@@ -1423,13 +1423,15 @@ package
        * v5 方案：雾场 1px/瓦片（classicRaw），classicBmp smoothing=true + 半格
        * 错位（同原版）；**每帧读游戏 tile.visi**（游戏 lighting/lighting2 照常
        * 维护渐变节奏），按规则写 alpha：
-       * - fov!=NONE（当前视野内）→ (1-visi)×255：游戏值原样（淡入渐亮、
-       *   门景 doordim 由 doorBoost 写入 visi 后同样生效）；
-       * - fov==NONE 且 visi>=0.99 且已探索且非 retDark → 记忆暗色 dimA
-       *   （原版已探索常亮区，classic 暗化为记忆区）；
-       * - fov==NONE 且 visi>0.01 → (1-visi)×255：光缘环/残留雾带/光源物体
-       *   照亮的区域——游戏值（原版雾带本体）；
-       * - 其余已探索（非 retDark）→ dimA（记忆区兜底）；
+       * - fov!=NONE（当前视野内）→ (1-max(visi,dimF))×255：游戏值原样但
+       *   **不低于记忆暗色下限**（游戏 visi 含距离衰减，无下限时远处视野比
+       *   记忆区还暗——"视野内远处渲染为阴影"）；门景 doordim 由 doorBoost
+       *   写入 visi 后同样生效；
+       * - fov==NONE 且已探索且非 retDark → **一律记忆暗色 dimA**（游戏 visi
+       *   冻结在淡入中途值会造成记忆区斑驳——"墙壁单位"块状感）；
+       * - fov==NONE 且 visi>0.01 → (1-visi)×255：retDark 消退尾迹/光源物体
+       *   照亮的区域（原版雾带本体）；
+       * - 其余已探索（retDark 消退完毕）→ dimA；
        * - 否则 → 255 黑（未探索）。
        * 变化才写像素（lastA 缓存）；边缘行列照抄原版（lighting 循环从 1 开始，
        * 恒定黑）。站立时游戏 visi 冻结 → 零写入。
@@ -1445,7 +1447,8 @@ package
          {
             w.grafon.visLight.visible = false;
          }
-         var dimA:int = Math.round((1 - this.cfgDim) * 255);
+         var dimF:Number = this.cfgDim;
+         var dimA:int = Math.round((1 - dimF) * 255);
          var retDark:Boolean = loc.retDark == true;
          var tx:int;
          var ty:int;
@@ -1467,17 +1470,30 @@ package
                var a:int;
                if(this.fov[i] != FOV_NONE)
                {
+                  // 视野内：游戏值（淡入节奏/门景 doordim）但**不低于记忆暗色
+                  // 下限**（v0.17.4 规则，v5 重写时丢失）——游戏 visi 含距离
+                  // 衰减（lDist1 外线性降暗），无下限时远处视野比记忆区还暗，
+                  // 观感"视野内远处渲染为阴影"
+                  if(gv < dimF)
+                  {
+                     gv = dimF;
+                  }
                   a = Math.round((1 - gv) * 255);
                }
-               else if(gv >= 0.99 && this.explored[i] == 1 && !retDark)
+               else if(!retDark && this.explored[i] == 1)
                {
+                  // 记忆区（非 retDark）：**一律均匀记忆暗色**——游戏 visi 在
+                  // 非 retDark 房间只升不降、玩家走开时冻结在淡入中途值
+                  // （0.1-0.9 不等），按游戏值显示会让记忆区每瓦片一个亮度
+                  // （斑驳马赛克 → "墙壁单位"块状感）
                   a = dimA;
                }
                else if(gv > 0.01)
                {
+                  // retDark 消退尾迹 / 光源物体照亮的区域：游戏值（原版雾带）
                   a = Math.round((1 - gv) * 255);
                }
-               else if(this.explored[i] == 1 && !retDark)
+               else if(this.explored[i] == 1)
                {
                   a = dimA;
                }

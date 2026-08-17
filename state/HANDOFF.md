@@ -1,6 +1,6 @@
 # RealisticVision —— 交接文档（HANDOFF）
 
-> 最后更新：2026-08-17（v0.18）
+> 最后更新：2026-08-18（v0.18.1）
 > 用途：项目转移到新对话时，新 agent 先读本文 + `AGENT_SCOPE.md` + `state/current-status.md`。
 
 ## 0. 项目一句话
@@ -11,7 +11,7 @@
 
 ## 1. 当前状态摘要（2026-08-17）
 
-- 版本 **v0.18**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
+- 版本 **v0.18.1**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
   由补丁 MainFE 加载）。游戏本体文件**未改动**。
 - 三档渲染模式（`config.txt` 的 `mode`，F12 轮换，PipBuck 选项页面板 + F10
   面板 + F12 屏幕提示显示模式名）：
@@ -21,9 +21,10 @@
     "雾"三要素）——1px/瓦片雾层 + **smoothing=true 双线性**（40px 渐变雾带）
     + **半格错位**（x=-20,y=-60 写 y+1 行，墙亮面/暗边自然产生）+ **每帧读
     游戏 tile.visi**（原版淡入 +0.1/帧、lighting2 呼吸、retDark -0.025 消退
-    节奏原样）；记忆区（fov==NONE 且已探索）→ dimA 166，未探索 → 黑；
-    边界/墙亮全部由插值+错位产生（无子格、无 blur）；每帧变化才写像素
-    （lastA 缓存，站立零写入）；门景 doorBoost 写 visi 生效；
+    节奏原样）；**v0.18.1 补回两条 v4 规则**：视野内 max(visi,dimF) 记忆暗色
+    下限（远处视野不暗于记忆区）、非 retDark 记忆区一律 dimA（消除冻结值
+    斑驳）；retDark 消退尾迹/光源物保留游戏值；门景 doorBoost 写 visi 生效；
+    每帧变化才写像素（lastA 缓存，站立零写入）；
   - `current`（平滑阴影）：8×8 子格 raycast 线状阴影 + 渐变（blur 2.5,quality 3
     ≈20px）+ 单侧钳制 + 子格"曾见"历史边界（5px）+ 门景 doordim；**可见墙
     四分格映射**（v0.17.4 复刻原版墙亮，无波痕）；性能：fogCache 缓存 +
@@ -132,11 +133,10 @@ debug=0
 
 ## 5. 已知问题 / 待办
 
-- **验证未完成（v0.18 classic v5 未实测）**：① 雾状渐变/淡入呼吸（移动时
-  光缘环雾带）② 错位墙亮面（东/南半亮）③ 记忆区 166 边界渐变（40px 雾带）
-  ④ 帧率（每帧读 visi，站立零写入）。v0.18 机制已过离线像素模拟
-  （`knowledge/experiments/classic-v5-original-pipeline.md`），待游戏内实测。
-  另：v0.17.2-v0.17.4 的 current 墙四分格/门景 doordim/性能项仍未实测。
+- **验证未完成（v0.18/0.18.1 classic v5 未实测）**：① 雾状渐变/淡入呼吸
+  ② 错位墙亮面 ③ **记忆区均匀 166（无斑驳）与视野内远处不暗于记忆区
+  （v0.18.1 修复项）** ④ 帧率（每帧读 visi，站立零写入）。机制已过离线
+  模拟/规则 case 验证，待游戏内实测。
 - **敌人掩膜二值限制**：Flash mask 是二值的，5px 子格是锯齿上限（无法软裁剪）；
   若仍嫌锯齿可用位图掩膜方案（历史上有白块生命周期风险，需严格挂载同步）。
 - **classic 已知小差异**：模组 fov 光源点/半径测量与原版 lightBmp 略有不同
