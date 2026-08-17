@@ -1,11 +1,52 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-17（v0.17.5，待运行时验证）
+> 最后更新：2026-08-17（v0.18，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.17.5（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.18（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.18 变更：classic v5 = 复刻原版光照管线（恢复"雾状感"）
+
+用户反馈："classic 整体仍无原版的雾状感"。用用户提供的原版备份
+（`C:\Users\micha\Desktop\Remains\pfe.swf`，未污染）反编译确认了"雾"的来源。
+
+### 原版雾状感三要素（反编译 fe.loc.Location / fe.loc.Tile / fe.graph.Grafon）
+
+1. **1px/瓦片 alpha 遮罩 + Bitmap smoothing=true**（双线性插值）——40px 瓦片值
+   之间连续渐变（原版"雾"是渐变场不是瓦片块；v0.17.1 起模组 smoothing=false
+   是雾感丢失主因）；
+2. **半格错位**（visLight.x=-20、y=-60；写 y+1 行）——亮度像素中心落在瓦片
+   西北角，墙的亮面（东/南半显示邻瓦值）与暗边由错位自然产生；
+3. **visi 渐进节奏**（Tile.updVisi() 每帧 +0.1 淡入；lighting() 后 10 帧
+   lighting2() 呼吸式刷新；retDark 变暗目标每帧 -0.025 消退尾迹）。
+
+### v5 实现
+
+- 新增 classic 独立雾层：`classicRaw`（1px/瓦片，spaceX × spaceY+1，初始全黑）
+  + `classicBmp`（smoothing=true、scale 40、x=-20/y=-60、写 y+1 行）——结构
+  完全复刻原版 lightBmp（classic/current 雾层在 fogVis 内互斥显示）；
+- **每帧读游戏 tile.visi**（游戏 lighting/lighting2 照常维护渐变节奏）：
+  fov!=NONE → (1-visi)×255；fov==NONE && visi≥0.99 && explored && !retDark
+  → 记忆暗色 dimA；fov==NONE && visi>0.01 → (1-visi)×255（光缘环/残留雾带/
+  光源物）；其余 explored（非 retDark）→ dimA；否则 255 黑；
+- 变化才写像素（lastA 缓存，站立零写入）；边缘行列照抄原版（lighting 循环
+  从 1 开始恒定黑）；
+- 删除 fillWallClassic/markSeenByDist（半格错位自动产生墙亮面，四分格映射
+  不再需要）；记忆区边界由 smoothing 双线性渐变（40px 雾带）替代 5px 子格。
+- stub：Location 增加 retDark。
+
+### 验证
+
+- 构建通过；离线像素模拟（1px 雾场 + y+1 写入 + 40 倍双线性插值）：
+  场景1（墙东未探索）地板↔墙交界 40px 渐变中点 127.5 ✓；场景2（墙东亮区）
+  **墙东半自动显示东邻亮值（错位墙亮面）** ✓、墙西半黑 ✓、记忆区 166 ✓、
+  166↔255 渐变中点 210.5 ✓——ALL PASS。
+  （详见 `knowledge/experiments/classic-v5-original-pipeline.md`）
+- **待游戏内实测**：① 雾状渐变（移动时呼吸式淡入/光缘环雾带）② 墙亮面
+  （东/南半亮，错位原版感）③ 记忆区 166 边界渐变 ④ 帧率（每帧读 visi，
+  站立零写入）。
 
 ## v0.17.5 修复：classic 记忆区边界（整块 40px / 亮边 / 黑斑三处同源问题）
 

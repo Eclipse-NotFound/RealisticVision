@@ -15,6 +15,7 @@ package fe.loc
       public var active:Boolean;
       public var base:Boolean;
       public var black:Boolean;
+      public var retDark:Boolean;
       public var isRelight:Boolean;
       public var isRebuild:Boolean;
       public var units:Array;
