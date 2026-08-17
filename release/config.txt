@@ -1,0 +1,11 @@
+# RealisticVision 配置文件
+# 修改后重启游戏生效；F11 运行时切换 enabled、F12 轮换 mode，均写回本文件。
+enabled=1
+mode=current
+dim=0.35
+doordim=0.5
+litmin=0.6
+fadestep=0.1
+telegrace=3
+base_rooms=
+debug=0

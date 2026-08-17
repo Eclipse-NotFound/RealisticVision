@@ -1,0 +1,11 @@
+# ===== 构建/反编译中间产物（均可由 build.sh 重新生成，不入库） =====
+build/GameStubs.swc
+build/alldata/
+build/decompiled-current/
+
+# 二进制 SWF（部署产物：由 src/ + stubs 构建）
+build/patched/pfe_merged.swf
+release/RealisticVisionMod.swf
+
+# ===== 通用 =====
+*.log
