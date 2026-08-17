@@ -123,11 +123,12 @@ package
       private var fogCache:BitmapData = null; // current：最终 alpha 场缓存（仅 FOV 重算时更新）
       private var fogBmp:BitmapData = null;
       private var fogBitmap:Bitmap = null;
-      // classic（仿原版）v5：1px/瓦片雾层——复刻原版 lightBmp 结构
+      // classic（仿原版）v7：1px/瓦片雾层——复刻原版 lightBmp 结构
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
+      private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       private var fogDirty:Boolean = false;
       private var fogRect:Rectangle = null;
       private var fogCellRect:Rectangle = new Rectangle(0,0,FOG_SUB,FOG_SUB);
@@ -627,8 +628,11 @@ package
          // ① smoothing=true 双线性插值（40px 值之间连续渐变 → 雾状感本体）
          // ② 半格错位（x=-tileX/2, y=-tileY/2-tileY，写 y+1 行——亮度像素
          //    中心落在瓦片西北角，墙亮面/暗边由错位自然产生，同原版）
-         var cw:int = this.spaceX;
-         var ch:int = this.spaceY + 1;
+         // ③ 尺寸 = (spaceX+1)×(spaceY+2)——**富余 1 列 2 行**（原版 lightBmp
+         //    49×28 = 最大房间 48×26 + 同款富余）。无富余时错位后雾层右端
+         //    缺 20px、底端缺 20px → 画面右下亮边缺口
+         var cw:int = this.spaceX + 1;
+         var ch:int = this.spaceY + 2;
          if(this.classicRaw == null || this.classicRaw.width != cw || this.classicRaw.height != ch)
          {
             if(this.classicRaw != null)
@@ -649,11 +653,14 @@ package
          }
          if(this.lastA == null || this.lastA.length != this.spaceX * this.spaceY)
          {
-            this.lastA = new Array(this.spaceX * this.spaceY);
+            var nk:int = this.spaceX * this.spaceY;
+            this.lastA = new Array(nk);
+            this.memCur = new Array(nk);
             var k:int;
-            for(k = 0; k < this.lastA.length; k++)
+            for(k = 0; k < nk; k++)
             {
                this.lastA[k] = -1;
+               this.memCur[k] = 0;
             }
          }
          // 模式可见性互斥：classic 显示 1px 雾层，current 显示 8×8 雾层
@@ -1430,10 +1437,13 @@ package
          var retDark:Boolean = loc.retDark == true;
          var tx:int;
          var ty:int;
-         // x/y 从 1 到 spaceX-2（照抄原版 lighting 循环范围——边缘行列恒定黑）
-         for(ty = 1; ty < this.spaceY - 1; ty++)
+         // 写入范围照抄原版 lighting 循环：列 1..spaceX-1、行 2..spaceY
+         // （写 y+1 行）——原版是 _loc7_<spaceX / _loc8_<spaceY；位图富余
+         // 列 0/spaceX、行 0/1/spaceY+1 恒黑。旧版少写最后一列/行导致
+         // 最右列/最底行瓦片错位显示残缺（墙边/画面边缘异常亮暗）
+         for(ty = 1; ty < this.spaceY; ty++)
          {
-            for(tx = 1; tx < this.spaceX - 1; tx++)
+            for(tx = 1; tx < this.spaceX; tx++)
             {
                var i:int = tx + ty * this.spaceX;
                var t:Tile = loc.getTile(tx,ty);
@@ -1446,18 +1456,36 @@ package
                {
                   gv = 1;
                }
-               // v6：游戏值优先——alpha 默认 = (1-visi)×255（原版渲染原样：
-               // 视野内衰减环梯度 / 淡入节奏 / retDark 消退 / 光源物 / 门景 /
-               // 墙恒黑+半格错位渗亮）
-               var a:int = Math.round((1 - gv) * 255);
-               if(!retDark && t.opac < 1 && this.fov[i] == FOV_NONE && a < dimA)
+               // 游戏值（原版渲染原样：视野内衰减环梯度 / 淡入节奏 /
+               // retDark 消退 / 光源物 / 门景 / 墙恒黑+半格错位渗亮）
+               var gameA:int = Math.round((1 - gv) * 255);
+               // 记忆化进度（0.1/帧，与原版 visi 渐入同款节奏）：视野外渐增、
+               // 视野内渐减——移动时记忆区边界平滑渐变（消灭 fov 瓦片级二值
+               // 切换的"格子感"），收敛后与 v6 规则一致
+               var mem:Boolean = !retDark && t.opac < 1 && this.fov[i] == FOV_NONE;
+               var cur:Number = this.memCur[i];
+               if(mem)
                {
-                  // 唯一的模组干预——记忆区（非 retDark、非墙、当前视野外）：
-                  // 亮度下限 dimA。内部（visi≈1）→ 均匀 166；边界瓦片（游戏
-                  // 距离衰减冻结值 0~0.35）→ 保留游戏衰减梯度（166 渐变到黑，
-                  // 原版风格边界）。墙不干预（原版墙恒黑，错位渗亮自动产生）
-                  a = dimA;
+                  cur += this.cfgFadeStep;
+                  if(cur > 1)
+                  {
+                     cur = 1;
+                  }
                }
+               else
+               {
+                  cur -= this.cfgFadeStep;
+                  if(cur < 0)
+                  {
+                     cur = 0;
+                  }
+               }
+               this.memCur[i] = cur;
+               // 显示 = 游戏值 + 进度×(记忆暗色 - 游戏值)：中途态是两者之间的
+               // 渐变色（刚离开视野的瓦片渐暗、刚进入的渐亮）；目标恒 ≥ 游戏值
+               // （只暗化不亮化的不变量保持）
+               var memT:int = gameA < dimA ? dimA : gameA;
+               var a:int = Math.round(gameA + cur * (memT - gameA));
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
