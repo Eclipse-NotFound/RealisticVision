@@ -1388,27 +1388,8 @@ package
       }
 
       /**
-       * classic（仿原版）v4：**雾场复刻原版亮度 + 记忆区暗化**（自渲染，隐藏
-       * 游戏掩膜）。
-       *
-       * v3 的"覆盖层"方案失败：覆盖层是半透明的（166/255），游戏 lightBmp 在
-       * 前沿带的近黑值（visi≈0.1-0.5）会透过覆盖层渗出，把记忆区边界变成
-       * "166+掩膜值"混合——40px 阶梯来自游戏 visi 场，覆盖层无法抹平。
-       *
-       * v4 改为自渲染雾场（与 current 同管线）：
-       * - 可见区（fov!=NONE）：alpha = (1 - tile.visi)×255——**游戏 visi 原样
-       *   复刻**（40px 原版亮度值、淡入节奏、门景 doordim 由 doorBoost 写入
-       *   visi 后同样生效）；
-       * - 可见墙（opac≥1，邻域点亮规则）：四分格映射复刻原版半格错位墙亮
-       *   （TL=自身 visi=0→黑，TR/BL/BR=东/南/东南瓦片 visi）；
-       * - fov==NONE：4 角采样——全暗：已探索→记忆暗色 dimA，未探索→按曾见
-       *   历史（曾见→dimA，否则→黑 255）；边界带（光缘环/前沿）：逐子格——
-       *   当前可见→该瓦片 visi 亮度，曾见→dimA，否则→黑。
-       * - 边界全部 5px 子格粒度；单侧钳制同 current。
-       * - 游戏 visLight 隐藏（雾场取代之），不写 tile.visi（除门景 doorBoost）。
-       */
-      /**
-       * classic（仿原版）v5：**复刻原版光照管线**（原版雾状感）。
+       * classic（仿原版）v6：**游戏值优先**——复刻原版光照管线（原版雾状感），
+       * 唯一的模组干预是记忆区亮度下限。
        *
        * 原版"雾"的三要素（反编译确认）：
        * ① lightBmp 是 1px/瓦片 的 alpha 遮罩 + Bitmap smoothing=true（双线性
@@ -1419,20 +1400,17 @@ package
        * ③ visi 渐进节奏——Tile.updVisi() 每帧 +0.1 向 t_visi 逼近（淡入），
        *    lighting() 后 10 帧 lighting2() 持续刷新（雾"呼吸"），retDark 房间
        *    变暗目标每帧 -0.025（雾消退尾迹）。
+       * ④ 距离衰减环（lDist1=300 全亮 → lDist2=1000 线性降暗到 0）是原版
+       *    边界的本体；墙永远不被游戏点亮（walk 末步检查目标瓦片 opac），
+       *    原版墙恒黑、仅靠错位渗入邻瓦亮值。
        *
-       * v5 方案：雾场 1px/瓦片（classicRaw），classicBmp smoothing=true + 半格
-       * 错位（同原版）；**每帧读游戏 tile.visi**（游戏 lighting/lighting2 照常
-       * 维护渐变节奏），按规则写 alpha：
-       * - fov!=NONE（当前视野内）→ (1-max(visi,dimF))×255：游戏值原样但
-       *   **不低于记忆暗色下限**（游戏 visi 含距离衰减，无下限时远处视野比
-       *   记忆区还暗——"视野内远处渲染为阴影"）；门景 doordim 由 doorBoost
-       *   写入 visi 后同样生效；
-       * - fov==NONE 且已探索且非 retDark → **一律记忆暗色 dimA**（游戏 visi
-       *   冻结在淡入中途值会造成记忆区斑驳——"墙壁单位"块状感）；
-       * - fov==NONE 且 visi>0.01 → (1-visi)×255：retDark 消退尾迹/光源物体
-       *   照亮的区域（原版雾带本体）；
-       * - 其余已探索（retDark 消退完毕）→ dimA；
-       * - 否则 → 255 黑（未探索）。
+       * v6 规则（每帧读游戏 tile.visi，1px/瓦片写 classicRaw，y+1 错位）：
+       *   a = (1-visi)×255  —— 游戏值原样：视野内衰减环梯度/淡入节奏/
+       *     retDark 消退/光源物/门景/墙恒黑+错位渗亮，全部与 vanilla 相同；
+       *   仅当（非 retDark && 非墙 && 当前视野外 && a < dimA）：
+       *     a = dimA  —— 记忆区下限：内部（visi≈1）均匀 166；边界瓦片
+       *     （游戏距离衰减冻结值 0~0.35）保留游戏衰减梯度（166 渐变到黑，
+       *     原版风格边界，无亮步/无块状）。
        * 变化才写像素（lastA 缓存）；边缘行列照抄原版（lighting 循环从 1 开始，
        * 恒定黑）。站立时游戏 visi 冻结 → 零写入。
        */
@@ -1458,7 +1436,8 @@ package
             for(tx = 1; tx < this.spaceX - 1; tx++)
             {
                var i:int = tx + ty * this.spaceX;
-               var gv:Number = loc.getTile(tx,ty).visi;
+               var t:Tile = loc.getTile(tx,ty);
+               var gv:Number = t.visi;
                if(gv < 0)
                {
                   gv = 0;
@@ -1467,39 +1446,17 @@ package
                {
                   gv = 1;
                }
-               var a:int;
-               if(this.fov[i] != FOV_NONE)
+               // v6：游戏值优先——alpha 默认 = (1-visi)×255（原版渲染原样：
+               // 视野内衰减环梯度 / 淡入节奏 / retDark 消退 / 光源物 / 门景 /
+               // 墙恒黑+半格错位渗亮）
+               var a:int = Math.round((1 - gv) * 255);
+               if(!retDark && t.opac < 1 && this.fov[i] == FOV_NONE && a < dimA)
                {
-                  // 视野内：游戏值（淡入节奏/门景 doordim）但**不低于记忆暗色
-                  // 下限**（v0.17.4 规则，v5 重写时丢失）——游戏 visi 含距离
-                  // 衰减（lDist1 外线性降暗），无下限时远处视野比记忆区还暗，
-                  // 观感"视野内远处渲染为阴影"
-                  if(gv < dimF)
-                  {
-                     gv = dimF;
-                  }
-                  a = Math.round((1 - gv) * 255);
-               }
-               else if(!retDark && this.explored[i] == 1)
-               {
-                  // 记忆区（非 retDark）：**一律均匀记忆暗色**——游戏 visi 在
-                  // 非 retDark 房间只升不降、玩家走开时冻结在淡入中途值
-                  // （0.1-0.9 不等），按游戏值显示会让记忆区每瓦片一个亮度
-                  // （斑驳马赛克 → "墙壁单位"块状感）
+                  // 唯一的模组干预——记忆区（非 retDark、非墙、当前视野外）：
+                  // 亮度下限 dimA。内部（visi≈1）→ 均匀 166；边界瓦片（游戏
+                  // 距离衰减冻结值 0~0.35）→ 保留游戏衰减梯度（166 渐变到黑，
+                  // 原版风格边界）。墙不干预（原版墙恒黑，错位渗亮自动产生）
                   a = dimA;
-               }
-               else if(gv > 0.01)
-               {
-                  // retDark 消退尾迹 / 光源物体照亮的区域：游戏值（原版雾带）
-                  a = Math.round((1 - gv) * 255);
-               }
-               else if(this.explored[i] == 1)
-               {
-                  a = dimA;
-               }
-               else
-               {
-                  a = 255;
                }
                if(a != this.lastA[i])
                {
