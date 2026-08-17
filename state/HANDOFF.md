@@ -1,6 +1,6 @@
 # RealisticVision —— 交接文档（HANDOFF）
 
-> 最后更新：2026-08-17（v0.17.4）
+> 最后更新：2026-08-17（v0.17.5）
 > 用途：项目转移到新对话时，新 agent 先读本文 + `AGENT_SCOPE.md` + `state/current-status.md`。
 
 ## 0. 项目一句话
@@ -11,20 +11,23 @@
 
 ## 1. 当前状态摘要（2026-08-17）
 
-- 版本 **v0.17.4**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
+- 版本 **v0.17.5**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
   由补丁 MainFE 加载）。游戏本体文件**未改动**。
 - 三档渲染模式（`config.txt` 的 `mode`，F12 轮换，PipBuck 选项页面板 + F10
   面板 + F12 屏幕提示显示模式名）：
   - `vanilla`（原版）：**纯透传**——模组完全不碰 visi/visLight/lightBmp，
     游戏原样渲染（半格错位掩膜/硬边/已探索常亮）；
-  - `classic`（仿原版）：**雾场自渲染（v4）**——可见区复刻游戏 visi
-    （40px 原版亮度 + 记忆暗色下限，光缘环终点=166 与记忆区连续）、可见墙
-    四分格映射（原版半格错位墙亮）、fov NONE 区按曾见历史子格化（5px 边界）；
-    游戏 visLight 隐藏；门景经 doorBoost 写 visi 生效；
+  - `classic`（仿原版）：**雾场自渲染（v4，v0.17.5 修记忆区边界）**——可见区
+    复刻游戏 visi（40px 原版亮度 + 记忆暗色下限，光缘环终点=166 与记忆区
+    连续）、可见墙四分格映射（原版半格错位墙亮）、**fov NONE 区（记忆区/
+    未探索）统一按 seenSub 子格历史填充**（5px 边界，可见瓦片经
+    markSeenByDist 按半径标记，边界带用本子格实际亮度——无 40px 阶梯/
+    无亮边/无黑斑）；游戏 visLight 隐藏；门景经 doorBoost 写 visi 生效；
   - `current`（平滑阴影）：8×8 子格 raycast 线状阴影 + 渐变（blur 2.5,quality 3
-    ≈20px）+ 单侧钳制 + 子格"曾见"历史边界（5px）+ 门景 doordim；**可见墙
-    四分格映射**（v0.17.4 复刻原版墙亮，无波痕）；性能：fogCache 缓存 +
-    4 角采样分类，站立零 raycast。
+    ≈20px）+ 单侧钳制 + 子格"曾见"历史边界（5px，v0.17.5 与 classic 同源
+    一致化：记忆区填充/标记完整性）+ 门景 doordim；**可见墙四分格映射**
+    （v0.17.4 复刻原版墙亮，无波痕）；性能：fogCache 缓存 + 4 角采样分类，
+    站立零 raycast。
 - 敌人掩膜子格 5px（MASK_SUB=8，与雾层一致）。
 - **验证状态**：全部功能未经用户最终确认（用户此前确认过的：v0.4.1 敌人
   "明处显示暗处不显示"语义、v0.10 渐变可见性、classic 最接近原版观感）。
@@ -129,9 +132,11 @@ debug=0
 
 ## 5. 已知问题 / 待办
 
-- **验证未完成（v0.17.2-v0.17.4 未实测）**：① current 墙四分格亮度与平滑度
-  ② classic v4 雾场（记忆区边界/光缘/墙亮）③ 门景亮度（doordim 可调）④
-  性能（F10 面板 frame 值）。
+- **验证未完成（v0.17.2-v0.17.5 未实测）**：① current 墙四分格亮度与平滑度
+  ② classic v4 雾场 + **v0.17.5 记忆区边界（5px 平滑/无亮边/无黑斑）** ③ 门景
+  亮度（doordim 可调）④ 性能（F10 面板 frame 值）。v0.17.5 记忆区逻辑已过
+  离线模拟（`knowledge/experiments/classic-memory-boundary-sim.md`），待游戏内
+  实测确认观感。
 - **敌人掩膜二值限制**：Flash mask 是二值的，5px 子格是锯齿上限（无法软裁剪）；
   若仍嫌锯齿可用位图掩膜方案（历史上有白块生命周期风险，需严格挂载同步）。
 - **classic 已知小差异**：模组 fov 光源点/半径测量与原版 lightBmp 略有不同

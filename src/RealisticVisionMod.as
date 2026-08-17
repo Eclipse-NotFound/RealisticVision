@@ -1072,7 +1072,7 @@ package
                if(f == FOV_DIM)
                {
                   // 透光门/水后：门景亮度（doordim，比记忆暗色亮），逐子格重算
-                  this.recalcTile(loc,tx,ty,bx,by,doorF,dimA,cs,true,true);
+                  this.recalcTile(loc,tx,ty,bx,by,doorF,dimA,cs,true);
                   continue;
                }
                if(f == FOV_VISIBLE && t.opac >= 1)
@@ -1103,11 +1103,9 @@ package
                      if(lit > 0.0001)
                      {
                         cLit++;
-                        if(this.explored[i] != 1)
-                        {
-                           // 未探索瓦片的可见角 → 子格历史（记忆区↔未探索边界平滑）
-                           this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
-                        }
+                        // 可见角 → 子格"曾见"历史（记忆区↔未探索边界 5px 粒度；
+                        // 已探索瓦片同样标记，否则记忆区填充会出黑斑）
+                        this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
                      }
                   }
                }
@@ -1116,30 +1114,17 @@ package
                   // 全亮瓦片：无 raycast，逐子格距离衰减（含记忆暗色下限）
                   this.fillLitTile(tx,ty,bx,by,dimF,cs);
                }
-               else if(cLit == 0 && this.explored[i] == 1)
-               {
-                  if(t.opac > 0)
-                  {
-                     // 记忆区墙：按子格历史（曾见的内半侧→记忆暗色，外半侧→黑）
-                     this.fillSeenTile(tx,ty,dimA);
-                  }
-                  else
-                  {
-                     // 全暗已探索地板：均匀记忆暗色
-                     this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
-                     this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
-                     this.fogCache.fillRect(this.fogCellRect,dimA << 24);
-                  }
-               }
                else if(cLit == 0)
                {
-                  // 全暗未探索瓦片：按子格历史（曾见边缘→记忆暗色，其余→黑）
-                  this.fillSeenTile(tx,ty,dimA);
+                  // 全暗瓦片（记忆区/未探索）：按子格"曾见"历史填充——曾见→记忆
+                  // 暗色，从未见→黑。已探索瓦片不再整块 166（v0.17.4 回归的
+                  // 40px 阶梯）：记忆区边界由子格历史形状决定（5px 粒度）
+                  this.fillMemoryTile(tx,ty,dimA);
                }
                else
                {
                   // 边界瓦片（含阴影线/泄漏/曾见边缘）：完整 8×8 raycast
-                  this.recalcTile(loc,tx,ty,bx,by,dimF,dimA,cs,this.explored[i] == 1,false);
+                  this.recalcTile(loc,tx,ty,bx,by,dimF,dimA,cs,false);
                }
             }
          }
@@ -1149,10 +1134,12 @@ package
       /**
        * 边界瓦片完整 8×8 子格 raycast。
        * doorView=true：透光门/水后——所有子格用门景亮度（floor=doordim）；
-       * 否则：亮子格 max(lit×falloff, floor)，暗子格=已探索或曾见→记忆暗色，否则黑。
+       * 否则：亮子格 max(lit×falloff, floor)，暗子格=曾见→记忆暗色，否则黑。
+       * 当前可见子格一律记入"曾见"历史（含 doorView 与已探索瓦片——记忆区
+       * 填充按子格历史，漏标会出现黑斑）。
        */
       private function recalcTile(loc:Location, tx:int, ty:int, bx:Number, by:Number,
-         floorF:Number, dimA:int, cs:Number, exploredTile:Boolean, doorView:Boolean):void
+         floorF:Number, dimA:int, cs:Number, doorView:Boolean):void
       {
          var sx:int;
          var sy:int;
@@ -1174,6 +1161,10 @@ package
                {
                   lit = 1;
                }
+               if(lit > 0.0001)
+               {
+                  this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
+               }
                var a:int;
                if(doorView)
                {
@@ -1186,10 +1177,6 @@ package
                }
                else if(lit > 0.0001)
                {
-                  if(!exploredTile)
-                  {
-                     this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
-                  }
                   br = lit * this.distFalloff(sdx * sdx + sdy * sdy);
                   if(br < floorF)
                   {
@@ -1197,8 +1184,7 @@ package
                   }
                   a = Math.round((1 - br) * 255);
                }
-               else if(exploredTile
-                  || this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] == 1)
+               else if(this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] == 1)
                {
                   a = dimA;
                }
@@ -1211,11 +1197,21 @@ package
          }
       }
 
-      /** current：全亮瓦片无 raycast 填充——逐子格距离衰减（亮度 = max(falloff, dim)）。 */
+      /** current：全亮瓦片无 raycast 填充——逐子格距离衰减（亮度 = max(falloff, dim)）。
+       *  4 角已确认全在视野半径内（角是瓦片最远点）→ 整瓦片记入"曾见"历史
+       *  （记忆区按子格历史填充，漏标会出现黑斑）。 */
       private function fillLitTile(tx:int, ty:int, bx:Number, by:Number, dimF:Number, cs:Number):void
       {
+         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
          var sx:int;
          var sy:int;
+         for(sx = 0; sx < FOG_SUB; sx++)
+         {
+            for(sy = 0; sy < FOG_SUB; sy++)
+            {
+               this.seenSub[idxBase + sy * this.subW + sx] = 1;
+            }
+         }
          for(sx = 0; sx < FOG_SUB; sx++)
          {
             for(sy = 0; sy < FOG_SUB; sy++)
@@ -1289,28 +1285,43 @@ package
          }
       }
 
-      /** current：全暗未探索瓦片按子格历史填充——曾见→记忆暗色，其余→黑。 */
-      private function fillSeenTile(tx:int, ty:int, dimA:int):void
+      /**
+       * 全暗瓦片（记忆区/未探索）按子格"曾见"历史填充：曾见→记忆暗色 dimA，
+       * 从未见→全黑。快路径：整块已见→fillRect(dimA)，整块未见→fillRect(黑)。
+       * 记忆区边界由 seenSub 形状决定（5px 粒度），不再整块 40px 阶梯。
+       */
+      private function fillMemoryTile(tx:int, ty:int, dimA:int):void
       {
+         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
+         var seenAll:Boolean = true;
+         var seenAny:Boolean = false;
          var sx:int;
          var sy:int;
-         var any:Boolean = false;
-         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
-         for(sx = 0; sx < FOG_SUB && !any; sx++)
+         for(sx = 0; sx < FOG_SUB; sx++)
          {
-            for(sy = 0; sy < FOG_SUB && !any; sy++)
+            for(sy = 0; sy < FOG_SUB; sy++)
             {
                if(this.seenSub[idxBase + sy * this.subW + sx] == 1)
                {
-                  any = true;
+                  seenAny = true;
+               }
+               else
+               {
+                  seenAll = false;
                }
             }
          }
-         if(!any)
+         this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
+         this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
+         if(seenAll)
          {
-            // 从未见过：整块全黑
-            this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
-            this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
+            // 整块都曾见（记忆区内部）：均匀暗色
+            this.fogCache.fillRect(this.fogCellRect,dimA << 24);
+            return;
+         }
+         if(!seenAny)
+         {
+            // 从未见过（未探索内部）：整块全黑
             this.fogCache.fillRect(this.fogCellRect,0xFF000000);
             return;
          }
@@ -1320,14 +1331,8 @@ package
          {
             for(sy = 0; sy < FOG_SUB; sy++)
             {
-               if(this.seenSub[idxBase + sy * this.subW + sx] == 1)
-               {
-                  this.fogCache.setPixel32(px0 + sx,py0 + sy,dimA << 24);
-               }
-               else
-               {
-                  this.fogCache.setPixel32(px0 + sx,py0 + sy,0xFF000000);
-               }
+               this.fogCache.setPixel32(px0 + sx,py0 + sy,
+                  (this.seenSub[idxBase + sy * this.subW + sx] == 1 ? dimA : 255) << 24);
             }
          }
       }
@@ -1408,6 +1413,9 @@ package
                   this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
                   this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
                   this.fogCache.fillRect(this.fogCellRect,a << 24);
+                  // 可见瓦片按当前视野半径标记"曾见"子格（无 raycast）——
+                  // 离开后记忆区按真实扫过范围（距离）子格化，边界 5px 平滑
+                  this.markSeenByDist(tx,ty,bx,by);
                   continue;
                }
                // 4 角采样：当前仍有光线的瓦片（光缘环/前沿带）→ 逐子格判定；
@@ -1434,54 +1442,17 @@ package
                }
                if(cLit == 0)
                {
-                  if(this.explored[i] == 1)
-                  {
-                     // 记忆区（瓦片级已探索）：均匀暗色
-                     this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
-                     this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
-                     this.fogCache.fillRect(this.fogCellRect,dimA << 24);
-                     continue;
-                  }
-                  // 全暗未探索瓦片：按曾见历史（曾见边缘→暗色，其余→黑）
-                  var idxB:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
-                  var any:Boolean = false;
-                  for(sx = 0; sx < FOG_SUB && !any; sx++)
-                  {
-                     for(sy = 0; sy < FOG_SUB && !any; sy++)
-                     {
-                        if(this.seenSub[idxB + sy * this.subW + sx] == 1)
-                        {
-                           any = true;
-                        }
-                     }
-                  }
-                  if(!any)
-                  {
-                     this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
-                     this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
-                     this.fogCache.fillRect(this.fogCellRect,0xFF000000);
-                     continue;
-                  }
-                  for(sx = 0; sx < FOG_SUB; sx++)
-                  {
-                     for(sy = 0; sy < FOG_SUB; sy++)
-                     {
-                        if(this.seenSub[idxB + sy * this.subW + sx] == 1)
-                        {
-                           this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,
-                              FOG_PAD + ty * FOG_SUB + sy,dimA << 24);
-                        }
-                        else
-                        {
-                           this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,
-                              FOG_PAD + ty * FOG_SUB + sy,0xFF000000);
-                        }
-                     }
-                  }
+                  // 全暗瓦片（记忆区/未探索）：按子格"曾见"历史填充——曾见→
+                  // 记忆暗色，从未见→黑。已探索瓦片不再整块 166（40px 阶梯），
+                  // 记忆区边界与未探索区一样由 seenSub 形状决定（5px 粒度）
+                  this.fillMemoryTile(tx,ty,dimA);
                   continue;
                }
                // 边界瓦片（光缘环/前沿带）：逐子格当前光线判定——
-               // 当前可见 → 该瓦片 visi 亮度；曾见 → 记忆暗色；从未见 → 黑
+               // 当前可见 → 本子格实际亮度（lit×距离衰减，记忆暗色下限）；
+               // 曾见 → 记忆暗色；从未见 → 黑。
+               // 注意不能用 tile.visi：游戏 visi 只升不降、记忆区瓦片恒为 1，
+               // 会把这些窥光子格渲染成全亮（记忆区边界亮边）
                var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
                for(sx = 0; sx < FOG_SUB; sx++)
                {
@@ -1499,23 +1470,14 @@ package
                      if(lit2 > 0.0001)
                      {
                         this.seenSub[idxBase + sy * this.subW + sx] = 1;
-                        var gv2:Number = t.visi;
-                        if(gv2 < 0)
+                        var br2:Number = lit2 * this.distFalloff(ddx * ddx + ddy * ddy);
+                        if(br2 < dimF)
                         {
-                           gv2 = 0;
+                           br2 = dimF;
                         }
-                        else if(gv2 > 1)
-                        {
-                           gv2 = 1;
-                        }
-                        if(gv2 < dimF)
-                        {
-                           gv2 = dimF;
-                        }
-                        aa = Math.round((1 - gv2) * 255);
+                        aa = Math.round((1 - br2) * 255);
                      }
-                     else if(this.seenSub[idxBase + sy * this.subW + sx] == 1
-                        || this.explored[i] == 1)
+                     else if(this.seenSub[idxBase + sy * this.subW + sx] == 1)
                      {
                         aa = dimA;
                      }
@@ -1554,12 +1516,14 @@ package
 
       /** classic：可见墙四分格映射——复刻原版掩膜半格错位墙亮
        *  （TL=自身 visi，TR=东，BL=南，BR=东南）；施加记忆暗色下限与
-       *  可见区一致（环边缘墙与记忆区连续）。 */
+       *  可见区一致（环边缘墙与记忆区连续）。显示过的子格记入"曾见"
+       *  （记忆区按显示填充，否则墙变记忆后整块黑）。 */
       private function fillWallClassic(loc:Location, tx:int, ty:int, bx:Number, by:Number):void
       {
          var half:int = FOG_SUB / 2;
          var cs:Number = Tile.tileX / FOG_SUB;
          var dimF:Number = this.cfgDim;
+         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
          var sx:int;
          var sy:int;
          for(sx = 0; sx < FOG_SUB; sx++)
@@ -1585,9 +1549,35 @@ package
                      gv = dimF;
                   }
                   a = Math.round((1 - gv) * 255);
+                  this.seenSub[idxBase + sy * this.subW + sx] = 1;
                }
                this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,
                   FOG_PAD + ty * FOG_SUB + sy,a << 24);
+            }
+         }
+      }
+
+      /** classic：可见瓦片（fov!=NONE）按当前视野半径（lDist2）逐子格距离
+       *  标记"曾见"历史（无 raycast，64 次距离判定）。可见瓦片的显示是
+       *  40px 均匀的，但记忆区按真实扫过范围子格化——边界瓦片（明暗混合）
+       *  由逐子格 raycast 精确标记，这里只负责半径内子格。 */
+      private function markSeenByDist(tx:int, ty:int, bx:Number, by:Number):void
+      {
+         var d2max:Number = this.locDist2 * this.locDist2;
+         var cs:Number = Tile.tileX / FOG_SUB;
+         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
+         var sx:int;
+         var sy:int;
+         for(sx = 0; sx < FOG_SUB; sx++)
+         {
+            var wx:Number = bx + (sx + 0.5) * cs - this.eyeX;
+            for(sy = 0; sy < FOG_SUB; sy++)
+            {
+               var wy:Number = by + (sy + 0.5) * cs - this.eyeY;
+               if(wx * wx + wy * wy <= d2max)
+               {
+                  this.seenSub[idxBase + sy * this.subW + sx] = 1;
+               }
             }
          }
       }

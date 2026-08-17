@@ -1,11 +1,49 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-17（v0.17.4，待运行时验证）
+> 最后更新：2026-08-17（v0.17.5，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.17.4（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.17.5（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.17.5 修复：classic 记忆区边界（整块 40px / 亮边 / 黑斑三处同源问题）
+
+用户反馈：classic 扫过但未覆盖区域的边界显示仍有问题。
+
+### 排查根因（三处，全部出在"记忆区按瓦片级填充/取亮度"）
+
+1. **整块 40px 阶梯**：全暗已探索瓦片直接 `fillRect(dimA)` 整块填充，无视
+   seenSub 子格历史——v0.17.3 的记忆区子格化在 v0.17.4 重写中回归丢失；
+2. **记忆区亮边**：边界带（fov==NONE 但子格有光）的亮度取 `tile.visi`——游戏
+   visi 只升不降、记忆区瓦片恒为 1 → 窥光子格渲染成 alpha 0（全亮），而实际
+   只是光缘（低亮度）；
+3. **记忆区黑斑**：seenSub 只在 fov==NONE 边界瓦片标记，可见瓦片（fov!=NONE）
+   完全不标记 → 扫过区变记忆后从未被标记的子格显示为黑。
+
+### 修复
+
+- **`fillMemoryTile`（新，classic/current 共用）**：记忆区/未探索统一按子格
+  "曾见"历史填充（曾见→dimA，从未见→黑），带整块快路径（全见→fillRect(dimA)、
+  全未见→fillRect(黑)）；
+- **`markSeenByDist`（新）**：classic 可见瓦片（fov!=NONE）按当前视野半径
+  lDist2 逐子格距离标记曾见（无 raycast）——离开后记忆区按真实扫过范围
+  （距离）子格化，边界 5px 平滑；
+- **边界带亮度改用本子格实际光线** `lit×距离衰减`（下限 dimF），不再用游戏
+  visi（消灭亮边）；暗子格去掉瓦片级 `explored` 兜底；
+- **标记完整性**：`recalcTile`（含 doorView 门景分支）与 4 角采样对已探索
+  瓦片同样标记；`fillLitTile` 整块标记；`fillWallClassic` 补标记——记忆区
+  不再出黑斑/黑洞。
+- current 模式同步一致化（同根因：已探索地板整块 166、已探索瓦片漏标）。
+
+### 验证
+
+- 构建通过（build.sh）；离线 Node 模拟（复刻 castRay/4 角采样/markSeenByDist/
+  边界带/fillMemoryTile，24×24 含墙布局，玩家左半区活动后离开）：
+  ① 记忆区无黑洞（真值 15378 曾见子格 0 遗漏）② 30 个混合边界瓦片按 5px 子格
+  填充（非整块）③ 离开后填充与子格历史逐格一致。
+  （详见 `knowledge/experiments/classic-memory-boundary-sim.md`）
+- **待游戏内实测**：记忆区边界 5px 平滑（无 40px 阶梯）、无亮边、无黑斑。
 
 ## v0.17.4 变更：墙四分格映射（去波痕）+ classic v4 雾场自渲染（去 40px 阶梯）
 
