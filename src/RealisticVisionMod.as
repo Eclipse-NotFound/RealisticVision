@@ -1494,13 +1494,29 @@ package
                var a:int = Math.round(gameA + cur * (memT - gameA));
                if(t.opac >= 1)
                {
-                  // **墙恒黑**（原版语义）：原版 lighting walk 末步检查目标瓦片
-                  // opac → 墙 visi 恒 0 → alpha 255。不读 visi——current 模式把
-                  // 墙 visi 写成 1（二元 explored→1，邻域点亮规则），切到
-                  // classic 后残留 → 墙 gameA=0 显示亮块，并借错位渗成
-                  // "竖直墙左边/水平墙上边"的 20px 亮带（游戏 lighting 只升
-                  // 不降，不强制则永久亮）
-                  a = 255;
+                  // **墙**：原版恒黑 255（lighting walk 末步检查目标 opac → 墙
+                  // visi 恒 0），不读 visi（防 current 模式 visi 残留污染）。
+                  // 但墙值借半格错位溢出到**西邻东半/北邻南半**（20px 溢出带）：
+                  // 邻域是记忆区（166）时，255 黑带贴 166 形成"溢出黑边"——
+                  // 此时墙值取 dimA（与记忆区连续，溢出带无对比）；亮区/
+                  // 未探索邻接时保持 255（原版墙影/全黑连续）。
+                  var memN:Boolean = false;
+                  if(!retDark)
+                  {
+                     if(tx > 0 && loc.getTile(tx - 1,ty).opac < 1
+                        && this.explored[(tx - 1) + ty * this.spaceX] == 1
+                        && this.fov[(tx - 1) + ty * this.spaceX] == FOV_NONE)
+                     {
+                        memN = true;
+                     }
+                     else if(ty > 0 && loc.getTile(tx,ty - 1).opac < 1
+                        && this.explored[tx + (ty - 1) * this.spaceX] == 1
+                        && this.fov[tx + (ty - 1) * this.spaceX] == FOV_NONE)
+                     {
+                        memN = true;
+                     }
+                  }
+                  a = memN ? dimA : 255;
                }
                if(a != this.lastA[i])
                {
