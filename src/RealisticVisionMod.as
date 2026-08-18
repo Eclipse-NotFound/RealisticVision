@@ -1486,6 +1486,16 @@ package
                // （只暗化不亮化的不变量保持）
                var memT:int = gameA < dimA ? dimA : gameA;
                var a:int = Math.round(gameA + cur * (memT - gameA));
+               if(t.opac >= 1)
+               {
+                  // **墙恒黑**（原版语义）：原版 lighting walk 末步检查目标瓦片
+                  // opac → 墙 visi 恒 0 → alpha 255。不读 visi——current 模式把
+                  // 墙 visi 写成 1（二元 explored→1，邻域点亮规则），切到
+                  // classic 后残留 → 墙 gameA=0 显示亮块，并借错位渗成
+                  // "竖直墙左边/水平墙上边"的 20px 亮带（游戏 lighting 只升
+                  // 不降，不强制则永久亮）
+                  a = 255;
+               }
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
