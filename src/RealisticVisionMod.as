@@ -179,17 +179,39 @@ package
 
       private function startup(main:*):void
       {
+         // 文件日志（trace 在 release 构建被剥离，写 applicationStorageDirectory
+         // 诊断启动卡点——RConnect 同款做法）
+         var lg:String = "startup enter main=" + (main != null) + " stage=" + (main != null && main.stage != null);
          if(main == null || main.stage == null)
          {
+            this.fileLog(lg + " -> NO STAGE, abort");
             trace("[RVision] init: no stage");
             return;
          }
          stageRef = main.stage;
          this.loadConfig();
+         this.fileLog(lg + " -> after loadConfig enabled=" + this.cfgEnabled);
          stageRef.addEventListener(Event.ENTER_FRAME,this.onFrame);
          stageRef.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
          stageRef.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN,this.onRightDown);
          trace("[RVision] init ok enabled=" + this.cfgEnabled);
+         this.fileLog("init ok enabled=" + this.cfgEnabled);
+      }
+
+      /** 诊断文件日志：%APPDATA%/<appid>/Local Store/RVision.log（trace 被 release 剥离）。 */
+      private function fileLog(msg:String):void
+      {
+         try
+         {
+            var f:File = File.applicationStorageDirectory.resolvePath("RVision.log");
+            var fs:FileStream = new FileStream();
+            fs.open(f,FileMode.APPEND);
+            fs.writeUTFBytes(msg + "\n");
+            fs.close();
+         }
+         catch(err:Error)
+         {
+         }
       }
 
       // ==================== 配置 ====================
@@ -405,6 +427,12 @@ package
       private function onFrame(e:Event):void
       {
          var t0:int = getTimer();
+         this.frameCount++;
+         if(this.frameCount % 180 == 1)
+         {
+            // 心跳（诊断）：确认 onFrame 在跑（每 ~3 秒一行）
+            this.fileLog("tick " + this.frameCount);
+         }
          try
          {
             this.onFrameInner();
@@ -665,9 +693,12 @@ package
                this.fogBitmap.parent.removeChild(this.fogBitmap);
             }
             this.fogBitmap = new Bitmap(this.fogBmp);
-            // 无平滑：current 线状边界保持锐利（5px 子格已足够细）；
-            // classic 的半影由模糊输出提供，不受影响。
-            this.fogBitmap.smoothing = false;
+            // v0.22.1：**smoothing=true**（参考原版"模糊墙壁单位格子"思路——
+            // 原版 lightBmp 1px/瓦片 + 双线性插值产生 40px 渐变雾带）。current
+            // 的 5px 子格值之间双线性插值（5px 渐变带），消除 5px 像素块锯齿；
+            // 配合 curBlur（4.0 ≈32px）→ 阴影边缘平滑柔和。线状阴影几何
+            // （子格 raycast）保留，仅显示层插值。
+            this.fogBitmap.smoothing = true;
             this.fogBitmap.scaleX = this.fogBitmap.scaleY = Tile.tileX / FOG_SUB;
             this.fogBitmap.x = this.fogBitmap.y = -FOG_PAD * Tile.tileX / FOG_SUB;
             this.fogVis.addChild(this.fogBitmap);
