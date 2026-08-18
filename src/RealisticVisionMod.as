@@ -559,8 +559,12 @@ package
                   for(ty = 0; ty < this.spaceY; ty++)
                   {
                      var t:Tile = loc.getTile(tx,ty);
+                     // 只写 visi（二元），**不写 t_visi**（v0.21.1）：t_visi 是
+                     // 游戏 lighting() 的目标值，保留游戏自己的值——current 退出
+                     // （切 vanilla/classic/F11 关闭）后，游戏 lighting2/lighting
+                     // 以 t_visi 为目标把 visi 拉回游戏语义（自愈），不会残留
+                     // 模组写的 0/1 污染原版渲染
                      t.visi = 0;
-                     t.t_visi = 0;
                   }
                }
             }
@@ -1026,8 +1030,10 @@ package
                   }
                }
                var t:Tile = loc.getTile(tx,ty);
+               // 只写 visi（二元，供 checkPort/地图/Sats 等游戏逻辑），
+               // 不写 t_visi（v0.21.1）：t_visi 保留游戏 lighting() 的目标值，
+               // 退出 current 后游戏可自愈恢复（见 resetRoom 注释）
                t.visi = gv;
-               t.t_visi = gv;
             }
          }
          if(fading)

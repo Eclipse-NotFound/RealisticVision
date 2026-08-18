@@ -1,11 +1,47 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-18（v0.21，待运行时验证）
+> 最后更新：2026-08-18（v0.21.1，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.21（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.21.1（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.21.1 修复：current 模式 t_visi 污染（切模式后原版渲染无法自愈）
+
+用户反馈："原版渲染机制似乎被污染"——对照桌面干净备份排查。
+
+### 排查结论（游戏文件层零污染）
+
+对照 `C:\Users\micha\Desktop\Remains`（干净原版）逐项核对：
+- **渲染核心类零差异**：fe.loc.Location / fe.loc.Tile / fe.graph.Grafon / fe.World
+  反编译逐行 diff 均为 0 行差异（游戏根 pfe.swf vs 干净备份）；
+- **Rooms 房间数据**：31 个 XML 全部 md5 一致；sound/sprite/texture/文本配置
+  全部一致；pfe.swf 的 +5507 字节差异 = 6 个 mod 加载器合并（Sandevistan/
+  RConnect/RealisticVision/RandomRooms/MSW/TDFC），MainFE 之外无任何改动；
+- 其他 mod 均不定义渲染类（无类覆盖）；RandomRooms 只追加测试地形
+  （rr_test land），不替换原版房间/光照。
+
+### 真正的污染源（运行时状态，我的模组）
+
+- **current 模式每帧写 `tile.t_visi = explored?1:0`（二元）**——t_visi 是
+  游戏 lighting() 的目标值，被写 0 后游戏 lighting2 的 updVisi 以 t_visi 为
+  目标 → **visi 永久停在 0（黑）**；游戏 lighting() 只升不降 → 无法自愈。
+  切到 vanilla/classic 后边界瓦片残留错误亮度 → "原版渲染机制被污染"观感。
+
+### 修复
+
+- current 模式**只写 `tile.visi`（二元，供 checkPort/地图/Sats 等游戏逻辑），
+  保留游戏自己的 `t_visi`**（resetRoom 与 applyVision 两处）——退出 current
+  后游戏 lighting2/lighting 以 t_visi 为目标把 visi 拉回游戏语义（+0.1/帧，
+  10 帧自愈），移动时 lighting() 重算目标彻底恢复。
+- doorBoost（classic 门景）写 visi/t_visi=doordim 保留（classic 内稳态，
+  切 vanilla 后移动自愈）。
+
+### 验证
+
+- 构建通过；自愈路径离线验证：切 vanilla 后 visi 10 帧内 0→1.0（旧版 t_visi
+  被写 0 → 永久黑）。
 
 ## v0.21 修复：炮塔类敌人明暗边界二分 + 敌人边界颗粒感（位图掩膜）
 
