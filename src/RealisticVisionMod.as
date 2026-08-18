@@ -1570,29 +1570,32 @@ package
                var a:int = Math.round(gameA + cur * (memT - gameA));
                if(t.opac >= 1)
                {
-                  // **墙**：原版恒黑 255（lighting walk 末步检查目标 opac → 墙
-                  // visi 恒 0），不读 visi（防 current 模式 visi 残留污染）。
-                  // 但墙值借半格错位溢出到**西邻东半/北邻南半**（20px 溢出带）：
-                  // 邻域是记忆区（166）时，255 黑带贴 166 形成"溢出黑边"——
-                  // 此时墙值取 dimA（与记忆区连续，溢出带无对比）；亮区/
-                  // 未探索邻接时保持 255（原版墙影/全黑连续）。
-                  var memN:Boolean = false;
+                  // **墙值 = 邻域协调**（v0.22.2，替代 v0.21.2 的记忆区特判）：
+                  // 墙值借半格错位显示在"墙自身西北半 + 西邻东半 + 北邻南半"，
+                  // 墙东/南半显示东/南邻值。恒 255 时亮区邻接的溢出带是黑边、
+                  // 东邻暗值（记忆区 166/未探索 255）让墙东半突兀变暗——
+                  // 用户反馈"水平墙上方/竖直墙右方黑边溢出"。
+                  // 规则：西/北邻（溢出方向）为**未探索**（fov NONE && !explored）
+                  // → 墙值 255（未探索全黑连续）；否则 → dimA（166 记忆暗色：
+                  // 亮区邻接的溢出带为灰影而非黑边、记忆区邻接连续；墙东/南半
+                  // 显示的邻域值恰好与墙值一致 → 墙整体均匀无突兀黑边）。
+                  var darkWall:Boolean = false;
                   if(!retDark)
                   {
                      if(tx > 0 && loc.getTile(tx - 1,ty).opac < 1
-                        && this.explored[(tx - 1) + ty * this.spaceX] == 1
-                        && this.fov[(tx - 1) + ty * this.spaceX] == FOV_NONE)
+                        && this.fov[(tx - 1) + ty * this.spaceX] == FOV_NONE
+                        && this.explored[(tx - 1) + ty * this.spaceX] == 0)
                      {
-                        memN = true;
+                        darkWall = true;
                      }
                      else if(ty > 0 && loc.getTile(tx,ty - 1).opac < 1
-                        && this.explored[tx + (ty - 1) * this.spaceX] == 1
-                        && this.fov[tx + (ty - 1) * this.spaceX] == FOV_NONE)
+                        && this.fov[tx + (ty - 1) * this.spaceX] == FOV_NONE
+                        && this.explored[tx + (ty - 1) * this.spaceX] == 0)
                      {
-                        memN = true;
+                        darkWall = true;
                      }
                   }
-                  a = memN ? dimA : 255;
+                  a = darkWall ? 255 : dimA;
                }
                if(a != this.lastA[i])
                {
