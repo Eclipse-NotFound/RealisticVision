@@ -1,6 +1,6 @@
 # RealisticVision —— 交接文档（HANDOFF）
 
-> 最后更新：2026-08-18（v0.21.2）
+> 最后更新：2026-08-18（v0.22）
 > 用途：项目转移到新对话时，新 agent 先读本文 + `AGENT_SCOPE.md` + `state/current-status.md`。
 
 ## 0. 项目一句话
@@ -11,7 +11,7 @@
 
 ## 1. 当前状态摘要（2026-08-17）
 
-- 版本 **v0.21.2**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
+- 版本 **v0.22**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
   由补丁 MainFE 加载）。游戏本体文件**未改动**。
 - **污染排查结论（2026-08-18，对照桌面干净备份）**：游戏文件层零污染——
   Location/Tile/Grafon/World 反编译逐行零差异、Rooms 数据/资源/文本一致；

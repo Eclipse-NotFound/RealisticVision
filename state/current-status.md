@@ -1,11 +1,44 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-18（v0.21.2，待运行时验证）
+> 最后更新：2026-08-18（v0.22，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.21.2（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.22（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.22 变更：跨房间记忆（原版语义）+ current 性能/阴影模糊
+
+用户反馈：① current 快速跑动时卡顿、阴影边缘较硬 ② 原版探索完房间 1 进
+房间 2 再回房间 1 时已探索区仍亮，current/classic 却全部按未探索处理——
+要求实现原版跨房间记忆。
+
+### ① 跨房间记忆（roomMem）
+
+- 原版：房间对象缓存 → tile.visi 保留 → 回房间时已探索常亮；模组每次进房
+  resetRoom 把自己的 explored[] 清零 → 记忆丢失。
+- 修复：`roomMem:Object`（loc.id → explored 数组）——resetRoom 离开前保存
+  当前房间 explored（最后一次 FOV 重算状态），回同 id 房间时恢复：
+  - classic：explored 恢复 → memCur 从游戏值渐暗到 166（跨房间记忆渐现
+    动画）；游戏 tile.visi 由原版房间缓存保留（回房 visi=1 → 亮→渐暗）；
+  - current：恢复 explored 时同步把已探索瓦片的 seenSub 全标记（首帧
+    fillMemoryTile 显示记忆区 166；瓦片级边界随后 FOV 重算细化）；
+  - 内存：仅瓦片级 explored（~10KB/房间）；resetOff（读档/加载）清空。
+
+### ② current 性能（FOV 重算阈值 0.5 → 1.5px）
+
+- 快速跑动时每帧移动都触发 FOV 重算（~1-2 万条 raycast）→ 卡顿；
+  阈值放宽 3 倍后重算频率降约 2/3，边界更新滞后 1.5px 不可察觉。
+
+### ③ current 阴影模糊（curBlur 2.5 → 4.0，≈32px 世界渐变）
+
+- 阴影边缘渐变带从 ≈20px 加宽到 ≈32px（BlurFilter 4.0,4.0,3）。
+
+### 验证
+
+- 构建通过；离线验证：① explored 保存/恢复（左半 1/右半 0）② 新房间无
+  记忆 ③ current 首帧记忆区按 seenSub 显示 166 ④ classic memCur 10 帧
+  渐暗到 166。
 
 ## v0.21.2 修复：classic 记忆区邻接墙的"溢出黑边"
 

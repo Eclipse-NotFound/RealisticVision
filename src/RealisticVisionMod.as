@@ -129,13 +129,17 @@ package
       private var classicBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
+      // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
+      // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
+      // 回到房间时全部按未探索处理）
+      private var roomMem:Object = {};
       private var fogDirty:Boolean = false;
       private var fogRect:Rectangle = null;
       private var fogCellRect:Rectangle = new Rectangle(0,0,FOG_SUB,FOG_SUB);
       private var fogPoint:Point = new Point(0,0);
       private var fogCellPoint:Point = new Point(0,0);
       private var fogBlur:BlurFilter = new BlurFilter(2.0,2.0,2);   // classic（仿原版）半影
-      private var curBlur:BlurFilter = new BlurFilter(2.5,2.5,3);   // current：阴影渐变过渡（≈20px 世界）
+      private var curBlur:BlurFilter = new BlurFilter(4.0,4.0,3);   // current：阴影渐变过渡（≈32px 世界）
 
       private var defCT:ColorTransform = new ColorTransform();
       private var infraCT:ColorTransform = new ColorTransform(1,1,1,1,100);
@@ -462,9 +466,11 @@ package
             return;
          }
          // FOV 门控：玩家位移 / 阻挡结构变化（自算 opac+phis 哈希——isRelight/isRebuild
-         // 在 Location.step 末尾即被游戏清零，读不到）/ 每 15 帧兜底
+         // 在 Location.step 末尾即被游戏清零，读不到）/ 每 15 帧兜底。
+         // 位移阈值 1.5px（v0.22 优化）：快速跑动时重算频率降约 3 倍（原 0.5px
+         // 每帧移动都重算 → 卡顿）；边界更新滞后 ~1.5px 不可察觉
          var gg:UnitPlayer = loc.gg;
-         var moved:Boolean = Math.abs(gg.X - this.lastGX) > 0.5 || Math.abs(gg.Y - this.lastGY) > 0.5;
+         var moved:Boolean = Math.abs(gg.X - this.lastGX) > 1.5 || Math.abs(gg.Y - this.lastGY) > 1.5;
          var hash:int = this.structHash(loc);
          var needFov:Boolean = moved || hash != this.lastStructHash || this.frameCount % 15 == 0;
          if(needFov)
@@ -503,6 +509,7 @@ package
          this.explored = [];
          this.fov = [];
          this.visCur = [];
+         this.roomMem = {};   // 世界重置（读档/加载）：跨房间记忆清空
          this.unitVis = new Dictionary(true);
          this.hpHidden = new Dictionary(true);
          this.managedHidden = new Dictionary(true);
@@ -512,6 +519,13 @@ package
 
       private function resetRoom(w:World, loc:Location):void
       {
+         // 跨房间记忆（v0.22）：离开前保存当前房间的 explored（最后一次
+         // FOV 重算后的状态），回到同 id 房间时恢复——原版靠 tile.visi 缓存
+         // 保留已探索常亮，模组需自己保存 explored[]
+         if(this.curLoc != null && this.explored != null && this.explored.length > 0)
+         {
+            this.roomMem[this.curLoc.id] = this.explored.concat();
+         }
          this.curLoc = loc;
          this.spaceX = loc.spaceX;
          this.spaceY = loc.spaceY;
@@ -519,20 +533,51 @@ package
          this.lastA = null;
          var n:int = this.spaceX * this.spaceY;
          this.fov = new Array(n);
-         this.explored = new Array(n);
          this.visCur = new Array(n);
          this.br = new Array(n);
          this.litArr = new Array(n);
          this.subW = this.spaceX * FOG_SUB;
          this.seenSub = new Array(this.subW * this.spaceY * FOG_SUB);
+         // 恢复跨房间记忆（存在且尺寸匹配时），否则新房间全未探索
+         var mem:Array = this.roomMem[loc.id] as Array;
+         var hasMem:Boolean = mem != null && mem.length == n;
+         this.explored = hasMem ? mem.concat() : new Array(n);
          var i:int;
          for(i = 0; i < n; i++)
          {
             this.fov[i] = FOV_NONE;
-            this.explored[i] = 0;
+            if(!hasMem)
+            {
+               this.explored[i] = 0;
+            }
             this.visCur[i] = 0;
             this.br[i] = 0;
             this.litArr[i] = 0;
+         }
+         if(hasMem)
+         {
+            // current 的记忆区填充按 seenSub 子格历史（fillMemoryTile）——
+            // 恢复 explored 时把已探索瓦片的 seenSub 全部标记，首帧记忆区
+            // 显示正确（瓦片级边界，随后 FOV 重算细化）
+            var si:int;
+            var sx:int;
+            var sy:int;
+            for(si = 0; si < n; si++)
+            {
+               if(this.explored[si] == 1)
+               {
+                  var tx0:int = si % this.spaceX;
+                  var ty0:int = (si / this.spaceX) | 0;
+                  var base:int = ty0 * FOG_SUB * this.subW + tx0 * FOG_SUB;
+                  for(sx = 0; sx < FOG_SUB; sx++)
+                  {
+                     for(sy = 0; sy < FOG_SUB; sy++)
+                     {
+                        this.seenSub[base + sy * this.subW + sx] = 1;
+                     }
+                  }
+               }
+            }
          }
          // 透传/原版（vanilla/总开关关/黑暗关/安全基地）：visi 与掩膜完全交给游戏
          var pass:Boolean = !this.cfgEnabled || !w.black || this.cfgMode == "vanilla"
