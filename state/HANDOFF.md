@@ -1,6 +1,6 @@
 # RealisticVision —— 交接文档（HANDOFF）
 
-> 最后更新：2026-08-19（v0.23）
+> 最后更新：2026-08-19（v0.23.1）
 > 用途：项目转移到新对话时，新 agent 先读本文 + `AGENT_SCOPE.md` + `state/current-status.md`。
 
 ## 0. 项目一句话

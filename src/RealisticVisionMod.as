@@ -135,6 +135,7 @@ package
       private var wallBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
       private var aArr:Array = null;    // 当前帧各瓦片 alpha（墙层四分格用邻域值）
+      private var wallKey:Array = null; // 墙层每瓦片 4 字节 key（TL|TR<<8|BL<<16|BR<<24）——变化才写像素（站立零写）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
@@ -766,11 +767,13 @@ package
             this.lastA = new Array(nk);
             this.memCur = new Array(nk);
             this.aArr = new Array(nk);
+            this.wallKey = new Array(nk);
             var k:int;
             for(k = 0; k < nk; k++)
             {
                this.lastA[k] = -1;
                this.memCur[k] = 0;
+               this.wallKey[k] = -1;   // 强制首帧全部写入
             }
          }
          // 模式可见性互斥：classic 显示 1px 雾层 + 墙层，current 显示 8×8 雾层
@@ -1623,7 +1626,9 @@ package
             }
          }
          // 第二遍：墙专用层（墙瓦片四分格——TL=墙黑，TR/BL/BR=东/南/东南
-         // 邻域亮度（邻域为墙→黑 255，否则→其雾层值）；越界（房间边缘）→黑）
+         // 邻域亮度（邻域为墙→黑 255，否则→其雾层值）；越界（房间边缘）→黑）。
+         // v0.23.1 性能：wallKey 门控——每瓦片 4 字节 key 不变则跳过写入
+         // （站立时雾层静止→邻域值静止→墙层零写；移动时只写值变化的墙）
          if(this.wallRaw != null)
          {
             this.wallRaw.lock();
@@ -1632,26 +1637,33 @@ package
                for(tx = 1; tx < this.spaceX; tx++)
                {
                   var wi:int = tx + ty * this.spaceX;
+                  var key:int;
                   if(loc.getTile(tx,ty).opac < 1)
                   {
-                     // 非墙：透明（不遮挡雾层）
-                     this.wallRaw.setPixel32(tx * 2,ty * 2,0);
-                     this.wallRaw.setPixel32(tx * 2 + 1,ty * 2,0);
-                     this.wallRaw.setPixel32(tx * 2,ty * 2 + 1,0);
-                     this.wallRaw.setPixel32(tx * 2 + 1,ty * 2 + 1,0);
-                     continue;
+                     key = 0;   // 透明
                   }
-                  // 墙：TL 恒黑；TR/BL/BR 邻域亮度（邻域墙→黑）
-                  this.wallRaw.setPixel32(tx * 2,ty * 2,0xFF000000);
-                  var aE:int = (tx + 1 < this.spaceX)
-                     ? (loc.getTile(tx + 1,ty).opac >= 1 ? 255 : this.aArr[(tx + 1) + ty * this.spaceX]) : 255;
-                  var aS:int = (ty + 1 < this.spaceY)
-                     ? (loc.getTile(tx,ty + 1).opac >= 1 ? 255 : this.aArr[tx + (ty + 1) * this.spaceX]) : 255;
-                  var aSE:int = (tx + 1 < this.spaceX && ty + 1 < this.spaceY)
-                     ? (loc.getTile(tx + 1,ty + 1).opac >= 1 ? 255 : this.aArr[(tx + 1) + (ty + 1) * this.spaceX]) : 255;
-                  this.wallRaw.setPixel32(tx * 2 + 1,ty * 2,aE << 24);
-                  this.wallRaw.setPixel32(tx * 2,ty * 2 + 1,aS << 24);
-                  this.wallRaw.setPixel32(tx * 2 + 1,ty * 2 + 1,aSE << 24);
+                  else
+                  {
+                     // 墙：TL 恒黑；TR/BL/BR 邻域亮度（邻域墙→黑）
+                     var aE:int = (tx + 1 < this.spaceX)
+                        ? (loc.getTile(tx + 1,ty).opac >= 1 ? 255 : this.aArr[(tx + 1) + ty * this.spaceX]) : 255;
+                     var aS:int = (ty + 1 < this.spaceY)
+                        ? (loc.getTile(tx,ty + 1).opac >= 1 ? 255 : this.aArr[tx + (ty + 1) * this.spaceX]) : 255;
+                     var aSE:int = (tx + 1 < this.spaceX && ty + 1 < this.spaceY)
+                        ? (loc.getTile(tx + 1,ty + 1).opac >= 1 ? 255 : this.aArr[(tx + 1) + (ty + 1) * this.spaceX]) : 255;
+                     key = 255 | (aE << 8) | (aS << 16) | (aSE << 24);
+                  }
+                  if(key != this.wallKey[wi])
+                  {
+                     this.wallKey[wi] = key;
+                     var px2:int = tx * 2;
+                     var py2:int = ty * 2;
+                     // 墙层像素 = 黑色遮罩（RGB 0 + alpha=值）：0=透明，>0=遮罩强度
+                     this.wallRaw.setPixel32(px2,py2,(key & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2,((key >> 8) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2,py2 + 1,((key >> 16) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,((key >>> 24) & 0xFF) << 24);
+                  }
                }
             }
             this.wallRaw.unlock();
