@@ -127,7 +127,14 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
+      // 墙专用层（v0.23）：2px/瓦片、无错位——墙的显示完全独立于雾层错位，
+      // 消除"水平墙上方/竖直墙右方"溢出黑边（1px/瓦片+错位下墙值必然影响
+      // 邻瓦 20px，任何暗墙值都会在亮区产生平带）。四分格亮面保留原版
+      // 墙亮面；雾层在墙位置透明（墙由本层绘制）
+      private var wallRaw:BitmapData = null;
+      private var wallBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
+      private var aArr:Array = null;    // 当前帧各瓦片 alpha（墙层四分格用邻域值）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
@@ -729,6 +736,28 @@ package
             this.classicBmp.x = -Tile.tileX / 2;
             this.classicBmp.y = -Tile.tileY / 2 - Tile.tileY;
             this.fogVis.addChild(this.classicBmp);
+            // 墙专用层（v0.23）：2px/瓦片、无错位（像素对齐瓦片网格）——
+            // 墙显示独立于雾层错位，无溢出黑边；smoothing 双线性让墙边
+            // 呈平滑渐变（原版墙影风格，无平带）
+            var ww:int = this.spaceX * 2;
+            var wh:int = this.spaceY * 2;
+            if(this.wallRaw == null || this.wallRaw.width != ww || this.wallRaw.height != wh)
+            {
+               if(this.wallRaw != null)
+               {
+                  this.wallRaw.dispose();
+               }
+               if(this.wallBmp != null && this.wallBmp.parent)
+               {
+                  this.wallBmp.parent.removeChild(this.wallBmp);
+               }
+               this.wallRaw = new BitmapData(ww,wh,true,0); // 透明初始（不遮挡雾层）
+               this.wallBmp = new Bitmap(this.wallRaw,"auto",true);
+               this.wallBmp.scaleX = this.wallBmp.scaleY = Tile.tileX / 2;
+               this.wallBmp.x = 0;
+               this.wallBmp.y = 0;
+               this.fogVis.addChild(this.wallBmp);   // classicBmp 之上
+            }
             this.lastA = null;
          }
          if(this.lastA == null || this.lastA.length != this.spaceX * this.spaceY)
@@ -736,6 +765,7 @@ package
             var nk:int = this.spaceX * this.spaceY;
             this.lastA = new Array(nk);
             this.memCur = new Array(nk);
+            this.aArr = new Array(nk);
             var k:int;
             for(k = 0; k < nk; k++)
             {
@@ -743,7 +773,7 @@ package
                this.memCur[k] = 0;
             }
          }
-         // 模式可见性互斥：classic 显示 1px 雾层，current 显示 8×8 雾层
+         // 模式可见性互斥：classic 显示 1px 雾层 + 墙层，current 显示 8×8 雾层
          var classicMode:Boolean = this.cfgMode == "classic";
          if(this.fogBitmap != null)
          {
@@ -752,6 +782,10 @@ package
          if(this.classicBmp != null)
          {
             this.classicBmp.visible = classicMode;
+         }
+         if(this.wallBmp != null)
+         {
+            this.wallBmp.visible = classicMode;
          }
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
@@ -1563,46 +1597,64 @@ package
                   }
                }
                this.memCur[i] = cur;
-               // 显示 = 游戏值 + 进度×(记忆暗色 - 游戏值)：中途态是两者之间的
-               // 渐变色（刚离开视野的瓦片渐暗、刚进入的渐亮）；目标恒 ≥ 游戏值
-               // （只暗化不亮化的不变量保持）
-               var memT:int = gameA < dimA ? dimA : gameA;
-               var a:int = Math.round(gameA + cur * (memT - gameA));
+               var a:int;
                if(t.opac >= 1)
                {
-                  // **墙值 = 邻域协调**（v0.22.2，替代 v0.21.2 的记忆区特判）：
-                  // 墙值借半格错位显示在"墙自身西北半 + 西邻东半 + 北邻南半"，
-                  // 墙东/南半显示东/南邻值。恒 255 时亮区邻接的溢出带是黑边、
-                  // 东邻暗值（记忆区 166/未探索 255）让墙东半突兀变暗——
-                  // 用户反馈"水平墙上方/竖直墙右方黑边溢出"。
-                  // 规则：西/北邻（溢出方向）为**未探索**（fov NONE && !explored）
-                  // → 墙值 255（未探索全黑连续）；否则 → dimA（166 记忆暗色：
-                  // 亮区邻接的溢出带为灰影而非黑边、记忆区邻接连续；墙东/南半
-                  // 显示的邻域值恰好与墙值一致 → 墙整体均匀无突兀黑边）。
-                  var darkWall:Boolean = false;
-                  if(!retDark)
-                  {
-                     if(tx > 0 && loc.getTile(tx - 1,ty).opac < 1
-                        && this.fov[(tx - 1) + ty * this.spaceX] == FOV_NONE
-                        && this.explored[(tx - 1) + ty * this.spaceX] == 0)
-                     {
-                        darkWall = true;
-                     }
-                     else if(ty > 0 && loc.getTile(tx,ty - 1).opac < 1
-                        && this.fov[tx + (ty - 1) * this.spaceX] == FOV_NONE
-                        && this.explored[tx + (ty - 1) * this.spaceX] == 0)
-                     {
-                        darkWall = true;
-                     }
-                  }
-                  a = darkWall ? 255 : dimA;
+                  // **墙**（v0.23）：雾层写 0（透明）——墙由墙专用层（wallRaw，
+                  // 2px/瓦片无错位）绘制，不再借雾层错位显示（错位会让墙值
+                  // 溢出到西/北邻 20px——任何暗墙值都在亮区产生平带黑边，
+                  // v0.22.2 的 166 协调只能"减弱"）。墙层四分格保留原版
+                  // 墙亮面（TR/BL/BR=东/南/东南邻域亮度），墙本身恒黑
+                  a = 0;
                }
+               else
+               {
+                  // 游戏值（原版渲染原样：视野内衰减环梯度 / 淡入节奏 /
+                  // retDark 消退 / 光源物 / 门景）
+                  var memT:int = gameA < dimA ? dimA : gameA;
+                  a = Math.round(gameA + cur * (memT - gameA));
+               }
+               this.aArr[i] = a;
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
                   this.classicRaw.setPixel32(tx,ty + 1,a << 24);
                }
             }
+         }
+         // 第二遍：墙专用层（墙瓦片四分格——TL=墙黑，TR/BL/BR=东/南/东南
+         // 邻域亮度（邻域为墙→黑 255，否则→其雾层值）；越界（房间边缘）→黑）
+         if(this.wallRaw != null)
+         {
+            this.wallRaw.lock();
+            for(ty = 1; ty < this.spaceY; ty++)
+            {
+               for(tx = 1; tx < this.spaceX; tx++)
+               {
+                  var wi:int = tx + ty * this.spaceX;
+                  if(loc.getTile(tx,ty).opac < 1)
+                  {
+                     // 非墙：透明（不遮挡雾层）
+                     this.wallRaw.setPixel32(tx * 2,ty * 2,0);
+                     this.wallRaw.setPixel32(tx * 2 + 1,ty * 2,0);
+                     this.wallRaw.setPixel32(tx * 2,ty * 2 + 1,0);
+                     this.wallRaw.setPixel32(tx * 2 + 1,ty * 2 + 1,0);
+                     continue;
+                  }
+                  // 墙：TL 恒黑；TR/BL/BR 邻域亮度（邻域墙→黑）
+                  this.wallRaw.setPixel32(tx * 2,ty * 2,0xFF000000);
+                  var aE:int = (tx + 1 < this.spaceX)
+                     ? (loc.getTile(tx + 1,ty).opac >= 1 ? 255 : this.aArr[(tx + 1) + ty * this.spaceX]) : 255;
+                  var aS:int = (ty + 1 < this.spaceY)
+                     ? (loc.getTile(tx,ty + 1).opac >= 1 ? 255 : this.aArr[tx + (ty + 1) * this.spaceX]) : 255;
+                  var aSE:int = (tx + 1 < this.spaceX && ty + 1 < this.spaceY)
+                     ? (loc.getTile(tx + 1,ty + 1).opac >= 1 ? 255 : this.aArr[(tx + 1) + (ty + 1) * this.spaceX]) : 255;
+                  this.wallRaw.setPixel32(tx * 2 + 1,ty * 2,aE << 24);
+                  this.wallRaw.setPixel32(tx * 2,ty * 2 + 1,aS << 24);
+                  this.wallRaw.setPixel32(tx * 2 + 1,ty * 2 + 1,aSE << 24);
+               }
+            }
+            this.wallRaw.unlock();
          }
       }
 
