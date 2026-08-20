@@ -127,15 +127,15 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
-      // 墙专用层（v0.24）：**8×8 子格（5px 像素）、无错位**——墙的显示完全
-      // 独立于雾层（无溢出），像素 5px 使 smoothing 渐变带仅 ~5px（墙上下
-      // 边不再有 20px 亮边——v0.23 的 2px/瓦片渐变带 20px 造成"水平墙上下
-      // 边亮边"）。墙值恒定全黑——wallKey 门控站立零写
+      // 墙专用层（v0.23）：2px/瓦片、无错位——墙的显示完全独立于雾层错位，
+      // 消除"水平墙上方/竖直墙右方"溢出黑边（1px/瓦片+错位下墙值必然影响
+      // 邻瓦 20px，任何暗墙值都会在亮区产生平带）。四分格亮面保留原版
+      // 墙亮面；雾层在墙位置透明（墙由本层绘制）
       private var wallRaw:BitmapData = null;
       private var wallBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
-      private var aArr:Array = null;    // （保留未用）
-      private var wallKey:Array = null; // 墙层每瓦片 key（1=墙全黑 / 0=透明）——变化才写像素（站立零写）
+      private var aArr:Array = null;    // 当前帧各瓦片 alpha（墙层四分格用邻域值）
+      private var wallKey:Array = null; // 墙层每瓦片 4 字节 key（TL|TR<<8|BL<<16|BR<<24）——变化才写像素（站立零写）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
@@ -742,11 +742,11 @@ package
             this.classicBmp.x = 0;
             this.classicBmp.y = 0;
             this.fogVis.addChild(this.classicBmp);
-            // 墙专用层（v0.24）：8×8 子格/瓦片（5px 像素）、无错位（像素对齐
-            // 瓦片网格）——墙显示独立于雾层，无溢出；5px 像素使 smoothing
-            // 渐变带仅 ~5px（v0.23 的 2px/瓦片 20px 渐变造成墙上下边亮边）
-            var ww:int = this.spaceX * 8;
-            var wh:int = this.spaceY * 8;
+            // 墙专用层（v0.23）：2px/瓦片、无错位（像素对齐瓦片网格）——
+            // 墙显示独立于雾层错位，无溢出黑边；smoothing 双线性让墙边
+            // 呈平滑渐变（原版墙影风格，无平带）
+            var ww:int = this.spaceX * 2;
+            var wh:int = this.spaceY * 2;
             if(this.wallRaw == null || this.wallRaw.width != ww || this.wallRaw.height != wh)
             {
                if(this.wallRaw != null)
@@ -759,7 +759,7 @@ package
                }
                this.wallRaw = new BitmapData(ww,wh,true,0); // 透明初始（不遮挡雾层）
                this.wallBmp = new Bitmap(this.wallRaw,"auto",true);
-               this.wallBmp.scaleX = this.wallBmp.scaleY = Tile.tileX / 8;
+               this.wallBmp.scaleX = this.wallBmp.scaleY = Tile.tileX / 2;
                this.wallBmp.x = 0;
                this.wallBmp.y = 0;
                this.fogVis.addChild(this.wallBmp);   // classicBmp 之上
@@ -1627,9 +1627,10 @@ package
                }
             }
          }
-         // 第二遍：墙专用层（8×8 子格全黑，v0.24）——墙瓦片 8×8 = 64 像素
-         // 全写墙值黑（0xFF000000 = 不透明黑遮罩），非墙透明。
-         // wallKey 门控（key=墙?1:0，墙值恒定）——墙/非墙转换才写，站立零写
+         // 第二遍：墙专用层（墙瓦片四分格——TL=墙黑，TR/BL/BR=东/南/东南
+         // 邻域亮度（邻域为墙→黑 255，否则→其雾层值）；越界（房间边缘）→黑）。
+         // v0.23.1 性能：wallKey 门控——每瓦片 4 字节 key 不变则跳过写入
+         // （站立时雾层静止→邻域值静止→墙层零写；移动时只写值变化的墙）
          if(this.wallRaw != null)
          {
             this.wallRaw.lock();
@@ -1638,22 +1639,31 @@ package
                for(tx = 0; tx < this.spaceX; tx++)
                {
                   var wi:int = tx + ty * this.spaceX;
-                  var key:int = (loc.getTile(tx,ty).opac >= 1) ? 1 : 0;
+                  var key:int;
+                  if(loc.getTile(tx,ty).opac < 1)
+                  {
+                     key = 0;   // 透明
+                  }
+                  else
+                  {
+                     // 墙：**全黑**（v0.23.2 修正）——之前四分格
+                     // TR/BL/BR=邻域值在邻域亮时让墙只剩 TL 黑角、
+                     // 其余被邻域亮值占据 → "水平墙上方/竖直墙右方
+                     // 亮边"（墙几乎消失）。墙层 2×2 全写墙值黑——
+                     // 墙=40×40 整块黑，无亮边/无溢出/无平带
+                     // （smoothing 只产生墙内+墙边的平滑渐变过渡）
+                     key = 0xFFFFFFFF;
+                  }
                   if(key != this.wallKey[wi])
                   {
                      this.wallKey[wi] = key;
-                     var px0:int = tx * 8;
-                     var py0:int = ty * 8;
-                     var sx0:int;
-                     var sy0:int;
-                     var col:uint = key == 1 ? 0xFF000000 : 0;
-                     for(sx0 = 0; sx0 < 8; sx0++)
-                     {
-                        for(sy0 = 0; sy0 < 8; sy0++)
-                        {
-                           this.wallRaw.setPixel32(px0 + sx0,py0 + sy0,col);
-                        }
-                     }
+                     var px2:int = tx * 2;
+                     var py2:int = ty * 2;
+                     // 墙层像素 = 黑色遮罩（RGB 0 + alpha=值）：0=透明，>0=遮罩强度
+                     this.wallRaw.setPixel32(px2,py2,(key & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2,((key >> 8) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2,py2 + 1,((key >> 16) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,((key >>> 24) & 0xFF) << 24);
                   }
                }
             }
