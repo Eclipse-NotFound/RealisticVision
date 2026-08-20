@@ -1,11 +1,43 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-20（v0.24.3，待运行时验证）
+> 最后更新：2026-08-20（v0.24.4，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.24.3（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.24.4（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.24.4 修复：敌人再次二分（软边掩膜补 cacheAsBitmap——alpha 掩膜的硬性要求）
+
+用户反馈：v0.24.3 软边掩膜（位图填充）上线后，current/classic 敌人又变为
+全出现-全消失二分。
+
+### 根因（查证 Flash 文档）
+
+**Flash alpha（软边）掩膜的硬性要求：掩膜对象与被掩膜对象都必须
+`cacheAsBitmap=true`**。否则掩膜按**二值覆盖**光栅化——alpha 渐变被忽略，
+位图填充内容甚至完全不渲染。v0.24.3 的位图填充 Shape 掩膜恰好缺了
+cacheAsBitmap → 掩膜光栅化为空 → state=2 的敌人被整只裁掉 → 只在全亮
+（state=1）时出现 → 看起来"全出现-全消失二分"。
+（对照：v0.24.2 的纯矢量实心矩形是二值掩膜，不依赖 alpha，所以能工作。）
+
+### 修复
+
+- applyMask（state=2 路径）：`s2/s3.cacheAsBitmap = true` +
+  `u.vis/u.hpbar.cacheAsBitmap = true`，再挂 mask；
+- clearMask：摘 mask 同时还原 `cacheAsBitmap = false`（不残留缓存开销）；
+- 掩膜内容不变（模糊位图填充，模拟已验证的渐变宽度）；`maskblur_*`=0
+  仍是硬边回退。
+
+### 验证
+
+- 构建通过；ffdec 反编译确认：cacheAsBitmap 四处设置（掩膜×2 + 对象×2）、
+  挂 mask、applyFilter（模糊）、beginBitmapFill 全链路完整，无结构损坏。
+
+**待用户游戏内确认**：两种模式下敌人明暗交界应渐变淡出（无二分、无颗粒）。
+若 cacheAsBitmap 与游戏对单位的其他渲染交互异常（理论上不会——缓存只是
+光栅化副本），可把 `maskblur_classic/current` 设 0 回退到 v0.24.2 实心矩形
+（必能工作，只是硬边）。
 
 ## v0.24.3 修复：敌人明暗边界颗粒感（软边掩膜——按模式对齐模糊策略）
 

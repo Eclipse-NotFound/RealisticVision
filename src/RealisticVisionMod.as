@@ -79,10 +79,10 @@ package
       private static const FOG_PAD:int = 4;
 
       // 敌人 FOV 掩膜参数：每瓦片 8px 子格（5px，与雾层一致）。掩膜 = 矢量
-      // Shape + 模糊位图填充（v0.24.3：子格二值场按模式模糊后经
-      // beginBitmapFill(smooth) 放大绘制——Flash 掩膜尊重 alpha，明暗交界处
-      // 敌人渐变淡出，无 5px 硬阶梯颗粒）；区域外扩覆盖血条（头顶）与动画
-      // 超出手臂/翅膀等超出逻辑包围盒的视觉部分
+      // Shape + 模糊位图填充 + cacheAsBitmap（v0.24.4：alpha 掩膜须双方
+      // cacheAsBitmap=true，否则掩膜忽略 alpha/位图填充 → 二分；模糊按模式
+      // 对齐雾层边界宽度，敌人明暗交界渐变淡出）；区域外扩覆盖血条（头顶）
+      // 与动画超出手臂/翅膀等超出逻辑包围盒的视觉部分
       private static const MASK_SUB:int = 8;
       private static const MASK_PAD_X:int = 2;
       private static const MASK_PAD_TOP:int = 3;
@@ -1843,14 +1843,16 @@ package
       }
 
             /**
-       * FOV 掩膜（只在部分可见时）：矢量 Shape + 模糊位图填充（v0.24.3——
-       * 取代 v0.24.2 的 5px 硬矩形）。子格二值场先写入小位图（m2d）、按
-       * 模式模糊（m2e，classic≈40px / current≈32px，对齐各自雾层边界宽度），
-       * 再经 beginBitmapFill(smooth) 放大绘制进 Shape——Flash 掩膜尊重 alpha
-       * 通道 → 敌人在明暗交界处渐变淡出，无 5px 阶梯颗粒。掩膜机制仍是矢量
-       * Shape（v0.24.2 实测有效；v0.21 的 Bitmap-as-mask 在 Flash 中不生效）。
+       * FOV 掩膜（只在部分可见时）：矢量 Shape + 模糊位图填充 + cacheAsBitmap
+       * （v0.24.4——v0.24.3 补上 alpha 掩膜缺失的 cacheAsBitmap：Flash 文档
+       * 明确，掩膜与被掩膜对象都须 cacheAsBitmap=true，掩膜才尊重 alpha 通道，
+       * 否则按二值覆盖光栅化、位图填充内容甚至不渲染 → 二分）。
+       *
+       * 内容：子格二值场写入小位图 m2d、按模式模糊到 m2e（classic 6/q2≈40px
+       * / current 4/q3≈32px，对齐各自雾层边界宽度），beginBitmapFill(smooth)
+       * 放大绘制进 Shape → 敌人明暗交界渐变淡出，无 5px 硬阶梯颗粒。
        * 子格级 raycast + castRay 返回 -1（墙瓦片）回退 fov（墙炮塔不消失）；
-       * 区域覆盖包围盒并向上/左右外扩（血条/动画）；按 FOV 版本 + 区域签名门控。
+       * 区域覆盖包围盒并向上/左右外扩（血条/动画）；按 FOV 版本+区域签名门控。
        */
       private function applyMask(w:World, u:Unit, bb:Array):void
       {
@@ -1937,8 +1939,22 @@ package
          }
          try
          {
-            if(u.vis) { u.vis.mask = s2; }
-            if(u.hpbar) { u.hpbar.mask = s3; }
+            // v0.24.4：alpha 掩膜（软边）要求**掩膜与被掩膜对象都
+            // cacheAsBitmap=true**（Flash 文档明确：否则掩膜按二值覆盖光栅化、
+            // 位图填充内容甚至不渲染 → 敌人"全出现-全消失"二分——v0.24.3 即
+            // 此失败）。只在本路径（state=2 部分可见）开启，clearMask 还原。
+            s2.cacheAsBitmap = true;
+            s3.cacheAsBitmap = true;
+            if(u.vis)
+            {
+               u.vis.cacheAsBitmap = true;
+               u.vis.mask = s2;
+            }
+            if(u.hpbar)
+            {
+               u.hpbar.cacheAsBitmap = true;
+               u.hpbar.mask = s3;
+            }
          }
          catch(err:Error)
          {
@@ -2004,8 +2020,16 @@ package
          }
          try
          {
-            if(u.vis) { u.vis.mask = null; }
-            if(u.hpbar) { u.hpbar.mask = null; }
+            if(u.vis)
+            {
+               u.vis.mask = null;
+               u.vis.cacheAsBitmap = false;
+            }
+            if(u.hpbar)
+            {
+               u.hpbar.mask = null;
+               u.hpbar.cacheAsBitmap = false;
+            }
          }
          catch(err:Error)
          {
