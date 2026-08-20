@@ -120,6 +120,8 @@ package
       private var lastGX:Number = -99999;
       private var lastGY:Number = -99999;
       private var lastStructHash:int = 0;
+      private var lastFovFrame:int = -100;   // v0.24.7：fov 重算节流（moved 触发的最小间隔帧）
+      private var fogBlurPending:Boolean = false; // v0.24.7：模糊+钳制拆帧（fov 帧峰值减半）
       private var eyeX:Number = 0;
       private var eyeY:Number = 0;
       private var locDist1:Number = 300;
@@ -542,9 +544,15 @@ package
          // 不可察觉；全图 1248 瓦片遍历从每帧降到半帧）
          var hash:int = (this.frameCount & 1) == 0
             ? this.structHash(loc) : this.lastStructHash;
-         var needFov:Boolean = moved || hash != this.lastStructHash || this.frameCount % 15 == 0;
+         // v0.24.7：fov 重算节流——moved 触发的最小间隔 3 帧（快速跑动时
+         // 重算频率降 ~3×；fov 帧 2-3ms 峰值是主要卡顿源，阴影边界滞后
+         // ≤3 帧 ≈50ms 由雾层模糊掩盖）；墙破坏（hash 变化）与 30 帧兜底
+         // 不受限（破坏墙即时更新视野）
+         var needFov:Boolean = (moved && this.frameCount - this.lastFovFrame >= 3)
+            || hash != this.lastStructHash || this.frameCount % 30 == 0;
          if(needFov)
          {
+            this.lastFovFrame = this.frameCount;
             this.lastGX = gg.X;
             this.lastGY = gg.Y;
             this.lastStructHash = hash;
@@ -555,15 +563,18 @@ package
          if(this.cfgMode == "classic")
          {
             // classic（仿原版）：雾场复刻原版亮度 + 记忆区暗化（v4 自渲染）
-            this.applyVisionClassic(w,loc);
-            this.doorBoost(w,loc);
+            this.applyVisionClassic(w,loc,needFov);
+            if((this.frameCount & 1) == 0 || needFov)
+            {
+               this.doorBoost(w,loc);
+            }
          }
          else
          {
             // current（平滑阴影）：模组自建雾层全权接管
             this.applyVision(w,loc,needFov);
          }
-         this.hideEnemies(w,loc);
+         this.hideEnemies(w,loc,needFov);
          if(this.frameCount % 10 == 0)
          {
             this.sweepMasks();
@@ -585,6 +596,8 @@ package
          this.managedHidden = new Dictionary(true);
          this.managedCount = 0;
          this.lastGX = this.lastGY = -99999;
+         this.lastFovFrame = -100;
+         this.fogBlurPending = false;
       }
 
       private function resetRoom(w:World, loc:Location):void
@@ -1205,7 +1218,10 @@ package
       private function applyVision(w:World, loc:Location, needFov:Boolean):void
       {
          this.ensureFog(w);
-         if(this.fogBmp == null || !this.fogDirty)
+         // v0.24.7：模糊+钳制拆到 fov 帧的下一帧执行——fov 帧峰值从
+         // ~3ms 降到 ~1.7ms（模糊 0.3 + 钳制 ~1ms 移到次帧；显示滞后 1 帧
+         // 不可察觉）。门控：无变化且无待办模糊时整帧跳过
+         if(this.fogBmp == null || (!this.fogDirty && !this.fogBlurPending))
          {
             return;
          }
@@ -1213,111 +1229,121 @@ package
          {
             w.grafon.visLight.visible = false;
          }
+         var fieldFresh:Boolean = false;
          if(needFov)
          {
             this.fillFogCache(loc);
+            this.fogBlurPending = true;
+            fieldFresh = true;
          }
          var changed:Boolean = false;
          var fading:Boolean = false;
          var tx:int;
          var ty:int;
-         for(tx = 0; tx < this.spaceX; tx++)
+         if(this.fogDirty)
          {
-            for(ty = 0; ty < this.spaceY; ty++)
-            {
-               var i:int = tx + ty * this.spaceX;
-               var gv:Number = this.explored[i] == 1 ? 1 : 0;
-               // 淡入进度（进房/开关时 0→1；收敛后子格值即最终亮度）
-               var cur:Number = this.visCur[i];
-               if(cur < 1)
-               {
-                  cur += this.cfgFadeStep;
-                  if(cur > 1)
-                  {
-                     cur = 1;
-                  }
-                  this.visCur[i] = cur;
-                  changed = true;
-                  if(cur < 1)
-                  {
-                     fading = true;
-                  }
-               }
-               var t:Tile = loc.getTile(tx,ty);
-               // 只写 visi（二元，供 checkPort/地图/Sats 等游戏逻辑），
-               // 不写 t_visi（v0.21.1）：t_visi 保留游戏 lighting() 的目标值，
-               // 退出 current 后游戏可自愈恢复（见 resetRoom 注释）
-               t.visi = gv;
-            }
-         }
-         if(fading)
-         {
-            // 淡入帧：fogRaw = 按每瓦片 cur 缩放缓存场（alpha = 255 - cur×(255-cacheA)）
-            this.fogRaw.lock();
             for(tx = 0; tx < this.spaceX; tx++)
             {
                for(ty = 0; ty < this.spaceY; ty++)
                {
-                  var cf:Number = this.visCur[tx + ty * this.spaceX];
-                  var px0:int = FOG_PAD + tx * FOG_SUB;
-                  var py0:int = FOG_PAD + ty * FOG_SUB;
-                  if(cf >= 1)
+                  var i:int = tx + ty * this.spaceX;
+                  var gv:Number = this.explored[i] == 1 ? 1 : 0;
+                  // 淡入进度（进房/开关时 0→1；收敛后子格值即最终亮度）
+                  var cur:Number = this.visCur[i];
+                  if(cur < 1)
                   {
-                     this.fogCellRect.x = px0;
-                     this.fogCellRect.y = py0;
-                     this.fogCellPoint.x = px0;
-                     this.fogCellPoint.y = py0;
-                     this.fogRaw.copyPixels(this.fogCache,this.fogCellRect,this.fogCellPoint);
-                  }
-                  else
-                  {
-                     var sx:int;
-                     var sy:int;
-                     for(sx = 0; sx < FOG_SUB; sx++)
+                     cur += this.cfgFadeStep;
+                     if(cur > 1)
                      {
-                        for(sy = 0; sy < FOG_SUB; sy++)
+                        cur = 1;
+                     }
+                     this.visCur[i] = cur;
+                     changed = true;
+                     if(cur < 1)
+                     {
+                        fading = true;
+                     }
+                  }
+                  var t:Tile = loc.getTile(tx,ty);
+                  // 只写 visi（二元，供 checkPort/地图/Sats 等游戏逻辑），
+                  // 不写 t_visi（v0.21.1）：t_visi 保留游戏 lighting() 的目标值，
+                  // 退出 current 后游戏可自愈恢复（见 resetRoom 注释）
+                  t.visi = gv;
+               }
+            }
+            if(fading)
+            {
+               // 淡入帧：fogRaw = 按每瓦片 cur 缩放缓存场（alpha = 255 - cur×(255-cacheA)）
+               this.fogRaw.lock();
+               for(tx = 0; tx < this.spaceX; tx++)
+               {
+                  for(ty = 0; ty < this.spaceY; ty++)
+                  {
+                     var cf:Number = this.visCur[tx + ty * this.spaceX];
+                     var px0:int = FOG_PAD + tx * FOG_SUB;
+                     var py0:int = FOG_PAD + ty * FOG_SUB;
+                     if(cf >= 1)
+                     {
+                        this.fogCellRect.x = px0;
+                        this.fogCellRect.y = py0;
+                        this.fogCellPoint.x = px0;
+                        this.fogCellPoint.y = py0;
+                        this.fogRaw.copyPixels(this.fogCache,this.fogCellRect,this.fogCellPoint);
+                     }
+                     else
+                     {
+                        var sx:int;
+                        var sy:int;
+                        for(sx = 0; sx < FOG_SUB; sx++)
                         {
-                           var ca:int = this.fogCache.getPixel32(px0 + sx,py0 + sy) >>> 24;
-                           var a:int = 255 - cf * (255 - ca);
-                           if(a < 0)
+                           for(sy = 0; sy < FOG_SUB; sy++)
                            {
-                              a = 0;
+                              var ca:int = this.fogCache.getPixel32(px0 + sx,py0 + sy) >>> 24;
+                              var a:int = 255 - cf * (255 - ca);
+                              if(a < 0)
+                              {
+                                 a = 0;
+                              }
+                              else if(a > 255)
+                              {
+                                 a = 255;
+                              }
+                              this.fogRaw.setPixel32(px0 + sx,py0 + sy,a << 24);
                            }
-                           else if(a > 255)
-                           {
-                              a = 255;
-                           }
-                           this.fogRaw.setPixel32(px0 + sx,py0 + sy,a << 24);
                         }
                      }
                   }
                }
+               this.fogRaw.unlock();
             }
-            this.fogRaw.unlock();
-         }
-         else
-         {
-            // 收敛后：缓存场直接拷贝（无逐像素循环）
-            this.fogRaw.copyPixels(this.fogCache,this.fogRect,this.fogPoint);
-         }
-         // 模糊 → 阴影边缘渐变过渡（source≠dest）
-         this.fogBmp.applyFilter(this.fogRaw,this.fogRect,this.fogPoint,this.curBlur);
-         // 单侧钳制（D16）：display = max(raw, blurred)——暗区/未探索/墙保持洁净，
-         // 只允许暗色向亮区渐变（窗户/亮面的光晕不向黑墙渗透）。
-         // v0.24.5：逐像素 getPixel32/setPixel32（fov 重算卡顿主要来源）→
-         // getVector/setVector 整块拷贝 + 纯内存比较（alpha 即 uint 高位，
-         // 像素恒黑可直接比较）
-         var vRaw:Vector.<uint> = this.fogRaw.getVector(this.fogRect);
-         var vBlur:Vector.<uint> = this.fogBmp.getVector(this.fogRect);
-         var np:int = vRaw.length;
-         for(var vi:int = 0; vi < np; vi++)
-         {
-            if(vBlur[vi] < vRaw[vi])
+            else
             {
-               vBlur[vi] = vRaw[vi];
+               // 收敛后：缓存场直接拷贝（无逐像素循环）
+               this.fogRaw.copyPixels(this.fogCache,this.fogRect,this.fogPoint);
             }
          }
-         this.fogBmp.setVector(this.fogRect,vBlur);
+         if(this.fogBlurPending && !fieldFresh)
+         {
+            // 模糊 → 阴影边缘渐变过渡（source≠dest）
+            this.fogBmp.applyFilter(this.fogRaw,this.fogRect,this.fogPoint,this.curBlur);
+            // 单侧钳制（D16）：display = max(raw, blurred)——暗区/未探索/墙保持洁净，
+            // 只允许暗色向亮区渐变（窗户/亮面的光晕不向黑墙渗透）。
+            // v0.24.5：逐像素 getPixel32/setPixel32（fov 重算卡顿主要来源）→
+            // getVector/setVector 整块拷贝 + 纯内存比较（alpha 即 uint 高位，
+            // 像素恒黑可直接比较）
+            var vRaw:Vector.<uint> = this.fogRaw.getVector(this.fogRect);
+            var vBlur:Vector.<uint> = this.fogBmp.getVector(this.fogRect);
+            var np:int = vRaw.length;
+            for(var vi:int = 0; vi < np; vi++)
+            {
+               if(vBlur[vi] < vRaw[vi])
+               {
+                  vBlur[vi] = vRaw[vi];
+               }
+            }
+            this.fogBmp.setVector(this.fogRect,vBlur);
+            this.fogBlurPending = false;
+         }
          if(!changed)
          {
             this.fogDirty = false;
@@ -1639,8 +1665,15 @@ package
        * 变化才写像素（lastA 缓存）；边缘行列照抄原版（lighting 循环从 1 开始，
        * 恒定黑）。站立时游戏 visi 冻结 → 零写入。
        */
-      private function applyVisionClassic(w:World, loc:Location):void
+      private function applyVisionClassic(w:World, loc:Location, needFov:Boolean):void
       {
+         // v0.24.7：30Hz 门控——偶数帧或 fov 变化帧才跑全图循环。站立时游戏
+         // visi 冻结（循环零写入）；移动时游戏 visi 自身 +0.1/帧平滑渐变，
+         // 30Hz 采样不可察觉；memCur 渐变速率随之减半，同样不可察觉
+         if((this.frameCount & 1) != 0 && !needFov)
+         {
+            return;
+         }
          this.ensureFog(w);
          if(this.classicRaw == null)
          {
@@ -2067,6 +2100,39 @@ package
                }
             }
          }
+         else if(this.cfgMode == "classic" && this.classicRaw != null)
+         {
+            // v0.24.7（classic）：采样雾层 classicRaw（1px/瓦片，瓦片级缓存
+            // 复用）——零 raycast；掩膜与 classic 雾层**瓦片级对齐**（门景/
+            // 衰减环/记忆区/墙协调值，阈值同为 MASK_LIT_A=140）
+            var lTx:int = -1;
+            var lTy:int = -1;
+            var lA:int = 255;
+            for(scx = 0; scx < totx; scx++)
+            {
+               for(scy = 0; scy < toty; scy++)
+               {
+                  var cwx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
+                  var cwy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
+                  var ctx:int = Math.floor(cwx / Tile.tileX);
+                  var cty:int = Math.floor(cwy / Tile.tileY);
+                  if(ctx < 0) { ctx = 0; }
+                  else if(ctx >= this.spaceX) { ctx = this.spaceX - 1; }
+                  if(cty < 0) { cty = 0; }
+                  else if(cty >= this.spaceY) { cty = this.spaceY - 1; }
+                  if(ctx != lTx || cty != lTy)
+                  {
+                     lA = this.classicRaw.getPixel32(ctx,cty) >>> 24;
+                     lTx = ctx;
+                     lTy = cty;
+                  }
+                  if(lA < MASK_LIT_A)
+                  {
+                     bd.setPixel32(scx,scy,0xFFFFFFFF);
+                  }
+               }
+            }
+         }
          else
          {
             var d2max:Number = this.locDist2 * this.locDist2;
@@ -2220,7 +2286,7 @@ package
          }
       }
 
-      private function hideEnemies(w:World, loc:Location):void
+      private function hideEnemies(w:World, loc:Location, needFov:Boolean):void
       {
          var gg:UnitPlayer = loc.gg;
          var hiddenPos:Array = [];
@@ -2283,40 +2349,49 @@ package
                }
             }
          }
-         // 敌方手持武器：跟随所属敌人的显示状态
-         var obj:Pt = loc.firstObj;
-         var guard:int = 0;
-         while(obj != null && guard < 5000)
+         // 敌方手持武器：跟随所属敌人的显示状态。
+         // v0.24.7：扫描门控——fov 变化帧或每 3 帧（敌人在明暗边界移动时
+         // 武器状态滞后 ≤3 帧 ≈50ms，不可察觉；省去每帧遍历整条对象链）
+         if(needFov || this.frameCount % 3 == 0)
          {
-            if(obj is Weapon)
+            var obj:Pt = loc.firstObj;
+            var guard:int = 0;
+            while(obj != null && guard < 5000)
             {
-               var wpn:Weapon = obj as Weapon;
-               if(wpn.vis)
+               if(obj is Weapon)
                {
-                  exempt[wpn.vis] = true;
-               }
-               var owner:Unit = wpn.owner;
-               if(owner != null && owner != gg && !owner.player && !owner.npc && owner.fraction != Unit.F_PLAYER)
-               {
-                  // 按所属敌人当前瓦片实时判定（含尸体与被抓取状态；拖入暗处武器
-                  // 同样隐藏）
-                  var wst:int = this.enemyState(loc,owner);
-                  if(wst == 0)
+                  var wpn:Weapon = obj as Weapon;
+                  if(wpn.vis)
                   {
-                     this.setWeaponVis(wpn,false);
+                     exempt[wpn.vis] = true;
                   }
-                  else if(wst == 2)
+                  var owner:Unit = wpn.owner;
+                  if(owner != null && owner != gg && !owner.player && !owner.npc && owner.fraction != Unit.F_PLAYER)
                   {
-                     var orec2:Object = this.unitVis[owner];
-                     if(wpn.vis && orec2 != null && orec2.m2 != null)
+                     // 按所属敌人当前瓦片实时判定（含尸体与被抓取状态；拖入暗处武器
+                     // 同样隐藏）
+                     var wst:int = this.enemyState(loc,owner);
+                     if(wst == 0)
                      {
-                        wpn.vis.visible = true;
-                        // v0.24.6：武器挂掩膜同样必须 cacheAsBitmap=true——
-                        // 否则位图填充掩膜按路径光栅化（整块矩形），贴墙敌人
-                        // （bbox 含邻域点亮的墙瓦片 → state=2）在记忆区里武器
-                        // 全显（本体被掩膜正确裁掉，武器却整把可见）
-                        wpn.vis.cacheAsBitmap = true;
-                        wpn.vis.mask = orec2.m2;
+                        this.setWeaponVis(wpn,false);
+                     }
+                     else if(wst == 2)
+                     {
+                        var orec2:Object = this.unitVis[owner];
+                        if(wpn.vis && orec2 != null && orec2.m2 != null)
+                        {
+                           wpn.vis.visible = true;
+                           // v0.24.6：武器挂掩膜同样必须 cacheAsBitmap=true——
+                           // 否则位图填充掩膜按路径光栅化（整块矩形），贴墙敌人
+                           // （bbox 含邻域点亮的墙瓦片 → state=2）在记忆区里武器
+                           // 全显（本体被掩膜正确裁掉，武器却整把可见）
+                           wpn.vis.cacheAsBitmap = true;
+                           wpn.vis.mask = orec2.m2;
+                        }
+                        else
+                        {
+                           this.setWeaponVis(wpn,true);
+                        }
                      }
                      else
                      {
@@ -2328,16 +2403,12 @@ package
                      this.setWeaponVis(wpn,true);
                   }
                }
-               else
-               {
-                  this.setWeaponVis(wpn,true);
-               }
+               obj = obj.nobj;
+               guard++;
             }
-            obj = obj.nobj;
-            guard++;
          }
          // 显示树扫描：隐藏未被识别的子对象（狮鹫手臂等）；无全隐敌人时提前退出
-         if(hiddenPos.length > 0 || this.managedCount > 0)
+         if((needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
          {
             this.scanArms(w,hiddenPos,visiblePos,exempt);
          }

@@ -1,11 +1,71 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-20（v0.24.6，待运行时验证）
+> 最后更新：2026-08-21（v0.24.7）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.24.6（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.24.7（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.24.7 优化：current/classic 性能（五处，两模式）
+
+用户反馈：两种模式性能消耗仍略大；并询问能否让 GPU 帮忙渲染（结论见下）。
+
+### 运行时验证先行：BlendMode.LIGHTEN 不可用于钳制
+
+用 adl64 跑最小 AIR 测试程序（/tmp/rv_blendtest，结论存档）：
+LIGHTEN 的 alpha 是 **source-over 合成**（166|50 → 183 而非逐通道 max 166），
+RGB 也非逐通道 max（红|绿 → 黑）。→ 钳制无法换原生 draw，保留 vector 钳制。
+
+### ① fov 重算节流（current/classic 共用）
+
+快速跑动时 moved 每帧都超阈值 → fov 每帧重算（2-3ms 峰值帧 = 卡顿源）。
+moved 触发的最小间隔 **3 帧**（重算频率降 ~3×，阴影边界滞后 ≤3 帧 ≈50ms，
+由雾层模糊掩盖）；**墙破坏（hash 变化）不受限**（破坏墙即时更新视野）；
+兜底 15→30 帧（站立时峰值减半）。
+
+### ② 模糊+钳制拆帧（current）
+
+fov 帧只做 fillFogCache+拷贝（峰值 ~3ms → ~1.7ms），模糊+钳制移到下一帧
+（显示滞后 1 帧不可察觉）。门控：`!fogDirty && !fogBlurPending` 整帧跳过。
+
+### ③ classic 雾层 30Hz 门控
+
+applyVisionClassic + doorBoost 仅在**偶数帧或 fov 变化帧**跑全图循环。
+站立时游戏 visi 冻结（循环零写入）→ 仅 30 帧兜底跑；移动时游戏 visi
+自身 +0.1/帧平滑，30Hz 采样不可察觉；memCur 渐变速率减半同样不可察觉。
+
+### ④ 武器/手臂扫描门控
+
+武器扫描（每帧遍历整条 firstObj 对象链 + 每武器 enemyState）与 scanArms
+改为 **fov 变化帧或每 3 帧**（敌人在边界移动时武器状态滞后 ≤3 帧 ≈50ms）。
+
+### ⑤ classic 掩膜采样 classicRaw（零 raycast）
+
+applyMask 的 classic 分支改为采样雾层 classicRaw（1px/瓦片，瓦片级缓存
+复用）——与 current 的 fogCache 采样对称；掩膜与 classic 雾层**瓦片级
+对齐**（门景/衰减环/记忆区/墙协调值，阈值同为 MASK_LIT_A=140）。raycast
+路径仅剩兜底（对应缓存未就绪时）。
+
+### GPU 渲染可行性（结论：不可行）
+
+- 渲染模式（renderMode）由游戏 **application.xml 描述符**在启动时决定
+  （cpu/direct/gpu），Loader 子域注入的模组**无法更改**；本游戏跑在
+  direct 模式；
+- 本模组的开销是 **CPU 侧计算**（raycast/像素循环/淡入），不是位图
+  上屏——GPU 帮不上；显示层雾图与游戏原版 lightBmp 同为全屏覆盖，
+  上屏成本与 vanilla 相当（模组隐藏了 visLight，不增负）；
+- Stage3D 与显示列表混用需要 direct 模式且要重写雾渲染为着色器管线
+  （纹理上传 + 全屏四边形），复杂度/风险远超收益，且游戏场景本身仍是
+  软件渲染的显示列表。
+
+### 验证
+
+- 构建通过；ffdec 反编译确认五处优化完整（节流、拆帧、30Hz 门控、
+  %3 扫描门控、classicRaw 采样分支）；BlendMode 行为经 adl64 真机验证。
+
+**待用户游戏内确认**：快速跑动流畅度；classic 雾层 30Hz 下光环比对是否
+可察觉；破坏墙后视野即时更新。
 
 ## v0.24.6 修复：①贴墙敌人武器误显 ②原版模式隐身敌人
 
