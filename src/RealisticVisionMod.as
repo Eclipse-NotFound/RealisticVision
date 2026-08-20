@@ -1606,12 +1606,15 @@ package
                var a:int;
                if(t.opac >= 1)
                {
-                  // **墙**（v0.23）：雾层写 0（透明）——墙由墙专用层（wallRaw，
-                  // 2px/瓦片无错位）绘制，不再借雾层错位显示（错位会让墙值
-                  // 溢出到西/北邻 20px——任何暗墙值都在亮区产生平带黑边，
-                  // v0.22.2 的 166 协调只能"减弱"）。墙层四分格保留原版
-                  // 墙亮面（TR/BL/BR=东/南/东南邻域亮度），墙本身恒黑
+                  // **墙**（v0.24.1）：雾层像素不写 0——0（透明）会被 smoothing
+                  // 与邻瓦暗值（记忆区 166/未探索 255）渐变稀释成透明 → 墙
+                  // 上下边显示场景（亮边）。墙由墙专用层（wallRaw 全黑）绘制，
+                  // 雾层墙像素只在平滑渐变的"邻瓦侧"起作用——写**邻域协调值**
+                  // （第二遍用邻瓦 aArr 平均）→ 邻瓦靠墙处保持其遮罩值（无稀释）。
+                  // 第一遍延后写入（等待邻瓦 aArr 全部算完）
                   a = 0;
+                  this.aArr[i] = 0;
+                  this.lastA[i] = a;   // 先占位，第二遍校准（协调值不同会重写）
                }
                else
                {
@@ -1619,40 +1622,65 @@ package
                   // retDark 消退 / 光源物 / 门景）
                   var memT:int = gameA < dimA ? dimA : gameA;
                   a = Math.round(gameA + cur * (memT - gameA));
-               }
-               if(a != this.lastA[i])
-               {
-                  this.lastA[i] = a;
-                  this.classicRaw.setPixel32(tx,ty,a << 24);
+                  this.aArr[i] = a;
+                  if(a != this.lastA[i])
+                  {
+                     this.lastA[i] = a;
+                     this.classicRaw.setPixel32(tx,ty,a << 24);
+                  }
                }
             }
          }
-         // 第二遍：墙专用层（墙瓦片四分格——TL=墙黑，TR/BL/BR=东/南/东南
-         // 邻域亮度（邻域为墙→黑 255，否则→其雾层值）；越界（房间边缘）→黑）。
-         // v0.23.1 性能：wallKey 门控——每瓦片 4 字节 key 不变则跳过写入
-         // （站立时雾层静止→邻域值静止→墙层零写；移动时只写值变化的墙）
+         // 第二遍：① 墙瓦片雾层协调值（v0.24.1：邻瓦 aArr 平均——消除
+         // smoothing 稀释导致的墙上/下边亮边）写回 classicRaw；
+         // ② 墙专用层（墙瓦片全黑，wallKey 门控——墙值恒定零写）
          if(this.wallRaw != null)
          {
             this.wallRaw.lock();
+            this.classicRaw.lock();
             for(ty = 0; ty < this.spaceY; ty++)
             {
                for(tx = 0; tx < this.spaceX; tx++)
                {
                   var wi:int = tx + ty * this.spaceX;
                   var key:int;
-                  if(loc.getTile(tx,ty).opac < 1)
+                  if(loc.getTile(tx,ty).opac >= 1)
                   {
-                     key = 0;   // 透明
+                     // ① 雾层墙像素：邻域协调值（4 邻 aArr 平均，越界/墙邻跳过）
+                     var ssum:int = 0;
+                     var scnt:int = 0;
+                     if(ty > 0 && loc.getTile(tx,ty - 1).opac < 1)
+                     {
+                        ssum += this.aArr[tx + (ty - 1) * this.spaceX];
+                        scnt++;
+                     }
+                     if(ty + 1 < this.spaceY && loc.getTile(tx,ty + 1).opac < 1)
+                     {
+                        ssum += this.aArr[tx + (ty + 1) * this.spaceX];
+                        scnt++;
+                     }
+                     if(tx > 0 && loc.getTile(tx - 1,ty).opac < 1)
+                     {
+                        ssum += this.aArr[(tx - 1) + ty * this.spaceX];
+                        scnt++;
+                     }
+                     if(tx + 1 < this.spaceX && loc.getTile(tx + 1,ty).opac < 1)
+                     {
+                        ssum += this.aArr[(tx + 1) + ty * this.spaceX];
+                        scnt++;
+                     }
+                     var awall:int = scnt > 0 ? Math.round(ssum / scnt) : 255;
+                     if(awall != this.lastA[wi])
+                     {
+                        this.lastA[wi] = awall;
+                        this.classicRaw.setPixel32(tx,ty,awall << 24);
+                     }
+                     // ② 墙层全黑（v0.23.2）：墙=40×40 整块黑，无亮边/溢出
+                     key = 0xFFFFFFFF;
                   }
                   else
                   {
-                     // 墙：**全黑**（v0.23.2 修正）——之前四分格
-                     // TR/BL/BR=邻域值在邻域亮时让墙只剩 TL 黑角、
-                     // 其余被邻域亮值占据 → "水平墙上方/竖直墙右方
-                     // 亮边"（墙几乎消失）。墙层 2×2 全写墙值黑——
-                     // 墙=40×40 整块黑，无亮边/无溢出/无平带
-                     // （smoothing 只产生墙内+墙边的平滑渐变过渡）
-                     key = 0xFFFFFFFF;
+                     key = 0;   // 墙层透明（不遮挡雾层）
                   }
                   if(key != this.wallKey[wi])
                   {
@@ -1667,6 +1695,7 @@ package
                   }
                }
             }
+            this.classicRaw.unlock();
             this.wallRaw.unlock();
          }
       }
