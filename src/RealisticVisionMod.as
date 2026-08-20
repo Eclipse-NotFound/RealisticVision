@@ -719,8 +719,8 @@ package
          // ③ 尺寸 = (spaceX+1)×(spaceY+2)——**富余 1 列 2 行**（原版 lightBmp
          //    49×28 = 最大房间 48×26 + 同款富余）。无富余时错位后雾层右端
          //    缺 20px、底端缺 20px → 画面右下亮边缺口
-         var cw:int = this.spaceX + 1;
-         var ch:int = this.spaceY + 2;
+         var cw:int = this.spaceX;
+         var ch:int = this.spaceY;
          if(this.classicRaw == null || this.classicRaw.width != cw || this.classicRaw.height != ch)
          {
             if(this.classicRaw != null)
@@ -731,11 +731,16 @@ package
             {
                this.classicBmp.parent.removeChild(this.classicBmp);
             }
-            this.classicRaw = new BitmapData(cw,ch,true,0xFF000000); // 初始全黑（原版 fillRect 同）
+            this.classicRaw = new BitmapData(cw,ch,true,0xFF000000); // 初始全黑
             this.classicBmp = new Bitmap(this.classicRaw,"auto",true); // smoothing=true
             this.classicBmp.scaleX = this.classicBmp.scaleY = Tile.tileX;
-            this.classicBmp.x = -Tile.tileX / 2;
-            this.classicBmp.y = -Tile.tileY / 2 - Tile.tileY;
+            // v0.23.3：**无错位**（x=0, y=0，像素对齐瓦片网格，写 (tx,ty)）
+            // ——与墙专用层（同样无错位）同一坐标系。此前雾层是原版半格
+            // 错位（x=-20/y=-60 写 y+1），墙层无错位——两套坐标导致雾层
+            // 暗区（记忆区/未探索/光缘环）相对墙偏左上 20px（用户实测
+            // "阴影明显向左上角错位"）
+            this.classicBmp.x = 0;
+            this.classicBmp.y = 0;
             this.fogVis.addChild(this.classicBmp);
             // 墙专用层（v0.23）：2px/瓦片、无错位（像素对齐瓦片网格）——
             // 墙显示独立于雾层错位，无溢出黑边；smoothing 双线性让墙边
@@ -1556,13 +1561,11 @@ package
          var retDark:Boolean = loc.retDark == true;
          var tx:int;
          var ty:int;
-         // 写入范围照抄原版 lighting 循环：列 1..spaceX-1、行 2..spaceY
-         // （写 y+1 行）——原版是 _loc7_<spaceX / _loc8_<spaceY；位图富余
-         // 列 0/spaceX、行 0/1/spaceY+1 恒黑。旧版少写最后一列/行导致
-         // 最右列/最底行瓦片错位显示残缺（墙边/画面边缘异常亮暗）
-         for(ty = 1; ty < this.spaceY; ty++)
+         // 写入范围：全图（v0.23.3 无错位——像素 (tx,ty) 对齐瓦片网格，
+         // 不再照抄原版的"写 y+1 行 + 半格错位"（错位与墙层坐标系不一致））
+         for(ty = 0; ty < this.spaceY; ty++)
          {
-            for(tx = 1; tx < this.spaceX; tx++)
+            for(tx = 0; tx < this.spaceX; tx++)
             {
                var i:int = tx + ty * this.spaceX;
                var t:Tile = loc.getTile(tx,ty);
@@ -1620,7 +1623,7 @@ package
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
-                  this.classicRaw.setPixel32(tx,ty + 1,a << 24);
+                  this.classicRaw.setPixel32(tx,ty,a << 24);
                }
             }
          }
@@ -1631,9 +1634,9 @@ package
          if(this.wallRaw != null)
          {
             this.wallRaw.lock();
-            for(ty = 1; ty < this.spaceY; ty++)
+            for(ty = 0; ty < this.spaceY; ty++)
             {
-               for(tx = 1; tx < this.spaceX; tx++)
+               for(tx = 0; tx < this.spaceX; tx++)
                {
                   var wi:int = tx + ty * this.spaceX;
                   var key:int;
