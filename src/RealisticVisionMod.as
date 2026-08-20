@@ -1617,7 +1617,6 @@ package
                   var memT:int = gameA < dimA ? dimA : gameA;
                   a = Math.round(gameA + cur * (memT - gameA));
                }
-               this.aArr[i] = a;
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
@@ -1644,14 +1643,13 @@ package
                   }
                   else
                   {
-                     // 墙：TL 恒黑；TR/BL/BR 邻域亮度（邻域墙→黑）
-                     var aE:int = (tx + 1 < this.spaceX)
-                        ? (loc.getTile(tx + 1,ty).opac >= 1 ? 255 : this.aArr[(tx + 1) + ty * this.spaceX]) : 255;
-                     var aS:int = (ty + 1 < this.spaceY)
-                        ? (loc.getTile(tx,ty + 1).opac >= 1 ? 255 : this.aArr[tx + (ty + 1) * this.spaceX]) : 255;
-                     var aSE:int = (tx + 1 < this.spaceX && ty + 1 < this.spaceY)
-                        ? (loc.getTile(tx + 1,ty + 1).opac >= 1 ? 255 : this.aArr[(tx + 1) + (ty + 1) * this.spaceX]) : 255;
-                     key = 255 | (aE << 8) | (aS << 16) | (aSE << 24);
+                     // 墙：**全黑**（v0.23.2 修正）——之前四分格
+                     // TR/BL/BR=邻域值在邻域亮时让墙只剩 TL 黑角、
+                     // 其余被邻域亮值占据 → "水平墙上方/竖直墙右方
+                     // 亮边"（墙几乎消失）。墙层 2×2 全写墙值黑——
+                     // 墙=40×40 整块黑，无亮边/无溢出/无平带
+                     // （smoothing 只产生墙内+墙边的平滑渐变过渡）
+                     key = 0xFFFFFFFF;
                   }
                   if(key != this.wallKey[wi])
                   {
