@@ -1818,46 +1818,29 @@ package
          return 2;
       }
 
-      /**
-       * FOV 掩膜（只在部分可见时）：子格级位图掩膜（v0.21）。
-       * 区域覆盖包围盒并向上/左右外扩（血条在头顶上方，需纳入掩膜区域）。
-       * 可见子格含 FOV_VISIBLE 与 FOV_DIM（透门暗色视野内敌人可见、可抓取）。
-       * 按 FOV 版本 + 区域签名门控重绘。
-       *
-       * 位图掩膜 + smoothing=true：双线性插值把 5px 子格台阶圆滑成连续轮廓
-       * （Flash mask 是二值 alpha>0 判定，插值带内的 alpha 渐变使边界形状
-       * 平滑）——明暗交界处敌人边界无颗粒感（矢量矩形硬台阶的替代）。
-       * 生命周期（v0.5 教训）：先挂 mask 引用后填内容；clearMask 移出图层
-       * 并 dispose；死亡清扫兜底。
+            /**
+       * FOV 掩膜（只在部分可见时）：矢量矩形 Shape 子格掩膜（v0.24.2 回归——
+       * v0.21 改位图掩膜（Bitmap as mask）在 Flash 中不生效，导致敌人"全出现-
+       * 全消失"二分；Shape 掩膜经 v0.17.2-0.17.5 实测有效）。子格级 5px 判定
+       * （明暗交界部分裁剪），castRay 返回 -1（墙瓦片）回退 fov 判定（墙炮塔）；
+       * 区域覆盖包围盒并向上/左右外扩（血条/动画）；按 FOV 版本 + 区域签名门控。
        */
       private function applyMask(w:World, u:Unit, bb:Array):void
       {
          var rec:Object = this.unitVis[u];
          if(rec == null)
          {
-            rec = {state:1,m2:null,m3:null,m2d:null,m3d:null,lastFov:-1,lastBb:""};
+            rec = {state:1,m2:null,m3:null,lastFov:-1,lastBb:""};
             this.unitVis[u] = rec;
          }
          var x0:int = bb[0] - MASK_PAD_X;
          var y0:int = bb[1] - MASK_PAD_TOP;
          var x1:int = bb[2] + MASK_PAD_X;
          var y1:int = bb[3] + MASK_PAD_BOTTOM;
-         if(x0 < 0)
-         {
-            x0 = 0;
-         }
-         if(y0 < 0)
-         {
-            y0 = 0;
-         }
-         if(x1 >= this.spaceX)
-         {
-            x1 = this.spaceX - 1;
-         }
-         if(y1 >= this.spaceY)
-         {
-            y1 = this.spaceY - 1;
-         }
+         if(x0 < 0) { x0 = 0; }
+         if(y0 < 0) { y0 = 0; }
+         if(x1 >= this.spaceX) { x1 = this.spaceX - 1; }
+         if(y1 >= this.spaceY) { y1 = this.spaceY - 1; }
          var sig:String = x0 + "," + y0 + "," + x1 + "," + y1;
          if(rec.lastFov == this.fovVersion && rec.lastBb == sig)
          {
@@ -1865,92 +1848,49 @@ package
          }
          rec.lastFov = this.fovVersion;
          rec.lastBb = sig;
-         var bw:int = (x1 - x0 + 1) * MASK_SUB;
-         var bh:int = (y1 - y0 + 1) * MASK_SUB;
-         var bd2:BitmapData = rec.m2d as BitmapData;
-         var bd3:BitmapData = rec.m3d as BitmapData;
-         var mb2:Bitmap = rec.m2 as Bitmap;
-         var mb3:Bitmap = rec.m3 as Bitmap;
-         if(bd2 == null || bd2.width != bw || bd2.height != bh)
+         var s2:Shape = rec.m2 as Shape;
+         var s3:Shape = rec.m3 as Shape;
+         if(s2 == null)
          {
-            if(bd2 != null)
-            {
-               bd2.dispose();
-            }
-            if(bd3 != null)
-            {
-               bd3.dispose();
-            }
-            bd2 = new BitmapData(bw,bh,true,0);        // 透明初始（挂载瞬间无白块）
-            bd3 = new BitmapData(bw,bh,true,0);
-            rec.m2d = bd2;
-            rec.m3d = bd3;
-            mb2 = new Bitmap(bd2,"auto",true);         // smoothing=true → 双线性圆滑
-            mb2.scaleX = mb2.scaleY = Tile.tileX / MASK_SUB;
-            mb2.x = x0 * Tile.tileX;
-            mb2.y = y0 * Tile.tileY;
-            mb3 = new Bitmap(bd3,"auto",true);
-            mb3.scaleX = mb3.scaleY = Tile.tileX / MASK_SUB;
-            mb3.x = x0 * Tile.tileX;
-            mb3.y = y0 * Tile.tileY;
-            rec.m2 = mb2;
-            rec.m3 = mb3;
+            s2 = new Shape();
+            rec.m2 = s2;
          }
-         else
+         if(s3 == null)
          {
-            bd2.fillRect(bd2.rect,0);                  // 清透明（复用）
-            bd3.fillRect(bd3.rect,0);
+            s3 = new Shape();
+            rec.m3 = s3;
          }
          if(w.grafon != null)
          {
             if(u.vis != null)
             {
-               if(mb2.parent != w.grafon.visObjs[2])
-               {
-                  w.grafon.visObjs[2].addChild(mb2);
-               }
+               if(s2.parent != w.grafon.visObjs[2]) { w.grafon.visObjs[2].addChild(s2); }
             }
-            else if(mb2.parent != null)
-            {
-               mb2.parent.removeChild(mb2);
-            }
+            else if(s2.parent != null) { s2.parent.removeChild(s2); }
             if(u.hpbar != null)
             {
-               if(mb3.parent != w.grafon.visObjs[3])
-               {
-                  w.grafon.visObjs[3].addChild(mb3);
-               }
+               if(s3.parent != w.grafon.visObjs[3]) { w.grafon.visObjs[3].addChild(s3); }
             }
-            else if(mb3.parent != null)
-            {
-               mb3.parent.removeChild(mb3);
-            }
+            else if(s3.parent != null) { s3.parent.removeChild(s3); }
          }
          try
          {
-            if(u.vis)
-            {
-               u.vis.mask = mb2;
-            }
-            if(u.hpbar)
-            {
-               u.hpbar.mask = mb3;
-            }
+            if(u.vis) { u.vis.mask = s2; }
+            if(u.hpbar) { u.hpbar.mask = s3; }
          }
          catch(err:Error)
          {
          }
-         // 子格级判定（5px 粒度）：每个子格中心一次光线判定。castRay 返回 -1
-         // （目标瓦片为墙 opac≥1，如嵌在墙上的炮塔）时**回退 fov 判定**——
-         // 墙瓦片被邻域点亮规则标为 VISIBLE → 子格可见（否则墙炮塔掩膜全空、
-         // state=2 时整只消失 → "全出现-全消失"二分）
+         // 子格级判定（5px）：castRay -1（墙）回退 fov（墙炮塔不消失）
+         var g:flash.display.Graphics = s2.graphics;
+         g.clear();
+         g.beginFill(0xFF0000,1);
          var cs:Number = Tile.tileX / MASK_SUB;
          var d2max:Number = this.locDist2 * this.locDist2;
          var scx:int;
          var scy:int;
          var totx:int = (x1 - x0 + 1) * MASK_SUB;
          var toty:int = (y1 - y0 + 1) * MASK_SUB;
-         bd2.lock();
          for(scx = 0; scx < totx; scx++)
          {
             for(scy = 0; scy < toty; scy++)
@@ -1969,12 +1909,13 @@ package
                }
                if(lit > 0.0001)
                {
-                  bd2.setPixel32(scx,scy,0xFFFFFFFF);
+                  g.drawRect((x0 * MASK_SUB + scx) * cs,(y0 * MASK_SUB + scy) * cs,cs,cs);
                }
             }
          }
-         bd2.unlock();
-         bd3.copyPixels(bd2,bd2.rect,new Point(0,0));
+         g.endFill();
+         s3.graphics.clear();
+         s3.graphics.copyFrom(g);
       }
 
       private function clearMask(u:Unit):void
@@ -1986,43 +1927,17 @@ package
          }
          try
          {
-            if(u.vis)
-            {
-               u.vis.mask = null;
-            }
-            if(u.hpbar)
-            {
-               u.hpbar.mask = null;
-            }
+            if(u.vis) { u.vis.mask = null; }
+            if(u.hpbar) { u.hpbar.mask = null; }
          }
          catch(err:Error)
          {
          }
-         // 掩膜位图必须移出图层：不被 mask 引用时会被当普通内容渲染（白块）
-         var mb2:Bitmap = rec.m2 as Bitmap;
-         var mb3:Bitmap = rec.m3 as Bitmap;
-         if(mb2 != null && mb2.parent != null)
-         {
-            mb2.parent.removeChild(mb2);
-         }
-         if(mb3 != null && mb3.parent != null)
-         {
-            mb3.parent.removeChild(mb3);
-         }
-         var bd2:BitmapData = rec.m2d as BitmapData;
-         var bd3:BitmapData = rec.m3d as BitmapData;
-         if(bd2 != null)
-         {
-            bd2.dispose();
-         }
-         if(bd3 != null)
-         {
-            bd3.dispose();
-         }
-         rec.m2 = null;
-         rec.m3 = null;
-         rec.m2d = null;
-         rec.m3d = null;
+         // 掩膜必须移出图层：不被 mask 引用时会被当普通内容渲染（白块）
+         var s2:Shape = rec.m2 as Shape;
+         var s3:Shape = rec.m3 as Shape;
+         if(s2 != null && s2.parent != null) { s2.parent.removeChild(s2); }
+         if(s3 != null && s3.parent != null) { s3.parent.removeChild(s3); }
          rec.lastFov = -1;
       }
 
@@ -2136,7 +2051,7 @@ package
                var rec:Object = this.unitVis[u];
                if(rec == null)
                {
-                  rec = {state:1,m2:null,m3:null,m2d:null,m3d:null,lastFov:-1,lastBb:""};
+                  rec = {state:1,m2:null,m3:null,lastFov:-1,lastBb:""};
                   this.unitVis[u] = rec;
                }
                rec.state = st;
