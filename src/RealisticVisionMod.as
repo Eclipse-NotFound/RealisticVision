@@ -14,6 +14,7 @@ package
    import flash.filesystem.FileStream;
    import flash.filters.BlurFilter;
    import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
    import flash.geom.Point;
    import flash.geom.Rectangle;
    import flash.text.TextField;
@@ -53,6 +54,8 @@ package
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
       private var cfgLitMin:Number = 0.6;
       private var cfgFadeStep:Number = 0.1;
+      private var cfgMaskBlurClassic:Number = 6.0; // 敌人掩膜模糊（classic，子格 px=5px；0=硬边）
+      private var cfgMaskBlurCurrent:Number = 4.0; // 敌人掩膜模糊（current，与雾层 curBlur 对齐）
       private var cfgTeleGrace:Number = 3;
       private var cfgBaseRooms:Object = {};
       private var cfgDebug:Boolean = false;
@@ -75,9 +78,11 @@ package
       private static const FOG_SUB:int = 8;
       private static const FOG_PAD:int = 4;
 
-      // 敌人 FOV 掩膜参数：每瓦片 8px 子格（5px，与雾层一致）+ 矢量矩形掩膜
-      // （Flash mask 是二值的，子格越细锯齿越小）；区域外扩覆盖血条（头顶）
-      // 与动画超出手臂/翅膀等超出逻辑包围盒的视觉部分
+      // 敌人 FOV 掩膜参数：每瓦片 8px 子格（5px，与雾层一致）。掩膜 = 矢量
+      // Shape + 模糊位图填充（v0.24.3：子格二值场按模式模糊后经
+      // beginBitmapFill(smooth) 放大绘制——Flash 掩膜尊重 alpha，明暗交界处
+      // 敌人渐变淡出，无 5px 硬阶梯颗粒）；区域外扩覆盖血条（头顶）与动画
+      // 超出手臂/翅膀等超出逻辑包围盒的视觉部分
       private static const MASK_SUB:int = 8;
       private static const MASK_PAD_X:int = 2;
       private static const MASK_PAD_TOP:int = 3;
@@ -148,11 +153,18 @@ package
       private var fogCellPoint:Point = new Point(0,0);
       private var fogBlur:BlurFilter = new BlurFilter(2.0,2.0,2);   // classic（仿原版）半影
       private var curBlur:BlurFilter = new BlurFilter(4.0,4.0,3);   // current：阴影渐变过渡（≈32px 世界）
+      // 敌人掩膜模糊（v0.24.3）：按模式对齐各自雾层边界的模糊策略——
+      // BlurFilter(bx,q) ≈ 盒模糊 bx px 应用 q 次，σ = bx·√(q/12) 子格：
+      // classic 目标 40px（1px/瓦片双线性渐变）→ 6.0/q2（σ≈12px）；current
+      // 目标 32px（雾层 curBlur）→ 4.0/q3（σ≈10px，与雾层同参）。0=硬边
+      private var maskBlurClassic:BlurFilter = new BlurFilter(6.0,6.0,2);
+      private var maskBlurCurrent:BlurFilter = new BlurFilter(4.0,4.0,3);
 
       private var defCT:ColorTransform = new ColorTransform();
       private var infraCT:ColorTransform = new ColorTransform(1,1,1,1,100);
 
-      // 敌人显示状态：unit -> {state:int, m2:Shape, m3:Shape, lastFov:int, lastBb:String}
+      // 敌人显示状态：unit -> {state:int, m2:Shape, m3:Shape, m2d:BitmapData,
+      // m2e:BitmapData, lastFov:int, lastBb:String}（m2d/m2e=掩膜二值场/模糊场）
       private var unitVis:Dictionary = new Dictionary(true);
       // 被我们强制隐藏血条的单位
       private var hpHidden:Dictionary = new Dictionary(true);
@@ -267,6 +279,16 @@ package
                {
                   this.cfgFadeStep = Number(val);
                }
+               else if(key == "maskblur_classic")
+               {
+                  this.cfgMaskBlurClassic = Number(val);
+                  this.maskBlurClassic.blurX = this.maskBlurClassic.blurY = this.cfgMaskBlurClassic;
+               }
+               else if(key == "maskblur_current")
+               {
+                  this.cfgMaskBlurCurrent = Number(val);
+                  this.maskBlurCurrent.blurX = this.maskBlurCurrent.blurY = this.cfgMaskBlurCurrent;
+               }
                else if(key == "telegrace")
                {
                   this.cfgTeleGrace = Number(val);
@@ -319,6 +341,8 @@ package
                + "doordim=" + this.cfgDoorDim + "\n"
                + "litmin=" + this.cfgLitMin + "\n"
                + "fadestep=" + this.cfgFadeStep + "\n"
+               + "maskblur_classic=" + this.cfgMaskBlurClassic + "\n"
+               + "maskblur_current=" + this.cfgMaskBlurCurrent + "\n"
                + "telegrace=" + this.cfgTeleGrace + "\n"
                + "base_rooms=" + ids.join(",") + "\n"
                + "debug=" + (this.cfgDebug ? "1" : "0") + "\n";
@@ -1819,10 +1843,13 @@ package
       }
 
             /**
-       * FOV 掩膜（只在部分可见时）：矢量矩形 Shape 子格掩膜（v0.24.2 回归——
-       * v0.21 改位图掩膜（Bitmap as mask）在 Flash 中不生效，导致敌人"全出现-
-       * 全消失"二分；Shape 掩膜经 v0.17.2-0.17.5 实测有效）。子格级 5px 判定
-       * （明暗交界部分裁剪），castRay 返回 -1（墙瓦片）回退 fov 判定（墙炮塔）；
+       * FOV 掩膜（只在部分可见时）：矢量 Shape + 模糊位图填充（v0.24.3——
+       * 取代 v0.24.2 的 5px 硬矩形）。子格二值场先写入小位图（m2d）、按
+       * 模式模糊（m2e，classic≈40px / current≈32px，对齐各自雾层边界宽度），
+       * 再经 beginBitmapFill(smooth) 放大绘制进 Shape——Flash 掩膜尊重 alpha
+       * 通道 → 敌人在明暗交界处渐变淡出，无 5px 阶梯颗粒。掩膜机制仍是矢量
+       * Shape（v0.24.2 实测有效；v0.21 的 Bitmap-as-mask 在 Flash 中不生效）。
+       * 子格级 raycast + castRay 返回 -1（墙瓦片）回退 fov（墙炮塔不消失）；
        * 区域覆盖包围盒并向上/左右外扩（血条/动画）；按 FOV 版本 + 区域签名门控。
        */
       private function applyMask(w:World, u:Unit, bb:Array):void
@@ -1830,17 +1857,29 @@ package
          var rec:Object = this.unitVis[u];
          if(rec == null)
          {
-            rec = {state:1,m2:null,m3:null,lastFov:-1,lastBb:""};
+            rec = {state:1,m2:null,m3:null,m2d:null,m2e:null,lastFov:-1,lastBb:""};
             this.unitVis[u] = rec;
          }
          var x0:int = bb[0] - MASK_PAD_X;
          var y0:int = bb[1] - MASK_PAD_TOP;
          var x1:int = bb[2] + MASK_PAD_X;
          var y1:int = bb[3] + MASK_PAD_BOTTOM;
-         if(x0 < 0) { x0 = 0; }
-         if(y0 < 0) { y0 = 0; }
-         if(x1 >= this.spaceX) { x1 = this.spaceX - 1; }
-         if(y1 >= this.spaceY) { y1 = this.spaceY - 1; }
+         if(x0 < 0)
+         {
+            x0 = 0;
+         }
+         if(y0 < 0)
+         {
+            y0 = 0;
+         }
+         if(x1 >= this.spaceX)
+         {
+            x1 = this.spaceX - 1;
+         }
+         if(y1 >= this.spaceY)
+         {
+            y1 = this.spaceY - 1;
+         }
          var sig:String = x0 + "," + y0 + "," + x1 + "," + y1;
          if(rec.lastFov == this.fovVersion && rec.lastBb == sig)
          {
@@ -1848,6 +1887,29 @@ package
          }
          rec.lastFov = this.fovVersion;
          rec.lastBb = sig;
+         var totx:int = (x1 - x0 + 1) * MASK_SUB;
+         var toty:int = (y1 - y0 + 1) * MASK_SUB;
+         var bd:BitmapData = rec.m2d as BitmapData;   // 子格二值场
+         var bdb:BitmapData = rec.m2e as BitmapData;  // 模糊后显示源
+         if(bd == null || bd.width != totx || bd.height != toty)
+         {
+            if(bd != null)
+            {
+               bd.dispose();
+            }
+            if(bdb != null)
+            {
+               bdb.dispose();
+            }
+            bd = new BitmapData(totx,toty,true,0);
+            bdb = new BitmapData(totx,toty,true,0);
+            rec.m2d = bd;
+            rec.m2e = bdb;
+         }
+         else
+         {
+            bd.fillRect(bd.rect,0);   // 清透明（复用）
+         }
          var s2:Shape = rec.m2 as Shape;
          var s3:Shape = rec.m3 as Shape;
          if(s2 == null)
@@ -1882,15 +1944,11 @@ package
          {
          }
          // 子格级判定（5px）：castRay -1（墙）回退 fov（墙炮塔不消失）
-         var g:flash.display.Graphics = s2.graphics;
-         g.clear();
-         g.beginFill(0xFF0000,1);
          var cs:Number = Tile.tileX / MASK_SUB;
          var d2max:Number = this.locDist2 * this.locDist2;
          var scx:int;
          var scy:int;
-         var totx:int = (x1 - x0 + 1) * MASK_SUB;
-         var toty:int = (y1 - y0 + 1) * MASK_SUB;
+         bd.lock();
          for(scx = 0; scx < totx; scx++)
          {
             for(scy = 0; scy < toty; scy++)
@@ -1909,10 +1967,29 @@ package
                }
                if(lit > 0.0001)
                {
-                  g.drawRect((x0 * MASK_SUB + scx) * cs,(y0 * MASK_SUB + scy) * cs,cs,cs);
+                  bd.setPixel32(scx,scy,0xFFFFFFFF);
                }
             }
          }
+         bd.unlock();
+         // 按模式模糊（classic/current 各自对齐雾层边界宽度）；0=关闭（硬边）
+         var blur:BlurFilter = this.cfgMode == "classic" ? this.maskBlurClassic : this.maskBlurCurrent;
+         if(blur.blurX > 0)
+         {
+            bdb.applyFilter(bd,bd.rect,this.fogPoint,blur);
+         }
+         else
+         {
+            bdb.copyPixels(bd,bd.rect,this.fogPoint);
+         }
+         // 位图填充绘制进矢量 Shape（smoothing → 双线性放大），alpha 渐变即软边
+         // 注：beginBitmapFill 的 matrix 不跨调用复用（可能持引用，复用会串改
+         // 前一个敌人的填充）——每次新建，成本可忽略（仅 FOV 变化时调用）
+         var g:flash.display.Graphics = s2.graphics;
+         g.clear();
+         var m:Matrix = new Matrix(cs,0,0,cs,x0 * Tile.tileX,y0 * Tile.tileY);
+         g.beginBitmapFill(bdb,m,false,true);
+         g.drawRect(x0 * Tile.tileX,y0 * Tile.tileY,totx * cs,toty * cs);
          g.endFill();
          s3.graphics.clear();
          s3.graphics.copyFrom(g);
@@ -1959,6 +2036,7 @@ package
             if(rec.state == 2 && (u.vis == null || u.vis.parent == null))
             {
                this.clearMask(u);
+               delete this.unitVis[k];   // 摘除条目：Shape+掩膜位图随回收
             }
          }
       }
@@ -2051,7 +2129,7 @@ package
                var rec:Object = this.unitVis[u];
                if(rec == null)
                {
-                  rec = {state:1,m2:null,m3:null,lastFov:-1,lastBb:""};
+                  rec = {state:1,m2:null,m3:null,m2d:null,m2e:null,lastFov:-1,lastBb:""};
                   this.unitVis[u] = rec;
                }
                rec.state = st;

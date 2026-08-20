@@ -1,11 +1,54 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-20（v0.24.2，待运行时验证）
+> 最后更新：2026-08-20（v0.24.3，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.24.2（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.24.3（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.24.3 修复：敌人明暗边界颗粒感（软边掩膜——按模式对齐模糊策略）
+
+用户反馈：v0.24.2 敌人二分已修复，但明暗边界 5px 硬矩形阶梯颗粒感较强；
+建议 classic/current 分别对齐各自雾层的明暗交界边界参数和模糊策略。
+
+### 各模式雾层边界宽度（对齐基准）
+
+| 模式 | 雾层边界机制 | 过渡宽度 |
+|---|---|---|
+| classic | 1px/瓦片 + smoothing 双线性 | ≈40px（一个瓦片渐变） |
+| current | 8×8 子格 + curBlur(4.0,4.0,3) | ≈32px（代码注释实测值） |
+
+BlurFilter(bx,q) 有效 σ = bx·√(q/12) 子格（盒模糊 bx px 应用 q 次）——
+用该模型反推：current 4.0/q3 → σ=2 子格 ≈33px ✓ 与注释吻合。
+
+### 修复（Shape 掩膜内容改为模糊位图填充）
+
+- applyMask：子格二值场（raycast 判定不变）先写入小位图 m2d，按模式
+  模糊到 m2e（classic=BlurFilter(6,6,2) ≈44px 过渡 / current=BlurFilter(4,4,3)
+  ≈36px，与雾层同宽度），再 `beginBitmapFill(m2e, matrix, smooth)` 放大
+  绘制进**矢量 Shape**——掩膜机制仍是 v0.24.2 实测有效的 Shape（v0.21
+  的 Bitmap-as-mask 失效问题不回归），Flash 掩膜尊重 alpha → 敌人边界
+  **渐变淡出**，无 5px 硬台阶；
+- 子格 raycast / 墙瓦片 castRay -1 回退 fov / 外扩 / FOV 版本门控全部不变；
+- 新配置键 `maskblur_classic`（默认 6）、`maskblur_current`（默认 4），
+  F11/F12 回写保留；0=关闭模糊（回退硬边）；
+- sweepMasks 清扫时删除 unitVis 条目（掩膜位图随 GC，防累积）；
+- beginBitmapFill 的 Matrix 每次新建（不跨调用复用——Graphics 可能持
+  引用，复用会串改前一个敌人的填充）。
+
+### 验证（Node 模拟，/tmp/rv_mask_sim/mask_sim.js）
+
+斜线边界 + σ 模型卷积 + 双线性放大采样：
+
+- classic：过渡宽度 44.0px（目标 ≈40px），相邻像素最大跳变 7.4/255；
+- current：过渡宽度 36.0px（目标 ≈32px），相邻像素最大跳变 9.0/255；
+- 对比 v0.24.2 硬边：跳变 51/255、过渡仅 4px（阶梯颗粒）→ 已消除；
+- 构建通过 + ffdec 反编译确认 m2d/m2e 字段、applyFilter、beginBitmapFill
+  路径完整（无结构损坏）。
+
+**待用户游戏内确认**：两种模式下敌人被视野边缘扫过时是否渐变露出/收起、
+无颗粒感；模糊宽度是否合适（可调 config 的两个 maskblur 键）。
 
 ## v0.24.2 修复：敌人全出现-全消失二分（位图掩膜→矢量 Shape 掩膜回归）
 

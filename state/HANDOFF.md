@@ -1,6 +1,6 @@
 # RealisticVision —— 交接文档（HANDOFF）
 
-> 最后更新：2026-08-20（v0.23.3）
+> 最后更新：2026-08-20（v0.24.3）
 > 用途：项目转移到新对话时，新 agent 先读本文 + `AGENT_SCOPE.md` + `state/current-status.md`。
 
 ## 0. 项目一句话
@@ -18,12 +18,17 @@
   pfe.swf 差异仅 6 mod 加载器合并（含新出现的 RandomRooms，只追加测试地形）。
   真实污染源为运行时状态：current 模式曾写 t_visi 二元 → **v0.21.1 起只写
   visi、保留游戏 t_visi**（切模式后游戏 10 帧自愈恢复，不再污染原版渲染）。
-- 敌人显示（v0.21 重构）：
+- 敌人显示（v0.21 重构 + v0.24.2/v0.24.3 掩膜修正）：
   - 三态判定（0 全隐/1 全显/2 部分）按 **unitBBox 外扩 1 瓦片**（单瓦片
     敌人如炮塔 phis 38×38 跨边界进入部分可见态，不再二分）；
-  - 部分可见用**位图掩膜**（子格 raycast → BitmapData → 放大 smoothing 双
-    线性圆滑边界，无硬台阶颗粒）；生命周期：先挂 mask 后填内容、clearMask
-    移出图层并 dispose、死亡清扫兜底（v0.5 教训）；hpbar 独立 BitmapData；
+  - 部分可见用**矢量 Shape 掩膜**（v0.24.2 回归——v0.21 的 Bitmap-as-mask
+    在 Flash 中不生效导致二分；v0.24.3 起 Shape 内容 = 子格二值场
+    BitmapData 按模式模糊后 beginBitmapFill 放大绘制 → 掩膜 alpha 渐变，
+    敌人明暗边界软边淡出，无 5px 硬台阶颗粒）。模糊按模式对齐雾层边界
+    宽度：classic BlurFilter(6,6,2)≈40px / current BlurFilter(4,4,3)≈32px
+    （config：maskblur_classic/maskblur_current，0=硬边）；
+  - 生命周期：先挂 mask 后填内容、clearMask 移出图层并 dispose、死亡清扫
+    兜底并删除 unitVis 条目（v0.5 教训）；hpbar 独立掩膜（copyFrom）；
   - **子格 castRay 返回 -1（墙瓦片）回退 fov 判定**（墙炮塔掩膜不空）；
   - 尸体（sost==4）保留；友好跳过；敌方武器按 owner 实时状态隐藏/裁剪；
     狮鹫手臂（UnitMerc.arm）用 visObjs[2] 显示树扫描隐藏。
