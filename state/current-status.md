@@ -1,11 +1,50 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-20（v0.24.5）
+> 最后更新：2026-08-20（v0.24.6，待运行时验证）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.24.5（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.24.6（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.24.6 修复：①贴墙敌人武器误显 ②原版模式隐身敌人
+
+### ① current/classic：记忆区贴墙敌人的武器错误显示
+
+现象：视野扫过但未覆盖区域中贴着墙的敌人（本体隐藏正确），但手持武器
+整把可见。
+
+根因：贴墙敌人的 bbox 含**被邻域点亮规则标为 fov VISIBLE 的墙瓦片** →
+enemyState=2 → 本体被 fogCache 掩膜正确裁掉（记忆区子格全暗）→ 武器走
+`wpn.vis.mask = orec2.m2` 分支——**但武器 vis 没有 cacheAsBitmap**：位图
+填充掩膜无 cache 时按矢量路径光栅化（整块矩形，v0.24.3 同款失败模式）
+→ 武器全显。
+
+修复：武器挂掩膜前 `wpn.vis.cacheAsBitmap = true`；`setWeaponVis` 摘掩膜
+同时关缓存。
+
+### ② 原版（vanilla）模式偶尔隐身敌人
+
+现象：F12/F11 切到原版后，部分敌人隐身；切回 current/classic 又能看见。
+
+根因（两类残留）：
+1. **hideUnit 残留**：切模式后 hideEnemies 停止运行，此前在暗处被隐藏的
+   敌人 `vis.visible=false` 永远不恢复（vanilla 没有任何恢复路径）；
+2. **过期掩膜残留**：resetRoom 不清 unitVis——旧掩膜（u.vis.mask + 显示
+   树里的掩膜 Shape）继续裁剪单位，玩家移动时敌人时隐时现（"有时"）。
+
+修复：新增 `restoreAll(w,loc)`，在透传分支（vanilla/总开关关/安全基地/
+黑暗关）每帧调用——①摘除全部掩膜（含显示树残留）；②恢复被隐藏单位
+（showUnit：vis/prior/hpbar）；③恢复武器（visible+摘 mask+关 cache）；
+④恢复显示树隐藏的附属对象（狮鹫手臂）。门控：三字典全空时零开销。
+
+### 验证
+
+- 构建通过；ffdec 反编译确认：restoreAll 在透传分支调用、武器 cacheAsBitmap
+  挂/摘、setWeaponVis 关缓存。
+
+**待用户游戏内确认**：记忆区贴墙敌人不再显示武器；F12 切原版后所有敌人
+正常显示（含此前被隐藏的）。
 
 ## v0.24.5 优化：current 模式性能（三处，按开销排序）
 

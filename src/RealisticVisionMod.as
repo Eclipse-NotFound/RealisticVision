@@ -524,6 +524,10 @@ package
          // 模组不碰 visi/visLight/lightBmp（原版效果原样恢复）
          if(!this.cfgEnabled || !w.black || this.cfgMode == "vanilla" || loc.base || this.cfgBaseRooms[loc.id] == true)
          {
+            // v0.24.6：清除模组一切残留（掩膜/隐藏单位/隐藏武器/手臂）——
+            // 否则 F12/F11 切回原版后，此前在暗处被隐藏的敌人保持隐身、
+            // 过期掩膜继续裁剪单位
+            this.restoreAll(w,loc);
             this.normalMode(w,loc);
             this.debugStep(w,loc,true);
             return;
@@ -869,6 +873,68 @@ package
                }
             }
          }
+      }
+
+      /** 透传路径（vanilla / 总开关关 / 安全基地）恢复全部残留（v0.24.6）：
+       *  ① 摘除全部掩膜（含残留在显示树中的掩膜 Shape，过期掩膜会继续裁剪
+       *     单位 → 原版"隐身敌人"）；② 恢复被隐藏单位的 vis/prior/hpbar；
+       *  ③ 恢复敌方武器（visible + 摘 mask + 关 cacheAsBitmap）；④ 恢复
+       *  显示树中被隐藏的附属对象（狮鹫手臂等）。门控：无残留时零开销。 */
+      private function restoreAll(w:World, loc:Location):void
+      {
+         var any:Boolean = false;
+         for(var k:Object in this.unitVis) { any = true; break; }
+         if(!any)
+         {
+            for(var kh:Object in this.hpHidden) { any = true; break; }
+         }
+         if(!any)
+         {
+            for(var km:Object in this.managedHidden) { any = true; break; }
+         }
+         if(!any)
+         {
+            return;
+         }
+         for(var ku:Object in this.unitVis)
+         {
+            var u:Unit = ku as Unit;
+            if(u != null)
+            {
+               this.clearMask(u);
+            }
+         }
+         this.unitVis = new Dictionary(true);
+         for(var khu:Object in this.hpHidden)
+         {
+            var uh:Unit = khu as Unit;
+            if(uh != null)
+            {
+               this.showUnit(uh);
+            }
+         }
+         this.hpHidden = new Dictionary(true);
+         var obj:Pt = loc.firstObj;
+         var guard:int = 0;
+         while(obj != null && guard < 5000)
+         {
+            if(obj is Weapon)
+            {
+               this.setWeaponVis(obj as Weapon,true);
+            }
+            obj = obj.nobj;
+            guard++;
+         }
+         for(var md:Object in this.managedHidden)
+         {
+            var c:DisplayObject = md as DisplayObject;
+            if(c != null)
+            {
+               c.visible = true;
+            }
+         }
+         this.managedHidden = new Dictionary(true);
+         this.managedCount = 0;
       }
 
       /** 阻挡结构哈希：opac>0 / phis>0 逐瓦片累计（用于墙破坏/开门/关门的即时检测）。 */
@@ -2245,6 +2311,11 @@ package
                      if(wpn.vis && orec2 != null && orec2.m2 != null)
                      {
                         wpn.vis.visible = true;
+                        // v0.24.6：武器挂掩膜同样必须 cacheAsBitmap=true——
+                        // 否则位图填充掩膜按路径光栅化（整块矩形），贴墙敌人
+                        // （bbox 含邻域点亮的墙瓦片 → state=2）在记忆区里武器
+                        // 全显（本体被掩膜正确裁掉，武器却整把可见）
+                        wpn.vis.cacheAsBitmap = true;
                         wpn.vis.mask = orec2.m2;
                      }
                      else
@@ -2279,6 +2350,7 @@ package
             if(wpn.vis)
             {
                wpn.vis.mask = null;
+               wpn.vis.cacheAsBitmap = false;   // v0.24.6：无掩膜即关缓存（防残留开销）
                wpn.vis.visible = visB;
             }
          }
