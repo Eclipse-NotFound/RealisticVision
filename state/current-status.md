@@ -1,11 +1,52 @@
 # RealisticVision 当前状态
 
-> 最后更新：2026-08-20（v0.24.4，待运行时验证）
+> 最后更新：2026-08-20（v0.24.5）
 > **新对话交接请先读 `state/HANDOFF.md`。**
 
 ## 当前版本
 
-v0.24.4（release/RealisticVisionMod.swf；游戏本体未改动）
+v0.24.5（release/RealisticVisionMod.swf；游戏本体未改动）
+
+## v0.24.5 优化：current 模式性能（三处，按开销排序）
+
+用户反馈：current 模式性能消耗仍略大（快速跑动时）。
+
+### ① 敌人掩膜改采样 fogCache（current 模式零 raycast）
+
+原：每 FOV 变化，每个部分可见敌人做 包围盒×8×8 子格 castRay（战斗中
+多个敌人 ≈ 数千次 raycast，且每次 raycast 是 DDA 走格）。
+
+新：掩膜子格直接读最终雾场 fogCache（getPixel32）——fogCache 在 FOV
+变化帧刚由 fillFogCache 算好（时序：applyVision → hideEnemies，门控同
+源 fovVersion），索引直接换算（FOG_SUB==MASK_SUB==8，FOG_PAD 偏移）。
+
+- **像素级对齐雾层渲染**：敌人按雾的实际亮度淡出（含距离衰减环/门景/
+  墙亮面/记忆区），不再是独立的 castRay 几何；阈值 MASK_LIT_A=140：
+  门景(≤128)/亮部(<140) 可见，记忆区(166)/未探索(255)/暗部(≥140) 不可见；
+- classic 模式无 fogCache，保留原 raycast 路径（含墙回退 fov）。
+
+### ② 单侧钳制改 getVector/setVector
+
+原：fov 重算时全图（≈392×216=8.5 万像素）逐像素 getPixel32/setPixel32
+比较——快速跑动的最大单点开销（约 5-15ms/次）。
+
+新：getVector 整块拷贝 + 纯内存比较（像素恒黑，alpha 即 uint 高位可直接
+比较）+ setVector 写回（约 1-2ms/次，降 5-10×）。
+
+### ③ structHash 每 2 帧算一次
+
+全图 1248 瓦片遍历从每帧降到半帧；墙破坏/开门检测延迟 ≤1 帧（33ms），
+不可察觉。
+
+### 验证
+
+- 构建通过；ffdec 反编译确认三处优化完整（MASK_LIT_A 分支、getVector
+  钳制、frameCount&1 哈希门控）；
+- Node 模拟：掩膜子格→fogCache 索引映射 61952 例零越界/零错位；阈值
+  行为验证（门景 128 亮 / 记忆 166 暗）。
+
+**待用户游戏内确认**：快速跑动流畅度；敌人边界仍渐变（fogCache 采样后
+掩膜与雾像素级对齐，边界位置略有变化——现在跟随雾的实际渲染，含衰减环）。
 
 ## v0.24.4 修复：敌人再次二分（软边掩膜补 cacheAsBitmap——alpha 掩膜的硬性要求）
 

@@ -84,6 +84,9 @@ package
       // 对齐雾层边界宽度，敌人明暗交界渐变淡出）；区域外扩覆盖血条（头顶）
       // 与动画超出手臂/翅膀等超出逻辑包围盒的视觉部分
       private static const MASK_SUB:int = 8;
+      // current 掩膜采样 fogCache 的亮度阈值（v0.24.5）：门景(≤128)/亮部
+      // (<140) 可见；记忆区(166)/未探索(255)/暗部(≥140) 不可见
+      private static const MASK_LIT_A:int = 140;
       private static const MASK_PAD_X:int = 2;
       private static const MASK_PAD_TOP:int = 3;
       private static const MASK_PAD_BOTTOM:int = 1;
@@ -531,7 +534,10 @@ package
          // 每帧移动都重算 → 卡顿）；边界更新滞后 ~1.5px 不可察觉
          var gg:UnitPlayer = loc.gg;
          var moved:Boolean = Math.abs(gg.X - this.lastGX) > 1.5 || Math.abs(gg.Y - this.lastGY) > 1.5;
-         var hash:int = this.structHash(loc);
+         // v0.24.5：结构哈希每 2 帧算一次（墙破坏/开门/关门检测延迟 ≤1 帧，
+         // 不可察觉；全图 1248 瓦片遍历从每帧降到半帧）
+         var hash:int = (this.frameCount & 1) == 0
+            ? this.structHash(loc) : this.lastStructHash;
          var needFov:Boolean = moved || hash != this.lastStructHash || this.frameCount % 15 == 0;
          if(needFov)
          {
@@ -1231,23 +1237,21 @@ package
          // 模糊 → 阴影边缘渐变过渡（source≠dest）
          this.fogBmp.applyFilter(this.fogRaw,this.fogRect,this.fogPoint,this.curBlur);
          // 单侧钳制（D16）：display = max(raw, blurred)——暗区/未探索/墙保持洁净，
-         // 只允许暗色向亮区渐变（窗户/亮面的光晕不向黑墙渗透）
-         this.fogBmp.lock();
-         var px:int;
-         var py:int;
-         for(py = 0; py < this.fogBmp.height; py++)
+         // 只允许暗色向亮区渐变（窗户/亮面的光晕不向黑墙渗透）。
+         // v0.24.5：逐像素 getPixel32/setPixel32（fov 重算卡顿主要来源）→
+         // getVector/setVector 整块拷贝 + 纯内存比较（alpha 即 uint 高位，
+         // 像素恒黑可直接比较）
+         var vRaw:Vector.<uint> = this.fogRaw.getVector(this.fogRect);
+         var vBlur:Vector.<uint> = this.fogBmp.getVector(this.fogRect);
+         var np:int = vRaw.length;
+         for(var vi:int = 0; vi < np; vi++)
          {
-            for(px = 0; px < this.fogBmp.width; px++)
+            if(vBlur[vi] < vRaw[vi])
             {
-               var a1:int = this.fogRaw.getPixel32(px,py) >>> 24;
-               var a2:int = this.fogBmp.getPixel32(px,py) >>> 24;
-               if(a2 < a1)
-               {
-                  this.fogBmp.setPixel32(px,py,a1 << 24);
-               }
+               vBlur[vi] = vRaw[vi];
             }
          }
-         this.fogBmp.unlock();
+         this.fogBmp.setVector(this.fogRect,vBlur);
          if(!changed)
          {
             this.fogDirty = false;
@@ -1961,29 +1965,65 @@ package
          }
          // 子格级判定（5px）：castRay -1（墙）回退 fov（墙炮塔不消失）
          var cs:Number = Tile.tileX / MASK_SUB;
-         var d2max:Number = this.locDist2 * this.locDist2;
          var scx:int;
          var scy:int;
          bd.lock();
-         for(scx = 0; scx < totx; scx++)
+         if(this.cfgMode == "current" && this.fogCache != null)
          {
-            for(scy = 0; scy < toty; scy++)
+            // v0.24.5（current）：直接采样最终雾场 fogCache（已含距离衰减/
+            // 墙亮面/门景/记忆区）——零 raycast（敌人掩膜从每 FOV 变化数千
+            // 次 castRay 降到数千次 getPixel32），且掩膜与雾层**像素级对齐**
+            // （敌人按雾的实际渲染淡出，含衰减环/门景边界）。fogCache 与
+            // 掩膜同为 8×8 子格/瓦片（FOG_SUB==MASK_SUB），索引直接换算；
+            // 该路径只在 fovVersion 变化帧运行（fogCache 恰为本帧刷新）。
+            var fg:BitmapData = this.fogCache;
+            var a0:int;
+            for(scx = 0; scx < totx; scx++)
             {
-               var swx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
-               var swy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
-               var dddx:Number = swx - this.eyeX;
-               var dddy:Number = swy - this.eyeY;
-               var lit:Number = dddx * dddx + dddy * dddy <= d2max
-                  ? this.castRay(this.curLoc,this.eyeX,this.eyeY,swx,swy,
-                     Math.floor(swx / Tile.tileX),Math.floor(swy / Tile.tileY))
-                  : -1;
-               if(lit < 0)
+               for(scy = 0; scy < toty; scy++)
                {
-                  lit = this.fov[Math.floor(swx / Tile.tileX) + Math.floor(swy / Tile.tileY) * this.spaceX] != FOV_NONE ? 1 : 0;
+                  var wx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
+                  var wy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
+                  var ftx:int = Math.floor(wx / Tile.tileX);
+                  var fty:int = Math.floor(wy / Tile.tileY);
+                  if(ftx < 0) { ftx = 0; }
+                  else if(ftx >= this.spaceX) { ftx = this.spaceX - 1; }
+                  if(fty < 0) { fty = 0; }
+                  else if(fty >= this.spaceY) { fty = this.spaceY - 1; }
+                  a0 = fg.getPixel32(FOG_PAD + ftx * FOG_SUB
+                     + Math.floor((wx - ftx * Tile.tileX) / cs),
+                     FOG_PAD + fty * FOG_SUB
+                     + Math.floor((wy - fty * Tile.tileY) / cs)) >>> 24;
+                  if(a0 < MASK_LIT_A)
+                  {
+                     bd.setPixel32(scx,scy,0xFFFFFFFF);
+                  }
                }
-               if(lit > 0.0001)
+            }
+         }
+         else
+         {
+            var d2max:Number = this.locDist2 * this.locDist2;
+            for(scx = 0; scx < totx; scx++)
+            {
+               for(scy = 0; scy < toty; scy++)
                {
-                  bd.setPixel32(scx,scy,0xFFFFFFFF);
+                  var swx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
+                  var swy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
+                  var dddx:Number = swx - this.eyeX;
+                  var dddy:Number = swy - this.eyeY;
+                  var lit:Number = dddx * dddx + dddy * dddy <= d2max
+                     ? this.castRay(this.curLoc,this.eyeX,this.eyeY,swx,swy,
+                        Math.floor(swx / Tile.tileX),Math.floor(swy / Tile.tileY))
+                     : -1;
+                  if(lit < 0)
+                  {
+                     lit = this.fov[Math.floor(swx / Tile.tileX) + Math.floor(swy / Tile.tileY) * this.spaceX] != FOV_NONE ? 1 : 0;
+                  }
+                  if(lit > 0.0001)
+                  {
+                     bd.setPixel32(scx,scy,0xFFFFFFFF);
+                  }
                }
             }
          }
