@@ -9,10 +9,11 @@
 （未探索全黑 / 视野内亮 / 记忆区暗色隐藏敌人），含破坏墙、透光门、敌人部分
 可见裁剪、念力规则（隔墙抓物品可、抓敌人不可）、多渲染模式切换。
 
-## 1. 当前状态摘要（2026-08-17）
+## 1. 当前状态摘要（2026-08-17；**最新版本 v0.24.7，见 state/current-status.md**）
 
-- 版本 **v0.22**，`release/RealisticVisionMod.swf` 已部署（Loader 子域注入，
-  由补丁 MainFE 加载）。游戏本体文件**未改动**。
+- 历史版本基线 v0.22（本节为 8-17 快照；自 v0.24.1 起每次修复/优化均记录在
+  current-status.md 顶部），`release/RealisticVisionMod.swf` 已部署（Loader
+  子域注入，由补丁 MainFE 加载）。游戏本体文件**未改动**。
 - **污染排查结论（2026-08-18，对照桌面干净备份）**：游戏文件层零污染——
   Location/Tile/Grafon/World 反编译逐行零差异、Rooms 数据/资源/文本一致；
   pfe.swf 差异仅 6 mod 加载器合并（含新出现的 RandomRooms，只追加测试地形）。
