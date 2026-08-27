@@ -16,14 +16,16 @@
 
 ## 3. 当前状态
 
-- **v0.24.8**（2026-08-27）：① 修复 classic 30Hz 门控失效（frameCount 双递增奇偶 bug，D21）② autotest 埋点（config 键 `autotest`，默认关）③ 启动日志版本标记 ④ saveConfig 错误日志。**已经 8 轮真机自动化验证（含修复对半交替数据），待用户游戏内确认**。
+- **v0.24.9**（2026-08-27）：classic 墙内部对齐原版——墙并入雾层同公式（游戏 visi + memCur 记忆混合），恒黑墙层（v0.23-v0.24.1）退役。**冒烟通过（err=0、30Hz 无回归、classic 帧耗时再降 ~25%），待用户游戏内确认墙观感**。
+- v0.24.8（同日）：classic 30Hz 门控失效修复（frameCount 双递增，D21）+ autotest 埋点（`autotest` 配置键，默认关）——已 8 轮真机自动化验证。
 - 已定论：GPU 渲染不可行（renderMode 由 application.xml 决定；开销在 CPU 侧）。
 - 游戏本体文件未改动；release 回滚 = `build/release_backup_v0247.swf`（游戏 SWF 回滚 = 根目录 `pfe_1.02_before_rvision_merge_20260815.swf`）。
 - 工具链（本机实测可用）：flexsdk `D:\RemainsMod\mods\Sandevistan\build\tools\flexsdk`；java 用 `D:\Program Files\Adobe Animate 2024\jre`；ffdec 走 `java -jar ffdec.jar`（exe 启动器找不到该 JRE）。测试构建用 `build\build_test.bat`（产物不覆盖 release）。
 
 ## 4. 正在进行与卡点
 
-- v0.24.8 待用户游戏内确认（重点：classic 模式帧率与光环观感——门控修复后 classic 才真正享受 30Hz）。
+- **v0.24.9 classic 墙观感待用户实测**：亮区墙应显示纹理（原版统一光照）、记忆区墙随地板渐暗、厚墙内部/未探索墙保持黑；若墙面边界出现 ~20px 稀释亮带（v0.24.1 曾处理过），回插邻域协调值。
+- **v0.24.8 classic 30Hz 修复待用户实测**：classic 流畅度应明显改善（30Hz 此前从未生效）。
 - **saveConfig 在 adl64 测试实例写盘失败**（F11/F12 后 config.txt 不更新，catch 静默）：v0.24.8 已埋错误日志（"auto config write error"），下次任何会话按 F11/F12 即可从 RVision.log 拿到具体异常。用户正常游玩环境是否复现未知。
 - **跨模组待报告（RConnect 维护者）**：autoTravelLand 到达即死——hp=100 存活出发，random_mane/raiders 到达后 localPose=lbl=die fr=14 卡死（非 t_die 正常流程）；begin 地不传送则存活。另：newGame(0,...) 实为加载 0 号槽（fe/World.as:823），需配存档模板。
 
@@ -37,10 +39,11 @@
 
 ## 6. 下一步（用户游戏内验证清单，按序勾销）
 
-1. classic 模式帧率/光环比对（v0.24.8 门控修复后应明显更流畅——原 v0.24.7 的 30Hz 从未生效）；
-2. v0.24.7 原清单沿用：亮边与厚墙内部、念力宽限、部分可见（hpbar/武器同步裁剪）、门、暗区武器/手、营地无雾、F10/F11/config、帧率手感、与 Sandevistan/RConnect 兼容观感；
-3. 任意会话按一次 F11/F12 → 查 RVision.log "auto config write error" 定位写盘失败；
-4. 向 RConnect 维护者报告 autoTravelLand 到达即死问题。
+1. **v0.24.9 墙观感**：classic 亮区墙显示纹理、记忆区墙渐暗、厚墙/未探索墙保持黑；切换 current↔classic 无残留；
+2. **v0.24.8 classic 流畅度**（30Hz 修复后首次真 30Hz）；
+3. v0.24.7 原清单沿用：亮边与厚墙内部、念力宽限、部分可见（hpbar/武器同步裁剪）、门、暗区武器/手、营地无雾、F10/F11/config、帧率手感、与 Sandevistan/RConnect 兼容观感；
+4. 任意会话按一次 F11/F12 → 查 RVision.log "auto config write error" 定位写盘失败；
+5. 向 RConnect 维护者报告 autoTravelLand 到达即死问题。
 
 ## 7. 深入了解
 
