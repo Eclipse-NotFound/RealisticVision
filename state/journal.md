@@ -2,6 +2,12 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-08-27 v0.25.0：渲染模式切换注入哔哔小马选项页原生列表
+
+- 做了什么：哔哔小马 → 选项页现在可直接点击切换渲染模式。实现：DFS 在显示树中找原生选项行（`id` 文本=="fullscreen" 的锚点行，语言无关），`Object(row).constructor` 实例化同类行（原生 visPipOptItem，观感与原生一致），按 setStatItem(page2==3) 规则填充（nazv=「视野渲染模式」、numb=模式名，隐藏 check/scr/key），放到列表最后一条已填充行的下一格（y+30），点击循环 vanilla→classic→current（cycleMode 与 F12 共用，含 saveConfig+toast）。选项子卡检测：锚点行 id 文本变化即隐藏注入行（其他子卡不显示）。
+- 关键决定/发现：PipPage.arr/vis/itemClass 全 internal（密封类外部不可达）→ 无法走原生 arr 注入，改显示树锚点+构造器克隆；行不参与原生键盘导航（选项子卡 15 条<18 行无滚动，纯鼠标可接受）；注入失败 try/catch 静默降级（左下面板+F12 照常）。F12 分支重构为 cycleMode() 共用。
+- 遗留/下一步：**注入行待用户打开哔哔小马选项页目检**（本会话验证时前台焦点被用户活动持续抢占，GUI 点击验证中止——加载冒烟 err=0 通过）；若行位置/观感异常，回退 `git revert` 或改回纯面板方案。
+
 ## 2026-08-27 v0.24.9：classic 墙内部对齐原版——墙层退役，墙并入雾层同公式
 
 - 做了什么：排查确认原版墙无特判（lighting() 对所有瓦片统一算 t_visi，射线步数 int(Δ/40) 使终点墙自身 opac 不被扣减 → 可达墙面被点亮、lightBmp≈透明显纹理；错位 -20/-60 产生墙亮面马赛克）。实施：classic 雾层墙瓦片走地板同款公式（gameA=(1-visi)×255 + memCur 记忆混合，mem 条件去掉 opac<1）；删除恒黑墙层（wallRaw/wallBmp/wallKey）与第二遍邻域协调值（v0.23-v0.24.1 全链退役）；版本标记 v0.24.9。

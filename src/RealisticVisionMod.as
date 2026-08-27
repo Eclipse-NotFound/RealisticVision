@@ -3,6 +3,7 @@ package
    import flash.display.Bitmap;
    import flash.display.BitmapData;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    import flash.display.Shape;
    import flash.display.Sprite;
    import flash.display.Stage;
@@ -61,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.24.9";
+      private static const VERSION:String = "v0.25.0";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -215,6 +216,9 @@ package
       // 哔哔小马选项页的开关面板
       private var optPanel:Sprite = null;
       private var optTxt:TextField = null;
+      // v0.25.0：注入选项页原生列表的模式行（克隆 visPipOptItem 实例，点击循环模式）
+      private var optRow:Object = null;      // 注入的行实例
+      private var optRowAnchor:Object = null; // 锚点行（id=="fullscreen"）——子选项卡检测用
 
       public function RealisticVisionMod()
       {
@@ -415,17 +419,11 @@ package
          else if(e.keyCode == Keyboard.F12)
          {
             // 渲染模式轮换：vanilla（原版）→ classic（v0.7.2）→ current（当前）
-            this.cfgMode = this.cfgMode == "vanilla" ? "classic"
-               : (this.cfgMode == "classic" ? "current" : "vanilla");
-            this.saveConfig();
-            this.curLoc = null;
-            this.errCount = 0;
-            this.showToast();
-            trace("[RVision] mode=" + this.cfgMode);
             if(this.cfgAutoTest)
             {
-               this.fileLog("auto key F12 mode=" + this.cfgMode);
+               this.fileLog("auto key F12");
             }
+            this.cycleMode();
          }
          else if(e.keyCode == Keyboard.Q)
          {
@@ -2611,6 +2609,22 @@ package
 
       // ==================== 设置界面（哔哔小马选项页） ====================
 
+      /** 渲染模式轮换（F12 与选项页注入行共用）：vanilla → classic → current。 */
+      private function cycleMode():void
+      {
+         this.cfgMode = this.cfgMode == "vanilla" ? "classic"
+            : (this.cfgMode == "classic" ? "current" : "vanilla");
+         this.saveConfig();
+         this.curLoc = null;
+         this.errCount = 0;
+         this.showToast();
+         trace("[RVision] mode=" + this.cfgMode);
+         if(this.cfgAutoTest)
+         {
+            this.fileLog("auto mode -> " + this.cfgMode);
+         }
+      }
+
       /** 模式显示名。 */
       private function modeName():String
       {
@@ -2669,16 +2683,158 @@ package
             var txt:String = "RealisticVision 视野系统: " + (this.cfgEnabled ? "开启" : "关闭")
                + "  模式: " + this.modeName()
                + (this.cfgEnabled && !w.black ? "\n（游戏黑暗选项已关闭，模组暂不生效）" : "")
-               + "\nF11 开关 / F12 换模式";
+               + "\nF11 开关 / F12 或点击上方列表行换模式";
             if(this.optTxt.text != txt)
             {
                this.optTxt.text = txt;
             }
             this.optPanel.visible = true;
+            // v0.25.0：向选项页原生列表注入"视野渲染模式"行（点击循环）
+            this.ensureOptRow(w);
+            if(this.optRow != null)
+            {
+               // 锚点行 id=="fullscreen" 仅在系统选项子卡存在——其余子卡隐藏本行
+               var tab:Boolean = this.optRowAnchor != null
+                  && this.optRowAnchor.hasOwnProperty("parent")
+                  && this.optRowAnchor["parent"] != null
+                  && this.optRowAnchor["id"] is TextField
+                  && this.optRowAnchor["id"].text == "fullscreen";
+               this.optRow.visible = tab;
+               if(tab)
+               {
+                  var numTxt:String = this.modeName() + (this.cfgEnabled ? "" : "（停用）");
+                  if(this.optRow["numb"].text != numTxt)
+                  {
+                     this.optRow["numb"].text = numTxt;
+                  }
+               }
+            }
          }
          else if(this.optPanel != null && this.optPanel.visible)
          {
             this.optPanel.visible = false;
+            if(this.optRow != null)
+            {
+               this.optRow.visible = false;
+            }
+         }
+      }
+
+      /**
+       * v0.25.0：向哔哔小马选项页（PipPageOpt）的原生选项列表注入一行
+       * "视野渲染模式"，点击循环 vanilla → classic → current。
+       * 做法：DFS 找到原生行（id 文本 == "fullscreen"，选项子卡的锚点行），
+       * 用 Object(row).constructor 实例化同类行（原生 visPipOptItem，观感
+       * 与导航样式一致），按 setStatItem(page2==3) 的填充规则隐藏 check/scr/
+       * key 等子件，放到列表最后一条已填充行的下一格。任何失败静默降级
+       * （左下面板与 F12 仍可用）。行不参与原生键盘导航/滚动（选项子卡
+       * 15 条 < 18 行容量，无滚动），仅鼠标点击。
+       */
+      private function ensureOptRow(w:World):void
+      {
+         if(this.optRow != null && this.optRow["parent"] != null)
+         {
+            return;
+         }
+         try
+         {
+            var anchor:Object = this.findRowById(w.main,"fullscreen",0);
+            if(anchor == null)
+            {
+               return;
+            }
+            var host:DisplayObjectContainer = anchor["parent"] as DisplayObjectContainer;
+            if(host == null)
+            {
+               return;
+            }
+            var cls:Class = anchor["constructor"] as Class;
+            var row:Object = new cls();
+            // 填充规则照抄 PipPageOpt.setStatItem(page2==3) 的行初始化
+            row["id"].visible = false;
+            row["scr"].visible = false;
+            row["check"].visible = false;
+            row["key1"].visible = false;
+            row["key2"].visible = false;
+            row["ramka"].visible = false;
+            row["land"].text = "";
+            row["ggName"].text = "";
+            row["nazv"].text = "视野渲染模式";
+            row["numb"].text = this.modeName();
+            // 放到列表最后一条已填充行（id 文本非空）的下一格（行距 30）
+            var lastY:Number = anchor["y"];
+            var cnt:int = host.numChildren;
+            var ci:int;
+            for(ci = 0; ci < cnt; ci++)
+            {
+               var sib:DisplayObject = host.getChildAt(ci);
+               if(sib.hasOwnProperty("id") && sib.hasOwnProperty("nazv")
+                  && sib["id"] is TextField && sib["id"].text != "")
+               {
+                  if(sib["y"] > lastY)
+                  {
+                     lastY = sib["y"];
+                  }
+               }
+            }
+            row["x"] = anchor["x"];
+            row["y"] = lastY + 30;
+            row["buttonMode"] = true;
+            row.addEventListener(MouseEvent.CLICK,this.onOptRowClick);
+            host.addChild(row as DisplayObject);
+            this.optRow = row;
+            this.optRowAnchor = anchor;
+            this.fileLog("optRow injected y=" + row["y"]);
+         }
+         catch(err:Error)
+         {
+            this.fileLog("optRow inject failed: " + err);
+            this.optRow = null;
+            this.optRowAnchor = null;
+         }
+      }
+
+      /** 深度优先在显示树中找带 id 文本框且文本==idStr 的行（哔哔小马行是动态 MovieClip）。 */
+      private function findRowById(node:DisplayObject,idStr:String,depth:int):Object
+      {
+         if(node == null || depth > 10)
+         {
+            return null;
+         }
+         try
+         {
+            if(node.hasOwnProperty("id") && node.hasOwnProperty("nazv")
+               && node["id"] is TextField && node["id"].text == idStr && node.visible)
+            {
+               return node;
+            }
+         }
+         catch(err:Error)
+         {
+         }
+         if(node is DisplayObjectContainer)
+         {
+            var c:int = (node as DisplayObjectContainer).numChildren;
+            var i:int;
+            for(i = 0; i < c; i++)
+            {
+               var r:Object = this.findRowById((node as DisplayObjectContainer).getChildAt(i),idStr,depth + 1);
+               if(r != null)
+               {
+                  return r;
+               }
+            }
+         }
+         return null;
+      }
+
+      /** 点击注入行：循环渲染模式（行内文本随 updateOptPanel 刷新）。 */
+      private function onOptRowClick(e:MouseEvent):void
+      {
+         this.cycleMode();
+         if(this.optRow != null)
+         {
+            this.optRow["numb"].text = this.modeName() + (this.cfgEnabled ? "" : "（停用）");
          }
       }
 
