@@ -2,6 +2,12 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-08-27 v0.24.8：自动化真机验证五处优化，抓出并修复 classic 30Hz 门控失效
+
+- 做了什么：按用户选择走自动化验证路线。模组加 `autotest` 埋点（默认关）→ 8 轮 adl64 真机运行（RConnect autoGame/autoWalk 驱动、pferv1 隔离实例、begin 地不传送保存活）→ 日志断言。验证 v0.24.7 ①fov 节流（2.2-2.5×）②拆帧 ③30Hz 门控 ④武器扫描 ⑤classicRaw 掩膜 + 三模式性能基线 + F11/F12 注入 + 敌人三态/掩膜真机数据；发布 v0.24.8（30Hz 修复 + 埋点 + 版本标记行 + saveConfig 错误日志），冒烟通过。
+- 关键决定/发现：**classic 30Hz 门控自 v0.24.7 发布即失效**——debugStep() 遗留 frameCount++ 造成双递增、奇偶恒定（实测 cls=150/0），fov 兜底退化每 15 帧；修复=移除该 ++（D21，教训：共享计数器单一递增原则 + 门控要实测不要推理）。环境发现：AIR 后台窗口 FPS 趋零（8/18"newGame 卡地形"真相）；computer-use 可注入 F 键；RConnect autoTravelLand 到达即死（跨模组待报告）；saveConfig 测试实例写盘失败（已埋日志待定位）。全文见 knowledge/experiments/2026-08-27-autotest-verification.md。
+- 遗留/下一步：v0.24.8 待用户游戏内实测（重点 classic 流畅度）；saveConfig 写盘失败待定位；MEMORY §6 观感清单照旧；向 RConnect 报告 travel 死亡。
+
 ## 2026-08-27 外置记忆迁移
 
 - 由 state/current-status.md + state/HANDOFF.md 拆分迁移（原文在 git 历史）：现行状态 → state\MEMORY.md；架构参考（关键机制/配置/常用操作）→ design\architecture.md；v0.2→v0.24.7 共 52 个版本的完整流水整体迁入本文件下方历史块。

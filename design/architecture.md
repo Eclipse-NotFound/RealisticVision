@@ -53,16 +53,20 @@ telegrace=3     念力拖敌出视野宽限（秒）
 base_rooms=     额外安全基地房间 id（逗号分隔）
 maskblur_classic / maskblur_current   敌人掩膜模糊宽度（0=硬边回退）
 debug=0
+autotest=0      自动化验证埋点（默认关；开=每 300 帧 auto st 统计 + 事件日志，
+                见 knowledge/experiments/2026-08-27-autotest-verification.md）
 ```
 
 ## 常用操作
 
 ```bash
-# 构建
-cd mods/RealisticVision/build && bash build.sh
-# 验证产物仅含模组类（期望只输出 RealisticVisionMod）
-ffdec-cli -dumpAS3 release/RealisticVisionMod.swf
+# 构建（本机实测路径，2026-08-27：flexsdk 在 Sandevistan 仓库工具目录，java 用 Animate 自带 JRE）
+cd mods/RealisticVision/build && cmd //c build_test.bat   # 测试版 → build\RealisticVisionMod_test.swf
+# 或 bash build.sh（脚本内旧 SDK 路径需先改，产物直接覆盖 release\）
+# 验证产物仅含模组类（期望只输出 RealisticVisionMod；ffdec exe 启动器找不到 JRE，必须 java -jar）
+"/d/Program Files/Adobe Animate 2024/jre/bin/java.exe" -jar \
+  "/d/RemainsMod/mods/Sandevistan/build/tools/ffdec/ffdec.jar" -dumpAS3 <swf>
 # 检查线上 pfe.swf 加载器（其他开发者是否改过）
-ffdec-cli -selectclass MainFE -export script /tmp/x <游戏根>/pfe.swf
+java -jar <ffdec>/ffdec.jar -selectclass MainFE -export script /tmp/x <游戏根>/pfe.swf
 grep -oE "app:/mods/[A-Za-z]+/release/[A-Za-z]+Mod.swf" /tmp/x/scripts/MainFE.as
 ```

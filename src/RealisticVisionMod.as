@@ -60,6 +60,9 @@ package
       private var cfgBaseRooms:Object = {};
       private var cfgDebug:Boolean = false;
 
+      // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
+      private static const VERSION:String = "v0.24.8";
+
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
       private static const FOV_NONE:int = 0;
@@ -193,6 +196,28 @@ package
       private var toastTxt:TextField = null;
       private var toastFrames:int = 0;
 
+      // 自动化验证埋点（config autotest=1 启用；默认关，不影响正常游玩）。
+      // 每 300 帧输出一行窗口统计 autoStats()，事件（进房/念力抓放/F 键/
+      // 看门狗）即时输出——验证 v0.24.7 五处优化与 v0.24.6 修复的运行时证据
+      private var cfgAutoTest:Boolean = false;
+      private var atLastEmit:int = 0; // 上次统计输出的 frameCount（窗口差值触发）
+      private var atFovM:int = 0;    // fov 重算：moved 触发（过 3 帧节流）
+      private var atFovH:int = 0;    // fov 重算：结构哈希变化（墙破坏/门）
+      private var atFovF:int = 0;    // fov 重算：30 帧兜底
+      private var atMvThr:int = 0;   // moved 但被 3 帧节流跳过
+      private var atBlurD:int = 0;   // current：模糊+钳制拆帧（延迟到次帧）
+      private var atClsF:int = 0;    // classic：全图循环执行帧
+      private var atClsS:int = 0;    // classic：30Hz 门控跳过帧
+      private var atWsEx:int = 0;    // 武器扫描执行帧
+      private var atWsSk:int = 0;    // 武器扫描门控跳过帧
+      private var atMaskRaw:int = 0; // 掩膜 classicRaw 采样分支（零 raycast）
+      private var atMaskRay:int = 0; // 掩膜 raycast 兜底分支
+      private var atMsSum:int = 0;   // 窗口内模组帧耗时累计（ms）
+      private var atMsMax:int = 0;   // 窗口内模组帧耗时峰值（ms）
+      private var atE0:int = 0;      // 敌人三态计数（最近一帧快照：全隐）
+      private var atE1:int = 0;      // 全显
+      private var atE2:int = 0;      // 部分可见（挂掩膜）
+
       // 哔哔小马选项页的开关面板
       private var optPanel:Sprite = null;
       private var optTxt:TextField = null;
@@ -220,7 +245,7 @@ package
          stageRef.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
          stageRef.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN,this.onRightDown);
          trace("[RVision] init ok enabled=" + this.cfgEnabled);
-         this.fileLog("init ok enabled=" + this.cfgEnabled);
+         this.fileLog("init ok " + VERSION + " enabled=" + this.cfgEnabled);
       }
 
       /** 诊断文件日志：%APPDATA%/<appid>/Local Store/RVision.log（trace 被 release 剥离）。 */
@@ -313,6 +338,10 @@ package
                {
                   this.cfgDebug = val == "1";
                }
+               else if(key == "autotest")
+               {
+                  this.cfgAutoTest = val == "1";
+               }
                else if(key == "mode")
                {
                   if(val == "vanilla" || val == "classic" || val == "current")
@@ -350,13 +379,20 @@ package
                + "maskblur_current=" + this.cfgMaskBlurCurrent + "\n"
                + "telegrace=" + this.cfgTeleGrace + "\n"
                + "base_rooms=" + ids.join(",") + "\n"
-               + "debug=" + (this.cfgDebug ? "1" : "0") + "\n";
+               + "debug=" + (this.cfgDebug ? "1" : "0") + "\n"
+               + "autotest=" + (this.cfgAutoTest ? "1" : "0") + "\n";
             fs.writeUTFBytes(s);
             fs.close();
+            if(this.cfgAutoTest)
+            {
+               this.fileLog("auto config saved (enabled=" + this.cfgEnabled
+                  + " mode=" + this.cfgMode + ")");
+            }
          }
          catch(err:Error)
          {
             trace("[RVision] config write error: " + err);
+            this.fileLog("auto config write error: " + err + "\n" + err.getStackTrace());
          }
       }
 
@@ -377,6 +413,10 @@ package
             this.curLoc = null;
             this.errCount = 0;
             trace("[RVision] enabled=" + this.cfgEnabled);
+            if(this.cfgAutoTest)
+            {
+               this.fileLog("auto key F11 enabled=" + this.cfgEnabled);
+            }
          }
          else if(e.keyCode == Keyboard.F12)
          {
@@ -388,6 +428,10 @@ package
             this.errCount = 0;
             this.showToast();
             trace("[RVision] mode=" + this.cfgMode);
+            if(this.cfgAutoTest)
+            {
+               this.fileLog("auto key F12 mode=" + this.cfgMode);
+            }
          }
          else if(e.keyCode == Keyboard.Q)
          {
@@ -474,6 +518,20 @@ package
          {
             this.onFrameInner();
             this.lastFrameMs = getTimer() - t0;
+            if(this.cfgAutoTest)
+            {
+               this.atMsSum += this.lastFrameMs;
+               if(this.lastFrameMs > this.atMsMax)
+               {
+                  this.atMsMax = this.lastFrameMs;
+               }
+               // frameCount 被 debugStep 双递增（奇偶不稳），用窗口差值触发
+               if(this.frameCount - this.atLastEmit >= 300)
+               {
+                  this.atLastEmit = this.frameCount;
+                  this.autoStats();
+               }
+            }
             this.errCount = 0;
          }
          catch(err:Error)
@@ -483,6 +541,21 @@ package
             if(this.errCount == 1)
             {
                trace("[RVision] ERROR: " + err + "\n" + err.getStackTrace());
+               if(this.cfgAutoTest)
+               {
+                  this.fileLog("auto error #" + err + "\n" + err.getStackTrace());
+                  try
+                  {
+                     var w:World = World.w;
+                     if(w != null && w["verror"] != null)
+                     {
+                        this.fileLog("auto verror: " + w["verror"].txt.text);
+                     }
+                  }
+                  catch(e2:Error)
+                  {
+                  }
+               }
             }
             if(this.errCount > 30)
             {
@@ -491,10 +564,44 @@ package
                   this.cfgEnabled = false;
                   this.saveConfig();
                   trace("[RVision] auto-disabled after repeated errors");
+                  if(this.cfgAutoTest)
+                  {
+                     this.fileLog("auto watchdog disabled after " + this.errCount + " errors");
+                  }
                }
                this.errCount = 0;
             }
          }
+      }
+
+      /** 自动化验证：每 300 帧输出一行窗口统计并复位计数器（autotest=1）。 */
+      private function autoStats():void
+      {
+         this.fileLog("auto st f=" + this.frameCount
+            + " mode=" + this.cfgMode
+            + " fov=" + this.atFovM + "/" + this.atFovH + "/" + this.atFovF
+            + " mvThr=" + this.atMvThr
+            + " blurD=" + this.atBlurD
+            + " cls=" + this.atClsF + "/" + this.atClsS
+            + " ws=" + this.atWsEx + "/" + this.atWsSk
+            + " mask=" + this.atMaskRaw + "/" + this.atMaskRay
+            + " e=" + this.atE0 + "/" + this.atE1 + "/" + this.atE2
+            + " mgr=" + this.managedCount
+            + " ms=" + (this.atMsSum / 300).toFixed(2) + "/" + this.atMsMax
+            + " err=" + this.errCount);
+         this.atFovM = 0;
+         this.atFovH = 0;
+         this.atFovF = 0;
+         this.atMvThr = 0;
+         this.atBlurD = 0;
+         this.atClsF = 0;
+         this.atClsS = 0;
+         this.atWsEx = 0;
+         this.atWsSk = 0;
+         this.atMaskRaw = 0;
+         this.atMaskRay = 0;
+         this.atMsSum = 0;
+         this.atMsMax = 0;
       }
 
       private function onFrameInner():void
@@ -552,6 +659,21 @@ package
             || hash != this.lastStructHash || this.frameCount % 30 == 0;
          if(needFov)
          {
+            if(this.cfgAutoTest)
+            {
+               if(hash != this.lastStructHash)
+               {
+                  this.atFovH++;
+               }
+               else if(moved)
+               {
+                  this.atFovM++;
+               }
+               else
+               {
+                  this.atFovF++;
+               }
+            }
             this.lastFovFrame = this.frameCount;
             this.lastGX = gg.X;
             this.lastGY = gg.Y;
@@ -559,6 +681,10 @@ package
             this.computeFov(loc);
             this.fovVersion++;
             this.fogDirty = true;
+         }
+         else if(this.cfgAutoTest && moved)
+         {
+            this.atMvThr++;
          }
          if(this.cfgMode == "classic")
          {
@@ -706,6 +832,13 @@ package
          this.lastGX = -99999;
          this.lastGY = -99999;
          trace("[RVision] room " + loc.id + " " + this.spaceX + "x" + this.spaceY + " lDist2=" + loc.lDist2 + " mode=" + this.cfgMode);
+         if(this.cfgAutoTest)
+         {
+            this.fileLog("auto room id=" + loc.id + " " + this.spaceX + "x" + this.spaceY
+               + " base=" + (loc.base || this.cfgBaseRooms[loc.id] == true)
+               + " black=" + w.black + " mode=" + this.cfgMode
+               + " enabled=" + this.cfgEnabled);
+         }
       }
 
       /** 自建软雾层：低分辨率子格 + 模糊，插在 visLight 之后同一层级。
@@ -1234,6 +1367,10 @@ package
          {
             this.fillFogCache(loc);
             this.fogBlurPending = true;
+            if(this.cfgAutoTest)
+            {
+               this.atBlurD++;
+            }
             fieldFresh = true;
          }
          var changed:Boolean = false;
@@ -1672,7 +1809,15 @@ package
          // 30Hz 采样不可察觉；memCur 渐变速率随之减半，同样不可察觉
          if((this.frameCount & 1) != 0 && !needFov)
          {
+            if(this.cfgAutoTest)
+            {
+               this.atClsS++;
+            }
             return;
+         }
+         if(this.cfgAutoTest)
+         {
+            this.atClsF++;
          }
          this.ensureFog(w);
          if(this.classicRaw == null)
@@ -2105,6 +2250,10 @@ package
             // v0.24.7（classic）：采样雾层 classicRaw（1px/瓦片，瓦片级缓存
             // 复用）——零 raycast；掩膜与 classic 雾层**瓦片级对齐**（门景/
             // 衰减环/记忆区/墙协调值，阈值同为 MASK_LIT_A=140）
+            if(this.cfgAutoTest)
+            {
+               this.atMaskRaw++;
+            }
             var lTx:int = -1;
             var lTy:int = -1;
             var lA:int = 255;
@@ -2135,6 +2284,10 @@ package
          }
          else
          {
+            if(this.cfgAutoTest)
+            {
+               this.atMaskRay++;
+            }
             var d2max:Number = this.locDist2 * this.locDist2;
             for(scx = 0; scx < totx; scx++)
             {
@@ -2294,6 +2447,12 @@ package
          var exempt:Dictionary = new Dictionary(true);
          var units:Array = loc.units;
          var k:int;
+         if(this.cfgAutoTest)
+         {
+            this.atE0 = 0;
+            this.atE1 = 0;
+            this.atE2 = 0;
+         }
          if(units != null)
          {
             for(k = 0; k < units.length; k++)
@@ -2313,6 +2472,21 @@ package
                   continue;
                }
                var st:int = this.enemyState(loc,u);
+               if(this.cfgAutoTest)
+               {
+                  if(st == 0)
+                  {
+                     this.atE0++;
+                  }
+                  else if(st == 1)
+                  {
+                     this.atE1++;
+                  }
+                  else
+                  {
+                     this.atE2++;
+                  }
+               }
                if(u.sost == 4)
                {
                   this.clearMask(u);
@@ -2354,6 +2528,10 @@ package
          // 武器状态滞后 ≤3 帧 ≈50ms，不可察觉；省去每帧遍历整条对象链）
          if(needFov || this.frameCount % 3 == 0)
          {
+            if(this.cfgAutoTest)
+            {
+               this.atWsEx++;
+            }
             var obj:Pt = loc.firstObj;
             var guard:int = 0;
             while(obj != null && guard < 5000)
@@ -2406,6 +2584,10 @@ package
                obj = obj.nobj;
                guard++;
             }
+         }
+         else if(this.cfgAutoTest)
+         {
+            this.atWsSk++;
          }
          // 显示树扫描：隐藏未被识别的子对象（狮鹫手臂等）；无全隐敌人时提前退出
          if((needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
@@ -2498,6 +2680,11 @@ package
          {
             this.teleLast = t;
             this.teleGraceFrames = 0;
+            if(this.cfgAutoTest)
+            {
+               this.fileLog("auto tele grab id=" + (t as Unit).id
+                  + " st=" + this.enemyState(loc,t as Unit));
+            }
          }
          var u:Unit = t as Unit;
          if(u.fraction == Unit.F_PLAYER)
@@ -2515,11 +2702,21 @@ package
             if(this.teleGraceFrames >= max)
             {
                this.teleGraceFrames = 0;
+               if(this.cfgAutoTest)
+               {
+                  this.fileLog("auto tele expire id=" + u.id
+                     + " after " + max + "f -> dropTeleObj");
+               }
                gg.dropTeleObj();
             }
          }
          else
          {
+            if(this.cfgAutoTest && this.teleGraceFrames > 0)
+            {
+               this.fileLog("auto tele release id=" + u.id
+                  + " graceFrames=" + this.teleGraceFrames);
+            }
             this.teleGraceFrames = 0;
          }
       }
@@ -2631,7 +2828,11 @@ package
 
       private function debugStep(w:World, loc:Location, normal:Boolean):void
       {
-         this.frameCount++;
+         // v0.24.8：移除本函数原有的 frameCount++（与 onFrame 的 ++ 形成双
+         // 递增）——双递增使 frameCount 每渲染帧 +2、奇偶恒定，classic 的
+         // 30Hz 门控（fc&1）因此恒全开或恒全关（自动化验证实测 cls=150/0，
+         // 优化失效），fov 30 帧兜底退化为每 15 帧。移除后各 %N 门槛恢复
+         // 设计语义（门控真 30Hz、兜底真 30 帧、tick 真 3 秒）
          // 模式切换提示（3 秒）
          if(this.toastFrames > 0)
          {

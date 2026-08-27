@@ -9,5 +9,6 @@ package fe
       public var prior:Number;
       public var massa:Number;
       public var levitPoss:Boolean;
+      public var id:String;
    }
 }
