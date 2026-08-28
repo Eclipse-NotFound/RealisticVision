@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.2";
+      private static const VERSION:String = "v0.25.3";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1931,7 +1931,19 @@ package
                         ssum += this.aArr[(tx + 1) + ty * this.spaceX];
                         scnt++;
                      }
-                     var awall:int = scnt > 0 ? Math.round(ssum / scnt) : this.aArr[wi];
+                     // ① 雾层墙像素：邻域协调值（4 邻非墙 aArr 平均，越界跳过）。
+                     // 房间边界墙例外（v0.25.3）：外侧无"墙外世界"，SE 半格
+                     // 露出协调值会把内侧地板亮度带到屏幕边缘（实测下/左亮带）
+                     // → 边界墙直接用自身值（亮墙整面亮、暗墙整面黑）
+                     var awall:int;
+                     if(tx == 0 || ty == 0 || tx == this.spaceX - 1 || ty == this.spaceY - 1)
+                     {
+                        awall = this.aArr[wi];
+                     }
+                     else
+                     {
+                        awall = scnt > 0 ? Math.round(ssum / scnt) : this.aArr[wi];
+                     }
                      if(awall != this.lastA[wi])
                      {
                         this.lastA[wi] = awall;
