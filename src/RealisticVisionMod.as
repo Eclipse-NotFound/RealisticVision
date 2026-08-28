@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.3";
+      private static const VERSION:String = "v0.25.4";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -141,11 +141,11 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
-      // 墙专用层（v0.25.2）：2px/瓦片、**整层位移 (-tileX/2,-tileY/2)**——每墙
-      // 写自身公式值单值，值块落在原版墙像素的屏上位置（NW 半格 + 上/左溢出
-      // 20px），墙 SE 半格露出雾层邻域协调值（≈邻地板亮度）→ 阴影 50% 线在
-      // 瓦片中线（对齐原版）且保持 v0.25.0 的单值干净观感。v0.25.1 的四分格
-      // 象限采样产生 20px 拼块（用户实测"脏"）废弃
+      // 墙专用层（v0.25.4）：2px/瓦片、整层位移 (-tileX/2,-tileY/2)——每墙
+      // 只写 (2x+1,2y+1) 一格自身公式值，该格在位移下恰好精确覆盖整瓦片、
+      // 零溢出。v0.25.2/3 的 4 格写法有 W/N 溢出格（墙值画进邻地板 20px =
+      // 边缘亮带/脏迹）；v0.25.1 的四分格象限采样发脏。雾层墙像素=协调值
+      // 只服务地板侧平滑，墙的屏上显示完全由本层承担
       private var wallRaw:BitmapData = null;
       private var wallBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
@@ -921,8 +921,8 @@ package
             this.classicBmp.x = 0;
             this.classicBmp.y = 0;
             this.fogVis.addChild(this.classicBmp);
-            // 墙专用层（v0.25.2）：2px/瓦片、整层位移半格——自身值块落在
-            // 原版墙像素的屏上位置（见字段注释）
+            // 墙专用层（v0.25.4）：2px/瓦片、整层位移半格——每墙只写
+            // (2x+1,2y+1) 单格（恰好覆盖整瓦片，见字段注释）
             var ww:int = this.spaceX * 2;
             var wh:int = this.spaceY * 2;
             if(this.wallRaw == null || this.wallRaw.width != ww || this.wallRaw.height != wh)
@@ -1931,19 +1931,9 @@ package
                         ssum += this.aArr[(tx + 1) + ty * this.spaceX];
                         scnt++;
                      }
-                     // ① 雾层墙像素：邻域协调值（4 邻非墙 aArr 平均，越界跳过）。
-                     // 房间边界墙例外（v0.25.3）：外侧无"墙外世界"，SE 半格
-                     // 露出协调值会把内侧地板亮度带到屏幕边缘（实测下/左亮带）
-                     // → 边界墙直接用自身值（亮墙整面亮、暗墙整面黑）
-                     var awall:int;
-                     if(tx == 0 || ty == 0 || tx == this.spaceX - 1 || ty == this.spaceY - 1)
-                     {
-                        awall = this.aArr[wi];
-                     }
-                     else
-                     {
-                        awall = scnt > 0 ? Math.round(ssum / scnt) : this.aArr[wi];
-                     }
+                     // ① 雾层墙像素：邻域协调值（4 邻非墙 aArr 平均，越界跳过；
+                     // 全墙邻兜底=自身值）——全部墙统一，地板侧无稀释无亮带
+                     var awall:int = scnt > 0 ? Math.round(ssum / scnt) : this.aArr[wi];
                      if(awall != this.lastA[wi])
                      {
                         this.lastA[wi] = awall;
@@ -1962,13 +1952,12 @@ package
                   if(key != this.wallKey[wi])
                   {
                      this.wallKey[wi] = key;
-                     var px2:int = tx * 2;
-                     var py2:int = ty * 2;
-                     var wv:int = key << 24;
-                     this.wallRaw.setPixel32(px2,py2,wv);
-                     this.wallRaw.setPixel32(px2 + 1,py2,wv);
-                     this.wallRaw.setPixel32(px2,py2 + 1,wv);
-                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,wv);
+                     // v0.25.4：只写 (2tx+1,2ty+1) 一格——层位移 (-20,-20) 下
+                     // 该格恰好精确覆盖整块墙瓦片、零溢出；v0.25.2/3 的 4 格
+                     // 写法含 (2tx,·)/(·,2ty) 的 W/N 溢出格，把墙自身值画进
+                     // 邻地板 20px = 屏幕边缘亮带与墙旁脏迹的来源（离线像素
+                     // 模拟 rv0253-wall-smudge-sim2.py 四版对比确认）
+                     this.wallRaw.setPixel32(2 * tx + 1, 2 * ty + 1, key << 24);
                   }
                }
             }
