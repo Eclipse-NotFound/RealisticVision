@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.1";
+      private static const VERSION:String = "v0.25.2";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -141,16 +141,16 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
-      // 墙专用层（v0.25.1 复活，v0.24.9 曾退役）：2px/瓦片无错位，四分格 =
-      // 原版"半格错位马赛克"的瓦片对齐呈现（TL=自身/TR=东/BL=南/BR=东南的
-      // 公式值）——墙内阴影位置与原版一致。v0.24.9 的教训：墙在瓦片对齐
-      // 雾层里显示自身单一值，墙内阴影边界落在瓦片边缘，与原版错位马赛克
-      // （边界在瓦片中线）差半格 = 用户实测"墙内阴影明显偏移"
+      // 墙专用层（v0.25.2）：2px/瓦片、**整层位移 (-tileX/2,-tileY/2)**——每墙
+      // 写自身公式值单值，值块落在原版墙像素的屏上位置（NW 半格 + 上/左溢出
+      // 20px），墙 SE 半格露出雾层邻域协调值（≈邻地板亮度）→ 阴影 50% 线在
+      // 瓦片中线（对齐原版）且保持 v0.25.0 的单值干净观感。v0.25.1 的四分格
+      // 象限采样产生 20px 拼块（用户实测"脏"）废弃
       private var wallRaw:BitmapData = null;
       private var wallBmp:Bitmap = null;
       private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
-      private var aArr:Array = null;    // 每瓦片本帧公式值（墙四分格采样源）
-      private var wallKey:Array = null; // 墙层每瓦片 4 字节 key（变化才写像素）
+      private var aArr:Array = null;    // 每瓦片本帧公式值（墙层单值采样源）
+      private var wallKey:Array = null; // 墙层每瓦片 key（变化才写像素）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
@@ -921,8 +921,8 @@ package
             this.classicBmp.x = 0;
             this.classicBmp.y = 0;
             this.fogVis.addChild(this.classicBmp);
-            // 墙专用层（v0.25.1）：2px/瓦片、无错位——四分格呈现原版错位
-            // 马赛克（见字段注释）；smoothing 双线性 → 象限间平滑过渡
+            // 墙专用层（v0.25.2）：2px/瓦片、整层位移半格——自身值块落在
+            // 原版墙像素的屏上位置（见字段注释）
             var ww:int = this.spaceX * 2;
             var wh:int = this.spaceY * 2;
             if(this.wallRaw == null || this.wallRaw.width != ww || this.wallRaw.height != wh)
@@ -938,8 +938,8 @@ package
                this.wallRaw = new BitmapData(ww,wh,true,0); // 透明初始（不遮挡雾层）
                this.wallBmp = new Bitmap(this.wallRaw,"auto",true);
                this.wallBmp.scaleX = this.wallBmp.scaleY = Tile.tileX / 2;
-               this.wallBmp.x = 0;
-               this.wallBmp.y = 0;
+               this.wallBmp.x = -Tile.tileX / 2;
+               this.wallBmp.y = -Tile.tileY / 2;
                this.fogVis.addChild(this.wallBmp);   // classicBmp 之上
             }
             this.lastA = null;
@@ -1893,9 +1893,9 @@ package
                }
             }
          }
-         // 第二遍（v0.25.1）：① 雾层墙像素=邻域协调值（v0.24.1，4 邻非墙
-         // aArr 平均——邻瓦靠墙处保持其遮罩值，无稀释）；② 墙专用层四分格
-         // 写入（wallKey 门控——站立零写）
+         // 第二遍（v0.25.2）：① 雾层墙像素=邻域协调值（4 邻非墙 aArr 平均
+         // ——邻瓦靠墙处保持其遮罩值，无稀释；全墙邻兜底=自身值）；
+         // ② 墙专用层写自身公式值单值（层位移半格，wallKey 门控——站立零写）
          if(this.wallRaw != null)
          {
             this.wallRaw.lock();
@@ -1937,15 +1937,11 @@ package
                         this.lastA[wi] = awall;
                         this.classicRaw.setPixel32(tx,ty,awall << 24);
                      }
-                     // ② 墙层四分格 = 原版错位马赛克：TL=自身/TR=东/BL=南/
-                     // BR=东南 的公式值（含墙邻——取其公式值，与原版采样位图
-                     // 一致）；越界=255。黑 RGB + alpha=值（0=透明）
-                     var nE:int = tx + 1 < this.spaceX ? this.aArr[(tx + 1) + ty * this.spaceX] : 255;
-                     var nS:int = ty + 1 < this.spaceY ? this.aArr[tx + (ty + 1) * this.spaceX] : 255;
-                     var nSE:int = tx + 1 < this.spaceX && ty + 1 < this.spaceY
-                        ? this.aArr[(tx + 1) + (ty + 1) * this.spaceX] : 255;
-                     key = (this.aArr[wi] & 0xFF) | ((nE & 0xFF) << 8)
-                        | ((nS & 0xFF) << 16) | ((nSE & 0xFF) << 24);
+                     // ② 墙层：写自身公式值单值（4 子格同值）。层位移半格后
+                     // 值块覆盖墙 NW 半格，墙 SE 半格露出雾层协调值（≈邻域
+                     // 地板亮度）——阴影 50% 线落在瓦片中线（原版位置），
+                     // 单值干净无拼块
+                     key = this.aArr[wi] & 0xFF;
                   }
                   else
                   {
@@ -1956,10 +1952,11 @@ package
                      this.wallKey[wi] = key;
                      var px2:int = tx * 2;
                      var py2:int = ty * 2;
-                     this.wallRaw.setPixel32(px2,py2,(key & 0xFF) << 24);
-                     this.wallRaw.setPixel32(px2 + 1,py2,((key >> 8) & 0xFF) << 24);
-                     this.wallRaw.setPixel32(px2,py2 + 1,((key >> 16) & 0xFF) << 24);
-                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,((key >>> 24) & 0xFF) << 24);
+                     var wv:int = key << 24;
+                     this.wallRaw.setPixel32(px2,py2,wv);
+                     this.wallRaw.setPixel32(px2 + 1,py2,wv);
+                     this.wallRaw.setPixel32(px2,py2 + 1,wv);
+                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,wv);
                   }
                }
             }
