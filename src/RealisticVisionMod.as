@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.0";
+      private static const VERSION:String = "v0.25.1";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -141,9 +141,16 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
-      // v0.24.9：墙专用层（wallRaw/wallBmp/wallKey/aArr，v0.23-v0.24.1）退役——
-      // 墙并入雾层同公式渲染，对齐原版统一光照（历史演变见 journal v0.23-v0.24.9）
-      private var lastA:Array = null;   // 每瓦片上次写入的 alpha（变化才写像素）
+      // 墙专用层（v0.25.1 复活，v0.24.9 曾退役）：2px/瓦片无错位，四分格 =
+      // 原版"半格错位马赛克"的瓦片对齐呈现（TL=自身/TR=东/BL=南/BR=东南的
+      // 公式值）——墙内阴影位置与原版一致。v0.24.9 的教训：墙在瓦片对齐
+      // 雾层里显示自身单一值，墙内阴影边界落在瓦片边缘，与原版错位马赛克
+      // （边界在瓦片中线）差半格 = 用户实测"墙内阴影明显偏移"
+      private var wallRaw:BitmapData = null;
+      private var wallBmp:Bitmap = null;
+      private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
+      private var aArr:Array = null;    // 每瓦片本帧公式值（墙四分格采样源）
+      private var wallKey:Array = null; // 墙层每瓦片 4 字节 key（变化才写像素）
       private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
@@ -914,8 +921,27 @@ package
             this.classicBmp.x = 0;
             this.classicBmp.y = 0;
             this.fogVis.addChild(this.classicBmp);
-            // v0.24.9：墙专用层（v0.23 恒黑墙层）退役——墙并入雾层同公式
-            // 渲染（对齐原版统一光照，见 applyVisionClassic 内注释）
+            // 墙专用层（v0.25.1）：2px/瓦片、无错位——四分格呈现原版错位
+            // 马赛克（见字段注释）；smoothing 双线性 → 象限间平滑过渡
+            var ww:int = this.spaceX * 2;
+            var wh:int = this.spaceY * 2;
+            if(this.wallRaw == null || this.wallRaw.width != ww || this.wallRaw.height != wh)
+            {
+               if(this.wallRaw != null)
+               {
+                  this.wallRaw.dispose();
+               }
+               if(this.wallBmp != null && this.wallBmp.parent)
+               {
+                  this.wallBmp.parent.removeChild(this.wallBmp);
+               }
+               this.wallRaw = new BitmapData(ww,wh,true,0); // 透明初始（不遮挡雾层）
+               this.wallBmp = new Bitmap(this.wallRaw,"auto",true);
+               this.wallBmp.scaleX = this.wallBmp.scaleY = Tile.tileX / 2;
+               this.wallBmp.x = 0;
+               this.wallBmp.y = 0;
+               this.fogVis.addChild(this.wallBmp);   // classicBmp 之上
+            }
             this.lastA = null;
          }
          if(this.lastA == null || this.lastA.length != this.spaceX * this.spaceY)
@@ -923,14 +949,17 @@ package
             var nk:int = this.spaceX * this.spaceY;
             this.lastA = new Array(nk);
             this.memCur = new Array(nk);
+            this.aArr = new Array(nk);
+            this.wallKey = new Array(nk);
             var k:int;
             for(k = 0; k < nk; k++)
             {
                this.lastA[k] = -1;
                this.memCur[k] = 0;
+               this.wallKey[k] = -1;   // 强制首帧全部写入
             }
          }
-         // 模式可见性互斥：classic 显示 1px 雾层，current 显示 8×8 雾层
+         // 模式可见性互斥：classic 显示 1px 雾层 + 墙层，current 显示 8×8 雾层
          var classicMode:Boolean = this.cfgMode == "classic";
          if(this.fogBitmap != null)
          {
@@ -939,6 +968,10 @@ package
          if(this.classicBmp != null)
          {
             this.classicBmp.visible = classicMode;
+         }
+         if(this.wallBmp != null)
+         {
+            this.wallBmp.visible = classicMode;
          }
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
@@ -1841,20 +1874,97 @@ package
                }
                this.memCur[i] = cur;
                // v0.24.9：墙与地板同公式——原版 lighting() 对墙无特判：
-               // 射线终点（墙瓦片）自身 opac 不被扣减（步数 int(Δ/40) 到
-               // 不了终点），可达墙面 t_visi≈1 → lightBmp 像素≈透明，墙
-               // 纹理显示；被挡/厚墙内部射线不通保持黑。恒黑墙层（v0.23.2）
-               // 与邻域协调值（v0.24.1）退役——两者针对的"暗墙值经半格错位
-               // 溢出到亮区"前提已随 v0.23.3 去错位消失。记忆区墙随地板
-               // 一起渐暗到 dimA（mem 不再排除墙）；未探索墙 visi=0 保持黑
+               // 射线终点（墙瓦片）自身 opac 不被扣减，可达墙面 t_visi≈1，
+               // 未探索墙 visi=0 保持黑。mem 记忆混合不再排除墙
+               // v0.25.1：墙的 classicRaw 写入延后到第二遍（邻域协调值，防
+               // 地板侧 smoothing 稀释）；墙的屏上显示由墙专用层四分格呈现
+               // （原版错位马赛克，见字段注释）
                var memT:int = gameA < dimA ? dimA : gameA;
                var a:int = Math.round(gameA + cur * (memT - gameA));
-               if(a != this.lastA[i])
+               this.aArr[i] = a;
+               if(t.opac >= 1)
+               {
+                  this.lastA[i] = a;   // 占位，第二遍协调值不同会重写
+               }
+               else if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
                   this.classicRaw.setPixel32(tx,ty,a << 24);
                }
             }
+         }
+         // 第二遍（v0.25.1）：① 雾层墙像素=邻域协调值（v0.24.1，4 邻非墙
+         // aArr 平均——邻瓦靠墙处保持其遮罩值，无稀释）；② 墙专用层四分格
+         // 写入（wallKey 门控——站立零写）
+         if(this.wallRaw != null)
+         {
+            this.wallRaw.lock();
+            this.classicRaw.lock();
+            for(ty = 0; ty < this.spaceY; ty++)
+            {
+               for(tx = 0; tx < this.spaceX; tx++)
+               {
+                  var wi:int = tx + ty * this.spaceX;
+                  var key:int;
+                  if(loc.getTile(tx,ty).opac >= 1)
+                  {
+                     // ① 雾层墙像素：邻域协调值（4 邻非墙 aArr 平均，越界跳过）
+                     var ssum:int = 0;
+                     var scnt:int = 0;
+                     if(ty > 0 && loc.getTile(tx,ty - 1).opac < 1)
+                     {
+                        ssum += this.aArr[tx + (ty - 1) * this.spaceX];
+                        scnt++;
+                     }
+                     if(ty + 1 < this.spaceY && loc.getTile(tx,ty + 1).opac < 1)
+                     {
+                        ssum += this.aArr[tx + (ty + 1) * this.spaceX];
+                        scnt++;
+                     }
+                     if(tx > 0 && loc.getTile(tx - 1,ty).opac < 1)
+                     {
+                        ssum += this.aArr[(tx - 1) + ty * this.spaceX];
+                        scnt++;
+                     }
+                     if(tx + 1 < this.spaceX && loc.getTile(tx + 1,ty).opac < 1)
+                     {
+                        ssum += this.aArr[(tx + 1) + ty * this.spaceX];
+                        scnt++;
+                     }
+                     var awall:int = scnt > 0 ? Math.round(ssum / scnt) : this.aArr[wi];
+                     if(awall != this.lastA[wi])
+                     {
+                        this.lastA[wi] = awall;
+                        this.classicRaw.setPixel32(tx,ty,awall << 24);
+                     }
+                     // ② 墙层四分格 = 原版错位马赛克：TL=自身/TR=东/BL=南/
+                     // BR=东南 的公式值（含墙邻——取其公式值，与原版采样位图
+                     // 一致）；越界=255。黑 RGB + alpha=值（0=透明）
+                     var nE:int = tx + 1 < this.spaceX ? this.aArr[(tx + 1) + ty * this.spaceX] : 255;
+                     var nS:int = ty + 1 < this.spaceY ? this.aArr[tx + (ty + 1) * this.spaceX] : 255;
+                     var nSE:int = tx + 1 < this.spaceX && ty + 1 < this.spaceY
+                        ? this.aArr[(tx + 1) + (ty + 1) * this.spaceX] : 255;
+                     key = (this.aArr[wi] & 0xFF) | ((nE & 0xFF) << 8)
+                        | ((nS & 0xFF) << 16) | ((nSE & 0xFF) << 24);
+                  }
+                  else
+                  {
+                     key = 0;   // 墙层透明（不遮挡雾层）
+                  }
+                  if(key != this.wallKey[wi])
+                  {
+                     this.wallKey[wi] = key;
+                     var px2:int = tx * 2;
+                     var py2:int = ty * 2;
+                     this.wallRaw.setPixel32(px2,py2,(key & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2,((key >> 8) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2,py2 + 1,((key >> 16) & 0xFF) << 24);
+                     this.wallRaw.setPixel32(px2 + 1,py2 + 1,((key >>> 24) & 0xFF) << 24);
+                  }
+               }
+            }
+            this.classicRaw.unlock();
+            this.wallRaw.unlock();
          }
       }
 
