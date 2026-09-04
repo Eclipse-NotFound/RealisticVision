@@ -14,3 +14,6 @@ release/RealisticVisionMod.swf
 build/RealisticVisionMod_test.swf
 build/*backup*.swf
 build/config_backup.txt
+
+# Python 分析工具缓存
+__pycache__/
