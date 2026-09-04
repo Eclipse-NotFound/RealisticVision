@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.7";
+      private static const VERSION:String = "v0.25.6";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1242,12 +1242,7 @@ package
                      {
                         this.fov[j2] = FOV_VISIBLE;
                         this.explored[j2] = 1;
-                        // v0.25.7：受光墙 br=亮值（借用光照场距离衰减）——
-                        // 上排墙的 BL/BR 象限读南邻（受光墙）的 br，亮值才能
-                        // 画出"上暗下亮"；v0.25.6 置 0 导致整墙取记忆暗色
-                        var fwx:Number = (tx + 0.5) * Tile.tileX - ex;
-                        var fwy:Number = (ty + 0.5) * Tile.tileY - ey;
-                        this.br[j2] = this.distFalloff(fwx * fwx + fwy * fwy);
+                        this.br[j2] = 0;       // 自身象限保持暗（原版上排墙 own=暗）
                         this.litArr[j2] = 2;   // 墙面受光标记（不链式）
                         break;
                      }
@@ -1736,14 +1731,7 @@ package
                {
                   var ni:int = nx + ny * this.spaceX;
                   var nf:int = this.fov[ni];
-                  if(nx == tx && ny == ty && this.litArr[ni] == 2)
-                  {
-                     // v0.25.7：受光墙的自身象限（TL）保持黑——原版上排墙自身
-                     // visi=0（射线被下排墙挡），亮的是下半（南邻拉光）；
-                     // 其余象限照常读邻（受光墙 br=亮值）→"上暗下亮"半影
-                     a = 255;
-                  }
-                  else if(nf != FOV_NONE)
+                  if(nf != FOV_NONE)
                   {
                      var b:Number = this.br[ni];
                      if(b < dimF)
@@ -1986,12 +1974,11 @@ package
                         this.lastA[wi] = awall;
                         this.classicRaw.setPixel32(tx,ty,awall << 24);
                      }
-                     // ② 墙层：写自身公式值单值（v0.25.7 改回——v0.25.6 的
-                     // 协调值让墙面蒙上邻地板记忆灰（用户实测灰蒙蒙/明暗条
-                     // 带跟随地板）。原版墙面显示的是墙自身 visi 场的错位
-                     // 马赛克（墙与墙之间拉光），不是邻地板亮度；记忆语义
-                     // 由 v0.25.5 的统一 dimA 承担。4 子格同值，层位移半格
-                     key = this.aArr[wi] & 0xFF;
+                     // ② 墙层：写协调值单值（v0.25.6 改——原写自身公式值，
+                     // 墙自身 visi 沿走向忽明忽暗 = 墙内斑驳且与前方地板脱节；
+                     // 协调值=邻域地板均亮，墙面亮度跟随地板（原版错位马赛克
+                     // 的主导观感）。4 子格同值，层位移半格恰好覆盖整瓦片
+                     key = awall & 0xFF;
                   }
                   else
                   {
