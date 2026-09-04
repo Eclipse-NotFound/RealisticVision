@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.26.0";
+      private static const VERSION:String = "v0.25.8";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1847,15 +1847,25 @@ package
                }
                this.memCur[i] = cur;
                // v0.24.9：墙与地板同公式——原版 lighting() 对墙无特判：
-               // 射线终点（墙瓦片）自身 opac 不被扣减，可达墙面 t_visi≈1，
-               // 未探索墙 visi=0 保持黑。mem 记忆混合不再排除墙
-               // v0.25.5：记忆目标统一 dimA（对齐 current 的 fillMemoryTile
-               // 语义：已探索=统一记忆暗色）。
+               // 射线终点（墙瓦片）自身 opac 不被扣减，可达墙面 t_visi≈1
+               // v0.25.5：地板记忆目标统一 dimA（对齐 current fillMemoryTile）
                // v0.26.0：全瓦片（含墙）直写 (tx, ty+1) 行——恢复原版位移
                // 显示后，游戏 visi 场经位移马赛克自然产生墙亮面/黑芯/渐变
                // （原版基准剖面实测：4 瓦片墙 = 亮/黑/黑/亮 + 40px 线性坡），
                // 墙层与协调值全部退役
-               var memT:int = this.explored[i] == 1 ? dimA : 255;
+               // v0.25.8：墙不参与记忆调暗——原版墙 visi 常亮不衰减，记忆区
+               // 墙面保持最后受光状态（亮墙恒亮、从未受光的墙恒黑）；记忆
+               // 暗色仅用于地板（模组特性）。否则已探索但背光的墙会被提亮
+               // 成灰（用户实测：角色在厚墙上方时墙内出现灰雾爬升）
+               var memT:int;
+               if(t.opac >= 1)
+               {
+                  memT = gameA;
+               }
+               else
+               {
+                  memT = this.explored[i] == 1 ? dimA : 255;
+               }
                var a:int = Math.round(gameA + cur * (memT - gameA));
                if(a != this.lastA[i])
                {
