@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.4";
+      private static const VERSION:String = "v0.25.5";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1876,10 +1876,11 @@ package
                // v0.24.9：墙与地板同公式——原版 lighting() 对墙无特判：
                // 射线终点（墙瓦片）自身 opac 不被扣减，可达墙面 t_visi≈1，
                // 未探索墙 visi=0 保持黑。mem 记忆混合不再排除墙
-               // v0.25.1：墙的 classicRaw 写入延后到第二遍（邻域协调值，防
-               // 地板侧 smoothing 稀释）；墙的屏上显示由墙专用层四分格呈现
-               // （原版错位马赛克，见字段注释）
-               var memT:int = gameA < dimA ? dimA : gameA;
+               // v0.25.5：记忆目标统一 dimA（对齐 current 的 fillMemoryTile
+               // 语义：已探索=统一记忆暗色）。原 max(gameA, dimA) 会让弱照明
+               // 瓦片（gameA>dimA——游戏 visi 场本就斑驳，墙的转角射线尤甚）
+               // 保持暗斑不参与调暗 = 记忆区脏迹（用户截图实测对比 current）
+               var memT:int = this.explored[i] == 1 ? dimA : 255;
                var a:int = Math.round(gameA + cur * (memT - gameA));
                this.aArr[i] = a;
                if(t.opac >= 1)
