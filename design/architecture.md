@@ -14,7 +14,7 @@
 自建雾层（Sprite+Bitmap）插在 `grafon.visLight` 之后同一层级：
 
 - **vanilla（透传）**：完全不碰 visi/visLight/lightBmp，游戏原样渲染（原版半格错位掩膜/硬边/已探索常亮）；进入透传瞬间调 `grafon.setLight()` 恢复掩膜。
-- **classic（仿原版，v7 = 游戏值优先 + 记忆化渐变）**：`visLight.visible=false`，雾层 1px/瓦片、smoothing 双线性、**无错位**（v0.23.3 起与瓦片网格对齐，写 (tx,ty)）、每帧读游戏 tile.visi；规则 `a=游戏值(1-visi)×255` + memCur 记忆化渐变（0.1/帧）；**v0.24.9 起墙与地板同公式**（对齐原版统一光照：原版 lighting() 对墙无特判，可达墙面 t_visi≈1 → 像素≈透明显纹理；墙层 wallRaw 已退役，mem 记忆混合不再排除墙）；**不变量：只暗化不亮化**；门景 doorBoost 写 visi 生效；变化才写像素（站立零写入）。
+- **classic（仿原版，v7 = 游戏值优先 + 记忆化渐变；v0.26.0 恢复位移架构）**：`visLight.visible=false`，雾层 1px/瓦片、smoothing 双线性、**原版位移显示**（x=-半格、y=-1 格半，写 (tx, ty+1) 行，位图 (spaceX+1)×(spaceY+2) 富余行列保持黑——同原版 lightBmp 边缘恒黑）；规则 `a=游戏值(1-visi)×255` + memCur 记忆化渐变（0.1/帧；v0.25.5 起目标统一 dimA）；**v0.26.0 起墙与地板同管线**：游戏 visi 场经位移马赛克自然产生原版墙内明暗（贴亮区墙行亮、结构内部黑、40px 线性过渡坡——原版基准截图剖面实测），墙专用层与协调值全部退役；**不变量：只暗化不亮化**；门景 doorBoost 写 visi 生效；变化才写像素（站立零写入）。
 - **current（平滑阴影）**：`visLight.visible=false`，`tile.visi` 写二元（探索过=1/未探索=0，D15），自建雾层全权接管：8×8 子格 raycast 线状阴影 + 渐变（blur 2.5,q3 ≈20px）+ 单侧钳制 max(raw,blurred) + 子格"曾见"历史边界（5px）+ 门景 doordim；可见墙四分格映射（TL=自身/TR=东/BL=南/BR=东南 visi）。
 
 - 游戏逻辑可见性：current 模式 visi≥0.8 才算可见（checkPort）；classic/vanilla 走原版语义。
