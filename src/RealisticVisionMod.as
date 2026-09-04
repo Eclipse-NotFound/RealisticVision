@@ -62,14 +62,13 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.6";
+      private static const VERSION:String = "v0.25.5";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
       private static const FOV_NONE:int = 0;
 
       private static const WALL_NEIGHBORS:Array = [[-1,-1],[0,-1],[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];
-      private static const WALL_FACE_NEIGHBORS:Array = [[0,1],[1,0],[1,1]];   // S/E/SE（v0.25.6 墙面受光方向）
 
       private static const ARM_SCAN_R:Number = 64;
 
@@ -1212,44 +1211,6 @@ package
                }
             }
          }
-         // v0.25.6：墙面受光传播（一步，不链式）——被地板点亮墙的 S/E/SE
-         // 邻墙获得"墙面受光"：原版错位显示会把下/右邻瓦的亮值拉到本墙的
-         // 下半/右半（贴结构墙上排呈"上暗下亮"半影，而非整行黑，用户实测
-         // current 上排墙整行黑带与原版不符）。litArr=2 标记墙面受光，
-         // 不再作为光源链式传播（深墙内部保持暗）；br=0 使自身象限保持暗
-         for(tx = 0; tx < this.spaceX; tx++)
-         {
-            for(ty = 0; ty < this.spaceY; ty++)
-            {
-               var j2:int = tx + ty * this.spaceX;
-               if(this.fov[j2] == FOV_VISIBLE)
-               {
-                  continue;
-               }
-               if(loc.getTile(tx,ty).opac <= 0)
-               {
-                  continue;
-               }
-               for each(var nb2:Array in WALL_FACE_NEIGHBORS)
-               {
-                  var nx2:int = tx + nb2[0];
-                  var ny2:int = ty + nb2[1];
-                  if(nx2 >= 0 && nx2 < this.spaceX && ny2 >= 0 && ny2 < this.spaceY)
-                  {
-                     var ni2:int = nx2 + ny2 * this.spaceX;
-                     if(this.fov[ni2] == FOV_VISIBLE && this.litArr[ni2] == 1
-                        && loc.getTile(nx2,ny2).opac >= 1)
-                     {
-                        this.fov[j2] = FOV_VISIBLE;
-                        this.explored[j2] = 1;
-                        this.br[j2] = 0;       // 自身象限保持暗（原版上排墙 own=暗）
-                        this.litArr[j2] = 2;   // 墙面受光标记（不链式）
-                        break;
-                     }
-                  }
-               }
-            }
-         }
       }
 
    private function castRay(loc:Location, ex:Number, ey:Number, cx:Number, cy:Number, tx:int, ty:int):Number
@@ -1921,7 +1882,12 @@ package
                // 保持暗斑不参与调暗 = 记忆区脏迹（用户截图实测对比 current）
                var memT:int = this.explored[i] == 1 ? dimA : 255;
                var a:int = Math.round(gameA + cur * (memT - gameA));
-               if(a != this.lastA[i])
+               this.aArr[i] = a;
+               if(t.opac >= 1)
+               {
+                  this.lastA[i] = a;   // 占位，第二遍协调值不同会重写
+               }
+               else if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
                   this.classicRaw.setPixel32(tx,ty,a << 24);
@@ -1974,11 +1940,11 @@ package
                         this.lastA[wi] = awall;
                         this.classicRaw.setPixel32(tx,ty,awall << 24);
                      }
-                     // ② 墙层：写协调值单值（v0.25.6 改——原写自身公式值，
-                     // 墙自身 visi 沿走向忽明忽暗 = 墙内斑驳且与前方地板脱节；
-                     // 协调值=邻域地板均亮，墙面亮度跟随地板（原版错位马赛克
-                     // 的主导观感）。4 子格同值，层位移半格恰好覆盖整瓦片
-                     key = awall & 0xFF;
+                     // ② 墙层：写自身公式值单值（4 子格同值）。层位移半格后
+                     // 值块覆盖墙 NW 半格，墙 SE 半格露出雾层协调值（≈邻域
+                     // 地板亮度）——阴影 50% 线落在瓦片中线（原版位置），
+                     // 单值干净无拼块
+                     key = this.aArr[wi] & 0xFF;
                   }
                   else
                   {
