@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.9";
+      private static const VERSION:String = "v0.25.8";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -226,10 +226,6 @@ package
       // v0.25.0：注入选项页原生列表的模式行（克隆 visPipOptItem 实例，点击循环模式）
       private var optRow:Object = null;      // 注入的行实例
       private var optRowAnchor:Object = null; // 锚点行（id=="fullscreen"）——子选项卡检测用
-      // v0.26.0：MSW 模组设置聚合页注册（MoreSkills&Weapons MSWSettingsHub 契约）
-      private var mswRegistered:Boolean = false;
-      private var mswRetryFrames:int = 0;
-      private var mswFailLogged:Boolean = false;
 
       public function RealisticVisionMod()
       {
@@ -614,10 +610,6 @@ package
          {
             return;
          }
-         if(!this.mswRegistered)
-         {
-            this.tryMswRegister(w);
-         }
          if(w.allStat < 1)
          {
             if(this.curLoc != null)
@@ -769,24 +761,6 @@ package
             this.visCur[i] = 0;
             this.br[i] = 0;
             this.litArr[i] = 0;
-         }
-         // v0.25.9：以游戏 visi 场初始化记忆（classic）——游戏 visi 随存档
-         // 持久化，原版加载后曾探索区域恢复全亮；模组记忆从零开始会让黑雾
-         // 盖住游戏认为已照亮的区域（用户实测"该区域加载为黑/阴影偏移"）。
-         // visi>0 的瓦片按已探索处理：首帧经位移马赛克显示其真实亮度
-         // （memCur=0 起全亮），随后按记忆语义正常变暗
-         if(this.cfgMode == "classic")
-         {
-            for(var stx:int = 0; stx < this.spaceX; stx++)
-            {
-               for(var sty:int = 0; sty < this.spaceY; sty++)
-               {
-                  if(loc.getTile(stx,sty).visi > 0)
-                  {
-                     this.explored[stx + sty * this.spaceX] = 1;
-                  }
-               }
-            }
          }
          if(hasMem)
          {
