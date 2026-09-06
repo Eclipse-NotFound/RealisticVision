@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.27.0";
+      private static const VERSION:String = "v0.27.1";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1863,14 +1863,19 @@ package
                // 显示后，游戏 visi 场经位移马赛克自然产生墙亮面/黑芯/渐变
                // （原版基准剖面实测：4 瓦片墙 = 亮/黑/黑/亮 + 40px 线性坡），
                // 墙层与协调值全部退役
-               // v0.25.8：墙不参与记忆调暗——原版墙 visi 常亮不衰减，记忆区
-               // 墙面保持最后受光状态（亮墙恒亮、从未受光的墙恒黑）；记忆
-               // 暗色仅用于地板（模组特性）。否则已探索但背光的墙会被提亮
-               // 成灰（用户实测：角色在厚墙上方时墙内出现灰雾爬升）
+               // v0.25.10：墙参与记忆变暗，"曾照亮"判定用游戏 visi（常亮权威
+               // 源）。v0.25.8 的墙恒亮在位移马赛克下产生墙外亮边——墙值画在
+               // 以瓦片 NW 角为中心的 40px 区域（含墙顶/墙西外 20px），亮墙值
+               // 盖在记忆暗/未探索黑的地板上 = 水平墙上方/竖直墙左方的 ~40px
+               // 亮带（用户 grilling 确认：位置/状态/固定/classic 独有/宽=一
+               // 单位墙，全部吻合位移相位）。修复：亮墙走出视野与地板一起变暗
+               // 到 dimA（值差消失=亮边消失）；墙不用 explored[] 判定（被墙可
+               // 见性的邻居地板传播污染，是 v0.25.8 前黑芯灰雾的来源）——
+               // visi>0 = 游戏侧曾照亮；visi=0 = 从未受光，恒黑不提亮
                var memT:int;
                if(t.opac >= 1)
                {
-                  memT = gameA;
+                  memT = gv > 0 ? dimA : 255;
                }
                else
                {
