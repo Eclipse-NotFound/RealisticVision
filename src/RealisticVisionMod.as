@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.25.9";
+      private static const VERSION:String = "v0.27.0";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -770,24 +770,8 @@ package
             this.br[i] = 0;
             this.litArr[i] = 0;
          }
-         // v0.25.9：以游戏 visi 场初始化记忆（classic）——游戏 visi 随存档
-         // 持久化，原版加载后曾探索区域恢复全亮；模组记忆从零开始会让黑雾
-         // 盖住游戏认为已照亮的区域（用户实测"该区域加载为黑/阴影偏移"）。
-         // visi>0 的瓦片按已探索处理：首帧经位移马赛克显示其真实亮度
-         // （memCur=0 起全亮），随后按记忆语义正常变暗
-         if(this.cfgMode == "classic")
-         {
-            for(var stx:int = 0; stx < this.spaceX; stx++)
-            {
-               for(var sty:int = 0; sty < this.spaceY; sty++)
-               {
-                  if(loc.getTile(stx,sty).visi > 0)
-                  {
-                     this.explored[stx + sty * this.spaceX] = 1;
-                  }
-               }
-            }
-         }
+         // v0.25.9 的 visi 场播种已回滚（回滚到 cfecf5a 语义）：
+         // 记忆状态仅由本模组增量维护（computeFov/roomMem）
          if(hasMem)
          {
             // current 的记忆区填充按 seenSub 子格历史（fillMemoryTile）——
@@ -2880,6 +2864,140 @@ package
          {
             this.optRow["numb"].text = this.modeName() + (this.cfgEnabled ? "" : "（停用）");
          }
+      }
+
+      // ==================== MSW 模组设置聚合页（v0.26.0） ====================
+
+      private static const MODES:Array = ["vanilla", "classic", "current"];
+
+      /**
+       * v0.26.0：向 MoreSkills&Weapons 模组设置聚合页注册本模组设置。
+       * 通道：World.w.main 上的 "MSWModAPICarrier" 动态载体（MSW 每帧幂等
+       * 发布；本模组 init 早于 MSW，故每 30 帧重试直至发布）。契约见
+       * mods/MoreSkills&Weapons/src/MSWSettingsHub.as：items 由注册方自持
+       * （get/set 回调），check 即时持久化，slider 实时生效、聚合页收起时
+       * onPageClose 统一落盘。失败静默重试（MSW 未启用时无限期等待，
+       * 每 30 帧一次查询代价可忽略）。
+       */
+      private function tryMswRegister(w:World):void
+      {
+         this.mswRetryFrames++;
+         if(this.mswRetryFrames % 30 != 0)
+         {
+            return;
+         }
+         try
+         {
+            var mainC:DisplayObjectContainer = w.main;
+            if(mainC == null)
+            {
+               return;
+            }
+            var carrier:DisplayObject = mainC.getChildByName("MSWModAPICarrier");
+            if(carrier == null)
+            {
+               return;
+            }
+            var api:Object = carrier["modAPI"];
+            if(api == null)
+            {
+               return;
+            }
+            api["registerPage"]("realisticvision", "RealisticVision 视野系统",
+               this.buildMswItems(), this.mswPageClose,
+               "视野渲染：三态视野/记忆暗色/念力宽限");
+            this.mswRegistered = true;
+            this.fileLog("msw settings registered");
+         }
+         catch(err:Error)
+         {
+            if(!this.mswFailLogged)
+            {
+               this.mswFailLogged = true;
+               this.fileLog("msw register failed (will retry): " + err);
+            }
+         }
+      }
+
+      private function buildMswItems():Array
+      {
+         var self:RealisticVisionMod = this;
+         var items:Array = [];
+         items[items.length] = {"key":"enabled","label":"视野系统","kind":"check",
+            "min":0,"max":1,"step":1,"hint":"总开关（F11 同款）","def":true,
+            "get":function():* { return self.cfgEnabled; },
+            "set":function(v:*):void { self.setEnabled(v == true); }};
+         items[items.length] = {"key":"mode","label":"渲染模式","kind":"slider",
+            "min":0,"max":2,"step":1,"hint":"0=原版 1=仿原版 2=平滑阴影","def":2,
+            "get":function():* { return self.modeIndex(); },
+            "set":function(v:*):void { self.setModeIndex(int(v)); }};
+         items[items.length] = {"key":"dim","label":"记忆区暗度","kind":"slider",
+            "min":0,"max":0.8,"step":0.05,"hint":"0=全亮 越大越暗","def":0.35,
+            "get":function():* { return self.cfgDim; },
+            "set":function(v:*):void { self.cfgDim = Number(v); }};
+         items[items.length] = {"key":"doordim","label":"透光门亮度","kind":"slider",
+            "min":0,"max":1,"step":0.05,"hint":"门/水后的视野亮度","def":0.5,
+            "get":function():* { return self.cfgDoorDim; },
+            "set":function(v:*):void { self.cfgDoorDim = Number(v); }};
+         items[items.length] = {"key":"litmin","label":"可见阈值","kind":"slider",
+            "min":0,"max":1,"step":0.05,"hint":"低于此亮度视为暗区","def":0.6,
+            "get":function():* { return self.cfgLitMin; },
+            "set":function(v:*):void { self.cfgLitMin = Number(v); }};
+         items[items.length] = {"key":"fadestep","label":"淡入速度","kind":"slider",
+            "min":0,"max":1,"step":0.05,"hint":"进视野渐亮速度","def":0.1,
+            "get":function():* { return self.cfgFadeStep; },
+            "set":function(v:*):void { self.cfgFadeStep = Number(v); }};
+         items[items.length] = {"key":"telegrace","label":"念力宽限(秒)","kind":"slider",
+            "min":0,"max":10,"step":1,"hint":"拖敌出视野后多久脱手","def":3,
+            "get":function():* { return self.cfgTeleGrace; },
+            "set":function(v:*):void { self.cfgTeleGrace = Number(v); }};
+         return items;
+      }
+
+      /** 总开关（与 F11 同路径：落盘 + 重建视野状态）。 */
+      private function setEnabled(v:Boolean):void
+      {
+         this.cfgEnabled = v;
+         this.saveConfig();
+         this.curLoc = null;
+         this.errCount = 0;
+      }
+
+      /** 渲染模式索引：0=vanilla 1=classic 2=current。 */
+      private function modeIndex():int
+      {
+         if(this.cfgMode == "classic")
+         {
+            return 1;
+         }
+         if(this.cfgMode == "current")
+         {
+            return 2;
+         }
+         return 0;
+      }
+
+      private function setModeIndex(v:int):void
+      {
+         if(v < 0 || v > 2)
+         {
+            return;
+         }
+         this.cfgMode = MODES[v];
+         this.saveConfig();
+         this.curLoc = null;
+         this.errCount = 0;
+         this.showToast();
+         if(this.cfgAutoTest)
+         {
+            this.fileLog("auto msw mode -> " + this.cfgMode);
+         }
+      }
+
+      /** 聚合页收起：滑块改动统一落盘（MSW 契约 onPageClose）。 */
+      private function mswPageClose():void
+      {
+         this.saveConfig();
       }
 
       private function ensureOptPanel(w:World):void
