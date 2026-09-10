@@ -1,63 +1,67 @@
 # RealisticVision —— 开发记忆入口
 
-> 新会话从这里开始。协议见工作区 GOVERNANCE.md §8；本模组参数见 ../AGENT_SCOPE.md。
+> 接手核对：2026-09-10。协议见工作区 GOVERNANCE.md §8；范围见 ../AGENT_SCOPE.md。
 
 ## 1. 这个模组是什么
 
-视野系统模组：三态视野（未探索全黑 / 视野内亮 / 记忆区暗色隐藏敌人），含破坏墙、透光门、敌人部分可见裁剪、念力规则（隔墙抓物品可、抓敌人不可）、三档渲染模式（`vanilla` 透传 / `classic` 仿原版 / `current` 平滑阴影，F12 轮换）。源码为单文件 `src/RealisticVisionMod.as`（约 2800 行），入口类 `RealisticVisionMod`。
+视野系统模组：未探索全黑、视野内可见、记忆区暗化并隐藏敌人。包含墙门遮挡、部分可见敌人裁剪、暗区敌人念力宽限、营地透传，提供 vanilla / classic / current 三种模式。入口 RealisticVisionMod，源码 src/RealisticVisionMod.as（3119 行）；只支持当前根目录 1.02 宿主，DLC 两份 SWF 没有本模组 loader。
 
 ## 2. 用户偏好与协作约定
 
-- **每次修改后请用户游戏内实测**（F10 面板 / F12 模式 / PipBuck 面板）——本模组大量修复史由用户观感反馈驱动。
-- 修复血条问题时勿无条件 `hpbar.visible=true`（历史教训：曾致全敌人满装甲条，用"隐藏时压暗 + 恢复时 visDetails 重算"）。
-- **pfe.swf 改动需多模组协调**：改前必须反编译核对线上加载器清单，他人改动先合并。
-- 跨模组问题只报告不修对方文件。
-- 本模组仅支持 1.02；DLC 两份 SWF 从未打过本模组 loader。
+- 视觉修改必须先用原版同场景截图校准离线模拟，每次只改一个变量；模拟确认后再做三模式真机比较，请用户目检。不要复活已回滚的墙面传播/记忆播种方案。
+- 修血条勿无条件 hpbar.visible=true；沿用隐藏时压暗、恢复时 visDetails 重算。
+- 游戏 SWF 修改和 release 部署按单独授权与发布门禁执行；修改宿主前核对、合并现有 loader。
+- 跨模组问题只记录，不改其他模组；对外发消息需用户授权。
+- 本轮是接手与基线检查，没有新的视觉修改授权或验收结论。保留现有 stash，不自动应用。
+- 自动化真机验证需保持游戏窗口前台，后台低帧率曾造成假卡死。
 
 ## 3. 当前状态
 
-- **v0.27.0**（2026-09-04，会话自 v0.25.9 分叉）：模组设置接入 **MSW 模组设置聚合页**（哔哔小马主菜单页→模组）——经 `MSWModAPICarrier.modAPI.registerPage` 注册 7 项（视野系统开关/渲染模式滑条 0-2/记忆暗度/透光门亮度/可见阈值/淡入速度/念力宽限），配置由本模组自持（get/set 回调 + onPageClose 落盘），每 30 帧重试至 MSW 发布载体。真机冒烟 "msw settings registered" ✓。**待用户目检聚合页**。
-- **v0.27.1**（2026-09-06）：修 classic 墙外亮边（水平墙上方/竖直墙左方 ~40px，grilling 定位：位移马赛克画墙值到墙外 20px + 墙恒亮 vs 地板记忆暗的值差）——墙参与记忆变暗，墙的"曾照亮"判定用游戏 visi（visi>0→dimA、visi=0 恒黑），与地板 explored[] 权威源解耦。冒烟 err=0。**待用户目检**（记忆区亮墙现随地板变暗，观感变化）。
-- **v0.25.9 → 已回滚**（2026-09-06，用户指示回退，revert 见 2716223）：曾以游戏 visi 场播种记忆（resetRoom：visi>0 → explored=1）试图修"读档后黑雾盖住已照亮区域"，未解决偏移且引入新异常（classic 墙体全亮/current 异常斑块）→ 回滚。记忆状态回归模组自维护。
-- **v0.25.8**（2026-09-04）：墙不参与记忆调暗（墙 memT=gameA 恒显游戏 visi 值）——修厚墙上方视角黑芯灰雾（原版语义：墙 visi 常亮，亮墙恒亮/未亮墙恒黑，记忆暗色仅用于地板）。
-- **v0.26.0**（2026-09-04）：classic 恢复原版位移架构——雾层 1px/瓦片、原版位移（x=-半格、y=-1 格半、写 (tx,ty+1) 行、位图 (spaceX+1)×(spaceY+2) 富余黑边）、墙与全部瓦片同走"游戏 visi + 记忆语义"，**墙专用层最终退役**。依据：原版墙面基准截图剖面实测（4 瓦片 = 亮/黑/黑/亮 + 40px 线性坡，位移双线性精确复现，校准脚本与数据见 knowledge/experiments）。
-- **遗留已知问题：current 墙中阴影位置/渐变与原版有差异（未解决）**。后续再攻：以 shot_vanilla|current|classic.png 为基准校准离线模拟，模拟内迭代成功后再部署。
-- 墙渲染迭代教训（v0.25.2→v0.25.7 六连败，2026-09-04 回滚 061dfbe/00583ab）：像素观感问题必须先在离线模拟里对齐"原版同场景截图"基准再上真机，每次只改一个变量，改完同场景三图对比；v0.25.6/7 的"墙面受光传播"思路见 git 历史（7b7525c/5098bc0）。
-- v0.25.0（08-27/29）：渲染模式切换注入哔哔小马选项页原生列表。**注入行待用户打开选项页目检**。
-- v0.24.8（08-27）：classic 30Hz 门控失效修复（frameCount 双递增，D21）+ autotest 埋点——已 8 轮真机自动化验证。
-- 已定论：GPU 渲染不可行（renderMode 由 application.xml 决定；开销在 CPU 侧）。
-- 游戏本体文件未改动；release 回滚 = `build/release_backup_v0247.swf`（游戏 SWF 回滚 = 根目录 `pfe_1.02_before_rvision_merge_20260815.swf`）。
-- 工具链（本机实测可用）：flexsdk `D:\RemainsMod\mods\Sandevistan\build\tools\flexsdk`；java 用 `D:\Program Files\Adobe Animate 2024\jre`；ffdec 走 `java -jar ffdec.jar`（exe 启动器找不到该 JRE）。测试构建用 `build\build_test.bat`（产物不覆盖 release）。
+- 代码版本 v0.27.1；接手起点 main / 458c96d，工作树原本干净。既有 MSW 未完成稿 stash 保留；完整集成已在 0d1becc，不应再套用旧稿。
+- v0.27.1：classic 墙参与记忆变暗，墙记忆目标由游戏 visi 是否大于 0 决定；地板目标由 explored 决定。用于修墙外亮边，尚待用户目检。
+- v0.27.0：MSW 聚合页注册 7 项设置，每 30 帧重试；get/set 即时生效，收页落盘。历史注册冒烟通过，设置页待用户目检。
+- 最近记录的真机冒烟：2026-09-06，err=0。本轮没有启动游戏，不能视为运行/观感验收。
+- 2026-09-10：修复 build/build_test.bat 两处括号提示导致的提前退出；完整测试构建成功。测试 SWF 16540 字节，FFDec dumpAS3 仅 RealisticVisionMod，无 fe.* 存根混入。
+- 本轮 src、release SWF、config 的 SHA256 均与接手基线相同；仅修测试构建入口并更新接手文档。
+- 当前配置：enabled=1，mode=current，dim=0.35，doordim=0.5，litmin=0.6，fadestep=0.1，maskblur_classic=6，maskblur_current=4，telegrace=3，base_rooms 空，debug=0。
+- 已回滚：v0.25.9 的 resetRoom 按 visi 播种 explored（2716223）。v0.25.8 的“墙恒亮”已经被 v0.27.1 改写，历史版本描述不是当前状态。
 
 ## 4. 正在进行与卡点
 
-- **遗留已知问题：current 墙中阴影位置/渐变与原版有差异**（用户原始诉求，v0.25.6/7 两轮修复失败已回滚）。后续再攻：以 shot_vanilla|current|classic.png 为基准校准离线模拟，模拟内迭代成功后再部署。
-- **saveConfig 在 adl64 测试实例写盘失败**（F11/F12 后 config.txt 不更新，catch 静默）：v0.24.8 已埋错误日志（"auto config write error"），下次任何会话按 F11/F12 即可从 RVision.log 拿到具体异常。用户正常游玩环境是否复现未知。
-- **跨模组待报告（RConnect 维护者）**：autoTravelLand 到达即死——hp=100 存活出发，random_mane/raiders 到达后 localPose=lbl=die fr=14 卡死（非 t_die 正常流程）；begin 地不传送则存活。另：newGame(0,...) 实为加载 0 号槽（fe/World.as:823），需配存档模板。
+- 首要遗留：current 墙内阴影位置/渐变与原版不同。尚未建立与当前 8×8 管线逐步对应的可靠模拟。
+- 当前源码基线：
+  - onFrame 仅递增一次 frameCount；移动阈值 1.5px、移动重算至少间隔 3 帧、结构哈希每 2 帧、兜底重算每 30 帧。
+  - 视野由眼点向瓦片投射线，含门透光和距离衰减；墙只由可见非阻挡邻格点亮，不沿厚墙内部链式传播。
+  - vanilla 恢复受管对象并透传；classic 用原版位移 1px/格位图，写 (tx,ty+1)，融合游戏 visi 与记忆。
+  - current 用每格 8×8 子格、模糊与单侧约束；墙四象限分别取自身/东/南/东南样本；游戏 visi 被写成二值。
+  - resetRoom 以 loc.id 保存/恢复房间记忆；不再按游戏 visi 播种；current 清 visi，不改 t_visi。
+  - classic 为交替 ENTER_FRAME 门控；真实频率依宿主帧率，不能把历史“30Hz”标题当作当前实测。
+- design/architecture.md 的部分调度参数、vision-system.md 早期设计和源码旧注释已落后；以当前函数体为准。
+- rv0253-wall-smudge-sim2.py 是历史 classic 候选模拟，不能直接当作 current 模拟。
 
 ## 5. 已知问题
 
-- 部分可见敌人的狮鹫手臂无法裁剪（internal 成员），全隐时手臂会被扫描隐藏。
-- 敌人掩膜二值限制：Flash mask 二值，5px 子格是锯齿上限。
-- classic 光缘最外圈 ~12-28px 过渡位置与原版有微小偏差（接受）。
-- Sats 卫星扫描器把记忆区当可见（D3 取舍）；抓取暗区敌人瞬间 alarma() 已触发（D5 副作用）——已接受取舍。
-- 自动化测试前提：游戏窗口必须保持前台（后台 AIR 窗口 FPS 趋零，模组 ENTER_FRAME 心跳停摆造成"卡死"假象——8/18 实验"newGame 卡地形"的真实原因）。
+- classic v0.27.1 墙外亮边、MSW 设置页、旧 Pip 选项页注入行，均保留目检待办。
+- 历史 adl64 测试实例配置写盘失败；当前 saveConfig catch 已无条件记录 “auto config write error”，不是静默。正常游玩环境是否复现尚未知。
+- 部分可见狮鹫手臂受 internal 成员限制；全隐时另扫手臂隐藏。当前敌人掩膜已设置 cacheAsBitmap 并使用模糊透明度，旧“Flash mask 必然二值、5px 锯齿上限”表述不再适合作为现状结论。
+- classic 光缘最外圈历史记录约 12–28px 小偏差（接受）；SATS 扫描把记忆区当可见（D3）、暗区抓敌瞬间 alarma 已触发（D5）为已接受取舍。
+- 跨模组历史记录：RConnect autoTravelLand 到达后角色死亡，正常环境未复核；本模组不负责修复。
+- GPU 渲染不可行是既有实验结论；本轮未重新测量。
 
-## 6. 下一步（用户游戏内验证清单，按序勾销）
+## 6. 下一步（按优先级）
 
-1. **回滚后回归确认**：classic 墙面恢复自身明暗+记忆统一灰（无亮带/脏迹）、current 无异常斑块——即 ac8f8b2 的已验收状态；
-2. **v0.25.0 注入行**：哔哔小马 → 选项页列表末行「视野渲染模式」点击循环并持久化；
-3. **v0.24.8 classic 流畅度**（30Hz 修复后首次真 30Hz）；
-4. v0.24.7 原清单沿用：亮边与厚墙内部、念力宽限、部分可见（hpbar/武器同步裁剪）、门、暗区武器/手、营地无雾、F10/F11/config、帧率手感、与 Sandevistan/RConnect 兼容观感；
-5. 任意会话按一次 F11/F12 → 查 RVision.log "auto config write error" 定位写盘失败；
-6. 向 RConnect 维护者报告 autoTravelLand 到达即死问题。
+1. 后续视觉开发从 current 墙内阴影入手：核对原版/当前同场景截图和现行源码，建立可复现模拟，再单变量比较；未经视觉验证不宣称修复。
+2. 收集 v0.27.1 classic 亮边与 MSW 7 项设置的用户目检结果；核对切换模式与重启后的配置持久化。
+3. 下一次真机检查覆盖门、厚墙、部分可见敌人/血条/武器、念力宽限、营地豁免、F10/F11/F12、旧选项页注入行与流畅度。
+4. 若配置仍写盘失败，读取具体异常再诊断；联机相关仅在本模组兼容范围内核查。
 
-## 7. 深入了解
+## 7. 深入了解与操作入口
 
-- **开发历程**：state/journal.md（v0.2→v0.24.8 完整流水）
-- **架构必读**：design/architecture.md（注入与构建 / 渲染管线三模式 / 敌人显示三态 / 配置表 / 常用操作命令）
-- **设计**：design/vision-system.md；**决策**：decisions/decisions.md（D1-D21；D21=frameCount 单一递增原则）
-- **本轮验证**：knowledge/experiments/2026-08-27-autotest-verification.md（埋点设计/八轮运行/断言数据/环境发现）+ logs-20260827/（原始日志）
-- **构建**：`cd build && bash build.sh`（或 `build_test.bat` 出测试版）；产物验证 `java -jar <ffdec>/ffdec.jar -dumpAS3`（期望只含 RealisticVisionMod）
-- **自动化验证**：remains-auto-testing 技能 + autotest 埋点（每 300 帧 `auto st` 统计行）；复用 RConnect autoGame/autoWalk 驱动，实例 appid `pferv1` + 临时描述符
-- **技能**：remains-mod-build、remains-runtime-debug、remains-release-gate
+- 开发历程：state/journal.md，最新接手条目含构建结果及基线指纹；设计理由：decisions/decisions.md（D1–D21）。
+- 架构入口：design/architecture.md、design/vision-system.md，读取时按第 4 节校正过时部分。
+- 图像基准：knowledge/experiments/shot_vanilla.png、shot_current.png、shot_classic.png、shot_classic_v0258.png。
+- 模拟历史：knowledge/experiments/classic-v5-original-pipeline.md、classic-memory-boundary-sim.md、rv0253-wall-smudge-sim2.py。
+- 测试构建：在 build 目录运行 build_test.bat，产 build/RealisticVisionMod_test.swf；此脚本不部署。build.bat/build.sh 含旧机器路径且写 release，不直接当接手检查入口。
+- 工具：D:\RemainsMod\mods\Sandevistan\build\tools\flexsdk；Java：D:\Program Files\Adobe Animate 2024\jre；FFDec：同 tools/ffdec/ffdec.jar，以 java -jar 启动。
+- 实测档案：knowledge/experiments/2026-08-27-autotest-verification.md；运行/部署按 remains-runtime-debug、remains-auto-testing、remains-release-gate、remains-swf-patching 技能。
+- 游戏机制导航：../../shared-knowledge/knowledge-validation/discoveries/game-mechanism-atlas-2026-09-09.md；源码首选 ../../game-reference/decompiled/1.02/src102/scripts/。
