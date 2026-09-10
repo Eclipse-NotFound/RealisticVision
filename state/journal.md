@@ -2,6 +2,14 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-09-10 v0.28.0 正式部署：备份、启动与入口检查
+
+- 做了什么：用户明确说“部署”后，复用35ecef6已验证的17,378字节候选，先备份v0.27.1再覆盖release/RealisticVisionMod.swf；新release SHA256为57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0。根游戏SWF、正式application.xml和config未改；本轮单模组部署顺序执行，未另行委托。
+- 启动实证：独立app id rv-deploy-smoke-v0280-20260910-213116使用正式根目录pfe.swf与现有六个release loader；六者均init returned，RV日志有init ok v0.28.0 enabled=true、持续tick和msw settings registered。定向给自有测试窗口发6次F12，调用栈确认进入cycleMode。隐藏窗口截图不可用，没有据此宣称模式画面验收。
+- 既有问题：F12复现saveConfig的SecurityError:fileWriteResource共6次；异常已被保存函数捕获，配置原文件SHA256保持5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F，没有其他RV异常。此为已记录的设置持久化问题，未在本次墙阴影部署中扩修。
+- 回滚：build/release_backup_v0271_before_v0280_20260910.swf，哈希9423F7D727191C0F090EDD0C2E50D43339643F70F69E9D0F05C33114AE86A56D；覆盖release/RealisticVisionMod.swf并重启。备份同名不存在才创建，未覆盖旧备份。
+- 收尾/下一步：自有测试进程已结束、临时描述符已移除；没有操作真实pfe存档。部署原始日志和断言存knowledge/experiments/wall-shadow-v0280/deployment-*，原验证报告追加部署补记。待用户正常启动后目检墙地板衔接；长期玩法及六模组共同战斗仍未验收。既有stash保持。
+
 ## 2026-09-10 v0.28.0 候选：修复两模式墙内阴影，未部署
 
 - 做了什么：按用户两次grilling确认目标，恢复墙的原版位置/黑芯/整格渐变，记忆只乘亮度压暗；停止模组写visi/t_visi，地图与传送回到原版判定。墙与地板通过互补裁剪替换，保留各自地板雾效。并修零行/列常黑、站立原版照明与部分敌人掩膜缓存同步。

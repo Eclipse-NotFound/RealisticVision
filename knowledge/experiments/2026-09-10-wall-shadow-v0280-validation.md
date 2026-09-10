@@ -6,6 +6,8 @@
 
 ## 结果
 
+> 后续状态：用户随后明确授权部署，v0.28.0已进入正式release并通过启动/入口检查，详见末尾“部署补记”。以下候选验证及fingerprints.json保留部署前的原始语境。
+
 代码修复完成，**候选 v0.28.0；未部署**。39 项独立渲染断言全部通过；同一套断言在 v0.27.1 / 8748feb 上为 9 通过、30 失败。完整游戏副本在 random_mane / loc0_4（48×25）对两模式各比较 358,400 个墙面像素，最大 RGB 通道差均为 0，游戏 visi/t_visi 改写数均为 0。
 
 可直接打开 [交互对照](wall-shadow-v0280/comparison.html)。源码决定见 ../../decisions/decisions.md 的 D22；复验入口见 ../../build/wall-tests/README.md。
@@ -76,3 +78,17 @@
 - 本报告、交互页面、真实断言输出与文件指纹。
 - D22 与 state/MEMORY.md、journal.md 的当前状态。
 - 读侧只需核对引导约束和旧知识冲突，不据本轮生产回归宣称技能晋升。部署后仍需用户目检墙边衔接及整体观感。
+
+## 部署补记（2026-09-10）
+
+用户明确要求“部署”后，按发布门禁复用已验证候选（源码提交35ecef6），先备份v0.27.1再替换正式release。没有修改根pfe.swf、正式application.xml、config或其他模组文件。未重新生成部署前指纹或候选渲染证据。
+
+- 正式产物：release/RealisticVisionMod.swf，17,378字节，SHA256 `57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0`。
+- 回滚文件：build/release_backup_v0271_before_v0280_20260910.swf，SHA256 `9423F7D727191C0F090EDD0C2E50D43339643F70F69E9D0F05C33114AE86A56D`。覆盖正式release同名文件并重启即可回到v0.27.1。
+- 冒烟入口：根目录临时描述符仅将app id改为`rv-deploy-smoke-v0280-20260910-213116`，content仍为`pfe.swf`，applicationDirectory仍是实际游戏目录。用正常现有loader加载真实release；没有换测试引导器、没有调用候选公开访问副本。
+- 通过证据：六个loader均`init returned`；RV日志含`init ok v0.28.0 enabled=true`、持续tick、`msw settings registered`。6次定向F12键事件的调用栈均进入`cycleMode`。14项部署断言为true，详见[部署断言](wall-shadow-v0280/deployment-checks.json)、[RV原始日志](wall-shadow-v0280/deployment-runtime.txt)、[loader原始输出](wall-shadow-v0280/deployment-loader.txt)。
+- 既有故障复现：6次F12各触发一次`saveConfig`的`SecurityError:fileWriteResource`，与此前记录的配置写回问题一致；异常在保存函数内捕获，没有新增RV异常，config哈希未变。此次只确认按键处理路径响应，未修设置持久化。
+- 验收边界：主菜单启动和入口响应通过；隐藏窗口截图不可用，未用于证明模式画面切换。没有在此次部署冒烟中开档、进入战斗或验收六模组玩法。墙渲染结论仍来自上文的39项独立AIR断言及完整游戏副本像素比较；整体衔接待用户目检。
+- 清理：仅结束自有测试进程并移除临时描述符；测试存储使用独立app id，真实pfe存档未操作。原始输出副本保留在本模组目录，正式游戏下次启动加载v0.28.0。
+
+发布门禁第1–3项沿用未改动候选的构建/版本/渲染结果；第4项由用户“部署”授权；第5项无需改loader，根SWF哈希未变；第6–9项备份、替换、启动和回滚路径见上；第10–12项同步更新MEMORY/journal并提交模组仓库。本模组无独立changelog。
