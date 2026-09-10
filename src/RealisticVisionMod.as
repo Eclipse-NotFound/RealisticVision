@@ -62,7 +62,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.27.1";
+      private static const VERSION:String = "v0.28.0";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -141,17 +141,17 @@ package
       // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
       private var classicRaw:BitmapData = null;
       private var classicBmp:Bitmap = null;
-      // 墙专用层（v0.25.4）：2px/瓦片、整层位移 (-tileX/2,-tileY/2)——每墙
-      // 只写 (2x+1,2y+1) 一格自身公式值，该格在位移下恰好精确覆盖整瓦片、
-      // 零溢出。v0.25.2/3 的 4 格写法有 W/N 溢出格（墙值画进邻地板 20px =
-      // 边缘亮带/脏迹）；v0.25.1 的四分格象限采样发脏。雾层墙像素=协调值
-      // 只服务地板侧平滑，墙的屏上显示完全由本层承担
-      // v0.26.0：墙专用层（wallRaw/wallBmp/wallKey/aArr，v0.23-v0.25.7 多轮
-      // 演进）最终退役——恢复原版位移显示后，墙与全部瓦片同走"游戏 visi 场
-      // 位移马赛克"管线，墙面明暗（亮/黑/黑/亮 + 40px 坡）自然产生，无需
-      // 任何墙特判（历史演变见 journal v0.22-v0.26.0）
+      // v0.28.0：墙与地板用互补 mask 分区替换；墙保留原版位图的完整渐变。
       private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
-      private var memCur:Array = null;  // classic：每瓦片记忆化进度（0=游戏值，1=记忆区 dimA，0.1/帧渐变）
+      private var memCur:Array = null;  // 每角记忆进度：0=原版亮度，1=完整记忆衰减
+      // 两种模式的墙使用同源原版角点；地板雾效各自保留。
+      private var wallA:Array = null;
+      private var wallTiles:Array = [];
+      private var wallCorners:Array = [];
+      private var wallRaw:BitmapData = null;
+      private var wallBmp:Bitmap = null;
+      private var wallClip:Shape = null;
+      private var floorClip:Shape = null;
       // 跨房间记忆（v0.22）：loc.id → explored 数组（原版靠 tile.visi 缓存
       // 保留已探索常亮；模组自己的 explored[] 需随房间切换保存/恢复，否则
       // 回到房间时全部按未探索处理）
@@ -697,10 +697,6 @@ package
          {
             // classic（仿原版）：雾场复刻原版亮度 + 记忆区暗化（v4 自渲染）
             this.applyVisionClassic(w,loc,needFov);
-            if((this.frameCount & 1) == 0 || needFov)
-            {
-               this.doorBoost(w,loc);
-            }
          }
          else
          {
@@ -747,6 +743,9 @@ package
          this.spaceY = loc.spaceY;
          // classic v5：每瓦片 alpha 缓存随房间重置（同尺寸房间防残留）
          this.lastA = null;
+         this.wallA = null;
+         this.wallTiles = [];
+         this.wallCorners = [];
          var n:int = this.spaceX * this.spaceY;
          this.fov = new Array(n);
          this.visCur = new Array(n);
@@ -812,25 +811,8 @@ package
                   w.grafon.visLight.visible = false;
                }
             }
-            else
-            {
-               // current：模组接管 visi（二元：探索过=1/未探索=0，游戏逻辑语义对齐原版）
-               var tx:int;
-               var ty:int;
-               for(tx = 0; tx < this.spaceX; tx++)
-               {
-                  for(ty = 0; ty < this.spaceY; ty++)
-                  {
-                     var t:Tile = loc.getTile(tx,ty);
-                     // 只写 visi（二元），**不写 t_visi**（v0.21.1）：t_visi 是
-                     // 游戏 lighting() 的目标值，保留游戏自己的值——current 退出
-                     // （切 vanilla/classic/F11 关闭）后，游戏 lighting2/lighting
-                     // 以 t_visi 为目标把 visi 拉回游戏语义（自愈），不会残留
-                     // 模组写的 0/1 污染原版渲染
-                     t.visi = 0;
-                  }
-               }
-            }
+            // visi/t_visi 完全由原版维护。墙内插值也依赖邻接地板的角值，
+            // 因而不能只保护墙格；地图/传送沿用原版的曾见判定（D22）。
          }
          this.fogDirty = true;
          this.fovVersion++;
@@ -946,6 +928,25 @@ package
                this.memCur[k] = 0;
             }
          }
+         if(this.wallRaw == null || this.wallRaw.width != cw || this.wallRaw.height != ch)
+         {
+            if(this.wallRaw != null) this.wallRaw.dispose();
+            if(this.wallBmp != null && this.wallBmp.parent) this.wallBmp.parent.removeChild(this.wallBmp);
+            this.wallRaw = new BitmapData(cw,ch,true,0xFF000000);
+            this.wallBmp = new Bitmap(this.wallRaw,"auto",true);
+            this.wallBmp.scaleX = Tile.tileX;
+            this.wallBmp.scaleY = Tile.tileY;
+            this.wallBmp.x = -Tile.tileX / 2;
+            this.wallBmp.y = -Tile.tileY / 2 - Tile.tileY;
+            this.fogVis.addChild(this.wallBmp);
+         }
+         if(this.wallClip == null)
+         {
+            this.wallClip = new Shape();
+            this.floorClip = new Shape();
+            this.fogVis.addChild(this.wallClip);
+            this.fogVis.addChild(this.floorClip);
+         }
          // 模式可见性互斥：classic 显示 1px 位移雾层，current 显示 8×8 雾层
          var classicMode:Boolean = this.cfgMode == "classic";
          if(this.fogBitmap != null)
@@ -956,6 +957,19 @@ package
          {
             this.classicBmp.visible = classicMode;
          }
+         // 两张图按互补范围替换，绝不叠加：墙=原版原尺寸场，地板=各模式雾效。
+         // 只将当前显示的地板图绑定 floorClip，同一个 mask 不同时绑定两个对象。
+         if(classicMode)
+         {
+            if(this.fogBitmap.mask != null) this.fogBitmap.mask = null;
+            if(this.classicBmp.mask != this.floorClip) this.classicBmp.mask = this.floorClip;
+         }
+         else
+         {
+            if(this.classicBmp.mask != null) this.classicBmp.mask = null;
+            if(this.fogBitmap.mask != this.floorClip) this.fogBitmap.mask = this.floorClip;
+         }
+         if(this.wallBmp.mask != this.wallClip) this.wallBmp.mask = this.wallClip;
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
          {
@@ -1317,7 +1331,7 @@ package
          return op;
       }
 
-      /** 三态写入 visi/t_visi + 软雾图（脏标记门控：无变化整帧跳过）。 */
+      /** current 地板软雾；原版亮度只读，墙面独立更新。 */
       /**
        * current（真实线状 + 渐变过渡）：阴影边界由光线几何产生——对已探索瓦片
        * 的每个子格（5px）中心独立 castRay，亮度 = max(lit × 距离衰减, 记忆暗色)。
@@ -1332,6 +1346,19 @@ package
       private function applyVision(w:World, loc:Location, needFov:Boolean):void
       {
          this.ensureFog(w);
+         // 原版 lighting2 在站立时仍可更新角值；墙场不能只等玩家移动。
+         var wallChanged:Boolean = this.refreshWallField(loc,needFov);
+         if(wallChanged && !needFov)
+         {
+            var maskChanged:Boolean = false;
+            for each(var wi:int in this.wallTiles)
+            {
+               if(this.fillWallTile(wi % this.spaceX,int(wi / this.spaceX),true)) maskChanged = true;
+            }
+            // 部分单位掩膜按此版本缓存；只在墙采样跨可见阈值时失效。
+            if(maskChanged) this.fovVersion++;
+         }
+         // 墙图随角值独立更新；不因远处地板的记忆渐变重跑整图模糊。
          // v0.24.7：模糊+钳制拆到 fov 帧的下一帧执行——fov 帧峰值从
          // ~3ms 降到 ~1.7ms（模糊 0.3 + 钳制 ~1ms 移到次帧；显示滞后 1 帧
          // 不可察觉）。门控：无变化且无待办模糊时整帧跳过
@@ -1365,7 +1392,6 @@ package
                for(ty = 0; ty < this.spaceY; ty++)
                {
                   var i:int = tx + ty * this.spaceX;
-                  var gv:Number = this.explored[i] == 1 ? 1 : 0;
                   // 淡入进度（进房/开关时 0→1；收敛后子格值即最终亮度）
                   var cur:Number = this.visCur[i];
                   if(cur < 1)
@@ -1382,11 +1408,6 @@ package
                         fading = true;
                      }
                   }
-                  var t:Tile = loc.getTile(tx,ty);
-                  // 只写 visi（二元，供 checkPort/地图/Sats 等游戏逻辑），
-                  // 不写 t_visi（v0.21.1）：t_visi 保留游戏 lighting() 的目标值，
-                  // 退出 current 后游戏可自愈恢复（见 resetRoom 注释）
-                  t.visi = gv;
                }
             }
             if(fading)
@@ -1488,18 +1509,16 @@ package
                var by:Number = ty * Tile.tileY;
                var f:int = this.fov[i];
                var t:Tile = loc.getTile(tx,ty);
+               if(t.opac >= 1)
+               {
+                  // 包括未见/记忆墙：黑芯与弱光不能落入地板的 dim 下限分支。
+                  this.fillWallTile(tx,ty);
+                  continue;
+               }
                if(f == FOV_DIM)
                {
                   // 透光门/水后：门景亮度（doordim，比记忆暗色亮），逐子格重算
                   this.recalcTile(loc,tx,ty,bx,by,doorF,dimA,cs,true);
-                  continue;
-               }
-               if(f == FOV_VISIBLE && t.opac >= 1)
-               {
-                  // 可见墙（邻域点亮规则）：复刻原版"掩膜半格错位 → 墙内一定厚度
-                  // 为亮区"——面向亮区邻域的半个瓦片按邻域亮度点亮，背侧保持
-                  // 暗色/黑；墙在光缘处的亮度随邻域衰减
-                  this.fillWallTile(loc,tx,ty,bx,by,cs);
                   continue;
                }
                // 4 角采样分类：全暗→记忆区/未探索整块；全亮→无 raycast 距离衰减；
@@ -1650,58 +1669,160 @@ package
          }
       }
 
-      /**
-       * current：可见墙瓦片（opac≥1，邻域点亮规则）——复刻原版"掩膜半格错位 →
-       * 墙内一定厚度为亮区"：四分格映射（TL=自身 / TR=东 / BL=南 / BR=东南），
-       * 每格显示其对应瓦片的连续亮度 br（光滑场，无逐瓦片马赛克波痕）；
-       * 对应瓦片为墙/暗区时按历史（曾见→记忆暗色，否则→黑）。
-       */
-      private function fillWallTile(loc:Location, tx:int, ty:int, bx:Number, by:Number, cs:Number):void
+      /** 原版角点 alpha + 本模组记忆/门景，只读游戏亮度。 */
+      private function tileFogAlpha(loc:Location, tx:int, ty:int):int
       {
-         var dimF:Number = this.cfgDim;
-         var dimA:int = Math.round((1 - dimF) * 255);
-         var half:int = FOG_SUB / 2;
-         var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
-         var sx:int;
-         var sy:int;
-         for(sx = 0; sx < FOG_SUB; sx++)
+         var i:int = tx + ty * this.spaceX;
+         // Grafon.setLight/Location.lighting 均从 (1,1) 开始；第零行列恒黑。
+         if(tx == 0 || ty == 0)
          {
-            for(sy = 0; sy < FOG_SUB; sy++)
+            this.advanceMemory(loc,i);
+            return 255;
+         }
+         var t:Tile = loc.getTile(tx,ty);
+         var gv:Number = Math.max(0,Math.min(1,t.visi));
+         // 门景仅改变显示值，不再把 visi/t_visi 永久抬高。
+         if(t.opac < 1 && this.fov[i] == FOV_DIM)
+         {
+            gv = Math.max(gv,this.cfgDoorDim);
+         }
+         var gameA:int = Math.floor((1 - gv) * 255);
+         var cur:Number = this.advanceMemory(loc,i);
+         var memT:Number;
+         if(t.opac >= 1)
+         {
+            // 乘亮度保留原版层次：10% 的弱光记忆后是 3.5%，绝不抬成 35%。
+            memT = 255 - (255 - gameA) * this.cfgDim;
+         }
+         else
+         {
+            memT = this.explored[i] == 1 ? Math.round((1 - this.cfgDim) * 255) : 255;
+         }
+         return Math.round(gameA + cur * (memT - gameA));
+      }
+
+      private function advanceMemory(loc:Location, i:int):Number
+      {
+         var target:Number = !loc.retDark && this.fov[i] == FOV_NONE ? 1 : 0;
+         var cur:Number = this.memCur[i];
+         if(cur < target) cur = Math.min(target,cur + this.cfgFadeStep);
+         else if(cur > target) cur = Math.max(target,cur - this.cfgFadeStep);
+         this.memCur[i] = cur;
+         return cur;
+      }
+
+      /** 墙单独保留原版光照层次，包括落在邻接地板上的角；不套地板记忆下限。 */
+      private function refreshWallField(loc:Location, rebuild:Boolean, advance:Boolean = true):Boolean
+      {
+         var n:int = this.spaceX * this.spaceY;
+         var fresh:Boolean = this.wallA == null || this.wallA.length != n;
+         if(fresh || rebuild)
+         {
+            this.wallTiles = [];
+            this.wallCorners = [];
+            this.wallA = new Array(n);
+            this.wallRaw.fillRect(this.wallRaw.rect,0xFF000000);
+            var used:Array = new Array(n);
+            this.wallClip.graphics.clear();
+            this.floorClip.graphics.clear();
+            this.wallClip.graphics.beginFill(0xFFFFFF);
+            this.floorClip.graphics.beginFill(0xFFFFFF);
+            var tw:int = Tile.tileX;
+            var th:int = Tile.tileY;
+            // 雾图富余边框归地板层，继续保持原有的全黑边界。
+            this.floorClip.graphics.drawRect(-2*tw,-2*th,(this.spaceX+4)*tw,2*th);
+            this.floorClip.graphics.drawRect(-2*tw,this.spaceY*th,(this.spaceX+4)*tw,2*th);
+            this.floorClip.graphics.drawRect(-2*tw,0,2*tw,this.spaceY*th);
+            this.floorClip.graphics.drawRect(this.spaceX*tw,0,2*tw,this.spaceY*th);
+            for(var y:int = 0; y < this.spaceY; y++)
             {
-               var nx:int = tx + (sx >= half ? 1 : 0);
-               var ny:int = ty + (sy >= half ? 1 : 0);
-               var a:int;
-               if(nx < this.spaceX && ny < this.spaceY)
+               var runStart:int = 0;
+               var runWall:Boolean = loc.getTile(0,y).opac >= 1;
+               for(var x:int = 0; x <= this.spaceX; x++)
                {
-                  var ni:int = nx + ny * this.spaceX;
-                  var nf:int = this.fov[ni];
-                  if(nf != FOV_NONE)
+                  var wall:Boolean = x < this.spaceX && loc.getTile(x,y).opac >= 1;
+                  if(x == this.spaceX || wall != runWall)
                   {
-                     var b:Number = this.br[ni];
-                     if(b < dimF)
+                     var clip:Shape = runWall ? this.wallClip : this.floorClip;
+                     clip.graphics.drawRect(runStart*tw,y*th,(x-runStart)*tw,th);
+                     runStart = x;
+                     runWall = wall;
+                  }
+                  if(x == this.spaceX || !wall) continue;
+                  this.wallTiles.push(x + y * this.spaceX);
+                  for(var dy:int = 0; dy <= 1; dy++)
+                  {
+                     for(var dx:int = 0; dx <= 1; dx++)
                      {
-                        b = dimF;
+                        if(x+dx >= this.spaceX || y+dy >= this.spaceY) continue;
+                        var ci:int = x+dx + (y+dy)*this.spaceX;
+                        if(!used[ci])
+                        {
+                           used[ci] = true;
+                           this.wallCorners.push(ci);
+                        }
                      }
-                     a = Math.round((1 - b) * 255);
-                     this.seenSub[idxBase + sy * this.subW + sx] = 1;
-                  }
-                  else if(this.explored[ni] == 1)
-                  {
-                     a = dimA;
-                     this.seenSub[idxBase + sy * this.subW + sx] = 1;
-                  }
-                  else
-                  {
-                     a = 255;
                   }
                }
-               else
-               {
-                  a = 255;
-               }
-               this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,FOG_PAD + ty * FOG_SUB + sy,a << 24);
+            }
+            this.wallClip.graphics.endFill();
+            this.floorClip.graphics.endFill();
+         }
+         var changed:Boolean = fresh || rebuild;
+         for each(var i:int in this.wallCorners)
+         {
+            var tx:int = i % this.spaceX;
+            var ty:int = int(i / this.spaceX);
+            if(advance) this.advanceMemory(loc,i);
+            var gv:Number = tx == 0 || ty == 0 ? 0 : Math.max(0,Math.min(1,loc.getTile(tx,ty).visi));
+            var gameA:int = Math.floor((1-gv)*255);
+            var cur:Number = this.memCur[i];
+            var a:int = Math.round(255 - (255-gameA)*(1-cur+cur*this.cfgDim));
+            if(this.wallA[i] !== a)
+            {
+               changed = true;
+               this.wallA[i] = a;
+               this.wallRaw.setPixel32(tx,ty+1,a << 24);
             }
          }
+         return changed;
+      }
+
+      private function wallCornerAlpha(tx:int, ty:int):Number
+      {
+         // 对齐原版位图的富余黑行/列，不用边界角向外无限延伸。
+         if(tx >= this.spaceX || ty >= this.spaceY) return 255;
+         return this.wallA[tx + ty * this.spaceX];
+      }
+
+      /** 每格四角连续双线性插值，坐标相位等价于原版 (-20,-60)+(x,y+1)。 */
+      private function fillWallTile(tx:int, ty:int, trackMask:Boolean = false):Boolean
+      {
+         var maskChanged:Boolean = false;
+         var a00:Number = this.wallCornerAlpha(tx,ty);
+         var a10:Number = this.wallCornerAlpha(tx+1,ty);
+         var a01:Number = this.wallCornerAlpha(tx,ty+1);
+         var a11:Number = this.wallCornerAlpha(tx+1,ty+1);
+         for(var sy:int = 0; sy < FOG_SUB; sy++)
+         {
+            var fy:Number = (sy + 0.5) / FOG_SUB;
+            var left:Number = a00 + fy * (a01 - a00);
+            var right:Number = a10 + fy * (a11 - a10);
+            for(var sx:int = 0; sx < FOG_SUB; sx++)
+            {
+               var fx:Number = (sx + 0.5) / FOG_SUB;
+               var a:int = Math.round(left + fx * (right - left));
+               if(trackMask)
+               {
+                  var oldA:int = this.fogCache.getPixel32(FOG_PAD + tx * FOG_SUB + sx,
+                     FOG_PAD + ty * FOG_SUB + sy) >>> 24;
+                  if((oldA < MASK_LIT_A) != (a < MASK_LIT_A)) maskChanged = true;
+               }
+               this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,
+                  FOG_PAD + ty * FOG_SUB + sy,a << 24);
+            }
+         }
+         return maskChanged;
       }
 
       /**
@@ -1756,132 +1877,25 @@ package
          }
       }
 
-      /**
-       * classic（仿原版）v6：**游戏值优先**——复刻原版光照管线（原版雾状感），
-       * 唯一的模组干预是记忆区亮度下限。
-       *
-       * 原版"雾"的三要素（反编译确认）：
-       * ① lightBmp 是 1px/瓦片 的 alpha 遮罩 + Bitmap smoothing=true（双线性
-       *    插值）——40px 瓦片值之间连续渐变，边界是柔和的雾带而非硬块；
-       * ② 半格错位（visLight.x=-tileX/2、y=-tileY/2-tileY，写入 y+1 行）——
-       *    每个瓦片的亮度像素中心落在瓦片西北角，墙的亮面/暗边由错位自然
-       *    产生（东/南邻值渗入墙内半格，原版同款）；
-       * ③ visi 渐进节奏——Tile.updVisi() 每帧 +0.1 向 t_visi 逼近（淡入），
-       *    lighting() 后 10 帧 lighting2() 持续刷新（雾"呼吸"），retDark 房间
-       *    变暗目标每帧 -0.025（雾消退尾迹）。
-       * ④ 距离衰减环（lDist1=300 全亮 → lDist2=1000 线性降暗到 0）是原版
-       *    边界的本体；墙永远不被游戏点亮（walk 末步检查目标瓦片 opac），
-       *    原版墙恒黑、仅靠错位渗入邻瓦亮值。
-       *
-       * v6 规则（每帧读游戏 tile.visi，1px/瓦片写 classicRaw，y+1 错位）：
-       *   a = (1-visi)×255  —— 游戏值原样：视野内衰减环梯度/淡入节奏/
-       *     retDark 消退/光源物/门景/墙恒黑+错位渗亮，全部与 vanilla 相同；
-       *   仅当（非 retDark && 非墙 && 当前视野外 && a < dimA）：
-       *     a = dimA  —— 记忆区下限：内部（visi≈1）均匀 166；边界瓦片
-       *     （游戏距离衰减冻结值 0~0.35）保留游戏衰减梯度（166 渐变到黑，
-       *     原版风格边界，无亮步/无块状）。
-       * 变化才写像素（lastA 缓存）；边缘行列照抄原版（lighting 循环从 1 开始，
-       * 恒定黑）。站立时游戏 visi 冻结 → 零写入。
-       */
+      /** classic 地板：原版 1px/格位移雾图加记忆效果；墙由同源独立场替换。 */
       private function applyVisionClassic(w:World, loc:Location, needFov:Boolean):void
       {
-         // v0.24.7：30Hz 门控——偶数帧或 fov 变化帧才跑全图循环。站立时游戏
-         // visi 冻结（循环零写入）；移动时游戏 visi 自身 +0.1/帧平滑渐变，
-         // 30Hz 采样不可察觉；memCur 渐变速率随之减半，同样不可察觉
+         // 交替渲染帧或 FOV 变化帧更新；实际频率取决于宿主帧率。
          if((this.frameCount & 1) != 0 && !needFov)
          {
-            if(this.cfgAutoTest)
-            {
-               this.atClsS++;
-            }
+            if(this.cfgAutoTest) this.atClsS++;
             return;
          }
-         if(this.cfgAutoTest)
-         {
-            this.atClsF++;
-         }
+         if(this.cfgAutoTest) this.atClsF++;
          this.ensureFog(w);
-         if(this.classicRaw == null)
+         if(this.classicRaw == null) return;
+         if(w.grafon != null) w.grafon.visLight.visible = false;
+         for(var ty:int = 0; ty < this.spaceY; ty++)
          {
-            return;
-         }
-         if(w.grafon != null)
-         {
-            w.grafon.visLight.visible = false;
-         }
-         var dimF:Number = this.cfgDim;
-         var dimA:int = Math.round((1 - dimF) * 255);
-         var retDark:Boolean = loc.retDark == true;
-         var tx:int;
-         var ty:int;
-         // 写入范围：全图（v0.23.3 无错位——像素 (tx,ty) 对齐瓦片网格，
-         // 不再照抄原版的"写 y+1 行 + 半格错位"（错位与墙层坐标系不一致））
-         for(ty = 0; ty < this.spaceY; ty++)
-         {
-            for(tx = 0; tx < this.spaceX; tx++)
+            for(var tx:int = 0; tx < this.spaceX; tx++)
             {
                var i:int = tx + ty * this.spaceX;
-               var t:Tile = loc.getTile(tx,ty);
-               var gv:Number = t.visi;
-               if(gv < 0)
-               {
-                  gv = 0;
-               }
-               else if(gv > 1)
-               {
-                  gv = 1;
-               }
-               // 游戏值（原版渲染原样：视野内衰减环梯度 / 淡入节奏 /
-               // retDark 消退 / 光源物 / 门景 / 墙恒黑+半格错位渗亮）
-               var gameA:int = Math.round((1 - gv) * 255);
-               // 记忆化进度（0.1/帧，与原版 visi 渐入同款节奏）：视野外渐增、
-               // 视野内渐减——移动时记忆区边界平滑渐变（消灭 fov 瓦片级二值
-               // 切换的"格子感"），收敛后与 v6 规则一致
-               var mem:Boolean = !retDark && this.fov[i] == FOV_NONE;
-               var cur:Number = this.memCur[i];
-               if(mem)
-               {
-                  cur += this.cfgFadeStep;
-                  if(cur > 1)
-                  {
-                     cur = 1;
-                  }
-               }
-               else
-               {
-                  cur -= this.cfgFadeStep;
-                  if(cur < 0)
-                  {
-                     cur = 0;
-                  }
-               }
-               this.memCur[i] = cur;
-               // v0.24.9：墙与地板同公式——原版 lighting() 对墙无特判：
-               // 射线终点（墙瓦片）自身 opac 不被扣减，可达墙面 t_visi≈1
-               // v0.25.5：地板记忆目标统一 dimA（对齐 current fillMemoryTile）
-               // v0.26.0：全瓦片（含墙）直写 (tx, ty+1) 行——恢复原版位移
-               // 显示后，游戏 visi 场经位移马赛克自然产生墙亮面/黑芯/渐变
-               // （原版基准剖面实测：4 瓦片墙 = 亮/黑/黑/亮 + 40px 线性坡），
-               // 墙层与协调值全部退役
-               // v0.25.10：墙参与记忆变暗，"曾照亮"判定用游戏 visi（常亮权威
-               // 源）。v0.25.8 的墙恒亮在位移马赛克下产生墙外亮边——墙值画在
-               // 以瓦片 NW 角为中心的 40px 区域（含墙顶/墙西外 20px），亮墙值
-               // 盖在记忆暗/未探索黑的地板上 = 水平墙上方/竖直墙左方的 ~40px
-               // 亮带（用户 grilling 确认：位置/状态/固定/classic 独有/宽=一
-               // 单位墙，全部吻合位移相位）。修复：亮墙走出视野与地板一起变暗
-               // 到 dimA（值差消失=亮边消失）；墙不用 explored[] 判定（被墙可
-               // 见性的邻居地板传播污染，是 v0.25.8 前黑芯灰雾的来源）——
-               // visi>0 = 游戏侧曾照亮；visi=0 = 从未受光，恒黑不提亮
-               var memT:int;
-               if(t.opac >= 1)
-               {
-                  memT = gv > 0 ? dimA : 255;
-               }
-               else
-               {
-                  memT = this.explored[i] == 1 ? dimA : 255;
-               }
-               var a:int = Math.round(gameA + cur * (memT - gameA));
+               var a:int = this.tileFogAlpha(loc,tx,ty);
                if(a != this.lastA[i])
                {
                   this.lastA[i] = a;
@@ -1889,29 +1903,7 @@ package
                }
             }
          }
-      }
-
-      /**
-       * classic：透光门/水后的门景亮度提升——fov==DIM 瓦片把 visi 抬到 doordim
-       * （比记忆暗色亮），雾场直接读取该 visi。游戏 lighting() 只升不降且计算
-       * 的透过亮度 < doordim，不会覆盖。
-       */
-      private function doorBoost(w:World, loc:Location):void
-      {
-         var tx:int;
-         var ty:int;
-         for(tx = 0; tx < this.spaceX; tx++)
-         {
-            for(ty = 0; ty < this.spaceY; ty++)
-            {
-               if(this.fov[tx + ty * this.spaceX] == FOV_DIM)
-               {
-                  var t:Tile = loc.getTile(tx,ty);
-                  t.visi = this.cfgDoorDim;
-                  t.t_visi = this.cfgDoorDim;
-               }
-            }
-         }
+         this.refreshWallField(loc,needFov,false);
       }
 
       /** 距离衰减因子：全亮半径内 1，向外到视野半径线性降到 0（原版 lDist1→lDist2）。 */
