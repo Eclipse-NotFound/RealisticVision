@@ -1,27 +1,56 @@
-# 墙内阴影复验
+# 墙内阴影与classic投影复验
 
-在 RealisticVision 模组目录运行：
+在RealisticVision模组目录运行。需要本机Flex/AIR、Animate JRE、游戏自带adl64/runtime；可通过RV_FLEX_SDK、RV_JAVA覆盖工具位置。普通沙箱中AIR启动可能被阻断，此时使用工具级审核放宽，只运行隔离实例。
 
-```text
-node build/wall-tests/run.mjs --baseline
-node build/wall-tests/run.mjs
-node build/wall-tests/run-game.mjs
-```
+## 原有墙内阴影（39项）
 
-第一条测试固定基线 8748feb，预期失败；第二条测试当前源码。
-前两条共用临时编译目录，**必须顺序运行**。游戏验证用不同目录和 app id。
-需要本机 Flex/AIR、Animate JRE、游戏自带 adl64/runtime；可通过 RV_FLEX_SDK、RV_JAVA 覆盖编译工具位置。
+    node build/wall-tests/run.mjs --baseline
+    node build/wall-tests/run.mjs
+    node build/wall-tests/run-game.mjs
 
-## 验证边界
+--baseline固定为8748feb（v0.27.1，预期失败）；不带该项测试当前源码。--revision <提交哈希>可指定另一旧版，不接受分支名或命令片段。
 
-- `WallHarness.as` 在独立不可见 AIR 程序中直接调用模组实际绘制方法，并用真实 Bitmap.draw 比较最终像素；临时源码只将 private 改为 public，方法体不替换、不重写算法。游戏类由编译存根与可控制 Location 夹具提供。
-- 原版基准准确复刻 Grafon.setLight 的 **从 (1,1) 起写入**、(x,y+1)、(-20,-60)、40 倍平滑显示。覆盖横墙、竖墙、墙角、微光、邻接地板角、记忆、retDark、切模式、同尺寸换房、墙破坏、静止照明、门景与单位掩膜缓存。
-- 0.8/1.25 缩放检查的是墙内部亮度；不将它表述为所有相机位置的边缝验收。12×10 性能循环只测渲染更新，不是完整游戏帧率。
-- `GameProbe.as` 经测试副本已有 loader 启动，等待 allLandsLoaded 后新开独立存档、旅行至 random_mane。它直接运行当前模组的实际渲染函数，在同一帧的原版画面上做墙像素对照；不调用正常模组 startup，不做敌人战斗/快捷键/六模组合测。
-- 完整游戏对照将 cfgFadeStep 暂设为 0、visCur 设为 1，以固定记忆进度而只检查原版墙形状。地板可见范围不同是正常模式差异；正常记忆衰减由夹具另测。
-- 游戏副本仅包含公共游戏资源和本模组测试引导器，未复制或启动其他模组。游戏根 pfe.swf 与真实 release/config、真实 pfe 存档均不改动。
-- 输出在 `build/wall-test-output/`（忽略目录）；程序有超时，退出后删除本次临时描述符。只使用 rv-wall-fixture / rv-wall-game-probe 的独立应用存储。
+## classic小墙块投影（v0.28.1）
 
-## 产物
+    node build/wall-tests/run.mjs --edges --revision 6c0170e
+    node build/wall-tests/run.mjs --edges
+    node build/wall-tests/run-game.mjs --training --revision 6c0170e
+    node build/wall-tests/run-game.mjs --training
 
-baseline.log / candidate.log：断言、粗略耗时和 PNG 数据；baseline-*.png / candidate-*.png：控制场景；game/game.log、game/game-*.png：完整游戏对照。最终有用证据由测试报告归档，过程生成物可由脚本重建。
+第一条运行v0.28.0，预期墙角偏差约20px，掩膜分类不齐；第二条运行候选，预期WALL_EDGE_TESTS PASS。--edges覆盖真实computeFov、墙外端点、10方向/相机缩放平移、亮暗区、掩膜取样、静止缓存、模式切换初始14帧、无暗邻居墙外亮度和记忆渐变。
+
+仅调查旧版时，可加--probes。它操作旧classicBmp，**必须与--edges及修复前--revision同用**：
+
+    node build/wall-tests/run.mjs --edges --revision 6c0170e --probes
+
+探针会改变当次渲染对象，是因果取证，不作为最终候选验证；后续新旧正式比较要重跑不带--probes的两条边缘命令。
+
+--training新开隔离档，正常从begin旅行至rbl，再通过gotoLoc(2)进训练房loc1_0。玩家约(1080.8,640)，24帧推进正常记忆。分别输出实际游戏场景、纯阴影、tile数据；CAPTURED仅表示采集完成，不表示修复通过。
+
+新旧训练采集后，用带Pillow的Python执行build/wall-tests/compare-training.py；它先断言整个训练输入一致，再比较纯阴影，断言current整图差0、两模式墙内差0，输出小墙角位置和右侧亮度剖面。目前系统PATH无python，已验证依赖路径：
+
+    C:/Users/hello/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe
+
+最后归档当次日志、指纹和交互对照：
+
+    node build/wall-tests/make-edge-evidence.mjs
+
+输出knowledge/experiments/classic-edge-v0281/。make-evidence.mjs是历史v0.28.0归档脚本，不要用它覆盖已保存的旧报告指纹。
+
+## 验证方式与边界
+
+- 同类用例共用输出目录，**顺序运行**。普通夹具、edges各有独立编译目录/app id；完整游戏的random_mane与training共用资源副本，二者以及不同revision之间必须顺序。
+- WallHarness/WallEdgeHarness在独立不可见AIR程序中直接调用实际模组方法，以Bitmap.draw读取最终像素。临时源码只将private改为public，方法体不改；游戏类用编译存根与可控制Location夹具提供。
+- 原版参照复刻Grafon.setLight从(1,1)开始、写(x,y+1)、(-20,-60)、40倍平滑显示。覆盖横/竖/角墙、弱光、邻地板角、记忆、retDark、切模式、同尺寸换房、破墙、静止照明、门及掩膜缓存。
+- classic中心场参考独立使用矩形相交，验证相位；40px粗格不等于连续多边形切线。其中一个水平掠角差21px是采样模型差异。薄墙的投影中心仍会影响可见侧约20px，不宣称所有墙外亮度未变。
+- 掩膜检查用5px格中心，忽略阈值±1取整，验证取样分类，不等于实际战斗中所有姿势/血条/武器验收。
+- GameProbe经副本已有loader启动，等待allLandsLoaded后正常新档/旅行。直接调用实际模组绘图方法，没有启动正常startup，也不做快捷键或六模组战斗。
+- random_mane旧场景固定cfgFadeStep=0、visCur=1，只测原版墙形状；training使用正常记忆推进。不要混淆两者或把CAPTURED当PASS。
+- 完整场景动画可变化；compare-training.py比较純阴影并断言输入一致，不能用场景PNG哈希判current回退。
+- 12×10与48×25计时仅为渲染更新循环，不是游戏帧率、受控性能基准或长期游玩验收。
+- 副本仅含公共游戏资源和本模组测试引导器。根pfe.swf、真实release/config和pfe存档均不改；其他模组缺件的loader报错属刻意隔离。
+- 生成物位于build/wall-test-output/（忽略目录）；超时后退出并清理临时描述符。app id仅用rv-wall-fixture/rv-wall-fixture-edges/rv-wall-game-probe-training/rv-wall-game-probe-random。
+
+## 输出
+
+夹具baseline.log/candidate.log包含原始断言、计时与PNG数据；edges位于edges/子目录。游戏场景在game/，旧版本带baseline-前缀。报告归档会移除日志中的PNG/DATA大行并单独保留图片和JSON；过程生成物可重建。

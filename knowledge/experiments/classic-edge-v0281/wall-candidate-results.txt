@@ -1,0 +1,61 @@
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current room entry preserves native brightness
+PASS current render preserves black wall corner in game state
+PASS current wall profile matches native: max brightness delta=0
+PASS current to classic keeps wall black core
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic visible wall profile matches native: delta=0
+PASS classic remembered weak light only darkens in final wall pixels: alpha=244
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current horizontal full wall pixels match native: delta=0
+PASS current horizontal memory preserves weak floor-corner light: delta=2
+PASS current horizontal retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current vertical full wall pixels match native: delta=0
+PASS current vertical memory preserves weak floor-corner light: delta=2
+PASS current vertical retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current corner full wall pixels match native: delta=0
+PASS current corner memory preserves weak floor-corner light: delta=2
+PASS current corner retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current stationary native lighting refresh
+PASS current leaves native light untouched after refresh
+PASS current removed wall has no stale black mask
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current door leaves native fields untouched
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+[RVision] room second-room 12x10 lDist2=1500 mode=current
+PASS current same-size room replacement
+PASS current camera scale 0.8 wall brightness
+PASS current camera scale 1.25 wall brightness
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic horizontal full wall pixels match native: delta=0
+PASS classic horizontal memory preserves weak floor-corner light: delta=2
+PASS classic horizontal retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic vertical full wall pixels match native: delta=0
+PASS classic vertical memory preserves weak floor-corner light: delta=2
+PASS classic vertical retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic corner full wall pixels match native: delta=0
+PASS classic corner memory preserves weak floor-corner light: delta=2
+PASS classic corner retDark follows native light
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic stationary native lighting refresh
+PASS classic leaves native light untouched after refresh
+PASS classic removed wall has no stale black mask
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS classic door leaves native fields untouched
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+[RVision] room second-room 12x10 lDist2=1500 mode=classic
+PASS classic same-size room replacement
+PASS classic camera scale 0.8 wall brightness
+PASS classic camera scale 1.25 wall brightness
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PASS current stationary wall light refreshes partial-enemy mask cache
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+PERF current 120 render updates ms=249 fixture=12x10
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PERF classic 120 render updates ms=106 fixture=12x10
+WALL_TESTS PASS failures=0

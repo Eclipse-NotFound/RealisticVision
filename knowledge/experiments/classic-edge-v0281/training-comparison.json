@@ -1,0 +1,54 @@
+{
+  "identical_training_input": true,
+  "current": {
+    "changed_pixels": 0,
+    "max_delta": 0,
+    "wall_max_delta": 0
+  },
+  "classic": {
+    "changed_pixels": 193814,
+    "max_delta": 189,
+    "wall_max_delta": 0,
+    "right_side_y440": [
+      {
+        "x": 960,
+        "old": 255,
+        "new": 129
+      },
+      {
+        "x": 965,
+        "old": 255,
+        "new": 163
+      },
+      {
+        "x": 970,
+        "old": 255,
+        "new": 195
+      },
+      {
+        "x": 975,
+        "old": 255,
+        "new": 227
+      },
+      {
+        "x": 980,
+        "old": 255,
+        "new": 249
+      },
+      {
+        "x": 985,
+        "old": 255,
+        "new": 255
+      },
+      {
+        "x": 1000,
+        "old": 255,
+        "new": 255
+      }
+    ],
+    "corner_y399_half_shadow_rightmost": {
+      "old": 939,
+      "new": 959
+    }
+  }
+}

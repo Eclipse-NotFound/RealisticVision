@@ -2,6 +2,7 @@ package
 {
    import flash.display.Bitmap;
    import flash.display.BitmapData;
+   import flash.display.BitmapDataChannel;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.display.Shape;
@@ -62,7 +63,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.28.0";
+      private static const VERSION:String = "v0.28.1";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -134,13 +135,17 @@ package
       // 自建雾层：原版式瓦片掩膜（无空间模糊，边界为干脆瓦片线）
       private var fogVis:Sprite = null;
       private var fogRaw:BitmapData = null;   // classic 覆盖层/current 工作位图
-      private var fogCache:BitmapData = null; // current：最终 alpha 场缓存（仅 FOV 重算时更新）
+      private var fogCache:BitmapData = null; // 两模式的雾场/单位裁剪取样缓存
       private var fogBmp:BitmapData = null;
       private var fogBitmap:Bitmap = null;
-      // classic（仿原版）v7：1px/瓦片雾层——复刻原版 lightBmp 结构
-      // （smoothing 双线性 + 半格错位 + 游戏 visi 渐进节奏 → 原版雾状感）
+      // classic：原版光照在格角，FOV/记忆在格中心；分别插值后再合成。
       private var classicRaw:BitmapData = null;
-      private var classicBmp:Bitmap = null;
+      private var classicMemoryRaw:BitmapData = null;
+      private var classicLightMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
+         FOG_PAD-FOG_SUB/2,FOG_PAD-FOG_SUB*1.5);
+      private var classicMemoryMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
+         FOG_PAD,FOG_PAD-FOG_SUB);
+      private var brightnessToFog:ColorTransform = new ColorTransform(-1,-1,-1,1,255,255,255,0);
       // v0.28.0：墙与地板用互补 mask 分区替换；墙保留原版位图的完整渐变。
       private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
       private var memCur:Array = null;  // 每角记忆进度：0=原版亮度，1=完整记忆衰减
@@ -212,7 +217,7 @@ package
       private var atClsS:int = 0;    // classic：30Hz 门控跳过帧
       private var atWsEx:int = 0;    // 武器扫描执行帧
       private var atWsSk:int = 0;    // 武器扫描门控跳过帧
-      private var atMaskRaw:int = 0; // 掩膜 classicRaw 采样分支（零 raycast）
+      private var atMaskRaw:int = 0; // classic 掩膜缓存采样分支（零 raycast）
       private var atMaskRay:int = 0; // 掩膜 raycast 兜底分支
       private var atMsSum:int = 0;   // 窗口内模组帧耗时累计（ms）
       private var atMsMax:int = 0;   // 窗口内模组帧耗时峰值（ms）
@@ -802,6 +807,12 @@ package
          if(!pass)
          {
             this.ensureFog(w);
+            // classic合成借用fogRaw保存RGB；同尺寸切回current也须像新建图
+            // 那样初始化三个缓冲，否则旧图/外围像素会留到淡入或模糊结束。
+            this.fogRaw.fillRect(this.fogRect,0xFF000000);
+            this.fogCache.fillRect(this.fogRect,0xFF000000);
+            this.fogBmp.fillRect(this.fogRect,0xFF000000);
+            this.fogBlurPending = false;
             if(this.cfgMode == "classic")
             {
                // classic（v4）：雾场自渲染，隐藏游戏掩膜（模式切换时一并隐藏，
@@ -832,9 +843,7 @@ package
          }
       }
 
-      /** 自建软雾层：低分辨率子格 + 模糊，插在 visLight 之后同一层级。
-       *  不在这里隐藏 visLight（classic 模式需要原版掩膜；current 模式由
-       *  applyVision 每帧隐藏）。 */
+      /** 自建雾层插在visLight之后；应用各模式的视野时再隐藏原版显示。 */
       private function ensureFog(w:World):void
       {
          if(w.grafon == null)
@@ -883,14 +892,8 @@ package
             this.fogVis.addChild(this.fogBitmap);
             this.fogDirty = true;
          }
-         // classic（仿原版）v5 雾层：1px/瓦片，复刻原版 lightBmp——
-         // ① smoothing=true 双线性插值（40px 值之间连续渐变 → 雾状感本体）
-         // ② 半格错位（x=-tileX/2, y=-tileY/2-tileY，写 y+1 行——亮度像素
-         //    中心落在瓦片西北角，墙亮面/暗边由错位自然产生，同原版）
-         // ③ 尺寸 = (spaceX+1)×(spaceY+2)——**富余 1 列 2 行**（原版 lightBmp
-         //    49×28 = 最大房间 48×26 + 同款富余）。无富余时错位后雾层右端
-         //    缺 20px、底端缺 20px → 画面右下亮边缺口；富余行列保持初始黑
-         //    （原版 lightBmp 边缘行列同为恒黑）
+         // classic仍按每格1像素平滑插值，但格角光照与格中心记忆分别变换。
+         // 富余1列2行保持黑色，覆盖两套相位下的房间边界。
          var cw:int = this.spaceX + 1;
          var ch:int = this.spaceY + 2;
          if(this.classicRaw == null || this.classicRaw.width != cw || this.classicRaw.height != ch)
@@ -898,22 +901,10 @@ package
             if(this.classicRaw != null)
             {
                this.classicRaw.dispose();
-            }
-            if(this.classicBmp != null && this.classicBmp.parent)
-            {
-               this.classicBmp.parent.removeChild(this.classicBmp);
+               this.classicMemoryRaw.dispose();
             }
             this.classicRaw = new BitmapData(cw,ch,true,0xFF000000); // 初始全黑
-            this.classicBmp = new Bitmap(this.classicRaw,"auto",true); // smoothing=true
-            this.classicBmp.scaleX = this.classicBmp.scaleY = Tile.tileX;
-            // v0.26.0：恢复原版位移显示（x=-半格，y=-1 格半；写 (tx, ty+1) 行）
-            // ——原版墙内明暗（亮/黑/黑/亮 + 40px 线性坡）就是游戏 visi 场经
-            // 此位移的双线性输出（基准截图剖面实测），瓦片对齐显示（v0.23.3）
-            // 会把坡压成瓦片阶梯 = 历次"偏移/位置不对"的根源。墙专用层退役：
-            // 位移马赛克下墙与全部瓦片同管线，无需任何墙特判
-            this.classicBmp.x = -Tile.tileX / 2;
-            this.classicBmp.y = -Tile.tileY / 2 - Tile.tileY;
-            this.fogVis.addChild(this.classicBmp);
+            this.classicMemoryRaw = new BitmapData(cw,ch,true,0xFF000000);
             this.lastA = null;
          }
          if(this.lastA == null || this.lastA.length != this.spaceX * this.spaceY)
@@ -947,28 +938,13 @@ package
             this.fogVis.addChild(this.wallClip);
             this.fogVis.addChild(this.floorClip);
          }
-         // 模式可见性互斥：classic 显示 1px 位移雾层，current 显示 8×8 雾层
-         var classicMode:Boolean = this.cfgMode == "classic";
+         // 两模式的地板都输出到5px工作图；classic的原版1px场只作合成输入。
          if(this.fogBitmap != null)
          {
-            this.fogBitmap.visible = !classicMode;
-         }
-         if(this.classicBmp != null)
-         {
-            this.classicBmp.visible = classicMode;
+            this.fogBitmap.visible = true;
          }
          // 两张图按互补范围替换，绝不叠加：墙=原版原尺寸场，地板=各模式雾效。
-         // 只将当前显示的地板图绑定 floorClip，同一个 mask 不同时绑定两个对象。
-         if(classicMode)
-         {
-            if(this.fogBitmap.mask != null) this.fogBitmap.mask = null;
-            if(this.classicBmp.mask != this.floorClip) this.classicBmp.mask = this.floorClip;
-         }
-         else
-         {
-            if(this.classicBmp.mask != null) this.classicBmp.mask = null;
-            if(this.fogBitmap.mask != this.floorClip) this.fogBitmap.mask = this.floorClip;
-         }
+         if(this.fogBitmap.mask != this.floorClip) this.fogBitmap.mask = this.floorClip;
          if(this.wallBmp.mask != this.wallClip) this.wallBmp.mask = this.wallClip;
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
@@ -1669,14 +1645,13 @@ package
          }
       }
 
-      /** 原版角点 alpha + 本模组记忆/门景，只读游戏亮度。 */
+      /** 原版格角光照与门景，只读游戏亮度；中心采样的记忆另行插值。 */
       private function tileFogAlpha(loc:Location, tx:int, ty:int):int
       {
          var i:int = tx + ty * this.spaceX;
          // Grafon.setLight/Location.lighting 均从 (1,1) 开始；第零行列恒黑。
          if(tx == 0 || ty == 0)
          {
-            this.advanceMemory(loc,i);
             return 255;
          }
          var t:Tile = loc.getTile(tx,ty);
@@ -1686,19 +1661,7 @@ package
          {
             gv = Math.max(gv,this.cfgDoorDim);
          }
-         var gameA:int = Math.floor((1 - gv) * 255);
-         var cur:Number = this.advanceMemory(loc,i);
-         var memT:Number;
-         if(t.opac >= 1)
-         {
-            // 乘亮度保留原版层次：10% 的弱光记忆后是 3.5%，绝不抬成 35%。
-            memT = 255 - (255 - gameA) * this.cfgDim;
-         }
-         else
-         {
-            memT = this.explored[i] == 1 ? Math.round((1 - this.cfgDim) * 255) : 255;
-         }
-         return Math.round(gameA + cur * (memT - gameA));
+         return Math.floor((1 - gv) * 255);
       }
 
       private function advanceMemory(loc:Location, i:int):Number
@@ -1877,7 +1840,7 @@ package
          }
       }
 
-      /** classic 地板：原版 1px/格位移雾图加记忆效果；墙由同源独立场替换。 */
+      /** classic：保留格角光照，中心FOV/记忆以自己的坐标合成，消除半格投影偏位。 */
       private function applyVisionClassic(w:World, loc:Location, needFov:Boolean):void
       {
          // 交替渲染帧或 FOV 变化帧更新；实际频率取决于宿主帧率。
@@ -1890,6 +1853,9 @@ package
          this.ensureFog(w);
          if(this.classicRaw == null) return;
          if(w.grafon != null) w.grafon.visLight.visible = false;
+         var changed:Boolean = needFov;
+         // 先推进全图，墙中心延续邻接地板的同一帧进度，避免遍历方向造成一帧差。
+         for(var mi:int = 0; mi < this.spaceX*this.spaceY; mi++) this.advanceMemory(loc,mi);
          for(var ty:int = 0; ty < this.spaceY; ty++)
          {
             for(var tx:int = 0; tx < this.spaceX; tx++)
@@ -1900,10 +1866,69 @@ package
                {
                   this.lastA[i] = a;
                   this.classicRaw.setPixel32(tx,ty + 1,a << 24);
+                  changed = true;
+               }
+               var memory:Number = this.memCur[i];
+               var grey:int = loc.getTile(tx,ty).opac >= 1
+                  ? Math.round((255-a)*this.cfgDim)
+                  : (this.explored[i] == 1 ? Math.round(255*this.cfgDim) : 0);
+               // 墙面可见性经邻居传播，不能拿它把地板投影端点挖成透明孔。
+               // 以相邻地板最深的记忆延续至墙中心，并跟随其淡入淡出；没有
+               // 暗邻居时不补遮挡，避免给整圈可见墙边凭空加一层黑带。
+               if(!loc.retDark && loc.getTile(tx,ty).opac >= 1)
+               {
+                  var deepest:Number = 0;
+                  for(var dy:int = -1; dy <= 1; dy++)
+                  {
+                     for(var dx:int = -1; dx <= 1; dx++)
+                     {
+                        var nx:int = tx+dx, ny:int = ty+dy;
+                        if(nx <= 0 || ny <= 0 || nx >= this.spaceX || ny >= this.spaceY
+                           || loc.getTile(nx,ny).opac >= 1) continue;
+                        var ni:int = nx+ny*this.spaceX;
+                        var ng:int = this.explored[ni] == 1 ? Math.round(255*this.cfgDim) : 0;
+                        var depth:Number = this.memCur[ni]*(255-ng);
+                        if(depth > deepest)
+                        {
+                           deepest = depth;
+                           memory = this.memCur[ni];
+                           grey = ng;
+                        }
+                     }
+                  }
+               }
+               var memoryAlpha:int = Math.round(memory*255);
+               // BitmapData会丢弃全透明像素的RGB；统一为0，避免静止时永久误报变化。
+               var pixel:uint = memoryAlpha == 0 ? 0 :
+                  (memoryAlpha << 24) | (grey << 16) | (grey << 8) | grey;
+               if(tx == 0 || ty == 0) pixel = 0xFF000000;
+               if(this.classicMemoryRaw.getPixel32(tx,ty+1) != pixel)
+               {
+                  this.classicMemoryRaw.setPixel32(tx,ty+1,pixel);
+                  changed = true;
                }
             }
          }
-         this.refreshWallField(loc,needFov,false);
+         if(this.refreshWallField(loc,needFov,false)) changed = true;
+         if(changed)
+         {
+            // 在白底上画原版黑雾，得到原版亮度；再以记忆进度为alpha混入
+            // 格中心记忆亮度。不是叠加两层黑雾，弱光与地板记忆语义各自保留。
+            this.fogRaw.fillRect(this.fogRect,0xFFFFFFFF);
+            this.fogRaw.draw(this.classicRaw,this.classicLightMatrix,null,null,null,true);
+            this.fogRaw.draw(this.classicMemoryRaw,this.classicMemoryMatrix,null,null,null,true);
+            // 先在不透明RGB上反相，再复制到alpha。直接反转目标alpha时，
+            // AIR会跳过alpha=0的像素，导致原本全黑的区域变成透明洞。
+            this.fogRaw.colorTransform(this.fogRect,this.brightnessToFog);
+            this.fogBmp.fillRect(this.fogRect,0);
+            this.fogBmp.copyChannel(this.fogRaw,this.fogRect,this.fogPoint,
+               BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+            // 部分敌人按本次合成后的实际场取样，不再读错行/错相位的1px源图。
+            this.fogCache.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
+            for each(var wi:int in this.wallTiles)
+               this.fillWallTile(wi % this.spaceX,int(wi / this.spaceX));
+            this.fovVersion++;
+         }
       }
 
       /** 距离衰减因子：全亮半径内 1，向外到视野半径线性降到 0（原版 lDist1→lDist2）。 */
@@ -2123,8 +2148,9 @@ package
          var scx:int;
          var scy:int;
          bd.lock();
-         if(this.cfgMode == "current" && this.fogCache != null)
+         if((this.cfgMode == "current" || this.cfgMode == "classic") && this.fogCache != null)
          {
+            if(this.cfgMode == "classic" && this.cfgAutoTest) this.atMaskRaw++;
             // v0.24.5（current）：直接采样最终雾场 fogCache（已含距离衰减/
             // 墙亮面/门景/记忆区）——零 raycast（敌人掩膜从每 FOV 变化数千
             // 次 castRay 降到数千次 getPixel32），且掩膜与雾层**像素级对齐**
@@ -2150,43 +2176,6 @@ package
                      FOG_PAD + fty * FOG_SUB
                      + Math.floor((wy - fty * Tile.tileY) / cs)) >>> 24;
                   if(a0 < MASK_LIT_A)
-                  {
-                     bd.setPixel32(scx,scy,0xFFFFFFFF);
-                  }
-               }
-            }
-         }
-         else if(this.cfgMode == "classic" && this.classicRaw != null)
-         {
-            // v0.24.7（classic）：采样雾层 classicRaw（1px/瓦片，瓦片级缓存
-            // 复用）——零 raycast；掩膜与 classic 雾层**瓦片级对齐**（门景/
-            // 衰减环/记忆区/墙协调值，阈值同为 MASK_LIT_A=140）
-            if(this.cfgAutoTest)
-            {
-               this.atMaskRaw++;
-            }
-            var lTx:int = -1;
-            var lTy:int = -1;
-            var lA:int = 255;
-            for(scx = 0; scx < totx; scx++)
-            {
-               for(scy = 0; scy < toty; scy++)
-               {
-                  var cwx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
-                  var cwy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
-                  var ctx:int = Math.floor(cwx / Tile.tileX);
-                  var cty:int = Math.floor(cwy / Tile.tileY);
-                  if(ctx < 0) { ctx = 0; }
-                  else if(ctx >= this.spaceX) { ctx = this.spaceX - 1; }
-                  if(cty < 0) { cty = 0; }
-                  else if(cty >= this.spaceY) { cty = this.spaceY - 1; }
-                  if(ctx != lTx || cty != lTy)
-                  {
-                     lA = this.classicRaw.getPixel32(ctx,cty) >>> 24;
-                     lTx = ctx;
-                     lTy = cty;
-                  }
-                  if(lA < MASK_LIT_A)
                   {
                      bd.setPixel32(scx,scy,0xFFFFFFFF);
                   }

@@ -2,6 +2,14 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-09-12 v0.28.1 候选：classic小墙块投影接回墙角，未部署
+
+- 做了什么：根据grilling的Q1/Q2定位到rbl训练房上方小墙块；分开原版格角光照与中心采样记忆，墙中心延续邻暗地板渐变，敌人掩膜取实际合成雾场。修复透明RGB导致静止重绘、共用工作图导致切回current残留。删除闲置classic显示位图。
+- 关键决定：D23补充D22，原版墙图及visi/t_visi只读继续保留。Q3重复询问未收到回答，按既有D22授权及本次定位继续，不把未回答写成确认。依grilling事实委托要求由classic_boundary_audit做只读审查，主线实际复现验证；未加载parallel-delegate技能。
+- 验证：最小墙角偏差20.25→0.25px；10方向/相机检查通过；掩膜分类2086→0；切current初始14帧逐像素差0；原39项通过。同训练输入current整图/两模式墙内差0，原版字段改写0，实景墙顶轮廓x939→959。报告knowledge/experiments/2026-09-12-classic-wall-edge-offset.md和classic-edge-v0281/交互对照。
+- 产物：build/RealisticVisionMod_test.swf为17,656字节，SHA256 1B20528A8DAD9D48D435391E628D15286E90A9561699F94F907BFD0BE6A47DFB；FFDec仅RealisticVisionMod，无游戏存根。正式release仍v0.28.0，config/游戏文件未改，已有stash保留。
+- 限制与下一步：classic仍有粗格掠角差异、投影薄墙可见侧约20px渐变；合成成本增加，单次完整房间60更新旧149ms/新487ms（另轮新273ms），不是帧率或性能基准。候选正常startup、正式快捷键和共同战斗未验；后续部署须新建v0.28.0备份、走启动门禁，旧v0.27.1备份原样保留。
+
 ## 2026-09-10 v0.28.0 正式部署：备份、启动与入口检查
 
 - 做了什么：用户明确说“部署”后，复用35ecef6已验证的17,378字节候选，先备份v0.27.1再覆盖release/RealisticVisionMod.swf；新release SHA256为57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0。根游戏SWF、正式application.xml和config未改；本轮单模组部署顺序执行，未另行委托。

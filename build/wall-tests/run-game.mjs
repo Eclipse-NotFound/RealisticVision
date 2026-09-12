@@ -1,6 +1,10 @@
 // Full 1.02 game in a copied asset root and a separate AIR app id. No user saves/mod releases.
 import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';import {spawnSync} from 'node:child_process';
 const here=path.dirname(fileURLToPath(import.meta.url)),mod=path.resolve(here,'../..'),game=path.resolve(mod,'../..');
+const training=process.argv.includes('--training');
+const revisionArg=process.argv.indexOf('--revision'),revision=revisionArg>=0?process.argv[revisionArg+1]:null;
+if(revisionArg>=0 && !/^[0-9a-f]{7,40}$/.test(revision||''))throw Error('--revision requires a commit hash');
+const prefix=revision?'baseline-':'';
 const out=path.join(mod,'build/wall-test-output/game');fs.mkdirSync(out,{recursive:true});
 const sdk=process.env.RV_FLEX_SDK||'D:/RemainsMod/mods/Sandevistan/build/tools/flexsdk';
 const java=process.env.RV_JAVA||'D:/Program Files/Adobe Animate 2024/jre/bin/java.exe';
@@ -9,20 +13,22 @@ for(const name of fs.readdirSync(game)) {
   if(!fs.existsSync(path.join(out,name)))fs.copyFileSync(path.join(game,name),path.join(out,name));
 }
 fs.cpSync(path.join(game,'Rooms'),path.join(out,'Rooms'),{recursive:true});
-const exposed=fs.readFileSync(path.join(mod,'src/RealisticVisionMod.as'),'utf8').replace(/\bprivate\b/g,'public');
+const source=revision?spawnSync('git',['show',revision+':src/RealisticVisionMod.as'],{cwd:mod,encoding:'utf8'}).stdout:fs.readFileSync(path.join(mod,'src/RealisticVisionMod.as'),'utf8');
+if(!source.includes('class RealisticVisionMod'))throw Error('Missing mod source');
+const exposed=source.replace(/\bprivate\b/g,'public');
 fs.writeFileSync(path.join(out,'RealisticVisionMod.as'),exposed);
 function compile(args){const r=spawnSync(java,['-Xmx384m','-jar',path.join(sdk,'lib/mxmlc.jar'),'+configname=air',`+flexlib=${sdk}/frameworks`,'-swf-version=32','-debug=true','-static-link-runtime-shared-libraries=true',...args],{cwd:out,env:{...process.env,AIR_HOME:sdk},encoding:'utf8',timeout:60000});if(r.status!==0)throw Error(r.stdout+r.stderr);}
 compile([`-source-path=${out}`,`-external-library-path+=${mod}/build/GameStubs.swc`,'-output',path.join(out,'WallMod.swf'),path.join(out,'RealisticVisionMod.as')]);
 const boot=path.join(out,'bootstrap');fs.mkdirSync(boot,{recursive:true});
 fs.copyFileSync(path.join(here,'GameProbe.as'),path.join(boot,'GameProbe.as'));
-fs.writeFileSync(path.join(boot,'RealisticVisionMod.as'),'package { import flash.display.Sprite; public class RealisticVisionMod extends Sprite { public static var probe:GameProbe; public static function init(main:*):void { probe=new GameProbe(main); } } }');
+fs.writeFileSync(path.join(boot,'RealisticVisionMod.as'),`package { import flash.display.Sprite; public class RealisticVisionMod extends Sprite { public static var probe:GameProbe; public static function init(main:*):void { probe=new GameProbe(main,"${training?'training':'random_mane'}"); } } }`);
 const injected=path.join(out,'mods/RealisticVision/release');fs.mkdirSync(injected,{recursive:true});
 compile([`-source-path=${boot}`,'-output',path.join(injected,'RealisticVisionMod.swf'),path.join(boot,'RealisticVisionMod.as')]);
 const descriptor=path.join(out,'app-wall-game-test.xml');
-fs.writeFileSync(descriptor,`<?xml version="1.0"?><application xmlns="http://ns.adobe.com/air/application/30.0"><id>rv-wall-game-probe</id><versionNumber>1.0</versionNumber><filename>WallGameProbe</filename><initialWindow><content>pfe.swf</content><visible>true</visible><width>1280</width><height>720</height><renderMode>direct</renderMode></initialWindow></application>`);
+fs.writeFileSync(descriptor,`<?xml version="1.0"?><application xmlns="http://ns.adobe.com/air/application/30.0"><id>rv-wall-game-probe-${training?'training':'random'}</id><versionNumber>1.0</versionNumber><filename>WallGameProbe</filename><initialWindow><content>pfe.swf</content><visible>false</visible><width>1280</width><height>720</height><renderMode>direct</renderMode></initialWindow></application>`);
 const r=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:85000,maxBuffer:20*1024*1024});
-const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(out,'game.log'),log);
+const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(out,prefix+(training?'training.log':'game.log')),log);
 fs.unlinkSync(descriptor);
-for(const line of log.split(/\r?\n/)){if(line.startsWith('PNG ')){const [,name,data]=line.split(' ');fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(data,'hex'));}else if(line.includes('GAME_PROBE'))console.log(line);}
+for(const line of log.split(/\r?\n/)){if(line.startsWith('PNG ')){const [,name,data]=line.split(' ');fs.writeFileSync(path.join(out,prefix+name+'.png'),Buffer.from(data,'hex'));}else if(line.startsWith('DATA training ')){fs.writeFileSync(path.join(out,prefix+'training-data.json'),line.slice('DATA training '.length));}else if(line.includes('GAME_PROBE'))console.log(line);}
 if(r.error)console.error(r.error.message);
-process.exit(r.status===0 && log.includes('GAME_PROBE PASS')?0:1);
+process.exit(r.status===0 && log.includes(training?'GAME_PROBE CAPTURED training':'GAME_PROBE PASS')?0:1);

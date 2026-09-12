@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-12",
+  "baselineCommit": "6c0170e",
+  "status": "candidate-not-deployed",
+  "source": "3b7f1d43b22dcb14b304d19e0584e6d2c7b8a0867279a0a70c0d1e24a157fd6e",
+  "testSwf": "1b20528a8dad9d48d435391e628d15286e90a9561699f94f907bfd0be6a47dfb",
+  "releaseSwf": "57fa90f813c267c1bb0bc4b4aab536257cf10edcd20e7e38bda93e9b3aa9b6e0",
+  "config": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+  "game": "5300ec4874e0404d298bb58c5d2a7469e82f93b455ad29ad64dd2e29d17241e7",
+  "testBytes": 17656
+}

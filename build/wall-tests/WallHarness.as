@@ -80,9 +80,9 @@ package {
       check(maxDiff<=2,"classic visible wall profile matches native: delta="+maxDiff);
       o.loc.getTile(6,3).visi=0.1;o.loc.getTile(6,3).t_visi=0.1;
       o.m.fov[6+3*12]=0;
-      render(o);
-      var a:int=o.m.classicRaw.getPixel32(6,4)>>>24;
-      check(a>=245,"classic remembered weak light only darkens: alpha="+a+" expected about 246");
+      var weakWall:BitmapData=render(o);
+      var a:int=255-(weakWall.getPixel(240,120)&255);
+      check(a>=238,"classic remembered weak light only darkens in final wall pixels: alpha="+a);
       for each(var mode:String in ["current","classic"]) {
         for each(var layout:String in ["horizontal","vertical","corner"]) {
           o=fixture(mode);

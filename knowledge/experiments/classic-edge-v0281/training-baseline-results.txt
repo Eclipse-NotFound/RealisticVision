@@ -1,0 +1,39 @@
+SandyMod: load start
+SandyMod: load issued
+RConnectMod: load start
+RConnectMod: load issued
+RVision: load start
+RVision: load issued
+MSWMod: load start
+MSWMod: load issued
+TDFC: load start
+TDFC: load issued
+RandomRoomsMod: load start
+RandomRoomsMod: load issued
+SandyMod: IOError Error #2035: URL Not Found. URL: app:/mods/Sandevistan/release/SandevistanMod.swf
+RConnectMod: IOError Error #2035: URL Not Found. URL: app:/mods/Rconnect/release/RConnectMod.swf
+MSWMod: IOError Error #2035: URL Not Found. URL: app:/mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf
+TDFC: IOError Error #2035: URL Not Found. URL: app:/mods/TDFC/release/TDFCMod.swf
+RandomRoomsMod: IOError Error #2035: URL Not Found. URL: app:/mods/RandomRooms/release/RandomRoomsMod.swf
+RVision: complete fired
+RVision: class=[class RealisticVisionMod]
+RVision: init returned
+1024 Интерфейс
+2042 Game init
+GAME_PROBE new game
+1595 Персонаж
+0 Местность
+1418 Создание местности
+false
+684 Вход в местность
+GAME_PROBE training start land=begin loc=loc0_0
+1364 Создание местности
+832 Вход в местность
+GAME_PROBE training capture loc1_0 48x25 player=1080.8,640
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+GAME_PROBE training classic nativeMutations=0
+GAME_PROBE PERF classic 60 render updates ms=149 room=48x25
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+GAME_PROBE training current nativeMutations=0
+GAME_PROBE PERF current 60 render updates ms=1990 room=48x25
+GAME_PROBE CAPTURED training (visual diagnosis only)
