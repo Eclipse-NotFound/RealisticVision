@@ -2,6 +2,19 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-09-19 v0.28.2正式部署：备份、正式路径启动与模式入口通过
+
+- 用户明确“请部署”。复用源码37c25ba的已验18,877字节产物，正式release SHA A8A7DAE9A755ACD7FC93101003AACE2C8CF2A0FF6A507318B3B7A7CAADB685E2；保留a583f1a念力修复。新备份build/release_backup_v0280_grabfix1_before_v0282_20260919.swf（E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969），回滚复制回release并重启。
+- 替换步骤前次空参数失败未改旧正式文件；核对原文件及备份后，使用NullString明确传入.NET null完成原子替换。正式config仍5136EE19…3C7F（current/dim=.35/debug=0），根pfe.swf仍5300EC48…241E7，其他模组未改。
+- 独立隐藏实例rv-deploy-smoke-v0282-20260919-232730从实际游戏根和正式release启动：6个loader全部init returned；RV init ok v0.28.2、msw settings registered、22条心跳至3781；仅向自有窗口定向发送3次F12，调用栈确认进入cycleMode。
+- 已知配置写入SecurityError:fileWriteResource复现3次，未作为新增渲染故障；配置未变，没有其他RV错误。未将主菜单入口检查说成三模式实景或六模组战斗验收。用户仍需保存并重启，自有PID24556和测试描述符已清理，未动用户进程/真实存档。
+- 证据：knowledge/experiments/2026-09-19-v0282-deployment.md、deployment-v0282/；MEMORY和对照页发布状态已更新，既有MSW stash及旧备份保留。
+
+## 2026-09-19 v0.28.2部署：替换步骤的参数兼容处理
+
+- 用户明确“请部署”。候选、源码、正式旧版和配置指纹均与前轮一致，先建立build/release_backup_v0280_grabfix1_before_v0282_20260919.swf（E4E5ED82…701969），不覆盖旧回滚点。
+- 首次.NET File.Replace的空备份参数被PowerShell传为空路径，替换前即报错；正式文件仍须核对为旧E4E5…1969。停在替换步骤，改用明确的.NET null字符串后从部署校验继续；后续成功状态另记。
+
 ## 2026-09-19 v0.28.2：按用户选择修复classic墙边接缝，候选未部署
 
 - 做了什么：按“按候选修复”完成源码、隔离AIR回归、完整训练房同输入对照和测试构建。classic原版墙底图不再预乘格角记忆，改由中心可见性统一压暗；墙外一格用共享角与边曲线衔接，避免内角叠加及接缝转移。原生位图合成墙缓存、复用边采样减轻成本。D24记录取舍。

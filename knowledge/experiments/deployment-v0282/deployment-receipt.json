@@ -1,0 +1,24 @@
+{
+  "version": "v0.28.2",
+  "sourceCommit": "37c25ba",
+  "deployedUtc": "2026-09-19T15:26:46.2378942Z",
+  "backup": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\release_backup_v0280_grabfix1_before_v0282_20260919.swf",
+  "previousSha256": "E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969",
+  "releaseSha256": "A8A7DAE9A755ACD7FC93101003AACE2C8CF2A0FF6A507318B3B7A7CAADB685E2",
+  "configSha256": "5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F",
+  "smoke": "passed",
+  "checks": {
+    "appId": "rv-deploy-smoke-v0282-20260919-232730",
+    "processId": 24556,
+    "loadedVersion": "v0.28.2",
+    "allSixLoadersInitialized": true,
+    "settingsRegistered": true,
+    "heartbeatCount": 22,
+    "lastHeartbeat": 3781,
+    "modeKeyCalls": 3,
+    "knownConfigWriteErrors": 3,
+    "configPreserved": true,
+    "isolatedTestStopped": true,
+    "rootGameSha256": "5300EC4874E0404D298BB58C5D2A7469E82F93B455AD29AD64DD2E29D17241E7"
+  }
+}

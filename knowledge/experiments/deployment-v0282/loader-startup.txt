@@ -1,0 +1,39 @@
+SandyMod: load start
+SandyMod: load issued
+RConnectMod: load start
+RConnectMod: load issued
+RVision: load start
+RVision: load issued
+MSWMod: load start
+MSWMod: load issued
+TDFC: load start
+TDFC: load issued
+RandomRoomsMod: load start
+RandomRoomsMod: load issued
+RandomRoomsMod: complete fired
+RandomRoomsMod: class=[class RandomRoomsMod]
+RandomRoomsMod: init returned
+MSWMod: complete fired
+MSWMod: class=[class MoreSkillsWeaponsMod]
+MSWMod: init returned
+RVision: complete fired
+RVision: class=[class RealisticVisionMod]
+RVision: init returned
+SandyMod: complete fired
+SandyMod: content=[object SandevistanMod]
+SandyMod: qname=SandevistanMod
+SandyMod: class=[class SandevistanMod]
+SandyMod: init returned
+TDFC: complete fired
+TDFC: class=[class TDFCMod]
+TDFC: init returned
+RConnectMod: complete fired
+RConnectMod: class=[class RConnectMod]
+RConnectMod: init returned
+581 Интерфейс
+1261 Game init
+1036 Персонаж
+1 Местность
+996 Создание местности
+false
+394 Вход в местность
