@@ -2,6 +2,16 @@
 
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
 
+## 2026-09-19 v0.28.0-grabfix.1：用户授权的念力误拦热修复
+
+- 用户在TDFC任务明确回答“允许”，批准将已验证的念力修复合入RealisticVision并更新正式模组。blockInvisibleGrab补齐vanilla/基地/配置安全房间透传条件；与渲染器一致，避免原版显示下未更新的全零FOV误吞右键/Q。原版距离、重量、魔力、天赋与目标条件不改。
+- 源码一行守卫单独提交a583f1a。合入时发现原视觉任务正在修改classic墙边源码，只应用该行，未覆盖、暂存或发布其他改动。正式热修复从旧部署v0.28.0单类导出/定向编译而来，不从当前v0.28.1阴影源码构建；后者继续原任务的接缝修复。
+- 正式release/RealisticVisionMod.swf为E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969，标记v0.28.0-grabfix.1。配置仍current，SHA5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F；游戏SWF/正式描述符未改。
+- 原版唯一备份build/release_backup_v0280_before_grabfix_20260919.swf，SHA57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0。回滚复制该文件到release/RealisticVisionMod.swf并重启。后续正式发布先另备当前热修复，不覆盖此备份或原v0.27.1备份。
+- 候选vanilla/classic/current合计36正例＋6基础LOS负例通过。部署后独立实例pfe-tdfc-test从正式release复制（无TestVisionSwf覆盖），只把测试配置设vanilla，run=cff445759b4d4e67bda26e3cfd090a60；29级Littlepip存档副本核验，天角兽/掠夺者/地雷×右键/Q×观察开/关12次成功，暂关并恢复副本透墙天赋的2次基础LOS检查通过。日志有新版本、设置注册及tick181/361。
+- 自有测试PID49036自动退出；未控制用户45036或本项目墙边测试，未写真实pfe存档。正在游玩的旧进程需用户正常保存重启；实际失败现场模式未知，不宣称每个个案已闭环。
+- 详细证据在../TDFC/knowledge/experiments/telekinesis-vision-validation-2026-09-19.md及其evidence/telekinesis-2026-09-19/deployed-cff44575-*、deployment-receipt.json。旧输入SHA固定的构建脚本../TDFC/build/prepare-vision-grab-fix.ps1记录原57FA→E4E流程，不能直接对更新后的release重复运行。
+
 ## 2026-09-19 classic墙边检查：发现v0.28.1新增接缝，纠正候选验收状态
 
 - 做了什么：按用户选择“墙边亮带、拐角接缝”，在独立1.02训练房复现上下梯子路线，对照v0.28.0、v0.28.1和原版；新增接缝夹具、测量器和局部交互对照。没有修改生产源码、配置或部署，也没有新委托/Ghost操作。
