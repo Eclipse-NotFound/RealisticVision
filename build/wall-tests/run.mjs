@@ -14,6 +14,7 @@ const harness=seams?'WallSeamHarness':edges?'WallEdgeHarness':'WallHarness';
 const revisionArg=process.argv.indexOf('--revision');
 const revision=revisionArg>=0?process.argv[revisionArg+1]:(process.argv.includes('--baseline')?'8748feb':null);
 if(revisionArg>=0 && !/^[0-9a-f]{7,40}$/.test(revision||''))throw Error('--revision requires a commit hash');
+if(process.argv.includes('--seam-probes') && !revision)throw Error('--seam-probes requires a pre-v0.28.2 --revision (old wall display tree)');
 if(process.argv.includes('--probes') && (!edges || !revision))throw Error('--probes requires --edges and a pre-fix --revision');
 const out=path.join(mod,'build/wall-test-output',seams?'seams':edges?'edges':'');
 fs.mkdirSync(out,{recursive:true});

@@ -1,0 +1,10 @@
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+PASS SEAM remembered=false scale=1 offset=0 adjacent=5,0 jump=5
+PASS SEAM remembered=false scale=1 offset=0.4 adjacent=6,1 jump=5
+PASS SEAM remembered=false scale=1.3 offset=0 adjacent=5,0 jump=5
+PASS SEAM remembered=false scale=1.3 offset=0.4 adjacent=5,1 jump=4
+PASS SEAM remembered=true scale=1 offset=0 adjacent=4,0 jump=4
+PASS SEAM remembered=true scale=1 offset=0.4 adjacent=4,1 jump=3
+PASS SEAM remembered=true scale=1.3 offset=0 adjacent=4,0 jump=4
+PASS SEAM remembered=true scale=1.3 offset=0.4 adjacent=4,1 jump=3
+WALL_SEAM_TESTS PASS

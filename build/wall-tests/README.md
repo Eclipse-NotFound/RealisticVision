@@ -43,9 +43,9 @@
 
     node build/wall-tests/run.mjs --seams --revision 6c0170e
     node build/wall-tests/run.mjs --seams
-    node build/wall-tests/run.mjs --seams --seam-probes
+    node build/wall-tests/run.mjs --seams --seam-probes --revision ee7988c
 
-第一条8/8通过；当前源码第二条预期7/8失败，最大相邻亮度差89。这是定位尚未修复的问题，不是已修复回归绿灯。第三条仅作单变量因果探针，改变当次夹具对象，不能当作候选效果。
+第一条8/8通过；历史v0.28.1（ee7988c）7/8失败、最大差89；v0.28.2当前源码第二条预期8/8通过、最大差5。第三条仅供旧候选因果探针，旧显示树不适用于v0.28.2，必须指定旧revision。
 
     node build/wall-tests/run-game.mjs --training --seams --revision 6c0170e
     node build/wall-tests/run-game.mjs --training --seams
@@ -61,6 +61,24 @@
 测量器输出game/*seam-measurements.json；候选运行先验证新旧输入完全一致、current整图/墙内未变，接缝值只作诊断指标，不把已知坏候选判为通过。最后一条仅作首次归档，输出knowledge/experiments/classic-seams-20260919/；已有指纹文件时拒绝覆盖，后续新实验应另设目录。报告为2026-09-19-classic-wall-seams.md。
 
 --seams夹具使用独立seams/输出与rv-wall-fixture-seams app id；完整游戏仍共用game/，必须与所有其他完整游戏场景、revision顺序执行。
+
+## v0.28.2 接缝修复验收
+
+    node build/wall-tests/run.mjs
+    node build/wall-tests/run.mjs --edges
+    node build/wall-tests/run.mjs --seams
+    node build/wall-tests/run-game.mjs --training --seams --revision ee7988c
+    node build/wall-tests/run-game.mjs --training --seams
+    # 使用上述带 Pillow 的 Python
+    python build/wall-tests/inspect-seams.py --baseline
+    python build/wall-tests/inspect-seams.py --repair
+    node build/wall-tests/make-seam-fix-evidence.mjs
+
+完整游戏两版本顺序运行；每次须进程成功退出并有CAPTURED，再执行测量器。导出PNG及计时上限150秒，超时不作通过。新增30次强制重建/30次静止调用计时，发生在截图后，只衡量绘图调用，不代表帧率。
+
+`--repair`保留旧诊断模式：校验输入一致、current整图差0、classic原版墙面无抬亮/黑芯保持0、目标区墙边额外跳变不超过12，并扫描全房内部地板格线（最大相邻差不超过12）。允许混合视野下墙面按正确中心坐标改变，不能再要求所有墙像素与v0.28.1一致。新证据独立存于classic-seams-v0282/，旧诊断目录不覆盖。
+
+WallHarness的39项中38项语义不变；单个弱光混合记忆测试从“角点100%衰减”更新为独立计算的中心双线性权重（像素240,120对中心260,140约1/4），同时验证不抬亮原光。端点、接缝、全记忆墙面断言均未放宽。详见2026-09-19-classic-wall-seam-fix.md。
 
 ## 验证方式与边界
 

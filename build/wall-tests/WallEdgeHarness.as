@@ -78,6 +78,7 @@ package {
       if(!currentAfterClassic(w,loc,m))ok=false;
       if(!unshadowedWall(w,loc))ok=false;
       if(!rememberedShadowFade(w,loc))ok=false;
+      if(!mixedWallMask())ok=false;
       for each(var horizontal:Boolean in [false,true])
         for each(var rightSide:Boolean in [false,true])
           for each(var below:Boolean in [false,true])
@@ -140,6 +141,37 @@ package {
       var edge:int=-1;
       for(var x:int=200;x<340;x++)if(255-(b.getPixel(x,y)&255)>=128)edge=x;
       b.dispose();return edge;
+    }
+    private function mixedWallMask():Boolean {
+      var errors:int=0,wallDelta:int=0;
+      for each(var light:Number in [0.2,0.5,1]) {
+        var loc:FixtureLocation=new FixtureLocation();
+        for(var y:int=0;y<10;y++)for(var x:int=0;x<12;x++) {
+          var t:Tile=loc.getTile(x,y);
+          t.opac=(x>=6 && x<=8 && y>=3 && y<=6)?1:0;t.phis=t.opac?1:0;
+          t.visi=t.t_visi=light*(x%3+1)/3;
+        }
+        loc.gg=new UnitPlayer();loc.gg.X=100;loc.gg.Y=100;loc.gg.scY=40;
+        var w:World=new World();w.loc=loc;w.gg=loc.gg;w.black=true;
+        w.grafon=new Grafon();w.grafon.visual=new Sprite();w.grafon.visLight=new Sprite();
+        w.grafon.visual.addChild(w.grafon.visLight);World.w=w;
+        var m:RealisticVisionMod=new RealisticVisionMod();m.cfgMode="classic";m.resetRoom(w,loc);
+        for(var i:int=0;i<120;i++){m.fov[i]=(i%12<7 && int(i/12)<6)?2:0;m.explored[i]=1;}
+        for(var f:int=0;f<24;f++){m.frameCount=f;m.applyVisionClassic(w,loc,f==0);}
+        var b:BitmapData=new BitmapData(480,400,false,0xffffff);b.draw(m.fogVis,null,null,null,null,true);
+        var unit:Unit=new Unit();m.applyMask(w,unit,[0,0,11,9]);var mask:BitmapData=m.unitVis[unit].m2d;
+        for(y=0;y<80;y++)for(x=0;x<96;x++) {
+          var alpha:int=255-(b.getPixel(x*5+2,y*5+2)&255);
+          var cached:int=m.fogCache.getPixel32(x+4,y+4)>>>24;
+          if(loc.getTile(int(x/8),int(y/8)).opac>=1)wallDelta=Math.max(wallDelta,Math.abs(alpha-cached));
+          // Either side exactly at the cutoff is ambiguous after AIR alpha rounding.
+          if(Math.abs(alpha-140)>1 && Math.abs(cached-140)>1
+            && ((mask.getPixel32(x,y)>>>24)>0)!=(alpha<140))errors++;
+        }
+        b.dispose();
+      }
+      trace("EDGE mixed weak-wall mask classification mismatches="+errors+" wall alpha delta="+wallDelta);
+      return errors==0 && wallDelta<=2;
     }
     private function currentAfterClassic(w:World,loc:FixtureLocation,m:RealisticVisionMod):Boolean {
       // Exercise the real same-size reset and initial fade, not a forced settled frame.

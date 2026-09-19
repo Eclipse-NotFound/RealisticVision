@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-19",
+  "baselineCommit": "ee7988c",
+  "candidateVersion": "v0.28.2",
+  "status": "repair-validated-test-build-not-deployed",
+  "hashes": {
+    "src/RealisticVisionMod.as": "e5b19e618ce5a09256281700c6efc80dcb5eb9543e16a42654b49e35e0119d35",
+    "build/RealisticVisionMod_test.swf": "a8a7dae9a755acd7fc93101003aace2c8cf2a0ff6a507318b3b7a7caadb685e2",
+    "release/RealisticVisionMod.swf": "e4e5ed82d5e65201a57a712f7bebc6fdb499e7822c131b414a67700107401969",
+    "release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "../../pfe.swf": "5300ec4874e0404d298bb58c5d2a7469e82f93b455ad29ad64dd2e29d17241e7"
+  }
+}

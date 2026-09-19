@@ -82,7 +82,14 @@ package {
       o.m.fov[6+3*12]=0;
       var weakWall:BitmapData=render(o);
       var a:int=255-(weakWall.getPixel(240,120)&255);
-      check(a>=238,"classic remembered weak light only darkens in final wall pixels: alpha="+a);
+      // The one remembered WALL sample is centered at (260,140). At this corner
+      // pixel its bilinear weight is ~1/4, not the old full corner-memory weight.
+      // Check the independently computed center phase and native-only darkening.
+      var weakNative:BitmapData=nativeImage(o);
+      var weakExpected:Number=(weakNative.getPixel(240,120)&255)*(1-0.65*Math.pow(20.5/40,2));
+      check(Math.abs((255-a)-weakExpected)<=2 && (255-a)<=(weakNative.getPixel(240,120)&255),
+        "classic weak wall uses centered memory without brightening: brightness="+(255-a)+" expected="+weakExpected.toFixed(2));
+      weakNative.dispose();
       for each(var mode:String in ["current","classic"]) {
         for each(var layout:String in ["horizontal","vertical","corner"]) {
           o=fixture(mode);

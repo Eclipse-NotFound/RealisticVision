@@ -29,7 +29,8 @@ const injected=path.join(out,'mods/RealisticVision/release');fs.mkdirSync(inject
 compile([`-source-path=${boot}`,'-output',path.join(injected,'RealisticVisionMod.swf'),path.join(boot,'RealisticVisionMod.as')]);
 const descriptor=path.join(out,'app-wall-game-test.xml');
 fs.writeFileSync(descriptor,`<?xml version="1.0"?><application xmlns="http://ns.adobe.com/air/application/30.0"><id>rv-wall-game-probe-${training?'training':'random'}</id><versionNumber>1.0</versionNumber><filename>WallGameProbe</filename><initialWindow><content>pfe.swf</content><visible>false</visible><width>1280</width><height>720</height><renderMode>direct</renderMode></initialWindow></application>`);
-const r=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:85000,maxBuffer:40*1024*1024});
+// Multi-position PNG encoding plus forced-rebuild timing can exceed the old 85s cap.
+const r=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:150000,maxBuffer:40*1024*1024});
 const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(out,prefix+(training?scenario+'.log':'game.log')),log);
 fs.unlinkSync(descriptor);
 for(const line of log.split(/\r?\n/)){if(line.startsWith('PNG ')){const [,name,data]=line.split(' ');fs.writeFileSync(path.join(out,prefix+name+'.png'),Buffer.from(data,'hex'));}else if(line.startsWith('DATA training ')){fs.writeFileSync(path.join(out,prefix+'training-data.json'),line.slice('DATA training '.length));}else if(line.startsWith('DATA seams ')){fs.writeFileSync(path.join(out,prefix+'seams-data.json'),line.slice('DATA seams '.length));}else if(line.includes('GAME_PROBE'))console.log(line);}

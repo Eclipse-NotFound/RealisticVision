@@ -208,6 +208,19 @@ package {
             emit("seams-"+name+"-native-fog",fog);fog.dispose();
             w.grafon.visLight.visible=false;m.fogVis.visible=true;
           }
+          // Separate stable frames from forced rebuilds; captures precede timing.
+          var started:int=getTimer();
+          for(var pf:int=0;pf<30;pf++) {
+            m.frameCount=200+pf*2;m.fogDirty=true;
+            if(mode=="classic")m.applyVisionClassic(w,loc,true);else m.applyVision(w,loc,true);
+          }
+          var rebuildMs:int=getTimer()-started;
+          started=getTimer();
+          for(pf=0;pf<30;pf++) {
+            m.frameCount=400+pf*2;
+            if(mode=="classic")m.applyVisionClassic(w,loc,false);else m.applyVision(w,loc,false);
+          }
+          trace("GAME_PROBE PERF "+mode+" "+name+" 30 rebuild ms="+rebuildMs+" stable ms="+(getTimer()-started)+" room=48x25");
         }
         previous=m;
       }

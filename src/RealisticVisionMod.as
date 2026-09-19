@@ -63,7 +63,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.28.1";
+      private static const VERSION:String = "v0.28.2";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -141,6 +141,12 @@ package
       // classic：原版光照在格角，FOV/记忆在格中心；分别插值后再合成。
       private var classicRaw:BitmapData = null;
       private var classicMemoryRaw:BitmapData = null;
+      private var classicVisibilityRaw:BitmapData = null;
+      private var classicVisibilityField:BitmapData = null;
+      private var classicWallShade:BitmapData = null;
+      private var classicWallShadeBmp:Bitmap = null;
+      private var wallLayer:Sprite = null;
+      private var classicCornerDeltas:Array = [];
       private var classicLightMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
          FOG_PAD-FOG_SUB/2,FOG_PAD-FOG_SUB*1.5);
       private var classicMemoryMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
@@ -148,7 +154,7 @@ package
       private var brightnessToFog:ColorTransform = new ColorTransform(-1,-1,-1,1,255,255,255,0);
       // v0.28.0：墙与地板用互补 mask 分区替换；墙保留原版位图的完整渐变。
       private var lastA:Array = null;   // 每瓦片上次写入 classicRaw 的 alpha（变化才写像素）
-      private var memCur:Array = null;  // 每角记忆进度：0=原版亮度，1=完整记忆衰减
+      private var memCur:Array = null;  // 每格记忆进度；classic按格中心显示，current墙按格角显示
       // 两种模式的墙使用同源原版角点；地板雾效各自保留。
       private var wallA:Array = null;
       private var wallTiles:Array = [];
@@ -875,6 +881,15 @@ package
             this.fogRaw = new BitmapData(bw,bh,true,0xFF000000);
             this.fogCache = new BitmapData(bw,bh,true,0xFF000000);
             this.fogBmp = new BitmapData(bw,bh,true,0xFF000000);
+            if(this.classicVisibilityField != null) this.classicVisibilityField.dispose();
+            if(this.classicWallShade != null) this.classicWallShade.dispose();
+            this.classicVisibilityField = new BitmapData(bw,bh,false,0xFFFFFF);
+            this.classicWallShade = new BitmapData(bw,bh,true,0);
+            if(this.classicWallShadeBmp != null && this.classicWallShadeBmp.parent)
+               this.classicWallShadeBmp.parent.removeChild(this.classicWallShadeBmp);
+            this.classicWallShadeBmp = new Bitmap(this.classicWallShade,"auto",true);
+            this.classicWallShadeBmp.scaleX = this.classicWallShadeBmp.scaleY = Tile.tileX / FOG_SUB;
+            this.classicWallShadeBmp.x = this.classicWallShadeBmp.y = -FOG_PAD * Tile.tileX / FOG_SUB;
             this.fogRect = new Rectangle(0,0,bw,bh);
             if(this.fogBitmap != null && this.fogBitmap.parent)
             {
@@ -902,9 +917,11 @@ package
             {
                this.classicRaw.dispose();
                this.classicMemoryRaw.dispose();
+               this.classicVisibilityRaw.dispose();
             }
             this.classicRaw = new BitmapData(cw,ch,true,0xFF000000); // 初始全黑
             this.classicMemoryRaw = new BitmapData(cw,ch,true,0xFF000000);
+            this.classicVisibilityRaw = new BitmapData(cw,ch,false,0xFFFFFF);
             this.lastA = null;
          }
          if(this.lastA == null || this.lastA.length != this.spaceX * this.spaceY)
@@ -945,7 +962,16 @@ package
          }
          // 两张图按互补范围替换，绝不叠加：墙=原版原尺寸场，地板=各模式雾效。
          if(this.fogBitmap.mask != this.floorClip) this.fogBitmap.mask = this.floorClip;
-         if(this.wallBmp.mask != this.wallClip) this.wallBmp.mask = this.wallClip;
+         if(this.wallLayer == null)
+         {
+            this.wallLayer = new Sprite();
+            this.fogVis.addChild(this.wallLayer);
+         }
+         if(this.wallBmp.parent != this.wallLayer) this.wallLayer.addChild(this.wallBmp);
+         if(this.classicWallShadeBmp.parent != this.wallLayer) this.wallLayer.addChild(this.classicWallShadeBmp);
+         this.classicWallShadeBmp.visible = this.cfgMode == "classic";
+         this.wallBmp.mask = null;
+         if(this.wallLayer.mask != this.wallClip) this.wallLayer.mask = this.wallClip;
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
          {
@@ -1674,7 +1700,7 @@ package
          return cur;
       }
 
-      /** 墙单独保留原版光照层次，包括落在邻接地板上的角；不套地板记忆下限。 */
+      /** 保留原版墙光照角点；current在此衰减，classic在中心遮挡层衰减。 */
       private function refreshWallField(loc:Location, rebuild:Boolean, advance:Boolean = true):Boolean
       {
          var n:int = this.spaceX * this.spaceY;
@@ -1740,7 +1766,9 @@ package
             var gv:Number = tx == 0 || ty == 0 ? 0 : Math.max(0,Math.min(1,loc.getTile(tx,ty).visi));
             var gameA:int = Math.floor((1-gv)*255);
             var cur:Number = this.memCur[i];
-            var a:int = Math.round(255 - (255-gameA)*(1-cur+cur*this.cfgDim));
+            // classic的记忆在中心坐标统一叠加；不能再在格角预先压暗一次。
+            var a:int = this.cfgMode == "classic" ? gameA
+               : Math.round(255 - (255-gameA)*(1-cur+cur*this.cfgDim));
             if(this.wallA[i] !== a)
             {
                changed = true;
@@ -1869,9 +1897,10 @@ package
                   changed = true;
                }
                var memory:Number = this.memCur[i];
+               var targetGrey:int = this.explored[i] == 1 ? Math.round(255*this.cfgDim) : 0;
                var grey:int = loc.getTile(tx,ty).opac >= 1
                   ? Math.round((255-a)*this.cfgDim)
-                  : (this.explored[i] == 1 ? Math.round(255*this.cfgDim) : 0);
+                  : targetGrey;
                // 墙面可见性经邻居传播，不能拿它把地板投影端点挖成透明孔。
                // 以相邻地板最深的记忆延续至墙中心，并跟随其淡入淡出；没有
                // 暗邻居时不补遮挡，避免给整圈可见墙边凭空加一层黑带。
@@ -1893,6 +1922,7 @@ package
                            deepest = depth;
                            memory = this.memCur[ni];
                            grey = ng;
+                           targetGrey = ng;
                         }
                      }
                   }
@@ -1902,6 +1932,13 @@ package
                var pixel:uint = memoryAlpha == 0 ? 0 :
                   (memoryAlpha << 24) | (grey << 16) | (grey << 8) | grey;
                if(tx == 0 || ty == 0) pixel = 0xFF000000;
+               var visibility:int = Math.round(255-memory*(255-targetGrey));
+               var visibilityPixel:uint = (visibility << 16) | (visibility << 8) | visibility;
+               if(this.classicVisibilityRaw.getPixel(tx,ty+1) != visibilityPixel)
+               {
+                  this.classicVisibilityRaw.setPixel(tx,ty+1,visibilityPixel);
+                  changed = true;
+               }
                if(this.classicMemoryRaw.getPixel32(tx,ty+1) != pixel)
                {
                   this.classicMemoryRaw.setPixel32(tx,ty+1,pixel);
@@ -1917,18 +1954,122 @@ package
             this.fogRaw.fillRect(this.fogRect,0xFFFFFFFF);
             this.fogRaw.draw(this.classicRaw,this.classicLightMatrix,null,null,null,true);
             this.fogRaw.draw(this.classicMemoryRaw,this.classicMemoryMatrix,null,null,null,true);
+            // 可见性系数在房间外沿延续最后一个样本；外侧黑色仍由原光照负责。
+            for(var edgeY:int = 1; edgeY <= this.spaceY; edgeY++)
+               this.classicVisibilityRaw.setPixel(this.spaceX,edgeY,this.classicVisibilityRaw.getPixel(this.spaceX-1,edgeY));
+            for(var edgeX:int = 0; edgeX <= this.spaceX; edgeX++)
+            {
+               this.classicVisibilityRaw.setPixel(edgeX,0,this.classicVisibilityRaw.getPixel(edgeX,1));
+               this.classicVisibilityRaw.setPixel(edgeX,this.spaceY+1,this.classicVisibilityRaw.getPixel(edgeX,this.spaceY));
+            }
+            this.classicVisibilityField.fillRect(this.fogRect,0xFFFFFF);
+            this.classicVisibilityField.draw(this.classicVisibilityRaw,this.classicMemoryMatrix,null,null,null,true);
             // 先在不透明RGB上反相，再复制到alpha。直接反转目标alpha时，
             // AIR会跳过alpha=0的像素，导致原本全黑的区域变成透明洞。
             this.fogRaw.colorTransform(this.fogRect,this.brightnessToFog);
             this.fogBmp.fillRect(this.fogRect,0);
             this.fogBmp.copyChannel(this.fogRaw,this.fogRect,this.fogPoint,
                BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+            this.joinClassicWalls(loc);
             // 部分敌人按本次合成后的实际场取样，不再读错行/错相位的1px源图。
             this.fogCache.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
-            for each(var wi:int in this.wallTiles)
-               this.fillWallTile(wi % this.spaceX,int(wi / this.spaceX));
             this.fovVersion++;
          }
+      }
+
+      /** 墙保留原版基底，仅叠加中心遮挡；地板在墙外一格内接到同一边界值。 */
+      private function joinClassicWalls(loc:Location):void
+      {
+         this.classicWallShade.fillRect(this.fogRect,0);
+         // 遮挡场延伸过裁切边界，平滑采样不会混入墙外透明像素而形成亮缝。
+         this.fogCache.copyPixels(this.classicVisibilityField,this.fogRect,this.fogPoint);
+         this.fogCache.colorTransform(this.fogRect,this.brightnessToFog);
+         this.classicWallShade.copyChannel(this.fogCache,this.fogRect,this.fogPoint,
+            BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+         this.classicCornerDeltas = new Array(this.spaceX*this.spaceY);
+         for each(var ci:int in this.wallCorners)
+         {
+            this.classicCornerDeltas[ci] = this.classicWallDelta(this.wallA[ci],
+               FOG_PAD+(ci%this.spaceX)*FOG_SUB-0.5,
+               FOG_PAD+int(ci/this.spaceX)*FOG_SUB-0.5);
+         }
+         // 敌人取样缓存：让位图合成完成墙光×可见性，避免AS3逐子像素乘算。
+         this.fogCache.fillRect(this.fogRect,0xFFFFFFFF);
+         this.fogCache.draw(this.wallRaw,this.classicLightMatrix,null,null,null,true);
+         this.fogCache.draw(this.classicVisibilityField,null,null,"multiply");
+         this.fogCache.colorTransform(this.fogRect,this.brightnessToFog);
+         var wallPoint:Point = new Point();
+         for each(var wi:int in this.wallTiles)
+         {
+            wallPoint.x = this.fogCellRect.x = FOG_PAD+(wi%this.spaceX)*FOG_SUB;
+            wallPoint.y = this.fogCellRect.y = FOG_PAD+int(wi/this.spaceX)*FOG_SUB;
+            this.fogBmp.copyChannel(this.fogCache,this.fogCellRect,wallPoint,
+               BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+         }
+         var westCurve:Array = [], eastCurve:Array = [], northCurve:Array = [], southCurve:Array = [];
+         for(var ty:int = 0; ty < this.spaceY; ty++) for(var tx:int = 0; tx < this.spaceX; tx++)
+         {
+            if(loc.getTile(tx,ty).opac >= 1) continue;
+            var west:Boolean = tx > 0 && loc.getTile(tx-1,ty).opac >= 1;
+            var east:Boolean = tx+1 < this.spaceX && loc.getTile(tx+1,ty).opac >= 1;
+            var north:Boolean = ty > 0 && loc.getTile(tx,ty-1).opac >= 1;
+            var south:Boolean = ty+1 < this.spaceY && loc.getTile(tx,ty+1).opac >= 1;
+            var d00:Number = this.classicCornerDeltaAt(tx,ty), d10:Number = this.classicCornerDeltaAt(tx+1,ty);
+            var d01:Number = this.classicCornerDeltaAt(tx,ty+1), d11:Number = this.classicCornerDeltaAt(tx+1,ty+1);
+            if(!west && !east && !north && !south && d00 == 0 && d10 == 0 && d01 == 0 && d11 == 0) continue;
+            var px0:int = FOG_PAD + tx*FOG_SUB, py0:int = FOG_PAD + ty*FOG_SUB;
+            var a00:Number = this.wallCornerAlpha(tx,ty), a10:Number = this.wallCornerAlpha(tx+1,ty);
+            var a01:Number = this.wallCornerAlpha(tx,ty+1), a11:Number = this.wallCornerAlpha(tx+1,ty+1);
+            // 同一条边只采样一次，供整格复用，避免每个子像素重复读取位图。
+            for(var q:int = 0; q < FOG_SUB; q++)
+            {
+               var fraction:Number = (q+0.5)/FOG_SUB;
+               if(west) westCurve[q] = this.classicWallDelta(a00+(a01-a00)*fraction,px0-0.5,py0+q)-(d00+(d01-d00)*fraction);
+               if(east) eastCurve[q] = this.classicWallDelta(a10+(a11-a10)*fraction,px0+FOG_SUB-0.5,py0+q)-(d10+(d11-d10)*fraction);
+               if(north) northCurve[q] = this.classicWallDelta(a00+(a10-a00)*fraction,px0+q,py0-0.5)-(d00+(d10-d00)*fraction);
+               if(south) southCurve[q] = this.classicWallDelta(a01+(a11-a01)*fraction,px0+q,py0+FOG_SUB-0.5)-(d01+(d11-d01)*fraction);
+            }
+            for(var sy:int = 0; sy < FOG_SUB; sy++) for(var sx:int = 0; sx < FOG_SUB; sx++)
+            {
+               var fx:Number = (sx+0.5)/FOG_SUB, fy:Number = (sy+0.5)/FOG_SUB;
+               var px:int = px0+sx, py:int = py0+sy;
+               var a:Number = this.fogRaw.getPixel(px,py)&255;
+               // 先共享四角差值，再补墙边的曲线残差。对角相邻地板也参与，
+               // 不把墙边的断层搬到一格之外；内角的共用角不会叠加两次。
+               a += (d00+(d10-d00)*fx)*(1-fy)+(d01+(d11-d01)*fx)*fy;
+               if(west) a += (1-fx)*westCurve[sy];
+               if(east) a += fx*eastCurve[sy];
+               if(north) a += (1-fy)*northCurve[sx];
+               if(south) a += fy*southCurve[sx];
+               this.fogBmp.setPixel32(px,py,Math.max(0,Math.min(255,Math.round(a))) << 24);
+            }
+         }
+      }
+
+      private function classicCornerDeltaAt(tx:int, ty:int):Number
+      {
+         if(tx >= this.spaceX || ty >= this.spaceY) return 0;
+         return this.classicCornerDeltas[tx+ty*this.spaceX] || 0;
+      }
+
+      private function classicWallDelta(wallAlpha:Number, px:Number, py:Number):Number
+      {
+         var visibility:Number = this.classicFieldAt(this.classicVisibilityField,px,py);
+         var target:Number = 255-(255-wallAlpha)*visibility/255;
+         return target-this.classicFieldAt(this.fogRaw,px,py);
+      }
+
+      private function classicFieldAt(field:BitmapData, px:Number, py:Number):Number
+      {
+         var x:int = int(px), y:int = int(py);
+         var fx:Number = px-x, fy:Number = py-y;
+         var a:Number = field.getPixel(x,y)&255;
+         if(fx == 0 && fy == 0) return a;
+         if(fx == 0) return a+((field.getPixel(x,y+1)&255)-a)*fy;
+         var b:Number = field.getPixel(x+1,y)&255;
+         if(fy == 0) return a+(b-a)*fx;
+         var c:Number = field.getPixel(x,y+1)&255, d:Number = field.getPixel(x+1,y+1)&255;
+         return (a+(b-a)*fx)*(1-fy)+(c+(d-c)*fx)*fy;
       }
 
       /** 距离衰减因子：全亮半径内 1，向外到视野半径线性降到 0（原版 lDist1→lDist2）。 */
