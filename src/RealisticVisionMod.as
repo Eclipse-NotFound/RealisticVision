@@ -472,7 +472,7 @@ package
             return false;
          }
          var loc:Location = w.loc;
-         if(loc !== this.curLoc)
+         if(loc !== this.curLoc || this.cfgMode == "vanilla" || loc.base || this.cfgBaseRooms[loc.id] == true)
          {
             return false;
          }
