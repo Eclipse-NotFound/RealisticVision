@@ -1,15 +1,15 @@
-[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
-FAIL SEAM remembered=false scale=1 offset=0 adjacent=10,0 jump=10
-FAIL SEAM remembered=false scale=1 offset=0.4 adjacent=11,2 jump=9
-FAIL SEAM remembered=false scale=1.3 offset=0 adjacent=10,0 jump=10
-PASS SEAM remembered=false scale=1.3 offset=0.4 adjacent=10,2 jump=8
-FAIL SEAM remembered=true scale=1 offset=0 adjacent=89,0 jump=89
-FAIL SEAM remembered=true scale=1 offset=0.4 adjacent=89,23 jump=66
-FAIL SEAM remembered=true scale=1.3 offset=0 adjacent=89,0 jump=89
-FAIL SEAM remembered=true scale=1.3 offset=0.4 adjacent=89,23 jump=66
-SEAM_PROBE floor field alone jump=0
-SEAM_PROBE memory on light coordinates jump=87
-SEAM_PROBE remembered brightness zero jump=0
-SEAM_PROBE uniform field clip error offset=0 max=0
-SEAM_PROBE uniform field clip error offset=0.4 max=0
-WALL_SEAM_TESTS FAIL
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+FAIL SEAM remembered=false scale=1 offset=0 adjacent=10,0 jump=10
+FAIL SEAM remembered=false scale=1 offset=0.4 adjacent=11,2 jump=9
+FAIL SEAM remembered=false scale=1.3 offset=0 adjacent=10,0 jump=10
+PASS SEAM remembered=false scale=1.3 offset=0.4 adjacent=10,2 jump=8
+FAIL SEAM remembered=true scale=1 offset=0 adjacent=89,0 jump=89
+FAIL SEAM remembered=true scale=1 offset=0.4 adjacent=89,23 jump=66
+FAIL SEAM remembered=true scale=1.3 offset=0 adjacent=89,0 jump=89
+FAIL SEAM remembered=true scale=1.3 offset=0.4 adjacent=89,23 jump=66
+SEAM_PROBE floor field alone jump=0
+SEAM_PROBE memory on light coordinates jump=87
+SEAM_PROBE remembered brightness zero jump=0
+SEAM_PROBE uniform field clip error offset=0 max=0
+SEAM_PROBE uniform field clip error offset=0.4 max=0
+WALL_SEAM_TESTS FAIL

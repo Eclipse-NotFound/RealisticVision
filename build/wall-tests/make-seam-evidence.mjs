@@ -8,6 +8,7 @@ const input=path.join(mod,'build/wall-test-output');
 const out=path.join(mod,'knowledge/experiments/classic-seams-20260919');
 if(fs.existsSync(path.join(out,'fingerprints.json')))throw Error('This dated evidence is already archived; choose a new output directory for a new experiment.');
 const read=p=>fs.readFileSync(path.join(input,p),'utf8');
+const clean=s=>s.replace(/\r/g,'').trimEnd()+'\n';
 for(const prefix of ['baseline-','']) {
   if(!read('game/'+prefix+'training-seams.log').includes('GAME_PROBE CAPTURED training seams (visual diagnosis only)'))throw Error('Incomplete game capture');
 }
@@ -15,15 +16,15 @@ const measurements=JSON.parse(read('game/seam-measurements.json'));
 if(!measurements.identical_inputs)throw Error('Inputs differ');
 fs.mkdirSync(out,{recursive:true});
 for(const prefix of ['baseline-','']) {
-  for(const name of ['seams-data.json','seam-measurements.json'])fs.copyFileSync(path.join(input,'game',prefix+name),path.join(out,prefix+name));
+  for(const name of ['seams-data.json','seam-measurements.json'])fs.writeFileSync(path.join(out,prefix+name),clean(read('game/'+prefix+name)));
   for(const position of ['lower','upper'])for(const mode of ['classic','current'])for(const type of ['', '-fog']) {
     if(mode==='current' && type==='')continue;
     const name=prefix+'seams-'+position+'-'+mode+type+'.png';
     fs.copyFileSync(path.join(input,'game',name),path.join(out,name));
   }
   const gameLog=read('game/'+prefix+'training-seams.log').split(/\r?\n/).filter(s=>s.trim()&&!/^(PNG|DATA) /.test(s)).join('\n')+'\n';
-  fs.writeFileSync(path.join(out,prefix+'game-results.txt'),gameLog);
-  fs.copyFileSync(path.join(input,'seams',prefix?'baseline.log':'candidate.log'),path.join(out,prefix+'fixture-results.txt'));
+  fs.writeFileSync(path.join(out,prefix+'game-results.txt'),clean(gameLog));
+  fs.writeFileSync(path.join(out,prefix+'fixture-results.txt'),clean(read('seams/'+(prefix?'baseline.log':'candidate.log'))));
 }
 for(const position of ['lower','upper'])for(const type of ['', '-fog']) {
   const name='seams-'+position+'-native'+type+'.png';
