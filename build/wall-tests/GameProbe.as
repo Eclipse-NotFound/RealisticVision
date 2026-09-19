@@ -42,21 +42,23 @@ package {
         if(w.verror && w.verror.visible) {trace("GAME_PROBE FAIL game dialog "+w.verror.txt.text);NativeApplication.nativeApplication.exit(1);return;}
         if(phase==0) {w.mm.active=false;w.newGame(-1,"LP",null);phase=1;trace("GAME_PROBE new game");return;}
         if(phase==1 && w.gg && w.loc && w.loc.active && w.game.curLandId) {
-          if(scene=="training") {
+          if(scene.indexOf("training")==0) {
             trace("GAME_PROBE training start land="+w.game.curLandId+" loc="+w.loc.id);
             w.pers.healAll();w.game.beginMission("rbl");phase=10;return;
           }
           w.pers.healAll();w.game.beginMission("random_mane");phase=2;trace("GAME_PROBE travel random_mane");return;
         }
-        if(scene=="training" && phase==10 && w.loc && w.loc.active && w.game.curLandId=="rbl" && w.land.act.id=="rbl") {
+        if(scene.indexOf("training")==0 && phase==10 && w.loc && w.loc.active && w.game.curLandId=="rbl" && w.land.act.id=="rbl") {
           if(w.land.locX!=0 || w.land.locY!=0) throw new Error("Unexpected base entrance");
           w.gg.setPos(w.loc.limX-60,600);
           if(w.land.gotoLoc(2)==null) throw new Error("Training room entrance blocked");
           w.gg.setPos(1080,640);phase=2;return;
         }
-        if(scene=="training" && phase==2 && w.loc && w.loc.active && w.game.curLandId=="rbl" && w.land.locX==1 && w.land.locY==0) {
+        if(scene.indexOf("training")==0 && phase==2 && w.loc && w.loc.active && w.game.curLandId=="rbl" && w.land.locX==1 && w.land.locY==0) {
           if(++settled<20) return;
-          phase=3;w.mm.active=true;captureTraining(w);NativeApplication.nativeApplication.exit(0);return;
+          phase=3;w.mm.active=true;
+          if(scene=="training-seams")captureSeams(w);else captureTraining(w);
+          NativeApplication.nativeApplication.exit(0);return;
         }
         if(phase==2 && w.loc && w.loc.active && w.game.curLandId=="random_mane" && w.land.act.id=="random_mane") {
           if(++settled<20) return;
@@ -66,9 +68,11 @@ package {
       } catch(err:Error) {trace("GAME_PROBE FAIL "+err.getStackTrace());NativeApplication.nativeApplication.exit(1);}
     }
     private function emit(name:String,b:BitmapData):void {
-      var bytes:ByteArray=b.encode(b.rect,new PNGEncoderOptions());var hex:String="";
-      for(var i:int=0;i<bytes.length;i++){var h:String=bytes[i].toString(16);hex+=(h.length==1?"0":"")+h;}
-      trace("PNG "+name+" "+hex);
+      var bytes:ByteArray=b.encode(b.rect,new PNGEncoderOptions());
+      var table:Array=[],parts:Array=[];
+      for(var i:int=0;i<256;i++){var h:String=i.toString(16);table[i]=(h.length==1?"0":"")+h;}
+      for(i=0;i<bytes.length;i++)parts.push(table[bytes[i]]);
+      trace("PNG "+name+" "+parts.join(""));
     }
     private function shot(w:*):BitmapData {
       var b:BitmapData=new BitmapData(w.loc.spaceX*40,w.loc.spaceY*40,false,0);
@@ -156,6 +160,59 @@ package {
       }
       trace("DATA training "+JSON.stringify(data));
       trace("GAME_PROBE CAPTURED training (visual diagnosis only)");
+    }
+    private function captureSeams(w:*):void {
+      var loc:*=w.loc;w.black=true;loc.black=true;loc.base=false;
+      var result:Object={room:loc.id,states:[]};
+      var previous:*,m:*;
+      var originalLight:Array=[];
+      for(var oy:int=0;oy<loc.spaceY;oy++)for(var ox:int=0;ox<loc.spaceX;ox++)
+        originalLight.push([loc.getTile(ox,oy).visi,loc.getTile(ox,oy).t_visi]);
+      // Walk the same upper-room -> ladder -> lower-room -> upper-room sequence.
+      // No animation/physics advance is needed to measure the fog's wall boundary.
+      var route:Array=[[1080,640],[480,640],[240,640],[240,920],[240,640],[480,640]];
+      for each(var mode:String in ["classic","current"]) {
+        if(previous && previous.fogVis)previous.fogVis.visible=false;
+        for(oy=0;oy<loc.spaceY;oy++)for(ox=0;ox<loc.spaceX;ox++) {
+          loc.getTile(ox,oy).visi=originalLight[ox+oy*loc.spaceX][0];
+          loc.getTile(ox,oy).t_visi=originalLight[ox+oy*loc.spaceX][1];
+        }
+        m=new modClass();m.cfgMode=mode;m.resetRoom(w,loc);
+        for(var step:int=0;step<route.length;step++) {
+          w.gg.setPos(route[step][0],route[step][1]);w.gg.setVisPos();
+          // Let the engine retain all light encountered along the route. Freezing
+          // the initial room-entry light would leave artificial holes near the ladder.
+          for(var lightFrame:int=0;lightFrame<24;lightFrame++){loc.lighting();loc.lighting2();}
+          m.computeFov(loc);
+          for(var f:int=0;f<24;f++) {
+            m.frameCount=f;m.fogDirty=true;
+            if(mode=="classic")m.applyVisionClassic(w,loc,f==0);else m.applyVision(w,loc,f==0);
+          }
+          if(step!=3 && step!=5)continue;
+          var name:String=step==3?"lower":"upper";
+          trace("GAME_PROBE seam capture "+mode+" "+name);
+          var state:Object={mode:mode,position:name,eye:[m.eyeX,m.eyeY],tiles:[]};
+          for(var y:int=0;y<loc.spaceY;y++)for(var x:int=0;x<loc.spaceX;x++) {
+            var t:*=loc.getTile(x,y),i:int=x+y*loc.spaceX;
+            state.tiles.push({x:x,y:y,opac:t.opac,visi:t.visi,fov:m.fov[i],explored:m.explored[i],memory:m.memCur[i]});
+          }
+          result.states.push(state);
+          var sceneShot:BitmapData=shot(w);emit("seams-"+name+"-"+mode,sceneShot);sceneShot.dispose();
+          var fog:BitmapData=new BitmapData(loc.spaceX*40,loc.spaceY*40,false,0xffffff);
+          fog.draw(m.fogVis,null,null,null,null,true);emit("seams-"+name+"-"+mode+"-fog",fog);fog.dispose();
+          if(mode=="classic") {
+            m.fogVis.visible=false;w.grafon.setLight();w.grafon.visLight.visible=true;
+            sceneShot=shot(w);emit("seams-"+name+"-native",sceneShot);sceneShot.dispose();
+            fog=new BitmapData(loc.spaceX*40,loc.spaceY*40,false,0xffffff);
+            fog.draw(w.grafon.visLight,w.grafon.visLight.transform.matrix,null,null,null,true);
+            emit("seams-"+name+"-native-fog",fog);fog.dispose();
+            w.grafon.visLight.visible=false;m.fogVis.visible=true;
+          }
+        }
+        previous=m;
+      }
+      trace("DATA seams "+JSON.stringify(result));
+      trace("GAME_PROBE CAPTURED training seams (visual diagnosis only)");
     }
   }
 }

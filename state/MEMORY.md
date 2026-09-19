@@ -1,6 +1,6 @@
 # RealisticVision —— 开发记忆入口
 
-> 更新：2026-09-12，v0.28.1 classic小墙块投影修复候选已验证，未部署。范围见../AGENT_SCOPE.md。
+> 更新：2026-09-19。classic墙边检查发现v0.28.1接缝回退；候选不能部署，生产源码与正式版未改。范围见../AGENT_SCOPE.md。
 
 ## 1. 这个模组是什么
 
@@ -9,52 +9,48 @@
 ## 2. 用户偏好与协作约定
 
 - D22两次明确确认：两模式墙按原版黑芯/亮面/渐变，只压暗原光；原版维护visi/t_visi与地图/传送判定。地板保留模式区别。
-- 本轮grilling定位：主要是“阴影位置偏移、不贴墙”，具体在“上方伸出的小墙块附近”。未收到重复询问保留D22的Q3答复；依既有授权和Q1/Q2实施，不把沉默记成确认。
-- 视觉修复先同场景原版/旧版对照和实际AIR复现，每次只改一个变量；原游玩进度仍需用户目检。不要恢复记忆播种、墙面受光传播旧方案。
-- 2026-09-10“部署”已完成v0.28.0；其后的本次问题反馈完成候选，正式release尚未替换。后续部署走发布门禁和独立启动检查。
-- 血条勿强制visible=true；保持隐藏压暗、恢复由visDetails重算。
-- 不写其他模组；既有MSW WIP stash保留，完整集成在0d1becc，不自动套用旧稿。
+- 上轮定位是“上方伸出的小墙块附近，阴影位置偏移、不贴墙”；本轮截图重点为“墙边亮带、拐角接缝”，不能混为同一症状。
+- 视觉修复先同场景原版/旧版对照和实际AIR复现，每次只改一个变量。既要查墙内，也查墙/地板交界；纯阴影比较先核对全部输入一致。
+- 不把“检查亮带”自动解释为改变D22渐变范围。原版自身也有宽亮面；若收窄需具体对照和新的目标确认。原游玩进度仍需目检。
+- 2026-09-10“部署”已完成v0.28.0；后续问题反馈只生成候选/诊断，正式release未替换。本轮不加载parallel-delegate、不新增委托、不用Ghost。
+- 不写其他模组；既有MSW WIP stash保留。血条勿强制visible=true；恢复由visDetails重算。不要恢复记忆播种、墙面受光传播旧方案。
 
 ## 3. 当前状态
 
-- **源码/测试产物v0.28.1，正式release v0.28.0；本轮未部署。** 仓库main，候选提交包含本记忆、D23与实证。
-- classic修复：原版格角光照与中心FOV/记忆分开插值；地板合成到5px工作图；墙继续原版尺寸直接显示。敌人掩膜读取同一合成结果。
-- 最小墙角：旧20.25px偏差→候选0.25px；10个方向/缩放对独立中心场差0。掩膜分类差2086→0，静止缓存稳定。
-- 切回current同记忆初始14帧/外围差0；无暗邻居墙外亮度差0；记忆接缝99→255单调，最大单步16；原39项全部通过。
-- 完整训练房rbl/loc1_0：同输入current整图差0，classic/current墙内差0，原版字段改写0；小墙顶轮廓x939→959，墙角x960。
-- 构建build/RealisticVisionMod_test.swf成功，17,656字节；FFDec仅RealisticVisionMod，无fe.*。源码SHA256 3B7F1D43B22DCB14B304D19E0584E6D2C7B8A0867279A0A70C0D1E24A157FD6E；测试SWF SHA256 1B20528A8DAD9D48D435391E628D15286E90A9561699F94F907BFD0BE6A47DFB。
-- 正式release SHA256仍57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0。config仍5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F；默认current、dim=.35，未改。
+- **源码/旧测试产物v0.28.1，正式release v0.28.0。v0.28.1新接缝测试失败，撤回“已验候选、待部署”状态。** 仓库main；本轮只有测试、证据和记忆改动。
+- 完整1.02训练房、两位置、同一探索路线：输入全同；current整图差0、两模式墙内差0，但classic墙/地板接边额外亮度跳变旧3/4→候选166/84（0..255）。原版参照也有墙边亮面，不能据此宣称用户截图所有细节已解释。
+- 最小接缝夹具：v0.28.0 8/8通过；v0.28.1 7/8失败，全记忆最大相邻差89。只显示地板场后差0；统一半透明场无裁切漏缝；简单平移记忆矩阵仍差87。
+- 原39项、小墙端点20.25→0.25px等旧证据仍成立，但不覆盖新接缝，不能替代它。尚无新修复SWF。
+- 本轮指纹不变：源码3B7F1D43B22DCB14B304D19E0584E6D2C7B8A0867279A0A70C0D1E24A157FD6E；测试SWF 1B20528A8DAD9D48D435391E628D15286E90A9561699F94F907BFD0BE6A47DFB；正式SWF 57FA90F813C267C1BB0BC4B4AAB536257CF10EDCD20E7E38BDA93E9B3AA9B6E0。
+- 正式config仍current、dim=.35、debug=0，SHA256 5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F。真实日志最近init是v0.28.0；既有saveConfig错误栈未扩修。
 
-## 4. 当前实现与注意点
+## 4. 正在进行与卡点
 
-- D23补充D22：native光照样本在格角，computeFov在格中心，不能把二者先混合再整体平移。classic保持40px粗格插值，不是current的子格射线。
-- 墙面可见性有邻居传播；用于地板投影时，墙中心延续相邻地板最深的记忆，避免端点提前消失。全图先推进记忆再取邻居，淡入淡出一致；无暗邻居/retDark不额外补遮挡。
-- 全透明像素必须规范为0，BitmapData不会保留其RGB，否则静止时永久重绘。RGB反相后copyChannel转黑雾alpha；不能直接反转透明度，会跳过alpha0像素挖出亮洞。
-- classic借用fogRaw/fogCache/fogBmp；同尺寸resetRoom必须清黑三图和fogBlurPending，否则切current初始淡入留旧图/白边。
-- 墙图独立保留原版角位置与弱光，墙邻地板角也仅乘记忆衰减；零行零列仍恒黑。current静止原版照明与墙掩膜采样保持刷新。
-- 原版同实例切房保留Tile亮度，磁盘存档不直接保存visi；不能据旧日志播种探索。
+- D23将classic格角光照与中心FOV/记忆分开插值，墙中心延续邻地板记忆；地板合成到5px图，墙继续D22原尺寸显示。两张场各自平滑，**交界却不是同一亮度**：这是候选新硬接缝的已证原因。
+- 修复必须同时保住D23小墙端点、D22墙内层次、未探索不漏亮。不能简单平移整个记忆场、删除墙层或把记忆全涂黑。本轮只诊断，未选定新实现。
+- 截图位置根据梯子/墙几何估计。正式v0.28.0复现场景未测出大硬接缝；原版也有类似宽亮边。未重放用户精确存档/相机/移动过程，截图细节的完整归因仍有边界。
+- 测试取图注意：visLight自身有40倍缩放与(-20,-60)位移，BitmapData.draw需传入transform.matrix；沿路必须调用原版lighting/lighting2。错误早期参照已丢弃，归档是校正后的成对输入。
 
-## 5. 已知问题与验证边界
+## 5. 已知问题
 
-- classic粗格插值仍会在正在投影的薄墙可见侧产生约20px渐变。实景小墙x960亮度129，至x985恢复255；无暗邻居墙边未额外变暗。一个掠角对连续切线仍差21px，中心场一致不等于所有多边形边界精确。
-- 分场合成增加classic开销：完整48×25房60次更新，存档旧149ms/候选487ms；另轮候选273ms，环境噪声显著。不是实际帧率或长期性能结论；稳定场不重复合成已测。
-- v0.28.1完整游戏验证直接调用实际绘图方法，没有正常startup、快捷键、战斗或六模组联动验收。
-- v0.28.0正式根目录六模组启动冒烟曾通过，F12复现既有saveConfig SecurityError:fileWriteResource；本轮未扩修。MSW设置页7项与旧Pip行仍待目检。
-- 部分狮鹫手臂受internal限制；SATS记忆区扫描及抓暗区敌人瞬间报警为历史取舍。真实敌人/血条/武器、念力、地图传送和长期游玩仍待扩测。
+- current同一路线也有较大的边界明暗差（最大139/149），两版本相同；本次classic检查没有扩改current。
+- v0.28.1粗格掠角、薄墙可见侧约20px渐变与增加的合成成本仍在；新增硬接缝不能再仅归入这些旧限制。
+- 未做正常startup、快捷键、真实战斗/血条/武器、念力、地图传送或六模组联动。本轮没有生产修复，因此没有用旧测试重跑来宣称验收。
+- F12的saveConfig SecurityError:fileWriteResource、部分狮鹫internal手臂限制、SATS记忆扫描/抓暗敌瞬间报警等历史问题仍未扩修。
+- classic复用fogRaw/fogCache/fogBmp；同尺寸resetRoom必须清黑三图及fogBlurPending。透明RGBA需规范为0，避免静止重复合成。这些已修逻辑勿回退。
 
 ## 6. 下一步
 
-1. 用户查看本轮小墙对照；后续部署v0.28.1时复用已验候选，并为当前v0.28.0新建唯一备份，再走正常入口冒烟。尚无v0.28.0回滚备份，不得误用v0.27.1备份代替本次部署前版本。
-2. 保留现有build/release_backup_v0271_before_v0280_20260910.swf（SHA256 9423F7D727191C0F090EDD0C2E50D43339643F70F69E9D0F05C33114AE86A56D），它仅是上次部署回滚点。
-3. 正常进度下目检小墙/薄墙渐变及移动开销；必要时继续按具体问题复现。
-4. 设置持久化、真实战斗/血条/念力/地图传送等未在本次修复中扩写。
+1. 优先解决候选接缝：run.mjs --seams当前应失败；在同一失败用例上修，再重跑完整training --seams，并回归--edges和D22墙内39项。
+2. 对原版自身宽亮面，保持当前D22目标；如要改变，先制作具体效果供用户判断，不擅自收窄/涂黑。
+3. 当前没有部署就绪候选。后续部署须先新建v0.28.0唯一备份，再走发布门禁及正常入口检查；尚无v0.28.0回滚备份。
+4. 保留build/release_backup_v0271_before_v0280_20260910.swf（9423F7D727191C0F090EDD0C2E50D43339643F70F69E9D0F05C33114AE86A56D），它仅是上次部署回滚点。
 
 ## 7. 深入了解与复验
 
-- 本轮报告：knowledge/experiments/2026-09-12-classic-wall-edge-offset.md；实证/交互对照：classic-edge-v0281/。
-- 前轮D22墙内验证：knowledge/experiments/2026-09-10-wall-shadow-v0280-validation.md及wall-shadow-v0280/；部署实证deployment-*仍保留。
-- 复验：build/wall-tests/README.md。run.mjs --edges --revision 6c0170e（预期失败）→ --edges；run-game.mjs --training --revision 6c0170e → --training；compare-training.py断言输入一致/current未回退/墙内未变。共享输出目录必须顺序运行。
-- 构建：build/build_test.bat只写测试产物；旧build.bat/build.sh含旧路径且写release，勿用于检查。
-- SDK：D:/RemainsMod/mods/Sandevistan/build/tools/flexsdk；Java：D:/Program Files/Adobe Animate 2024/jre；FFDec同tools/ffdec/ffdec.jar。
-- 本轮AIR/FFDec在普通沙箱失败，经工具级放宽后通过；仍只用独立app id/副本，未读写真实pfe存档。
-- 原因：decisions/decisions.md D22/D23；历程：state/journal.md。design旧文和历史截图不等于当前实现/验收。
+- 本轮报告：knowledge/experiments/2026-09-19-classic-wall-seams.md；图片、输入、指标和交互对照：classic-seams-20260919/。本轮没有新生产代码决策。
+- 前轮小墙：2026-09-12-classic-wall-edge-offset.md、classic-edge-v0281/、D23；原墙层次：2026-09-10-wall-shadow-v0280-validation.md、wall-shadow-v0280/、D22。
+- 复验入口：build/wall-tests/README.md。新夹具run.mjs --seams；完整run-game.mjs --training --seams；旧版加--revision 6c0170e。Python inspect-seams.py先--baseline再候选。共享game/目录必须顺序运行。
+- 构建只用build/build_test.bat，旧build.bat/build.sh含旧路径并写release。SDK D:/RemainsMod/mods/Sandevistan/build/tools/flexsdk；Java D:/Program Files/Adobe Animate 2024/jre；FFDec同tools/ffdec/ffdec.jar。只读取共用工具链，不读取其他模组源码。
+- AIR普通沙箱可能失败，工具级放宽只运行独立app id/资源副本；禁止写真实pfe存档。带Pillow的Python：C:/Users/hello/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe。
+- journal最新条目接续本轮；旧报告/旧对照页是历史范围，不能替代当前失败结果。

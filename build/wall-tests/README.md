@@ -1,5 +1,7 @@
 # 墙内阴影与classic投影复验
 
+**2026-09-19 状态纠正：当前 v0.28.1 源码在新增墙/地板接缝测试中失败，不能仅凭旧39项与小墙端点通过就部署。此轮只有诊断，无新修复。**
+
 在RealisticVision模组目录运行。需要本机Flex/AIR、Animate JRE、游戏自带adl64/runtime；可通过RV_FLEX_SDK、RV_JAVA覆盖工具位置。普通沙箱中AIR启动可能被阻断，此时使用工具级审核放宽，只运行隔离实例。
 
 ## 原有墙内阴影（39项）
@@ -36,6 +38,29 @@
     node build/wall-tests/make-edge-evidence.mjs
 
 输出knowledge/experiments/classic-edge-v0281/。make-evidence.mjs是历史v0.28.0归档脚本，不要用它覆盖已保存的旧报告指纹。
+
+## 梯子口、厚墙内角接缝（2026-09-19）
+
+    node build/wall-tests/run.mjs --seams --revision 6c0170e
+    node build/wall-tests/run.mjs --seams
+    node build/wall-tests/run.mjs --seams --seam-probes
+
+第一条8/8通过；当前源码第二条预期7/8失败，最大相邻亮度差89。这是定位尚未修复的问题，不是已修复回归绿灯。第三条仅作单变量因果探针，改变当次夹具对象，不能当作候选效果。
+
+    node build/wall-tests/run-game.mjs --training --seams --revision 6c0170e
+    node build/wall-tests/run-game.mjs --training --seams
+
+两条顺序运行。完整1.02训练房按上层→梯子底部→回上层的路线取样；调用原版lighting/lighting2累积沿途亮度，再调用实际模组绘图。每版本捕获两位置的classic/current/原版和纯阴影。原版visLight取图必须传入它自身的变换矩阵；只draw该容器会得到原始1px/格缩略图。不会读取用户存档，不等于重放用户截图当帧。
+
+用本页上述带Pillow的Python依次运行：
+
+    build/wall-tests/inspect-seams.py --baseline
+    build/wall-tests/inspect-seams.py
+    node build/wall-tests/make-seam-evidence.mjs
+
+测量器输出game/*seam-measurements.json；候选运行先验证新旧输入完全一致、current整图/墙内未变，接缝值只作诊断指标，不把已知坏候选判为通过。最后一条仅作首次归档，输出knowledge/experiments/classic-seams-20260919/；已有指纹文件时拒绝覆盖，后续新实验应另设目录。报告为2026-09-19-classic-wall-seams.md。
+
+--seams夹具使用独立seams/输出与rv-wall-fixture-seams app id；完整游戏仍共用game/，必须与所有其他完整游戏场景、revision顺序执行。
 
 ## 验证方式与边界
 

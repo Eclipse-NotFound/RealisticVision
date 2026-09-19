@@ -1,0 +1,38 @@
+SandyMod: load start
+SandyMod: load issued
+RConnectMod: load start
+RConnectMod: load issued
+RVision: load start
+RVision: load issued
+MSWMod: load start
+MSWMod: load issued
+TDFC: load start
+TDFC: load issued
+RandomRoomsMod: load start
+RandomRoomsMod: load issued
+SandyMod: IOError Error #2035: URL Not Found. URL: app:/mods/Sandevistan/release/SandevistanMod.swf
+RConnectMod: IOError Error #2035: URL Not Found. URL: app:/mods/Rconnect/release/RConnectMod.swf
+MSWMod: IOError Error #2035: URL Not Found. URL: app:/mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf
+TDFC: IOError Error #2035: URL Not Found. URL: app:/mods/TDFC/release/TDFCMod.swf
+RandomRoomsMod: IOError Error #2035: URL Not Found. URL: app:/mods/RandomRooms/release/RandomRoomsMod.swf
+RVision: complete fired
+RVision: class=[class RealisticVisionMod]
+RVision: init returned
+537 Интерфейс
+1123 Game init
+GAME_PROBE new game
+893 Персонаж
+0 Местность
+767 Создание местности
+false
+393 Вход в местность
+GAME_PROBE training start land=begin loc=loc0_0
+707 Создание местности
+383 Вход в местность
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+GAME_PROBE seam capture classic lower
+GAME_PROBE seam capture classic upper
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+GAME_PROBE seam capture current lower
+GAME_PROBE seam capture current upper
+GAME_PROBE CAPTURED training seams (visual diagnosis only)

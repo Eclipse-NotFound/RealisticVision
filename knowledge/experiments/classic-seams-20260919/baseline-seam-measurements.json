@@ -1,0 +1,671 @@
+{
+  "region": [
+    120,
+    560,
+    800,
+    959
+  ],
+  "threshold": 12,
+  "measurements": [
+    {
+      "mode": "classic",
+      "position": "lower",
+      "eye": [
+        240,
+        867.5
+      ],
+      "sample_count": 2123,
+      "max_excess": 3,
+      "over_12": 0,
+      "worst": [
+        {
+          "point": [
+            280,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            251,
+            254
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            281,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            247,
+            250
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            282,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            243,
+            246
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            283,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            239,
+            242
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            286,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            226,
+            229
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            289,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            214,
+            217
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            290,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            210,
+            213
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        },
+        {
+          "point": [
+            160,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            253,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 2
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "position": "upper",
+      "eye": [
+        480,
+        587.5
+      ],
+      "sample_count": 2123,
+      "max_excess": 4,
+      "over_12": 0,
+      "worst": [
+        {
+          "point": [
+            189,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            137,
+            133
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            190,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            133,
+            129
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            192,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            125,
+            121
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            196,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            108,
+            104
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            197,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            104,
+            100
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            198,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            100,
+            96
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            199,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            96,
+            92
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 4
+        },
+        {
+          "point": [
+            178,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            181,
+            178
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 3
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "position": "lower",
+      "eye": [
+        240,
+        867.5
+      ],
+      "sample_count": 2123,
+      "max_excess": 139,
+      "over_12": 2083,
+      "worst": [
+        {
+          "point": [
+            160,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            116,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 139
+        },
+        {
+          "point": [
+            161,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            116,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 139
+        },
+        {
+          "point": [
+            162,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            116,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 139
+        },
+        {
+          "point": [
+            163,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            117,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 138
+        },
+        {
+          "point": [
+            164,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            117,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 138
+        },
+        {
+          "point": [
+            165,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            118,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 137
+        },
+        {
+          "point": [
+            166,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            118,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 137
+        },
+        {
+          "point": [
+            167,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            118,
+            255
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 137
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "position": "upper",
+      "eye": [
+        480,
+        587.5
+      ],
+      "sample_count": 2123,
+      "max_excess": 149,
+      "over_12": 1096,
+      "worst": [
+        {
+          "point": [
+            199,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            241,
+            92
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 149
+        },
+        {
+          "point": [
+            199,
+            640
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            240
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 148
+        },
+        {
+          "point": [
+            199,
+            641
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            237
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 145
+        },
+        {
+          "point": [
+            198,
+            639
+          ],
+          "direction": [
+            0,
+            1
+          ],
+          "brightness": [
+            239,
+            96
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 143
+        },
+        {
+          "point": [
+            199,
+            642
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            235
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 143
+        },
+        {
+          "point": [
+            199,
+            643
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            233
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 141
+        },
+        {
+          "point": [
+            199,
+            644
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            232
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 140
+        },
+        {
+          "point": [
+            199,
+            645
+          ],
+          "direction": [
+            1,
+            0
+          ],
+          "brightness": [
+            92,
+            230
+          ],
+          "native": [
+            255,
+            255
+          ],
+          "excess": 138
+        }
+      ]
+    }
+  ]
+}
