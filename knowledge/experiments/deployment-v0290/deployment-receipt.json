@@ -1,0 +1,18 @@
+{
+  "deployedAt": "2026-09-20T11:06:43.8408947+08:00",
+  "sourceCommit": "dadd417ea6be1d150a8bcbb6412a9272d2dacf4d",
+  "version": "v0.29.0-candidate",
+  "profile": "current medium 4/q3",
+  "sourceSHA256": "34F62748734B000D26D438668A455A5C4D2CC59B9FEF37CD78D078AA854BD10B",
+  "deployedSHA256": "5C26D604BA6AE33A92A5D11F8A6F6ABCFBF8BDE9663BAF3AB68E919A32B8C242",
+  "bytes": 20608,
+  "previousSHA256": "A8A7DAE9A755ACD7FC93101003AACE2C8CF2A0FF6A507318B3B7A7CAADB685E2",
+  "backup": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\release_backup_v0282_before_v0290_20260920-110643.swf",
+  "configSHA256": "5136EE1923A77F5F10EAB1B3994B64CBD67B09D687A7E829FB1E81D2E79A3C7F",
+  "hostSHA256": "5300EC4874E0404D298BB58C5D2A7469E82F93B455AD29AD64DD2E29D17241E7",
+  "smoke": "passed: version marker, settings registration, continuing heartbeat",
+  "heartbeatCount": 17,
+  "lastHeartbeat": 2881,
+  "smokeProcessClosed": true,
+  "descriptorRemoved": true
+}

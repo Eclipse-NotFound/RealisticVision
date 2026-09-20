@@ -13,7 +13,7 @@ date-updated: 2026-09-20
 
 # current 连续柔化与跑动刷新候选
 
-用户认可设计后实现 v0.29.0-candidate。默认推荐适中柔化，较宽档保留为对照。**候选已编译、回归完成，尚未部署；正式游戏仍加载 v0.28.2。**
+用户认可设计后实现 v0.29.0-candidate。默认推荐适中柔化，较宽档保留为对照。**2026-09-20 已按用户授权部署适中档，构建与本报告验证产物完全一致。[部署回执](2026-09-20-v0290-deployment.md)。以下记录部署前的验证结果与指纹。**
 
 [两档逐帧对照](current-soft-v0290/comparison.html) · [测量](current-soft-v0290/analysis.json) · [专项断言](current-soft-v0290/soft-checks.txt) · [完整游戏回归](current-soft-v0290/full-game-regression.json) · [指纹](current-soft-v0290/fingerprints.json)。设计见 D25；上一轮诊断证据保留在 current-motion-20260920。
 
