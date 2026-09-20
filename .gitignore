@@ -19,3 +19,5 @@ build/config_backup.txt
 __pycache__/
 build/wall-test-output/
 build/motion-test-output/
+build/shared-exploration/*
+!build/shared-exploration/run_checks.py

@@ -63,7 +63,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.29.0-candidate";
+      private static const VERSION:String = "v0.30.0-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -105,6 +105,149 @@ package
       }
 
       private var stageRef:Stage;
+      // Optional public API; neither RConnect nor network classes are referenced.
+      private static const EXP_HEX:String = "0123456789abcdef";
+      private var sharedRooms:Dictionary = new Dictionary(true);
+      private var sharedLight:Array;
+      private var sharedSeen:Array;
+      private var sharedExplored:Array;
+      private var sharedFull:Array;
+
+      private function publishExploration(main:DisplayObjectContainer):void
+      {
+         if(main == null) return;
+         var carrier:RVExplorationCarrier = new RVExplorationCarrier();
+         carrier.name = "RVExplorationAPI";
+         carrier.visible = false;
+         carrier.mouseEnabled = carrier.mouseChildren = false;
+         var self:RealisticVisionMod = this;
+         carrier["api"] = {version:1,
+            active:function(loc:Object):Boolean { return self.explorationActive(loc); },
+            capture:function(loc:Object):Array { return self.captureExploration(loc); },
+            merge:function(loc:Object, rows:Array):Boolean { return self.mergeExploration(loc,rows); }};
+         main.addChild(carrier);
+      }
+
+      private function explorationActive(loc:Object):Boolean
+      {
+         var w:World = World.w;
+         return w != null && loc != null && loc === this.curLoc && w.loc === loc && loc.active
+            && this.cfgEnabled && w.black && this.cfgMode != "vanilla"
+            && !loc.base && this.cfgBaseRooms[loc.id] != true;
+      }
+
+      private function captureExploration(loc:Object):Array
+      {
+         if(!this.explorationActive(loc)) return null;
+         var rows:Array = [];
+         for(var y:int = 0; y < this.spaceY; y++)
+         {
+            var row:Array = [];
+            for(var x:int = 0; x < this.spaceX; x++)
+            {
+               var i:int = x+y*this.spaceX;
+               var light:int = Math.max(0,Math.min(15,Math.round(Number(loc.getTile(x,y).visi)*15)));
+               var bits:String = "";
+               if(this.fullySeen[i] || (this.cfgMode == "classic" && this.explored[i] == 1)) bits = "ffffffffffffffff";
+               else
+               {
+                  for(var b:int = 0; b < 64; b += 4)
+                  {
+                     var nibble:int = 0;
+                     for(var q:int = 0; q < 4; q++)
+                     {
+                        var sub:int = b+q;
+                        if(this.seenSub[(y*8+int(sub/8))*this.subW+x*8+(sub%8)] == 1) nibble |= 1 << q;
+                     }
+                     bits += EXP_HEX.charAt(nibble);
+                  }
+               }
+               row.push(EXP_HEX.charAt(light)+bits);
+            }
+            rows.push(row.join(""));
+         }
+         return rows;
+      }
+
+      private function mergeExploration(loc:Object, rows:Array):Boolean
+      {
+         var w:World = World.w;
+         if(w == null || loc == null || loc !== w.loc || loc !== this.curLoc
+            || this.spaceX < 1 || this.spaceX > 200 || this.spaceY < 1 || this.spaceY > 200
+            || rows == null || rows.length != this.spaceY) return false;
+         for each(var row:* in rows)
+            if(!(row is String) || row.length != this.spaceX*17 || /[^0-9a-f]/.test(row)) return false;
+         var old:Array = this.sharedRooms[loc] as Array;
+         if(old != null && (old.length != this.spaceY || old[0].length != this.spaceX*17)) old = null;
+         var merged:Array = [];
+         var changed:Boolean = old == null;
+         for(var y:int = 0; y < rows.length; y++)
+         {
+            var parts:Array = [];
+            for(var k:int = 0; k < rows[y].length; k++)
+            {
+               var a:int = old == null ? 0 : EXP_HEX.indexOf(old[y].charAt(k));
+               var b:int = EXP_HEX.indexOf(rows[y].charAt(k));
+               parts.push(EXP_HEX.charAt(k%17 == 0 ? Math.max(a,b) : a|b));
+            }
+            merged[y] = parts.join("");
+            if(old != null && merged[y] != old[y]) changed = true;
+         }
+         if(changed)
+         {
+            this.sharedRooms[loc] = merged;
+            this.restoreSharedExploration();
+         }
+         return true;
+      }
+
+      private function restoreSharedExploration():void
+      {
+         this.sharedLight = null;
+         this.sharedSeen = this.sharedExplored = this.sharedFull = null;
+         var rows:Array = this.sharedRooms[this.curLoc] as Array;
+         if(rows == null || rows.length != this.spaceY || rows[0].length != this.spaceX*17) return;
+         this.sharedLight = new Array(this.spaceX*this.spaceY);
+         this.sharedSeen = new Array(this.subW*this.spaceY*8);
+         this.sharedExplored = new Array(this.spaceX*this.spaceY);
+         this.sharedFull = new Array(this.spaceX*this.spaceY);
+         for(var y:int = 0; y < this.spaceY; y++) for(var x:int = 0; x < this.spaceX; x++)
+         {
+            var i:int = x+y*this.spaceX;
+            this.sharedLight[i] = EXP_HEX.indexOf(rows[y].charAt(x*17))/15;
+            var all:Boolean = true, any:Boolean = false;
+            for(var b:int = 0; b < 64; b++)
+            {
+               var nibble:int = EXP_HEX.indexOf(rows[y].charAt(x*17+1+int(b/4)));
+               var si:int = (y*8+int(b/8))*this.subW+x*8+(b%8);
+               if((nibble & (1 << (b%4))) != 0) { this.sharedSeen[si] = 1; any = true; }
+               else all = false;
+            }
+            if(any) this.sharedExplored[i] = 1;
+            if(all) this.sharedFull[i] = true;
+         }
+         this.fogDirty = true;
+         this.lastGX = -99999;
+      }
+
+      /** Display input only; native visibility and interaction permissions stay local. */
+      private function explorationLight(loc:Location, x:int, y:int):Number
+      {
+         var light:Number = Math.max(0,Math.min(1,loc.getTile(x,y).visi));
+         if(!loc.retDark && this.sharedLight != null)
+            light = Math.max(light,Number(this.sharedLight[x+y*this.spaceX]));
+         return light;
+      }
+
+      private function memorySeen(i:int):Boolean
+      {
+         return this.seenSub[i] == 1 || (this.sharedSeen != null && this.sharedSeen[i] == 1);
+      }
+
+      private function memoryExplored(i:int):Boolean
+      {
+         return this.explored[i] == 1 || (this.sharedExplored != null && this.sharedExplored[i] == 1);
+      }
 
       // 房间状态
       private var curLoc:Location = null;
@@ -271,6 +414,7 @@ package
             return;
          }
          stageRef = main.stage;
+         this.publishExploration(main as DisplayObjectContainer);
          this.loadConfig();
          this.fileLog(lg + " -> after loadConfig enabled=" + this.cfgEnabled);
          stageRef.addEventListener(Event.ENTER_FRAME,this.onFrame);
@@ -737,6 +881,9 @@ package
          this.fov = [];
          this.visCur = [];
          this.roomMem = {};   // 世界重置（读档/加载）：跨房间记忆清空
+         this.sharedRooms = new Dictionary(true);
+         this.sharedLight = null;
+         this.sharedSeen = this.sharedExplored = this.sharedFull = null;
          this.unitVis = new Dictionary(true);
          this.hpHidden = new Dictionary(true);
          this.managedHidden = new Dictionary(true);
@@ -846,6 +993,7 @@ package
          this.fogDirty = true;
          this.fovVersion++;
          this.normalApplied = false;
+         this.restoreSharedExploration();
          this.locDist1 = loc.lDist1 > 0 ? loc.lDist1 : 300;
          this.locDist2 = loc.lDist2 > 0 ? loc.lDist2 : 1000;
          // 置为不可能值：进房首帧强制 needFov（立即重算 fogCache，避免首帧全黑）
@@ -1666,7 +1814,7 @@ package
                   }
                   a = Math.round((1 - br) * 255);
                }
-               else if(this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] == 1)
+               else if(this.memorySeen((ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)))
                {
                   a = dimA;
                }
@@ -1740,7 +1888,7 @@ package
             return 255;
          }
          var t:Tile = loc.getTile(tx,ty);
-         var gv:Number = Math.max(0,Math.min(1,t.visi));
+         var gv:Number = this.explorationLight(loc,tx,ty);
          // 门景仅改变显示值，不再把 visi/t_visi 永久抬高。
          if(t.opac < 1 && this.fov[i] == FOV_DIM)
          {
@@ -1822,7 +1970,7 @@ package
             var tx:int = i % this.spaceX;
             var ty:int = int(i / this.spaceX);
             if(advance) this.advanceMemory(loc,i);
-            var gv:Number = tx == 0 || ty == 0 ? 0 : Math.max(0,Math.min(1,loc.getTile(tx,ty).visi));
+            var gv:Number = tx == 0 || ty == 0 ? 0 : this.explorationLight(loc,tx,ty);
             var gameA:int = Math.floor((1-gv)*255);
             var cur:Number = this.memCur[i];
             // classic的记忆在中心坐标统一叠加；不能再在格角预先压暗一次。
@@ -1845,6 +1993,14 @@ package
          return this.wallA[tx + ty * this.spaceX];
       }
 
+      private function personalWallAlpha(tx:int, ty:int):Number
+      {
+         if(tx <= 0 || ty <= 0 || tx >= this.spaceX || ty >= this.spaceY) return 255;
+         var gv:Number = Math.max(0,Math.min(1,this.curLoc.getTile(tx,ty).visi));
+         var cur:Number = this.memCur[tx+ty*this.spaceX];
+         return Math.round(255-gv*255*(1-cur+cur*this.cfgDim));
+      }
+
       /** 每格四角连续双线性插值，坐标相位等价于原版 (-20,-60)+(x,y+1)。 */
       private function fillWallTile(tx:int, ty:int, trackMask:Boolean = false):Boolean
       {
@@ -1853,6 +2009,11 @@ package
          var a10:Number = this.wallCornerAlpha(tx+1,ty);
          var a01:Number = this.wallCornerAlpha(tx,ty+1);
          var a11:Number = this.wallCornerAlpha(tx+1,ty+1);
+         // Shared wall brightness is visual memory, never additional unit sight.
+         var p00:Number = this.sharedLight == null ? a00 : this.personalWallAlpha(tx,ty);
+         var p10:Number = this.sharedLight == null ? a10 : this.personalWallAlpha(tx+1,ty);
+         var p01:Number = this.sharedLight == null ? a01 : this.personalWallAlpha(tx,ty+1);
+         var p11:Number = this.sharedLight == null ? a11 : this.personalWallAlpha(tx+1,ty+1);
          for(var sy:int = 0; sy < FOG_SUB; sy++)
          {
             var fy:Number = (sy + 0.5) / FOG_SUB;
@@ -1871,8 +2032,11 @@ package
                this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,
                   FOG_PAD + ty * FOG_SUB + sy,a << 24);
                if(this.cfgMode == "current" && this.currentSight != null)
+               {
+                  var personalA:int = Math.round((1-fx)*((1-fy)*p00+fy*p01)+fx*((1-fy)*p10+fy*p11));
                   this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,
-                     a < MASK_LIT_A && this.fov[tx+ty*this.spaceX]!=FOV_NONE ? 0xFFFFFFFF : 0);
+                     personalA < MASK_LIT_A && this.fov[tx+ty*this.spaceX]!=FOV_NONE ? 0xFFFFFFFF : 0);
+               }
             }
          }
          return maskChanged;
@@ -1885,7 +2049,7 @@ package
        */
       private function fillMemoryTile(tx:int, ty:int, dimA:int):void
       {
-         if(this.fullySeen[tx+ty*this.spaceX])
+         if(this.fullySeen[tx+ty*this.spaceX] || (this.sharedFull != null && this.sharedFull[tx+ty*this.spaceX]))
          {
             this.fogCellRect.x=FOG_PAD+tx*FOG_SUB; this.fogCellRect.y=FOG_PAD+ty*FOG_SUB;
             this.fogCache.fillRect(this.fogCellRect,uint(dimA)<<24);
@@ -1900,7 +2064,7 @@ package
          {
             for(sy = 0; sy < FOG_SUB; sy++)
             {
-               if(this.seenSub[idxBase + sy * this.subW + sx] == 1)
+               if(this.memorySeen(idxBase + sy * this.subW + sx))
                {
                   seenAny = true;
                }
@@ -1931,7 +2095,7 @@ package
             for(sy = 0; sy < FOG_SUB; sy++)
             {
                this.fogCache.setPixel32(px0 + sx,py0 + sy,
-                  (this.seenSub[idxBase + sy * this.subW + sx] == 1 ? dimA : 255) << 24);
+                  (this.memorySeen(idxBase + sy * this.subW + sx) ? dimA : 255) << 24);
             }
          }
       }
@@ -1965,7 +2129,7 @@ package
                   changed = true;
                }
                var memory:Number = this.memCur[i];
-               var targetGrey:int = this.explored[i] == 1 ? Math.round(255*this.cfgDim) : 0;
+               var targetGrey:int = this.memoryExplored(i) ? Math.round(255*this.cfgDim) : 0;
                var grey:int = loc.getTile(tx,ty).opac >= 1
                   ? Math.round((255-a)*this.cfgDim)
                   : targetGrey;
@@ -1983,7 +2147,7 @@ package
                         if(nx <= 0 || ny <= 0 || nx >= this.spaceX || ny >= this.spaceY
                            || loc.getTile(nx,ny).opac >= 1) continue;
                         var ni:int = nx+ny*this.spaceX;
-                        var ng:int = this.explored[ni] == 1 ? Math.round(255*this.cfgDim) : 0;
+                        var ng:int = this.memoryExplored(ni) ? Math.round(255*this.cfgDim) : 0;
                         var depth:Number = this.memCur[ni]*(255-ng);
                         if(depth > deepest)
                         {

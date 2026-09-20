@@ -1,6 +1,20 @@
 # RealisticVision —— 开发日志
 
+## 2026-09-20 已发布视野版本接入独立 ModSettings
+- 用户授权安装与切换入口；以已发布源码 44f5929 为基线独立编译本次注册/保存补丁，源码仅部分暂存提交 eb92773，共享探索 WIP 保留且未发布。
+- 真机控件发现原 app:/ 写入被 AIR 拒绝，改为应用存储用户配置，首次读原模板。两种组合均重启恢复 dim=.45/mode=classic，通过 TDFC 新载体读取。
+- 正式发布 SHA 47403D06…407AEB，版本标记含 settings=ModSettings-v1。原配置未改；成套备份/验证见 MEMORY 顶部和 ModSettings 实验记录。
+
 > 协议见 GOVERNANCE.md §8：只追加不改写，**新条目插在最上面**。
+
+## 2026-09-20 v0.30.0 候选：供 RConnect 使用的可选共享探索接口
+
+- 用户明确允许共享探索任务修改 RV 接口，但禁止硬依赖；各端独立接收开关、关闭保留、RV 自身规则优先。新增命名载体 active/capture/merge，独立共享记忆参与 current/classic/墙面显示；不改原生 visi/t_visi、本地 FOV 或 currentSight。
+- 验证：无 RConnect 独立 16+21 PASS；配套普通 RV SWF 的 RConnect 双实例 e6c6df2924 为 104 PASS；普通组合启动 510c982aa5 通过。Sprite 动态属性 #1056 的失败与修正保留在 knowledge/experiments/2026-09-20-shared-exploration-api.md；契约 design/shared-exploration-api.md。
+- 候选22310字节、SHA ce3abb8d…3a8dfb5b，位于 build/shared-exploration/RealisticVisionMod.swf。仅入口和载体两类，无游戏存根/测试类/联机类；正式 release、真实用户进程/存档未由本任务操作。
+- 同期 ModSettings 注册迁移保留为另一任务的变更；已经协调各自只提交本任务差异。后续部署应先核对这两个主题的最终状态与最新产物。
+
+---
 
 ## 2026-09-20 v0.29.0适中柔化部署完成
 

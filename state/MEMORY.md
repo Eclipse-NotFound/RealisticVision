@@ -1,6 +1,13 @@
 # RealisticVision —— 开发记忆入口
 
+## 2026-09-20 正式入口迁移补充
+按用户授权，已发布的 v0.29.0-candidate 另加 ModSettings 注册与持久化修复（源码提交 eb92773），正式 SWF 为 20361 字节，SHA256 47403D06BB989EDA462599361E8CA921E356DA15541C32B737AF29EB03407AEB；启动标记含 settings=ModSettings-v1。共享探索 v0.30 候选仍是独立工作，本次未发布。
+入口改为 ModSettingsCarrier；配置优先 Local Store/RealisticVision_config.txt，首次读原 release/config.txt，写入应用存储。原模板 SHA 未变，F11/F12 保留；下文旧 F12 app:/ 保存失败现已修复。完整/无 MSW 组合与两次进程保存恢复、正式七模组字节启动通过。
+回滚须恢复 ModSettings 迁移前整套宿主/客户端；备份在 ../ModSettings/build/backups/before-migration-20260920-142036。完整证据见 ../ModSettings/knowledge/experiments/2026-09-20-migration.md。本次安装不覆盖共享探索源码/记忆增量，也未重跑柔化算法性能。
+
 > 更新：2026-09-20。v0.29.0 适中柔化已部署，构建标记保留 v0.29.0-candidate（与已验产物完全一致）。权限见 ../AGENT_SCOPE.md。
+
+> 新增：RConnect 共享探索任务已获用户明确授权，在本模组实现 v0.30.0-candidate 可选接口，候选尚未部署。同期 ModSettings 注册迁移由另一任务独立提交 eb92773，本接口叠加其后；没有混入对方暂存内容。
 
 ## 1. 这个模组是什么
 
@@ -8,6 +15,7 @@
 
 ## 2. 用户偏好与协作约定
 
+- 共享探索任务的新授权：宿主/加入者双向，各自控制接收，关闭后保留共享区域；RV 按自身设置显示。允许同时修改 RV 接口，禁止对 RConnect/RV 相互引入硬性依赖。当前只交付 build 候选，正式部署记录仍为下述 v0.29.0。
 - 用户已明确“认可你的设计，请继续”：落实 current 投影轮廓配连续地板渐变、适中/宽两档比较、刷新与错误亮点修复。不是尚待定案的讨论。本轮用户进一步明确“部署”，已完成正式替换与独立启动检查。
 - D25：允许地板边缘有限柔和过渡，不把边界外所有非黑像素自动判错；柔化不扩大逻辑视野或探索。默认推荐适中约28px，宽档约41px供比较，均是斜边实测10%–90%范围。
 - D22：墙按原版黑芯、基础亮面、渐变，只压暗原光；游戏维护 visi/t_visi 与地图/传送判定。D24 classic 接缝修复保留。
@@ -27,6 +35,8 @@
 
 ## 4. 正在进行与停点
 
+- 共享探索接口：src/RVExplorationCarrier.as 发布 active/capture/merge，独立记忆按 Location 实例隔离；子格/瓦片/墙光仅参与记忆显示，不写原版字段或本地 FOV/currentSight。未安装 RConnect 时原功能照常。契约 design/shared-exploration-api.md；验证 knowledge/experiments/2026-09-20-shared-exploration-api.md。
+- 候选 build/shared-exploration/RealisticVisionMod.swf；独立回归 build/shared-exploration/run_checks.py。RConnect 侧联测日志与最终哈希在其 M31 报告/JSON。正式 release 未由共享探索任务替换；部署前需合并同期设置任务并核对最终源码。
 - 本轮候选开发、两档实际绘图、回归和测试编译完成。说明：knowledge/experiments/2026-09-20-current-soft-candidate.md；对照页 current-soft-v0290/comparison.html，可逐帧切换适中/宽档。已按用户要求部署适中档。部署回执2026-09-20-v0290-deployment.md，证据deployment-v0290/。正式路径独立实例确认新版标记、MSW设置注册与17条心跳至2881；测试PID51952已关闭、描述符已删除，用户实例未操作。
 - 浏览器URL策略拒绝自动打开本地HTML，未绕过。脚本语法已检查、原始PNG已目检，但浏览器交互未实测；给用户文件链接即可，不宣称页面已打开。
 - 原调查 ef82898/37f3284 与讨论534865e保留；当前motion-tests旧变体固定读取37c25ba，新soft-*读取当前源码。不要让历史实验改用新源码，或覆盖current-motion-20260920证据。
