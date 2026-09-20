@@ -1,0 +1,663 @@
+{
+  "baseline": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 1.62,
+    "p95_ms": 5,
+    "max_ms": 6,
+    "over_33ms": 0,
+    "rebuild_mean_ms": null,
+    "rays_per_rebuild": null,
+    "boundary_tiles": null,
+    "phase_sum_ms": {
+      "computeFov": 0,
+      "fillFogCache": 0,
+      "refreshWallField": 0,
+      "structHash": 0,
+      "hideEnemies": 0,
+      "applyVision": 0
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.299,
+      "edge_residual_range_px": 5.9,
+      "deep_shadow_max_brightness": 29,
+      "deep_shadow_pixels_above_2": 74
+    },
+    "never_seen_interior": {
+      "pixels_above_2": 808,
+      "max_brightness": 62
+    }
+  },
+  "bench-baseline-1": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 8.9,
+    "p95_ms": 21,
+    "max_ms": 24,
+    "over_33ms": 0,
+    "rebuild_mean_ms": null,
+    "rays_per_rebuild": null,
+    "boundary_tiles": null,
+    "phase_sum_ms": {
+      "computeFov": 0,
+      "fillFogCache": 0,
+      "refreshWallField": 0,
+      "structHash": 0,
+      "hideEnemies": 0,
+      "applyVision": 0
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-baseline-10": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 9.67,
+    "p95_ms": 22,
+    "max_ms": 24,
+    "over_33ms": 0,
+    "rebuild_mean_ms": null,
+    "rays_per_rebuild": null,
+    "boundary_tiles": null,
+    "phase_sum_ms": {
+      "computeFov": 0,
+      "fillFogCache": 0,
+      "refreshWallField": 0,
+      "structHash": 0,
+      "hideEnemies": 0,
+      "applyVision": 0
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-corner-history-7": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 10,
+    "p95_ms": 22,
+    "max_ms": 24,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 19.52,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 62,
+      "fillFogCache": 449,
+      "refreshWallField": 29,
+      "structHash": 5,
+      "hideEnemies": 182,
+      "applyVision": 650
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-coverage-6": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 14,
+    "p95_ms": 38,
+    "max_ms": 41,
+    "over_33ms": 10,
+    "rebuild_mean_ms": 31.16,
+    "rays_per_rebuild": 16337.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 50,
+      "fillFogCache": 829,
+      "refreshWallField": 22,
+      "structHash": 3,
+      "hideEnemies": 178,
+      "applyVision": 1027
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-fast-rays-3": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 7.04,
+    "p95_ms": 13,
+    "max_ms": 14,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 11.81,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 21,
+      "fillFogCache": 262,
+      "refreshWallField": 28,
+      "structHash": 7,
+      "hideEnemies": 154,
+      "applyVision": 449
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-fast-rays-9": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 6.9,
+    "p95_ms": 14,
+    "max_ms": 15,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 11.65,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 24,
+      "fillFogCache": 260,
+      "refreshWallField": 26,
+      "structHash": 6,
+      "hideEnemies": 157,
+      "applyVision": 434
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-fast-sync-4": {
+    "frames": 90,
+    "updates": 90,
+    "frozen": 0,
+    "mean_ms": 14.01,
+    "p95_ms": 17,
+    "max_ms": 72,
+    "over_33ms": 1,
+    "rebuild_mean_ms": 14.01,
+    "rays_per_rebuild": 7346.9,
+    "boundary_tiles": 46.2,
+    "phase_sum_ms": {
+      "computeFov": 73,
+      "fillFogCache": 758,
+      "refreshWallField": 107,
+      "structHash": 4,
+      "hideEnemies": 160,
+      "applyVision": 1023
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-fast-sync-8": {
+    "frames": 90,
+    "updates": 90,
+    "frozen": 0,
+    "mean_ms": 12.98,
+    "p95_ms": 16,
+    "max_ms": 19,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 12.98,
+    "rays_per_rebuild": 7346.9,
+    "boundary_tiles": 46.2,
+    "phase_sum_ms": {
+      "computeFov": 66,
+      "fillFogCache": 740,
+      "refreshWallField": 47,
+      "structHash": 4,
+      "hideEnemies": 158,
+      "applyVision": 934
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-hires-5": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 24.92,
+    "p95_ms": 55,
+    "max_ms": 58,
+    "over_33ms": 31,
+    "rebuild_mean_ms": 48.81,
+    "rays_per_rebuild": 17088.9,
+    "boundary_tiles": 49.6,
+    "phase_sum_ms": {
+      "computeFov": 48,
+      "fillFogCache": 1374,
+      "refreshWallField": 27,
+      "structHash": 1,
+      "hideEnemies": 170,
+      "applyVision": 2023
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-profile-11": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 10.63,
+    "p95_ms": 23,
+    "max_ms": 57,
+    "over_33ms": 1,
+    "rebuild_mean_ms": 19.58,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 52,
+      "fillFogCache": 464,
+      "refreshWallField": 25,
+      "structHash": 5,
+      "hideEnemies": 177,
+      "applyVision": 720
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "bench-profile-2": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 9.13,
+    "p95_ms": 20,
+    "max_ms": 22,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 17.35,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 47,
+      "fillFogCache": 415,
+      "refreshWallField": 24,
+      "structHash": 2,
+      "hideEnemies": 164,
+      "applyVision": 608
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "corner-history": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 1.93,
+    "p95_ms": 5,
+    "max_ms": 7,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 4.67,
+    "rays_per_rebuild": 3596.8,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 6,
+      "fillFogCache": 89,
+      "refreshWallField": 0,
+      "structHash": 2,
+      "hideEnemies": 1,
+      "applyVision": 107
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.299,
+      "edge_residual_range_px": 5.9,
+      "deep_shadow_max_brightness": 29,
+      "deep_shadow_pixels_above_2": 74
+    },
+    "never_seen_interior": {
+      "pixels_above_2": 0,
+      "max_brightness": 0
+    }
+  },
+  "coverage": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 2.53,
+    "p95_ms": 8,
+    "max_ms": 9,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 6.76,
+    "rays_per_rebuild": 7967.0,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 7,
+      "fillFogCache": 135,
+      "refreshWallField": 1,
+      "structHash": 3,
+      "hideEnemies": 0,
+      "applyVision": 142
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.27,
+      "edge_residual_range_px": 5.804,
+      "deep_shadow_max_brightness": 58,
+      "deep_shadow_pixels_above_2": 236
+    }
+  },
+  "fast-rays": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 1.88,
+    "p95_ms": 6,
+    "max_ms": 8,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 4.14,
+    "rays_per_rebuild": 3596.8,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 7,
+      "fillFogCache": 78,
+      "refreshWallField": 2,
+      "structHash": 5,
+      "hideEnemies": 0,
+      "applyVision": 99
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.299,
+      "edge_residual_range_px": 5.9,
+      "deep_shadow_max_brightness": 29,
+      "deep_shadow_pixels_above_2": 74
+    },
+    "exact_baseline_frames": 24
+  },
+  "fast-sync": {
+    "frames": 60,
+    "updates": 60,
+    "frozen": 0,
+    "mean_ms": 5.05,
+    "p95_ms": 7,
+    "max_ms": 13,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 5.05,
+    "rays_per_rebuild": 3602.4,
+    "boundary_tiles": 22.9,
+    "phase_sum_ms": {
+      "computeFov": 13,
+      "fillFogCache": 240,
+      "refreshWallField": 2,
+      "structHash": 3,
+      "hideEnemies": 0,
+      "applyVision": 286
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.308,
+      "edge_residual_range_px": 5.945,
+      "deep_shadow_max_brightness": 58,
+      "deep_shadow_pixels_above_2": 187
+    }
+  },
+  "game-baseline": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 21.2,
+    "p95_ms": 46,
+    "max_ms": 177,
+    "over_33ms": 15,
+    "rebuild_mean_ms": null,
+    "rays_per_rebuild": null,
+    "boundary_tiles": null,
+    "phase_sum_ms": {
+      "computeFov": 0,
+      "fillFogCache": 0,
+      "refreshWallField": 0,
+      "structHash": 0,
+      "hideEnemies": 0,
+      "applyVision": 0
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "game-corner-history": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 9.19,
+    "p95_ms": 19,
+    "max_ms": 24,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 17.45,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 46,
+      "fillFogCache": 414,
+      "refreshWallField": 23,
+      "structHash": 3,
+      "hideEnemies": 172,
+      "applyVision": 606
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "game-coverage": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 11.89,
+    "p95_ms": 29,
+    "max_ms": 34,
+    "over_33ms": 1,
+    "rebuild_mean_ms": 26.26,
+    "rays_per_rebuild": 16337.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 42,
+      "fillFogCache": 694,
+      "refreshWallField": 16,
+      "structHash": 6,
+      "hideEnemies": 152,
+      "applyVision": 865
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "game-fast-rays": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 8.84,
+    "p95_ms": 18,
+    "max_ms": 21,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 14.94,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 32,
+      "fillFogCache": 319,
+      "refreshWallField": 30,
+      "structHash": 8,
+      "hideEnemies": 207,
+      "applyVision": 545
+    },
+    "identical_room_input": true,
+    "native_mutations": 0,
+    "exact_baseline_frames": 24
+  },
+  "game-fast-sync": {
+    "frames": 90,
+    "updates": 90,
+    "frozen": 0,
+    "mean_ms": 14.24,
+    "p95_ms": 18,
+    "max_ms": 18,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 14.24,
+    "rays_per_rebuild": 7346.9,
+    "boundary_tiles": 46.2,
+    "phase_sum_ms": {
+      "computeFov": 70,
+      "fillFogCache": 815,
+      "refreshWallField": 54,
+      "structHash": 11,
+      "hideEnemies": 178,
+      "applyVision": 1021
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "game-hires": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 24.8,
+    "p95_ms": 54,
+    "max_ms": 59,
+    "over_33ms": 31,
+    "rebuild_mean_ms": 47.81,
+    "rays_per_rebuild": 17088.9,
+    "boundary_tiles": 49.6,
+    "phase_sum_ms": {
+      "computeFov": 47,
+      "fillFogCache": 1349,
+      "refreshWallField": 20,
+      "structHash": 7,
+      "hideEnemies": 163,
+      "applyVision": 2008
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "game-profile": {
+    "frames": 90,
+    "updates": 30,
+    "frozen": 3,
+    "mean_ms": 21.43,
+    "p95_ms": 53,
+    "max_ms": 86,
+    "over_33ms": 18,
+    "rebuild_mean_ms": 39.77,
+    "rays_per_rebuild": 7375.4,
+    "boundary_tiles": 46.7,
+    "phase_sum_ms": {
+      "computeFov": 99,
+      "fillFogCache": 920,
+      "refreshWallField": 75,
+      "structHash": 14,
+      "hideEnemies": 378,
+      "applyVision": 1431
+    },
+    "identical_room_input": true,
+    "native_mutations": 0
+  },
+  "gate1": {
+    "frames": 60,
+    "updates": 0,
+    "frozen": 60,
+    "mean_ms": 5.62,
+    "p95_ms": 8,
+    "max_ms": 8,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 5.62,
+    "rays_per_rebuild": 3602.4,
+    "boundary_tiles": 22.9,
+    "phase_sum_ms": {
+      "computeFov": 23,
+      "fillFogCache": 308,
+      "refreshWallField": 3,
+      "structHash": 1,
+      "hideEnemies": 0,
+      "applyVision": 313
+    }
+  },
+  "hires": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 6.62,
+    "p95_ms": 20,
+    "max_ms": 21,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 16.9,
+    "rays_per_rebuild": 8320.6,
+    "boundary_tiles": 24.1,
+    "phase_sum_ms": {
+      "computeFov": 7,
+      "fillFogCache": 346,
+      "refreshWallField": 0,
+      "structHash": 0,
+      "hideEnemies": 1,
+      "applyVision": 388
+    },
+    "spatial": {
+      "edge_residual_rms_px": 0.631,
+      "edge_residual_range_px": 2.793,
+      "deep_shadow_max_brightness": 3,
+      "deep_shadow_pixels_above_2": 1
+    }
+  },
+  "immediate": {
+    "frames": 60,
+    "updates": 21,
+    "frozen": 2,
+    "mean_ms": 2.05,
+    "p95_ms": 7,
+    "max_ms": 7,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 5.71,
+    "rays_per_rebuild": 3596.8,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 8,
+      "fillFogCache": 100,
+      "refreshWallField": 1,
+      "structHash": 0,
+      "hideEnemies": 2,
+      "applyVision": 113
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.299,
+      "edge_residual_range_px": 5.9,
+      "deep_shadow_max_brightness": 29,
+      "deep_shadow_pixels_above_2": 74
+    }
+  },
+  "no-clamp": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 2.05,
+    "p95_ms": 6,
+    "max_ms": 7,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 5.05,
+    "rays_per_rebuild": 3596.8,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 9,
+      "fillFogCache": 93,
+      "refreshWallField": 2,
+      "structHash": 2,
+      "hideEnemies": 0,
+      "applyVision": 111
+    },
+    "spatial": {
+      "edge_residual_rms_px": 0.325,
+      "edge_residual_range_px": 1.545,
+      "deep_shadow_max_brightness": 98,
+      "deep_shadow_pixels_above_2": 2500
+    }
+  },
+  "profile": {
+    "frames": 60,
+    "updates": 20,
+    "frozen": 3,
+    "mean_ms": 2.37,
+    "p95_ms": 7,
+    "max_ms": 8,
+    "over_33ms": 0,
+    "rebuild_mean_ms": 5.95,
+    "rays_per_rebuild": 3596.8,
+    "boundary_tiles": 22.8,
+    "phase_sum_ms": {
+      "computeFov": 9,
+      "fillFogCache": 113,
+      "refreshWallField": 2,
+      "structHash": 0,
+      "hideEnemies": 0,
+      "applyVision": 133
+    },
+    "spatial": {
+      "edge_residual_rms_px": 1.299,
+      "edge_residual_range_px": 5.9,
+      "deep_shadow_max_brightness": 29,
+      "deep_shadow_pixels_above_2": 74
+    },
+    "exact_baseline_frames": 24
+  }
+}

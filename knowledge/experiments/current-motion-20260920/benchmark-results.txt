@@ -1,0 +1,34 @@
+CASE baseline-1
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE profile-2
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE fast-rays-3
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE fast-sync-4
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE hires-5
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE coverage-6
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE corner-history-7
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE fast-sync-8
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE fast-rays-9
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE baseline-10
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+CASE profile-11
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE
+MOTION_BENCH COMPLETE

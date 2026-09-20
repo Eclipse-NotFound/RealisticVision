@@ -1,0 +1,3 @@
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+MOTION_GAME COMPLETE

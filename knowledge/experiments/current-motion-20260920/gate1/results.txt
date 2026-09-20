@@ -1,0 +1,3 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+MOTION RED consecutive frozen frames=60 display updates=0/60
+MOTION COMPLETE
