@@ -21,3 +21,6 @@ build/wall-test-output/
 build/motion-test-output/
 build/shared-exploration/*
 !build/shared-exploration/run_checks.py
+
+# Local release rollback copies
+build/backup/
