@@ -22,7 +22,8 @@ const descriptor=path.join(out,'app-motion-game-test.xml');
 fs.writeFileSync(descriptor,`<?xml version="1.0"?><application xmlns="http://ns.adobe.com/air/application/30.0"><id>rv-motion-game-${variant}</id><versionNumber>1.0</versionNumber><filename>MotionGameProbe</filename><initialWindow><content>pfe.swf</content><visible>false</visible><width>1280</width><height>720</height><renderMode>direct</renderMode></initialWindow></application>`);
 const r=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:150000,maxBuffer:48*1024*1024});fs.unlinkSync(descriptor);
 const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(result,'run.log'),log);
-for(const line of log.split(/\r?\n/)){
+for(const rawLine of log.split(/\r?\n/)){
+  const line=rawLine.trimEnd();
   if(line.startsWith('PNG ')){const [,name,data]=line.split(' ');fs.writeFileSync(path.join(result,name+'.png'),Buffer.from(data,'hex'));}
   else if(line.startsWith('DATA '))fs.writeFileSync(path.join(result,'motion.json'),line.slice(5));
   else if(line.includes('MOTION_GAME'))console.log(line);

@@ -13,7 +13,7 @@ shutil.copy2(OUT/'analysis.json',DEST/'analysis.json')
 for p in OUT.iterdir():
     if not p.is_dir() or not (p/'motion.json').exists():continue
     d=DEST/p.name;d.mkdir(exist_ok=True)
-    shutil.copy2(p/'motion.json',d/'motion.json')
+    (d/'motion.json').write_text((p/'motion.json').read_text().rstrip()+'\n')
     if (p/'run.log').exists():
         lines=(p/'run.log').read_text().splitlines()
         (d/'results.txt').write_text('\n'.join(x for x in lines if 'MOTION' in x or x.startswith('[RVision]'))+'\n')

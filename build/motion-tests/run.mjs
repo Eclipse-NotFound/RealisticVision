@@ -19,7 +19,8 @@ fs.writeFileSync(descriptor,`<?xml version="1.0"?><application xmlns="http://ns.
 const run=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:60000,maxBuffer:32*1024*1024});
 fs.unlinkSync(descriptor);
 const log=(run.stdout||'')+(run.stderr||'');fs.writeFileSync(path.join(out,'run.log'),log);
-for(const line of log.split(/\r?\n/)){
+for(const rawLine of log.split(/\r?\n/)){
+  const line=rawLine.trimEnd();
   if(line.startsWith('PNG ')){const [,name,data]=line.split(' ');fs.writeFileSync(path.join(out,name+'.png'),Buffer.from(data,'hex'));}
   else if(line.startsWith('DATA '))fs.writeFileSync(path.join(out,'motion.json'),line.slice(5));
   else if(line.trim())console.log(line);
