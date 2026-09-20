@@ -1,0 +1,12 @@
+{
+  "lower": {
+    "classic_identical_input": true,
+    "classic_pixel_differences": 0,
+    "current_wall_max_difference": 0
+  },
+  "upper": {
+    "classic_identical_input": true,
+    "classic_pixel_differences": 0,
+    "current_wall_max_difference": 0
+  }
+}

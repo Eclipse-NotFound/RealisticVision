@@ -1,0 +1,114 @@
+SandyMod: load start
+
+SandyMod: load issued
+
+RConnectMod: load start
+
+RConnectMod: load issued
+
+RVision: load start
+
+RVision: load issued
+
+MSWMod: load start
+
+MSWMod: load issued
+
+TDFC: load start
+
+TDFC: load issued
+
+RandomRoomsMod: load start
+
+RandomRoomsMod: load issued
+
+SandyMod: IOError Error #2035: URL Not Found. URL: app:/mods/Sandevistan/release/SandevistanMod.swf
+
+RConnectMod: IOError Error #2035: URL Not Found. URL: app:/mods/Rconnect/release/RConnectMod.swf
+
+MSWMod: IOError Error #2035: URL Not Found. URL: app:/mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf
+
+TDFC: IOError Error #2035: URL Not Found. URL: app:/mods/TDFC/release/TDFCMod.swf
+
+RandomRoomsMod: IOError Error #2035: URL Not Found. URL: app:/mods/RandomRooms/release/RandomRoomsMod.swf
+
+RVision: complete fired
+
+RVision: class=[class RealisticVisionMod]
+
+RVision: init returned
+
+553 Интерфейс
+
+1047 Game init
+
+819 Персонаж
+
+0 Местность
+
+681 Создание местности
+
+false
+
+352 Вход в местность
+
+712 Создание местности
+
+367 Вход в местность
+
+CASE baseline-1
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+CASE soft-medium-2
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+CASE soft-wide-3
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+CASE soft-wide-4
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+CASE soft-medium-5
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME GREEN frozen=0 updates=90/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+CASE baseline-6
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+MOTION_GAME RED frozen=3 updates=30/90 stageFPS=30 room=48x25 mutations=0
+
+
+MOTION_GAME COMPLETE
+
+MOTION_BENCH COMPLETE
+

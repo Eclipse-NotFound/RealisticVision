@@ -3,7 +3,8 @@ import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} fro
 import {transform} from './variants.mjs';
 const here=path.dirname(fileURLToPath(import.meta.url)),mod=path.resolve(here,'../..'),game=path.resolve(mod,'../..');
 const out=path.join(mod,'build/motion-test-output/game'),sdk=process.env.RV_FLEX_SDK||'D:/RemainsMod/mods/Sandevistan/build/tools/flexsdk',java=process.env.RV_JAVA||'D:/Program Files/Adobe Animate 2024/jre/bin/java.exe';
-const variants=['baseline','profile','fast-rays','fast-sync','hires','coverage','corner-history'];
+const soft=process.argv.includes('--soft');
+const variants=soft?['baseline','soft-medium','soft-wide']:['baseline','profile','fast-rays','fast-sync','hires','coverage','corner-history'];
 function compile(args){const r=spawnSync(java,['-Xmx384m','-jar',path.join(sdk,'lib/mxmlc.jar'),'+configname=air',`+flexlib=${sdk}/frameworks`,'-swf-version=32','-debug=false','-optimize=true','-omit-trace-statements=false','-static-link-runtime-shared-libraries=true',...args],{cwd:out,env:{...process.env,AIR_HOME:sdk},encoding:'utf8',timeout:60000});if(r.status!==0)throw Error(r.stdout+r.stderr);}
 for(const variant of variants){
   fs.writeFileSync(path.join(out,'RealisticVisionMod.as'),transform(fs.readFileSync(path.join(mod,'src/RealisticVisionMod.as'),'utf8'),variant));
@@ -12,7 +13,7 @@ for(const variant of variants){
 const boot=path.join(out,'bootstrap');fs.copyFileSync(path.join(here,'MotionCapture.as'),path.join(boot,'MotionCapture.as'));
 let probe=fs.readFileSync(path.join(here,'GameMotionProbe.as'),'utf8');
 probe=probe.replace('private var phase:int=0,ticks:int=0,settled:int=0;',`private var phase:int=0,ticks:int=0,settled:int=0; private var index:int=0,classes:Object={},loaders:Array=[];
-private var plan:Array=["baseline","profile","fast-rays","fast-sync","hires","coverage","corner-history","fast-sync","fast-rays","baseline","profile"];`);
+private var plan:Array=${JSON.stringify(soft?['baseline','soft-medium','soft-wide','soft-wide','soft-medium','baseline']:['baseline','profile','fast-rays','fast-sync','hires','coverage','corner-history','fast-sync','fast-rays','baseline','profile'])};`);
 probe=probe.replace('modClass=mod.contentLoaderInfo.applicationDomain.getDefinition("RealisticVisionMod") as Class;','modClass=mod.contentLoaderInfo.applicationDomain.getDefinition("RealisticVisionMod") as Class;');
 // Keep initial loading/startup identical; load each experiment into a sibling domain after entering the room.
 probe=probe.replace('MotionCapture.run(w,modClass,gameMain.stage.frameRate);\n          NativeApplication.nativeApplication.exit(0);','loadCase(w);');
@@ -36,13 +37,13 @@ compile([`-source-path=${boot}`,'-output',path.join(injected,'RealisticVisionMod
 const descriptor=path.join(out,'app-motion-bench-test.xml');
 fs.writeFileSync(descriptor,'<?xml version="1.0"?><application xmlns="http://ns.adobe.com/air/application/30.0"><id>rv-motion-game-bench</id><versionNumber>1.0</versionNumber><filename>MotionBench</filename><initialWindow><content>pfe.swf</content><visible>false</visible><width>1280</width><height>720</height><renderMode>direct</renderMode></initialWindow></application>');
 const r=spawnSync(path.join(game,'adl64.exe'),['-runtime',path.join(game,'runtimes/air/win64'),descriptor],{cwd:out,encoding:'utf8',timeout:150000,maxBuffer:20*1024*1024});fs.unlinkSync(descriptor);
-const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(out,'bench.log'),log);let label;
+const log=(r.stdout||'')+(r.stderr||'');fs.writeFileSync(path.join(out,soft?'bench-soft.log':'bench.log'),log);let label;
 for(const rawLine of log.split(/\r?\n/)){
   const line=rawLine.trimEnd();
   if(line.startsWith('CASE ')){label=line.slice(5);console.log(line);}
   else if(line.startsWith('DATA ')){
     if(!/^[a-z0-9-]+$/.test(label))throw Error('Invalid case');
-    const dest=path.join(mod,'build/motion-test-output','bench-'+label);fs.mkdirSync(dest,{recursive:true});fs.writeFileSync(path.join(dest,'motion.json'),line.slice(5));
+    const dest=path.join(mod,'build/motion-test-output',(soft?'bench-soft-':'bench-')+label);fs.mkdirSync(dest,{recursive:true});fs.writeFileSync(path.join(dest,'motion.json'),line.slice(5));
   }else if(line.includes('MOTION_'))console.log(line);
 }
 if(r.error)console.error(r.error.message);

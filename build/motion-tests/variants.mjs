@@ -1,9 +1,14 @@
-// Disposable experiment transforms. src/ and release/ stay untouched.
+// Historical variants are pinned to v0.28.2; soft-* exercise the current candidate.
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 export function transform(source,variant){
-  const allowed=['baseline','profile','gate1','immediate','fast-rays','fast-sync','no-clamp','hires','coverage','corner-history'];
+  const candidate=variant.startsWith('soft-');
+  if(!candidate)source=execFileSync('git',['show','37c25ba:src/RealisticVisionMod.as'],{cwd:fileURLToPath(new URL('../..',import.meta.url)),encoding:'utf8'});
+  const allowed=['soft-medium','soft-wide','baseline','profile','gate1','immediate','fast-rays','fast-sync','no-clamp','hires','coverage','corner-history'];
   if(!allowed.includes(variant))throw Error('Unknown variant '+variant);
   source=source.replace(/\r\n/g,'\n').replace(/\bprivate\b/g,'public');
   function replace(a,b){if(!source.includes(a))throw Error('Missing transform anchor '+a);source=source.replace(a,b);}
+  if(variant==='soft-wide')replace('curBlur:BlurFilter = new BlurFilter(4.0,4.0,3)', 'curBlur:BlurFilter = new BlurFilter(6.0,6.0,3)');
   if(['gate1','fast-sync'].includes(variant))replace('this.frameCount - this.lastFovFrame >= 3','this.frameCount - this.lastFovFrame >= 1');
   if(['immediate','fast-sync'].includes(variant))replace('this.fogBlurPending && !fieldFresh','this.fogBlurPending');
   if(variant==='no-clamp')replace('if(vBlur[vi] < vRaw[vi])','if(false)');

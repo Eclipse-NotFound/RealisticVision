@@ -1,6 +1,21 @@
 # current 跑动与像素边界调查夹具
 
-本目录是 **2026-09-20 调查工具，不是已采用的源码补丁**。只在 build/motion-test-output 生成临时源码/SWF，正式 src/release 不改。实验变换集中在 variants.mjs，保持失败方案以便解释取舍。
+本目录包含 2026-09-20 调查工具与 v0.29.0 候选验证。测试只在 build/motion-test-output 生成临时源码/SWF，不改 src/release。历史变体固定读取 `37c25ba` 的 v0.28.2 源码，避免候选修改后旧锚点失效；`soft-medium` / `soft-wide` 使用当前源码，后者仅把地板滤镜从 4/q3 改成 6/q3。
+
+候选验证（在模组目录依次执行）：
+
+```powershell
+node build/motion-tests/run.mjs soft-medium --checks --assert
+node build/motion-tests/run.mjs soft-medium --assert
+node build/motion-tests/run.mjs soft-wide --assert
+node build/motion-tests/run-game.mjs soft-medium
+node build/motion-tests/run-game.mjs soft-wide
+node build/motion-tests/bench-game.mjs --soft
+```
+
+`SoftHarness` 验证淡入显示、柔化与记忆/单位可见性分离、已知墙几何后的错误历史、1000 条门水/越界射线、短视距、动态遮光、破墙、单位掩膜、换房与切模式。`bench --soft` 的六例交替写 `bench-soft-*`，不覆盖旧调查。性能仍是模组固定步回放成本，不是真实战斗 FPS；最终候选两次适中复测之一有 67ms 峰值。
+
+归档脚本 `soft-evidence.py` 读取上述结果及墙回归、测试构建，写 `knowledge/experiments/current-soft-v0290`，拒绝覆盖已有归档。地板允许受限柔化带，不再把几何边界外所有非黑像素都判为错误；原墙黑芯、逻辑遮挡、原版记录仍有独立断言。旧 `analyze.py` / `make-evidence.py` 保留为历史调查入口，不应覆盖旧证据。
 
 在 RealisticVision 目录运行：
 
@@ -31,7 +46,7 @@ node build/motion-tests/bench-game.mjs
 | immediate | 原频率，同帧显示 | 分离显示延迟与三帧节流 |
 | fast-rays | 每次FOV前平铺遮光值，DDA读取缓存 | 测重复 getTile/tileOpac 成本 |
 | fast-sync | fast-rays + 每帧FOV + 同帧显示 | 时间连续性实验 |
-| no-clamp | 不把模糊结果压回原始硬边 | 分离硬钳制影响；会漏光，不能采用 |
+| no-clamp | 不把模糊结果压回原始硬边 | 在旧的严格黑区条件下失败；不等于D25分层柔化候选 |
 | hires | 16×16子格，保持世界模糊尺度/边框 | 全图加密成本与台阶对照 |
 | coverage | 边界子格四点积分，其他保持 | 负结果：更贵、改善小 |
 | corner-history | 四角历史写到0/7而非0/1 | 修正错误曾见记录的独立验证 |

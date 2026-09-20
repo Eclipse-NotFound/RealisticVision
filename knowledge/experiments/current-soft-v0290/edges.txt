@@ -1,0 +1,79 @@
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+EDGE top-right expected=279.25 actual=279 offset=0.25 pixels
+
+EDGE interior unexplored=0 visible=255
+
+EDGE partial-enemy mask classification mismatches=0
+
+EDGE stationary settled cache stable=true
+
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=current
+
+EDGE classic-to-current initial fade differences=0 padding differences=0
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+EDGE wall without adjacent shadow preserves native floor light delta=0
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+EDGE remembered shadow fades from=99 to=255 maxStep=16 monotonic=true
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+EDGE mixed weak-wall mask classification mismatches=0 wall alpha delta=2
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=120,80 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.13
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=120,320 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.13
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=420,80 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.06
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=420,320 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.06
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE horizontal eye=120,80 scale=1 centeredFieldDelta=0.00 coarseVsTangent=21.00
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE horizontal eye=120,320 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.13
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE horizontal eye=420,80 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.08
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE horizontal eye=420,320 scale=1 centeredFieldDelta=0.00 coarseVsTangent=0.19
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=420,320 scale=0.8 centeredFieldDelta=0.00 coarseVsTangent=0.13
+
+[RVision] room wall-fixture 12x10 lDist2=1500 mode=classic
+
+PASS EDGE vertical eye=420,320 scale=1.25 centeredFieldDelta=0.00 coarseVsTangent=0.13
+
+WALL_EDGE_TESTS PASS block=(240,160)-(280,240), eye=(400,320)
+
