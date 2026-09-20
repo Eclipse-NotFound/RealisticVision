@@ -277,7 +277,7 @@ package
          stageRef.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
          stageRef.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN,this.onRightDown);
          trace("[RVision] init ok enabled=" + this.cfgEnabled);
-         this.fileLog("init ok " + VERSION + " enabled=" + this.cfgEnabled);
+         this.fileLog("init ok " + VERSION + " settings=ModSettings-v1 enabled=" + this.cfgEnabled);
       }
 
       /** 诊断文件日志：%APPDATA%/<appid>/Local Store/RVision.log（trace 被 release 剥离）。 */
@@ -302,7 +302,8 @@ package
       {
          try
          {
-            var f:File = File.applicationDirectory.resolvePath("mods/RealisticVision/release/config.txt");
+            var f:File = File.applicationStorageDirectory.resolvePath("RealisticVision_config.txt");
+            if(!f.exists) f = File.applicationDirectory.resolvePath("mods/RealisticVision/release/config.txt");
             if(!f.exists)
             {
                return;
@@ -393,7 +394,7 @@ package
       {
          try
          {
-            var f:File = File.applicationDirectory.resolvePath("mods/RealisticVision/release/config.txt");
+            var f:File = File.applicationStorageDirectory.resolvePath("RealisticVision_config.txt");
             var fs:FileStream = new FileStream();
             fs.open(f,FileMode.WRITE);
             var ids:Array = [];
@@ -3094,14 +3095,8 @@ package
 
       private static const MODES:Array = ["vanilla", "classic", "current"];
 
-      /**
-       * v0.26.0：向 MoreSkills&Weapons 模组设置聚合页注册本模组设置。
-       * 通道：World.w.main 上的 "MSWModAPICarrier" 动态载体（MSW 每帧幂等
-       * 发布；本模组 init 早于 MSW，故每 30 帧重试直至发布）。契约见
-       * mods/MoreSkills&Weapons/src/MSWSettingsHub.as：items 由注册方自持
-       * （get/set 回调），check 即时持久化，slider 实时生效、聚合页收起时
-       * onPageClose 统一落盘。失败静默重试（MSW 未启用时无限期等待，
-       * 每 30 帧一次查询代价可忽略）。
+      /** Register with independent ModSettings. Config and existing hotkeys stay local.
+       * Poll every 30 frames until the host is available, irrespective of loader order.
        */
       private function tryMswRegister(w:World):void
       {
@@ -3117,7 +3112,7 @@ package
             {
                return;
             }
-            var carrier:DisplayObject = mainC.getChildByName("MSWModAPICarrier");
+            var carrier:DisplayObject = mainC.getChildByName("ModSettingsCarrier");
             if(carrier == null)
             {
                return;
@@ -3131,14 +3126,14 @@ package
                this.buildMswItems(), this.mswPageClose,
                "视野渲染：三态视野/记忆暗色/念力宽限");
             this.mswRegistered = true;
-            this.fileLog("msw settings registered");
+            this.fileLog("ModSettings settings registered");
          }
          catch(err:Error)
          {
             if(!this.mswFailLogged)
             {
                this.mswFailLogged = true;
-               this.fileLog("msw register failed (will retry): " + err);
+               this.fileLog("ModSettings register failed (will retry): " + err);
             }
          }
       }
