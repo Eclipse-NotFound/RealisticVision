@@ -1,62 +1,53 @@
-# RealisticVision —— 《Remains》视野系统模组
+# RealisticVision
 
-实时视野更新：未探索区域全黑、当前视野内正常显示、离开视野的已探索区域暗色显示
-（保留场景/地形/物品、隐藏敌人）。支持可破坏墙壁、玻璃门暗色视野、敌人念力移动
-物品实时显示、玩家隔墙念力（物品可、敌人不可）。
+A fog-of-war / line-of-sight overhaul for **Fallout Equestria: REMAINS**: unexplored areas go fully dark, what you currently see renders normally, and areas you have left stay dimly remembered — terrain and items persist, enemies don't.
 
-## 目录
+English (this page) · [简体中文](README.zh-CN.md)
 
-```text
-src/                 模组源码（RealisticVisionMod.as，文档类）
-build/
-  build.sh           构建脚本（Git Bash）
-  stubs/             游戏公共 API 编译期存根（勿随 release 发布）
-  GameStubs.swc      构建中间产物
-  patched/           MainFE 加载补丁（pfe_patched_out.swf + MainFE.as）
-  decompiled-current/ 研究用：当前 pfe.swf 的 MainFE 反编译
-release/             模组产物 RealisticVisionMod.swf
-design/              架构设计（vision-system.md）
-decisions/           技术决策
-state/               当前开发状态（current-status.md）
-knowledge/           模组专属发现/实验
-```
+## Features
 
-## 构建
+- Real-time vision updates: unexplored = black, in-sight = normal, explored-but-out-of-sight = dimmed memory (scene, terrain and items kept; enemies hidden until seen again).
+- Works with destructible walls (vision opens up as walls break) and glass doors / lit doorways.
+- Telekinesis-aware: items moved by enemy telekinesis show up live; your own telekinesis works through walls for items but not enemies (`telegrace` gives enemies a grace period when dragged out of sight).
+- Optional **shared exploration** integration with [RConnect](https://github.com/Eclipse-NotFound/RConnect) co-op (two-way, per-side toggle).
 
-依赖（本机路径，见 build.sh）：
+## Requirements
 
-- Git Bash + Java 8
-- Apache Flex 4.16.1 SDK（`C:\Users\micha\Documents\_sandevistan_dev\flexsdk`）
-- FFDec（`C:\Users\micha\Documents\_sandevistan_dev\ffdec`，仅用于补丁/研究）
+- Fallout Equestria: REMAINS (1.02).
+- The one-time **ModLoader** game patch — see
+  [ModLoader Releases](https://github.com/Eclipse-NotFound/ModLoader/releases) → `Remains-GamePatch`.
 
-```bash
-cd build && bash build.sh
-# -> release/RealisticVisionMod.swf
-```
+## Install
 
-## 加载补丁（已部署，见 state/current-status.md 合并记录）
+1. Download `RealisticVision_v0.30.0.zip` from [Releases](../../releases).
+2. Copy the zip's `mods` folder into your game root (next to `pfe.swf`).
+3. Restart the game.
 
-游戏 pfe.swf（1.02，SWF41）的文档类 MainFE 已被修改为加载三个模组：
-Sandevistan、RConnect、RealisticVision。本模组加载器指向
-`app:/mods/RealisticVision/release/RealisticVisionMod.swf`（文档类静态
-`RealisticVisionMod.init(main)`）。
+## Usage
 
-- 合并源码：`build/patched/MainFE_merged.as`（三方合并版）
-- 合并产物：`build/patched/pfe_merged.swf`（已部署到游戏根）
-- 重新生成：`ffdec-cli -replace pfe.swf out.swf MainFE build/patched/MainFE_merged.as`
-- 回滚：游戏根 `pfe_1.02_before_rvision_merge_20260815.swf`
-- DLC 下其他版本（1.03/1.04）由 RConnect 补丁覆盖，本模组暂不部署。
+| Key | Action |
+|---|---|
+| **F11** | Toggle on/off at runtime (writes back to config) |
+| **F12** | Cycle vision mode |
+| **F10** | Diagnostics panel (room/visibility counters, telekinesis countdown, current mode) |
 
-## 配置与游戏内调试
+Configuration lives in `mods/RealisticVision/release/config.txt` — `enabled`, `mode`, `dim` (memory darkness, default 0.35), `doordim` (light through doors/water, 0.5), `litmin` (visibility threshold), `fadestep` (smoothing), `telegrace` (seconds of enemy grace when dragged out of sight), `base_rooms` (extra safe-house room ids) and `debug`. Changes take effect after a restart; F11/F12 write back to the file.
 
-- `release/config.txt`：enabled（总开关）、dim（记忆区暗度 0.35）、doordim（透光
-  门/水后视野亮度 0.5）、litmin（可见阈值 0.6）、fadestep（平滑步长）、telegrace
-  （拖敌出视野宽限秒数 3）、base_rooms（追加安全基地房间 id，逗号分隔）、debug。
-  修改后重启生效。
-- **F11**：运行时开关渲染模式（写回 config.txt）。
-- **F10**：诊断面板（房间、visible/dim/unexplored 计数、念力倒计时、当前模式）。
-- 关键事件走 `trace`（RVision 前缀）。
+## Disable / uninstall
 
-## 已知取舍
+Set the mod's switches to `0` in `mods/loader-manifest.txt`, or delete `mods/RealisticVision`.
 
-见 `state/current-status.md` 与 `decisions/decisions.md`。
+## Build from source
+
+AS3 source is a single document class (`src/RealisticVisionMod.as`) compiled against game-API stubs via `build/build.sh` (Git Bash + Flex SDK; see the Chinese README for toolchain paths). The release artifact is `release/RealisticVisionMod.swf`.
+
+## Related mods
+
+[ModLoader](https://github.com/Eclipse-NotFound/ModLoader) ·
+[RConnect](https://github.com/Eclipse-NotFound/RConnect) (shared exploration partner) ·
+[Sandevistan](https://github.com/Eclipse-NotFound/Sandevistan) ·
+[MoreSkillsAndWeapons](https://github.com/Eclipse-NotFound/MoreSkillsAndWeapons) ·
+[TDFC](https://github.com/Eclipse-NotFound/TDFC) ·
+[RandomRooms](https://github.com/Eclipse-NotFound/RandomRooms)
+
+> Fan mod project; not affiliated with the game's authors.
