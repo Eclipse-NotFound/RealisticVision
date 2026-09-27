@@ -1,0 +1,27 @@
+{
+  "time": "20260928-073745",
+  "source_commit": "55bb77e",
+  "new_sha256": "772e58a0cf384656632cffd9503929188445cc4b19953a725b7b47801d3e7080",
+  "previous_sha256": "ce3abb8d1321df4f2a6e1053ecbb44aabff66a6e27f81b517d3a341b3a8dfb5b",
+  "backup": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\release_backup_v0300_before_v0301_20260928-073745.swf",
+  "before": {
+    "pfe.swf": "b78244657ed407d03808c90e97325509db35f802122835f58933fff8003305ac",
+    "mods\\RealisticVision\\release\\config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "application.xml": "70dd3b085e5f6c66c03693cf68ce5e93a4e4136dd745d40d1a5b2a49863ba236"
+  },
+  "loaders": [
+    "mods/ModSettings/release/ModSettingsMod.swf",
+    "mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf",
+    "mods/RandomRooms/release/RandomRoomsMod.swf",
+    "mods/Rconnect/release/RConnectMod.swf",
+    "mods/RealisticVision/release/RealisticVisionMod.swf",
+    "mods/Sandevistan/release/SandevistanMod.swf",
+    "mods/TDFC/release/TDFCMod.swf"
+  ],
+  "appid": "rv-deploy-v0301-64dcfe75d82a42c397edfeaf5df90719",
+  "descriptor": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\app-rv-toast-test-20260928-073745.xml",
+  "result": "ROLLED BACK",
+  "pid": 88904,
+  "test_process_closed": true,
+  "error": "RuntimeError('formal startup log checks timed out')"
+}

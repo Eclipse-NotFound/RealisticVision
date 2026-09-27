@@ -1,10 +1,10 @@
 # RealisticVision —— 开发记忆入口
 
-## 2026-09-27 最新候选：模式切换提示 v0.30.1（未部署）
+## 2026-09-28 当前部署：模式切换提示 v0.30.1
 
-按用户要求，将右上模式提示移到左上，仅实际切换时显示3秒。到期按实际时间处理，放在每帧房间检查之前，避免菜单/无房间时滞留；重复选择当前模式不提示、不刷新计时。候选编译成功，调用路径与差异检查完成，尚未进行本轮游戏内显示实测。正式版本仍为下述 v0.30.0；候选与验证指纹见 journal 最新条目。
+用户明确“请部署”后，已发布源码55bb77e对应产物，22,311字节，SHA256 772E58A0CF384656632CFFD9503929188445CC4B19953A725B7B47801D3E7080。模式提示移至左上，仅实际切换时显示3秒，重复选择不续时，菜单/无世界也会到期。候选实际SWF的9项独立行为检查通过；正式路径新版init、设置注册与心跳1/181/361通过，测试实例已关闭。版本字符串保留v0.30.1-candidate，实际已部署。过程、证据和回滚见state/deployment-v0301-2026-09-28.md（相对模组根）。
 
-## 2026-09-20 当前部署：共享探索 v0.30.0
+## 2026-09-20 上次部署：共享探索 v0.30.0（历史）
 
 用户明确“替换正式版本”后，已部署22310字节、SHA256 ce3abb8d1321df4f2a6e1053ecbb44aabff66a6e27f81b517d3a341b3a8dfb5b，版本标记保留 v0.30.0-candidate。配套 RConnect 0.2.3-dev，包含下述 ModSettings 迁移和保存修复。部署/回滚见 state/deployment-v0300-2026-09-20.md。
 
@@ -13,7 +13,7 @@
 入口改为 ModSettingsCarrier；配置优先 Local Store/RealisticVision_config.txt，首次读原 release/config.txt，写入应用存储。原模板 SHA 未变，F11/F12 保留；下文旧 F12 app:/ 保存失败现已修复。完整/无 MSW 组合与两次进程保存恢复、正式七模组字节启动通过。
 回滚须恢复 ModSettings 迁移前整套宿主/客户端；备份在 ../ModSettings/build/backups/before-migration-20260920-142036。完整证据见 ../ModSettings/knowledge/experiments/2026-09-20-migration.md。本次安装不覆盖共享探索源码/记忆增量，也未重跑柔化算法性能。
 
-> 更新：2026-09-27。源码为 v0.30.1-candidate，正式安装仍为 v0.30.0-candidate，继承 v0.29.0 适中柔化。权限见 ../AGENT_SCOPE.md。
+> 更新：2026-09-28。源码与正式安装均为 v0.30.1-candidate，继承 v0.30.0 共享探索与 v0.29.0 适中柔化。权限见 ../AGENT_SCOPE.md。
 
 > 新增：RConnect 共享探索任务已获用户明确授权，在本模组实现 v0.30.0-candidate 可选接口，现已部署。同期 ModSettings 注册迁移由另一任务独立提交 eb92773，本接口叠加其后；没有混入对方暂存内容。
 
@@ -33,7 +33,7 @@
 
 ## 3. 当前状态
 
-- 本轮正式路径独立启动检查 **46b70da446 PASS**：双方 RC0.2.3 初始化、tick200、连接和 RV0.30 心跳；测试实例已回收。短窗口回滚和并行测试脚本版本竞争已解决并留在部署记录。
+- 本轮v0.30.1正式路径独立启动检查通过：新版初始化、ModSettings注册、tick1/181/361；提示行为9项由同一SWF独立夹具验证。实际用户存档的遮挡/布局未截图验收。旧v0.30.0的 **46b70da446 PASS** 联测记录仍有效，但未在本轮重跑联机或阴影回归。
 
 - 源码 v0.30.1-candidate（仅提示改动，继承 v0.30.0 与 D25）：current 每帧位移刷新并当帧显示；地板4/q3柔化，修0/7角点历史；射线批次缓存比较实际门/水/墙，房间和宽高失效；近区整块填充、完整曾见块快路径、墙几何按结构变化重建。classic 渲染主体与念力守卫不改。
 - currentSight 独立保存未柔化的单位可见性，地板按LOS/距离/亮度，墙按当前FOV和原版亮面；敌人可见侧淡出，粗格全亮不能跳过细分遮挡。提高记忆亮度不会显示隐藏敌人。
@@ -47,7 +47,7 @@
 ## 4. 正在进行与停点
 
 - 共享探索接口：src/RVExplorationCarrier.as 发布 active/capture/merge，独立记忆按 Location 实例隔离；子格/瓦片/墙光仅参与记忆显示，不写原版字段或本地 FOV/currentSight。未安装 RConnect 时原功能照常。契约 design/shared-exploration-api.md；验证 knowledge/experiments/2026-09-20-shared-exploration-api.md。
-- 候选 build/shared-exploration/RealisticVisionMod.swf；独立回归 build/shared-exploration/run_checks.py。RConnect 侧联测日志与最终哈希在其 M31 报告/JSON。正式 release 已替换为该产物，部署前核对源码指纹与 ModSettings 迁移一致。
+- 历史共享探索候选 build/shared-exploration/RealisticVisionMod.swf；独立回归 build/shared-exploration/run_checks.py。RConnect侧联测日志在其M31报告/JSON。当前正式版已叠加v0.30.1提示修改，不能再拿旧共享探索候选覆盖。
 - 本轮候选开发、两档实际绘图、回归和测试编译完成。说明：knowledge/experiments/2026-09-20-current-soft-candidate.md；对照页 current-soft-v0290/comparison.html，可逐帧切换适中/宽档。已按用户要求部署适中档。部署回执2026-09-20-v0290-deployment.md，证据deployment-v0290/。正式路径独立实例确认新版标记、MSW设置注册与17条心跳至2881；测试PID51952已关闭、描述符已删除，用户实例未操作。
 - 浏览器URL策略拒绝自动打开本地HTML，未绕过。脚本语法已检查、原始PNG已目检，但浏览器交互未实测；给用户文件链接即可，不宣称页面已打开。
 - 原调查 ef82898/37f3284 与讨论534865e保留；当前motion-tests旧变体固定读取37c25ba，新soft-*读取当前源码。不要让历史实验改用新源码，或覆盖current-motion-20260920证据。
@@ -61,13 +61,14 @@
 
 ## 6. 下一步
 
-1. 若用户要求部署本轮提示改动，核对 build/RealisticVisionMod_test.swf（22,311字节，SHA256 772E58A0CF384656632CFFD9503929188445CC4B19953A725B7B47801D3E7080）与当前源码后走发布门禁；不能用旧共享探索候选覆盖新版。此次尚未实测实际游戏中的提示位置/遮挡和计时。
-2. v0.30.0 的部署已完成，正式版反馈先核对 ce3abb8d…3a8dfb5b 与场景；该次部署的回滚使用 v0.29 + ModSettings 备份 47403d06…407aeb，路径见部署记录。
+1. 本轮提示版本已部署；用户保存并正常重启后生效。新反馈先核对772E58A0…D3E7080与场景。用户实例和真实存档未操作。
+2. 回滚本轮提示修改：build/release_backup_v0300_before_v0301_20260928-074716.swf，SHA256 CE3ABB8D…3A8DFB5B，复制回release后重启；保留共享探索/ModSettings，不用更早v0.29备份。
 3. 若继续性能优化，围绕67ms峰值和真实多敌人负载取证，关注每帧位图/向量分配；现有短测不能定位其原因。保持D22/D24/D25和念力守卫。
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
 ## 7. 深入了解与复验
 
+- 最新发布：state/deployment-v0301-2026-09-28.md与state/deployment-v0301/。当前宿主为新ModLoader加载链；普通非pfe测试ID会触发MSW自动开档。正式检查使用其现有豁免前缀pfe-modsettings-rv-deploy-及-nodebug，独立存储；不修改其他模组。早期失败均已回滚，详情见回执，不将一次基线成功视为环境稳定证明。
 - 新候选：2026-09-20-current-soft-candidate.md / current-soft-v0290/ / D25。新SoftHarness.as与motion-tests/README.md列完整命令，--checks专项、soft-medium/soft-wide、run-game和bench-game --soft。
 - 原调查：2026-09-20-current-motion-investigation.md / current-motion-20260920/。证实三帧+次帧约10Hz、只提频会饿死显示、max硬钳制台阶、角点误写亮点。全图2.5px成本高，四点积分收益小。
 - 既有classic修复：2026-09-19-classic-wall-seam-fix.md / classic-seams-v0282/ / D24；部署2026-09-19-v0282-deployment.md。D22/D23旧报告与念力交接见journal。

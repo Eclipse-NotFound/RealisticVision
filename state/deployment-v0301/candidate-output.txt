@@ -1,0 +1,12 @@
+PROBE constructor
+PROBE candidate loaded
+PASS startup has no toast
+PASS same mode stays quiet
+PASS setting switch shows selected mode
+PASS toast at upper left does not intercept input
+PASS rapid switch shows newest mode
+PASS latest switch restarts duration
+PASS menu toast expires after 3 seconds; same selection does not extend it
+PASS F12 shows current mode
+PASS toast expires without a world
+TOAST COMPLETE

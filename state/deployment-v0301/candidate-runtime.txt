@@ -1,0 +1,5 @@
+startup enter main=true stage=true -> after loadConfig enabled=true
+init ok v0.30.1-candidate settings=ModSettings-v1 enabled=true
+tick 1
+ModSettings settings registered
+tick 181
