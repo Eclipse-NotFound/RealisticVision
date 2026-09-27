@@ -63,7 +63,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.30.0-candidate";
+      private static const VERSION:String = "v0.30.1-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -362,7 +362,7 @@ package
       private var lastFrameMs:int = 0;
       private var normalApplied:Boolean = false;
       private var toastTxt:TextField = null;
-      private var toastFrames:int = 0;
+      private var toastUntil:int = 0;
 
       // 自动化验证埋点（config autotest=1 启用；默认关，不影响正常游玩）。
       // 每 300 帧输出一行窗口统计 autoStats()，事件（进房/念力抓放/F 键/
@@ -679,6 +679,7 @@ package
       private function onFrame(e:Event):void
       {
          var t0:int = getTimer();
+         this.updateToast(t0);
          this.frameCount++;
          if(this.frameCount % 180 == 1)
          {
@@ -3049,7 +3050,7 @@ package
             : (this.cfgMode == "classic" ? "仿原版" : "平滑阴影");
       }
 
-      /** F12 切换时在屏幕上短暂显示当前模式（3 秒）。 */
+      /** 实际切换模式时，在左上角提示3秒；菜单/无房间时同样会到期。 */
       private function showToast():void
       {
          var w:World = World.w;
@@ -3070,10 +3071,18 @@ package
          }
          this.toastTxt.text = "视野渲染模式: " + this.modeName()
             + (this.cfgEnabled ? "" : "（已停用）");
-         this.toastTxt.x = (this.stageRef != null ? this.stageRef.stageWidth : 1280) - 330;
-         this.toastTxt.y = 60;
+         this.toastTxt.x = 16;
+         this.toastTxt.y = 16;
          this.toastTxt.visible = true;
-         this.toastFrames = 90;
+         this.toastUntil = getTimer() + 3000;
+      }
+
+      private function updateToast(now:int):void
+      {
+         if(this.toastTxt != null && this.toastTxt.visible && now >= this.toastUntil)
+         {
+            this.toastTxt.visible = false;
+         }
       }
 
       /**
@@ -3366,6 +3375,10 @@ package
          {
             return;
          }
+         if(this.cfgMode == MODES[v])
+         {
+            return;
+         }
          this.cfgMode = MODES[v];
          this.saveConfig();
          this.curLoc = null;
@@ -3422,15 +3435,6 @@ package
          // 30Hz 门控（fc&1）因此恒全开或恒全关（自动化验证实测 cls=150/0，
          // 优化失效），fov 30 帧兜底退化为每 15 帧。移除后各 %N 门槛恢复
          // 设计语义（门控真 30Hz、兜底真 30 帧、tick 真 3 秒）
-         // 模式切换提示（3 秒）
-         if(this.toastFrames > 0)
-         {
-            this.toastFrames--;
-            if(this.toastFrames == 0 && this.toastTxt != null)
-            {
-               this.toastTxt.visible = false;
-            }
-         }
          if(!this.dbgOn)
          {
             if(this.dbgTxt)
