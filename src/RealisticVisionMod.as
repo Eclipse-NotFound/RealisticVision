@@ -1,5 +1,6 @@
 package
 {
+   import modlocales.vision.RVLocale;
    import flash.display.Bitmap;
    import flash.display.BitmapData;
    import flash.display.BitmapDataChannel;
@@ -3069,8 +3070,8 @@ package
             this.toastTxt.mouseEnabled = false;
             w.main.addChild(this.toastTxt);
          }
-         this.toastTxt.text = "视野渲染模式: " + this.modeName()
-            + (this.cfgEnabled ? "" : "（已停用）");
+         RVLocale.bind(this.toastTxt,"视野渲染模式: " + this.modeName()
+            + (this.cfgEnabled ? "" : "（已停用）"));
          this.toastTxt.x = 16;
          this.toastTxt.y = 16;
          this.toastTxt.visible = true;
@@ -3112,7 +3113,7 @@ package
                + "\nF11 开关 / F12 或点击上方列表行换模式";
             if(this.optTxt.text != txt)
             {
-               this.optTxt.text = txt;
+               RVLocale.bind(this.optTxt,txt,true);
             }
             this.optPanel.visible = true;
             // v0.25.0：向选项页原生列表注入"视野渲染模式"行（点击循环）
@@ -3131,7 +3132,7 @@ package
                   var numTxt:String = this.modeName() + (this.cfgEnabled ? "" : "（停用）");
                   if(this.optRow["numb"].text != numTxt)
                   {
-                     this.optRow["numb"].text = numTxt;
+                     RVLocale.bind(this.optRow["numb"] as TextField,numTxt,true);
                   }
                }
             }
@@ -3185,8 +3186,8 @@ package
             row["ramka"].visible = false;
             row["land"].text = "";
             row["ggName"].text = "";
-            row["nazv"].text = "视野渲染模式";
-            row["numb"].text = this.modeName();
+            RVLocale.bind(row["nazv"] as TextField,"视野渲染模式",true);
+            RVLocale.bind(row["numb"] as TextField,this.modeName(),true);
             // 放到列表最后一条已填充行（id 文本非空）的下一格（行距 30）
             var lastY:Number = anchor["y"];
             var cnt:int = host.numChildren;
@@ -3260,7 +3261,7 @@ package
          this.cycleMode();
          if(this.optRow != null)
          {
-            this.optRow["numb"].text = this.modeName() + (this.cfgEnabled ? "" : "（停用）");
+            RVLocale.bind(this.optRow["numb"] as TextField,this.modeName() + (this.cfgEnabled ? "" : "（停用）"),true);
          }
       }
 
@@ -3295,9 +3296,10 @@ package
             {
                return;
             }
-            api["registerPage"]("realisticvision", "RealisticVision 视野系统",
-               this.buildMswItems(), this.mswPageClose,
-               "视野渲染：三态视野/记忆暗色/念力宽限");
+            var pageArgs:Array = ["realisticvision", "RealisticVision 视野系统",
+               this.buildMswItems(), this.mswPageClose, "视野渲染：三态视野/记忆暗色/念力宽限"];
+            if("localizationVersion" in api) pageArgs.push({translate:RVLocale.render});
+            api["registerPage"].apply(api, pageArgs);
             this.mswRegistered = true;
             this.fileLog("ModSettings settings registered");
          }
@@ -3495,7 +3497,7 @@ package
                + "\nF10 面板 / F11 开关";
          }
          this.dbgTxt.visible = true;
-         this.dbgTxt.text = msg;
+         RVLocale.bind(this.dbgTxt,msg);
       }
    }
 }
