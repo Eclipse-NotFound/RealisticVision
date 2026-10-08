@@ -1,53 +1,62 @@
-# RealisticVision
+# RealisticVision — line of sight and exploration fog
 
-A fog-of-war / line-of-sight overhaul for **Fallout Equestria: REMAINS**: unexplored areas go fully dark, what you currently see renders normally, and areas you have left stay dimly remembered — terrain and items persist, enemies don't.
+**English** · [简体中文](README.zh-CN.md)
 
-English (this page) · [简体中文](README.zh-CN.md)
+Unexplored areas stay dark, your current view is clear, and places you leave become dim memories. Enemies disappear when they leave your sight. For a stronger sense of stealth and exploration.
 
-## Features
+**[Download v0.30.1 — RealisticVision_v0.30.1.zip](https://github.com/Eclipse-NotFound/RealisticVision/releases/download/v0.30.1/RealisticVision_v0.30.1.zip)** · [Release notes / other versions](https://github.com/Eclipse-NotFound/RealisticVision/releases)
 
-- Real-time vision updates: unexplored = black, in-sight = normal, explored-but-out-of-sight = dimmed memory (scene, terrain and items kept; enemies hidden until seen again).
-- Works with destructible walls (vision opens up as walls break) and glass doors / lit doorways.
-- Telekinesis-aware: items moved by enemy telekinesis show up live; your own telekinesis works through walls for items but not enemies (`telegrace` gives enemies a grace period when dragged out of sight).
-- Optional **shared exploration** integration with [RConnect](https://github.com/Eclipse-NotFound/RConnect) co-op (two-way, per-side toggle).
+Use the download link above, or open the release page, expand **Assets**, and select that filename. **Source code** and the green **Code → Download ZIP** button are development files, not the installable package.
 
-## Requirements
+## What changes?
 
-- Fallout Equestria: REMAINS (1.02).
-- The one-time **ModLoader** game patch — see
-  [ModLoader Releases](https://github.com/Eclipse-NotFound/ModLoader/releases) → `Remains-GamePatch`.
+- Three visibility states: unexplored, visible now, and remembered.
+- Broken walls, doors and glass affect sight. Memory retains terrain and items, not hidden enemies.
+- Switch between vanilla and two mod vision modes, and adjust remembered-area brightness.
+- Optional shared exploration with RConnect, controlled independently by each player.
 
 ## Install
 
-1. Download `RealisticVision_v0.30.0.zip` from [Releases](../../releases).
-2. Copy the zip's `mods` folder into your game root (next to `pfe.swf`).
-3. Restart the game.
+For **Windows / Remains 1.02**.
 
-## Usage
+1. Save and close the game. In your Steam Library, right-click Remains → **Manage → Browse local files**. The game folder contains `pfe.swf` and `application.xml`.
+2. If this is your first mod from this collection, complete the [ModLoader first-time setup](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.md#first-install), including the game patch and scanner. Skip this if already installed.
+3. Extract the ZIP and **merge its `mods` folder into the game folder**. Avoid a nested `mods/mods` folder. On a first installation, copy `default-config/RealisticVision/config.txt` into `mods/RealisticVision/release/config.txt`. Do not overwrite an existing configuration when updating.
+4. Double-click **`mods/ModLoader/RemainsModScanner.exe`** inside the game folder. Wait for it to finish, close its message, then launch the game normally.
 
-| Key | Action |
+Check that this file exists: `mods/RealisticVision/release/RealisticVisionMod.swf`. Enter an exploration area to see the effect; use F11 to compare enabled and disabled views.
+
+[Folder diagram, updating and recovery](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.md)
+
+## Your first session
+
+| Control | Action |
 |---|---|
-| **F11** | Toggle on/off at runtime (writes back to config) |
-| **F12** | Cycle vision mode |
-| **F10** | Diagnostics panel (room/visibility counters, telekinesis countdown, current mode) |
+| F11 | Enable/disable the effect |
+| F12 | Cycle vanilla, classic and current vision modes |
+| PipBuck → Settings → Mods (`模组`) → vision settings | Adjust brightness and other options |
 
-Configuration lives in `mods/RealisticVision/release/config.txt` — `enabled`, `mode`, `dim` (memory darkness, default 0.35), `doordim` (light through doors/water, 0.5), `litmin` (visibility threshold), `fadestep` (smoothing), `telegrace` (seconds of enemy grace when dragged out of sight), `base_rooms` (extra safe-house room ids) and `debug`. Changes take effect after a restart; F11/F12 write back to the file.
+The mode name appears briefly when you switch. Mode and enable settings persist; saved in-game settings take priority over the installation template.
 
-## Disable / uninstall
+## Updates, removal and compatibility
 
-Set the mod's switches to `0` in `mods/loader-manifest.txt`, or delete `mods/RealisticVision`.
+Before updating, save and close the game, back up `mods/RealisticVision`, merge the new files, run the scanner and restart. Preserve your configuration. To disable the mod temporarily, move its folder outside `mods` as a backup, scan again and restart.
 
-## Build from source
+This guide covers v0.30.1 on Remains 1.02. Safe areas may retain the vanilla view. Increasing memory brightness does not reveal hidden enemies. Performance in busy scenes depends on your machine and other mods.
 
-AS3 source is a single document class (`src/RealisticVisionMod.as`) compiled against game-API stubs via `build/build.sh` (Git Bash + Flex SDK; see the Chinese README for toolchain paths). The release artifact is `release/RealisticVisionMod.swf`.
+## Need help?
 
-## Related mods
+Check the folder location, run the scanner, and fully restart the game. See the [installation troubleshooting guide](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.md#troubleshooting) for common problems.
 
-[ModLoader](https://github.com/Eclipse-NotFound/ModLoader) ·
-[RConnect](https://github.com/Eclipse-NotFound/RConnect) (shared exploration partner) ·
-[Sandevistan](https://github.com/Eclipse-NotFound/Sandevistan) ·
-[MoreSkillsAndWeapons](https://github.com/Eclipse-NotFound/MoreSkillsAndWeapons) ·
-[TDFC](https://github.com/Eclipse-NotFound/TDFC) ·
-[RandomRooms](https://github.com/Eclipse-NotFound/RandomRooms)
+If it still fails, [report an issue](https://github.com/Eclipse-NotFound/RealisticVision/issues) with your game version, mod version, other installed mods, steps to reproduce, and what you expected versus what happened. Include a screenshot or exact error if available; a personal save is not needed for an initial report.
 
-> Fan mod project; not affiliated with the game's authors.
+<details>
+<summary>Development resources (not needed to install)</summary>
+
+This page describes the downloadable release; repository source may be ahead. See [src](src/) for implementation, with design, validation and version records in the project tree.
+
+</details>
+
+[Browse the mod collection](https://github.com/Eclipse-NotFound/ModLoader#choose-mods) · [First-time installation guide](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.md)
+
+An unofficial fan project. You need your own copy of the game.
