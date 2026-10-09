@@ -64,7 +64,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.30.1-candidate";
+      private static const VERSION:String = "v0.30.2-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -108,6 +108,8 @@ package
       private var stageRef:Stage;
       // Optional public API; neither RConnect nor network classes are referenced.
       private static const EXP_HEX:String = "0123456789abcdef";
+      // Packed local history only. Current brightness is read on every capture.
+      private var explorationBits:Array;
       private var sharedRooms:Dictionary = new Dictionary(true);
       private var sharedLight:Array;
       private var sharedSeen:Array;
@@ -150,6 +152,7 @@ package
                var light:int = Math.max(0,Math.min(15,Math.round(Number(loc.getTile(x,y).visi)*15)));
                var bits:String = "";
                if(this.fullySeen[i] || (this.cfgMode == "classic" && this.explored[i] == 1)) bits = "ffffffffffffffff";
+               else if(this.explorationBits[i] != null) bits = this.explorationBits[i];
                else
                {
                   for(var b:int = 0; b < 64; b += 4)
@@ -162,6 +165,7 @@ package
                      }
                      bits += EXP_HEX.charAt(nibble);
                   }
+                  this.explorationBits[i] = bits;
                }
                row.push(EXP_HEX.charAt(light)+bits);
             }
@@ -880,6 +884,7 @@ package
       {
          this.curLoc = null;
          this.explored = [];
+         this.explorationBits = null;
          this.fov = [];
          this.visCur = [];
          this.roomMem = {};   // 世界重置（读档/加载）：跨房间记忆清空
@@ -918,6 +923,7 @@ package
          this.wallCorners = [];
          var n:int = this.spaceX * this.spaceY;
          this.fullySeen = new Array(n);
+         this.explorationBits = new Array(n);
          this.fov = new Array(n);
          this.visCur = new Array(n);
          this.br = new Array(n);
@@ -1737,6 +1743,7 @@ package
                            // 可见角 → 子格"曾见"历史（记忆区↔未探索边界 5px 粒度；
                            // 已探索瓦片同样标记，否则记忆区填充会出黑斑）
                            this.seenSub[(ty * FOG_SUB + (sy == 0 ? 0 : FOG_SUB-1)) * this.subW + (tx * FOG_SUB + (sx == 0 ? 0 : FOG_SUB-1))] = 1;
+                           this.explorationBits[tx + ty * this.spaceX] = null;
                         }
                      }
                   }
@@ -1796,6 +1803,7 @@ package
                if(lit > 0.0001)
                {
                   this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
+                  this.explorationBits[tx + ty * this.spaceX] = null;
                }
                var a:int;
                if(doorView)
