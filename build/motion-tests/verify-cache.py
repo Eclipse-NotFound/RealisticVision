@@ -29,9 +29,12 @@ if a.mode=='build':
             n=p.relative_to(MOD).as_posix();dest=out/n;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest);inputs[n]=sha(p)
     originals={n:sha(GAME/n) for n in ('pfe.swf','application.xml','mods/RealisticVision/release/RealisticVisionMod.swf','mods/RealisticVision/release/config.txt')}
     shutil.copy2(MOD/'release/RealisticVisionMod.swf',out/'installed-before.swf')
-    # The unmodified oracle is the checked-in current source, hash pinned before editing.
-    old=subprocess.check_output(['git','-C',str(MOD),'show','HEAD:src/RealisticVisionMod.as'])
+    # Keep the oracle at the pre-cache source even after the cache is committed.
+    # HEAD would silently compare the new algorithm with itself on later builds.
+    oracle_revision='d634b5769f9af1949d2114b4643d37d97af8f7b6'
+    old=subprocess.check_output(['git','-C',str(MOD),'show',oracle_revision+':src/RealisticVisionMod.as'])
     old_text=old.decode('utf-8-sig').replace('\r\n','\n')
+    assert hashlib.sha256(old_text.encode('utf-8')).hexdigest()=='f2e1b49c7da4c968789529707caea82fbf48c707764beaf5f08ff6f1e258f742'
     # Freeze original checked-in source explicitly; the benchmark never runs it as a deployed mod.
     (out/'original.as').write_text(old_text,encoding='utf-8')
     classes=['fe.World','fe.Pt','fe.Obj','fe.loc.Location','fe.loc.Tile','fe.graph.Grafon','fe.unit.Unit','fe.unit.UnitPlayer','fe.unit.Pers','fe.weapon.Weapon']
@@ -44,7 +47,7 @@ if a.mode=='build':
     actual={line.split()[0] for line in (out/'classes.txt').read_text(encoding='utf-8-sig').splitlines() if line.strip()}
     intended={p.relative_to(out/'src').with_suffix('').as_posix().replace('/','.') for p in (out/'src').rglob('*.as')}
     assert actual==intended,(actual,intended)
-    save(out/'inputs.json',dict(source=inputs,protected=originals,original_sha256=sha(out/'original.as'),candidate_sha256=sha(out/'RealisticVisionMod.swf'),classes=sorted(actual),size=(out/'RealisticVisionMod.swf').stat().st_size))
+    save(out/'inputs.json',dict(source=inputs,protected=originals,original_revision=oracle_revision,original_sha256=sha(out/'original.as'),candidate_sha256=sha(out/'RealisticVisionMod.swf'),classes=sorted(actual),size=(out/'RealisticVisionMod.swf').stat().st_size))
     print(json.dumps(dict(candidate=sha(out/'RealisticVisionMod.swf'),classes=sorted(actual))))
 else:
     m=json.loads((out/'inputs.json').read_text(encoding='utf-8'))

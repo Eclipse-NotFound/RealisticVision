@@ -81,3 +81,5 @@
 - 构建只用build/build_test.bat（旧build.bat/build.sh会写release）。SDK D:/RemainsMod/mods/Sandevistan/build/tools/flexsdk，Java D:/Program Files/Adobe Animate 2024/jre，FFDec同tools/ffdec。
 - AIR使用独立app id和资源副本，禁止写真实pfe存储；性能试验顺序，优化编译debug=false/optimize=true并保留trace。完整游戏共享输出目录的脚本也顺序，限时150秒并核对成功退出。普通沙箱AIR/FFDec可能初始化失败，走工具审核，不凭空日志认定算法失败。
 - Pillow Python：C:/Users/hello/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe。知识库KB-000056已有性能比较方法，不重复记卡。
+
+缓存验证工具的旧算法已固定到提交d634b5769f9af1949d2114b4643d37d97af8f7b6及规范化源码SHA f2e1b49c…，避免后续HEAD变化变成新算法自比。执行实际取源/指纹检查，并与已验证02中的原始源码逐字一致；本次仅修未来构建工具，已部署SWF与02证据不变。
