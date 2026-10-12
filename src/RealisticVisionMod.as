@@ -106,6 +106,7 @@ package
       }
 
       private var stageRef:Stage;
+      private var authorityView:RVAuthorityView = new RVAuthorityView();
       // Optional public API; neither RConnect nor network classes are referenced.
       private static const EXP_HEX:String = "0123456789abcdef";
       // Packed local history only. Current brightness is read on every capture.
@@ -420,6 +421,7 @@ package
          }
          stageRef = main.stage;
          this.publishExploration(main as DisplayObjectContainer);
+         this.authorityView.publish(main as DisplayObjectContainer);
          this.loadConfig();
          this.fileLog(lg + " -> after loadConfig enabled=" + this.cfgEnabled);
          stageRef.addEventListener(Event.ENTER_FRAME,this.onFrame);
@@ -783,6 +785,7 @@ package
 
       private function onFrameInner():void
       {
+         if(this.authorityView.active) this.authorityView.restore();
          var w:World = World.w;
          if(w == null)
          {
@@ -1241,7 +1244,7 @@ package
             var c:DisplayObject = md as DisplayObject;
             if(c != null)
             {
-               c.visible = true;
+               this.authorityView.write(c,"visible",true,true);
             }
          }
          this.managedHidden = new Dictionary(true);
@@ -2466,6 +2469,7 @@ package
          var sig:String = x0 + "," + y0 + "," + x1 + "," + y1;
          if(rec.lastFov == this.fovVersion && rec.lastBb == sig)
          {
+            if(this.authorityView.active) this.rebindAuthorityMask(w,u,rec);
             return;
          }
          rec.lastFov = this.fovVersion;
@@ -2528,13 +2532,13 @@ package
             s3.cacheAsBitmap = true;
             if(u.vis)
             {
-               u.vis.cacheAsBitmap = true;
-               u.vis.mask = s2;
+               this.authorityView.write(u.vis,"cacheAsBitmap",true);
+               this.authorityView.write(u.vis,"mask",s2);
             }
             if(u.hpbar)
             {
-               u.hpbar.cacheAsBitmap = true;
-               u.hpbar.mask = s3;
+               this.authorityView.write(u.hpbar,"cacheAsBitmap",true);
+               this.authorityView.write(u.hpbar,"mask",s3);
             }
          }
          catch(err:Error)
@@ -2649,6 +2653,21 @@ package
          s3.graphics.copyFrom(g);
       }
 
+      private function rebindAuthorityMask(w:World,u:Unit,rec:Object):void
+      {
+         if(w.grafon == null) return;
+         if(u.vis && rec.m2) {
+            if(rec.m2.parent != w.grafon.visObjs[2]) w.grafon.visObjs[2].addChild(rec.m2);
+            this.authorityView.write(u.vis,"cacheAsBitmap",true);
+            this.authorityView.write(u.vis,"mask",rec.m2);
+         }
+         if(u.hpbar && rec.m3) {
+            if(rec.m3.parent != w.grafon.visObjs[3]) w.grafon.visObjs[3].addChild(rec.m3);
+            this.authorityView.write(u.hpbar,"cacheAsBitmap",true);
+            this.authorityView.write(u.hpbar,"mask",rec.m3);
+         }
+      }
+
       private function clearMask(u:Unit):void
       {
          var rec:Object = this.unitVis[u];
@@ -2660,13 +2679,13 @@ package
          {
             if(u.vis)
             {
-               u.vis.mask = null;
-               u.vis.cacheAsBitmap = false;
+               this.authorityView.write(u.vis,"mask",null,true);
+               this.authorityView.write(u.vis,"cacheAsBitmap",false,true);
             }
             if(u.hpbar)
             {
-               u.hpbar.mask = null;
-               u.hpbar.cacheAsBitmap = false;
+               this.authorityView.write(u.hpbar,"mask",null,true);
+               this.authorityView.write(u.hpbar,"cacheAsBitmap",false,true);
             }
          }
          catch(err:Error)
@@ -2712,13 +2731,13 @@ package
          {
             if(u.vis)
             {
-               u.vis.visible = false;
+               this.authorityView.write(u.vis,"visible",false);
             }
             if(u.hpbar)
             {
-               u.hpbar.visible = false;
+               this.authorityView.write(u.hpbar,"visible",false);
             }
-            u.prior = 0;
+            this.authorityView.write(u,"prior",0);
          }
          catch(err:Error)
          {
@@ -2732,9 +2751,9 @@ package
          {
             if(u.vis)
             {
-               u.vis.visible = true;
+               this.authorityView.write(u.vis,"visible",true,true);
             }
-            u.prior = 1;
+            this.authorityView.write(u,"prior",1,true);
          }
          catch(err:Error)
          {
@@ -2744,7 +2763,9 @@ package
             delete this.hpHidden[u];
             try
             {
+               this.authorityView.remember(u.hpbar,"visible");
                u.visDetails();
+               this.authorityView.changed(u.hpbar,"visible");
             }
             catch(err:Error)
             {
@@ -2839,7 +2860,7 @@ package
          // 敌方手持武器：跟随所属敌人的显示状态。
          // v0.24.7：扫描门控——fov 变化帧或每 3 帧（敌人在明暗边界移动时
          // 武器状态滞后 ≤3 帧 ≈50ms，不可察觉；省去每帧遍历整条对象链）
-         if(needFov || this.frameCount % 3 == 0)
+         if(this.authorityView.active || needFov || this.frameCount % 3 == 0)
          {
             if(this.cfgAutoTest)
             {
@@ -2871,13 +2892,13 @@ package
                         var orec2:Object = this.unitVis[owner];
                         if(wpn.vis && orec2 != null && orec2.m2 != null)
                         {
-                           wpn.vis.visible = true;
+                           this.authorityView.write(wpn.vis,"visible",true,true);
                            // v0.24.6：武器挂掩膜同样必须 cacheAsBitmap=true——
                            // 否则位图填充掩膜按路径光栅化（整块矩形），贴墙敌人
                            // （bbox 含邻域点亮的墙瓦片 → state=2）在记忆区里武器
                            // 全显（本体被掩膜正确裁掉，武器却整把可见）
-                           wpn.vis.cacheAsBitmap = true;
-                           wpn.vis.mask = orec2.m2;
+                           this.authorityView.write(wpn.vis,"cacheAsBitmap",true);
+                           this.authorityView.write(wpn.vis,"mask",orec2.m2);
                         }
                         else
                         {
@@ -2903,7 +2924,7 @@ package
             this.atWsSk++;
          }
          // 显示树扫描：隐藏未被识别的子对象（狮鹫手臂等）；无全隐敌人时提前退出
-         if((needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
+         if((this.authorityView.active || needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
          {
             this.scanArms(w,hiddenPos,visiblePos,exempt);
          }
@@ -2915,9 +2936,9 @@ package
          {
             if(wpn.vis)
             {
-               wpn.vis.mask = null;
-               wpn.vis.cacheAsBitmap = false;   // v0.24.6：无掩膜即关缓存（防残留开销）
-               wpn.vis.visible = visB;
+               this.authorityView.write(wpn.vis,"mask",null,true);
+               this.authorityView.write(wpn.vis,"cacheAsBitmap",false,true);   // v0.24.6：无掩膜即关缓存（防残留开销）
+               this.authorityView.write(wpn.vis,"visible",visB,visB);
             }
          }
          catch(err:Error)
@@ -2945,14 +2966,14 @@ package
             {
                if(c.visible)
                {
-                  c.visible = false;
+                  this.authorityView.write(c,"visible",false);
                   this.managedHidden[c] = true;
                   this.managedCount++;
                }
             }
             else if(this.managedHidden[c] == true)
             {
-               c.visible = true;
+               this.authorityView.write(c,"visible",true,true);
                delete this.managedHidden[c];
                this.managedCount--;
             }
