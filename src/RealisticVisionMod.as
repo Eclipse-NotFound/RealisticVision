@@ -64,7 +64,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.30.2-candidate";
+      private static const VERSION:String = "v0.30.3-scene";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1149,6 +1149,21 @@ package
             var vi:int = visual.getChildIndex(w.grafon.visLight);
             visual.addChildAt(this.fogVis,vi + 1);
          }
+         // Cropping the display also bounds AIR's masked-surface composition.
+         // scrollRect translates its content; restore the same world-space origin.
+         if(this.spaceX > 48 || this.spaceY > 25)
+         {
+            var sceneView:Rectangle = this.scenePaintBounds();
+            sceneView.x *= Tile.tileX; sceneView.y *= Tile.tileY;
+            sceneView.width *= Tile.tileX; sceneView.height *= Tile.tileY;
+            this.fogVis.scrollRect = sceneView;
+            this.fogVis.x = sceneView.x; this.fogVis.y = sceneView.y;
+         }
+         else
+         {
+            this.fogVis.scrollRect = null;
+            this.fogVis.x = this.fogVis.y = 0;
+         }
          this.fogVis.visible = true;
          if(w.pers != null && (w.pers as Pers).infravis > 0)
          {
@@ -1551,9 +1566,29 @@ package
        * （视野内）无 raycast 只算距离衰减、只有边界/泄漏瓦片（角点明暗混合或
        * FOV_DIM）才做完整 8×8 raycast。站立时（淡入帧）零 raycast。
        */
+      /** Large scenes keep native FOV/AI coordinates. Only the visible fog pixels
+       * are repainted; the margin covers blur and camera interpolation. Small rooms
+       * retain their complete original paint extent. */
+      private function scenePaintBounds():Rectangle
+      {
+         if(this.spaceX <= 48 && this.spaceY <= 25) return new Rectangle(0,0,this.spaceX,this.spaceY);
+         var world:* = World.w;
+         var camera:* = world.cam;
+         var left:int = Math.max(0,Math.floor(-camera.vx / Tile.tileX) - 4);
+         var top:int = Math.max(0,Math.floor(-camera.vy / Tile.tileY) - 4);
+         var right:int = Math.min(this.spaceX,Math.ceil((-camera.vx + camera.screenX) / Tile.tileX) + 4);
+         var bottom:int = Math.min(this.spaceY,Math.ceil((-camera.vy + camera.screenY) / Tile.tileY) + 4);
+         return new Rectangle(left,top,right-left,bottom-top);
+      }
+
       private function applyVision(w:World, loc:Location, needFov:Boolean, occlusionPrepared:Boolean = false):void
       {
+         var sceneBounds:Rectangle = this.scenePaintBounds();
          this.ensureFog(w);
+         var sceneLarge:Boolean = this.spaceX > 48 || this.spaceY > 25;
+         var scenePixelBounds:Rectangle = sceneLarge ? new Rectangle(FOG_PAD + sceneBounds.x * FOG_SUB,
+            FOG_PAD + sceneBounds.y * FOG_SUB,sceneBounds.width * FOG_SUB,sceneBounds.height * FOG_SUB) : this.fogRect;
+         var scenePixelPoint:Point = sceneLarge ? new Point(scenePixelBounds.x,scenePixelBounds.y) : this.fogPoint;
          // 原版 lighting2 在站立时仍可更新角值；墙场不能只等玩家移动。
          if(needFov && !occlusionPrepared) this.prepareOcclusion(loc);
          if(this.currentSight == null || this.currentSight.width != this.fogCache.width || this.currentSight.height != this.fogCache.height)
@@ -1600,9 +1635,9 @@ package
          var ty:int;
          if(this.fogDirty)
          {
-            for(tx = 0; tx < this.spaceX; tx++)
+            for(tx = int(sceneBounds.left); tx < sceneBounds.right; tx++)
             {
-               for(ty = 0; ty < this.spaceY; ty++)
+               for(ty = int(sceneBounds.top); ty < sceneBounds.bottom; ty++)
                {
                   var i:int = tx + ty * this.spaceX;
                   // 淡入进度（进房/开关时 0→1；收敛后子格值即最终亮度）
@@ -1627,9 +1662,9 @@ package
             {
                // 淡入帧：fogRaw = 按每瓦片 cur 缩放缓存场（alpha = 255 - cur×(255-cacheA)）
                this.fogRaw.lock();
-               for(tx = 0; tx < this.spaceX; tx++)
+               for(tx = int(sceneBounds.left); tx < sceneBounds.right; tx++)
                {
-                  for(ty = 0; ty < this.spaceY; ty++)
+                  for(ty = int(sceneBounds.top); ty < sceneBounds.bottom; ty++)
                   {
                      var cf:Number = this.visCur[tx + ty * this.spaceX];
                      var px0:int = FOG_PAD + tx * FOG_SUB;
@@ -1671,13 +1706,13 @@ package
             else
             {
                // 收敛后：缓存场直接拷贝（无逐像素循环）
-               this.fogRaw.copyPixels(this.fogCache,this.fogRect,this.fogPoint);
+               this.fogRaw.copyPixels(this.fogCache,scenePixelBounds,scenePixelPoint);
             }
          }
          if(this.fogBlurPending || this.fogDirty)
          {
             // 模糊 → 阴影边缘渐变过渡（source≠dest）
-            this.fogBmp.applyFilter(this.fogRaw,this.fogRect,this.fogPoint,this.curBlur);
+            this.fogBmp.applyFilter(this.fogRaw,scenePixelBounds,scenePixelPoint,this.curBlur);
             // 仅地板使用连续显示场；墙裁切与 currentSight 独立保护墙内和单位遮挡。
             this.fogBlurPending = false;
          }
@@ -1690,6 +1725,7 @@ package
       /** current：最终 alpha 场写入 fogCache（仅 FOV 重算时调用）。 */
       private function fillFogCache(loc:Location):void
       {
+         var sceneBounds:Rectangle = this.scenePaintBounds();
          this.rayBatch = true;
          this.currentSight.fillRect(this.currentSight.rect,0);
          try
@@ -1702,9 +1738,9 @@ package
             this.fogCache.lock();
             var tx:int;
             var ty:int;
-            for(tx = 0; tx < this.spaceX; tx++)
+            for(tx = int(sceneBounds.left); tx < sceneBounds.right; tx++)
             {
-               for(ty = 0; ty < this.spaceY; ty++)
+               for(ty = int(sceneBounds.top); ty < sceneBounds.bottom; ty++)
                {
                   var i:int = tx + ty * this.spaceX;
                   var bx:Number = tx * Tile.tileX;
