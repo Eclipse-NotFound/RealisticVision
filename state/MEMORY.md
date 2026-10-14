@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-14 23:10 ContinuousScene预绘兼容已升级：**v0.30.4-scene**，SHA256 `89B391BCE114534D6F2C0147BD4B136602168EE4362AA36F6F0C37ECD47173B5`。大图视野快照在有可见单位需要时才复制，场变化即时失效；原视野、遮罩和小房间保留。42项视野、48项场景、15项安装启动通过。仍由0735491生产线叠加补丁，不发布authority接口/WIP。当前回退归ContinuousScene/build/rollback-v03.ps1；详见[本轮部署记录](deployment-scene-v03-20261014.md)。下方0.30.3为历史。
+
 > 2026-10-14 ContinuousScene兼容已安装：**v0.30.3-scene**，SHA256 `ED76EC15666FD8CD50ACF0149F7EC32F2602D2E68D753580A0EC5814B95A2E99`。用户明确允许必要兼容修改。大场景雾绘图、模糊和显示裁切按镜头范围，小房间范围/逻辑视野/共享探索保留。安装包从原安装线0735491叠加补丁构建，不包含HEAD的authority接口和下述既有WIP；切勿用HEAD未经核验直接覆盖。37项视野、全模组44项和正式原生启动通过。详见[兼容部署记录](deployment-scene-20261014.md)，配置未改，备份归ContinuousScene统一管理。
 
 > 2026-10-12 RConnect B协作：用户明确授权“创建独立接口，与原版本接口保持隔离”。独立RVAuthorityViewAPI显示写入撤回接口已在B102双侧视野实机主67/0、加66/0；RV002独立检查15/0。原共享探索接口不变；B模式逐帧遮蔽开销仍待压力测试。 仅产物冻结于 mods/RConnect/build/ab，安装release未修改。详情见RConnect/state/host-authority-playable-2026-10-11.md末节。

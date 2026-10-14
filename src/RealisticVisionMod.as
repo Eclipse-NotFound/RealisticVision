@@ -64,7 +64,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.30.3-scene";
+      private static const VERSION:String = "v0.30.4-scene";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1607,7 +1607,7 @@ package
             }
             // 部分单位掩膜按此版本缓存；只在墙采样跨可见阈值时失效。
             if(maskChanged) this.fovVersion++;
-            this.currentSightData = this.currentSight.getVector(this.currentSight.rect);
+            this.currentSightData = sceneLarge ? null : this.currentSight.getVector(this.currentSight.rect);
          }
          // 墙图随角值独立更新；不因远处地板的记忆渐变重跑整图模糊。
          // 重算和淡入均当帧显示；无变化时跳过地板绘制。
@@ -1622,7 +1622,7 @@ package
          if(needFov)
          {
             this.fillFogCache(loc);
-            this.currentSightData = this.currentSight.getVector(this.currentSight.rect);
+            this.currentSightData = sceneLarge ? null : this.currentSight.getVector(this.currentSight.rect);
             this.fogBlurPending = true;
             if(this.cfgAutoTest)
             {
@@ -2441,6 +2441,12 @@ package
          {
             return 0;
          }
+         // Large scenes snapshot sight only when a visible unit needs it.
+         // Invalidation still happens on every fog/wall change; all units in a
+         // frame share one exact snapshot. Empty and fully hidden areas allocate none.
+         if(this.cfgMode == "current" && this.currentSightData == null && this.currentSight != null
+            && (this.spaceX > 48 || this.spaceY > 25))
+            this.currentSightData = this.currentSight.getVector(this.currentSight.rect);
          if(this.cfgMode == "current" && this.currentSightData != null)
          {
             // 格中心全亮时，单位边角仍可能被挡住；不能直接跳过子格掩膜。
