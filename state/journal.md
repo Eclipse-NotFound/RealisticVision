@@ -1,3 +1,9 @@
+## 2026-10-15 菜单改键已部署并正式读回复验
+
+- 用户在快捷键统筹会话明确选择安装剩余六个客户端；备份后安装固定产物SHA256 E99608088A8B00B4442BC3AEF52D8035336F0123EA5A96D55503C90B1F6E0808。
+- 正式路径原字节复制到唯一AIR应用，七模组23项联合175＋171项通过；原本体/清单/配置及其它模块指纹复核无变。没有关闭玩家游戏或写真实存档。
+- 本模组旧文件SHA256 B7695DF82AA45FDB783C4EB88AFFCB0C34A7674E3A052D2FD128867172A83A49，备份 D:/Program Files/Steam/steamapps/common/Remains/mods/ModLoader/build/backups/before-keybind-clients-20261015-214440-393ca9a3/RealisticVision/RealisticVisionMod.swf。安装与统一回退见state/keybind-deployment-2026-10-15.md；保留其他任务WIP。
+
 ## 2026-10-15 — 视野快捷键菜单候选，未部署
 
 - 新增三个权威改键项、本机保存、精确组合键与当前绑定提示；念力拦截跟随原版当前设置。
