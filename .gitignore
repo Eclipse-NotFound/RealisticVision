@@ -18,6 +18,7 @@ build/config_backup.txt
 # Python 分析工具缓存
 __pycache__/
 build/wall-test-output/
+build/wall-surface-output/
 build/motion-test-output/
 build/shared-exploration/*
 !build/shared-exploration/run_checks.py

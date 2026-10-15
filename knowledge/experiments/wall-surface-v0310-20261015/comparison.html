@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RealisticVision · 常亮墙边候选</title><style>
+*{box-sizing:border-box}body{margin:0;background:#10161c;color:#e6ebf2;font:16px/1.65 "Segoe UI","Microsoft Yahei",sans-serif}
+main{max-width:1500px;margin:auto;padding:28px}h1{font-size:28px;margin:0 0 8px}p{color:#aebbc9;margin:8px 0 18px}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:20px 0}label{display:flex;gap:8px;align-items:center}
+select,button{background:#202b37;color:#f2f6fb;border:1px solid #3d5064;border-radius:7px;padding:9px 12px;font:inherit;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}figure{margin:0;background:#080c10;border:1px solid #30404e;border-radius:10px;overflow:hidden}
+figcaption{padding:10px 15px;font-weight:600}.image{overflow:auto}img{display:block;width:100%;height:auto}.zoom img{width:1090px;max-width:none}
+#native{margin-top:20px;max-width:1090px}small{color:#9aabba}a{color:#97cfff}@media(max-width:850px){.grid{grid-template-columns:1fr}main{padding:16px}}
+</style><main><h1>已探索墙边，保留一圈亮面</h1><p>离开当前视野后，墙边仍可见；往墙内逐渐变暗。地板雾效继续由各模式决定。</p>
+<div class="controls"><label>材质<select id="material"><option value="game-rock">岩壁与半高墙</option value="game">原训练房金属墙</option></select></label>
+<label>模式<select id="mode"><option value="classic">仿原版</option><option value="current">平滑阴影</option></select></label>
+<label>位置<select id="position"><option value="upper">回到上层 · 下方为记忆区</option><option value="lower">梯子下方 · 上方为记忆区</option></select></label>
+<button id="zoom">查看原始像素</button><button id="reference">显示原版参照</button></div>
+<div class="grid"><figure><figcaption>当前安装</figcaption><div class="image"><img id="baseline" alt="当前安装的墙面和阴影"></div></figure>
+<figure><figcaption>候选 · 已探索墙边常亮</figcaption><div class="image"><img id="candidate" alt="候选的常亮墙边"></div></figure></div>
+<figure id="native" hidden><figcaption>同场景原版参照</figcaption><div class="image"><img id="original" alt="原版照明参照"></div></figure>
+<p><small>取自隔离游戏实例，同场景、同路线对照。岩壁使用原生 G 材质并设置一处半高墙，用于检查凹凸边缘；不是用户存档的精确复刻。此页为候选，正式安装尚未替换。<br>
+八组图像中，墙体图像以外的雾层差异为 0；各组 156 个深墙芯采样保持全黑。<a href="preview.png">打开局部对照图</a></small></p></main>
+<script>
+const byId=id=>document.getElementById(id);
+function update(){const key=byId('material').value+'/'+'';const suffix='-'+byId('position').value+'-'+byId('mode').value+'-detail.png';
+ byId('baseline').src=key+'baseline'+suffix;byId('candidate').src=key+'candidate'+suffix;byId('original').src=key+'native'+suffix;}
+['material','mode','position'].forEach(id=>byId(id).addEventListener('change',update));
+byId('zoom').onclick=()=>{document.body.classList.toggle('zoom');byId('zoom').textContent=document.body.classList.contains('zoom')?'缩放到页面':'查看原始像素'};
+byId('reference').onclick=()=>{byId('native').hidden=!byId('native').hidden;byId('reference').textContent=byId('native').hidden?'显示原版参照':'收起原版参照'};update();
+</script></html>

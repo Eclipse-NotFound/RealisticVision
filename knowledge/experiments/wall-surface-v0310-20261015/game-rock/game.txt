@@ -1,0 +1,83 @@
+ModLoader[boot_start] v2 run=run_1792064675468_941572
+ModLoader[requested_WallSurfaceProbe] line 1
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_WallSurfaceProbe] init
+903 Интерфейс
+1802 Game init
+SURFACE GAME newGame
+1309 Персонаж
+0 Местность
+741 Создание местности
+false
+345 Вход в местность
+804 Создание местности
+453 Вход в местность
+PASS rock fixture partial wall exists
+FILE terrain.png
+FILE terrain-alpha.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS baseline classic route 0 native light unchanged
+PASS baseline classic route 1 native light unchanged
+PASS baseline classic route 2 native light unchanged
+PASS baseline classic route 3 native light unchanged
+FILE baseline-lower-classic.png
+FILE baseline-lower-classic-fog.png
+PASS baseline classic route 4 native light unchanged
+PASS baseline classic route 5 native light unchanged
+FILE baseline-upper-classic.png
+FILE baseline-upper-classic-fog.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS baseline current route 0 native light unchanged
+PASS baseline current route 1 native light unchanged
+PASS baseline current route 2 native light unchanged
+PASS baseline current route 3 native light unchanged
+FILE baseline-lower-current.png
+FILE baseline-lower-current-fog.png
+PASS baseline current route 4 native light unchanged
+PASS baseline current route 5 native light unchanged
+FILE baseline-upper-current.png
+FILE baseline-upper-current-fog.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS candidate classic route 0 native light unchanged
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate classic route 1 native light unchanged
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate classic route 2 native light unchanged
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate classic route 3 native light unchanged
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+FILE candidate-lower-classic.png
+FILE candidate-lower-classic-fog.png
+FILE native-lower-classic.png
+FILE native-lower-classic-fog.png
+PASS candidate classic route 4 native light unchanged
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate classic route 5 native light unchanged
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+FILE candidate-upper-classic.png
+FILE candidate-upper-classic-fog.png
+FILE native-upper-classic.png
+FILE native-upper-classic-fog.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS candidate current route 0 native light unchanged
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate current route 1 native light unchanged
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate current route 2 native light unchanged
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate current route 3 native light unchanged
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+FILE candidate-lower-current.png
+FILE candidate-lower-current-fog.png
+FILE native-lower-current.png
+FILE native-lower-current-fog.png
+PASS candidate current route 4 native light unchanged
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+PASS candidate current route 5 native light unchanged
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+FILE candidate-upper-current.png
+FILE candidate-upper-current-fog.png
+FILE native-upper-current.png
+FILE native-upper-current-fog.png
+FILE result.json
+SURFACE GAME COMPLETE checks=37

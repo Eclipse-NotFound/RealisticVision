@@ -1,0 +1,82 @@
+[
+  {
+    "fixture": "game",
+    "mode": "classic",
+    "position": "upper",
+    "air_pixels": 1262830,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 238206
+  },
+  {
+    "fixture": "game",
+    "mode": "classic",
+    "position": "lower",
+    "air_pixels": 1262830,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 238258
+  },
+  {
+    "fixture": "game",
+    "mode": "current",
+    "position": "upper",
+    "air_pixels": 1262830,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 237988
+  },
+  {
+    "fixture": "game",
+    "mode": "current",
+    "position": "lower",
+    "air_pixels": 1262830,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 237651
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "classic",
+    "position": "upper",
+    "air_pixels": 1267968,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 233022
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "classic",
+    "position": "lower",
+    "air_pixels": 1267968,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 233037
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "current",
+    "position": "upper",
+    "air_pixels": 1267968,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 232908
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "current",
+    "position": "lower",
+    "air_pixels": 1267968,
+    "air_max_difference": 0,
+    "core_points": 156,
+    "core_max_brightness": 0,
+    "changed_wall_pixels": 232906
+  }
+]

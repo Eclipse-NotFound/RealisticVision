@@ -64,7 +64,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.30.4-scene";
+      private static const VERSION:String = "v0.31.0-wall-surface-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -307,6 +307,8 @@ package
       private var classicWallShade:BitmapData = null;
       private var classicWallShadeBmp:Bitmap = null;
       private var wallLayer:Sprite = null;
+      private var fogShadow:Sprite = null;
+      private var wallSurface:RVWallSurface = new RVWallSurface();
       private var classicCornerDeltas:Array = [];
       private var classicLightMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
          FOG_PAD-FOG_SUB/2,FOG_PAD-FOG_SUB*1.5);
@@ -873,6 +875,7 @@ package
             // current（平滑阴影）：模组自建雾层全权接管
             this.applyVision(w,loc,needFov,true);
          }
+         this.updateWallSurface(w,loc);
          this.hideEnemies(w,loc,needFov);
          if(this.frameCount % 10 == 0)
          {
@@ -885,6 +888,7 @@ package
 
       private function resetOff():void
       {
+         this.wallSurface.reset();
          this.curLoc = null;
          this.explored = [];
          this.explorationBits = null;
@@ -1143,6 +1147,15 @@ package
          this.classicWallShadeBmp.visible = this.cfgMode == "classic";
          this.wallBmp.mask = null;
          if(this.wallLayer.mask != this.wallClip) this.wallLayer.mask = this.wallClip;
+         // Keep the native infrared fog transform separate from the bright surface.
+         if(this.fogShadow == null)
+         {
+            this.fogShadow = new Sprite();
+            this.fogShadow.mouseEnabled = this.fogShadow.mouseChildren = false;
+            this.fogVis.addChild(this.fogShadow);
+         }
+         for each(var fogChild:DisplayObject in [this.fogBitmap,this.wallLayer,this.wallClip,this.floorClip])
+            if(fogChild.parent != this.fogShadow) this.fogShadow.addChild(fogChild);
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
          {
@@ -1164,16 +1177,18 @@ package
             this.fogVis.scrollRect = null;
             this.fogVis.x = this.fogVis.y = 0;
          }
+         this.fogShadow.scrollRect = this.fogVis.scrollRect;
+         this.fogShadow.x = this.fogVis.x; this.fogShadow.y = this.fogVis.y;
          this.fogVis.visible = true;
          if(w.pers != null && (w.pers as Pers).infravis > 0)
          {
-            this.fogVis.transform.colorTransform = this.infraCT;
-            this.fogVis.blendMode = "multiply";
+            this.fogShadow.transform.colorTransform = this.infraCT;
+            this.fogShadow.blendMode = "multiply";
          }
          else
          {
-            this.fogVis.transform.colorTransform = this.defCT;
-            this.fogVis.blendMode = "normal";
+            this.fogShadow.transform.colorTransform = this.defCT;
+            this.fogShadow.blendMode = "normal";
          }
       }
 
@@ -2033,6 +2048,15 @@ package
             }
          }
          return changed;
+      }
+
+      /** Surface protection changes only the displayed fog, never enemy sight. */
+      private function updateWallSurface(w:World, loc:Location):void
+      {
+         if(this.fogShadow == null) return;
+         var self:RealisticVisionMod = this;
+         this.wallSurface.update(this.fogVis,w.grafon,loc,this.scenePaintBounds(),
+            function(tx:int,ty:int):Boolean { return self.memoryExplored(tx+ty*self.spaceX); });
       }
 
       private function wallCornerAlpha(tx:int, ty:int):Number

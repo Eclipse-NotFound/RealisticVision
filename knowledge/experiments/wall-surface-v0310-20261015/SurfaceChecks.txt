@@ -1,0 +1,56 @@
+PASS unexplored wall stays black
+
+PASS explored top face retains a bright strip
+
+PASS explored vertical face retains a bright strip
+
+PASS surface fades smoothly into the wall
+
+PASS thick wall core stays fully black
+
+PASS unexplored opposite faces stay black
+
+PASS no cutout in air or transparent rock notches
+
+PASS native opaque lip outside tile grid is protected
+
+PASS native alpha limits antialiased rim erasure
+
+PASS patch compositor matches independent native bitmap-mask rendering max=0 
+
+PASS overlapping translucent foreground layers preserve native colour and alpha max=0 
+
+PASS colour-transform fallback matches native rendering max=0 
+
+PASS unchanged exploration keeps the same wall pixels
+
+PASS stable frames reuse wall surface caches
+
+PASS in-place alpha changes invalidate protection without a tile change
+
+PASS new fog children do not cover the protective cutout
+
+PASS half-height face follows the actual top and leaves air dark
+
+PASS same-size new room clears old wall exploration
+
+PASS nonzero viewport origin retains world-space alignment
+
+PASS nested large-scene scrollRect compensation keeps wall registration
+
+PASS chunk gutter is cropped before applying world offset
+
+PASS hidden chunk is removed from wall protection
+
+PASS chunk damage updates live mask without a bitmap replacement
+
+PASS replaced foreground bitmap restores the correct mask
+
+SURFACE PERF stable100=7ms terrain=10 field=5
+
+PASS world reset releases old pixels and room references
+
+PASS surface rebuilds correctly after world reset
+
+SURFACE COMPLETE passed=26 failures=0
+

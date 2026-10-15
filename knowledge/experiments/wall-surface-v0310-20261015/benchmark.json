@@ -1,0 +1,46 @@
+[
+  {
+    "variant": "baseline",
+    "mode": "classic",
+    "samples": 120,
+    "update_mean_ms": 7.37,
+    "draw_mean_ms": 7.16,
+    "total_mean_ms": 14.53,
+    "median_ms": 15.0,
+    "p95_ms": 28,
+    "max_ms": 55
+  },
+  {
+    "variant": "candidate",
+    "mode": "classic",
+    "samples": 120,
+    "update_mean_ms": 10.99,
+    "draw_mean_ms": 8.54,
+    "total_mean_ms": 19.53,
+    "median_ms": 19.5,
+    "p95_ms": 38,
+    "max_ms": 60
+  },
+  {
+    "variant": "baseline",
+    "mode": "current",
+    "samples": 120,
+    "update_mean_ms": 7.71,
+    "draw_mean_ms": 6.55,
+    "total_mean_ms": 14.26,
+    "median_ms": 14.0,
+    "p95_ms": 18,
+    "max_ms": 19
+  },
+  {
+    "variant": "candidate",
+    "mode": "current",
+    "samples": 120,
+    "update_mean_ms": 11.63,
+    "draw_mean_ms": 7.13,
+    "total_mean_ms": 18.77,
+    "median_ms": 19.0,
+    "p95_ms": 22,
+    "max_ms": 33
+  }
+]

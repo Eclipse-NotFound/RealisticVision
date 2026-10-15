@@ -1,0 +1,10 @@
+{
+  "page_js_syntax": "passed",
+  "detail_image_resources": 24,
+  "browser_interaction": "not tested",
+  "game_assertions": {
+    "game": 36,
+    "game-rock": 37
+  },
+  "pixel_cases": 8
+}

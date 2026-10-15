@@ -1,0 +1,17 @@
+{
+  "SurfaceChecks": {
+    "exit": 0,
+    "passed": 26,
+    "failed": 0
+  },
+  "SoftHarness": {
+    "exit": 0,
+    "passed": 16,
+    "failed": 0
+  },
+  "SharedExplorationHarness": {
+    "exit": 0,
+    "passed": 21,
+    "failed": 0
+  }
+}
