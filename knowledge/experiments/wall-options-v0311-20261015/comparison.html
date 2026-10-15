@@ -10,9 +10,9 @@ figure{margin:0;background:#090e13;border:1px solid #324454;border-radius:8px;ov
 <label>模式<select id="mode"><option value="classic">仿原版</option><option value="current">平滑阴影</option></select></label>
 <label>位置<select id="position"><option value="upper">上层 · 下方为记忆区</option><option value="lower">梯子下方</option></select></label>
 <label>画面<select id="view"><option value="detail">局部对照</option><option value="stage">最终游戏画面</option></select></label><button id="zoom">查看原始像素</button></div>
-<div class="grid"><figure><figcaption>当前安装</figcaption><div class="image"><img id="baseline" alt="旧版墙面与阴影"></div></figure>
-<figure><figcaption>候选 · 常亮关闭</figcaption><div class="image"><img id="off" alt="常亮关闭但保留阴影修复"></div></figure>
-<figure><figcaption>候选 · 常亮开启</figcaption><div class="image"><img id="on" alt="常亮开启并保留阴影修复"></div></figure></div>
-<p><small>同场景、同路线的独立测试实例；岩壁使用原生材质和一处半高墙，并非用户存档复刻。候选尚未部署。<a href="preview.png">局部预览</a> · <a href="../2026-10-15-wall-bright-option.md">验证与性能记录</a></small></p></main>
+<div class="grid"><figure><figcaption>部署前版本</figcaption><div class="image"><img id="baseline" alt="旧版墙面与阴影"></div></figure>
+<figure><figcaption>已部署版本 · 常亮关闭</figcaption><div class="image"><img id="off" alt="常亮关闭但保留阴影修复"></div></figure>
+<figure><figcaption>已部署版本 · 常亮开启</figcaption><div class="image"><img id="on" alt="常亮开启并保留阴影修复"></div></figure></div>
+<p><small>同场景、同路线的独立测试实例；岩壁使用原生材质和一处半高墙，并非用户存档复刻。同一候选已于2026-10-15部署，保存并重启游戏后生效。<a href="preview.png">局部预览</a> · <a href="../2026-10-15-wall-bright-option.md">验证与性能记录</a> · <a href="../../../state/deployment-v0311-2026-10-15.md">部署与回退记录</a></small></p></main>
 <script>const el=id=>document.getElementById(id);function update(){for(const variant of ['baseline','off','on'])el(variant).src=el('material').value+'/'+variant+'-'+el('position').value+'-'+el('mode').value+'-'+el('view').value+'.png';}
 for(const id of ['material','mode','position','view'])el(id).addEventListener('change',update);el('zoom').onclick=()=>{document.body.classList.toggle('zoom');el('zoom').textContent=document.body.classList.contains('zoom')?'缩放到页面':'查看原始像素'};update();</script></html>

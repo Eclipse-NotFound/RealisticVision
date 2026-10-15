@@ -30,4 +30,5 @@ build/backup/
 # Immutable local cache-validation builds and rollback copies
 build/exploration-cache-*/
 build/backups/before-exploration-cache-*/
+build/backups/before-wall-options-*/
 build/keybind-output/

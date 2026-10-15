@@ -1,6 +1,6 @@
 # RealisticVision —— 开发记忆入口
 
-> 2026-10-15 D27候选完成，**墙面修复未部署**：设置新增“已探索墙边常亮”（默认开、即时保存）；关闭后墙面随视野变暗，classic/current的透明凹口与墙边阴影修复始终生效。v0.31.1-wall-options-candidate，35,017B，SHA256 `BAA48289D9CF86F64CFF53B4734032AD29C89C3AC1704DB2D89038D4B8DB4275`。已保留本轮期间刚安装的改键功能，正式安装仍以下方E9960808改键部署为准。212项检查和8组图像通过，最终平均额外渲染约9.8～13.7ms；大型全模组战斗未验。报告/对照：[常亮选项与独立修复](../knowledge/experiments/2026-10-15-wall-bright-option.md)。
+> 2026-10-15 22:27:59 D27 **已部署**：设置新增“已探索墙边常亮”（默认开、即时保存）；关闭后墙面随视野变暗，classic/current的透明凹口与墙边阴影修复始终生效。正式安装v0.31.1-wall-options-candidate，35,017B，SHA256 `BAA48289D9CF86F64CFF53B4734032AD29C89C3AC1704DB2D89038D4B8DB4275`。精确安装验收候选，保留改键与场景兼容；212项开发检查、8组图像、20项生产字节设置检查和正式路径init/设置注册/tick1/181/361通过。备份和单模组回退见[部署回执](deployment-v0311-2026-10-15.md)。平均额外渲染约9.8～13.7ms；大型全模组战斗未验。需保存并重启游戏生效。
 
 > 2026-10-15 菜单改键已安装：本模组改键候选已随统一六客户端安装并从正式路径读回，七模组23项联合两进程346项通过。当前正式SHA256 E99608088A8B00B4442BC3AEF52D8035336F0123EA5A96D55503C90B1F6E0808。入口「模组→对应模组→快捷键」，保存后重启游戏加载新版；本机偏好即时保存。备份/回退及权限见[keybind-deployment-2026-10-15.md](keybind-deployment-2026-10-15.md)。下方候选及旧安装记忆保留历史；未发布WIP没有带入本次安装。
 
@@ -55,7 +55,7 @@
 
 ## 3. 当前状态
 
-- D27墙面候选：83项独立检查、岩壁65项与金属64项通过；8组开关的空气像素差0、远处地板差0、每组156个深墙芯点全黑。旧透明凹口复现0→255，即使关闭常亮也通过。11组优化前后逐像素相等。组合已发布改键后重新完整验证；主源码编译、产物无fe.*及authority嵌入确认。
+- D27墙面修复已安装：83项独立检查、岩壁65项与金属64项通过；8组开关的空气像素差0、远处地板差0、每组156个深墙芯点全黑。旧透明凹口复现0→255，即使关闭常亮也通过。11组优化前后逐像素相等。另20项生产字节检查验证设置/改键页、即时保存与跨进程恢复；正式原生启动通过。测试进程已退出，配置/宿主/清单指纹未变，未操作玩家游戏或存档。
 
 - 本轮v0.30.1正式路径独立启动检查通过：新版初始化、ModSettings注册、tick1/181/361；提示行为9项由同一SWF独立夹具验证。实际用户存档的遮挡/布局未截图验收。旧v0.30.0的 **46b70da446 PASS** 联测记录仍有效，但未在本轮重跑联机或阴影回归。
 
@@ -70,7 +70,7 @@
 
 ## 4. 正在进行与停点
 
-- D27候选与对照已完成，release未由本任务替换。交付包 `build/wall-options-output/candidate/RealisticVisionMod.swf`；工具 `build/wall-options/README.md`；实证 `knowledge/experiments/wall-options-v0311-20261015/`。48张页面资源与JS语法通过，预览/最终Stage图已目检；打开工具只返回queued，浏览器交互未验。
+- D27已按本对话“部署”指令替换release，精确对应 `build/wall-options-output/candidate/RealisticVisionMod.swf`；回执 `state/deployment-v0311-2026-10-15.md`，部署日志 `state/deployment-v0311/`。工具 `build/wall-options/README.md`；画面实证 `knowledge/experiments/wall-options-v0311-20261015/`。对照页标记已部署，历史开发报告保持原验收时点；浏览器交互未验。
 - 候选来源固定为v0.30.5-scene基础快照，并叠加本轮已正式安装的改键源码（主文件83F27414…BD3F58C8，另固定RVKeybinds与语言目录）；源码位于本轮installed-keys/src，不自动跟随外部生成目录。原完整候选不含新改键，不能再用；新的D27包保留改键且不含authority WIP。head-check仍不是部署包。
 
 - 共享探索接口：src/RVExplorationCarrier.as 发布 active/capture/merge，独立记忆按 Location 实例隔离；子格/瓦片/墙光仅参与记忆显示，不写原版字段或本地 FOV/currentSight。未安装 RConnect 时原功能照常。契约 design/shared-exploration-api.md；验证 knowledge/experiments/2026-09-20-shared-exploration-api.md。
@@ -90,8 +90,8 @@
 
 ## 6. 下一步
 
-1. D27墙面选项与边界修复等待后续部署指令；先重新核对正式安装和生产源，执行发布门禁与必要兼容检查。当前D27候选已保留正式改键，不用旧D26或未经核验的HEAD覆盖安装。
-2. 正式安装已由另一授权任务升级为v0.30.6-keybinds-candidate（E9960808…1F6E0808）；回退见keybind-deployment-2026-10-15.md。较早的场景/提示版和备份为历史，不能直接覆盖较新安装。
+1. D27已部署完成，玩家保存并正常重启后生效。「模组→RealisticVision视野系统→已探索墙边常亮」可开关；关闭常亮仍保留两模式阴影修复。不要用旧D26或未经核验的HEAD覆盖安装。
+2. 本次回退仅使用 `build/backups/before-wall-options-20261015-222759-aa7db9/RealisticVisionMod.before.swf`（E9960808…1F6E0808），恢复此前改键版；先核对当前安装和备份。不能用旧改键/场景联合回退处理本次单模组安装。
 3. 如继续墙面性能优化，针对原雾快照、动态局部合成及真实多敌人/大场景取证；保持D27开关与修复独立、D22记录隔离、D24/D25地板规则及念力守卫，不减少刷新造成破墙或镜头残影。
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
@@ -99,7 +99,7 @@
 
 - 本轮入口：`knowledge/experiments/2026-10-15-wall-bright-option.md`、D27、`build/wall-options/README.md`；最终指纹/图像/日志在wall-options-v0311-20261015。D26旧记录仍留原址。SDK在本区 `mods/Sandevistan/build/tools/`，仅只读使用。
 
-- 最新发布：state/deployment-v0301-2026-09-28.md与state/deployment-v0301/。当前宿主为新ModLoader加载链；普通非pfe测试ID会触发MSW自动开档。正式检查使用其现有豁免前缀pfe-modsettings-rv-deploy-及-nodebug，独立存储；不修改其他模组。早期失败均已回滚，详情见回执，不将一次基线成功视为环境稳定证明。
+- 最新发布：state/deployment-v0311-2026-10-15.md与state/deployment-v0311/；此前v0301回执是历史。当前宿主为ModLoader加载链；正式检查沿用pfe-modsettings-rv-deploy-前缀及-nodebug，独立存储。部署前指纹抄录与探针心跳等待不足已修正并保留记录，均未替换安装；最终生产字节与原生启动通过。
 - 新候选：2026-09-20-current-soft-candidate.md / current-soft-v0290/ / D25。新SoftHarness.as与motion-tests/README.md列完整命令，--checks专项、soft-medium/soft-wide、run-game和bench-game --soft。
 - 原调查：2026-09-20-current-motion-investigation.md / current-motion-20260920/。证实三帧+次帧约10Hz、只提频会饿死显示、max硬钳制台阶、角点误写亮点。全图2.5px成本高，四点积分收益小。
 - 既有classic修复：2026-09-19-classic-wall-seam-fix.md / classic-seams-v0282/ / D24；部署2026-09-19-v0282-deployment.md。D22/D23旧报告与念力交接见journal。

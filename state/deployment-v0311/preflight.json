@@ -1,0 +1,17 @@
+{
+  "candidate_sha256": "baa48289d9cf86f64cff53b4734032ad29c89c3ac1704db2d89038d4b8db4275",
+  "appid": "pfe-modsettings-rv-d27-probe-1166e6853ea54c48abceeec3dbd6ef5e",
+  "runs": [
+    {
+      "pid": 7808,
+      "exit": 0,
+      "checks": 10
+    },
+    {
+      "pid": 12568,
+      "exit": 0,
+      "checks": 10
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,31 @@
+{
+  "time": "20261015-222759-aa7db9",
+  "version": "v0.31.1-wall-options-candidate",
+  "source_commit": "5222966",
+  "new_sha256": "baa48289d9cf86f64cff53b4734032ad29c89c3ac1704db2d89038d4b8db4275",
+  "previous_sha256": "e99608088a8b00b4442bc3aef52d8035336f0123ea5a96d55503c90b1f6e0808",
+  "backup": "build/backups/before-wall-options-20261015-222759-aa7db9/RealisticVisionMod.before.swf",
+  "before": {
+    "pfe.swf": "9987c696bebbeb0626d8f73da775cf867b2ced4ff626137fd9f161264270f938",
+    "application.xml": "70dd3b085e5f6c66c03693cf68ce5e93a4e4136dd745d40d1a5b2a49863ba236",
+    "mods/RealisticVision/release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "mods/loader-manifest.txt": "6b669474b2f5043f859ce37add0906ce999e465aa2b81c33bc05f229718a8c63"
+  },
+  "static_host_paths": [
+    "mods/ModSettings/release/ModSettingsMod.swf",
+    "mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf",
+    "mods/RandomRooms/release/RandomRoomsMod.swf",
+    "mods/Rconnect/release/RConnectMod.swf",
+    "mods/RealisticVision/release/RealisticVisionMod.swf",
+    "mods/Sandevistan/release/SandevistanMod.swf",
+    "mods/TDFC/release/TDFCMod.swf"
+  ],
+  "appid": "pfe-modsettings-rv-deploy-v0311-1085e713ca4e4eacb9f26f8c586e449b",
+  "descriptor": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\app-rv-options-test-20261015-222759-aa7db9.xml",
+  "result": "PASS",
+  "authorization": "User explicitly requested deployment in this thread",
+  "pid": 42900,
+  "test_process_closed": true,
+  "heartbeat_count": 3,
+  "test_descriptor_removed": true
+}
