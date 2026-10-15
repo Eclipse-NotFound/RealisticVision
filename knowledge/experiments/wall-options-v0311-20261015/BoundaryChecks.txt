@@ -1,0 +1,56 @@
+PASS unexplored face remains black with constant brightness off
+
+PASS new cached patch with zero source and target light stays black
+
+PASS OFF corrects rectangular wall-shadow spill into visible air notch
+
+PASS OFF retains normally lit top and side faces
+
+PASS core and unexplored back face remain black
+
+PASS floor far from wall is unchanged
+
+PASS OFF wall follows remembered floor brightness
+
+PASS OFF fixes spill in remembered transparent notches without making them bright
+
+PASS OFF remembered deep core remains black
+
+PASS ON keeps explored rock face bright in memory
+
+PASS ON does not brighten the air notch
+
+PASS ON does not change floor away from wall
+
+PASS native antialiased alpha limits the brightening
+
+PASS ON leaves core and unknown reverse side black
+
+PASS ON to OFF immediately restores the corrected dim picture
+
+PASS stationary native lighting changes update OFF wall brightness
+
+PASS stable frames reuse face field and patch geometry
+
+PASS in-place wall damage switches to corrected air shading immediately
+
+PASS half-height wall protects material without lighting the air above
+
+PASS room change clears old exploration and replacement mask
+
+PASS nonzero viewport keeps contour aligned
+
+PASS nested camera scroll compensation preserves patch alignment
+
+PASS chunk gutter and actual empty pixels remain distinct
+
+PASS hidden foreground chunk does not leave a bright wall ghost
+
+PASS colour-transform fallback respects effective foreground alpha
+
+PASS reset releases cache, old room and base mask
+
+PASS contour renderer rebuilds after reset
+
+BOUNDARY COMPLETE passed=27 failures=0
+

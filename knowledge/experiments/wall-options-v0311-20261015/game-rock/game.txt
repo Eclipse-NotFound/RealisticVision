@@ -1,0 +1,205 @@
+ModLoader[boot_start] v2 run=run_1792072345933_747304
+ModLoader[requested_WallSurfaceProbe] line 1
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_WallSurfaceProbe] init
+1166 Интерфейс
+2082 Game init
+SURFACE GAME newGame
+1425 Персонаж
+0 Местность
+1306 Создание местности
+false
+675 Вход в местность
+1456 Создание местности
+760 Вход в местность
+PASS rock fixture partial wall exists
+FILE terrain.png
+FILE terrain-alpha.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+ROUTE START baseline classic 0
+PASS baseline classic route 0 native light unchanged
+ROUTE UPDATE baseline classic 0 ms=182
+ROUTE START baseline classic 1
+PASS baseline classic route 1 native light unchanged
+ROUTE UPDATE baseline classic 1 ms=130
+ROUTE START baseline classic 2
+PASS baseline classic route 2 native light unchanged
+ROUTE UPDATE baseline classic 2 ms=179
+ROUTE START baseline classic 3
+PASS baseline classic route 3 native light unchanged
+ROUTE UPDATE baseline classic 3 ms=152
+FILE baseline-lower-classic.png
+FILE baseline-lower-classic-fog.png
+FILE baseline-lower-classic-stage.png
+ROUTE START baseline classic 4
+PASS baseline classic route 4 native light unchanged
+ROUTE UPDATE baseline classic 4 ms=169
+ROUTE START baseline classic 5
+PASS baseline classic route 5 native light unchanged
+ROUTE UPDATE baseline classic 5 ms=138
+FILE baseline-upper-classic.png
+FILE baseline-upper-classic-fog.png
+FILE baseline-upper-classic-stage.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+ROUTE START baseline current 0
+PASS baseline current route 0 native light unchanged
+ROUTE UPDATE baseline current 0 ms=128
+ROUTE START baseline current 1
+PASS baseline current route 1 native light unchanged
+ROUTE UPDATE baseline current 1 ms=87
+ROUTE START baseline current 2
+PASS baseline current route 2 native light unchanged
+ROUTE UPDATE baseline current 2 ms=92
+ROUTE START baseline current 3
+PASS baseline current route 3 native light unchanged
+ROUTE UPDATE baseline current 3 ms=82
+FILE baseline-lower-current.png
+FILE baseline-lower-current-fog.png
+FILE baseline-lower-current-stage.png
+ROUTE START baseline current 4
+PASS baseline current route 4 native light unchanged
+ROUTE UPDATE baseline current 4 ms=103
+ROUTE START baseline current 5
+PASS baseline current route 5 native light unchanged
+ROUTE UPDATE baseline current 5 ms=72
+FILE baseline-upper-current.png
+FILE baseline-upper-current-fog.png
+FILE baseline-upper-current-stage.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+ROUTE START off classic 0
+PASS off classic route 0 native light unchanged
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 0 ms=633
+ROUTE START off classic 1
+PASS off classic route 1 native light unchanged
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 1 ms=525
+ROUTE START off classic 2
+PASS off classic route 2 native light unchanged
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 2 ms=487
+ROUTE START off classic 3
+PASS off classic route 3 native light unchanged
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 3 ms=593
+FILE off-lower-classic.png
+FILE off-lower-classic-fog.png
+FILE off-lower-classic-stage.png
+PASS classic lower-classic live toggle leaves game and sight state unchanged
+ROUTE START off classic 4
+PASS off classic route 4 native light unchanged
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 4 ms=640
+ROUTE START off classic 5
+PASS off classic route 5 native light unchanged
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off classic 5 ms=644
+FILE off-upper-classic.png
+FILE off-upper-classic-fog.png
+FILE off-upper-classic-stage.png
+PASS classic upper-classic live toggle leaves game and sight state unchanged
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+ROUTE START off current 0
+PASS off current route 0 native light unchanged
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 0 ms=546
+ROUTE START off current 1
+PASS off current route 1 native light unchanged
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 1 ms=416
+ROUTE START off current 2
+PASS off current route 2 native light unchanged
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 2 ms=458
+ROUTE START off current 3
+PASS off current route 3 native light unchanged
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 3 ms=567
+FILE off-lower-current.png
+FILE off-lower-current-fog.png
+FILE off-lower-current-stage.png
+PASS current lower-current live toggle leaves game and sight state unchanged
+ROUTE START off current 4
+PASS off current route 4 native light unchanged
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 4 ms=590
+ROUTE START off current 5
+PASS off current route 5 native light unchanged
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE off current 5 ms=435
+FILE off-upper-current.png
+FILE off-upper-current-fog.png
+FILE off-upper-current-stage.png
+PASS current upper-current live toggle leaves game and sight state unchanged
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+ROUTE START on classic 0
+PASS on classic route 0 native light unchanged
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 0 ms=616
+ROUTE START on classic 1
+PASS on classic route 1 native light unchanged
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 1 ms=584
+ROUTE START on classic 2
+PASS on classic route 2 native light unchanged
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 2 ms=614
+ROUTE START on classic 3
+PASS on classic route 3 native light unchanged
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 3 ms=728
+FILE on-lower-classic.png
+FILE on-lower-classic-fog.png
+FILE on-lower-classic-stage.png
+FILE native-lower-classic.png
+FILE native-lower-classic-fog.png
+ROUTE START on classic 4
+PASS on classic route 4 native light unchanged
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 4 ms=816
+ROUTE START on classic 5
+PASS on classic route 5 native light unchanged
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on classic 5 ms=648
+FILE on-upper-classic.png
+FILE on-upper-classic-fog.png
+FILE on-upper-classic-stage.png
+FILE native-upper-classic.png
+FILE native-upper-classic-fog.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+ROUTE START on current 0
+PASS on current route 0 native light unchanged
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 0 ms=389
+ROUTE START on current 1
+PASS on current route 1 native light unchanged
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 1 ms=291
+ROUTE START on current 2
+PASS on current route 2 native light unchanged
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 2 ms=307
+ROUTE START on current 3
+PASS on current route 3 native light unchanged
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 3 ms=392
+FILE on-lower-current.png
+FILE on-lower-current-fog.png
+FILE on-lower-current-stage.png
+FILE native-lower-current.png
+FILE native-lower-current-fog.png
+ROUTE START on current 4
+PASS on current route 4 native light unchanged
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 4 ms=356
+ROUTE START on current 5
+PASS on current route 5 native light unchanged
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+ROUTE UPDATE on current 5 ms=313
+FILE on-upper-current.png
+FILE on-upper-current-fog.png
+FILE on-upper-current-stage.png
+FILE native-upper-current.png
+FILE native-upper-current-fog.png
+FILE result.json
+SURFACE GAME COMPLETE checks=65

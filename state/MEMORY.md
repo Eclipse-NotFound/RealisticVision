@@ -1,10 +1,12 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-15 D27候选完成，**墙面修复未部署**：设置新增“已探索墙边常亮”（默认开、即时保存）；关闭后墙面随视野变暗，classic/current的透明凹口与墙边阴影修复始终生效。v0.31.1-wall-options-candidate，35,017B，SHA256 `BAA48289D9CF86F64CFF53B4734032AD29C89C3AC1704DB2D89038D4B8DB4275`。已保留本轮期间刚安装的改键功能，正式安装仍以下方E9960808改键部署为准。212项检查和8组图像通过，最终平均额外渲染约9.8～13.7ms；大型全模组战斗未验。报告/对照：[常亮选项与独立修复](../knowledge/experiments/2026-10-15-wall-bright-option.md)。
+
 > 2026-10-15 菜单改键已安装：本模组改键候选已随统一六客户端安装并从正式路径读回，七模组23项联合两进程346项通过。当前正式SHA256 E99608088A8B00B4442BC3AEF52D8035336F0123EA5A96D55503C90B1F6E0808。入口「模组→对应模组→快捷键」，保存后重启游戏加载新版；本机偏好即时保存。备份/回退及权限见[keybind-deployment-2026-10-15.md](keybind-deployment-2026-10-15.md)。下方候选及旧安装记忆保留历史；未发布WIP没有带入本次安装。
 
 > 2026-10-15 菜单改键候选完成，未部署：调试、总开关、渲染模式三项可在「视野系统→快捷键」修改并即时保存，提示文字同步。准确生产线候选E9960808…1F6E0808，排除墙面候选与authority WIP；最终七模组346项和公共39项通过。详情见[keybind-integration-2026-10-15.md](keybind-integration-2026-10-15.md)。
 
-> 2026-10-15 墙面候选完成，**未部署**：用户确认“已探索墙边常亮”，D26 更新旧 D22 的记忆墙压暗要求。classic/current 共用实际材质轮廓，墙内约12px亮面、至32px渐隐；墙芯/未探索背面/地板雾效及敌人视野保持各自规则。候选 v0.31.0-wall-surface-candidate，29,879B，SHA256 `6DE9C96EBF48E7CB9E01479DD5661E21625625E2EE9C1B6F9E5F640B7518E06D`。正式安装仍以下方 v0.30.5-scene 为准。报告与对照：[已探索墙面](../knowledge/experiments/2026-10-15-explored-wall-surface.md)。
+> 2026-10-15 D26历史墙面候选（已由上方D27替代），**未部署**：用户确认“已探索墙边常亮”，D26 更新旧 D22 的记忆墙压暗要求。classic/current 共用实际材质轮廓，墙内约12px亮面、至32px渐隐；墙芯/未探索背面/地板雾效及敌人视野保持各自规则。候选 v0.31.0-wall-surface-candidate，29,879B，SHA256 `6DE9C96EBF48E7CB9E01479DD5661E21625625E2EE9C1B6F9E5F640B7518E06D`。当时正式安装为 v0.30.5-scene；当前安装见顶部改键部署。历史报告与对照：[已探索墙面](../knowledge/experiments/2026-10-15-explored-wall-surface.md)。
 
 > 2026-10-15 16:18:17 当前安装已随 ContinuousScene 0.5 更新为 **v0.30.5-scene**，SHA256 `B7695DF82AA45FDB783C4EB88AFFCB0C34A7674E3A052D2FD128867172A83A49`。来源为冻结的0735491生产线加CS兼容补丁，未发布authority接口或既有WIP；不要用HEAD直接覆盖。详见[本轮部署记录](deployment-scene-v05-20261015.md)。当前回退仅经 `ContinuousScene/build/upgrade-v05.ps1 -Action Rollback`；下方旧部署与回退说明保留作历史，既有开发内容不变。
 
@@ -47,13 +49,13 @@
 - 共享探索任务的新授权：宿主/加入者双向，各自控制接收，关闭后保留共享区域；RV 按自身设置显示。允许同时修改 RV 接口，禁止对 RConnect/RV 相互引入硬性依赖。本轮已获“替换正式版本”授权并完成部署。
 - 用户已明确“认可你的设计，请继续”：落实 current 投影轮廓配连续地板渐变、适中/宽两档比较、刷新与错误亮点修复。不是尚待定案的讨论。本轮用户进一步明确“部署”，已完成正式替换与独立启动检查。
 - D25：允许地板边缘有限柔和过渡，不把边界外所有非黑像素自动判错；柔化不扩大逻辑视野或探索。默认推荐适中约28px，宽档约41px供比较，均是斜边实测10%–90%范围。
-- D26：已探索相邻空间的墙边常亮，允许补亮实际材质，更新 D22“记忆只压暗原光”的部分；墙芯、未探索背面保持黑暗。D22 的原版 visi/t_visi 与地图/传送判定、D24/D25 的地板雾效及敌人视野隔离继续保留。
+- D26/D27：已探索墙边亮面约12px、至32px渐隐；常亮现在可在设置中关闭，默认开启。关闭仅控制墙面亮度，两模式始终按真实材质轮廓修复阴影溢出。墙芯/未探索背面仍黑，原版记录、地图/传送、地板规则与敌人视野继续隔离。
 - 同场景、同输入对照，实际 AIR 复现；不能把固定步算法耗时当完整游戏FPS。用户精确存档、相机/历史与战斗验收仍需区分。
 - 不写其他模组、不用Ghost、不新增委托。MSW既有WIP stash保留。血条不强制visible=true，不恢复旧记忆播种/墙面受光传播。a583f1a念力守卫保留。
 
 ## 3. 当前状态
 
-- 墙面候选：SurfaceChecks 26/26、SoftHarness 16/16、共享探索21/21、完整金属/岩壁训练房36/36及37/37通过；八组墙外雾层差0、每组156个深墙芯采样全黑，三种独立原生alpha-mask参照最大差0。主源码编译通过。下列9月记录为历史，不等于本轮全模组或用户存档验收。
+- D27墙面候选：83项独立检查、岩壁65项与金属64项通过；8组开关的空气像素差0、远处地板差0、每组156个深墙芯点全黑。旧透明凹口复现0→255，即使关闭常亮也通过。11组优化前后逐像素相等。组合已发布改键后重新完整验证；主源码编译、产物无fe.*及authority嵌入确认。
 
 - 本轮v0.30.1正式路径独立启动检查通过：新版初始化、ModSettings注册、tick1/181/361；提示行为9项由同一SWF独立夹具验证。实际用户存档的遮挡/布局未截图验收。旧v0.30.0的 **46b70da446 PASS** 联测记录仍有效，但未在本轮重跑联机或阴影回归。
 
@@ -68,8 +70,8 @@
 
 ## 4. 正在进行与停点
 
-- 本轮候选与对照已完成，正式release未替换。交付包 `build/wall-surface-output/candidate/RealisticVisionMod.swf`，工具 `build/wall-surface/README.md`，实证 `knowledge/experiments/wall-surface-v0310-20261015/`。页面语法和24张资源通过、PNG已目检；打开工具仅queued，浏览器交互未测。
-- 候选来源固定为v0.30.5-scene生产快照（主源码6979263B…0D446），不含HEAD的authority接口/WIP。外部ContinuousScene生成目录在任务中已变化，prepare.py只优先复用自己校验过的baseline/src；首次指纹不符拒绝，不能改pin绕过。主源码已整合墙面，但head-check产物不是部署包。
+- D27候选与对照已完成，release未由本任务替换。交付包 `build/wall-options-output/candidate/RealisticVisionMod.swf`；工具 `build/wall-options/README.md`；实证 `knowledge/experiments/wall-options-v0311-20261015/`。48张页面资源与JS语法通过，预览/最终Stage图已目检；打开工具只返回queued，浏览器交互未验。
+- 候选来源固定为v0.30.5-scene基础快照，并叠加本轮已正式安装的改键源码（主文件83F27414…BD3F58C8，另固定RVKeybinds与语言目录）；源码位于本轮installed-keys/src，不自动跟随外部生成目录。原完整候选不含新改键，不能再用；新的D27包保留改键且不含authority WIP。head-check仍不是部署包。
 
 - 共享探索接口：src/RVExplorationCarrier.as 发布 active/capture/merge，独立记忆按 Location 实例隔离；子格/瓦片/墙光仅参与记忆显示，不写原版字段或本地 FOV/currentSight。未安装 RConnect 时原功能照常。契约 design/shared-exploration-api.md；验证 knowledge/experiments/2026-09-20-shared-exploration-api.md。
 - 历史共享探索候选 build/shared-exploration/RealisticVisionMod.swf；独立回归 build/shared-exploration/run_checks.py。RConnect侧联测日志在其M31报告/JSON。当前正式版已叠加v0.30.1提示修改，不能再拿旧共享探索候选覆盖。
@@ -79,7 +81,7 @@
 
 ## 5. 已知问题与边界
 
-- 墙面候选最终同进程交替回放：classic均值14.53→19.53ms/P95 28→38ms；current 14.26→18.77ms/P95 18→22ms。额外约4.5～5ms，包含更新和绘图，不是完整战斗FPS。此前较低开销不能代替最终冻结数据；大型连续场景、全模组负载及用户精确存档未验收，分块/透明叠层仅专项夹具证据。
+- D27最终同进程三组轮换回放：classic基线/关闭/开启均值8.17/17.92/20.58ms，P95 12/25/29ms；current 9.31/20.68/23.04ms，P95 11/24/29ms。平均额外约9.8～13.7ms，最大53ms；不是完整战斗FPS。整张最终输出分支无收益已撤回，采用局部内容比较缓存；大型连续场景、全模组负载与用户存档未验。
 
 - 候选仍为5px逻辑采样及四角快速分类，不是连续多边形可见性重写。未覆盖任意窄缝/全部缩放相位、用户精确存档、长时间战斗和六模组共同负载。单位掩膜零泄漏断言针对采样点，不是任意亚像素几何证明。
 - 一次67ms峰值未定位；宽/适中间约零点几毫秒差视为噪声，不据此选档。完整训练房视距3000/10000，与普通房不同。
@@ -88,14 +90,14 @@
 
 ## 6. 下一步
 
-1. 墙面候选等待后续部署指令；当前无需继续改算法或重复已通过的短测。部署前重新核对正式安装是否变化，执行发布门禁及必要场景兼容检查，不用HEAD/旧生产快照覆盖较新的场景修复。
-2. 正式安装仍v0.30.5-scene，回退依顶部部署记录。9月提示版及其备份仅为历史，不能作为当前安装的直接回退包。
-3. 若继续墙面性能优化，针对局部前景复制/比较及真实多敌人、大型分块场景取证；保持D26常亮面目标和D22原版记录隔离、D24/D25地板规则及念力守卫。不能靠少采样造成破墙/镜头移动残影来换取短测数字。
+1. D27墙面选项与边界修复等待后续部署指令；先重新核对正式安装和生产源，执行发布门禁与必要兼容检查。当前D27候选已保留正式改键，不用旧D26或未经核验的HEAD覆盖安装。
+2. 正式安装已由另一授权任务升级为v0.30.6-keybinds-candidate（E9960808…1F6E0808）；回退见keybind-deployment-2026-10-15.md。较早的场景/提示版和备份为历史，不能直接覆盖较新安装。
+3. 如继续墙面性能优化，针对原雾快照、动态局部合成及真实多敌人/大场景取证；保持D27开关与修复独立、D22记录隔离、D24/D25地板规则及念力守卫，不减少刷新造成破墙或镜头残影。
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
 ## 7. 深入了解与复验
 
-- 本轮入口：`knowledge/experiments/2026-10-15-explored-wall-surface.md`、D26、`build/wall-surface/README.md`；最终指纹/图像/日志均在wall-surface-v0310-20261015。SDK实际位置为本区 `mods/Sandevistan/build/tools/`（只读共享工具），下方旧D:/RemainsMod路径为历史。
+- 本轮入口：`knowledge/experiments/2026-10-15-wall-bright-option.md`、D27、`build/wall-options/README.md`；最终指纹/图像/日志在wall-options-v0311-20261015。D26旧记录仍留原址。SDK在本区 `mods/Sandevistan/build/tools/`，仅只读使用。
 
 - 最新发布：state/deployment-v0301-2026-09-28.md与state/deployment-v0301/。当前宿主为新ModLoader加载链；普通非pfe测试ID会触发MSW自动开档。正式检查使用其现有豁免前缀pfe-modsettings-rv-deploy-及-nodebug，独立存储；不修改其他模组。早期失败均已回滚，详情见回执，不将一次基线成功视为环境稳定证明。
 - 新候选：2026-09-20-current-soft-candidate.md / current-soft-v0290/ / D25。新SoftHarness.as与motion-tests/README.md列完整命令，--checks专项、soft-medium/soft-wide、run-game和bench-game --soft。

@@ -55,6 +55,7 @@ package
       private var keybinds:RVKeybinds = new RVKeybinds();
       private var cfgMode:String = "current";   // vanilla=原版 / classic=v0.7.2 / current=当前
       private var cfgDim:Number = 0.35;
+      private var cfgWallBright:Boolean = true;
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
       private var cfgLitMin:Number = 0.6;
       private var cfgFadeStep:Number = 0.1;
@@ -65,7 +66,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.31.0-wall-surface-candidate";
+      private static const VERSION:String = "v0.31.1-wall-options-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -309,6 +310,7 @@ package
       private var classicWallShadeBmp:Bitmap = null;
       private var wallLayer:Sprite = null;
       private var fogShadow:Sprite = null;
+      private var fogBase:Sprite = null;
       private var wallSurface:RVWallSurface = new RVWallSurface();
       private var classicCornerDeltas:Array = [];
       private var classicLightMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
@@ -480,6 +482,10 @@ package
                {
                   this.cfgEnabled = val == "1";
                }
+               else if(key == "wallbright")
+               {
+                  if(val == "1" || val == "0") this.cfgWallBright = val == "1";
+               }
                 else if(key == "dim")
                 {
                    this.cfgDim = Number(val);
@@ -558,6 +564,7 @@ package
             }
             var s:String = "enabled=" + (this.cfgEnabled ? "1" : "0") + "\n"
                + "mode=" + this.cfgMode + "\n"
+               + "wallbright=" + (this.cfgWallBright ? "1" : "0") + "\n"
                + "dim=" + this.cfgDim + "\n"
                + "doordim=" + this.cfgDoorDim + "\n"
                + "litmin=" + this.cfgLitMin + "\n"
@@ -1161,8 +1168,14 @@ package
             this.fogShadow.mouseEnabled = this.fogShadow.mouseChildren = false;
             this.fogVis.addChild(this.fogShadow);
          }
+         if(this.fogBase == null)
+         {
+            this.fogBase = new Sprite();
+            this.fogBase.mouseEnabled = this.fogBase.mouseChildren = false;
+            this.fogShadow.addChild(this.fogBase);
+         }
          for each(var fogChild:DisplayObject in [this.fogBitmap,this.wallLayer,this.wallClip,this.floorClip])
-            if(fogChild.parent != this.fogShadow) this.fogShadow.addChild(fogChild);
+            if(fogChild.parent != this.fogBase) this.fogBase.addChild(fogChild);
          var visual:Sprite = w.grafon.visual;
          if(this.fogVis.parent != visual)
          {
@@ -2062,8 +2075,30 @@ package
       {
          if(this.fogShadow == null) return;
          var self:RealisticVisionMod = this;
-         this.wallSurface.update(this.fogVis,w.grafon,loc,this.scenePaintBounds(),
-            function(tx:int,ty:int):Boolean { return self.memoryExplored(tx+ty*self.spaceX); });
+         this.wallSurface.update(this.fogShadow,this.fogBase,w.grafon,loc,this.scenePaintBounds(),
+            function(tx:int,ty:int):Boolean { return self.memoryExplored(tx+ty*self.spaceX); },
+            function(tx:int,ty:int,wx:Number,wy:Number,dir:int):Number { return self.wallEdgeLight(tx,ty,wx,wy,dir); },
+            this.cfgWallBright);
+      }
+
+      /** Read light from the open side, never from the wall-centre shadow.
+       * This is display-only; no ray result is added to sight or exploration. */
+      private function wallEdgeLight(tx:int, ty:int, wx:Number, wy:Number, dir:int):Number
+      {
+         var tile:Tile = this.curLoc.getTile(tx,ty);
+         if(this.cfgMode == "current" && tile.opac < 1 && this.fogRaw != null)
+         {
+            if(dir == 0) wy -= 2.5;
+            else if(dir == 1) wy += 2.5;
+            else if(dir == 2) wx -= 2.5;
+            else wx += 2.5;
+            return 1 - (this.fogRaw.getPixel32(FOG_PAD+Math.floor(wx/5),FOG_PAD+Math.floor(wy/5)) >>> 24)/255;
+         }
+         var i:int = tx+ty*this.spaceX;
+         var memory:Number = this.memCur[i];
+         var nativeLight:Number = this.explorationLight(this.curLoc,tx,ty);
+         if(tile.opac < 1 && this.fov[i] == FOV_DIM) nativeLight = Math.max(nativeLight,this.cfgDoorDim);
+         return Math.max(0,Math.min(1,nativeLight*(1-memory)+this.cfgDim*memory));
       }
 
       private function wallCornerAlpha(tx:int, ty:int):Number
@@ -3427,6 +3462,10 @@ package
             "min":0,"max":2,"step":1,"hint":"0=原版 1=仿原版 2=平滑阴影","def":2,
             "get":function():* { return self.modeIndex(); },
             "set":function(v:*):void { self.setModeIndex(int(v)); }};
+         items[items.length] = {"key":"wallbright","label":"已探索墙边常亮","kind":"check",
+            "min":0,"max":1,"step":1,"hint":"关闭后墙面随视野变暗；两种模式始终修正墙边阴影","def":true,
+            "get":function():* { return self.cfgWallBright; },
+            "set":function(v:*):void { self.setWallBright(v == true); }};
          items[items.length] = {"key":"dim","label":"记忆区暗度","kind":"slider",
             "min":0,"max":0.8,"step":0.05,"hint":"0=全亮 越大越暗","def":0.35,
             "get":function():* { return self.cfgDim; },
@@ -3448,6 +3487,13 @@ package
             "get":function():* { return self.cfgTeleGrace; },
             "set":function(v:*):void { self.cfgTeleGrace = Number(v); }};
          return items;
+      }
+
+      private function setWallBright(v:Boolean):void
+      {
+         if(this.cfgWallBright == v) return;
+         this.cfgWallBright = v;
+         this.saveConfig();
       }
 
       /** 总开关（与 F11 同路径：落盘 + 重建视野状态）。 */

@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>墙边常亮开关与阴影修复</title><style>
+*{box-sizing:border-box}body{margin:0;background:#111820;color:#e8edf3;font:16px/1.7 "Segoe UI","Microsoft Yahei",sans-serif}main{max-width:1800px;margin:auto;padding:28px}
+h1{font-size:28px;margin:0 0 10px}p{color:#b5c2d0}.controls{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0}label{display:flex;gap:8px;align-items:center}
+select,button{font:inherit;background:#233140;color:#fff;border:1px solid #4b6074;border-radius:6px;padding:6px 12px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+figure{margin:0;background:#090e13;border:1px solid #324454;border-radius:8px;overflow:hidden}figcaption{padding:10px;font-weight:600}.image{overflow:auto}img{width:100%;display:block}.zoom img{width:auto;max-width:none}small{color:#9dacba}a{color:#95c9ff}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}main{padding:16px}}
+</style><main><h1>常亮可以关闭，墙边阴影仍会修正</h1><p>关闭时，已探索墙面随视野变暗；开启时保留亮面。两种设置都修正岩壁透明凹口处的方格黑影，深处墙芯继续保持黑暗。</p>
+<div class="controls"><label>材质<select id="material"><option value="game-rock">岩壁与半高墙</option><option value="game">金属训练房</option></select></label>
+<label>模式<select id="mode"><option value="classic">仿原版</option><option value="current">平滑阴影</option></select></label>
+<label>位置<select id="position"><option value="upper">上层 · 下方为记忆区</option><option value="lower">梯子下方</option></select></label>
+<label>画面<select id="view"><option value="detail">局部对照</option><option value="stage">最终游戏画面</option></select></label><button id="zoom">查看原始像素</button></div>
+<div class="grid"><figure><figcaption>当前安装</figcaption><div class="image"><img id="baseline" alt="旧版墙面与阴影"></div></figure>
+<figure><figcaption>候选 · 常亮关闭</figcaption><div class="image"><img id="off" alt="常亮关闭但保留阴影修复"></div></figure>
+<figure><figcaption>候选 · 常亮开启</figcaption><div class="image"><img id="on" alt="常亮开启并保留阴影修复"></div></figure></div>
+<p><small>同场景、同路线的独立测试实例；岩壁使用原生材质和一处半高墙，并非用户存档复刻。候选尚未部署。<a href="preview.png">局部预览</a> · <a href="../2026-10-15-wall-bright-option.md">验证与性能记录</a></small></p></main>
+<script>const el=id=>document.getElementById(id);function update(){for(const variant of ['baseline','off','on'])el(variant).src=el('material').value+'/'+variant+'-'+el('position').value+'-'+el('mode').value+'-'+el('view').value+'.png';}
+for(const id of ['material','mode','position','view'])el(id).addEventListener('change',update);el('zoom').onclick=()=>{document.body.classList.toggle('zoom');el('zoom').textContent=document.body.classList.contains('zoom')?'缩放到页面':'查看原始像素'};update();</script></html>

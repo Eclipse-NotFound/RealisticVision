@@ -134,6 +134,14 @@ package modlocales.vision {
   "\nF10 面板 / F11 开关": {
     "en": "\nF10: panel / F11: toggle",
     "ru": "\nF10: панель / F11: вкл./выкл."
+  },
+  "已探索墙边常亮": {
+    "en": "Keep explored wall edges bright",
+    "ru": "Яркие края изученных стен"
+  },
+  "关闭后墙面随视野变暗；两种模式始终修正墙边阴影": {
+    "en": "When off, walls dim with visibility. Wall-edge shadow fixes remain active in both modes.",
+    "ru": "Если выключено, стены темнеют вне видимости. Исправление границ теней действует в обоих режимах."
   }
 };
    }

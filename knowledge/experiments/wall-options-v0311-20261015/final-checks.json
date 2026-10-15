@@ -1,0 +1,17 @@
+{
+  "candidate_version": "v0.31.1-wall-options-candidate",
+  "candidate_bytes": 35017,
+  "candidate_sha256": "baa48289d9cf86f64cff53b4734032ad29c89c3ac1704db2d89038d4b8db4275",
+  "checks_passed": 212,
+  "pixel_groups_passed": 8,
+  "javascript_syntax": "passed",
+  "linked_images": 48,
+  "report_link": "present",
+  "test_descriptors": 0,
+  "image_review": "preview and final Stage samples visually inspected",
+  "browser_open_status": "queued; interaction not verified",
+  "embedded_classes": ["RealisticVisionMod", "RVWallSurface", "modlocales.vision.RVLocale", "RVExplorationCarrier", "RVKeybinds", "modlocales.vision.RVLocaleMessages"],
+  "embedded_game_classes": [],
+  "wall_fix_deployed": false,
+  "installed_keybinds_preserved_in_candidate": true
+}

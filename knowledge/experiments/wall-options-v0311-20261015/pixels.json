@@ -1,0 +1,98 @@
+[
+  {
+    "fixture": "game",
+    "mode": "classic",
+    "position": "upper",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 92985,
+    "repair_changed_air_pixels": 11223,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game",
+    "mode": "classic",
+    "position": "lower",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 141449,
+    "repair_changed_air_pixels": 7807,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game",
+    "mode": "current",
+    "position": "upper",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 87775,
+    "repair_changed_air_pixels": 18255,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game",
+    "mode": "current",
+    "position": "lower",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 139552,
+    "repair_changed_air_pixels": 19125,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "classic",
+    "position": "upper",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 87005,
+    "repair_changed_air_pixels": 13316,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "classic",
+    "position": "lower",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 132502,
+    "repair_changed_air_pixels": 9541,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "current",
+    "position": "upper",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 81689,
+    "repair_changed_air_pixels": 20376,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  },
+  {
+    "fixture": "game-rock",
+    "mode": "current",
+    "position": "lower",
+    "switch_air_max_difference": 0,
+    "switch_changed_opaque_pixels": 130601,
+    "repair_changed_air_pixels": 20434,
+    "repair_outside_wall_band_max": 0,
+    "core_points": 156,
+    "off_core_max": 0,
+    "on_core_max": 0
+  }
+]

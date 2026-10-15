@@ -1,16 +1,19 @@
 package {
    import flash.display.Bitmap;
    import flash.display.BitmapData;
+   import flash.display.BitmapDataChannel;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.display.Sprite;
+   import flash.display.Shape;
+   import flash.geom.ColorTransform;
    import flash.geom.Matrix;
    import flash.geom.Point;
    import flash.geom.Rectangle;
 
-   /** Display-only protection for explored wall faces. The native foreground
-    * alpha clips the protection to actual rock/brick pixels, including broken
-    * edges and half-height tiles. No light, exploration or unit masks are written. */
+   /** Display-only fog replacement at explored wall boundaries. Native alpha
+    * separates rock from air. Constant wall brightness is optional; contour
+    * correction is always active. Logic light and unit masks remain untouched. */
    public class RVWallSurface {
       private static const CELL:int = 40;
       private static const STEP:int = 5;
@@ -21,6 +24,7 @@ package {
       private var bounds:Rectangle;
       private var shapeKey:String = "";
       private var seenKey:String = "";
+      private var lightKey:String = "";
       private var faces:Array = [];
       private var heights:Vector.<int>;
       private var cols:int;
@@ -28,9 +32,15 @@ package {
       private var left:int;
       private var top:int;
       private var field:BitmapData;
-      private var fullMask:BitmapData;
+      private var floorField:BitmapData;
+      private var wallField:BitmapData;
+      private var fieldStamp:BitmapData;
+      private var baseLight:BitmapData;
       private var wallPixels:Sprite = new Sprite();
-      private var cover:Bitmap = new Bitmap();
+      private var baseOwner:Sprite;
+      private var baseClip:Shape = new Shape();
+      private var alphaMap:Array=[];
+      private var zeroMap:Array=[];
       private var origin:Point = new Point();
       private var support:Array=[];
       private var pieces:Array=[];
@@ -39,28 +49,41 @@ package {
 
       public function RVWallSurface() {
          wallPixels.mouseEnabled=wallPixels.mouseChildren=false;
-         cover.smoothing = true;
-         cover.scaleX = cover.scaleY = STEP;
+         for(var i:int=0;i<256;i++){alphaMap[i]=uint(255-i)<<24;zeroMap[i]=0;}
       }
 
-      public function update(parent:Sprite, grafon:*, loc:*, view:Rectangle, known:Function):void {
+      public function update(parent:Sprite, base:Sprite, grafon:*, loc:*, view:Rectangle,
+                             known:Function, light:Function, alwaysBright:Boolean):void {
+         if(baseOwner!==base) {
+            if(baseOwner!=null && baseOwner.mask===baseClip)baseOwner.mask=null;
+            baseOwner=base;
+         }
          var front:DisplayObjectContainer = null;
          try { front = grafon.visFront as DisplayObjectContainer; } catch(e:Error) {}
-         if(front == null || view.width <= 0 || view.height <= 0) {wallPixels.visible=false;return;}
+         if(front == null || !front.visible || view.width <= 0 || view.height <= 0) {
+            wallPixels.visible=false;base.mask=null;
+            if(baseClip.parent)baseClip.parent.removeChild(baseClip);
+            return;
+         }
          if(wallPixels.parent != parent) parent.addChild(wallPixels);
-         // ensureFog can replace its bitmaps after a room resize. Surface is last.
+         if(baseClip.parent != parent)parent.addChild(baseClip);
          parent.setChildIndex(wallPixels,parent.numChildren-1);
          wallPixels.visible = true;
          var reset:Boolean = owner !== loc || bounds == null || !bounds.equals(view);
          if(reset) {
-            owner=loc; bounds=view.clone(); shapeKey=seenKey="";
+            owner=loc; bounds=view.clone(); shapeKey=seenKey=lightKey="";
             left=int(view.x); top=int(view.y); cols=int(view.width); rows=int(view.height);
             if(field == null || field.width!=cols*CELL/STEP || field.height!=rows*CELL/STEP) {
                if(field != null) field.dispose();
                field=new BitmapData(cols*CELL/STEP,rows*CELL/STEP,true,0);
-               cover.bitmapData=field;
-               if(fullMask!=null)fullMask.dispose();
-               fullMask=new BitmapData(cols*CELL,rows*CELL,true,0);
+               if(floorField!=null){floorField.dispose();wallField.dispose();fieldStamp.dispose();}
+               floorField=new BitmapData(field.width,field.height,false,0);
+               wallField=new BitmapData(field.width,field.height,false,0);
+               fieldStamp=new BitmapData(field.width,field.height,false,0);
+            }
+            if(baseLight==null || baseLight.width!=cols*CELL || baseLight.height!=rows*CELL){
+               if(baseLight!=null)baseLight.dispose();
+               baseLight=new BitmapData(cols*CELL,rows*CELL,false,0xffffff);
             }
             wallPixels.x=left*CELL; wallPixels.y=top*CELL;
             heights=new Vector.<int>((cols+2)*(rows+2),true);
@@ -76,27 +99,41 @@ package {
          var nextShape:String=key.join(",");
          var changed:Boolean=nextShape!=shapeKey;
          if(changed) { shapeKey=nextShape; rebuildFaces(loc); seenKey=""; }
-         var seen:Array=[];
+         var seen:Array=[],lights:Array=[];
          var count:int=0;
-         for(var i:int=0;i<faces.length;i+=5) {var isKnown:int=known(faces[i+3],faces[i+4])?1:0;seen.push(isKnown);count+=isKnown;}
+         for(var i:int=0;i<faces.length;i+=5) {
+            var isKnown:int=known(faces[i+3],faces[i+4])?1:0;
+            seen.push(isKnown);count+=isKnown;
+            lights.push(isKnown?Math.round(255*Math.max(0,Math.min(1,
+               light(faces[i+3],faces[i+4],faces[i],faces[i+1],faces[i+2])))):0);
+         }
          var nextSeen:String=seen.join("");
          var fieldChanged:Boolean=reset || changed || nextSeen!=seenKey;
-         if(fieldChanged){
+         var nextLight:String=String(alwaysBright)+":"+lights.join(",");
+         if(fieldChanged || lightKey!=nextLight){
+            lightKey=nextLight;
             seenKey=nextSeen;field.lock();field.fillRect(field.rect,0);
-            for(i=0;i<faces.length;i+=5) if(seen[i/5]) paintFace(faces[i],faces[i+1],faces[i+2]);
+            floorField.lock();wallField.lock();floorField.fillRect(floorField.rect,0);wallField.fillRect(wallField.rect,0);
+            for(i=0;i<faces.length;i+=5) if(seen[i/5]) paintFace(faces[i],faces[i+1],faces[i+2],lights[i/5],alwaysBright);
+            floorField.unlock();wallField.unlock();
             field.unlock();fieldUpdates++;
-            rebuildSupport();
-            fullMask.fillRect(fullMask.rect,0);fullMask.draw(field,cover.transform.matrix,null,null,fullMask.rect,true);
-            rebuildPieces();
+            fieldStamp.copyChannel(floorField,floorField.rect,origin,BitmapDataChannel.RED,BitmapDataChannel.RED);
+            fieldStamp.copyChannel(wallField,wallField.rect,origin,BitmapDataChannel.GREEN,BitmapDataChannel.GREEN);
+            if(fieldChanged){rebuildSupport();rebuildPieces();rebuildClip(loc);}
          }
-         wallPixels.visible=count>0 && front.visible;
-         if(!wallPixels.visible)return;
-         // Pixel comparison catches native damage/decals and streamed foreground
-         // replacements, including in-place bitmap edits with unchanged tile flags.
-         // Only static terrain is copied; changing fog does not invalidate this cache.
-         var sources:Array=foregroundSources(front),updated:Boolean=false;
+         wallPixels.visible=count>0;
+         if(!wallPixels.visible){base.mask=null;if(baseClip.parent)baseClip.parent.removeChild(baseClip);return;}
+         var sources:Array=alwaysBright?foregroundSources(front):null,updated:Boolean=false;
+         // Rasterize the unmodified fog once per update. Drawing it separately
+         // for each small rectangle repeats the nested masks and blur work.
+         base.mask=null;
+         try {
+         baseLight.fillRect(baseLight.rect,0xffffff);
+         baseLight.draw(base,new Matrix(1,0,0,1,-left*CELL,-top*CELL),null,null,null,true);
          for each(var piece:Object in pieces){
             var scratch:BitmapData=piece.next,terrain:BitmapData=piece.previous;
+            var pixelsChanged:Boolean=false;
+            if(alwaysBright){
             scratch.fillRect(scratch.rect,0);
             if(sources!=null)copyForeground(sources,piece.rect,scratch);
             else {
@@ -105,13 +142,47 @@ package {
                scratch.draw(front,matrix,front.transform.colorTransform,null,scratch.rect,true);
             }
             var delta:Object=scratch.compare(terrain);
-            var pixelsChanged:Boolean=!(delta is uint && uint(delta)==0);
+            pixelsChanged=!(delta is uint && uint(delta)==0);
             if(delta is BitmapData)BitmapData(delta).dispose();
-            if(!fieldChanged && !pixelsChanged)continue;
-            piece.previous=scratch;piece.next=terrain;
-            piece.output.copyPixels(scratch,scratch.rect,origin,fullMask,piece.rect.topLeft,false);
-            updated=true;
-         }
+            if(pixelsChanged){piece.previous=scratch;piece.next=terrain;updated=true;}
+            }
+            var shadeChanged:Boolean=false;
+            if(piece.version!=fieldUpdates){
+               piece.nextStamp.copyPixels(fieldStamp,piece.stampRect,origin);
+               delta=piece.nextStamp.compare(piece.stamp);
+               shadeChanged=!(delta is uint && uint(delta)==0);
+               if(delta is BitmapData)BitmapData(delta).dispose();
+               if(shadeChanged){var swap:BitmapData=piece.stamp;piece.stamp=piece.nextStamp;piece.nextStamp=swap;}
+               piece.version=fieldUpdates;
+            }
+            // Local fields include a one-sample halo for bilinear filtering.
+            // Unchanged wall patches reuse their target shading while the
+            // original moving fog is still sampled every frame below.
+            if(shadeChanged || pixelsChanged){
+            var scale:Matrix=new Matrix(STEP,0,0,STEP,-piece.rect.x,-piece.rect.y);
+            piece.floor.fillRect(piece.floor.rect,0);
+            piece.floor.draw(floorField,scale,null,null,null,true);
+            if(alwaysBright){
+            piece.wall.fillRect(piece.wall.rect,0);
+            piece.wall.draw(wallField,scale,null,null,null,true);
+            piece.wall.copyChannel(piece.previous,piece.previous.rect,origin,BitmapDataChannel.ALPHA,BitmapDataChannel.ALPHA);
+            // Grayscale stores brightness: native alpha linearly selects rock
+            // or air, including semitransparent and overlapping foregrounds.
+            piece.floor.draw(piece.wall);
+            }
+            }
+            piece.nextBase.copyPixels(baseLight,piece.rect,origin);
+            delta=piece.nextBase.compare(piece.base);
+            var baseChanged:Boolean=!(delta is uint && uint(delta)==0);
+            if(delta is BitmapData)BitmapData(delta).dispose();
+            if(baseChanged){swap=piece.base;piece.base=piece.nextBase;piece.nextBase=swap;}
+            if(!piece.outputValid || baseChanged || shadeChanged || pixelsChanged){
+               piece.light.copyPixels(piece.base,piece.base.rect,origin);
+               piece.light.draw(piece.floor,null,null,"lighten");
+               piece.output.paletteMap(piece.light,piece.light.rect,origin,alphaMap,zeroMap,zeroMap,zeroMap);
+               piece.outputValid=true;
+            }
+         }} finally {base.mask=baseClip;}
          if(updated)terrainUpdates++;
       }
 
@@ -125,12 +196,45 @@ package {
       }
 
       public function reset():void {
+         if(baseOwner!=null && baseOwner.mask===baseClip)baseOwner.mask=null;baseOwner=null;
+         if(baseClip.parent)baseClip.parent.removeChild(baseClip);baseClip.graphics.clear();
          if(wallPixels.parent)wallPixels.parent.removeChild(wallPixels);
-         cover.bitmapData=null;
          if(field!=null)field.dispose();field=null;
-         if(fullMask!=null)fullMask.dispose();fullMask=null;
+         if(baseLight!=null)baseLight.dispose();baseLight=null;
+         if(floorField!=null){floorField.dispose();wallField.dispose();fieldStamp.dispose();}floorField=wallField=fieldStamp=null;
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
-         owner=null;bounds=null;shapeKey=seenKey="";faces=[];support=[];heights=null;
+         owner=null;bounds=null;shapeKey=seenKey=lightKey="";faces=[];support=[];heights=null;
+      }
+
+      private function rebuildClip(loc:*):void {
+         baseClip.graphics.clear();baseClip.graphics.beginFill(0xffffff);
+         // Flash's vector mask stencil can fill even-odd holes. Emit only the
+         // positive complement rectangles, so drawing and masking agree.
+         var ox:int=left*CELL,oy:int=top*CELL,w:int=cols*CELL,h:int=rows*CELL;
+         baseClip.graphics.drawRect(-80,-80,loc.spaceX*CELL+160,oy+80);
+         baseClip.graphics.drawRect(-80,oy+h,loc.spaceX*CELL+160,loc.spaceY*CELL+80-oy-h);
+         baseClip.graphics.drawRect(-80,oy,ox+80,h);
+         baseClip.graphics.drawRect(ox+w,oy,loc.spaceX*CELL+80-ox-w,h);
+         var rectangles:Array=[],previous:Object={};
+         for(var y:int=0;y<h;y+=STEP){
+            var intervals:Array=[],current:Object={};
+            for each(var area:Rectangle in support)if(y>=area.top&&y<area.bottom)intervals.push(area);
+            intervals.sortOn("x",Array.NUMERIC);
+            var x:int=0;
+            for(var i:int=0;i<=intervals.length;i++){
+               var end:int=i<intervals.length?intervals[i].left:w;
+               if(end>x){
+                  var key:String=x+":"+end,rect:Rectangle=previous[key] as Rectangle;
+                  if(rect!=null)rect.height+=STEP;
+                  else{rect=new Rectangle(ox+x,oy+y,end-x,STEP);rectangles.push(rect);}
+                  current[key]=rect;
+               }
+               if(i<intervals.length)x=Math.max(x,intervals[i].right);
+            }
+            previous=current;
+         }
+         for each(rect in rectangles)baseClip.graphics.drawRect(rect.x,rect.y,rect.width,rect.height);
+         baseClip.graphics.endFill();
       }
 
       private function rebuildPieces():void {
@@ -141,8 +245,13 @@ package {
             var key:String=rect.toString();piece=old[key];
             if(piece!=null)delete old[key];
             else {
+               var stampRect:Rectangle=new Rectangle(rect.x/STEP-1,rect.y/STEP-1,rect.width/STEP+2,rect.height/STEP+2).intersection(field.rect);
                piece={rect:rect,previous:new BitmapData(rect.width,rect.height,true,0),
-                  next:new BitmapData(rect.width,rect.height,true,0),output:new BitmapData(rect.width,rect.height,true,0)};
+                  next:new BitmapData(rect.width,rect.height,true,0),output:new BitmapData(rect.width,rect.height,true,0),
+                  floor:new BitmapData(rect.width,rect.height,false,0),wall:new BitmapData(rect.width,rect.height,true,0),
+                  light:new BitmapData(rect.width,rect.height,false,0xffffff),version:-1,stampRect:stampRect,
+                  base:new BitmapData(rect.width,rect.height,false,0),nextBase:new BitmapData(rect.width,rect.height,false,0),outputValid:false,
+                  stamp:new BitmapData(stampRect.width,stampRect.height,false,0),nextStamp:new BitmapData(stampRect.width,stampRect.height,false,0)};
                piece.display=new Bitmap(piece.output);piece.display.x=rect.x;piece.display.y=rect.y;
                wallPixels.addChild(piece.display);
             }pieces.push(piece);
@@ -153,6 +262,9 @@ package {
       private function disposePiece(piece:Object):void {
          if(piece.display.parent)piece.display.parent.removeChild(piece.display);
          piece.display.bitmapData=null;piece.previous.dispose();piece.next.dispose();piece.output.dispose();
+         piece.floor.dispose();piece.wall.dispose();piece.light.dispose();
+         piece.base.dispose();piece.nextBase.dispose();
+         piece.stamp.dispose();piece.nextStamp.dispose();
       }
 
       /** Disjoint pixel rectangles around the nonzero field, with a 5px halo
@@ -248,7 +360,7 @@ package {
          faces.push(x,y,dir,int(outX/CELL),int(outY/CELL));
       }
 
-      private function paintFace(wx:Number,wy:Number,dir:int):void {
+      private function paintFace(wx:Number,wy:Number,dir:int,light:int,alwaysBright:Boolean):void {
          var vertical:Boolean=dir>=2;
          var sign:int=(dir==0 || dir==2)?1:-1;
          var along:int=Math.floor(((vertical?wy:wx)-(vertical?top:left)*CELL)/STEP);
@@ -259,9 +371,13 @@ package {
             var distance:Number=(q+0.5-edge)*STEP*sign;
             if(distance < -FRINGE || distance>=DEPTH)continue;
             var a:int=distance<=BRIGHT?255:Math.round(255*(DEPTH-distance)/(DEPTH-BRIGHT));
+            if(distance<0)a=Math.round(a*Math.min(1,(distance+FRINGE)/STEP));
             var px:int=vertical?q:along,py:int=vertical?along:q;
             if(px<0 || py<0 || px>=field.width || py>=field.height)continue;
             if(a>(field.getPixel32(px,py)>>>24))field.setPixel32(px,py,uint(a)<<24);
+            var floorValue:int=Math.round(a*light/255),wallValue:int=alwaysBright?a:floorValue;
+            if(floorValue>(floorField.getPixel(px,py)&255))floorField.setPixel(px,py,floorValue*0x010101);
+            if(wallValue>(wallField.getPixel(px,py)&255))wallField.setPixel(px,py,wallValue*0x010101);
          }
       }
 

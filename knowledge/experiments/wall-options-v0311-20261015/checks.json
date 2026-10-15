@@ -1,0 +1,27 @@
+{
+  "BoundaryChecks": {
+    "exit": 0,
+    "passed": 27,
+    "failed": 0
+  },
+  "DrawOnceChecks": {
+    "exit": 0,
+    "passed": 11,
+    "failed": 0
+  },
+  "SettingsChecks": {
+    "exit": 0,
+    "passed": 8,
+    "failed": 0
+  },
+  "SoftHarness": {
+    "exit": 0,
+    "passed": 16,
+    "failed": 0
+  },
+  "SharedExplorationHarness": {
+    "exit": 0,
+    "passed": 21,
+    "failed": 0
+  }
+}

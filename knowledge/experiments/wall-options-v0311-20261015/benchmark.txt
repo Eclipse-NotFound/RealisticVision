@@ -1,0 +1,31 @@
+ModLoader[boot_start] v2 run=run_1792072636318_658867
+ModLoader[requested_WallSurfaceProbe] line 1
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_WallSurfaceProbe] init
+511 Интерфейс
+1122 Game init
+SURFACE GAME newGame
+929 Персонаж
+0 Местность
+764 Создание местности
+false
+359 Вход в местность
+676 Создание местности
+382 Вход в местность
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+BENCH WARM classic baseline
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+BENCH WARM classic off
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+BENCH WARM classic on
+BENCH MODE COMPLETE classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+BENCH WARM current baseline
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+BENCH WARM current off
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+BENCH WARM current on
+BENCH MODE COMPLETE current
+PASS paired rendering benchmark completed without screenshots in timing
+FILE result.json
+SURFACE GAME COMPLETE checks=1
