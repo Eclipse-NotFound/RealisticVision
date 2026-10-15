@@ -22,9 +22,15 @@ package {
       private static const FRINGE:Number = 10;
       private var owner:*;
       private var bounds:Rectangle;
-      private var shapeKey:String = "";
-      private var seenKey:String = "";
-      private var lightKey:String = "";
+      // Keep the actual sampled values instead of allocating and joining three
+      // string signatures every frame. Dirty flags survive a callback throwing
+      // halfway through a scan; partial cache writes must never hide a change.
+      private var shapeDirty:Boolean = true;
+      private var fieldShapeDirty:Boolean = true;
+      private var lightDirty:Boolean = true;
+      private var previousBright:Boolean;
+      private var seen:Vector.<int> = new Vector.<int>();
+      private var lights:Vector.<Number> = new Vector.<Number>();
       private var faces:Array = [];
       private var heights:Vector.<int>;
       private var cols:int;
@@ -71,7 +77,7 @@ package {
          wallPixels.visible = true;
          var reset:Boolean = owner !== loc || bounds == null || !bounds.equals(view);
          if(reset) {
-            owner=loc; bounds=view.clone(); shapeKey=seenKey=lightKey="";
+            owner=loc; bounds=view.clone(); shapeDirty=fieldShapeDirty=lightDirty=true;
             left=int(view.x); top=int(view.y); cols=int(view.width); rows=int(view.height);
             if(field == null || field.width!=cols*CELL/STEP || field.height!=rows*CELL/STEP) {
                if(field != null) field.dispose();
@@ -90,29 +96,36 @@ package {
          }
          // One-cell halo distinguishes exterior faces from joins, including two
          // touching half-height tiles. Geometry is checked even when FOV is static.
-         var key:Array=[];
+         var index:int=0;
          for(var y:int=top-1;y<=top+rows;y++) for(var x:int=left-1;x<=left+cols;x++) {
             var h:int=heightAt(loc,x,y);
-            heights[x-left+1+(y-top+1)*(cols+2)]=h;
-            key.push(h);
+            if(heights[index]!=h){shapeDirty=true;heights[index]=h;}
+            index++;
          }
-         var nextShape:String=key.join(",");
-         var changed:Boolean=nextShape!=shapeKey;
-         if(changed) { shapeKey=nextShape; rebuildFaces(loc); seenKey=""; }
-         var seen:Array=[],lights:Array=[];
+         if(shapeDirty) {
+            fieldShapeDirty=true;
+            rebuildFaces(loc);
+            seen.length=lights.length=faces.length/5;
+            shapeDirty=false;
+         }
+         if(previousBright!=alwaysBright){lightDirty=true;previousBright=alwaysBright;}
          var count:int=0;
          for(var i:int=0;i<faces.length;i+=5) {
             var isKnown:int=known(faces[i+3],faces[i+4])?1:0;
-            seen.push(isKnown);count+=isKnown;
-            lights.push(isKnown?Math.round(255*Math.max(0,Math.min(1,
-               light(faces[i+3],faces[i+4],faces[i],faces[i+1],faces[i+2])))):0);
+            index=i/5;
+            if(seen[index]!=isKnown){fieldShapeDirty=true;seen[index]=isKnown;}
+            count+=isKnown;
+            var value:Number=isKnown?Math.round(255*Math.max(0,Math.min(1,
+               light(faces[i+3],faces[i+4],faces[i],faces[i+1],faces[i+2])))):0;
+            var previous:Number=lights[index];
+            // The former string signature treated NaN as equal to NaN.
+            if(value!=previous && !(value!=value && previous!=previous)){
+               lightDirty=true;lights[index]=value;
+            }
          }
-         var nextSeen:String=seen.join("");
-         var fieldChanged:Boolean=reset || changed || nextSeen!=seenKey;
-         var nextLight:String=String(alwaysBright)+":"+lights.join(",");
-         if(fieldChanged || lightKey!=nextLight){
-            lightKey=nextLight;
-            seenKey=nextSeen;field.lock();field.fillRect(field.rect,0);
+         var fieldChanged:Boolean=fieldShapeDirty;
+         if(fieldChanged || lightDirty){
+            field.lock();field.fillRect(field.rect,0);
             floorField.lock();wallField.lock();floorField.fillRect(floorField.rect,0);wallField.fillRect(wallField.rect,0);
             for(i=0;i<faces.length;i+=5) if(seen[i/5]) paintFace(faces[i],faces[i+1],faces[i+2],lights[i/5],alwaysBright);
             floorField.unlock();wallField.unlock();
@@ -120,6 +133,7 @@ package {
             fieldStamp.copyChannel(floorField,floorField.rect,origin,BitmapDataChannel.RED,BitmapDataChannel.RED);
             fieldStamp.copyChannel(wallField,wallField.rect,origin,BitmapDataChannel.GREEN,BitmapDataChannel.GREEN);
             if(fieldChanged){rebuildSupport();rebuildPieces();rebuildClip(loc);}
+            fieldShapeDirty=lightDirty=false;
          }
          wallPixels.visible=count>0;
          if(!wallPixels.visible){base.mask=null;if(baseClip.parent)baseClip.parent.removeChild(baseClip);return;}
@@ -203,7 +217,8 @@ package {
          if(baseLight!=null)baseLight.dispose();baseLight=null;
          if(floorField!=null){floorField.dispose();wallField.dispose();fieldStamp.dispose();}floorField=wallField=fieldStamp=null;
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
-         owner=null;bounds=null;shapeKey=seenKey=lightKey="";faces=[];support=[];heights=null;
+         owner=null;bounds=null;shapeDirty=fieldShapeDirty=lightDirty=true;
+         faces=[];support=[];heights=null;seen.length=lights.length=0;
       }
 
       private function rebuildClip(loc:*):void {
