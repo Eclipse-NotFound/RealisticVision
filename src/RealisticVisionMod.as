@@ -52,6 +52,7 @@ package
    {
       // ---- 默认配置（可被 config.txt 覆盖）----
       private var cfgEnabled:Boolean = true;
+      private var keybinds:RVKeybinds = new RVKeybinds();
       private var cfgMode:String = "current";   // vanilla=原版 / classic=v0.7.2 / current=当前
       private var cfgDim:Number = 0.35;
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
@@ -584,16 +585,19 @@ package
 
       private function onKeyDown(e:KeyboardEvent):void
       {
-         if(e.keyCode == Keyboard.F10)
+         if(!this.keybinds.canAct()) return;
+         if(this.keybinds.matches("debug",e))
          {
+            e.stopImmediatePropagation(); e.preventDefault();
             this.dbgOn = !this.dbgOn;
             if(!this.dbgOn && this.dbgTxt)
             {
                this.dbgTxt.visible = false;
             }
          }
-         else if(e.keyCode == Keyboard.F11)
+         else if(this.keybinds.matches("toggle",e))
          {
+            e.stopImmediatePropagation(); e.preventDefault();
             this.cfgEnabled = !this.cfgEnabled;
             this.saveConfig();
             this.curLoc = null;
@@ -604,8 +608,9 @@ package
                this.fileLog("auto key F11 enabled=" + this.cfgEnabled);
             }
          }
-         else if(e.keyCode == Keyboard.F12)
+         else if(this.keybinds.matches("mode",e))
          {
+            e.stopImmediatePropagation(); e.preventDefault();
             // 渲染模式轮换：vanilla（原版）→ classic（v0.7.2）→ current（当前）
             if(this.cfgAutoTest)
             {
@@ -613,7 +618,7 @@ package
             }
             this.cycleMode();
          }
-         else if(e.keyCode == Keyboard.Q)
+         else if(this.keybinds.nativeTeleKey(e))
          {
             // 念力键（默认 Q）：目标为不可见敌人时拦截，游戏 Ctr 收不到
             if(this.blockInvisibleGrab())
@@ -625,6 +630,7 @@ package
 
       private function onRightDown(e:MouseEvent):void
       {
+         if(!this.keybinds.canAct() || !this.keybinds.nativeTeleToken("rmb")) return;
          // 念力备用键（右键）：同上
          if(this.blockInvisibleGrab())
          {
@@ -687,6 +693,7 @@ package
 
       private function onFrame(e:Event):void
       {
+         this.keybinds.tick();
          var t0:int = getTimer();
          this.updateToast(t0);
          this.frameCount++;
@@ -3208,7 +3215,7 @@ package
                + "\nF11 开关 / F12 或点击上方列表行换模式";
             if(this.optTxt.text != txt)
             {
-               RVLocale.bind(this.optTxt,txt,true);
+               RVLocale.bind(this.optTxt,this.keybinds.hint(txt),true);
             }
             this.optPanel.visible = true;
             // v0.25.0：向选项页原生列表注入"视野渲染模式"行（点击循环）
@@ -3413,7 +3420,7 @@ package
          var self:RealisticVisionMod = this;
          var items:Array = [];
          items[items.length] = {"key":"enabled","label":"视野系统","kind":"check",
-            "min":0,"max":1,"step":1,"hint":"总开关（F11 同款）","def":true,
+            "min":0,"max":1,"step":1,"hint":"总开关；快捷键可在本模组的快捷键页修改","def":true,
             "get":function():* { return self.cfgEnabled; },
             "set":function(v:*):void { self.setEnabled(v == true); }};
          items[items.length] = {"key":"mode","label":"渲染模式","kind":"slider",
@@ -3592,7 +3599,7 @@ package
                + "\nF10 面板 / F11 开关";
          }
          this.dbgTxt.visible = true;
-         RVLocale.bind(this.dbgTxt,msg);
+         RVLocale.bind(this.dbgTxt,this.keybinds.hint(msg));
       }
    }
 }

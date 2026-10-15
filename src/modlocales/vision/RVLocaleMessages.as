@@ -1,6 +1,16 @@
 package modlocales.vision {
    public class RVLocaleMessages {
       public static const DATA:Object = {
+  "未绑定": {"en":"Unbound","ru":"Не назначено"},
+  "总开关；快捷键可在本模组的快捷键页修改": {"en":"Enable vision. Edit its shortcut on this module's Shortcuts page.","ru":"Включить зрение. Клавиша меняется на странице «Клавиши» этого модуля."},
+  "快捷键": {"en":"Shortcuts","ru":"Клавиши"},
+  "视野系统 · 快捷键": {"en":"Vision · Shortcuts","ru":"Зрение · Клавиши"},
+  "调试显示": {"en":"Debug display","ru":"Отладочная информация"},
+  "视野系统总开关": {"en":"Toggle vision","ru":"Переключить зрение"},
+  "切换渲染模式": {"en":"Cycle rendering mode","ru":"Сменить режим отображения"},
+  "点击当前按键以修改；原有默认键保留。F10与联机浮窗共用时会提示冲突。": {
+    "en":"Click a binding to change it. Existing defaults are preserved; shared F10 bindings are marked.",
+    "ru":"Нажмите сочетание для изменения. Исходные клавиши сохранены; совпадения F10 отмечены."},
   "原版": {
     "en": "Vanilla",
     "ru": "Оригинал"

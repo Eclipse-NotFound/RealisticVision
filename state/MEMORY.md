@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-15 菜单改键候选完成，未部署：调试、总开关、渲染模式三项可在「视野系统→快捷键」修改并即时保存，提示文字同步。准确生产线候选E9960808…1F6E0808，排除墙面候选与authority WIP；最终七模组346项和公共39项通过。详情见[keybind-integration-2026-10-15.md](keybind-integration-2026-10-15.md)。
+
 > 2026-10-15 墙面候选完成，**未部署**：用户确认“已探索墙边常亮”，D26 更新旧 D22 的记忆墙压暗要求。classic/current 共用实际材质轮廓，墙内约12px亮面、至32px渐隐；墙芯/未探索背面/地板雾效及敌人视野保持各自规则。候选 v0.31.0-wall-surface-candidate，29,879B，SHA256 `6DE9C96EBF48E7CB9E01479DD5661E21625625E2EE9C1B6F9E5F640B7518E06D`。正式安装仍以下方 v0.30.5-scene 为准。报告与对照：[已探索墙面](../knowledge/experiments/2026-10-15-explored-wall-surface.md)。
 
 > 2026-10-15 16:18:17 当前安装已随 ContinuousScene 0.5 更新为 **v0.30.5-scene**，SHA256 `B7695DF82AA45FDB783C4EB88AFFCB0C34A7674E3A052D2FD128867172A83A49`。来源为冻结的0735491生产线加CS兼容补丁，未发布authority接口或既有WIP；不要用HEAD直接覆盖。详见[本轮部署记录](deployment-scene-v05-20261015.md)。当前回退仅经 `ContinuousScene/build/upgrade-v05.ps1 -Action Rollback`；下方旧部署与回退说明保留作历史，既有开发内容不变。
