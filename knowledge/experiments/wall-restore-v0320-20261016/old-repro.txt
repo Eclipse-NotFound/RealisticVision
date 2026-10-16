@@ -1,0 +1,53 @@
+PASS unexplored notch stays native dark
+
+PASS OFF repairs visible air notch
+
+FAIL OFF every material pixel preserves the original wall field: changes=9171
+
+PASS deep wall core remains black
+
+PASS distant floor unchanged
+
+FAIL fractional zoom 0.75 retains native wall gradient and black core
+
+PASS fractional zoom 0.75 keeps notch free of wall spill
+
+FAIL fractional zoom 1.25 retains native wall gradient and black core
+
+PASS fractional zoom 1.25 keeps notch free of wall spill
+
+FAIL fractional zoom 1.5 retains native wall gradient and black core
+
+PASS fractional zoom 1.5 keeps notch free of wall spill
+
+PASS OFF notch dims with floor visibility
+
+PASS ON retains optional explored bright face
+
+PASS ON cannot brighten transparent notch
+
+PASS ON deep core stays black
+
+PASS toggle ON OFF restores exact default image
+
+PASS in-place material damage reveals dim air immediately
+
+FAIL chunk gutter maps air and material to their world positions
+
+FAIL multiple overlapping chunks preserve actual alpha
+
+PASS hidden chunk immediately becomes air
+
+FAIL transformed foreground fallback keeps material shading and clears air
+
+PASS hidden foreground detaches correction mask
+
+PASS offset viewport retains contour alignment
+
+PASS nested camera scroll preserves alignment
+
+PASS reset restores unmasked original
+
+PASS new room does not reuse old corrected cutouts
+
+RESTORE COMPLETE passed=19 failures=7

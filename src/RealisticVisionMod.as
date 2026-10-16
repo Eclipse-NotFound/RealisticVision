@@ -55,7 +55,7 @@ package
       private var keybinds:RVKeybinds = new RVKeybinds();
       private var cfgMode:String = "current";   // vanilla=原版 / classic=v0.7.2 / current=当前
       private var cfgDim:Number = 0.35;
-      private var cfgWallBright:Boolean = true;
+      private var cfgWallBright:Boolean = false;
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
       private var cfgLitMin:Number = 0.6;
       private var cfgFadeStep:Number = 0.1;
@@ -66,7 +66,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.31.1-wall-options-candidate";
+      private static const VERSION:String = "v0.32.0-wall-restore-candidate";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -3463,7 +3463,7 @@ package
             "get":function():* { return self.modeIndex(); },
             "set":function(v:*):void { self.setModeIndex(int(v)); }};
          items[items.length] = {"key":"wallbright","label":"已探索墙边常亮","kind":"check",
-            "min":0,"max":1,"step":1,"hint":"关闭后墙面随视野变暗；两种模式始终修正墙边阴影","def":true,
+            "min":0,"max":1,"step":1,"hint":"关闭后墙面随视野变暗；两种模式始终修正墙边阴影","def":false,
             "get":function():* { return self.cfgWallBright; },
             "set":function(v:*):void { self.setWallBright(v == true); }};
          items[items.length] = {"key":"dim","label":"记忆区暗度","kind":"slider",

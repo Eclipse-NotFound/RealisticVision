@@ -32,3 +32,5 @@ build/exploration-cache-*/
 build/backups/before-exploration-cache-*/
 build/backups/before-wall-options-*/
 build/keybind-output/
+
+build/wall-restore-output/

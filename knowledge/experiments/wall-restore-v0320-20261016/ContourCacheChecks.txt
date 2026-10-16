@@ -1,0 +1,23 @@
+PASS OFF remembered contour with blurred and masked base exact pixels
+
+PASS unchanged cached contour exact pixels
+
+PASS ON remembered contour with native alpha material retained, air independent
+
+PASS visible contour material retained, air independent
+
+PASS OFF visible contour exact pixels
+
+PASS unknown contour exact pixels
+
+PASS damaged alpha exact pixels
+
+PASS offset viewport exact pixels
+
+PASS resized viewport exact pixels
+
+PASS changed original fog exact pixels
+
+PASS room reset exact pixels
+
+DRAW ONCE COMPLETE passed=11 failed=0

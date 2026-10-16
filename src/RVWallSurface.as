@@ -52,6 +52,17 @@ package {
       private var pieces:Array=[];
       private var terrainUpdates:int = 0;
       private var fieldUpdates:int = 0;
+      private var mode:int = -1;
+      private var contourDirty:Boolean = true;
+      private var contourPieces:Array = [];
+      private var contourLayoutDirty:Boolean = true;
+      private var contourFog:BitmapData;
+      private var contourBitmap:Bitmap;
+      private var airClip:Shape = new Shape();
+      private var solidClip:Shape = new Shape();
+      private var onClip:Shape = new Shape();
+      private var airPixels:Sprite = new Sprite();
+      private var contourUpdates:int = 0;
 
       public function RVWallSurface() {
          wallPixels.mouseEnabled=wallPixels.mouseChildren=false;
@@ -60,15 +71,18 @@ package {
 
       public function update(parent:Sprite, base:Sprite, grafon:*, loc:*, view:Rectangle,
                              known:Function, light:Function, alwaysBright:Boolean):void {
+         var requested:int=alwaysBright?1:0;
+         if(mode!=requested){this.reset();mode=requested;}
          if(baseOwner!==base) {
-            if(baseOwner!=null && baseOwner.mask===baseClip)baseOwner.mask=null;
+            if(baseOwner!=null && (baseOwner.mask===baseClip||baseOwner.mask===onClip))baseOwner.mask=null;
             baseOwner=base;
          }
          var front:DisplayObjectContainer = null;
          try { front = grafon.visFront as DisplayObjectContainer; } catch(e:Error) {}
          if(front == null || !front.visible || view.width <= 0 || view.height <= 0) {
-            wallPixels.visible=false;base.mask=null;
+            wallPixels.visible=airPixels.visible=false;base.mask=null;
             if(baseClip.parent)baseClip.parent.removeChild(baseClip);
+            if(onClip.parent)onClip.parent.removeChild(onClip);
             return;
          }
          if(wallPixels.parent != parent) parent.addChild(wallPixels);
@@ -87,12 +101,13 @@ package {
                wallField=new BitmapData(field.width,field.height,false,0);
                fieldStamp=new BitmapData(field.width,field.height,false,0);
             }
-            if(baseLight==null || baseLight.width!=cols*CELL || baseLight.height!=rows*CELL){
+            if(alwaysBright && (baseLight==null || baseLight.width!=cols*CELL || baseLight.height!=rows*CELL)){
                if(baseLight!=null)baseLight.dispose();
                baseLight=new BitmapData(cols*CELL,rows*CELL,false,0xffffff);
             }
             wallPixels.x=left*CELL; wallPixels.y=top*CELL;
             heights=new Vector.<int>((cols+2)*(rows+2),true);
+            contourDirty=contourLayoutDirty=true;
          }
          // One-cell halo distinguishes exterior faces from joins, including two
          // touching half-height tiles. Geometry is checked even when FOV is static.
@@ -132,11 +147,13 @@ package {
             field.unlock();fieldUpdates++;
             fieldStamp.copyChannel(floorField,floorField.rect,origin,BitmapDataChannel.RED,BitmapDataChannel.RED);
             fieldStamp.copyChannel(wallField,wallField.rect,origin,BitmapDataChannel.GREEN,BitmapDataChannel.GREEN);
-            if(fieldChanged){rebuildSupport();rebuildPieces();rebuildClip(loc);}
+            if(fieldChanged){rebuildSupport();contourDirty=contourLayoutDirty=true;if(alwaysBright){rebuildPieces();rebuildClip(loc);}}
             fieldShapeDirty=lightDirty=false;
          }
          wallPixels.visible=count>0;
-         if(!wallPixels.visible){base.mask=null;if(baseClip.parent)baseClip.parent.removeChild(baseClip);return;}
+         airPixels.visible=wallPixels.visible;
+         if(!wallPixels.visible){base.mask=null;if(baseClip.parent)baseClip.parent.removeChild(baseClip);if(onClip.parent)onClip.parent.removeChild(onClip);return;}
+         if(!alwaysBright){updateContour(parent,base,front,loc,false);return;}
          var sources:Array=alwaysBright?foregroundSources(front):null,updated:Boolean=false;
          // Rasterize the unmodified fog once per update. Drawing it separately
          // for each small rectangle repeats the nested masks and blur work.
@@ -198,6 +215,7 @@ package {
             }
          }} finally {base.mask=baseClip;}
          if(updated)terrainUpdates++;
+         updateContour(parent,base,front,loc,true);
       }
 
       private function heightAt(loc:*,x:int,y:int):int {
@@ -210,7 +228,7 @@ package {
       }
 
       public function reset():void {
-         if(baseOwner!=null && baseOwner.mask===baseClip)baseOwner.mask=null;baseOwner=null;
+         if(baseOwner!=null && (baseOwner.mask===baseClip||baseOwner.mask===onClip))baseOwner.mask=null;baseOwner=null;
          if(baseClip.parent)baseClip.parent.removeChild(baseClip);baseClip.graphics.clear();
          if(wallPixels.parent)wallPixels.parent.removeChild(wallPixels);
          if(field!=null)field.dispose();field=null;
@@ -219,17 +237,131 @@ package {
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
          owner=null;bounds=null;shapeDirty=fieldShapeDirty=lightDirty=true;
          faces=[];support=[];heights=null;seen.length=lights.length=0;
+         if(airClip.parent)airClip.parent.removeChild(airClip);airClip.graphics.clear();wallPixels.mask=null;
+         if(solidClip.parent)solidClip.parent.removeChild(solidClip);solidClip.graphics.clear();
+         if(onClip.parent)onClip.parent.removeChild(onClip);onClip.graphics.clear();
+         if(airPixels.parent)airPixels.parent.removeChild(airPixels);airPixels.mask=null;
+         if(contourBitmap!=null){if(contourBitmap.parent)contourBitmap.parent.removeChild(contourBitmap);contourBitmap.bitmapData=null;contourBitmap=null;}
+         for each(var patch:Object in contourPieces){patch.alpha.dispose();patch.next.dispose();patch.scratch.dispose();patch.pixels.dispose();}contourPieces=[];
+         if(contourFog!=null)contourFog.dispose();contourFog=null;
+         contourDirty=contourLayoutDirty=true;mode=-1;
       }
 
-      private function rebuildClip(loc:*):void {
-         baseClip.graphics.clear();baseClip.graphics.beginFill(0xffffff);
+      /** Default path leaves the original smooth wall field untouched on ALL
+       * material pixels (including antialiased pixels). Only actual empty
+       * cutouts inside collision cells receive the open-side fog. No screenshot
+       * of the dynamic fog, full-resolution shading or pixelwise light merge. */
+      private function updateContour(parent:Sprite,base:Sprite,front:DisplayObjectContainer,loc:*,bright:Boolean):void {
+         if(contourFog==null||contourFog.width!=field.width||contourFog.height!=field.height){
+            if(contourFog!=null)contourFog.dispose();contourFog=new BitmapData(field.width,field.height,true,0xff000000);
+            if(contourBitmap==null){contourBitmap=new Bitmap(null,"auto",true);airPixels.addChild(contourBitmap);}
+            contourBitmap.bitmapData=contourFog;contourBitmap.scaleX=contourBitmap.scaleY=STEP;
+            contourDirty=true;
+         }
+         if(contourLayoutDirty){
+            var old:Object={};
+            for each(var patch:Object in contourPieces)old[patch.rect.toString()]=patch;
+            contourPieces=[];
+            for each(var area:Rectangle in support){
+               var key:String=area.toString();patch=old[key];
+               if(patch!=null)delete old[key];
+               else patch={rect:area,alpha:new BitmapData(area.width,area.height,true,0),next:new BitmapData(area.width,area.height,true,0),scratch:new BitmapData(area.width,area.height,true,0),pixels:new BitmapData(area.width,area.height,true,0)};
+               contourPieces.push(patch);
+            }
+            for each(patch in old){patch.alpha.dispose();patch.next.dispose();patch.scratch.dispose();patch.pixels.dispose();}
+            contourLayoutDirty=false;
+         }
+         var sources:Array=foregroundSources(front);
+         for each(patch in contourPieces){
+         var contourScratch:BitmapData=patch.scratch;contourScratch.fillRect(contourScratch.rect,0);
+         // copyPixels is the native bulk-copy path. Avoid extracting a channel
+         // on unchanged terrain; even a changing RGB decal only rebuilds masks
+         // when the subsequent alpha-only comparison actually differs.
+         if(sources!=null&&sources.length==1){
+            var s:Object=sources[0],r:Rectangle=patch.rect.intersection(s.rect);
+            var p:Point=new Point(r.x-patch.rect.x,r.y-patch.rect.y);r.offset(-s.x,-s.y);
+            contourScratch.copyPixels(s.data,r,p);
+         }else{
+            if(sources!=null)copyForeground(sources,patch.rect,contourScratch);
+            else{
+               var m:Matrix=front.transform.matrix;m.tx-=left*CELL+patch.rect.x;m.ty-=top*CELL+patch.rect.y;
+               contourScratch.draw(front,m,front.transform.colorTransform,null,null,true);
+            }
+         }
+         var delta:Object=contourScratch.compare(patch.pixels);
+         if(delta is uint&&uint(delta)==0)continue;
+         if(delta is BitmapData)BitmapData(delta).dispose();
+         var swap:BitmapData=patch.pixels;patch.pixels=contourScratch;patch.scratch=swap;
+         var nextAlpha:BitmapData=patch.next;
+         nextAlpha.copyChannel(patch.pixels,patch.pixels.rect,origin,BitmapDataChannel.ALPHA,BitmapDataChannel.ALPHA);
+         delta=nextAlpha.compare(patch.alpha);
+         if(!(delta is uint&&uint(delta)==0)){
+            swap=patch.alpha;patch.alpha=nextAlpha;patch.next=swap;contourDirty=true;
+            if(delta is BitmapData)BitmapData(delta).dispose();
+         }
+         }
+         if(contourDirty){buildContourClip(loc);contourDirty=false;contourUpdates++;}
+         contourFog.paletteMap(floorField,floorField.rect,origin,alphaMap,zeroMap,zeroMap,zeroMap);
+         if(airPixels.parent!=parent)parent.addChild(airPixels);
+         airPixels.x=left*CELL;airPixels.y=top*CELL;
+         if(airClip.parent!=parent)parent.addChild(airClip);
+         airPixels.mask=airClip;
+         if(bright){
+            if(onClip.parent!=parent)parent.addChild(onClip);
+            if(solidClip.parent!=parent)parent.addChild(solidClip);
+            wallPixels.mask=solidClip;base.mask=onClip;
+            if(baseClip.parent)baseClip.parent.removeChild(baseClip);
+         }else base.mask=baseClip;
+      }
+
+      private function buildContourClip(loc:*):void {
+         rebuildClip(loc); // Positive complement of support patches, never holes.
+         rebuildClip(loc,onClip);
+         baseClip.graphics.beginFill(0xffffff);onClip.graphics.beginFill(0xffffff);
+         airClip.graphics.clear();airClip.graphics.beginFill(0xffffff);
+         solidClip.graphics.clear();solidClip.graphics.beginFill(0xffffff);
+         for each(var patch:Object in contourPieces){
+            var area:Rectangle=patch.rect;
+            var pixels:Vector.<uint>=patch.alpha.getVector(patch.alpha.rect),w:int=patch.alpha.width;
+            var previous:Object={},rectangles:Array=[];
+            for(var y:int=area.top;y<area.bottom;y++){
+               var current:Object={},start:int=area.left,x:int=start;
+               while(x<area.right){
+                  var role:int=contourRole(pixels,x,y,area,w);start=x++;
+                  while(x<area.right&&contourRole(pixels,x,y,area,w)==role)x++;
+                  var key:String=start+":"+x+":"+role,rect:Object=previous[key];
+                  if(rect!=null)rect.h++;
+                  else{rect={x:start,y:y,w:x-start,h:1,role:role};rectangles.push(rect);}
+                  current[key]=rect;
+               }
+               previous=current;
+            }
+            for each(rect in rectangles){
+               var shape:Shape=rect.role==0?airClip:baseClip;
+               shape.graphics.drawRect(left*CELL+rect.x,top*CELL+rect.y,rect.w,rect.h);
+               if(rect.role!=0){shape=rect.role==1?solidClip:onClip;shape.graphics.drawRect(left*CELL+rect.x,top*CELL+rect.y,rect.w,rect.h);}
+            }
+         }
+         baseClip.graphics.endFill();airClip.graphics.endFill();solidClip.graphics.endFill();onClip.graphics.endFill();
+      }
+
+      private function contourRole(pixels:Vector.<uint>,x:int,y:int,area:Rectangle,w:int):int {
+         // No brightness threshold: dark texture is still solid material.
+         // Retaining nonzero alpha also avoids puncturing antialiased rock edges.
+         if((pixels[x-area.x+(y-area.y)*w]>>>24)>0)return 1;
+         return heights[int(x/CELL)+1+(int(y/CELL)+1)*(cols+2)]>0?0:2;
+      }
+
+      private function rebuildClip(loc:*,target:Shape=null):void {
+         var clip:Shape=target==null?baseClip:target;
+         clip.graphics.clear();clip.graphics.beginFill(0xffffff);
          // Flash's vector mask stencil can fill even-odd holes. Emit only the
          // positive complement rectangles, so drawing and masking agree.
          var ox:int=left*CELL,oy:int=top*CELL,w:int=cols*CELL,h:int=rows*CELL;
-         baseClip.graphics.drawRect(-80,-80,loc.spaceX*CELL+160,oy+80);
-         baseClip.graphics.drawRect(-80,oy+h,loc.spaceX*CELL+160,loc.spaceY*CELL+80-oy-h);
-         baseClip.graphics.drawRect(-80,oy,ox+80,h);
-         baseClip.graphics.drawRect(ox+w,oy,loc.spaceX*CELL+80-ox-w,h);
+         clip.graphics.drawRect(-80,-80,loc.spaceX*CELL+160,oy+80);
+         clip.graphics.drawRect(-80,oy+h,loc.spaceX*CELL+160,loc.spaceY*CELL+80-oy-h);
+         clip.graphics.drawRect(-80,oy,ox+80,h);
+         clip.graphics.drawRect(ox+w,oy,loc.spaceX*CELL+80-ox-w,h);
          var rectangles:Array=[],previous:Object={};
          for(var y:int=0;y<h;y+=STEP){
             var intervals:Array=[],current:Object={};
@@ -248,8 +380,8 @@ package {
             }
             previous=current;
          }
-         for each(rect in rectangles)baseClip.graphics.drawRect(rect.x,rect.y,rect.width,rect.height);
-         baseClip.graphics.endFill();
+         for each(rect in rectangles)clip.graphics.drawRect(rect.x,rect.y,rect.width,rect.height);
+         clip.graphics.endFill();
       }
 
       private function rebuildPieces():void {
@@ -267,7 +399,7 @@ package {
                   light:new BitmapData(rect.width,rect.height,false,0xffffff),version:-1,stampRect:stampRect,
                   base:new BitmapData(rect.width,rect.height,false,0),nextBase:new BitmapData(rect.width,rect.height,false,0),outputValid:false,
                   stamp:new BitmapData(stampRect.width,stampRect.height,false,0),nextStamp:new BitmapData(stampRect.width,stampRect.height,false,0)};
-               piece.display=new Bitmap(piece.output);piece.display.x=rect.x;piece.display.y=rect.y;
+               piece.display=new Bitmap(piece.output,"auto",true);piece.display.x=rect.x;piece.display.y=rect.y;
                wallPixels.addChild(piece.display);
             }pieces.push(piece);
          }
