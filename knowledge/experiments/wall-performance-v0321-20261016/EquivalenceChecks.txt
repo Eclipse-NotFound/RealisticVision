@@ -1,0 +1,137 @@
+PASS OFF remembered contour with blurred and masked base exact pixels
+
+PASS unchanged cached contour exact pixels
+
+PASS ON remembered contour with native alpha exact pixels
+
+PASS visible contour exact pixels
+
+PASS OFF visible contour exact pixels
+
+PASS unknown contour exact pixels
+
+PASS damaged alpha exact pixels
+
+PASS offset viewport exact pixels
+
+PASS resized viewport exact pixels
+
+PASS changed original fog exact pixels
+
+PASS room reset exact pixels
+
+PASS changing light, partial wall, alpha and option 0 exact pixels
+
+PASS changing light, partial wall, alpha and option 1 exact pixels
+
+PASS changing light, partial wall, alpha and option 2 exact pixels
+
+PASS changing light, partial wall, alpha and option 3 exact pixels
+
+PASS changing light, partial wall, alpha and option 4 exact pixels
+
+PASS changing light, partial wall, alpha and option 5 exact pixels
+
+PASS changing light, partial wall, alpha and option 6 exact pixels
+
+PASS changing light, partial wall, alpha and option 7 exact pixels
+
+PASS changing light, partial wall, alpha and option 8 exact pixels
+
+PASS changing light, partial wall, alpha and option 9 exact pixels
+
+PASS changing light, partial wall, alpha and option 10 exact pixels
+
+PASS changing light, partial wall, alpha and option 11 exact pixels
+
+PASS changing light, partial wall, alpha and option 12 exact pixels
+
+PASS changing light, partial wall, alpha and option 13 exact pixels
+
+PASS changing light, partial wall, alpha and option 14 exact pixels
+
+PASS changing light, partial wall, alpha and option 15 exact pixels
+
+PASS changing light, partial wall, alpha and option 16 exact pixels
+
+PASS changing light, partial wall, alpha and option 17 exact pixels
+
+PASS changing light, partial wall, alpha and option 18 exact pixels
+
+PASS changing light, partial wall, alpha and option 19 exact pixels
+
+PASS changing light, partial wall, alpha and option 20 exact pixels
+
+PASS changing light, partial wall, alpha and option 21 exact pixels
+
+PASS changing light, partial wall, alpha and option 22 exact pixels
+
+PASS changing light, partial wall, alpha and option 23 exact pixels
+
+PASS changing light, partial wall, alpha and option 24 exact pixels
+
+PASS changing light, partial wall, alpha and option 25 exact pixels
+
+PASS changing light, partial wall, alpha and option 26 exact pixels
+
+PASS changing light, partial wall, alpha and option 27 exact pixels
+
+PASS changing light, partial wall, alpha and option 28 exact pixels
+
+PASS changing light, partial wall, alpha and option 29 exact pixels
+
+PASS changing light, partial wall, alpha and option 30 exact pixels
+
+PASS changing light, partial wall, alpha and option 31 exact pixels
+
+PASS changing light, partial wall, alpha and option 32 exact pixels
+
+PASS changing light, partial wall, alpha and option 33 exact pixels
+
+PASS changing light, partial wall, alpha and option 34 exact pixels
+
+PASS changing light, partial wall, alpha and option 35 exact pixels
+
+PASS changing light, partial wall, alpha and option 36 exact pixels
+
+PASS changing light, partial wall, alpha and option 37 exact pixels
+
+PASS changing light, partial wall, alpha and option 38 exact pixels
+
+PASS changing light, partial wall, alpha and option 39 exact pixels
+
+PASS chunk scroll under ON exact pixels
+
+PASS overlapping translucent chunks ON exact pixels
+
+PASS hidden overlap ON exact pixels
+
+PASS transformed foreground ON exact pixels
+
+PASS transformed foreground OFF exact pixels
+
+PASS hidden foreground exact pixels
+
+PASS foreground shown again exact pixels
+
+PASS NaN light retains old coercion exact pixels
+
+PASS valid light after NaN exact pixels
+
+PASS OFF fractional camera 0.75 exact pixels
+
+PASS ON fractional camera 0.75 exact pixels
+
+PASS OFF fractional camera 1 exact pixels
+
+PASS ON fractional camera 1 exact pixels
+
+PASS OFF fractional camera 1.25 exact pixels
+
+PASS ON fractional camera 1.25 exact pixels
+
+PASS OFF fractional camera 1.5 exact pixels
+
+PASS ON fractional camera 1.5 exact pixels
+
+DRAW ONCE COMPLETE passed=68 failed=0

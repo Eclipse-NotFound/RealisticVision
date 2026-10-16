@@ -1,6 +1,6 @@
 # RealisticVision —— 开发记忆入口
 
-> 2026-10-16 D28候选完成，**未部署**：按用户要求恢复v0.30.1墙芯/渐变，透明凹口独立修复；常亮选项保留、默认关闭。v0.32.0-wall-restore-candidate，36,474B，SHA256 `65B6BF90859CC78DECEF504FF7C912884D038E027E579BF0C51BEBB046BE7217`。279项与8组像素通过，默认渲染均值classic 20.12→12.52ms、current 22.22→14.54ms（非完整FPS）。生产线排除authority WIP；正式仍BAA48289…B8DB4275。入口：[验证与对照](../knowledge/experiments/2026-10-16-wall-render-restore.md)。
+> 2026-10-16 16:06:22 D29 **已部署**：v0.32.1-wall-performance，36,992B，SHA256 `2E7150CF415355C2D7B809689AAC3C4CA0BACBB5F6D8770066A6E887D8907A10`。保持D28原生墙芯/渐变和防溢出；常亮默认关闭并保留保存值。复用墙边采样、光照缓冲区与常亮墙面图；336项、68组人工差分与16组原生雾层严格相同，准确生产字节及正式路径启动通过。相比D28同进程平均渲染开销减少约4%–9%，非完整FPS，长帧/密集联机仍有边界。仅改RV，authority WIP保留。详见[报告](../knowledge/experiments/2026-10-16-wall-performance.md)和[回退记录](deployment-v0321-2026-10-16.md)。
 
 > 2026-10-15 22:27:59 D27 **已部署**：设置新增“已探索墙边常亮”（默认开、即时保存）；关闭后墙面随视野变暗，classic/current的透明凹口与墙边阴影修复始终生效。正式安装v0.31.1-wall-options-candidate，35,017B，SHA256 `BAA48289D9CF86F64CFF53B4734032AD29C89C3AC1704DB2D89038D4B8DB4275`。精确安装验收候选，保留改键与场景兼容；212项开发检查、8组图像、20项生产字节设置检查和正式路径init/设置注册/tick1/181/361通过。备份和单模组回退见[部署回执](deployment-v0311-2026-10-15.md)。平均额外渲染约9.8～13.7ms；大型全模组战斗未验。需保存并重启游戏生效。
 
@@ -57,7 +57,7 @@
 
 ## 3. 当前状态
 
-- D28候选完成：279项、8组像素检查与冻结字节两进程通过；尚未替换release。候选/对照/性能边界见顶部报告。真实用户存档与大型场景未验；RConnect回报2da241821f高负载联机七个密集窗口仍未达80帧/8秒，不能归因RV，详见本轮报告。
+- D29已部署2E7150CF…8907A10：336项通过、16组原生雾层差0。保持D28视觉；正式路径新版init/设置注册/tick1/181/361通过。当前无RV测试实例，AIR已归还RConnect。
 
 - D27墙面修复已安装：83项独立检查、岩壁65项与金属64项通过；8组开关的空气像素差0、远处地板差0、每组156个深墙芯点全黑。旧透明凹口复现0→255，即使关闭常亮也通过。11组优化前后逐像素相等。另20项生产字节检查验证设置/改键页、即时保存与跨进程恢复；正式原生启动通过。测试进程已退出，配置/宿主/清单指纹未变，未操作玩家游戏或存档。
 
@@ -74,7 +74,7 @@
 
 ## 4. 正在进行与停点
 
-- D28准确生产源在build/wall-restore-output/candidate/src，完整输入指纹见build/wall-restore/inputs.json；禁止用含authority的HEAD整包部署或让历史候选随新helper重建。当前只待用户另行部署指令与后续实际组合测试；没有运行中的RV测试实例。
+- D29准确生产源与已部署字节在build/wall-performance-output/candidate；脚本入口build/wall-performance/README.md。禁止用含authority的HEAD整包部署，禁止重建覆盖冻结候选。D28旧候选/实验保留。
 
 - D27已按本对话“部署”指令替换release，精确对应 `build/wall-options-output/candidate/RealisticVisionMod.swf`；回执 `state/deployment-v0311-2026-10-15.md`，部署日志 `state/deployment-v0311/`。工具 `build/wall-options/README.md`；画面实证 `knowledge/experiments/wall-options-v0311-20261015/`。对照页标记已部署，历史开发报告保持原验收时点；浏览器交互未验。
 - 候选来源固定为v0.30.5-scene基础快照，并叠加本轮已正式安装的改键源码（主文件83F27414…BD3F58C8，另固定RVKeybinds与语言目录）；源码位于本轮installed-keys/src，不自动跟随外部生成目录。原完整候选不含新改键，不能再用；新的D27包保留改键且不含authority WIP。head-check仍不是部署包。
@@ -87,7 +87,7 @@
 
 ## 5. 已知问题与边界
 
-- D28默认路径平均12.52/14.54ms、P95 18/19ms、max20ms；开启常亮仍22.44/25.29ms。只代表本轮四版本同进程渲染回放，不是全战斗FPS。每组最多6个材质边缘像素超过1级、最大3/255；开关空气最大2/255。下述D27开销为历史。
+- D29最终同进程240帧：关闭常亮classic18.73→18.05ms、current20.89→19.72ms；开启32.21→30.17ms、35.44→32.28ms。P95和峰值本轮均下降，开启仍有75–96ms长帧；不能换算完整战斗FPS。真实大图/玩家存档与密集联机未验。
 
 - D27最终同进程三组轮换回放：classic基线/关闭/开启均值8.17/17.92/20.58ms，P95 12/25/29ms；current 9.31/20.68/23.04ms，P95 11/24/29ms。平均额外约9.8～13.7ms，最大53ms；不是完整战斗FPS。整张最终输出分支无收益已撤回，采用局部内容比较缓存；大型连续场景、全模组负载与用户存档未验。
 
@@ -98,12 +98,14 @@
 
 ## 6. 下一步
 
-1. D28候选未部署，先保留当前BAA安装；若用户要求部署，走发布门禁，备份当前BAA并安装精确65B6BF90候选，不从HEAD重编。用户游戏不自动关闭。
-2. 本次回退仅使用 `build/backups/before-wall-options-20261015-222759-aa7db9/RealisticVisionMod.before.swf`（E9960808…1F6E0808），恢复此前改键版；先核对当前安装和备份。不能用旧改键/场景联合回退处理本次单模组安装。
-3. 后续优先核对RConnect隔离组合与真实大场景/战斗；本轮单模组实测不代替联机门槛。保留D28视觉目标、D22记录隔离、D24/D25地板与念力守卫，不减少刷新。
+1. D29已按本轮授权部署，用户保存并正常重启生效；无需重复部署或等待新授权。
+2. 本次仅用`build/backups/before-wall-performance-20261016-160622-78a9d0/RealisticVisionMod.before.swf`回退至BAA；核对指纹后只恢复RV。详情见deployment-v0321-2026-10-16.md。
+3. 后续优先核对RConnect隔离组合与真实大场景/战斗；本轮单模组实测不代替联机门槛。保留D29严格等价于D28的视觉目标、D22记录隔离、D24/D25地板与念力守卫，不减少刷新。
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
 ## 7. 深入了解与复验
+
+- D29最新入口：knowledge/experiments/2026-10-16-wall-performance.md、state/deployment-v0321-2026-10-16.md、build/wall-performance/README.md；KB-000102记录本轮精确调用护栏经验。
 
 - 本轮入口：`knowledge/experiments/2026-10-15-wall-bright-option.md`、D27、`build/wall-options/README.md`；最终指纹/图像/日志在wall-options-v0311-20261015。D26旧记录仍留原址。SDK在本区 `mods/Sandevistan/build/tools/`，仅只读使用。
 

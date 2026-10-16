@@ -41,6 +41,11 @@ package {
       private var floorField:BitmapData;
       private var wallField:BitmapData;
       private var fieldStamp:BitmapData;
+      private var sampleStarts:Vector.<int>;
+      private var samplePixels:Vector.<int>;
+      private var sampleAlphas:Vector.<int>;
+      private var sampleCells:Vector.<int>;
+      private var floorValues:Vector.<uint>;
       private var baseLight:BitmapData;
       private var wallPixels:Sprite = new Sprite();
       private var baseOwner:Sprite;
@@ -52,6 +57,7 @@ package {
       private var pieces:Array=[];
       private var terrainUpdates:int = 0;
       private var fieldUpdates:int = 0;
+      private var wallFieldUpdates:int = 0;
       private var mode:int = -1;
       private var contourDirty:Boolean = true;
       private var contourPieces:Array = [];
@@ -120,6 +126,7 @@ package {
          if(shapeDirty) {
             fieldShapeDirty=true;
             rebuildFaces(loc);
+            rebuildSamples();
             seen.length=lights.length=faces.length/5;
             shapeDirty=false;
          }
@@ -140,11 +147,34 @@ package {
          }
          var fieldChanged:Boolean=fieldShapeDirty;
          if(fieldChanged || lightDirty){
-            field.lock();field.fillRect(field.rect,0);
-            floorField.lock();wallField.lock();floorField.fillRect(floorField.rect,0);wallField.fillRect(wallField.rect,0);
-            for(i=0;i<faces.length;i+=5) if(seen[i/5]) paintFace(faces[i],faces[i+1],faces[i+2],lights[i/5],alwaysBright);
-            floorField.unlock();wallField.unlock();
-            field.unlock();fieldUpdates++;
+            // Bulk bitmap upload preserves the old integer max/rounding rules.
+            // Geometry is stable across lighting changes; retain face samples.
+            var n:int=field.width*field.height;
+            // Clear only previously sampled cells; do not allocate a full
+            // lighting vector on every changing frame.
+            for(var c:int=0;c<sampleCells.length;c++)floorValues[sampleCells[c]]=0;
+            var shapeValues:Vector.<uint>=fieldChanged?new Vector.<uint>(n,true):null;
+            var wallValues:Vector.<uint>=fieldChanged&&alwaysBright?new Vector.<uint>(n,true):null;
+            for(i=0;i<seen.length;i++)if(seen[i]){
+               var intensity:int=lights[i];
+               for(var q:int=sampleStarts[i];q<sampleStarts[i+1];q++){
+                  var pixel:int=samplePixels[q],alpha:int=sampleAlphas[q];
+                  var value8:int=Math.round(alpha*intensity/255);
+                  if(value8>(floorValues[pixel]&255))floorValues[pixel]=uint(0xff000000)|uint(value8*0x010101);
+                  if(fieldChanged && alpha>int(shapeValues[pixel]>>>24)){
+                     shapeValues[pixel]=uint(alpha)<<24;
+                     if(alwaysBright)wallValues[pixel]=uint(0xff000000)|uint(alpha*0x010101);
+                  }
+               }
+            }
+            floorField.setVector(floorField.rect,floorValues);
+            if(fieldChanged){
+               field.setVector(field.rect,shapeValues);
+               if(alwaysBright)wallField.setVector(wallField.rect,wallValues);
+               wallFieldUpdates++;
+            }
+            if(!alwaysBright)wallField.copyPixels(floorField,floorField.rect,origin);
+            fieldUpdates++;
             fieldStamp.copyChannel(floorField,floorField.rect,origin,BitmapDataChannel.RED,BitmapDataChannel.RED);
             fieldStamp.copyChannel(wallField,wallField.rect,origin,BitmapDataChannel.GREEN,BitmapDataChannel.GREEN);
             if(fieldChanged){rebuildSupport();contourDirty=contourLayoutDirty=true;if(alwaysBright){rebuildPieces();rebuildClip(loc);}}
@@ -194,9 +224,12 @@ package {
             piece.floor.fillRect(piece.floor.rect,0);
             piece.floor.draw(floorField,scale,null,null,null,true);
             if(alwaysBright){
+            if(pixelsChanged || piece.wallVersion!=wallFieldUpdates){
             piece.wall.fillRect(piece.wall.rect,0);
             piece.wall.draw(wallField,scale,null,null,null,true);
             piece.wall.copyChannel(piece.previous,piece.previous.rect,origin,BitmapDataChannel.ALPHA,BitmapDataChannel.ALPHA);
+            piece.wallVersion=wallFieldUpdates;
+            }
             // Grayscale stores brightness: native alpha linearly selects rock
             // or air, including semitransparent and overlapping foregrounds.
             piece.floor.draw(piece.wall);
@@ -237,6 +270,7 @@ package {
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
          owner=null;bounds=null;shapeDirty=fieldShapeDirty=lightDirty=true;
          faces=[];support=[];heights=null;seen.length=lights.length=0;
+         sampleStarts=null;samplePixels=null;sampleAlphas=null;sampleCells=null;floorValues=null;
          if(airClip.parent)airClip.parent.removeChild(airClip);airClip.graphics.clear();wallPixels.mask=null;
          if(solidClip.parent)solidClip.parent.removeChild(solidClip);solidClip.graphics.clear();
          if(onClip.parent)onClip.parent.removeChild(onClip);onClip.graphics.clear();
@@ -396,7 +430,7 @@ package {
                piece={rect:rect,previous:new BitmapData(rect.width,rect.height,true,0),
                   next:new BitmapData(rect.width,rect.height,true,0),output:new BitmapData(rect.width,rect.height,true,0),
                   floor:new BitmapData(rect.width,rect.height,false,0),wall:new BitmapData(rect.width,rect.height,true,0),
-                  light:new BitmapData(rect.width,rect.height,false,0xffffff),version:-1,stampRect:stampRect,
+                  light:new BitmapData(rect.width,rect.height,false,0xffffff),version:-1,wallVersion:-1,stampRect:stampRect,
                   base:new BitmapData(rect.width,rect.height,false,0),nextBase:new BitmapData(rect.width,rect.height,false,0),outputValid:false,
                   stamp:new BitmapData(stampRect.width,stampRect.height,false,0),nextStamp:new BitmapData(stampRect.width,stampRect.height,false,0)};
                piece.display=new Bitmap(piece.output,"auto",true);piece.display.x=rect.x;piece.display.y=rect.y;
@@ -507,26 +541,33 @@ package {
          faces.push(x,y,dir,int(outX/CELL),int(outY/CELL));
       }
 
-      private function paintFace(wx:Number,wy:Number,dir:int,light:int,alwaysBright:Boolean):void {
-         var vertical:Boolean=dir>=2;
-         var sign:int=(dir==0 || dir==2)?1:-1;
-         var along:int=Math.floor(((vertical?wy:wx)-(vertical?top:left)*CELL)/STEP);
-         var edge:Number=((vertical?wx:wy)-(vertical?left:top)*CELL)/STEP;
-         var low:int=Math.floor(edge-(sign>0?FRINGE:DEPTH)/STEP);
-         var high:int=Math.ceil(edge+(sign>0?DEPTH:FRINGE)/STEP);
-         for(var q:int=low;q<high;q++) {
-            var distance:Number=(q+0.5-edge)*STEP*sign;
-            if(distance < -FRINGE || distance>=DEPTH)continue;
-            var a:int=distance<=BRIGHT?255:Math.round(255*(DEPTH-distance)/(DEPTH-BRIGHT));
-            if(distance<0)a=Math.round(a*Math.min(1,(distance+FRINGE)/STEP));
-            var px:int=vertical?q:along,py:int=vertical?along:q;
-            if(px<0 || py<0 || px>=field.width || py>=field.height)continue;
-            if(a>(field.getPixel32(px,py)>>>24))field.setPixel32(px,py,uint(a)<<24);
-            var floorValue:int=Math.round(a*light/255),wallValue:int=alwaysBright?a:floorValue;
-            if(floorValue>(floorField.getPixel(px,py)&255))floorField.setPixel(px,py,floorValue*0x010101);
-            if(wallValue>(wallField.getPixel(px,py)&255))wallField.setPixel(px,py,wallValue*0x010101);
+      /** Frozen geometry for each exposed face; exploration and light are
+       * still sampled every update. A rebuilt shape regenerates this table. */
+      private function rebuildSamples():void {
+         sampleStarts=new Vector.<int>();samplePixels=new Vector.<int>();sampleAlphas=new Vector.<int>();
+         sampleCells=new Vector.<int>();floorValues=new Vector.<uint>(field.width*field.height,true);
+         var registered:Vector.<Boolean>=new Vector.<Boolean>(floorValues.length,true);
+         for(var i:int=0;i<faces.length;i+=5){
+            sampleStarts.push(samplePixels.length);
+            var wx:Number=faces[i],wy:Number=faces[i+1],dir:int=faces[i+2];
+            var vertical:Boolean=dir>=2,sign:int=(dir==0||dir==2)?1:-1;
+            var along:int=Math.floor(((vertical?wy:wx)-(vertical?top:left)*CELL)/STEP);
+            var edge:Number=((vertical?wx:wy)-(vertical?left:top)*CELL)/STEP;
+            var low:int=Math.floor(edge-(sign>0?FRINGE:DEPTH)/STEP);
+            var high:int=Math.ceil(edge+(sign>0?DEPTH:FRINGE)/STEP);
+            for(var q:int=low;q<high;q++){
+               var distance:Number=(q+0.5-edge)*STEP*sign;
+               if(distance < -FRINGE || distance>=DEPTH)continue;
+               var a:int=distance<=BRIGHT?255:Math.round(255*(DEPTH-distance)/(DEPTH-BRIGHT));
+               if(distance<0)a=Math.round(a*Math.min(1,(distance+FRINGE)/STEP));
+               var px:int=vertical?q:along,py:int=vertical?along:q;
+               if(px<0||py<0||px>=field.width||py>=field.height)continue;
+               var cell:int=px+py*field.width;
+               samplePixels.push(cell);sampleAlphas.push(a);
+               if(!registered[cell]){registered[cell]=true;sampleCells.push(cell);}
+            }
          }
+         sampleStarts.push(samplePixels.length);
       }
-
    }
 }

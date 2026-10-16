@@ -34,3 +34,5 @@ build/backups/before-wall-options-*/
 build/keybind-output/
 
 build/wall-restore-output/
+build/wall-performance-output/
+build/backups/before-wall-performance-*/

@@ -66,7 +66,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.32.0-wall-restore-candidate";
+      private static const VERSION:String = "v0.32.1-wall-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;

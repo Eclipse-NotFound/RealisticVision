@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "classic",
+    "variant": "oldOff",
+    "samples": 240,
+    "mean": 18.733333333333334,
+    "p95": 27,
+    "maximum": 37
+  },
+  {
+    "mode": "classic",
+    "variant": "oldOn",
+    "samples": 240,
+    "mean": 32.208333333333336,
+    "p95": 46,
+    "maximum": 116
+  },
+  {
+    "mode": "classic",
+    "variant": "off",
+    "samples": 240,
+    "mean": 18.054166666666667,
+    "p95": 25,
+    "maximum": 32
+  },
+  {
+    "mode": "classic",
+    "variant": "on",
+    "samples": 240,
+    "mean": 30.170833333333334,
+    "p95": 42,
+    "maximum": 96
+  },
+  {
+    "mode": "current",
+    "variant": "oldOff",
+    "samples": 240,
+    "mean": 20.891666666666666,
+    "p95": 25,
+    "maximum": 51
+  },
+  {
+    "mode": "current",
+    "variant": "oldOn",
+    "samples": 240,
+    "mean": 35.44166666666667,
+    "p95": 43,
+    "maximum": 93
+  },
+  {
+    "mode": "current",
+    "variant": "off",
+    "samples": 240,
+    "mean": 19.720833333333335,
+    "p95": 24,
+    "maximum": 37
+  },
+  {
+    "mode": "current",
+    "variant": "on",
+    "samples": 240,
+    "mean": 32.28333333333333,
+    "p95": 39,
+    "maximum": 75
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "scene": "game-reuse",
+    "mode": "classic",
+    "position": "upper",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "classic",
+    "position": "upper",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "classic",
+    "position": "lower",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "classic",
+    "position": "lower",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "current",
+    "position": "upper",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "current",
+    "position": "upper",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "current",
+    "position": "lower",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-reuse",
+    "mode": "current",
+    "position": "lower",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "classic",
+    "position": "upper",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "classic",
+    "position": "upper",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "classic",
+    "position": "lower",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "classic",
+    "position": "lower",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "current",
+    "position": "upper",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "current",
+    "position": "upper",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "current",
+    "position": "lower",
+    "option": "off",
+    "changed_pixels": 0,
+    "max_delta": 0
+  },
+  {
+    "scene": "game-rock-reuse",
+    "mode": "current",
+    "position": "lower",
+    "option": "on",
+    "changed_pixels": 0,
+    "max_delta": 0
+  }
+]
