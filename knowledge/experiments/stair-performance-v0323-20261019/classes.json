@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "sha256": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+  "tool": "JPEXS ffdec-cli.jar -dumpAS3",
+  "exit": 0,
+  "classes": ["RealisticVisionMod", "RVWallSurface", "modlocales.vision.RVLocale", "RVExplorationCarrier", "RVKeybinds", "modlocales.vision.RVLocaleMessages"],
+  "warning": "FFDec AppData logging lock was inaccessible; enumeration completed with exit 0. Log permissions were not changed."
+}

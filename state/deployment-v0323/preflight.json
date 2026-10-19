@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "version": "v0.32.3-stair-performance",
+  "old_sha256": "decca3e0e1142eb8faf7e0e776f2b94fc67dce1c5503de7fba7b810c4a0b10ca",
+  "new_sha256": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+  "before": {
+    "pfe.swf": "2a4662488ba3b690eb23acfe4b79aca3f0d9ae114e5e2dee7595af3cabffb3ea",
+    "application.xml": "70dd3b085e5f6c66c03693cf68ce5e93a4e4136dd745d40d1a5b2a49863ba236",
+    "mods/loader-manifest.txt": "33de189e1209fdd397e811a52e9ac67ff0dedaeeae5cfeff4b7d15d4536eb133",
+    "mods/RealisticVision/release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "mods/ModLoader/release/ModLoaderMod.swf": "bd71b6f31774b97841d4c158451da0353b53bc46ac72f8e2a7fe2c3f3f4908b1",
+    "mods/Sandevistan/release/SandevistanMod.swf": "cec6a3061cb90380579d8a95aa1254e0328bd0dae6e239fc4ca5205d6cccf942",
+    "mods/Rconnect/release/RConnectMod.swf": "a02e5aafc2ba529d37a78c83ac92a055121b72d347d56ab8ca720802cc9ddf60",
+    "mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf": "b7a3c811d0a073f026a5e810386699c1059f99ef066012992cfde605ff96e402",
+    "mods/TDFC/release/TDFCMod.swf": "99bfbaa68229635fbaa496ef9287a94bb9ea7c65d71339cef3fde65f47e30275",
+    "mods/RandomRooms/release/RandomRoomsMod.swf": "3f8789c62f9b2ef8efc082597f672a2fea230a0d7fce3be90c04efd9582e5145",
+    "mods/RModifier/release/LootEditorMod.swf": "4f1d6cf19979f4ea4960f8ccd8377c1d3cac490bed9949866885357d073c8625",
+    "mods/PermanentInjury/release/PermanentInjuryMod.swf": "d4f6a096ee06f8869fffb316801c6325df26f54260a34666ac17ec24ad8bd083",
+    "mods/AddictionSystem/release/AddictionSystemMod.swf": "5a4d9a405777867826061bb50178df931591987ea0737580bd0aa8a89458b9b3",
+    "mods/ContinuousScene/release/ContinuousSceneMod.swf": "70c06879a2cffe85901e5c8e19fc1715028d5c38934975e970569468737309d5",
+    "mods/FirearmAttachments/release/FirearmAttachmentsMod.swf": "b3304596eb7e08796f9de2cf02e1e7cccff10e188d26fedfa960aa6370d2a4b9",
+    "mods/LightAndDarkness/release/LightAndDarknessMod.swf": "514a7671d4da517a31045aeaf8ffad3089aa66705fe58d14dc339f849589a7f6",
+    "mods/WallBlend/release/WallBlendMod.swf": "df9aa07265e2538e115a5f048d272b85fc1c34d00ec4bc81585cd40d96648f76"
+  },
+  "script_sha256": "ebd421b21a8eee193bc55e1f680549e3a5b9ee4f48a6feee42ffd44026a47f79",
+  "common_sha256": "230aee4bf547350449949511ed2389c011ce8a53ad4415b61bc8809997ff7249",
+  "merge_script_sha256": "00bd7c4af43e1ec5af82b8f30affcc785e472ab5f8ae1b08cf76da8476865049",
+  "verified_sha256": "cef7e167f3021621518b620b88117bc6511d33a1837f4b18265531d004a75499",
+  "classes": {
+    "status": "PASS",
+    "sha256": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+    "tool": "JPEXS ffdec-cli.jar -dumpAS3",
+    "exit": 0,
+    "classes": [
+      "RealisticVisionMod",
+      "RVWallSurface",
+      "modlocales.vision.RVLocale",
+      "RVExplorationCarrier",
+      "RVKeybinds",
+      "modlocales.vision.RVLocaleMessages"
+    ],
+    "warning": "FFDec AppData logging lock was inaccessible; enumeration completed with exit 0. Log permissions were not changed."
+  }
+}

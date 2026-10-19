@@ -1,0 +1,18 @@
+PASS settings exposes a default-off checkbox
+
+PASS new setting is translated to English and Russian
+
+PASS setting explanation is translated
+
+PASS toggle is independent of mode, memory brightness and exploration
+
+PASS OFF persists with existing configuration values
+
+PASS ON persists and reloads
+
+PASS old configs without the key keep the default
+
+PASS invalid config values cannot silently disable the option
+
+SETTINGS COMPLETE passed=8 failures=0
+

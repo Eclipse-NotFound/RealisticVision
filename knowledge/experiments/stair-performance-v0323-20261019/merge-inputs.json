@@ -1,0 +1,22 @@
+{
+  "version": "v0.32.3-stair-performance",
+  "base_swf": "decca3e0e1142eb8faf7e0e776f2b94fc67dce1c5503de7fba7b810c4a0b10ca",
+  "stair_swf": "325a0ddc09adc286d442f02f81fe09cb9a4bafbbd7207e6c3d244fa7f6770a92",
+  "scope": "Only contourRole physical-height condition plus version marker",
+  "baseline": {
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "RealisticVisionMod.as": "e511c9f6167c0e4ea1b9a3f764ec85dad91e6994a7cd7f5daa26a167ebd73d63",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895"
+  },
+  "candidate": {
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "RealisticVisionMod.as": "bffada5f185e33cbcef00e721b78f09e7eec024d304931a052e70c039eb32846",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "4391f8aa30c5a507b7145ba779488b446b733497e61ff50b4d21174ad8bea57e"
+  }
+}

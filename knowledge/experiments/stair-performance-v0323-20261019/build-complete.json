@@ -1,0 +1,72 @@
+{
+  "version": "v0.32.3-stair-performance",
+  "base_swf": "decca3e0e1142eb8faf7e0e776f2b94fc67dce1c5503de7fba7b810c4a0b10ca",
+  "stair_swf": "325a0ddc09adc286d442f02f81fe09cb9a4bafbbd7207e6c3d244fa7f6770a92",
+  "scope": "Only contourRole physical-height condition plus version marker",
+  "baseline": {
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "RealisticVisionMod.as": "e511c9f6167c0e4ea1b9a3f764ec85dad91e6994a7cd7f5daa26a167ebd73d63",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895"
+  },
+  "candidate": {
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "RealisticVisionMod.as": "bffada5f185e33cbcef00e721b78f09e7eec024d304931a052e70c039eb32846",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "4391f8aa30c5a507b7145ba779488b446b733497e61ff50b4d21174ad8bea57e"
+  },
+  "candidate_swf": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+  "bytes": 37775,
+  "runtime": {
+    "lang.xml": "316d5ce9e32ac195ceb872c1809eb62785ff26a6e600e854a583317a2c38e6d4",
+    "launcher_text.xml": "a43c769ba1225af3296ad627ab51bee8f3ba4eac058cf907f538096faff8ee40",
+    "pfe.swf": "2a4662488ba3b690eb23acfe4b79aca3f0d9ae114e5e2dee7595af3cabffb3ea",
+    "sound.swf": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+    "sound_unit.swf": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+    "sound_weapon.swf": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+    "sprite.swf": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+    "sprite1.swf": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+    "texture.swf": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+    "texture1.swf": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+    "text_de.xml": "0c9602f3ac8cb01a50f7a072287bc3cd40d98fe13c4a25929d3494568ed8c8a9",
+    "text_en.xml": "f4adf9ae845f08877e25e0d5e46ee9df04d614b2f402cc68ed954e01d02e9ccc",
+    "text_es.xml": "133beaa49d048b743aa44cb57013340fea7bb335bfd7cf71c4c7d71d3e31d02c",
+    "text_jp.xml": "a6d6a00b5dba418a989c28d030a1bf066d020fbe31d07ac9e80a6a6337cf3bea",
+    "text_pl.xml": "b23cf49d156c0c334ea154fe0046839ec166b9ed229db3687f2c1ab7ed322a00",
+    "text_ru.xml": "acd503ab8ec20428c2d625865d10684a26a3c20e0a056ea2ee2be46d9fd9a6ad",
+    "text_tw.xml": "be6a7b392e32e1acd5b60429392e0353c3bb4627d5cb888ceb8def5f0e26e902",
+    "text_ua.xml": "1d558baf204a8f34eb46a4206090b0ea483df17f9b44753e3b9d29c75cd33cf6",
+    "text_zh.xml": "66da212793683b19e65e3973b726a94a2885d5032395af8a2e5a0fd20a17f895"
+  },
+  "harness_sources": {
+    "build\\stair-shadow\\WallSurfaceProbe.as": "83b8331ed9a8df4fde7e29ec465d9530b4a5790186baf8b0a4063dc28cc2be68",
+    "build\\stair-shadow\\CandidateOptionsProbe.as": "aa4899e6aa8ddc6c0615d11d85fc9677134db0b79ecc77965d3de8fae90de4df",
+    "build\\stair-shadow\\StairChecks.as": "f280091be55a419ebfa42da80d9cbc2fb117c505fd9d98def88b5482f288f8dd"
+  },
+  "compiled": {
+    "candidate/RealisticVisionMod.swf": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+    "capture/baseline.swf": "18a07a4018d95c17a15e5879cd7187b829ed1e75c8487ad01145b66502ac2710",
+    "capture/candidate.swf": "c7b697867de7b636b574b0eb1d9e9369e36707800feb7ebc059310bd4e9f100b",
+    "capture/pfe.swf": "2a4662488ba3b690eb23acfe4b79aca3f0d9ae114e5e2dee7595af3cabffb3ea",
+    "capture/sound.swf": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+    "capture/sound_unit.swf": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+    "capture/sound_weapon.swf": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+    "capture/sprite.swf": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+    "capture/sprite1.swf": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+    "capture/texture.swf": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+    "capture/texture1.swf": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+    "checks/StairChecks.swf": "c33b6bd97b0317ea81daa1ae7dcde0d1e9ee60025ea5c8cd894ad8fa10ead52e",
+    "options/candidate.swf": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+    "options/CandidateOptionsProbe.swf": "c07833a12dfb2e4e267fdfb3d96120276c59e1bb3f1db399f495c92888b50e78",
+    "regression/EquivalenceChecks.swf": "ddc1bfe0956bf804daa0b8ac0e3158593c8796910b644e49beb7f5c0cdd61633",
+    "regression/RestoreChecks.swf": "2ce9439070b196da1f0dcc123a0494b1422e31af5c22a41685062277d23d6483",
+    "regression/SettingsChecks.swf": "b74bb2fdac6e5bfb28df07fffabe053d95bf8c59712a4750761a97d565f1cdf5",
+    "regression/SharedExplorationHarness.swf": "634e8d1faebbbf015632ad9801fc9a2d397532d13119d0ced27ff6491290d785",
+    "regression/SoftHarness.swf": "4da18ab34559378edb3632547d60b4baa563080eb009ea968c867c8f23283af5",
+    "capture/mods/WallSurfaceProbe/release/WallSurfaceProbe.swf": "d32765a404df05ed06a516c6ea75b7f4d25c93aafaae68b4323479249647e75b"
+  }
+}

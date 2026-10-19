@@ -1,0 +1,23 @@
+{
+  "status": "PASS_WITH_RETAINED_REFERENCE_DIAGNOSTICS",
+  "sha256": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+  "version": "v0.32.3-stair-performance",
+  "functional_checks": 299,
+  "pixels": {
+    "passed": 18,
+    "failed": 8,
+    "isolation_passed": 4,
+    "isolation_failed": 4
+  },
+  "limitation": "Constant-bright reference residuals retained; no new performance or full-network claim",
+  "evidence": {
+    "build-complete.json": "5668229293688b25171c45f0f5734acab193ccfef6a5ce98f813f4b9de123df0",
+    "merge-inputs.json": "937b3daa9ac626921b4563ea5365af38dda845b3deecdfd600d9b093451cfd15",
+    "checks-result.json": "bda71c186d21693c4d08aed7c51ed61504bc4a25f27c3c81804c25f66e2d70f2",
+    "capture/evidence/result.json": "f22fd3f0cfd267c8c7c0d222771dd53c5f9f6aa8a68269012fb65c605958e5c5",
+    "capture/last-run.json": "6f5cca3f9ce1ebaf7bbe48d33013a0bd24b209e3fc7670a00dd31dd51c755bef",
+    "options/result.json": "dd2cf9c75fc1dd5561e88beeb5def687ec9874d71c24cf420c5e7957aa72e001",
+    "pixels.json": "1df6ff530ca6b265863f64cf639792fec064b0df6b92a95c73db86fa83f3ce21",
+    "residual.json": "320337ba2fd04b61bf9fbef3c86dfc5fb8738b7401ab2f57d9b266ebb99443f5"
+  }
+}

@@ -41,3 +41,7 @@ FFDec成功枚举6类：RealisticVisionMod、RVWallSurface、RVKeybinds、RVExpl
 本轮开始时安装为D29 `2E7150CF415355C2D7B809689AAC3C4CA0BACBB5F6D8770066A6E887D8907A10`；等待期间，RV性能会话在用户另行授权后于13:27:40部署 **v0.32.2-frame-performance**，37,760B，SHA256 `DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA`，见[其部署回执](../../state/deployment-v0322-2026-10-19.md)。该包不含本轮阶梯修改。**本轮阶梯候选未部署，不能直接用旧生产线325A整包覆盖DECCA；后续应只把本轮helper改动合到最新准确生产源再验证。** 本轮不结束玩家游戏，不写真实pfe存档。
 
 已清理本轮150份与保留来源SHA256一致的重复运行素材，合计325,933,470字节。先落盘清单再逐文件核对删除；候选、源码、原始图像、日志和恢复来源均保留，见证据目录的runtime-cleanup-plan.json与runtime-cleanup.json。新增报告、图像和构建入口位于[阶梯对照证据](stair-shadow-v0322-20261019/comparison.html)，不覆盖历史实验。
+
+## 后续合并部署
+
+2026-10-19 15:26:52，用户另行明确要求合并部署后，D32将本轮局部高度条件合入准确D31性能生产源，形成v0.32.3-stair-performance（76314B81…AF5C46B7，37,775B），完成新组合299项功能、8组图像和正式启动验证后安装。旧325A候选本身仍未整包部署；原严格诊断边界保留。详见[合并报告](2026-10-19-stair-performance-merge.md)与[部署回执](../../state/deployment-v0323-2026-10-19.md)。

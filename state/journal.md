@@ -1,3 +1,10 @@
+## 2026-10-19 — D32阶梯修复合入性能版并部署
+
+- 用户明确要求合并另一对话阶梯黑条候选并部署；以准确D31 DECCA生产源仅合D30高度条件和版本标记，性能六项保留，不包含authority。新包v0.32.3-stair-performance，37775B，76314B819151FBA6F67F6D740B21030A9EEC8359AF4C9C9DDEB83D4CAF5C46B7。
+- 新组合阶梯44+回归139+原生96+准确包设置20，共299项功能通过。8组每组500错误黑空气像素降至0，材质/修正区外差0；OFF隔离零差，ON34/70/34/70像素差1级，严格18/8及4/4照录，负1成因未逐点证明。未追加性能收益或全联机声明。
+- RConnect明确交接后启动；15:26:52备份DECCA并仅安装RV，17项当前保护指纹前后不变。正式新init/设置注册/tick1/181/361通过，测试PID69972、81072、70156、35268均已结束，自有描述符删除，窗口已交回。用户游戏/真实存储未操作，需正常保存并重启。
+- 回执state/deployment-v0323-2026-10-19.md；备份build/backups/before-stair-merge-20261019-152652-78efec/RealisticVisionMod.before.swf。报告knowledge/experiments/2026-10-19-stair-performance-merge.md，工具build/stair-merge/，新源和准确包冻结于build/stair-shadow-output/merged-v0323/candidate。仅提交本轮，原authority及其记忆增量保留。
+
 ## 2026-10-19 — D30阶梯黑条修复候选，交统一组合验证
 
 - 原因与修改：原生半高格可能被背景后缀重新设为opac=1；旧轮廓只看整格，将顶部空气误认为材质凹口。仅contourRole增加真实剩余高度条件，保留实体纹理凹口、防溢出及逻辑视野。

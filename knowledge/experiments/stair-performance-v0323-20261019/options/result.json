@@ -1,0 +1,17 @@
+{
+  "appid": "pfe-modsettings-rv-stair-merge-d6219ec2b1a844c6adf9e78bf3352ef4",
+  "sha256": "76314b819151fba6f67f6d740b21030a9eec8359af4c9c9ddeb83d4caf5c46b7",
+  "runs": [
+    {
+      "pid": 81072,
+      "exit": 0,
+      "checks": 10
+    },
+    {
+      "pid": 70156,
+      "exit": 0,
+      "checks": 10
+    }
+  ],
+  "status": "PASS"
+}
