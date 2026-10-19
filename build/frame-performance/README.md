@@ -1,6 +1,6 @@
 # D31 完整视野与单位遮罩性能验证
 
-基线固定为已安装 D29 `2E7150CF…8907A10`，准确生产源来自 `build/wall-performance-output/candidate/src`。本目录不写 release、不改用户存档。HEAD 另有未发布 authority 工作；`src/RVWallSurface.as` 也有其他会话的阶梯修复，不能整包编译 HEAD 当本次候选。
+验证基线固定为部署前的 D29 `2E7150CF…8907A10`，准确生产源来自 `build/wall-performance-output/candidate/src`。验证工具不写 release、不改用户存档；专用部署脚本已将准确生产包v0.32.2安装。HEAD 另有未发布 authority 工作；`src/RVWallSurface.as` 也有其他会话的阶梯修复，不能整包编译 HEAD 当本次候选。
 
 `prepare.py` 从冻结D29依次应用 `optimize.py`、`sparse_sight.py`、`view_cache.py`。六项改动是同色墙格批量填充、classic遮罩阈值运算、相同输入复用遮罩、瓦片可见性分类缓存、大图按需读取视野格子，以及常亮关闭时稳定墙面缓存范围。没有降采样或降低更新频率。已淘汰的paletteMap和colorTransform两个current方案留在trial-01/02，像素一致但更慢；常亮开启路径不扩大墙面缓存，因为viewport-checks-02出现10组像素差。
 
@@ -22,7 +22,7 @@ evidence.py
 
 以上是复现步骤，已有名字的成功运行与生产包已经冻结，不要照抄覆盖。`final-large-trial`现已成功完成，其余最终原生轮已完成或取消，本轮没有待运行的AIR。未来确有复验需要时使用新名字；运行前必须取得 RConnect 主会话新的明确交接，并通过6GiB可用内存门槛，单次资源观察不等于获得窗口。`environment.json`每10秒记录AIR/Java及可用内存，不能据此排除所有外部负载。完成或无法启动立即交回，再离线分析。
 
-早先因资源不足保存过停点，后于2026-10-19 12:09获得新窗口并完成最后一轮。四组更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms、仍有长帧；具体数据见报告末节及analysis-final.json，不等于完整游戏FPS。PID60112退出0、描述符删除，窗口已交回，未部署。
+早先因资源不足保存过停点，后于2026-10-19 12:09获得新窗口并完成最后一轮。四组更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms、仍有长帧；具体数据见报告及analysis-final.json，不等于完整游戏FPS。性能测试PID60112退出0、描述符删除，窗口已交回；随后13:27:40经用户确认新窗口完成正式部署。
 
 `analyze.py`只接受成功退出、无插桩、无像素核验的完整配对轮，输出更新、绘制及逐样本相加总耗时的均值、中位数、P95和最大值；P95使用排序后`floor(.95*(n-1))`。旧`trial-04`尚无新格式构建清单，不能直接套完整命令；统计函数已逐项复算并严格匹配其`analysis-initial.json`，没有改写旧证据。
 
@@ -40,6 +40,6 @@ evidence.py
 
 ## 精确部署入口
 
-用户已于2026-10-19明确要求部署最终改进版本。`deploy.py prepare`已核对准确生产包、源码及既有验证，保存`build/frame-performance-output/deployment/preflight.json`；它没有替换安装。已有预检记录不要覆盖，也不要直接运行历史D29脚本。
+用户已于2026-10-19明确要求部署最终改进版本，并确认“窗口已空出，继续部署”。`deploy.py prepare`预检及随后`deploy.py deploy`均成功，准确安装为DECCA3E0…C4A0B10CA。已保存`build/frame-performance-output/deployment/preflight.json`与`receipt.json`；它们和生产包均已冻结，不要重跑部署或覆盖记录，也不要直接运行历史D29脚本。
 
-取得新的短启动检查窗口后运行`deploy.py deploy`。脚本再次核对当前安装仍为2E7150CF…8907A10、候选仍DECCA3E0…C4A0B10CA、所有保护指纹与部署脚本未变，并检查6GiB门槛；随后独占创建`build/backups/before-frame-performance-<时间和随机后缀>/RealisticVisionMod.before.swf`，原子替换仅RV，从正式根目录用独立AppID检查新版init、ModSettings注册和tick1/181/361。失败只回滚本模组，成功/失败均保存receipt.json并清理自有描述符与进程。正式游戏需要用户保存并正常重启才加载新版。
+此次部署再次核对旧安装、准确候选、所有保护指纹与脚本，启动7.41GiB通过原6GiB门槛；备份为`build/backups/before-frame-performance-20261019-132740-314f74/RealisticVisionMod.before.swf`。正式根目录独立AppID确认新版init、ModSettings注册和tick1/181/361；PID93512与自有描述符已清理，窗口交回RConnect。回执与单模组回退见`state/deployment-v0322-2026-10-19.md`。正式游戏需要用户保存并正常重启才加载新版；后续组合包需重新冻结基线并验收。

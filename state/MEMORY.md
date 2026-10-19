@@ -1,8 +1,8 @@
 # RealisticVision —— 开发记忆入口
 
-> 2026-10-19 **v0.32.2已获部署授权，预检通过，尚未替换**：用户明确“请部署最终改进版本”。准确包DECCA3E0…C4A0B10CA、原安装2E7150CF…8907A10及18项保护指纹已核验，部署入口build/frame-performance/deploy.py，prepare已完成。协调正式路径约一分钟启动窗口的消息三次因自动审批服务容量不足未发送；RConnect仍有测试，已请用户协助确认窗口，不自行重用旧窗口。只待新明确窗口及即时6GiB检查后执行deploy；用户已授权部署，不重复询问部署许可。详见[部署准备记录](deployment-v0322-2026-10-19.md)。
+> 2026-10-19 13:27:40 **v0.32.2已部署**：用户明确部署并确认新测试窗口后，准确安装DECCA3E0…C4A0B10CA（37,760B）。正式路径独立实例确认新版init、设置注册及tick1/181/361；18项保护指纹不变，PID93512与描述符已清理，窗口已交回RConnect。D29单模组备份已保存，用户正常保存并重启生效。详见[部署回执](deployment-v0322-2026-10-19.md)。
 
-> 2026-10-19 D31 **候选验证完成，未部署**：保持原画面的六项优化已完成。55项聚合检查、48,000次分类、192组位图、32组192×75原生像素及准确包两进程20项设置检查通过。最终大图四场景各120配对样本，更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms，长帧仍存在，非完整游戏FPS。准确候选v0.32.2-frame-performance，37,760B，SHA256 `DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA`；正式仍D29。最后AIR PID60112正常退出，描述符删除，窗口已交回；无需再跑已完成或取消的轮次。源码提交25143cd，生产源固定`build/frame-performance-output/production/src`，不含authority或并行阶梯修复，不能直接编译HEAD替换。详见[报告](../knowledge/experiments/2026-10-19-frame-performance.md)和[工具](../build/frame-performance/README.md)。
+> 2026-10-19 D31 **已部署版本的验收依据**：保持原画面的六项优化已完成。55项聚合检查、48,000次分类、192组位图、32组192×75原生像素及准确包两进程20项设置检查通过。最终大图四场景各120配对样本，更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms，长帧仍存在，非完整游戏FPS。准确安装v0.32.2-frame-performance，SHA256 DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA。源码提交25143cd，生产源固定build/frame-performance-output/production/src，不含authority或并行阶梯修复，不能直接编译HEAD替换。无需重跑已完成或取消轮次；详见[报告](../knowledge/experiments/2026-10-19-frame-performance.md)和[工具](../build/frame-performance/README.md)。
 
 > 2026-10-16 16:06:22 D29 **已部署**：v0.32.1-wall-performance，36,992B，SHA256 `2E7150CF415355C2D7B809689AAC3C4CA0BACBB5F6D8770066A6E887D8907A10`。保持D28原生墙芯/渐变和防溢出；常亮默认关闭并保留保存值。复用墙边采样、光照缓冲区与常亮墙面图；336项、68组人工差分与16组原生雾层严格相同，准确生产字节及正式路径启动通过。相比D28同进程平均渲染开销减少约4%–9%，非完整FPS，长帧/密集联机仍有边界。仅改RV，authority WIP保留。详见[报告](../knowledge/experiments/2026-10-16-wall-performance.md)和[回退记录](deployment-v0321-2026-10-16.md)。
 
@@ -63,9 +63,9 @@
 
 ## 3. 当前状态
 
-- D31候选视觉、功能及最终性能对照已完成，未部署；准确包DECCA3E0…C4A0B10CA。最终四场景平均更新加绘制减少5.6%–14.2%、P95均下降，classic单次最大值上升；不能据此宣称全部卡顿解决。正式仍D29。
+- D31 v0.32.2已部署DECCA3E0…C4A0B10CA，准确包正式启动验证通过，沿用已完成的视觉、功能及最终性能对照。平均更新加绘制减少5.6%–14.2%、P95均下降，classic单次最大值上升；不能据此宣称全部卡顿解决。
 
-- D29已部署2E7150CF…8907A10：336项通过、16组原生雾层差0。保持D28视觉；正式路径新版init/设置注册/tick1/181/361通过。当前无RV测试实例，AIR已归还RConnect。
+- D29旧基线2E7150CF…8907A10已由D31替代并留作本次单模组回退。D29既有336项与16组原生雾层差0是历史证据；当前无本轮RV测试实例，窗口已归还RConnect。
 
 - D27墙面修复已安装：83项独立检查、岩壁65项与金属64项通过；8组开关的空气像素差0、远处地板差0、每组156个深墙芯点全黑。旧透明凹口复现0→255，即使关闭常亮也通过。11组优化前后逐像素相等。另20项生产字节检查验证设置/改键页、即时保存与跨进程恢复；正式原生启动通过。测试进程已退出，配置/宿主/清单指纹未变，未操作玩家游戏或存档。
 
@@ -82,13 +82,13 @@
 
 ## 4. 正在进行与停点
 
-- v0.32.2部署当前待启动检查窗口。preflight.json和部署脚本已冻结；取得窗口后运行build/frame-performance/deploy.py deploy，不重跑prepare、不覆盖其记录。成功后先交回窗口，再更新部署回执/状态；失败自动回滚RV。当前release仍D29。
+- v0.32.2部署及收尾已完成。preflight、receipt和日志已冻结并归档state/deployment-v0322；不要重跑prepare/deploy或覆盖证据。后续RConnect组合部署已获本次安装指纹，必须以新基线合并并重新验收，不拿旧阶梯包整包覆盖。
 
-- D31最终补测报告已提交fc06aed；全局测试台账的补测索引追加两次因自动审批服务容量不足未执行，保留原待测索引及本地完整结果。恢复服务后仅需补记索引，不重跑测试、不重新部署。
+- D31最终补测报告已提交fc06aed；全局台账现已追加最终性能与部署索引，旧待测行保留为历史。此前审批服务容量失败的补记停点解除，无需重跑测试。
 
 - D31 final-large-trial已完成并归档：PID60112退出0、test.xml删除。16次环境采样可用内存6.093–8.113GiB，未观察到其它AIR/Java，不能排除所有后台负载。32组final-large-verify已成功；profile/small/live仍取消。本轮已交回窗口，没有待跑的AIR；禁止覆盖冻结证据。
 
-- D29准确生产源与已部署字节在build/wall-performance-output/candidate；脚本入口build/wall-performance/README.md。禁止用含authority的HEAD整包部署，禁止重建覆盖冻结候选。D28旧候选/实验保留。
+- D29历史准确生产源与字节在build/wall-performance-output/candidate；当前D31在build/frame-performance-output/production。禁止用含authority的HEAD整包部署，禁止重建覆盖冻结候选。D28旧候选/实验保留。
 
 - D27已按本对话“部署”指令替换release，精确对应 `build/wall-options-output/candidate/RealisticVisionMod.swf`；回执 `state/deployment-v0311-2026-10-15.md`，部署日志 `state/deployment-v0311/`。工具 `build/wall-options/README.md`；画面实证 `knowledge/experiments/wall-options-v0311-20261015/`。对照页标记已部署，历史开发报告保持原验收时点；浏览器交互未验。
 - 候选来源固定为v0.30.5-scene基础快照，并叠加本轮已正式安装的改键源码（主文件83F27414…BD3F58C8，另固定RVKeybinds与语言目录）；源码位于本轮installed-keys/src，不自动跟随外部生成目录。原完整候选不含新改键，不能再用；新的D27包保留改键且不含authority WIP。head-check仍不是部署包。
@@ -114,10 +114,10 @@
 
 ## 6. 下一步
 
-- D31本轮候选实现和既定验证已完成；当前没有部署动作。后续若部署，应核对届时正式版本并走发布门禁，避免覆盖并行authority/阶梯工作。用户游戏不自动关闭，不复用已交回的测试窗口。
+- D31实现、既定验证及用户授权部署均完成。正式游戏需保存并正常重启；后续组合包另行验收，保留并行authority/阶梯工作，不复用已交回的窗口。
 
-1. D29已按本轮授权部署，用户保存并正常重启生效；无需重复部署或等待新授权。
-2. 本次仅用`build/backups/before-wall-performance-20261016-160622-78a9d0/RealisticVisionMod.before.swf`回退至BAA；核对指纹后只恢复RV。详情见deployment-v0321-2026-10-16.md。
+1. D31已按本轮授权部署，用户保存并正常重启生效；无需重复部署。
+2. 本次回退备份为`build/backups/before-frame-performance-20261019-132740-314f74/RealisticVisionMod.before.swf`，旧指纹2E7150CF…8907A10。仅当安装仍是本次DECCA3E0时可恢复，后续组合安装不得覆盖；详情见deployment-v0322-2026-10-19.md。
 3. 后续优先核对RConnect隔离组合与真实大场景/战斗；本轮单模组实测不代替联机门槛。保留D29严格等价于D28的视觉目标、D22记录隔离、D24/D25地板与念力守卫，不减少刷新。
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
@@ -129,7 +129,7 @@
 
 - 本轮入口：`knowledge/experiments/2026-10-15-wall-bright-option.md`、D27、`build/wall-options/README.md`；最终指纹/图像/日志在wall-options-v0311-20261015。D26旧记录仍留原址。SDK在本区 `mods/Sandevistan/build/tools/`，仅只读使用。
 
-- 最新发布：state/deployment-v0311-2026-10-15.md与state/deployment-v0311/；此前v0301回执是历史。当前宿主为ModLoader加载链；正式检查沿用pfe-modsettings-rv-deploy-前缀及-nodebug，独立存储。部署前指纹抄录与探针心跳等待不足已修正并保留记录，均未替换安装；最终生产字节与原生启动通过。
+- 最新发布：state/deployment-v0322-2026-10-19.md与state/deployment-v0322/；此前v0311等回执是历史。准确安装DECCA3E0…C4A0B10CA，正式路径新版初始化、设置注册和tick1/181/361通过，单模组回退备份及限制见回执。
 - 新候选：2026-09-20-current-soft-candidate.md / current-soft-v0290/ / D25。新SoftHarness.as与motion-tests/README.md列完整命令，--checks专项、soft-medium/soft-wide、run-game和bench-game --soft。
 - 原调查：2026-09-20-current-motion-investigation.md / current-motion-20260920/。证实三帧+次帧约10Hz、只提频会饿死显示、max硬钳制台阶、角点误写亮点。全图2.5px成本高，四点积分收益小。
 - 既有classic修复：2026-09-19-classic-wall-seam-fix.md / classic-seams-v0282/ / D24；部署2026-09-19-v0282-deployment.md。D22/D23旧报告与念力交接见journal。

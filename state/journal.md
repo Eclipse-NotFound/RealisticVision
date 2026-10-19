@@ -1,3 +1,10 @@
+## 2026-10-19 — v0.32.2准确生产包已部署
+
+- 用户明确要求部署，并确认“窗口已空出，继续部署”；13:27:40执行冻结脚本。准确安装v0.32.2-frame-performance，37,760B，SHA256 DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA。未重编译HEAD，authority与阶梯WIP保留。
+- 独占备份build/backups/before-frame-performance-20261019-132740-314f74/RealisticVisionMod.before.swf为旧D29准确指纹。18项宿主/清单/配置/其它模组指纹前后相同，唯一隐藏实例新版init、ModSettings注册、tick1/181/361通过，脚本退出0。PID93512已结束、描述符删除，窗口已交回RConnect。
+- 沿用55项逻辑、192组位图、32组原生图及20项设置验证。四场景平均RV更新加绘制减少5.6%–14.2%，classic最大值243→266ms，长帧仍在；不解释为完整FPS或卡顿全解。用户保存并正常重启生效。
+- 回执state/deployment-v0322-2026-10-19.md及state/deployment-v0322/。全局台账已追加最终补测和部署索引，旧待测行留历史。RConnect后续组合部署已告知新指纹，需保留本次性能修复并重新验收；本轮无待跑AIR。
+
 ## 2026-10-19 — v0.32.2部署预检通过，等待启动窗口
 
 用户明确要求部署最终改进版本，已完成准确生产包/源码/原验收证据及18项保护指纹核对；prepare成功，没有替换release或启动AIR。新脚本定向备份并替换RV，正式路径独立存储检查失败会自动恢复D29。向RConnect协调约一分钟窗口的三次消息均因自动审批服务模型容量不足未执行，RConnect仍在测试，已请用户协助确认窗口。部署许可已充分，不需重问；取得窗口和6GiB条件后仅执行deploy。记录state/deployment-v0322-2026-10-19.md，工具build/frame-performance/deploy.py。
