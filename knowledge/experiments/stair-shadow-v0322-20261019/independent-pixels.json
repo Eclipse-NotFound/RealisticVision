@@ -1,0 +1,458 @@
+{
+  "capture": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\stair-shadow-output\\reproduction-isolation",
+  "fixture": "native-concrete-staircase-dec-plain-and-background-suffix",
+  "result_sha256": "f22fd3f0cfd267c8c7c0d222771dd53c5f9f6aa8a68269012fb65c605958e5c5",
+  "method": "native tile heights plus terrain alpha; compare full rendered images",
+  "checks": [
+    {
+      "name": "AIR capture has no failing assertions",
+      "ok": true
+    },
+    {
+      "name": "off lower-classic changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "off lower-classic changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "off lower-classic cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "off upper-classic changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "off upper-classic changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "off upper-classic cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "off lower-current changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "off lower-current changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "off lower-current cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "off upper-current changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "off upper-current changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "off upper-current cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "on lower-classic changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "on lower-classic changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "on lower-classic cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "on upper-classic changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "on upper-classic changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "on upper-classic cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "on lower-current changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "on lower-current changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "on lower-current cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "on upper-current changed_outside_cut_air",
+      "ok": true
+    },
+    {
+      "name": "on upper-current changed_material_pixels",
+      "ok": true
+    },
+    {
+      "name": "on upper-current cut_air_mismatch_to_original_fog",
+      "ok": false
+    },
+    {
+      "name": "at least one captured regression is repaired",
+      "ok": true
+    }
+  ],
+  "isolation_checks": [
+    {
+      "name": "off lower-classic no overlay contribution in cut-away air",
+      "ok": true
+    },
+    {
+      "name": "off upper-classic no overlay contribution in cut-away air",
+      "ok": true
+    },
+    {
+      "name": "off lower-current no overlay contribution in cut-away air",
+      "ok": true
+    },
+    {
+      "name": "off upper-current no overlay contribution in cut-away air",
+      "ok": true
+    },
+    {
+      "name": "on lower-classic no overlay contribution in cut-away air",
+      "ok": false
+    },
+    {
+      "name": "on upper-classic no overlay contribution in cut-away air",
+      "ok": false
+    },
+    {
+      "name": "on lower-current no overlay contribution in cut-away air",
+      "ok": false
+    },
+    {
+      "name": "on upper-current no overlay contribution in cut-away air",
+      "ok": false
+    }
+  ],
+  "pairs": [
+    {
+      "variant": "off",
+      "mode": "classic",
+      "position": "lower",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1814,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 28,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 28
+      },
+      "residual_bbox": [
+        622,
+        680,
+        639,
+        697
+      ],
+      "residual_distance_to_physical_top": [
+        13,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        18.0
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOff-lower-classic-fog.png": "089380b398f8fb2b4d5ae7daf93bdf60a8aa29b6444c29331087978dfc50de4a",
+        "off-lower-classic-fog.png": "4733efe0396c1352fa02d91197c5704d9dac799c952b2c23bd23c244c981a018",
+        "off-lower-classic-without-helper.png": "e599419265c6c160316eb5051eb21225f3e9344678ff0d18fb8d9df1af46350d",
+        "off-lower-classic-masked-base-only.png": "4733efe0396c1352fa02d91197c5704d9dac799c952b2c23bd23c244c981a018"
+      },
+      "cut_air_overlay_mismatch": 0,
+      "cut_air_overlay_max_delta": 0
+    },
+    {
+      "variant": "off",
+      "mode": "classic",
+      "position": "upper",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1855,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 60,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 60
+      },
+      "residual_bbox": [
+        622,
+        680,
+        639,
+        699
+      ],
+      "residual_distance_to_physical_top": [
+        11,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        18.0
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOff-upper-classic-fog.png": "e4b1755481216a8080745d8a1cc7d86d95b2555f2d6d57fb2ad385445c24b392",
+        "off-upper-classic-fog.png": "346a8870f5c44fa3965b863c00a270dbf40305cc2bb950f63065a81a5a5e524f",
+        "off-upper-classic-without-helper.png": "aa425b8b0e49591725ed48524c5f98372f6ef18811ae30e2c24c7a6774bfa310",
+        "off-upper-classic-masked-base-only.png": "346a8870f5c44fa3965b863c00a270dbf40305cc2bb950f63065a81a5a5e524f"
+      },
+      "cut_air_overlay_mismatch": 0,
+      "cut_air_overlay_max_delta": 0
+    },
+    {
+      "variant": "off",
+      "mode": "current",
+      "position": "lower",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1844,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 30,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 30
+      },
+      "residual_bbox": [
+        622,
+        680,
+        639,
+        699
+      ],
+      "residual_distance_to_physical_top": [
+        11,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        18.0
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOff-lower-current-fog.png": "c547647c0516480ede171dda1ae6df9646cc0e8701894b2ee49bd122c6764860",
+        "off-lower-current-fog.png": "a321f626e2e6086a9e68ce13f86e826d21c64330b32be46e6e152dd754353243",
+        "off-lower-current-without-helper.png": "14036fd484afca94e5cc930a2eece6a209d684b3df78f8517061b579507d22c2",
+        "off-lower-current-masked-base-only.png": "a321f626e2e6086a9e68ce13f86e826d21c64330b32be46e6e152dd754353243"
+      },
+      "cut_air_overlay_mismatch": 0,
+      "cut_air_overlay_max_delta": 0
+    },
+    {
+      "variant": "off",
+      "mode": "current",
+      "position": "upper",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1855,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 60,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 60
+      },
+      "residual_bbox": [
+        622,
+        680,
+        639,
+        699
+      ],
+      "residual_distance_to_physical_top": [
+        11,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        18.0
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOff-upper-current-fog.png": "9e0d22075fb683c84636d33b5010034255a5e3a47a0eeba1bc950bab8f06c96c",
+        "off-upper-current-fog.png": "69196a5a7b47b356a4d71182081fab2d8d102a907b2cca03e8817eb4f042c229",
+        "off-upper-current-without-helper.png": "b29798aaf13b51cf69461c874c6915426bad28fd5de356e0e5ef08007fbf0a3f",
+        "off-upper-current-masked-base-only.png": "69196a5a7b47b356a4d71182081fab2d8d102a907b2cca03e8817eb4f042c229"
+      },
+      "cut_air_overlay_mismatch": 0,
+      "cut_air_overlay_max_delta": 0
+    },
+    {
+      "variant": "on",
+      "mode": "classic",
+      "position": "lower",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1805,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 50,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 48,
+        "1": 2
+      },
+      "residual_bbox": [
+        562,
+        680,
+        639,
+        706
+      ],
+      "residual_distance_to_physical_top": [
+        4,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        15.297058540778355
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOn-lower-classic-fog.png": "2051ff08d825022827dd54e235eb76181b55ca612704e802433d63d30db7bf34",
+        "on-lower-classic-fog.png": "bbad0637a97419e991a7da97a336c92f4af7254f3629a035de750ecb91f49ba8",
+        "on-lower-classic-without-helper.png": "e599419265c6c160316eb5051eb21225f3e9344678ff0d18fb8d9df1af46350d",
+        "on-lower-classic-masked-base-only.png": "a6adac8fc78fb25ab4066672b9e489cf28c0b5a93ace1cdc679b70d88625112d"
+      },
+      "cut_air_overlay_mismatch": 34,
+      "cut_air_overlay_max_delta": 1
+    },
+    {
+      "variant": "on",
+      "mode": "classic",
+      "position": "upper",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1840,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 120,
+      "max_air_delta_to_original_fog": 2,
+      "signed_air_deltas": {
+        "-2": 2,
+        "-1": 118
+      },
+      "residual_bbox": [
+        562,
+        680,
+        639,
+        709
+      ],
+      "residual_distance_to_physical_top": [
+        1,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        15.297058540778355
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOn-upper-classic-fog.png": "1569ce1b214042e6773fec1f4a3e6aaa99584dbd2901d014753b2300c0ce6e4d",
+        "on-upper-classic-fog.png": "8fdde005a59bb3469ef080de98b42cc4b8abada915d0bbd7ed21039094127f92",
+        "on-upper-classic-without-helper.png": "aa425b8b0e49591725ed48524c5f98372f6ef18811ae30e2c24c7a6774bfa310",
+        "on-upper-classic-masked-base-only.png": "30f7411a157196ceaf5458d7977effb1b03f5719a5702694a37a81c859c2f4d0"
+      },
+      "cut_air_overlay_mismatch": 70,
+      "cut_air_overlay_max_delta": 1
+    },
+    {
+      "variant": "on",
+      "mode": "current",
+      "position": "lower",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1835,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 52,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 52
+      },
+      "residual_bbox": [
+        562,
+        680,
+        639,
+        708
+      ],
+      "residual_distance_to_physical_top": [
+        2,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        15.297058540778355
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOn-lower-current-fog.png": "48cef729ff89c095f64bc797f96232ae2f5fc78beb30391a5976ddc37fc1303a",
+        "on-lower-current-fog.png": "184c7d105eaae636c0f5cb6cc5521a22fc422e633fa6915ba1784ad23a5017d4",
+        "on-lower-current-without-helper.png": "14036fd484afca94e5cc930a2eece6a209d684b3df78f8517061b579507d22c2",
+        "on-lower-current-masked-base-only.png": "94cefd6873e07e8ff950005f5b73d17a03166566179fd0291ceb070848320a88"
+      },
+      "cut_air_overlay_mismatch": 34,
+      "cut_air_overlay_max_delta": 1
+    },
+    {
+      "variant": "on",
+      "mode": "current",
+      "position": "upper",
+      "allowed_air_pixels": 2340,
+      "changed_pixels": 1840,
+      "changed_outside_cut_air": 0,
+      "changed_material_pixels": 0,
+      "cut_air_mismatch_to_original_fog": 120,
+      "max_air_delta_to_original_fog": 1,
+      "signed_air_deltas": {
+        "-1": 120
+      },
+      "residual_bbox": [
+        562,
+        680,
+        639,
+        709
+      ],
+      "residual_distance_to_physical_top": [
+        1,
+        30
+      ],
+      "residual_distance_to_material": [
+        1.0,
+        15.297058540778355
+      ],
+      "old_black_air": 500,
+      "new_black_air": 0,
+      "input_sha256": {
+        "oldOn-upper-current-fog.png": "ecb80246ef299edb71f139770c20325fe77848afb7f45bc63ee38704285da759",
+        "on-upper-current-fog.png": "141b1928da5cc1d56331c246467ecf3ce43cdd6bf3c1a0718b8fea236b0a926e",
+        "on-upper-current-without-helper.png": "b29798aaf13b51cf69461c874c6915426bad28fd5de356e0e5ef08007fbf0a3f",
+        "on-upper-current-masked-base-only.png": "c5f9d409b983ab21cb1620451c5e40c651c14c717cf7cf0f8ae2c34414ca4a9c"
+      },
+      "cut_air_overlay_mismatch": 70,
+      "cut_air_overlay_max_delta": 1
+    }
+  ],
+  "passed": 18,
+  "failed": 8,
+  "isolation_passed": 4,
+  "isolation_failed": 4
+}

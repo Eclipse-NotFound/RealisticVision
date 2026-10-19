@@ -1,0 +1,12 @@
+[RVision] init ok enabled=true
+PASS settings page has eight controls
+PASS installed hotkey page retained
+PASS wall option is a default-off checkbox
+PASS on preference loaded in second process
+PASS current rendering mode retained
+PASS wall option responds immediately
+PASS wall preference saved immediately
+PASS classic mode preserves wall preference
+PASS current mode preserves wall preference
+PASS mode hotkey remains F12 by default
+INSTALLED OPTIONS COMPLETE passed=10 restoring=true

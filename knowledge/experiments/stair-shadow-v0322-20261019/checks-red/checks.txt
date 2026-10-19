@@ -1,0 +1,82 @@
+FAIL cut=1 bright=false light=1 air stays original, changed=800 black=0
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=1 material notch remains repaired
+
+FAIL cut=2 bright=false light=1 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=2 material notch remains repaired
+
+FAIL cut=3 bright=false light=1 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=3 material notch remains repaired
+
+FAIL cut=1 bright=false light=0.35 air stays original, changed=800 black=0
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=1 material notch remains repaired
+
+FAIL cut=2 bright=false light=0.35 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=2 material notch remains repaired
+
+FAIL cut=3 bright=false light=0.35 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=3 material notch remains repaired
+
+FAIL cut=1 bright=true light=1 air stays original, changed=800 black=0
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=1 material notch remains repaired
+
+FAIL cut=2 bright=true light=1 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=2 material notch remains repaired
+
+FAIL cut=3 bright=true light=1 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=3 material notch remains repaired
+
+FAIL cut=1 bright=true light=0.35 air stays original, changed=800 black=0
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=1 material notch remains repaired
+
+FAIL cut=2 bright=true light=0.35 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=2 material notch remains repaired
+
+FAIL cut=3 bright=true light=0.35 air stays original, changed=1600 black=800
+
+PASS distant inner field not changed by contour correction
+
+PASS cut=3 material notch remains repaired
+
+PASS height change detected at fixed camera
+
+PASS incremental height change equals clean rebuild
+
+PASS native nonblocking stairs keep stable output
+
+PASS display correction never writes native opacity
+
+STAIR COMPLETE passed=28 failures=12
+

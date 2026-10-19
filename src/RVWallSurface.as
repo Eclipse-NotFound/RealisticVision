@@ -383,7 +383,11 @@ package {
          // No brightness threshold: dark texture is still solid material.
          // Retaining nonzero alpha also avoids puncturing antialiased rock edges.
          if((pixels[x-area.x+(y-area.y)*w]>>>24)>0)return 1;
-         return heights[int(x/CELL)+1+(int(y/CELL)+1)*(cols+2)]>0?0:2;
+         // A partial tile can still be opaque (e.g. native C;F decoding).
+         // Its cut-away top is open space, not a material notch. The contour
+         // field's zero-valued filter halo must not replace that original fog.
+         var h:int=heights[int(x/CELL)+1+(int(y/CELL)+1)*(cols+2)];
+         return h>0 && y%CELL>=CELL-h?0:2;
       }
 
       private function rebuildClip(loc:*,target:Shape=null):void {

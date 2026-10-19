@@ -1,0 +1,620 @@
+ModLoader[boot_start] v2 run=run_1792387821182_998659
+
+ModLoader[requested_WallSurfaceProbe] line 1
+
+ModLoader[boot] v2 col=2 requested=1
+
+ModLoader[ok_WallSurfaceProbe] init
+
+1115 Интерфейс
+
+2340 Game init
+
+SURFACE GAME newGame
+
+1861 Персонаж
+
+9 Местность
+
+1320 Создание местности
+
+false
+
+910 Вход в местность
+
+1709 Создание местности
+
+1179 Вход в местность
+
+PASS native decoded stair 8 physical and opacity flags
+
+PASS native decoded stair 9 physical and opacity flags
+
+PASS native decoded stair 10 physical and opacity flags
+
+PASS native decoded stair 11 physical and opacity flags
+
+PASS native decoded stair 12 physical and opacity flags
+
+PASS native decoded stair 13 physical and opacity flags
+
+PASS native decoded stair 14 physical and opacity flags
+
+PASS native decoded stair 15 physical and opacity flags
+
+FILE terrain.png
+
+FILE terrain-alpha.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+ROUTE START oldOff classic 0
+
+PASS oldOff classic route 0 native light unchanged
+
+ROUTE UPDATE oldOff classic 0 ms=338
+
+ROUTE START oldOff classic 1
+
+PASS oldOff classic route 1 native light unchanged
+
+ROUTE UPDATE oldOff classic 1 ms=282
+
+ROUTE START oldOff classic 2
+
+PASS oldOff classic route 2 native light unchanged
+
+ROUTE UPDATE oldOff classic 2 ms=412
+
+ROUTE START oldOff classic 3
+
+PASS oldOff classic route 3 native light unchanged
+
+ROUTE UPDATE oldOff classic 3 ms=344
+
+FILE oldOff-lower-classic-fog.png
+
+FILE oldOff-lower-classic-base.png
+
+FILE oldOff-lower-classic-masked-base-only.png
+
+FILE oldOff-lower-classic-without-helper.png
+
+FILE oldOff-lower-classic-native.png
+
+ROUTE START oldOff classic 4
+
+PASS oldOff classic route 4 native light unchanged
+
+ROUTE UPDATE oldOff classic 4 ms=405
+
+ROUTE START oldOff classic 5
+
+PASS oldOff classic route 5 native light unchanged
+
+ROUTE UPDATE oldOff classic 5 ms=763
+
+FILE oldOff-upper-classic-fog.png
+
+FILE oldOff-upper-classic-base.png
+
+FILE oldOff-upper-classic-masked-base-only.png
+
+FILE oldOff-upper-classic-without-helper.png
+
+FILE oldOff-upper-classic-native.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+ROUTE START oldOff current 0
+
+PASS oldOff current route 0 native light unchanged
+
+ROUTE UPDATE oldOff current 0 ms=291
+
+ROUTE START oldOff current 1
+
+PASS oldOff current route 1 native light unchanged
+
+ROUTE UPDATE oldOff current 1 ms=247
+
+ROUTE START oldOff current 2
+
+PASS oldOff current route 2 native light unchanged
+
+ROUTE UPDATE oldOff current 2 ms=201
+
+ROUTE START oldOff current 3
+
+PASS oldOff current route 3 native light unchanged
+
+ROUTE UPDATE oldOff current 3 ms=289
+
+FILE oldOff-lower-current-fog.png
+
+FILE oldOff-lower-current-base.png
+
+FILE oldOff-lower-current-masked-base-only.png
+
+FILE oldOff-lower-current-without-helper.png
+
+FILE oldOff-lower-current-native.png
+
+ROUTE START oldOff current 4
+
+PASS oldOff current route 4 native light unchanged
+
+ROUTE UPDATE oldOff current 4 ms=280
+
+ROUTE START oldOff current 5
+
+PASS oldOff current route 5 native light unchanged
+
+ROUTE UPDATE oldOff current 5 ms=707
+
+FILE oldOff-upper-current-fog.png
+
+FILE oldOff-upper-current-base.png
+
+FILE oldOff-upper-current-masked-base-only.png
+
+FILE oldOff-upper-current-without-helper.png
+
+FILE oldOff-upper-current-native.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+ROUTE START oldOn classic 0
+
+PASS oldOn classic route 0 native light unchanged
+
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 0 ms=809
+
+ROUTE START oldOn classic 1
+
+PASS oldOn classic route 1 native light unchanged
+
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 1 ms=918
+
+ROUTE START oldOn classic 2
+
+PASS oldOn classic route 2 native light unchanged
+
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 2 ms=767
+
+ROUTE START oldOn classic 3
+
+PASS oldOn classic route 3 native light unchanged
+
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 3 ms=995
+
+FILE oldOn-lower-classic-fog.png
+
+FILE oldOn-lower-classic-base.png
+
+FILE oldOn-lower-classic-masked-base-only.png
+
+FILE oldOn-lower-classic-without-helper.png
+
+FILE oldOn-lower-classic-native.png
+
+ROUTE START oldOn classic 4
+
+PASS oldOn classic route 4 native light unchanged
+
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 4 ms=1579
+
+ROUTE START oldOn classic 5
+
+PASS oldOn classic route 5 native light unchanged
+
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn classic 5 ms=1244
+
+FILE oldOn-upper-classic-fog.png
+
+FILE oldOn-upper-classic-base.png
+
+FILE oldOn-upper-classic-masked-base-only.png
+
+FILE oldOn-upper-classic-without-helper.png
+
+FILE oldOn-upper-classic-native.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+ROUTE START oldOn current 0
+
+PASS oldOn current route 0 native light unchanged
+
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 0 ms=1193
+
+ROUTE START oldOn current 1
+
+PASS oldOn current route 1 native light unchanged
+
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 1 ms=801
+
+ROUTE START oldOn current 2
+
+PASS oldOn current route 2 native light unchanged
+
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 2 ms=642
+
+ROUTE START oldOn current 3
+
+PASS oldOn current route 3 native light unchanged
+
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 3 ms=897
+
+FILE oldOn-lower-current-fog.png
+
+FILE oldOn-lower-current-base.png
+
+FILE oldOn-lower-current-masked-base-only.png
+
+FILE oldOn-lower-current-without-helper.png
+
+FILE oldOn-lower-current-native.png
+
+ROUTE START oldOn current 4
+
+PASS oldOn current route 4 native light unchanged
+
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 4 ms=2057
+
+ROUTE START oldOn current 5
+
+PASS oldOn current route 5 native light unchanged
+
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE oldOn current 5 ms=717
+
+FILE oldOn-upper-current-fog.png
+
+FILE oldOn-upper-current-base.png
+
+FILE oldOn-upper-current-masked-base-only.png
+
+FILE oldOn-upper-current-without-helper.png
+
+FILE oldOn-upper-current-native.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+ROUTE START off classic 0
+
+PASS off classic route 0 native light unchanged
+
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 0 ms=882
+
+CONTOUR rebuilds=1 fields=1 patches=29
+
+ROUTE START off classic 1
+
+PASS off classic route 1 native light unchanged
+
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 1 ms=618
+
+CONTOUR rebuilds=2 fields=11 patches=29
+
+ROUTE START off classic 2
+
+PASS off classic route 2 native light unchanged
+
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 2 ms=280
+
+CONTOUR rebuilds=3 fields=21 patches=28
+
+ROUTE START off classic 3
+
+PASS off classic route 3 native light unchanged
+
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 3 ms=267
+
+CONTOUR rebuilds=4 fields=31 patches=32
+
+FILE off-lower-classic-fog.png
+
+FILE off-lower-classic-base.png
+
+FILE off-lower-classic-masked-base-only.png
+
+FILE off-lower-classic-without-helper.png
+
+FILE off-lower-classic-native.png
+
+PASS classic lower-classic live toggle leaves game and sight state unchanged
+
+ROUTE START off classic 4
+
+PASS off classic route 4 native light unchanged
+
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 4 ms=1048
+
+CONTOUR rebuilds=7 fields=44 patches=32
+
+ROUTE START off classic 5
+
+PASS off classic route 5 native light unchanged
+
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off classic 5 ms=1190
+
+CONTOUR rebuilds=7 fields=54 patches=32
+
+FILE off-upper-classic-fog.png
+
+FILE off-upper-classic-base.png
+
+FILE off-upper-classic-masked-base-only.png
+
+FILE off-upper-classic-without-helper.png
+
+FILE off-upper-classic-native.png
+
+PASS classic upper-classic live toggle leaves game and sight state unchanged
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+ROUTE START off current 0
+
+PASS off current route 0 native light unchanged
+
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 0 ms=396
+
+CONTOUR rebuilds=1 fields=10 patches=29
+
+ROUTE START off current 1
+
+PASS off current route 1 native light unchanged
+
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 1 ms=262
+
+CONTOUR rebuilds=2 fields=11 patches=29
+
+ROUTE START off current 2
+
+PASS off current route 2 native light unchanged
+
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 2 ms=231
+
+CONTOUR rebuilds=3 fields=12 patches=28
+
+ROUTE START off current 3
+
+PASS off current route 3 native light unchanged
+
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 3 ms=292
+
+CONTOUR rebuilds=4 fields=22 patches=32
+
+FILE off-lower-current-fog.png
+
+FILE off-lower-current-base.png
+
+FILE off-lower-current-masked-base-only.png
+
+FILE off-lower-current-without-helper.png
+
+FILE off-lower-current-native.png
+
+PASS current lower-current live toggle leaves game and sight state unchanged
+
+ROUTE START off current 4
+
+PASS off current route 4 native light unchanged
+
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 4 ms=238
+
+CONTOUR rebuilds=7 fields=35 patches=32
+
+ROUTE START off current 5
+
+PASS off current route 5 native light unchanged
+
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE off current 5 ms=220
+
+CONTOUR rebuilds=7 fields=36 patches=32
+
+FILE off-upper-current-fog.png
+
+FILE off-upper-current-base.png
+
+FILE off-upper-current-masked-base-only.png
+
+FILE off-upper-current-without-helper.png
+
+FILE off-upper-current-native.png
+
+PASS current upper-current live toggle leaves game and sight state unchanged
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+ROUTE START on classic 0
+
+PASS on classic route 0 native light unchanged
+
+PASS classic route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 0 ms=698
+
+ROUTE START on classic 1
+
+PASS on classic route 1 native light unchanged
+
+PASS classic route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 1 ms=867
+
+ROUTE START on classic 2
+
+PASS on classic route 2 native light unchanged
+
+PASS classic route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 2 ms=662
+
+ROUTE START on classic 3
+
+PASS on classic route 3 native light unchanged
+
+PASS classic route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 3 ms=868
+
+FILE on-lower-classic-fog.png
+
+FILE on-lower-classic-base.png
+
+FILE on-lower-classic-masked-base-only.png
+
+FILE on-lower-classic-without-helper.png
+
+FILE on-lower-classic-native.png
+
+ROUTE START on classic 4
+
+PASS on classic route 4 native light unchanged
+
+PASS classic route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 4 ms=1037
+
+ROUTE START on classic 5
+
+PASS on classic route 5 native light unchanged
+
+PASS classic route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on classic 5 ms=791
+
+FILE on-upper-classic-fog.png
+
+FILE on-upper-classic-base.png
+
+FILE on-upper-classic-masked-base-only.png
+
+FILE on-upper-classic-without-helper.png
+
+FILE on-upper-classic-native.png
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+ROUTE START on current 0
+
+PASS on current route 0 native light unchanged
+
+PASS current route 0 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 0 ms=744
+
+ROUTE START on current 1
+
+PASS on current route 1 native light unchanged
+
+PASS current route 1 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 1 ms=563
+
+ROUTE START on current 2
+
+PASS on current route 2 native light unchanged
+
+PASS current route 2 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 2 ms=586
+
+ROUTE START on current 3
+
+PASS on current route 3 native light unchanged
+
+PASS current route 3 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 3 ms=932
+
+FILE on-lower-current-fog.png
+
+FILE on-lower-current-base.png
+
+FILE on-lower-current-masked-base-only.png
+
+FILE on-lower-current-without-helper.png
+
+FILE on-lower-current-native.png
+
+ROUTE START on current 4
+
+PASS on current route 4 native light unchanged
+
+PASS current route 4 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 4 ms=827
+
+ROUTE START on current 5
+
+PASS on current route 5 native light unchanged
+
+PASS current route 5 FOV/exploration/enemy visibility identical to installed lineage
+
+ROUTE UPDATE on current 5 ms=640
+
+FILE on-upper-current-fog.png
+
+FILE on-upper-current-base.png
+
+FILE on-upper-current-masked-base-only.png
+
+FILE on-upper-current-without-helper.png
+
+FILE on-upper-current-native.png
+
+FILE result.json
+
+SURFACE GAME COMPLETE checks=96
+
