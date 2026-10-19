@@ -80,6 +80,8 @@
 
 ## 4. 正在进行与停点
 
+- D31最终补测报告已提交fc06aed；全局测试台账的补测索引追加两次因自动审批服务容量不足未执行，保留原待测索引及本地完整结果。恢复服务后仅需补记索引，不重跑测试、不重新部署。
+
 - D31 final-large-trial已完成并归档：PID60112退出0、test.xml删除。16次环境采样可用内存6.093–8.113GiB，未观察到其它AIR/Java，不能排除所有后台负载。32组final-large-verify已成功；profile/small/live仍取消。本轮已交回窗口，没有待跑的AIR；禁止覆盖冻结证据。
 
 - D29准确生产源与已部署字节在build/wall-performance-output/candidate；脚本入口build/wall-performance/README.md。禁止用含authority的HEAD整包部署，禁止重建覆盖冻结候选。D28旧候选/实验保留。
