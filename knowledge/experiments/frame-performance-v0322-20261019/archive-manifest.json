@@ -1,0 +1,314 @@
+[
+  {
+    "source": "build\\frame-performance-output\\inputs.json",
+    "source_sha256": "83db3c7a6d76eb6fa7e7b4dda9aa2e30ca09454cb94bdb286fc60461e7dedddf",
+    "archive": "inputs.json",
+    "archive_sha256": "e856928ee40360a42c4b216b6cb45be26662c10ea7f54ef3bdec1bee8cab7b7b"
+  },
+  {
+    "source": "build\\frame-performance-output\\analysis-initial.json",
+    "source_sha256": "1d20913c1bbbc5e0a3c3f43f88f550dc32f410045059ca7a2332d3e7caf2f3d7",
+    "archive": "analysis-initial.json",
+    "archive_sha256": "2296bb9c52d62cb4054a5be4e11acc3fe3f3aef35139fde5afe5adfa2f3d7839"
+  },
+  {
+    "source": "build\\frame-performance-output\\window-01-preflight.json",
+    "source_sha256": "80e7043f4bb014299f99778d01ac7dea1da4314fa9af06816cdf7d97f796c2d4",
+    "archive": "window-01-preflight.json",
+    "archive_sha256": "34f8446ca127c3c50fee74445b38e9321e59dd856db9077fb8f3c8c534998fd5"
+  },
+  {
+    "source": "build\\frame-performance-output\\window-01-not-started.json",
+    "source_sha256": "5e09466aa37e726d9d7ebfcf826fb8e9c9c93ee3aa7bfcc010a6f28e35a606f0",
+    "archive": "window-01-not-started.json",
+    "archive_sha256": "b3c78dd0336d1c9e717e5c51be8c7efc39c51ee408068408da3458eccdf0b87b"
+  },
+  {
+    "source": "build\\frame-performance-output\\profile-03\\evidence\\result.json",
+    "source_sha256": "5812980cc67b8f013391a737bd9a4ae3b99bf06b8231e1749fb6608e48049ae2",
+    "archive": "profile-03\\evidence\\result.json",
+    "archive_sha256": "ed2b139af115c7ecd93778fb3a17451548b5f7b26f78c0912fb6857f25069efd"
+  },
+  {
+    "source": "build\\frame-performance-output\\profile-03\\last-run.json",
+    "source_sha256": "0228d55b88596b066dc193a9440d9f3b12d86eca18b572794db914382ca90972",
+    "archive": "profile-03\\last-run.json",
+    "archive_sha256": "59503b170589c13b3c7960064ac3d1ce95f59038d9815e39d15b339ae0ef3270"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-01\\evidence\\result.json",
+    "source_sha256": "69e7c891896c5cfc14144392d2a36170a316f0ff075a86206f47e2ca1b0291ff",
+    "archive": "trial-01\\evidence\\result.json",
+    "archive_sha256": "5cbf9afe7f5848735464f3c4416b9ae0b5bc744fd4f59a82b66ac3763cc84671"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-01\\last-run.json",
+    "source_sha256": "18546cba383c34e4f8140b454cf73298f27c7a049e07cac7a50d4d11877f0fdd",
+    "archive": "trial-01\\last-run.json",
+    "archive_sha256": "69357b82e7977f69d483a6753896c98f0b8f18484e285597aaf89df399da7801"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-02\\evidence\\result.json",
+    "source_sha256": "aa1e6aa8e68bf7b14da1eea3465bc2ceca96735deeaa3a09306f2b1f15368935",
+    "archive": "trial-02\\evidence\\result.json",
+    "archive_sha256": "c96d021afd7f05220254b97af09a850f2af3e86a3978f927cd8219266841de8e"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-02\\last-run.json",
+    "source_sha256": "4f6fdc402c193921c462f11a8563dfa06e5b544a409b7b48095638746b3553cd",
+    "archive": "trial-02\\last-run.json",
+    "archive_sha256": "e641fc3492055fa1872d94ec8e280abff1e1c408a7f3119504014f6e66fd95a5"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-03\\evidence\\result.json",
+    "source_sha256": "f7968b8ff642d0fb627d27b72efc4f155b45211ca36b762b09388dc024a970f0",
+    "archive": "trial-03\\evidence\\result.json",
+    "archive_sha256": "038ab508ff4fc0911a13bdaefd84dd1da18011a7222ed33358cba078ab2fc82c"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-03\\last-run.json",
+    "source_sha256": "b08cfbe4c27760918a8295f100a3bceae9aaa6ecc11a01cc410885e24a082505",
+    "archive": "trial-03\\last-run.json",
+    "archive_sha256": "8ea3452a6ca677612d0f4eef48960c116160004965ea2aec63db68ab4bd15af7"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-04\\evidence\\result.json",
+    "source_sha256": "a614c147b867f2d45ae39cc493b2b71c37ef0e28dfa199b27fe39245b7499cba",
+    "archive": "trial-04\\evidence\\result.json",
+    "archive_sha256": "f7200f65b436cde10d3723f768c3ff6d2fab42374d50783b3315ac77d1b0612e"
+  },
+  {
+    "source": "build\\frame-performance-output\\trial-04\\last-run.json",
+    "source_sha256": "a0265009bdd76796829a87fbf0f5566af54339d9892fa5920438e590de7e036c",
+    "archive": "trial-04\\last-run.json",
+    "archive_sha256": "0c17b40f1e0329ee56b0cc5e936f8bd42cf144b6b66205a0fa9cd5f78ed6511d"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-final-verify\\evidence\\result.json",
+    "source_sha256": "da1f2e07d6bcc983b83338608a3828f104f5c7707bf752eedbc908b3df1028a6",
+    "archive": "large-final-verify\\evidence\\result.json",
+    "archive_sha256": "aaf4cf3bd9b8868dbf38d638e4103491b25d24045f14b1f37895f8aef4d3a665"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-final-verify\\last-run.json",
+    "source_sha256": "bf8369c0a8ac82ace52480c4bda53986624bdba54a066cabd5b168f7d5e1dc90",
+    "archive": "large-final-verify\\last-run.json",
+    "archive_sha256": "01dee8d273ea7cd4c6c2f9b31066ccfad525401e849eb563d0e343a6a4f8da51"
+  },
+  {
+    "source": "build\\frame-performance-output\\live-final\\evidence\\result.json",
+    "source_sha256": "cbb041ea8ba5dfd0224e75196f010836bbc24b1458df7eb03e02a5c55a104074",
+    "archive": "live-final\\evidence\\result.json",
+    "archive_sha256": "533dd8c2e11dd0cf538659c53815547e70fdbe271da876b321ecc958d5dcfd19"
+  },
+  {
+    "source": "build\\frame-performance-output\\live-final\\last-run.json",
+    "source_sha256": "3c037cf2234370031ef3540b24b8fb28b57c9f1c5c39283c017cd3b0acd0b1c3",
+    "archive": "live-final\\last-run.json",
+    "archive_sha256": "34dfd27986eb6373c25031465c01fc58b1004138f7bd62551eb9f253a9101596"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-view-verify\\build-inputs.json",
+    "source_sha256": "a3755c70c8d04942b8ac21fc8e848e92cac176da8963c59519613d3fbe7e622d",
+    "archive": "large-view-verify\\build-inputs.json",
+    "archive_sha256": "ff73165fcf60d309d830fc173ac220b6b0c26dcfc1a30131efd5c98010ee1d58"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-view-profile\\build-inputs.json",
+    "source_sha256": "2badf511ecaf9e866973150c5d1b1991e78e3d706200c8ce3cc01a341ccdda18",
+    "archive": "large-view-profile\\build-inputs.json",
+    "archive_sha256": "7bd04aa7c345c114e865cbb34b4819590a2f8fe1a81e85ae016ece2c365fb4cb"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-sparse-profile\\build-inputs.json",
+    "source_sha256": "a6a6229e9038df890d3c96327b24d610195dda59a3a50288dfcd63696bf8b1bc",
+    "archive": "large-sparse-profile\\build-inputs.json",
+    "archive_sha256": "4bf78ec4b42c0c807fc44b2e36ec967f3300b481f7ee87920f2ce60b42bbd583"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-sparse-verify\\build-inputs.json",
+    "source_sha256": "6fdec890d7013510318a2125ede50c6018f320b5b3875aa9f4442ae1d9261a16",
+    "archive": "large-sparse-verify\\build-inputs.json",
+    "archive_sha256": "5e196886d99191da3c3170f007b5f09c5474f60b348478233b2d93623be5e06e"
+  },
+  {
+    "source": "build\\frame-performance-output\\large-sparse-trial\\build-inputs.json",
+    "source_sha256": "ab4cc0205d8352ff6974b5dbbafff122f86357d58d0e508ad144facd725a6e51",
+    "archive": "large-sparse-trial\\build-inputs.json",
+    "archive_sha256": "ee5aaf25f0ec753bcdc24849871127d0afc71f354a18d7c3d559aa4b8a9e393e"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-verify\\evidence\\result.json",
+    "source_sha256": "662bc3c341bb9d6582174fc069562460282b1ebd7b81a1c594ec5ed99f31b59d",
+    "archive": "final-large-verify\\evidence\\result.json",
+    "archive_sha256": "5ab6c060e82ec3221ecc28db27efb3c240ac8fc5f3906272063d91a5d72a1430"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-verify\\last-run.json",
+    "source_sha256": "08d778507cff057dfd8bca482c675862bb874b43a2252589927f4559c45a357f",
+    "archive": "final-large-verify\\last-run.json",
+    "archive_sha256": "fdc26b8a55855929b67f97c88f9968e4ce70ca383c5a9e3abbf78105ecebc20b"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-verify\\build-inputs.json",
+    "source_sha256": "95f8a4a7de76227338679faea5ea12d555d69d2367d0f858c61780d0b3e53bd0",
+    "archive": "final-large-verify\\build-inputs.json",
+    "archive_sha256": "8d2fb86bf07e64804465071add53ff736603cde352e86a4c10c22ea81c5418a7"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-verify\\launch-state.json",
+    "source_sha256": "d02b76847cc9b1980b361ca22885fa346cca74eba71cbea0a5fa11a9314bffe9",
+    "archive": "final-large-verify\\launch-state.json",
+    "archive_sha256": "3d44a8bfe0a568fa8ec24188c750060f598185d7db0b9958b56a97d1300de438"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-profile\\build-inputs.json",
+    "source_sha256": "72981bbe076bbbccbb9b6bd6a21288fc45070a2fcd0b7e5ceb7a935cfda4ee60",
+    "archive": "final-large-profile\\build-inputs.json",
+    "archive_sha256": "e0a61870ccb87a2fd20ac71ac0b773e4b4ed758f7b59d6a971381c4dd06af603"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-trial\\build-inputs.json",
+    "source_sha256": "ef152dee4610dcee40b82c42ce9f6a78dd5709b80e3f13face73ef4110fb0a28",
+    "archive": "final-large-trial\\build-inputs.json",
+    "archive_sha256": "1bb800bab86887e03803f0f5c19daf2216050eb367388a763811c56c3e5d2c28"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-live\\build-inputs.json",
+    "source_sha256": "b58f42b89e64d18d65607c86ce2eb2a9100e0f5cbdd933dc7a7c6f6c129ab9f2",
+    "archive": "final-live\\build-inputs.json",
+    "archive_sha256": "45d92db8531490fcfd979746f4a8e21274e6d572e3111ed73362f2c93e407396"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-small-trial\\build-inputs.json",
+    "source_sha256": "316c0e70a4968338fce6a566f2018accb0a0d7730bee5133e10661ac643b33cb",
+    "archive": "final-small-trial\\build-inputs.json",
+    "archive_sha256": "f482b94b296bc5f07b828b93cae06f0cd654ddbbaf4de30fb0486552d73c85f9"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-04\\MaskChecks.txt",
+    "source_sha256": "4a0d9045c6f685356ac1c5da2ff95572b35d0a662b57d988b821e8cc91f93995",
+    "archive": "checks-04\\MaskChecks.txt",
+    "archive_sha256": "a8168e10c8bbeaf3ceda645befd562bb1c04d17ca9cc1a0416bc24bed8ff2f04"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-04\\SightChecks.txt",
+    "source_sha256": "a27609745844bb9d4fa68f0718f653fbff90d3e8a0c48abfd987cba839ed5c3d",
+    "archive": "checks-04\\SightChecks.txt",
+    "archive_sha256": "150cfc917b18fe52581a2a6408c18fcdf1acd4d82f6c345ad210d722f65a89e4"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-04\\SoftHarness.txt",
+    "source_sha256": "ee2fdbc39e09278b9911097e64ef0fb14c4b28116687cb68ae484c69fbb26083",
+    "archive": "checks-04\\SoftHarness.txt",
+    "archive_sha256": "3c1722be4c79a983f560ad57dd5c90cecace67fa7b10727c9b853d7962402772"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-04\\SharedExplorationHarness.txt",
+    "source_sha256": "84758c42ad45b51fb9e4375a7e80e3d1816506e37972b57427d56b77491df176",
+    "archive": "checks-04\\SharedExplorationHarness.txt",
+    "archive_sha256": "9856cc5cd2164aff3bf8411a5413d6755a0fe7c9fbfda61b0523c71197ad70db"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-05\\MaskChecks.txt",
+    "source_sha256": "4a0d9045c6f685356ac1c5da2ff95572b35d0a662b57d988b821e8cc91f93995",
+    "archive": "checks-05\\MaskChecks.txt",
+    "archive_sha256": "a8168e10c8bbeaf3ceda645befd562bb1c04d17ca9cc1a0416bc24bed8ff2f04"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-05\\SightChecks.txt",
+    "source_sha256": "a27609745844bb9d4fa68f0718f653fbff90d3e8a0c48abfd987cba839ed5c3d",
+    "archive": "checks-05\\SightChecks.txt",
+    "archive_sha256": "150cfc917b18fe52581a2a6408c18fcdf1acd4d82f6c345ad210d722f65a89e4"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-05\\SoftHarness.txt",
+    "source_sha256": "ee2fdbc39e09278b9911097e64ef0fb14c4b28116687cb68ae484c69fbb26083",
+    "archive": "checks-05\\SoftHarness.txt",
+    "archive_sha256": "3c1722be4c79a983f560ad57dd5c90cecace67fa7b10727c9b853d7962402772"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-05\\SharedExplorationHarness.txt",
+    "source_sha256": "84758c42ad45b51fb9e4375a7e80e3d1816506e37972b57427d56b77491df176",
+    "archive": "checks-05\\SharedExplorationHarness.txt",
+    "archive_sha256": "9856cc5cd2164aff3bf8411a5413d6755a0fe7c9fbfda61b0523c71197ad70db"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-final\\MaskChecks.txt",
+    "source_sha256": "4a0d9045c6f685356ac1c5da2ff95572b35d0a662b57d988b821e8cc91f93995",
+    "archive": "checks-final\\MaskChecks.txt",
+    "archive_sha256": "a8168e10c8bbeaf3ceda645befd562bb1c04d17ca9cc1a0416bc24bed8ff2f04"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-final\\SightChecks.txt",
+    "source_sha256": "a27609745844bb9d4fa68f0718f653fbff90d3e8a0c48abfd987cba839ed5c3d",
+    "archive": "checks-final\\SightChecks.txt",
+    "archive_sha256": "150cfc917b18fe52581a2a6408c18fcdf1acd4d82f6c345ad210d722f65a89e4"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-final\\SoftHarness.txt",
+    "source_sha256": "ee2fdbc39e09278b9911097e64ef0fb14c4b28116687cb68ae484c69fbb26083",
+    "archive": "checks-final\\SoftHarness.txt",
+    "archive_sha256": "3c1722be4c79a983f560ad57dd5c90cecace67fa7b10727c9b853d7962402772"
+  },
+  {
+    "source": "build\\frame-performance-output\\checks-final\\SharedExplorationHarness.txt",
+    "source_sha256": "84758c42ad45b51fb9e4375a7e80e3d1816506e37972b57427d56b77491df176",
+    "archive": "checks-final\\SharedExplorationHarness.txt",
+    "archive_sha256": "9856cc5cd2164aff3bf8411a5413d6755a0fe7c9fbfda61b0523c71197ad70db"
+  },
+  {
+    "source": "build\\frame-performance-output\\viewport-checks-02\\ViewportChecks.txt",
+    "source_sha256": "fda58bfa79b4878d7a1a9e7b4b24a58b5a347f8877583f4674afff3e950ed53d",
+    "archive": "viewport-checks-02\\ViewportChecks.txt",
+    "archive_sha256": "d3737e52c0ca9310b9347a73aff620713a0836b4a010c774b2c7d48f542369f8"
+  },
+  {
+    "source": "build\\frame-performance-output\\viewport-checks-02\\last-run.json",
+    "source_sha256": "62d8238c881db035248a0dd8510e0af2f16a8d7e8fbd9f4537af8a2e038da3c1",
+    "archive": "viewport-checks-02\\last-run.json",
+    "archive_sha256": "ca5fe98095baa50f50d781da9ad55dce5f0a22e042ffd4df25cbe1ae3ba0b47b"
+  },
+  {
+    "source": "build\\frame-performance-output\\viewport-checks-03\\ViewportChecks.txt",
+    "source_sha256": "0150e06494fe2acad576f6d2534d1819528a5bf95e41ca18c44dc09304cd0bdf",
+    "archive": "viewport-checks-03\\ViewportChecks.txt",
+    "archive_sha256": "86c7c337a67f2e83858bb8f97ba05b4c9b3c304d64fef15e0f1b0b9c5af9d9cf"
+  },
+  {
+    "source": "build\\frame-performance-output\\viewport-checks-03\\last-run.json",
+    "source_sha256": "bc37cdf41ffa78729b9f595a64db27c00981be1405cb973f6b5089400eaa1be3",
+    "archive": "viewport-checks-03\\last-run.json",
+    "archive_sha256": "58d574d2612a44a5dd02a2a1cd838776af0cb7686354f10ffe8fa4a7466b8b32"
+  },
+  {
+    "source": "build\\frame-performance-output\\production\\source-manifest.json",
+    "source_sha256": "c0805d5b45c3d080dfa38d941073b56a9ba6486f73f6a980677414e86f3c126d",
+    "archive": "production\\source-manifest.json",
+    "archive_sha256": "f9e3247abb2e181fdd2d0508c8edd5f2309e0633312ce73b8a9333bb615ec01d"
+  },
+  {
+    "source": "build\\frame-performance-output\\production\\options\\result.json",
+    "source_sha256": "0c95cbc88ac8b17809da24f47522b6b1fd9ce1ffc6c57a20643912206d5720e4",
+    "archive": "production\\options\\result.json",
+    "archive_sha256": "898af19c802e3500ace642e51eac81c4512c40ce09c2bcba921fcf1892646f18"
+  },
+  {
+    "source": "build\\frame-performance-output\\production\\options\\process-1.txt",
+    "source_sha256": "8b1d8c0e7d9c4816b2130d27037e16c8ae1013407f411940ffc8d1c2cf0bfa3b",
+    "archive": "production\\options\\process-1.txt",
+    "archive_sha256": "112e0e3e832fd2b76cc26ffd6b9f9c065532f5cbcb54eaa3e53fcd543cfff868"
+  },
+  {
+    "source": "build\\frame-performance-output\\production\\options\\process-2.txt",
+    "source_sha256": "4ab07ff3ead474ad63c2f881864ecc623e1470d8e04270e8e02480dff7fc7158",
+    "archive": "production\\options\\process-2.txt",
+    "archive_sha256": "d1d425d1fbe51616adc7990bccd0f551c0ad16b057c32b6ae7d759028bb4576c"
+  },
+  {
+    "source": "build\\frame-performance-output\\production\\options\\runtime.txt",
+    "source_sha256": "7a8c6438133169701d8b90f6d249176858d24028e9c30adb3a6ced7b4af71e80",
+    "archive": "production\\options\\runtime.txt",
+    "archive_sha256": "7a8c6438133169701d8b90f6d249176858d24028e9c30adb3a6ced7b4af71e80"
+  }
+]

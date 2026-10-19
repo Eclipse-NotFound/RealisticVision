@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-19T03:05:39.485990+00:00",
+  "available_bytes": 6430617600,
+  "minimum_available_bytes": 6442450944,
+  "processes": [
+    {
+      "pid": 39672,
+      "name": "adl64.exe"
+    },
+    {
+      "pid": 84304,
+      "name": "adl64.exe"
+    }
+  ],
+  "air_started": false,
+  "outcome": "preflight_memory_below_6GiB",
+  "after_observation": "CIM confirmed CS runtime PID84304 created at 11:05:07; no candidate AIR was started."
+}

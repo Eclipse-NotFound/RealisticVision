@@ -1,0 +1,5 @@
+PASS viewport group current bright=false tested=48 cumulativeFailures=0
+PASS viewport group current bright=true tested=48 cumulativeFailures=0
+PASS viewport group classic bright=false tested=48 cumulativeFailures=0
+PASS viewport group classic bright=true tested=48 cumulativeFailures=0
+VIEWPORT COMPLETE comparisons=192 failures=0

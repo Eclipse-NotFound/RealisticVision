@@ -50,6 +50,12 @@ package
     */
    public class RealisticVisionMod extends Sprite
    {
+      // Lazily classify only tiles actually queried by units. A new immutable
+      // sight snapshot invalidates all summaries, including stationary changes.
+      private var wallViewBounds:Rectangle;
+      private var wallViewOwner:Location;
+      private var classifiedSight:Vector.<uint>;
+      private var sightClasses:Vector.<int>;
       // ---- 默认配置（可被 config.txt 覆盖）----
       private var cfgEnabled:Boolean = true;
       private var keybinds:RVKeybinds = new RVKeybinds();
@@ -66,7 +72,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.32.1-wall-performance";
+      private static const VERSION:String = "v0.32.2-frame-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -903,7 +909,9 @@ package
       private function resetOff():void
       {
          this.wallSurface.reset();
+         this.wallViewBounds = null; this.wallViewOwner = null;
          this.curLoc = null;
+         this.classifiedSight = null; this.sightClasses = null;
          this.explored = [];
          this.explorationBits = null;
          this.fov = [];
@@ -933,6 +941,8 @@ package
          this.rayLoc = null;
          this.rayBatch = false;
          this.currentSightData = null;
+         this.wallViewBounds = null; this.wallViewOwner = null;
+         this.classifiedSight = null; this.sightClasses = null;
          this.wallGeometryDirty = true;
          this.curLoc = loc;
          this.spaceX = loc.spaceX;
@@ -2075,7 +2085,26 @@ package
       {
          if(this.fogShadow == null) return;
          var self:RealisticVisionMod = this;
-         this.wallSurface.update(this.fogShadow,this.fogBase,w.grafon,loc,this.scenePaintBounds(),
+         var view:Rectangle = this.scenePaintBounds();
+         if(!this.cfgWallBright && (this.spaceX > 48 || this.spaceY > 25) && view.width > 0 && view.height > 0)
+         {
+            // The ordinary paint bounds already include four offscreen tiles.
+            // A further two-tile gutter retains wall geometry while the camera
+            // moves inside it. Terrain, exploration and light still refresh on
+            // every call; the actual fog and logical sight keep their old bounds.
+            // Constant-bright compositing retains its exact original extent:
+            // changing that extent can alter its intermediate raster rounding.
+            if(this.wallViewOwner !== loc || this.wallViewBounds == null || !this.wallViewBounds.containsRect(view))
+            {
+               var left:int = Math.max(0,int(view.left)-2);
+               var top:int = Math.max(0,int(view.top)-2);
+               this.wallViewBounds = new Rectangle(left,top,
+                  Math.min(this.spaceX,view.right+2)-left,Math.min(this.spaceY,view.bottom+2)-top);
+               this.wallViewOwner = loc;
+            }
+            view = this.wallViewBounds;
+         }
+         this.wallSurface.update(this.fogShadow,this.fogBase,w.grafon,loc,view,
             function(tx:int,ty:int):Boolean { return self.memoryExplored(tx+ty*self.spaceX); },
             function(tx:int,ty:int,wx:Number,wy:Number,dir:int):Number { return self.wallEdgeLight(tx,ty,wx,wy,dir); },
             this.cfgWallBright);
@@ -2129,6 +2158,21 @@ package
          var p10:Number = this.sharedLight == null ? a10 : this.personalWallAlpha(tx+1,ty);
          var p01:Number = this.sharedLight == null ? a01 : this.personalWallAlpha(tx,ty+1);
          var p11:Number = this.sharedLight == null ? a11 : this.personalWallAlpha(tx+1,ty+1);
+         // Uniform corners interpolate to the same integer for every sample.
+         // Preserve the tracking path, including its old threshold comparison.
+         if(!trackMask && a00 == a10 && a00 == a01 && a00 == a11
+            && (this.cfgMode != "current" || this.currentSight == null
+               || this.fov[tx+ty*this.spaceX] == FOV_NONE
+               || (p00 == p10 && p00 == p01 && p00 == p11)))
+         {
+            this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
+            this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
+            this.fogCache.fillRect(this.fogCellRect,uint(Math.round(a00))<<24);
+            if(this.cfgMode == "current" && this.currentSight != null)
+               this.currentSight.fillRect(this.fogCellRect,
+                  p00 < MASK_LIT_A && this.fov[tx+ty*this.spaceX] != FOV_NONE ? 0xFFFFFFFF : 0);
+            return false;
+         }
          for(var sy:int = 0; sy < FOG_SUB; sy++)
          {
             var fy:Number = (sy + 0.5) / FOG_SUB;
@@ -2507,15 +2551,60 @@ package
          {
             return 0;
          }
-         // Large scenes snapshot sight only when a visible unit needs it.
-         // Invalidation still happens on every fog/wall change; all units in a
-         // frame share one exact snapshot. Empty and fully hidden areas allocate none.
+         // Start a sight generation only when a visible unit needs it.
+         // Small rooms keep the existing full snapshot; large rooms classify
+         // exact queried tiles lazily. Fog/wall writes invalidate both paths.
          if(this.cfgMode == "current" && this.currentSightData == null && this.currentSight != null
             && (this.spaceX > 48 || this.spaceY > 25))
-            this.currentSightData = this.currentSight.getVector(this.currentSight.rect);
+            // Large maps need only the tiles actually touched by unit bounds.
+            // An empty vector identifies this unchanged logical field. Every
+            // write to currentSight above invalidates it before hideEnemies;
+            // classification and masks run synchronously against that field.
+            this.currentSightData = new Vector.<uint>();
          if(this.cfgMode == "current" && this.currentSightData != null)
          {
-            // 格中心全亮时，单位边角仍可能被挡住；不能直接跳过子格掩膜。
+            // Bounding boxes are tile aligned. Reusing each tile's exact
+            // all-dark/all-visible/mixed summary avoids rescanning overlapping
+            // unit bounds (including multiple units sharing a visual).
+            if(bb[0]>=0 && bb[1]>=0 && bb[2]<this.spaceX && bb[3]<this.spaceY)
+            {
+               if(this.classifiedSight !== this.currentSightData)
+               {
+                  this.classifiedSight = this.currentSightData;
+                  this.sightClasses = new Vector.<int>(this.spaceX*this.spaceY,true);
+               }
+               var combined:int = 0;
+               var data:Vector.<uint> = this.currentSightData;
+               var width:int = this.currentSight.width;
+               for(var ty:int=bb[1];ty<=bb[3];ty++) for(var tx:int=bb[0];tx<=bb[2];tx++)
+               {
+                  var ti:int=tx+ty*this.spaceX;
+                  var kind:int=this.sightClasses[ti];
+                  if(kind==0)
+                  {
+                     var tileData:Vector.<uint> = data;
+                     var tileStride:int = width;
+                     var start:int=(FOG_PAD+ty*MASK_SUB)*width+FOG_PAD+tx*MASK_SUB;
+                     if(data.length==0)
+                     {
+                        tileData=this.currentSight.getVector(new Rectangle(
+                           FOG_PAD+tx*MASK_SUB,FOG_PAD+ty*MASK_SUB,MASK_SUB,MASK_SUB));
+                        tileStride=MASK_SUB;start=0;
+                     }
+                     kind=tileData[start]!=0?2:1;
+                     for(var row:int=0;row<MASK_SUB && kind!=3;row++)
+                        for(var col:int=0;col<MASK_SUB;col++)
+                           if((tileData[start+row*tileStride+col]!=0?2:1)!=kind){kind=3;break;}
+                     this.sightClasses[ti]=kind;
+                  }
+                  if(kind==3 || (combined!=0 && kind!=combined))return 2;
+                  combined=kind;
+               }
+               return combined==2?1:0;
+            }
+            // Preserve the original fallback for unusual out-of-room bounds.
+            if(this.currentSightData.length==0)
+               this.currentSightData=this.currentSight.getVector(this.currentSight.rect);
             var first:int=-1;
             var stride:int=this.currentSight.width;
             for(var sy:int=bb[1]*MASK_SUB;sy<(bb[3]+1)*MASK_SUB;sy++)
@@ -2670,30 +2759,11 @@ package
             // （敌人按雾的实际渲染淡出，含衰减环/门景边界）。fogCache 与
             // 掩膜同为 8×8 子格/瓦片（FOG_SUB==MASK_SUB），索引直接换算；
             // 该路径只在 fovVersion 变化帧运行（fogCache 恰为本帧刷新）。
-            var fg:BitmapData = this.fogCache;
-            var a0:int;
-            for(scx = 0; scx < totx; scx++)
-            {
-               for(scy = 0; scy < toty; scy++)
-               {
-                  var wx:Number = (x0 * MASK_SUB + scx + 0.5) * cs;
-                  var wy:Number = (y0 * MASK_SUB + scy + 0.5) * cs;
-                  var ftx:int = Math.floor(wx / Tile.tileX);
-                  var fty:int = Math.floor(wy / Tile.tileY);
-                  if(ftx < 0) { ftx = 0; }
-                  else if(ftx >= this.spaceX) { ftx = this.spaceX - 1; }
-                  if(fty < 0) { fty = 0; }
-                  else if(fty >= this.spaceY) { fty = this.spaceY - 1; }
-                  a0 = fg.getPixel32(FOG_PAD + ftx * FOG_SUB
-                     + Math.floor((wx - ftx * Tile.tileX) / cs),
-                     FOG_PAD + fty * FOG_SUB
-                     + Math.floor((wy - fty * Tile.tileY) / cs)) >>> 24;
-                  if(a0 < MASK_LIT_A)
-                  {
-                     bd.setPixel32(scx,scy,0xFFFFFFFF);
-                  }
-               }
-            }
+            // The old world -> tile -> subcell arithmetic resolves exactly
+            // to this in-bounds integer rectangle (MASK_SUB == FOG_SUB).
+            bd.threshold(this.fogCache,
+               new Rectangle(FOG_PAD+x0*MASK_SUB,FOG_PAD+y0*MASK_SUB,totx,toty),
+               this.fogPoint,"<",uint(MASK_LIT_A)<<24,0xFFFFFFFF,0xFF000000,false);
          }
          else
          {
@@ -2728,6 +2798,20 @@ package
          bd.unlock();
          // 按模式模糊（classic/current 各自对齐雾层边界宽度）；0=关闭（硬边）
          var blur:BlurFilter = this.cfgMode == "classic" ? this.maskBlurClassic : this.maskBlurCurrent;
+         // Every eligible sample is still refreshed above. Reuse the rendered
+         // mask only when its complete input, world rectangle and filter match.
+         // Display attachment/restoration above always runs, even on a hit.
+         var previousInput:BitmapData = rec.maskInput as BitmapData;
+         if(rec.maskValid === true && previousInput != null
+            && previousInput.width == bd.width && previousInput.height == bd.height
+            && rec.maskBounds == sig && rec.maskMode == this.cfgMode
+            && rec.maskBlurX == blur.blurX && rec.maskBlurY == blur.blurY && rec.maskQuality == blur.quality)
+         {
+            var maskDelta:Object = bd.compare(previousInput);
+            if(maskDelta is uint && uint(maskDelta) == 0) return;
+            if(maskDelta is BitmapData) BitmapData(maskDelta).dispose();
+         }
+         rec.maskValid = false;
          if(blur.blurX > 0)
          {
             bdb.applyFilter(bd,bd.rect,this.fogPoint,blur);
@@ -2759,6 +2843,16 @@ package
          g.endFill();
          s3.graphics.clear();
          s3.graphics.copyFrom(g);
+         if(previousInput == null || previousInput.width != bd.width || previousInput.height != bd.height)
+         {
+            if(previousInput != null) previousInput.dispose();
+            previousInput = new BitmapData(bd.width,bd.height,true,0);
+            rec.maskInput = previousInput;
+         }
+         previousInput.copyPixels(bd,bd.rect,this.fogPoint);
+         rec.maskBounds = sig; rec.maskMode = this.cfgMode;
+         rec.maskBlurX = blur.blurX; rec.maskBlurY = blur.blurY; rec.maskQuality = blur.quality;
+         rec.maskValid = true;
       }
 
       private function rebindAuthorityMask(w:World,u:Unit,rec:Object):void

@@ -1,0 +1,27 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+PASS current 80 moving frames: exact fog, wall, sight, exploration, stationary geometry updates
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+PASS classic 80 moving frames: exact fog, wall, sight, exploration, stationary geometry updates
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+PASS classic blur=0 24 random full-alpha fields, edge sizes and exact masks
+PASS classic blur=1 24 random full-alpha fields, edge sizes and exact masks
+PASS classic blur=2 24 random full-alpha fields, edge sizes and exact masks
+PASS classic blur=4 24 random full-alpha fields, edge sizes and exact masks
+PASS classic blur=6 24 random full-alpha fields, edge sizes and exact masks
+PASS classic blur=9 24 random full-alpha fields, edge sizes and exact masks
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+PASS current blur=0 24 random full-alpha fields, edge sizes and exact masks
+PASS current blur=1 24 random full-alpha fields, edge sizes and exact masks
+PASS current blur=2 24 random full-alpha fields, edge sizes and exact masks
+PASS current blur=4 24 random full-alpha fields, edge sizes and exact masks
+PASS current blur=6 24 random full-alpha fields, edge sizes and exact masks
+PASS current blur=9 24 random full-alpha fields, edge sizes and exact masks
+PASS 512 uniform wall corner/threshold cases preserve pixels and tracking result
+PASS mask teardown removes display shapes
+MASK COMPLETE passed=16 failed=0

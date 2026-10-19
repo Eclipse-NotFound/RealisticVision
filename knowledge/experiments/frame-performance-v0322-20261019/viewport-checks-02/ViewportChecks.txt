@@ -1,0 +1,15 @@
+PASS viewport group current bright=false tested=48 cumulativeFailures=0
+FAIL viewport current bright=true frame=5
+FAIL viewport current bright=true frame=6
+FAIL viewport current bright=true frame=19
+FAIL viewport current bright=true frame=43
+FAIL viewport current bright=true frame=44
+PASS viewport group current bright=true tested=48 cumulativeFailures=5
+PASS viewport group classic bright=false tested=48 cumulativeFailures=5
+FAIL viewport classic bright=true frame=5
+FAIL viewport classic bright=true frame=6
+FAIL viewport classic bright=true frame=19
+FAIL viewport classic bright=true frame=43
+FAIL viewport classic bright=true frame=44
+PASS viewport group classic bright=true tested=48 cumulativeFailures=10
+VIEWPORT COMPLETE comparisons=192 failures=10

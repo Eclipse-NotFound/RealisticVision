@@ -1,0 +1,21 @@
+{
+  "baseline": "frame-04",
+  "profile": false,
+  "large": true,
+  "verify": true,
+  "live": false,
+  "sources": {
+    "frame-04\\src\\modlocales\\vision\\RVLocale.as": "fdb9596f7e9b77fe22c049ee220d4bd458bf832ccdece7835a1d5457cafa432e",
+    "frame-04\\src\\modlocales\\vision\\RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "frame-04\\src\\RealisticVisionMod.as": "9c856c39ffbfa9f40310c1200c2c7bc969282503a56d675274304891b2898002",
+    "frame-04\\src\\RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+    "frame-04\\src\\RVKeybinds.as": "50ba8a05b41c3b188f3e78b3deb060ecd152c5e8e940590a78c08ab9b65c334e",
+    "frame-04\\src\\RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895",
+    "candidate\\src\\modlocales\\vision\\RVLocale.as": "fdb9596f7e9b77fe22c049ee220d4bd458bf832ccdece7835a1d5457cafa432e",
+    "candidate\\src\\modlocales\\vision\\RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+    "candidate\\src\\RealisticVisionMod.as": "036bec03da1ddfb28266b065379e4dfe9406c71b71cf91c41318ce0fcbadbe42",
+    "candidate\\src\\RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+    "candidate\\src\\RVKeybinds.as": "50ba8a05b41c3b188f3e78b3deb060ecd152c5e8e940590a78c08ab9b65c334e",
+    "candidate\\src\\RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895"
+  }
+}

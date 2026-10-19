@@ -1,0 +1,17 @@
+{
+  "app_id": "pfe-modsettings-rv-d30-a26a41adc1eb40ca9d8c39ce55ba9e48",
+  "sha256": "decca3e0e1142eb8faf7e0e776f2b94fc67dce1c5503de7fba7b810c4a0b10ca",
+  "runs": [
+    {
+      "exit": 0,
+      "pid": 22440,
+      "checks": 10
+    },
+    {
+      "exit": 0,
+      "pid": 45992,
+      "checks": 10
+    }
+  ],
+  "status": "PASS"
+}
