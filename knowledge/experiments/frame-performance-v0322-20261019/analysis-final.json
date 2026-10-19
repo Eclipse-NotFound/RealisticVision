@@ -1,0 +1,459 @@
+{
+  "run": "final-large-trial",
+  "scene": {
+    "height": 75,
+    "nativeUnits": 58,
+    "width": 192,
+    "large": true,
+    "verification": false
+  },
+  "data_sha256": "81b73ec8cf54c7f326e39a2b4b4c004d865a827d6028e8198e8ea297122f95c6",
+  "source_manifest": {
+    "baseline": "baseline",
+    "profile": false,
+    "large": true,
+    "verify": false,
+    "live": false,
+    "runtime": {
+      "pfe.swf": "2a4662488ba3b690eb23acfe4b79aca3f0d9ae114e5e2dee7595af3cabffb3ea",
+      "mods\\ContinuousScene\\release\\ContinuousSceneMod.swf": "70c06879a2cffe85901e5c8e19fc1715028d5c38934975e970569468737309d5",
+      "mods\\ContinuousScene\\release\\scene.xml": "1cea74e218a55894d432e12cdfc544952d37cfff5ff55b256b1b970573eb7a9e"
+    },
+    "sources": {
+      "baseline\\src\\modlocales\\vision\\RVLocale.as": "fdb9596f7e9b77fe22c049ee220d4bd458bf832ccdece7835a1d5457cafa432e",
+      "baseline\\src\\modlocales\\vision\\RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+      "baseline\\src\\RealisticVisionMod.as": "62085fefc016119b3eeb7c5520e2a8d8d0f6215b92fdd7efbaa8c5a922c5ef81",
+      "baseline\\src\\RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+      "baseline\\src\\RVKeybinds.as": "50ba8a05b41c3b188f3e78b3deb060ecd152c5e8e940590a78c08ab9b65c334e",
+      "baseline\\src\\RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895",
+      "candidate\\src\\modlocales\\vision\\RVLocale.as": "fdb9596f7e9b77fe22c049ee220d4bd458bf832ccdece7835a1d5457cafa432e",
+      "candidate\\src\\modlocales\\vision\\RVLocaleMessages.as": "8945776e1df6be833369f84fa9d08e70498afbef423f11de02696f656540dc01",
+      "candidate\\src\\RealisticVisionMod.as": "321de9661d4f449b7404087e527946e349b29b7a586672e7dcab582490ad556d",
+      "candidate\\src\\RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+      "candidate\\src\\RVKeybinds.as": "50ba8a05b41c3b188f3e78b3deb060ecd152c5e8e940590a78c08ab9b65c334e",
+      "candidate\\src\\RVWallSurface.as": "62f22cc918368aeed59e70112d94dfcdab8de63c91a9249e888322513e47c895"
+    }
+  },
+  "last_run": {
+    "app_id": "pfe-modsettings-rv-surface-2a1e6be8420a4adcbcfc3b0e4a91b93a",
+    "pid": 60112,
+    "exit": 0
+  },
+  "units": "milliseconds; RV update and offscreen fog draw, not complete game frame time",
+  "p95_rule": "sorted(values)[floor(.95 * (n - 1))]",
+  "total_rule": "each matching update and draw sample added before computing statistics",
+  "rows": [
+    {
+      "spec": {
+        "dense": false,
+        "mode": "current",
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 34.225,
+          "median": 34.0,
+          "p95": 65,
+          "max": 90
+        },
+        {
+          "n": 120,
+          "mean": 29.975,
+          "median": 29.5,
+          "p95": 49,
+          "max": 84
+        }
+      ],
+      "updates_mean_reduction_percent": 12.41782322863404,
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.641666666666667,
+          "median": 4.0,
+          "p95": 7,
+          "max": 9
+        },
+        {
+          "n": 120,
+          "mean": 4.708333333333333,
+          "median": 4.5,
+          "p95": 7,
+          "max": 9
+        }
+      ],
+      "draws_mean_reduction_percent": -1.4362657091561815,
+      "total": [
+        {
+          "n": 120,
+          "mean": 38.86666666666667,
+          "median": 39.0,
+          "p95": 70,
+          "max": 96
+        },
+        {
+          "n": 120,
+          "mean": 34.68333333333333,
+          "median": 34.5,
+          "p95": 56,
+          "max": 87
+        }
+      ],
+      "total_mean_reduction_percent": 10.76329331046313,
+      "total_paired_absolute_difference_ms": {
+        "n": 120,
+        "mean": 7.716666666666667,
+        "median": 3.0,
+        "p95": 31,
+        "max": 73
+      },
+      "candidate_faster_pairs": 63,
+      "equal_pairs": 8,
+      "total_by_order": {
+        "baseline_first": [
+          {
+            "n": 60,
+            "mean": 40,
+            "median": 39.0,
+            "p95": 73,
+            "max": 96
+          },
+          {
+            "n": 60,
+            "mean": 33.43333333333333,
+            "median": 31.5,
+            "p95": 49,
+            "max": 87
+          }
+        ],
+        "candidate_first": [
+          {
+            "n": 60,
+            "mean": 37.733333333333334,
+            "median": 37.5,
+            "p95": 68,
+            "max": 77
+          },
+          {
+            "n": 60,
+            "mean": 35.93333333333333,
+            "median": 36.5,
+            "p95": 57,
+            "max": 84
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "current",
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 54.13333333333333,
+          "median": 48.0,
+          "p95": 94,
+          "max": 151
+        },
+        {
+          "n": 120,
+          "mean": 46.21666666666667,
+          "median": 42.0,
+          "p95": 83,
+          "max": 151
+        }
+      ],
+      "updates_mean_reduction_percent": 14.624384236453203,
+      "draws": [
+        {
+          "n": 120,
+          "mean": 5.408333333333333,
+          "median": 5.0,
+          "p95": 8,
+          "max": 10
+        },
+        {
+          "n": 120,
+          "mean": 5.441666666666666,
+          "median": 5.0,
+          "p95": 8,
+          "max": 11
+        }
+      ],
+      "draws_mean_reduction_percent": -0.6163328197226425,
+      "total": [
+        {
+          "n": 120,
+          "mean": 59.541666666666664,
+          "median": 54.0,
+          "p95": 101,
+          "max": 160
+        },
+        {
+          "n": 120,
+          "mean": 51.65833333333333,
+          "median": 47.0,
+          "p95": 89,
+          "max": 156
+        }
+      ],
+      "total_mean_reduction_percent": 13.24002799160252,
+      "total_paired_absolute_difference_ms": {
+        "n": 120,
+        "mean": 10.616666666666667,
+        "median": 6.0,
+        "p95": 38,
+        "max": 80
+      },
+      "candidate_faster_pairs": 94,
+      "equal_pairs": 7,
+      "total_by_order": {
+        "baseline_first": [
+          {
+            "n": 60,
+            "mean": 60.36666666666667,
+            "median": 53.5,
+            "p95": 103,
+            "max": 160
+          },
+          {
+            "n": 60,
+            "mean": 50.7,
+            "median": 45.5,
+            "p95": 82,
+            "max": 156
+          }
+        ],
+        "candidate_first": [
+          {
+            "n": 60,
+            "mean": 58.71666666666667,
+            "median": 54.0,
+            "p95": 94,
+            "max": 118
+          },
+          {
+            "n": 60,
+            "mean": 52.61666666666667,
+            "median": 48.0,
+            "p95": 89,
+            "max": 110
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "classic",
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 91.40833333333333,
+          "median": 100.5,
+          "p95": 182,
+          "max": 236
+        },
+        {
+          "n": 120,
+          "mean": 77.69166666666666,
+          "median": 90.5,
+          "p95": 157,
+          "max": 257
+        }
+      ],
+      "updates_mean_reduction_percent": 15.00592579086517,
+      "draws": [
+        {
+          "n": 120,
+          "mean": 6.383333333333334,
+          "median": 6.0,
+          "p95": 11,
+          "max": 14
+        },
+        {
+          "n": 120,
+          "mean": 6.208333333333333,
+          "median": 6.0,
+          "p95": 9,
+          "max": 37
+        }
+      ],
+      "draws_mean_reduction_percent": 2.741514360313324,
+      "total": [
+        {
+          "n": 120,
+          "mean": 97.79166666666667,
+          "median": 104.5,
+          "p95": 187,
+          "max": 243
+        },
+        {
+          "n": 120,
+          "mean": 83.9,
+          "median": 96.5,
+          "p95": 164,
+          "max": 266
+        }
+      ],
+      "total_mean_reduction_percent": 14.205368555602893,
+      "total_paired_absolute_difference_ms": {
+        "n": 120,
+        "mean": 16.875,
+        "median": 11.5,
+        "p95": 61,
+        "max": 76
+      },
+      "candidate_faster_pairs": 96,
+      "equal_pairs": 8,
+      "total_by_order": {
+        "baseline_first": [
+          {
+            "n": 60,
+            "mean": 64.55,
+            "median": 17.0,
+            "p95": 183,
+            "max": 243
+          },
+          {
+            "n": 60,
+            "mean": 52.25,
+            "median": 12.5,
+            "p95": 157,
+            "max": 202
+          }
+        ],
+        "candidate_first": [
+          {
+            "n": 60,
+            "mean": 131.03333333333333,
+            "median": 127.5,
+            "p95": 188,
+            "max": 214
+          },
+          {
+            "n": 60,
+            "mean": 115.55,
+            "median": 113.0,
+            "p95": 164,
+            "max": 266
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "current",
+        "bright": true
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 102.70833333333333,
+          "median": 100.0,
+          "p95": 161,
+          "max": 296
+        },
+        {
+          "n": 120,
+          "mean": 96.83333333333333,
+          "median": 95.5,
+          "p95": 156,
+          "max": 199
+        }
+      ],
+      "updates_mean_reduction_percent": 5.720081135902633,
+      "draws": [
+        {
+          "n": 120,
+          "mean": 6.5,
+          "median": 6.0,
+          "p95": 9,
+          "max": 20
+        },
+        {
+          "n": 120,
+          "mean": 6.266666666666667,
+          "median": 6.0,
+          "p95": 8,
+          "max": 20
+        }
+      ],
+      "draws_mean_reduction_percent": 3.589743589743588,
+      "total": [
+        {
+          "n": 120,
+          "mean": 109.20833333333333,
+          "median": 105.5,
+          "p95": 166,
+          "max": 307
+        },
+        {
+          "n": 120,
+          "mean": 103.1,
+          "median": 101.5,
+          "p95": 163,
+          "max": 204
+        }
+      ],
+      "total_mean_reduction_percent": 5.593285005723003,
+      "total_paired_absolute_difference_ms": {
+        "n": 120,
+        "mean": 12.108333333333333,
+        "median": 8.0,
+        "p95": 32,
+        "max": 191
+      },
+      "candidate_faster_pairs": 90,
+      "equal_pairs": 2,
+      "total_by_order": {
+        "baseline_first": [
+          {
+            "n": 60,
+            "mean": 113.68333333333334,
+            "median": 105.0,
+            "p95": 186,
+            "max": 307
+          },
+          {
+            "n": 60,
+            "mean": 105.86666666666666,
+            "median": 100.5,
+            "p95": 173,
+            "max": 204
+          }
+        ],
+        "candidate_first": [
+          {
+            "n": 60,
+            "mean": 104.73333333333333,
+            "median": 106.5,
+            "p95": 151,
+            "max": 165
+          },
+          {
+            "n": 60,
+            "mean": 100.33333333333333,
+            "median": 103.0,
+            "p95": 147,
+            "max": 175
+          }
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "samples": 16,
+    "sampling_interval_seconds": 10,
+    "minimum_available_gib": 6.093406677246094,
+    "maximum_available_gib": 8.112785339355469,
+    "other_air_java": [],
+    "limitation": "AIR/Java observations cannot exclude short-lived or other process contention"
+  }
+}

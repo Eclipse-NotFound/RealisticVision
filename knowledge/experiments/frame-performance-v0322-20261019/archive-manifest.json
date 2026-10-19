@@ -12,6 +12,12 @@
     "archive_sha256": "2296bb9c52d62cb4054a5be4e11acc3fe3f3aef35139fde5afe5adfa2f3d7839"
   },
   {
+    "source": "build\\frame-performance-output\\analysis-final.json",
+    "source_sha256": "e7daa800b0391f243e3774b482b70abca9ba8396c67535661c0e7c5b4a3e994b",
+    "archive": "analysis-final.json",
+    "archive_sha256": "e7daa800b0391f243e3774b482b70abca9ba8396c67535661c0e7c5b4a3e994b"
+  },
+  {
     "source": "build\\frame-performance-output\\window-01-preflight.json",
     "source_sha256": "80e7043f4bb014299f99778d01ac7dea1da4314fa9af06816cdf7d97f796c2d4",
     "archive": "window-01-preflight.json",
@@ -168,10 +174,34 @@
     "archive_sha256": "e0a61870ccb87a2fd20ac71ac0b773e4b4ed758f7b59d6a971381c4dd06af603"
   },
   {
+    "source": "build\\frame-performance-output\\final-large-trial\\evidence\\result.json",
+    "source_sha256": "81b73ec8cf54c7f326e39a2b4b4c004d865a827d6028e8198e8ea297122f95c6",
+    "archive": "final-large-trial\\evidence\\result.json",
+    "archive_sha256": "d74d9cf3ad7b69265aa179f6c71bca5a25d31101ef72e643ad09a8d50c1f23ba"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-trial\\last-run.json",
+    "source_sha256": "351a6380499db3cfb235684e67bf83b6a0cfc03d40b4d55256bb9d0f86b64143",
+    "archive": "final-large-trial\\last-run.json",
+    "archive_sha256": "6f4a8ff7fa8fa1d365a4eb046fd3867e123a796b6bd9469c6494340ff10c6377"
+  },
+  {
     "source": "build\\frame-performance-output\\final-large-trial\\build-inputs.json",
     "source_sha256": "ef152dee4610dcee40b82c42ce9f6a78dd5709b80e3f13face73ef4110fb0a28",
     "archive": "final-large-trial\\build-inputs.json",
     "archive_sha256": "1bb800bab86887e03803f0f5c19daf2216050eb367388a763811c56c3e5d2c28"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-trial\\launch-state.json",
+    "source_sha256": "4522bdf7c9c3ad78fa6ba6935663daf0b379a79c33f2673103f3e69213168e26",
+    "archive": "final-large-trial\\launch-state.json",
+    "archive_sha256": "385e73428f069487394d51f7a267bcb40a815d28fea21967450fed5b323ce19c"
+  },
+  {
+    "source": "build\\frame-performance-output\\final-large-trial\\environment.json",
+    "source_sha256": "5baa140f7e1826881edf75ae3c2de384377b77a86022c63a0ed62c05a87214e8",
+    "archive": "final-large-trial\\environment.json",
+    "archive_sha256": "62a081212adb9f87ddf53dbdd2ad37f43f3379b6eccf4519d6882da2dab901c4"
   },
   {
     "source": "build\\frame-performance-output\\final-live\\build-inputs.json",

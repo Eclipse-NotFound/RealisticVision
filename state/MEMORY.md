@@ -1,6 +1,6 @@
 # RealisticVision —— 开发记忆入口
 
-> 2026-10-19 D31 **视觉/功能验证通过，最终性能待测；未部署**：用户实测D29仍卡顿，要求保持视觉继续优化。六项改动覆盖同色墙格批量填充、classic遮罩原生阈值、相同输入复用遮罩、格子分类缓存、大图按需读取，以及常亮关闭时稳定墙面缓存范围；未降采样/刷新。最终55项聚合检查、48,000次分类对照、192组位图与32组192×75原生雾层严格相同，准确生产包两进程20项设置检查通过。候选v0.32.2-frame-performance，37,760B，SHA256 `DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA`；正式安装仍下方D29。只剩已编译`final-large-trial`，须等RConnect新的明确交接和6GiB门槛；其它profile/small/live轮已取消。入口[报告](../knowledge/experiments/2026-10-19-frame-performance.md)和[工具](../build/frame-performance/README.md)。生产源固定在`build/frame-performance-output/production/src`，不含authority或另一会话阶梯修复，不能用HEAD整包替换。
+> 2026-10-19 D31 **候选验证完成，未部署**：保持原画面的六项优化已完成。55项聚合检查、48,000次分类、192组位图、32组192×75原生像素及准确包两进程20项设置检查通过。最终大图四场景各120配对样本，更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms，长帧仍存在，非完整游戏FPS。准确候选v0.32.2-frame-performance，37,760B，SHA256 `DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA`；正式仍D29。最后AIR PID60112正常退出，描述符删除，窗口已交回；无需再跑已完成或取消的轮次。源码提交25143cd，生产源固定`build/frame-performance-output/production/src`，不含authority或并行阶梯修复，不能直接编译HEAD替换。详见[报告](../knowledge/experiments/2026-10-19-frame-performance.md)和[工具](../build/frame-performance/README.md)。
 
 > 2026-10-16 16:06:22 D29 **已部署**：v0.32.1-wall-performance，36,992B，SHA256 `2E7150CF415355C2D7B809689AAC3C4CA0BACBB5F6D8770066A6E887D8907A10`。保持D28原生墙芯/渐变和防溢出；常亮默认关闭并保留保存值。复用墙边采样、光照缓冲区与常亮墙面图；336项、68组人工差分与16组原生雾层严格相同，准确生产字节及正式路径启动通过。相比D28同进程平均渲染开销减少约4%–9%，非完整FPS，长帧/密集联机仍有边界。仅改RV，authority WIP保留。详见[报告](../knowledge/experiments/2026-10-16-wall-performance.md)和[回退记录](deployment-v0321-2026-10-16.md)。
 
@@ -61,7 +61,7 @@
 
 ## 3. 当前状态
 
-- D31候选视觉与功能验证通过、未部署；准确包DECCA3E0…C4A0B10CA。最终六项的性能数据尚缺，不能把第一组四项或含像素核验的计时当作最终收益。正式仍D29。
+- D31候选视觉、功能及最终性能对照已完成，未部署；准确包DECCA3E0…C4A0B10CA。最终四场景平均更新加绘制减少5.6%–14.2%、P95均下降，classic单次最大值上升；不能据此宣称全部卡顿解决。正式仍D29。
 
 - D29已部署2E7150CF…8907A10：336项通过、16组原生雾层差0。保持D28视觉；正式路径新版init/设置注册/tick1/181/361通过。当前无RV测试实例，AIR已归还RConnect。
 
@@ -80,7 +80,7 @@
 
 ## 4. 正在进行与停点
 
-- D31只剩`run.py run --name final-large-trial`，现已编译；本轮因资源不足收尾，不占槽、不持续轮询。仅在RConnect主会话01a086bb-378c-7f60-b8e1-50d90ffa0996的新明确交接且通过6GiB门槛后恢复。32组final-large-verify已成功退出，不重跑；final-large-profile/final-small-trial/final-live取消。测试后先交回窗口，再运行analyze.py及evidence.py补报告。
+- D31 final-large-trial已完成并归档：PID60112退出0、test.xml删除。16次环境采样可用内存6.093–8.113GiB，未观察到其它AIR/Java，不能排除所有后台负载。32组final-large-verify已成功；profile/small/live仍取消。本轮已交回窗口，没有待跑的AIR；禁止覆盖冻结证据。
 
 - D29准确生产源与已部署字节在build/wall-performance-output/candidate；脚本入口build/wall-performance/README.md。禁止用含authority的HEAD整包部署，禁止重建覆盖冻结候选。D28旧候选/实验保留。
 
@@ -95,7 +95,7 @@
 
 ## 5. 已知问题与边界
 
-- D31尚未证明最终六项能改善完整游戏帧率；第一组四项虽平均更新下降，仍有102ms峰值。原生大图32组严格相同只证明所测输入；用户精确存档、长期战斗和完整联机负载未测。本轮生产源不包含并行阶梯候选，未来合包需单独验收。
+- D31最终四组平均更新加绘制分别38.867→34.683、59.542→51.658、97.792→83.900、109.208→103.100ms；classic最大值243→266ms，仍有长帧且原因未定位。未测完整游戏帧率、玩家精确存档与长期密集联机；生产源不含阶梯候选，未来合包需单独验收。
 
 - D29最终同进程240帧：关闭常亮classic18.73→18.05ms、current20.89→19.72ms；开启32.21→30.17ms、35.44→32.28ms。P95和峰值本轮均下降，开启仍有75–96ms长帧；不能换算完整战斗FPS。真实大图/玩家存档与密集联机未验。
 
@@ -108,7 +108,7 @@
 
 ## 6. 下一步
 
-- 当前停点为D31最终性能待测；恢复后评估平均/P95/最大值。若无明确窗口或低于6GiB，保留候选，不自行启动。正式安装本轮未改；已获协调授权无需重复询问，用户游戏不自动关闭。
+- D31本轮候选实现和既定验证已完成；当前没有部署动作。后续若部署，应核对届时正式版本并走发布门禁，避免覆盖并行authority/阶梯工作。用户游戏不自动关闭，不复用已交回的测试窗口。
 
 1. D29已按本轮授权部署，用户保存并正常重启生效；无需重复部署或等待新授权。
 2. 本次仅用`build/backups/before-wall-performance-20261016-160622-78a9d0/RealisticVisionMod.before.swf`回退至BAA；核对指纹后只恢复RV。详情见deployment-v0321-2026-10-16.md。
