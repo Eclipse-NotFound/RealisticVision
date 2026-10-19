@@ -37,3 +37,9 @@ evidence.py
 `package.py` 只改版本标记为 v0.32.2-frame-performance，冻结到 `build/frame-performance-output/production`，并让**准确生产字节**通过两个独立进程的设置、改键和心跳检查。六个生产类应与 D29 相同，禁止携带探针、存根或 authority 类。
 
 所有启动使用唯一 AIR AppID、隐藏窗口和自己的存储，退出后删除自有描述符；玩家及其他会话进程不操作。正式安装另需复核当前安装、保护其他并行工作、按发布门禁保存回退并验证，不能直接运行历史 D29 部署脚本。
+
+## 精确部署入口
+
+用户已于2026-10-19明确要求部署最终改进版本。`deploy.py prepare`已核对准确生产包、源码及既有验证，保存`build/frame-performance-output/deployment/preflight.json`；它没有替换安装。已有预检记录不要覆盖，也不要直接运行历史D29脚本。
+
+取得新的短启动检查窗口后运行`deploy.py deploy`。脚本再次核对当前安装仍为2E7150CF…8907A10、候选仍DECCA3E0…C4A0B10CA、所有保护指纹与部署脚本未变，并检查6GiB门槛；随后独占创建`build/backups/before-frame-performance-<时间和随机后缀>/RealisticVisionMod.before.swf`，原子替换仅RV，从正式根目录用独立AppID检查新版init、ModSettings注册和tick1/181/361。失败只回滚本模组，成功/失败均保存receipt.json并清理自有描述符与进程。正式游戏需要用户保存并正常重启才加载新版。

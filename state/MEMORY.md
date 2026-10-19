@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-19 **v0.32.2已获部署授权，预检通过，尚未替换**：用户明确“请部署最终改进版本”。准确包DECCA3E0…C4A0B10CA、原安装2E7150CF…8907A10及18项保护指纹已核验，部署入口build/frame-performance/deploy.py，prepare已完成。协调正式路径约一分钟启动窗口的消息三次因自动审批服务容量不足未发送；RConnect仍有测试，已请用户协助确认窗口，不自行重用旧窗口。只待新明确窗口及即时6GiB检查后执行deploy；用户已授权部署，不重复询问部署许可。详见[部署准备记录](deployment-v0322-2026-10-19.md)。
+
 > 2026-10-19 D31 **候选验证完成，未部署**：保持原画面的六项优化已完成。55项聚合检查、48,000次分类、192组位图、32组192×75原生像素及准确包两进程20项设置检查通过。最终大图四场景各120配对样本，更新加绘制平均减少5.6%–14.2%、P95均下降，但classic最大值243→266ms，长帧仍存在，非完整游戏FPS。准确候选v0.32.2-frame-performance，37,760B，SHA256 `DECCA3E0E1142EB8FAF7E0E776F2B94FC67DCE1C5503DE7FBA7B810C4A0B10CA`；正式仍D29。最后AIR PID60112正常退出，描述符删除，窗口已交回；无需再跑已完成或取消的轮次。源码提交25143cd，生产源固定`build/frame-performance-output/production/src`，不含authority或并行阶梯修复，不能直接编译HEAD替换。详见[报告](../knowledge/experiments/2026-10-19-frame-performance.md)和[工具](../build/frame-performance/README.md)。
 
 > 2026-10-16 16:06:22 D29 **已部署**：v0.32.1-wall-performance，36,992B，SHA256 `2E7150CF415355C2D7B809689AAC3C4CA0BACBB5F6D8770066A6E887D8907A10`。保持D28原生墙芯/渐变和防溢出；常亮默认关闭并保留保存值。复用墙边采样、光照缓冲区与常亮墙面图；336项、68组人工差分与16组原生雾层严格相同，准确生产字节及正式路径启动通过。相比D28同进程平均渲染开销减少约4%–9%，非完整FPS，长帧/密集联机仍有边界。仅改RV，authority WIP保留。详见[报告](../knowledge/experiments/2026-10-16-wall-performance.md)和[回退记录](deployment-v0321-2026-10-16.md)。
@@ -79,6 +81,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- v0.32.2部署当前待启动检查窗口。preflight.json和部署脚本已冻结；取得窗口后运行build/frame-performance/deploy.py deploy，不重跑prepare、不覆盖其记录。成功后先交回窗口，再更新部署回执/状态；失败自动回滚RV。当前release仍D29。
 
 - D31最终补测报告已提交fc06aed；全局测试台账的补测索引追加两次因自动审批服务容量不足未执行，保留原待测索引及本地完整结果。恢复服务后仅需补记索引，不重跑测试、不重新部署。
 
