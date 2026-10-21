@@ -119,6 +119,7 @@ def options():
         save(folder/'result.json',{'swf':p.sha(folder/'candidate.swf'),'runs':results})
         record.outcome='passed';record.note='准确SWF两进程设置、快捷键与心跳通过'
 def final_validation():
+    assert not (OUT/'verified.json').exists(), 'Final evidence already exists; use a new run directory'
     with Registration(owner='RealisticVision / D34 设置终验',purpose='最终生产字节、原生场景与设置持久化',run_dir=OUT,evidence=OUT/'verified.json',wait=300) as record:
         build_native();build_options()
         native_result=air(OUT/'native-final','pfe.swf',record,220)

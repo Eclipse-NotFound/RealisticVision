@@ -9,6 +9,7 @@ def main():
     receipt=json.loads((OUT/'deployment/receipt.json').read_text(encoding='utf-8'))
     proof=json.loads((OUT/'verified.json').read_text(encoding='utf-8'))
     assert receipt['result']=='PASS' and run.p.sha(MOD/'release/RealisticVisionMod.swf')==proof['swf']
+    run.save(OUT/'frozen.json',{'version':run.p.VERSION,'swf':proof['swf'],'status':'DEPLOYED'})
     dest=MOD/'knowledge/experiments/vision-settings-v0330-20261021';dest.mkdir(exist_ok=True)
     for name in ['verified.json','build.json','baseline.json','classes.txt','classes-stderr.txt']:
         shutil.copyfile(OUT/name,dest/name)
