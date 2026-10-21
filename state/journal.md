@@ -1,3 +1,10 @@
+## 2026-10-21 — D33运动性能合入D34并部署v0.33.1
+
+- 完成：轮廓线性扫描与整数缓存、classic零修正写回跳过；合并D34全部设置，未发布authority。准确包40,686B，F2B8A973…AA749A561。
+- 验证：471项/组（含192组图像、32原生检查点、36准确包设置）通过；8个原生持续射击窗口均有22–37次攻击及弹丸。大图均值下降6.9%–15.4%，P95下降；classic射击更新约降18.3%，current短距离基本持平。偶发长帧与最大值回退照录，未承诺全组合/联机或稳定FPS。
+- 部署：16:07:44只替换RV，17项保护指纹不变；正式路径init/设置注册/tick1/181/361通过，PID112036与描述符已清理。备份build/backups/before-motion-performance-20261021-160744-56a353/RealisticVisionMod.before.swf（旧D34）。用户正常重启生效。
+- 证据：[完整报告](../knowledge/experiments/2026-10-21-motion-performance.md)，工具build/motion-performance，准确源build/motion-performance-output/merged-settings/production/src。早期v0.32.4/Object缓存和失败战斗驱动保留，不可部署。下一步如仍卡顿，按全组合长帧分段归因，不用均值替代体验结论。
+
 ## 2026-10-19 — D32阶梯修复合入性能版并部署
 
 ## 2026-10-21 D34 视野设置已部署

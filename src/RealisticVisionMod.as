@@ -81,7 +81,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.0-vision-settings";
+      private static const VERSION:String = "v0.33.1-motion-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -2531,6 +2531,19 @@ package
                if(east) eastCurve[q] = this.classicWallDelta(a10+(a11-a10)*fraction,px0+FOG_SUB-0.5,py0+q)-(d10+(d11-d10)*fraction);
                if(north) northCurve[q] = this.classicWallDelta(a00+(a10-a00)*fraction,px0+q,py0-0.5)-(d00+(d10-d00)*fraction);
                if(south) southCurve[q] = this.classicWallDelta(a01+(a11-a01)*fraction,px0+q,py0+FOG_SUB-0.5)-(d01+(d11-d01)*fraction);
+            }
+            // fogBmp already contains fogRaw's integer red channel here.
+            // When every correction is zero, the old 64-pixel loop merely
+            // writes those same bytes back. Keep the exact existing image.
+            var noCorrection:Boolean=d00==0 && d10==0 && d01==0 && d11==0;
+            if(noCorrection){
+               for(q=0;q<FOG_SUB;q++){
+                  if((west && westCurve[q]!=0) || (east && eastCurve[q]!=0)
+                     || (north && northCurve[q]!=0) || (south && southCurve[q]!=0)){
+                     noCorrection=false;break;
+                  }
+               }
+               if(noCorrection)continue;
             }
             for(var sy:int = 0; sy < FOG_SUB; sy++) for(var sx:int = 0; sx < FOG_SUB; sx++)
             {

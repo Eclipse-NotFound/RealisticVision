@@ -40,6 +40,8 @@ build/backups/before-wall-performance-*/
 build/backups/before-frame-performance-*/
 build/stair-shadow-output/
 build/backups/before-stair-merge-*/
+build/motion-performance-output/
+build/backups/before-motion-performance-*/
 
 build/vision-settings-output/
 build/backups/before-vision-settings-*/

@@ -29,6 +29,7 @@ package {
       private var fieldShapeDirty:Boolean = true;
       private var lightDirty:Boolean = true;
       private var previousBright:Boolean;
+      private var contourGeometryVersion:uint = 0;
       private var seen:Vector.<int> = new Vector.<int>();
       private var lights:Vector.<Number> = new Vector.<Number>();
       private var faces:Array = [];
@@ -124,6 +125,10 @@ package {
             index++;
          }
          if(shapeDirty) {
+            contourGeometryVersion++;
+            // Drop obsolete runs before rebuilding geometry. Packed integers
+            // avoid keeping thousands of rectangle objects alive in the cache.
+            for each(var stalePatch:Object in contourPieces)stalePatch.runs=null;
             fieldShapeDirty=true;
             rebuildFaces(loc);
             rebuildSamples();
@@ -330,7 +335,7 @@ package {
          nextAlpha.copyChannel(patch.pixels,patch.pixels.rect,origin,BitmapDataChannel.ALPHA,BitmapDataChannel.ALPHA);
          delta=nextAlpha.compare(patch.alpha);
          if(!(delta is uint&&uint(delta)==0)){
-            swap=patch.alpha;patch.alpha=nextAlpha;patch.next=swap;contourDirty=true;
+            swap=patch.alpha;patch.alpha=nextAlpha;patch.next=swap;contourDirty=true;patch.runs=null;
             if(delta is BitmapData)BitmapData(delta).dispose();
          }
          }
@@ -356,24 +361,54 @@ package {
          solidClip.graphics.clear();solidClip.graphics.beginFill(0xffffff);
          for each(var patch:Object in contourPieces){
             var area:Rectangle=patch.rect;
-            var pixels:Vector.<uint>=patch.alpha.getVector(patch.alpha.rect),w:int=patch.alpha.width;
-            var previous:Object={},rectangles:Array=[];
-            for(var y:int=area.top;y<area.bottom;y++){
-               var current:Object={},start:int=area.left,x:int=start;
-               while(x<area.right){
-                  var role:int=contourRole(pixels,x,y,area,w);start=x++;
-                  while(x<area.right&&contourRole(pixels,x,y,area,w)==role)x++;
-                  var key:String=start+":"+x+":"+role,rect:Object=previous[key];
-                  if(rect!=null)rect.h++;
-                  else{rect={x:start,y:y,w:x-start,h:1,role:role};rectangles.push(rect);}
-                  current[key]=rect;
+            // A patch's material alpha and tile heights fully determine its
+            // contour. Exploration can change the surrounding support without
+            // changing this patch; keep exactly the same maximal row runs.
+            var rectangles:Vector.<int>=patch.runs as Vector.<int>;
+            var rectangleIndex:int;
+            if(rectangles==null || patch.geometryVersion!=contourGeometryVersion){
+               rectangles=new Vector.<int>();
+               var pixels:Vector.<uint>=patch.alpha.getVector(patch.alpha.rect);
+               var w:int=patch.alpha.width, ax:int=area.x, right:int=area.right;
+               var previous:Object={},row:int=0;
+               for(var y:int=area.top;y<area.bottom;y++,row+=w){
+                  var current:Object={},start:int=ax,x:int=ax,role:int=-1;
+                  var tileEnd:int=ax,tileRole:int=2;
+                  var tileRow:int=(int(y/CELL)+1)*(cols+2),subY:int=y%CELL;
+                  for(var offset:int=0;x<right;x++,offset++){
+                     if(x>=tileEnd){
+                        var tileX:int=int(x/CELL);
+                        tileEnd=(tileX+1)*CELL;
+                        var h:int=heights[tileX+1+tileRow];
+                        tileRole=h>0 && subY>=CELL-h?0:2;
+                     }
+                     var nextRole:int=(pixels[row+offset]>>>24)>0?1:tileRole;
+                     if(nextRole!=role){
+                        if(role>=0){
+                           var key:String=start+":"+x+":"+role;
+                           rectangleIndex=int(previous[key])-1;
+                           if(rectangleIndex>=0)rectangles[rectangleIndex+3]++;
+                           else{rectangleIndex=rectangles.length;rectangles.push(start,y,x-start,1,role);}
+                           current[key]=rectangleIndex+1;
+                        }
+                        start=x;role=nextRole;
+                     }
+                  }
+                  key=start+":"+x+":"+role;rectangleIndex=int(previous[key])-1;
+                  if(rectangleIndex>=0)rectangles[rectangleIndex+3]++;
+                  else{rectangleIndex=rectangles.length;rectangles.push(start,y,x-start,1,role);}
+                  current[key]=rectangleIndex+1;
+                  previous=current;
                }
-               previous=current;
+               patch.runs=rectangles;patch.geometryVersion=contourGeometryVersion;
             }
-            for each(rect in rectangles){
-               var shape:Shape=rect.role==0?airClip:baseClip;
-               shape.graphics.drawRect(left*CELL+rect.x,top*CELL+rect.y,rect.w,rect.h);
-               if(rect.role!=0){shape=rect.role==1?solidClip:onClip;shape.graphics.drawRect(left*CELL+rect.x,top*CELL+rect.y,rect.w,rect.h);}
+            for(rectangleIndex=0;rectangleIndex<rectangles.length;rectangleIndex+=5){
+               role=rectangles[rectangleIndex+4];
+               var shape:Shape=role==0?airClip:baseClip;
+               var drawX:int=left*CELL+rectangles[rectangleIndex],drawY:int=top*CELL+rectangles[rectangleIndex+1];
+               var drawWidth:int=rectangles[rectangleIndex+2],drawHeight:int=rectangles[rectangleIndex+3];
+               shape.graphics.drawRect(drawX,drawY,drawWidth,drawHeight);
+               if(role!=0){shape=role==1?solidClip:onClip;shape.graphics.drawRect(drawX,drawY,drawWidth,drawHeight);}
             }
          }
          baseClip.graphics.endFill();airClip.graphics.endFill();solidClip.graphics.endFill();onClip.graphics.endFill();
