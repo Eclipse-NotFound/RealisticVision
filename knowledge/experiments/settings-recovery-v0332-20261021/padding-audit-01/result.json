@@ -1,0 +1,12 @@
+[
+  {
+    "name": "LazyClassicChecks",
+    "exit": 1,
+    "summary": [
+      "PASS 1464 exact display, canonical field, moving/new mask and terrain checks",
+      "",
+      "LAZY COMPLETE passed=1464 failed=72",
+      ""
+    ]
+  }
+]

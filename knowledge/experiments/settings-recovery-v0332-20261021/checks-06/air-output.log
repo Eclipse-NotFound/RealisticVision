@@ -1,0 +1,53 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+PASS classic default fog identical bright=false x=200
+PASS classic default eligibility identical false 200
+PASS classic default fog identical bright=false x=280
+PASS classic default eligibility identical false 280
+PASS classic default fog identical bright=false x=640
+PASS classic default eligibility identical false 640
+PASS classic default fog identical bright=false x=200
+PASS classic default eligibility identical false 200
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+PASS classic default fog identical bright=true x=200
+PASS classic default eligibility identical true 200
+PASS classic default fog identical bright=true x=280
+PASS classic default eligibility identical true 280
+PASS classic default fog identical bright=true x=640
+PASS classic default eligibility identical true 640
+PASS classic default fog identical bright=true x=200
+PASS classic default eligibility identical true 200
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+PASS current default fog identical bright=false x=200
+PASS current default eligibility identical false 200
+PASS current default fog identical bright=false x=280
+PASS current default eligibility identical false 280
+PASS current default fog identical bright=false x=640
+PASS current default eligibility identical false 640
+PASS current default fog identical bright=false x=200
+PASS current default eligibility identical false 200
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+PASS current default fog identical bright=true x=200
+PASS current default eligibility identical true 200
+PASS current default fog identical bright=true x=280
+PASS current default eligibility identical true 280
+PASS current default fog identical bright=true x=640
+PASS current default eligibility identical true 640
+PASS current default fog identical bright=true x=200
+PASS current default eligibility identical true 200
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+FAIL TypeError: Error #2007 TypeError: Error #2007
+	at RealisticVisionMod/applyVisionClassic()
+	at RealisticVisionMod/onFrameInner()
+	at SettingsChecks/step()
+	at SettingsChecks/run()
+	at SettingsChecks()
+	at runtime::ContentPlayer/playRawContent()
+	at runtime::ContentPlayer/playContent()
+	at runtime::AppRunner/run()
+	at ADLAppEntry/run()
+	at global/runtime::ADLEntry()
+SETTINGS COMPLETE passed=32 failed=1

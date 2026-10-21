@@ -1,0 +1,42 @@
+[
+  {
+    "name": "LazyClassicChecks",
+    "exit": 0,
+    "summary": [
+      "PASS 1536 exact display, canonical field, moving/new mask and terrain checks",
+      "",
+      "LAZY COMPLETE passed=1536 failed=0",
+      ""
+    ]
+  },
+  {
+    "name": "SettingsChecks",
+    "exit": 0,
+    "summary": [
+      "PASS world reset releases custom range light memory",
+      "",
+      "SETTINGS COMPLETE passed=90 failed=0",
+      ""
+    ]
+  },
+  {
+    "name": "SoftHarness",
+    "exit": 0,
+    "summary": [
+      "MOTION GREEN soft assertions failures=0",
+      "",
+      "MOTION COMPLETE",
+      ""
+    ]
+  },
+  {
+    "name": "SharedExplorationHarness",
+    "exit": 0,
+    "summary": [
+      "PASS world reset releases shared map",
+      "",
+      "SHARED COMPLETE failures=0",
+      ""
+    ]
+  }
+]

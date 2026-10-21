@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "version": "v0.33.2-settings-performance",
+  "swf": "7852f61e083993e69431d5d8ca2fdf3c07d4068715946d04b3e796cecbe86764",
+  "host": "befcf0509e11fac9fef7afb834708b8b93752a14ae3d5cd72b42aa6d42f9b82a",
+  "evidence": {
+    "checks-09/air-output.log": "1ea966f3ba4c8914c3246c1d0d1ff8c9e7e81f07cc675e387b851bd40ebd50ca",
+    "checks-09/inputs.json": "a1943c12b5e5a58a0ca207b68db2dfca1c3c3db11d102bf6b856b314ce218f27",
+    "checks-09/last-run.json": "be9ea6f0ad46eb32a9eedad603c87d90101673a29280e3d88fbd96e9939d8e7e",
+    "checks-09/LazyClassicChecks.compile.log": "83845b015b5ba5bf38ff0117386d176f34e28bfaf185b003da4f761d3e92c3d4",
+    "checks-09/LazyClassicChecks.txt": "bcb0992f97776e51d46c2bf4c48b8e9e90cc2904bc35f653bfcc6b4ab1e03925",
+    "checks-09/result.json": "ba59ed3a98bd662803c2e33e9fdc76f273dad1d539db40d5e17a47ea713547cf",
+    "checks-09/running.json": "fca785c121663d0e5e409f085458ddb2e252970bbbf467447c809d5c4af2b3a4",
+    "checks-09/SettingsChecks.compile.log": "df6a57023bb61ba9a90d35e4635c1aadf7df78dce15ccf4bcc4641c2cdce8548",
+    "checks-09/SettingsChecks.txt": "b40298f258167ee3a325be28fdb1832d1e8d42d52fed80361ca3406bc74f8b33",
+    "checks-09/SharedExplorationHarness.compile.log": "7c2904073a593af3183c2fabb2546179e9c09cf0adce8e023886dfb5eb682a69",
+    "checks-09/SharedExplorationHarness.txt": "84758c42ad45b51fb9e4375a7e80e3d1816506e37972b57427d56b77491df176",
+    "checks-09/SoftHarness.compile.log": "be7f8b1bc752d3ac88c7dc7ad4ae31b908672133de8c032ab0633cd145be1085",
+    "checks-09/SoftHarness.txt": "ee2fdbc39e09278b9911097e64ef0fb14c4b28116687cb68ae484c69fbb26083",
+    "baseline-trial-05/air-output.log": "9744a566539cc0c08bd1a46ac195ddb27900b77e01386f061b454fdfc769630f",
+    "baseline-trial-05/analysis.json": "4db1127e6c8dc72b23505df63414bc1493cde7b11dbe2552b7ede43b6981a447",
+    "baseline-trial-05/baseline.compile.log": "512c7481717b4725e7ac23a6e4d9f53ad547b42d18b2930038024d626424d741",
+    "baseline-trial-05/build.json": "e6ba262590ad665e4173528a18b77d800e613694d2393b7631017cf2b858e6b9",
+    "baseline-trial-05/candidate.compile.log": "0755b077fa104c531b3f7d57a1120e0e0c17e1109857c5d87d386076af546e19",
+    "baseline-trial-05/environment.json": "6ec06776405c40552028b0068061afb24bd79c69d4c71d4f55899af0adac66cb",
+    "baseline-trial-05/last-run.json": "9dd1e80abf5b9d13c4e4680b541039b0d810a35ccd6931dc7054c46d13bfda03",
+    "baseline-trial-05/launch-state.json": "93c2c390a0b7ebb720c3f75b30b10b8e1ce47ee2d62fc9760ac63afe8cecc7d3",
+    "baseline-trial-05/running.json": "d13c278f83d113481e0ae3a411bf91b2c62af2a28bf099653644fb92e8c1ee78",
+    "baseline-trial-05/selection.json": "7d28297a1b78ba9e64e47bddfb2bb55d21a2246dd9469fd33b1909f1683c9231",
+    "baseline-trial-05/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "baseline-trial-05/evidence/result.json": "2439cf3c9969d64e0e3b1bb345c4986c5cf0adb1c8a7bfa72725c848bbe06515",
+    "baseline-trial-05/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "a37062f07ed8e2ccc58fa405365ea77c94acbbac547ec7163f4cf16cd0270a59",
+    "final-native-01/air-output.log": "c5f4c040a996a26c8bfecdc88752bf4a7b3eea8d8fd5e414c32a77773e8d7920",
+    "final-native-01/baseline.compile.log": "cff30597f137f3f2cd4062db3ce49fbddcd263fedbec5b6c43ade4218bbde8ce",
+    "final-native-01/build.json": "b4268c4982643b772d188874158b61a2abc279a7d97f619abe91f4335d062a71",
+    "final-native-01/candidate.compile.log": "632831891aa01c05d809c6c96946c550c62f10a90a2dec253f5b6062a507039f",
+    "final-native-01/environment.json": "a5144569ac30405210e7bd135cabf1051791b75fd39be35f815d36b5dab7fa9f",
+    "final-native-01/last-run.json": "864352b93aad758ed1bbfc11a0fa0883471a2680cd3bde77114d0a326a8ad4e0",
+    "final-native-01/launch-state.json": "f90ef794ee50509cadb2d65a2436d70589603631a45201c72fd67fd8d0d1303d",
+    "final-native-01/running.json": "1629604eac4717416ff9d3adb922eab03b56f7911c852f66fb124dcc7f434cbe",
+    "final-native-01/selection.json": "230dc57fb76ced507e1ab2555b18e202ba3cf1bbde6c8a4d3a2aa6ccd2f31268",
+    "final-native-01/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "final-native-01/evidence/result.json": "6148b846960ad2ef56de55ebc95b56656a46e0fd2dbb425f18417d163f014dff",
+    "final-native-01/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "f23b1ff860af114f2ff3be97d85a28d43f44999b65994ff0f15aaed6bb30de0d",
+    "final-combat-01/air-output.log": "8fa10ebb13db8967365fa0c14e8583ca56c48107c57ad9bdd17149ab0ff382f8",
+    "final-combat-01/baseline.compile.log": "965285269586b2fc9721f6b5076fdb6daf362d3679b7dd5e0972d942612ed96e",
+    "final-combat-01/build.json": "9988a2ef00b01b0b294dd9b4e56cafc263e627f4a8503d4c3c2a69c4a9f90d5a",
+    "final-combat-01/candidate.compile.log": "49d5c501b924641cdae79fe7946db4f6b959759057c2778221fe82be3e33f4ea",
+    "final-combat-01/environment.json": "3e67d825203a63a5896315cb5ea8c6cf73c6a82580a9f509ad52ff92ea0654aa",
+    "final-combat-01/last-run.json": "d4621a08884832507d69642fcf3e27a742104aec5742ab587c4c24c1af592a3b",
+    "final-combat-01/launch-state.json": "6018d58575987c674856ca6732316fb4768b7986b8163ec436648312c9b2d060",
+    "final-combat-01/running.json": "a8054a31a66080be4e14ee390da370638260ce379afeda8378169a1075369d6c",
+    "final-combat-01/selection.json": "76da729392dc24f4f6a7598a166ac07881a960e19c2a0657b1ec4cf202047331",
+    "final-combat-01/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "final-combat-01/evidence/result.json": "9a27b60481d61f532e47c6fbb7b5090c6f583d92dc989ed2c29063d20f879275",
+    "final-combat-01/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "f201bc0530270d2c2ac68f5fd104ddbf8a8b0c2fcb22bcd2a7668991e8f2a068",
+    "production-singlepass/CandidateOptionsProbe.compile.log": "493d391e8114f3c7052c4cd4ddb2da425b3de713d7863bbf83aa924ad748b162",
+    "production-singlepass/classes.txt": "4233800572a86b6c15f0b68245e5a121395b33bf737599b22320557f2b4b5da6",
+    "production-singlepass/manifest.json": "efd797ba21940287515d38e9b6f7b710e371e9f70d81ef710d89ceab8a0e259d",
+    "production-singlepass/RealisticVisionMod.compile.log": "2bc5b27cee0c8f7d4d87263d0091abe4d05d2614a2e4c2648fae73e12c5d1264",
+    "production-singlepass/settings.json": "35bbe8f30fd3bc8e66fe7c9b1e790f9bd908886885c029e9955e0003ffc6e970",
+    "production-singlepass/first/air-output.log": "70ef462ac2764b71aba98848990f0e6700151d129fedb08ed4f32b3028f65138",
+    "production-singlepass/first/last-run.json": "ad1b8bdcbd2cbec14dbadd84528004c3528ca03b80b3d88a3970f6fd35002f51",
+    "production-singlepass/first/running.json": "0f8a5ec86073cb4c3cd8f0d09e71510c59e8be066f2dbe54f6c960722059ce01",
+    "production-singlepass/restored/air-output.log": "572fb17ab8ed469cb162c01ec3001945dbbadb25500945da0d39793d4b613d75",
+    "production-singlepass/restored/last-run.json": "8a229b612831aafe5001e2eda79691900e3e485be67b878da9760d9f9ff6e02a",
+    "production-singlepass/restored/running.json": "2a22a67c2e73e04ee92416021577cb01eb7a4ea05e351c2643a5f4fbac860682"
+  },
+  "checks": 1731,
+  "combat_windows": 8,
+  "performance": [
+    {
+      "case": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.35,
+        "bright": false
+      },
+      "mean_total": [
+        64.775,
+        50.791666666666664
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.6,
+        "bright": false
+      },
+      "mean_total": [
+        66.69166666666666,
+        64.13333333333334
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.35,
+        "bright": false
+      },
+      "mean_total": [
+        44.2,
+        38.858333333333334
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.6,
+        "bright": false
+      },
+      "mean_total": [
+        43.025,
+        38.05
+      ]
+    }
+  ],
+  "limits": "RV update plus fog drawing, not overall FPS; maximum spikes remain reportable."
+}

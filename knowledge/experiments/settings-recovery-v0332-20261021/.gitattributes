@@ -1,0 +1,2 @@
+# Raw evidence must retain its bytes, including AIR's CR/CRLF output.
+* -text -diff

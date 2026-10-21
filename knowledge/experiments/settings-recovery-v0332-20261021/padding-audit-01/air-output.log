@@ -1,0 +1,286 @@
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0/0/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 0/0/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0/0/false/0
+CANONICAL FIRST INSIDE 0/0/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0/0/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0/0/false/4
+CANONICAL FIRST INSIDE 0/0/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/0/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/0/false/5
+CANONICAL FIRST INSIDE 0/0/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/0/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/0/false/6
+CANONICAL FIRST INSIDE 0/0/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0/0/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0/0/false/7
+CANONICAL FIRST INSIDE 0/0/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0/0/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0/0/false/8
+CANONICAL DELTA 0/0/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0/0/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0/0/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0/0/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 0/0/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0/0/true/0
+CANONICAL FIRST INSIDE 0/0/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0/0/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0/0/true/4
+CANONICAL FIRST INSIDE 0/0/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/0/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/0/true/5
+CANONICAL FIRST INSIDE 0/0/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/0/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/0/true/6
+CANONICAL FIRST INSIDE 0/0/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0/0/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0/0/true/7
+CANONICAL FIRST INSIDE 0/0/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0/0/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0/0/true/8
+CANONICAL DELTA 0/0/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0/0/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0/0/true/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0/20/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 0/20/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0/20/false/0
+CANONICAL FIRST INSIDE 0/20/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0/20/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0/20/false/4
+CANONICAL FIRST INSIDE 0/20/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/20/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/20/false/5
+CANONICAL FIRST INSIDE 0/20/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/20/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/20/false/6
+CANONICAL FIRST INSIDE 0/20/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0/20/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0/20/false/7
+CANONICAL FIRST INSIDE 0/20/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0/20/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0/20/false/8
+CANONICAL DELTA 0/20/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0/20/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0/20/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0/20/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 0/20/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0/20/true/0
+CANONICAL FIRST INSIDE 0/20/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0/20/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0/20/true/4
+CANONICAL FIRST INSIDE 0/20/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/20/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/20/true/5
+CANONICAL FIRST INSIDE 0/20/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0/20/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0/20/true/6
+CANONICAL FIRST INSIDE 0/20/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0/20/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0/20/true/7
+CANONICAL FIRST INSIDE 0/20/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0/20/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0/20/true/8
+CANONICAL DELTA 0/20/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0/20/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0/20/true/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0.6/0/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 0.6/0/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0.6/0/false/0
+CANONICAL FIRST INSIDE 0.6/0/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0.6/0/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0.6/0/false/4
+CANONICAL FIRST INSIDE 0.6/0/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/0/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/0/false/5
+CANONICAL FIRST INSIDE 0.6/0/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/0/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/0/false/6
+CANONICAL FIRST INSIDE 0.6/0/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0.6/0/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0.6/0/false/7
+CANONICAL FIRST INSIDE 0.6/0/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0.6/0/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0.6/0/false/8
+CANONICAL DELTA 0.6/0/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/0/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/0/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0.6/0/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 0.6/0/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0.6/0/true/0
+CANONICAL FIRST INSIDE 0.6/0/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0.6/0/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0.6/0/true/4
+CANONICAL FIRST INSIDE 0.6/0/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/0/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/0/true/5
+CANONICAL FIRST INSIDE 0.6/0/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/0/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/0/true/6
+CANONICAL FIRST INSIDE 0.6/0/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0.6/0/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0.6/0/true/7
+CANONICAL FIRST INSIDE 0.6/0/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0.6/0/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0.6/0/true/8
+CANONICAL DELTA 0.6/0/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/0/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/0/true/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0.6/20/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 0.6/20/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0.6/20/false/0
+CANONICAL FIRST INSIDE 0.6/20/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0.6/20/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0.6/20/false/4
+CANONICAL FIRST INSIDE 0.6/20/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/20/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/20/false/5
+CANONICAL FIRST INSIDE 0.6/20/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/20/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/20/false/6
+CANONICAL FIRST INSIDE 0.6/20/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0.6/20/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0.6/20/false/7
+CANONICAL FIRST INSIDE 0.6/20/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0.6/20/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0.6/20/false/8
+CANONICAL DELTA 0.6/20/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/20/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/20/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 0.6/20/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 0.6/20/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 0.6/20/true/0
+CANONICAL FIRST INSIDE 0.6/20/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 0.6/20/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 0.6/20/true/4
+CANONICAL FIRST INSIDE 0.6/20/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/20/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/20/true/5
+CANONICAL FIRST INSIDE 0.6/20/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 0.6/20/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 0.6/20/true/6
+CANONICAL FIRST INSIDE 0.6/20/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 0.6/20/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 0.6/20/true/7
+CANONICAL FIRST INSIDE 0.6/20/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 0.6/20/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 0.6/20/true/8
+CANONICAL DELTA 0.6/20/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/20/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 0.6/20/true/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 1/0/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 1/0/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 1/0/false/0
+CANONICAL FIRST INSIDE 1/0/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 1/0/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 1/0/false/4
+CANONICAL FIRST INSIDE 1/0/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/0/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/0/false/5
+CANONICAL FIRST INSIDE 1/0/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/0/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/0/false/6
+CANONICAL FIRST INSIDE 1/0/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 1/0/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 1/0/false/7
+CANONICAL FIRST INSIDE 1/0/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 1/0/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 1/0/false/8
+CANONICAL DELTA 1/0/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 1/0/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 1/0/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 1/0/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 1/0/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 1/0/true/0
+CANONICAL FIRST INSIDE 1/0/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 1/0/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 1/0/true/4
+CANONICAL FIRST INSIDE 1/0/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/0/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/0/true/5
+CANONICAL FIRST INSIDE 1/0/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/0/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/0/true/6
+CANONICAL FIRST INSIDE 1/0/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 1/0/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 1/0/true/7
+CANONICAL FIRST INSIDE 1/0/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 1/0/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 1/0/true/8
+CANONICAL DELTA 1/0/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 1/0/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 1/0/true/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 1/20/false/0 @163,80 18000000/19000000
+CANONICAL DELTA 1/20/false/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 1/20/false/0
+CANONICAL FIRST INSIDE 1/20/false/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 1/20/false/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 1/20/false/4
+CANONICAL FIRST INSIDE 1/20/false/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/20/false/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/20/false/5
+CANONICAL FIRST INSIDE 1/20/false/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/20/false/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/20/false/6
+CANONICAL FIRST INSIDE 1/20/false/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 1/20/false/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 1/20/false/7
+CANONICAL FIRST INSIDE 1/20/false/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 1/20/false/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 1/20/false/8
+CANONICAL DELTA 1/20/false/9 queried=0 unusedPadding=114
+CANONICAL DELTA 1/20/false/10 queried=0 unusedPadding=114
+CANONICAL DELTA 1/20/false/11 queried=0 unusedPadding=157
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+CANONICAL FIRST INSIDE 1/20/true/0 @163,80 18000000/19000000
+CANONICAL DELTA 1/20/true/0 queried=4 unusedPadding=0
+FAIL all queryable canonical pixels 1/20/true/0
+CANONICAL FIRST INSIDE 1/20/true/4 @195,137 f2000000/f1000000
+CANONICAL DELTA 1/20/true/4 queried=3 unusedPadding=426
+FAIL all queryable canonical pixels 1/20/true/4
+CANONICAL FIRST INSIDE 1/20/true/5 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/20/true/5 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/20/true/5
+CANONICAL FIRST INSIDE 1/20/true/6 @195,138 f1000000/f0000000
+CANONICAL DELTA 1/20/true/6 queried=4 unusedPadding=477
+FAIL all queryable canonical pixels 1/20/true/6
+CANONICAL FIRST INSIDE 1/20/true/7 @195,138 f5000000/f4000000
+CANONICAL DELTA 1/20/true/7 queried=4 unusedPadding=170
+FAIL all queryable canonical pixels 1/20/true/7
+CANONICAL FIRST INSIDE 1/20/true/8 @195,139 f6000000/f5000000
+CANONICAL DELTA 1/20/true/8 queried=3 unusedPadding=221
+FAIL all queryable canonical pixels 1/20/true/8
+CANONICAL DELTA 1/20/true/9 queried=0 unusedPadding=114
+CANONICAL DELTA 1/20/true/10 queried=0 unusedPadding=114
+CANONICAL DELTA 1/20/true/11 queried=0 unusedPadding=157
+PASS 1464 exact display, canonical field, moving/new mask and terrain checks
+LAZY COMPLETE passed=1464 failed=72

@@ -45,3 +45,7 @@ build/backups/before-motion-performance-*/
 
 build/vision-settings-output/
 build/backups/before-vision-settings-*/
+
+build/regression-recovery-output/
+build/backups/before-afternoon-rollback-*/
+build/backups/before-settings-recovery-*/

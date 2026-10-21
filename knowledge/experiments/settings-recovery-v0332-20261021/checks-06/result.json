@@ -1,0 +1,22 @@
+[
+  {
+    "name": "LazyClassicChecks",
+    "exit": 0,
+    "summary": [
+      "PASS 1536 exact display, canonical field, moving/new mask and terrain checks",
+      "",
+      "LAZY COMPLETE passed=1536 failed=0",
+      ""
+    ]
+  },
+  {
+    "name": "SettingsChecks",
+    "exit": 1,
+    "summary": [
+      "\tat global/runtime::ADLEntry()",
+      "",
+      "SETTINGS COMPLETE passed=32 failed=1",
+      ""
+    ]
+  }
+]

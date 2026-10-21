@@ -1,0 +1,150 @@
+{
+  "baseline-trial-05": {
+    "checks": 0,
+    "pid": 97164,
+    "other_processes": [],
+    "min_available_gib": 7.49
+  },
+  "final-native-01": {
+    "checks": 32,
+    "pid": 50696,
+    "other_processes": [],
+    "min_available_gib": 7.42
+  },
+  "final-combat-01": {
+    "checks": 0,
+    "pid": 100132,
+    "other_processes": [],
+    "min_available_gib": 5.69,
+    "cases": [
+      {
+        "mode": "current",
+        "variant": "baseline",
+        "updates": {
+          "mean": 19.008,
+          "p95": 23,
+          "max": 26
+        },
+        "intervals": {
+          "mean": 51.608,
+          "p95": 78,
+          "max": 111
+        },
+        "attacks": 24,
+        "projectiles": 2
+      },
+      {
+        "mode": "current",
+        "variant": "candidate",
+        "updates": {
+          "mean": 19.208,
+          "p95": 22,
+          "max": 26
+        },
+        "intervals": {
+          "mean": 50.017,
+          "p95": 65,
+          "max": 259
+        },
+        "attacks": 24,
+        "projectiles": 3
+      },
+      {
+        "mode": "current",
+        "variant": "candidate",
+        "updates": {
+          "mean": 18.583,
+          "p95": 22,
+          "max": 25
+        },
+        "intervals": {
+          "mean": 41.2,
+          "p95": 49,
+          "max": 69
+        },
+        "attacks": 28,
+        "projectiles": 2
+      },
+      {
+        "mode": "current",
+        "variant": "baseline",
+        "updates": {
+          "mean": 18.292,
+          "p95": 21,
+          "max": 22
+        },
+        "intervals": {
+          "mean": 43.7,
+          "p95": 55,
+          "max": 104
+        },
+        "attacks": 37,
+        "projectiles": 3
+      },
+      {
+        "mode": "classic",
+        "variant": "baseline",
+        "updates": {
+          "mean": 71.192,
+          "p95": 122,
+          "max": 166
+        },
+        "intervals": {
+          "mean": 101.542,
+          "p95": 171,
+          "max": 219
+        },
+        "attacks": 31,
+        "projectiles": 3
+      },
+      {
+        "mode": "classic",
+        "variant": "candidate",
+        "updates": {
+          "mean": 38.467,
+          "p95": 65,
+          "max": 104
+        },
+        "intervals": {
+          "mean": 66.683,
+          "p95": 105,
+          "max": 129
+        },
+        "attacks": 27,
+        "projectiles": 3
+      },
+      {
+        "mode": "classic",
+        "variant": "candidate",
+        "updates": {
+          "mean": 36.233,
+          "p95": 59,
+          "max": 121
+        },
+        "intervals": {
+          "mean": 59.3,
+          "p95": 85,
+          "max": 145
+        },
+        "attacks": 34,
+        "projectiles": 2
+      },
+      {
+        "mode": "classic",
+        "variant": "baseline",
+        "updates": {
+          "mean": 73.725,
+          "p95": 128,
+          "max": 150
+        },
+        "intervals": {
+          "mean": 106.042,
+          "p95": 172,
+          "max": 222
+        },
+        "attacks": 34,
+        "projectiles": 3
+      }
+    ]
+  }
+}

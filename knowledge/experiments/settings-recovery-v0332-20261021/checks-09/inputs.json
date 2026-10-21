@@ -1,0 +1,15 @@
+{
+  "sources": {
+    "BaselineVision.as": "8bc0fc2ce0b56258764f9323059a6dcc261117dffd401bb80b740f00847413eb",
+    "LazyClassicChecks.as": "8d15bf775ed4e74667608fca53d66ac586b587e56e7f49801fe537f2a9d7715b",
+    "RealisticVisionMod.as": "0bd39ba4021cc688c1f147090f2b6d6b24da5dd3f53b1dc283837cb1a2889384",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "RVWallSurface.as": "a053b268db13c0bd9f0f97337da197320eb51c7b6953f96f6f6f8f20a99d123b",
+    "SettingsChecks.as": "40bd57dc67462a42a1fd2cf0c2b34810c939a39221e1aa4faf25f1be48515f5c",
+    "SharedExplorationHarness.as": "2c71c8f2c1ecf7357bac282ea4bc0129e4548bed436d3f26a3cc1f802164708b",
+    "SoftHarness.as": "44707e15307668d4c926cf42556947f2ec5dbc64f51ef2a6841519f277422641",
+    "modlocales\\vision\\RVLocale.as": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "modlocales\\vision\\RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  }
+}

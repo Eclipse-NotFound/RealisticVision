@@ -69,6 +69,15 @@ package
       private var rangeRoom:Location;
       private var rangeMem:Object = {};
       private var classicLogicCache:BitmapData;
+      // D35: preserve the canonical field, but finish wall seams only in mask
+      // regions that are actually queried. Display brightness never grants sight.
+      private var classicLogicMemorySamples:BitmapData;
+      private var classicLogicVisibilitySamples:BitmapData;
+      private var classicLogicRaw:BitmapData;
+      private var classicLogicVisibility:BitmapData;
+      private var classicLogicWalls:BitmapData;
+      private var classicLogicDeltas:Array;
+      private var classicLogicTiles:Vector.<int>;
       private var classicSoftInput:BitmapData;
       private var cfgWallBright:Boolean = false;
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
@@ -81,7 +90,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.1-motion-performance";
+      private static const VERSION:String = "v0.33.2-settings-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -993,6 +1002,7 @@ package
 
       private function resetOff():void
       {
+         this.releaseClassicLogic();
          this.wallSurface.reset();
          this.wallViewBounds = null; this.wallViewOwner = null;
          this.curLoc = null;
@@ -1017,6 +1027,7 @@ package
 
       private function resetRoom(w:World, loc:Location):void
       {
+         this.releaseClassicLogic();
          // 跨房间记忆（v0.22）：离开前保存当前房间的 explored（最后一次
          // FOV 重算后的状态），回到同 id 房间时恢复——原版靠 tile.visi 缓存
          // 保留已探索常亮，模组需自己保存 explored[]
@@ -1980,6 +1991,7 @@ package
                if(doorView)
                {
                   var br:Number = lit * this.distFalloff(sdx * sdx + sdy * sdy);
+                  var logicalBrightness:Number=br;
                   if(br < floorF)
                   {
                      br = floorF;
@@ -1989,6 +2001,7 @@ package
                else if(lit > 0.0001)
                {
                   br = lit * this.distFalloff(sdx * sdx + sdy * sdy);
+                  logicalBrightness=br;
                   if(br < floorF)
                   {
                      br = floorF;
@@ -2004,9 +2017,12 @@ package
                   a = 255;
                }
                this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,FOG_PAD + ty * FOG_SUB + sy,a << 24);
-               var logicalA:int=Math.round((1-Math.max(lit*this.distFalloff(sdx*sdx+sdy*sdy),doorView?floorF:0.35))*255);
-               if(lit > 0.0001 && logicalA < MASK_LIT_A && sdx*sdx+sdy*sdy <= this.locDist2*this.locDist2)
-                  this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,0xFFFFFFFF);
+               if(lit > 0.0001)
+               {
+                  var logicalA:int=Math.round((1-Math.max(logicalBrightness,doorView?floorF:0.35))*255);
+                  if(logicalA < MASK_LIT_A && sdx*sdx+sdy*sdy <= this.locDist2*this.locDist2)
+                     this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,0xFFFFFFFF);
+               }
             }
          }
       }
@@ -2363,81 +2379,97 @@ package
          this.ensureFog(w);
          if(this.classicRaw == null) return;
          if(w.grafon != null) w.grafon.visLight.visible = false;
-         var separateLogic:Boolean = !logicOnly && this.cfgDim != 0.35;
-         if(separateLogic)
+         var separateLogic:Boolean = this.cfgDim != 0.35;
+         if(separateLogic && this.classicLogicMemorySamples == null)
          {
-            var displayDim:Number=this.cfgDim;
-            try {this.cfgDim=0.35;this.applyVisionClassic(w,loc,needFov,true);}
-            finally {this.cfgDim=displayDim;}
-            this.classicLogicCache=this.sizedScratch(this.classicLogicCache);
-            this.classicLogicCache.copyPixels(this.fogCache,this.fogRect,this.fogPoint);
+            this.classicLogicMemorySamples=new BitmapData(this.classicMemoryRaw.width,this.classicMemoryRaw.height,true,0xFF000000);
+            this.classicLogicVisibilitySamples=new BitmapData(this.classicVisibilityRaw.width,this.classicVisibilityRaw.height,false,0xFFFFFF);
          }
-         var changed:Boolean = needFov || separateLogic;
-         // 先推进全图，墙中心延续邻接地板的同一帧进度，避免遍历方向造成一帧差。
-         if(!separateLogic) for(var mi:int = 0; mi < this.spaceX*this.spaceY; mi++) this.advanceMemory(loc,mi);
-         for(var ty:int = 0; ty < this.spaceY; ty++)
+         var changed:Boolean=needFov || separateLogic;
+         var logicalChanged:Boolean=needFov;
+         var displayGrey:int=Math.round(255*this.cfgDim);
+         var canonicalGrey:int=Math.round(255*0.35);
+         // Both fields share terrain, light and memory progress. Only their
+         // grey values and deepest-neighbour choice may differ.
+         for(var mi:int=0;mi<this.spaceX*this.spaceY;mi++) this.advanceMemory(loc,mi);
+         for(var ty:int=0;ty<this.spaceY;ty++) for(var tx:int=0;tx<this.spaceX;tx++)
          {
-            for(var tx:int = 0; tx < this.spaceX; tx++)
+            var i:int=tx+ty*this.spaceX;
+            var a:int=this.tileFogAlpha(loc,tx,ty);
+            if(a != this.lastA[i])
             {
-               var i:int = tx + ty * this.spaceX;
-               var a:int = this.tileFogAlpha(loc,tx,ty);
-               if(a != this.lastA[i])
+               this.lastA[i]=a;this.classicRaw.setPixel32(tx,ty+1,a<<24);
+               changed=logicalChanged=true;
+            }
+            var explored:Boolean=this.memoryExplored(i);
+            var solid:Boolean=loc.getTile(tx,ty).opac>=1;
+            var memory:Number=this.memCur[i], logicalMemory:Number=memory;
+            var targetGrey:int=explored?displayGrey:0;
+            var logicalTarget:int=explored?canonicalGrey:0;
+            var grey:int=solid?Math.round((255-a)*this.cfgDim):targetGrey;
+            var logicalGrey:int=solid?Math.round((255-a)*0.35):logicalTarget;
+            if(!loc.retDark && solid)
+            {
+               var deepest:Number=0,logicalDeepest:Number=0;
+               for(var dy:int=-1;dy<=1;dy++) for(var dx:int=-1;dx<=1;dx++)
                {
-                  this.lastA[i] = a;
-                  this.classicRaw.setPixel32(tx,ty + 1,a << 24);
-                  changed = true;
-               }
-               var memory:Number = this.memCur[i];
-               var targetGrey:int = this.memoryExplored(i) ? Math.round(255*this.cfgDim) : 0;
-               var grey:int = loc.getTile(tx,ty).opac >= 1
-                  ? Math.round((255-a)*this.cfgDim)
-                  : targetGrey;
-               // 墙面可见性经邻居传播，不能拿它把地板投影端点挖成透明孔。
-               // 以相邻地板最深的记忆延续至墙中心，并跟随其淡入淡出；没有
-               // 暗邻居时不补遮挡，避免给整圈可见墙边凭空加一层黑带。
-               if(!loc.retDark && loc.getTile(tx,ty).opac >= 1)
-               {
-                  var deepest:Number = 0;
-                  for(var dy:int = -1; dy <= 1; dy++)
+                  var nx:int=tx+dx,ny:int=ty+dy;
+                  if(nx<=0 || ny<=0 || nx>=this.spaceX || ny>=this.spaceY || loc.getTile(nx,ny).opac>=1)continue;
+                  var ni:int=nx+ny*this.spaceX;
+                  var ne:Boolean=this.memoryExplored(ni);
+                  var nm:Number=this.memCur[ni];
+                  var ng:int=ne?displayGrey:0;
+                  var depth:Number=nm*(255-ng);
+                  if(depth>deepest){deepest=depth;memory=nm;grey=targetGrey=ng;}
+                  if(separateLogic)
                   {
-                     for(var dx:int = -1; dx <= 1; dx++)
-                     {
-                        var nx:int = tx+dx, ny:int = ty+dy;
-                        if(nx <= 0 || ny <= 0 || nx >= this.spaceX || ny >= this.spaceY
-                           || loc.getTile(nx,ny).opac >= 1) continue;
-                        var ni:int = nx+ny*this.spaceX;
-                        var ng:int = this.memoryExplored(ni) ? Math.round(255*this.cfgDim) : 0;
-                        var depth:Number = this.memCur[ni]*(255-ng);
-                        if(depth > deepest)
-                        {
-                           deepest = depth;
-                           memory = this.memCur[ni];
-                           grey = ng;
-                           targetGrey = ng;
-                        }
-                     }
+                     ng=ne?canonicalGrey:0;depth=nm*(255-ng);
+                     if(depth>logicalDeepest){logicalDeepest=depth;logicalMemory=nm;logicalGrey=logicalTarget=ng;}
                   }
                }
-               var memoryAlpha:int = Math.round(memory*255);
-               // BitmapData会丢弃全透明像素的RGB；统一为0，避免静止时永久误报变化。
-               var pixel:uint = memoryAlpha == 0 ? 0 :
-                  (memoryAlpha << 24) | (grey << 16) | (grey << 8) | grey;
-               if(tx == 0 || ty == 0) pixel = 0xFF000000;
-               var visibility:int = Math.round(255-memory*(255-targetGrey));
-               var visibilityPixel:uint = (visibility << 16) | (visibility << 8) | visibility;
-               if(this.classicVisibilityRaw.getPixel(tx,ty+1) != visibilityPixel)
-               {
-                  this.classicVisibilityRaw.setPixel(tx,ty+1,visibilityPixel);
-                  changed = true;
-               }
-               if(this.classicMemoryRaw.getPixel32(tx,ty+1) != pixel)
-               {
-                  this.classicMemoryRaw.setPixel32(tx,ty+1,pixel);
-                  changed = true;
-               }
+            }
+            var memoryAlpha:int=Math.round(memory*255);
+            var pixel:uint=memoryAlpha==0?0:(memoryAlpha<<24)|(grey<<16)|(grey<<8)|grey;
+            if(tx==0 || ty==0)pixel=0xFF000000;
+            var visibility:int=Math.round(255-memory*(255-targetGrey));
+            var visibilityPixel:uint=(visibility<<16)|(visibility<<8)|visibility;
+            if(this.classicVisibilityRaw.getPixel(tx,ty+1)!=visibilityPixel)
+            {this.classicVisibilityRaw.setPixel(tx,ty+1,visibilityPixel);changed=true;}
+            if(this.classicMemoryRaw.getPixel32(tx,ty+1)!=pixel)
+            {this.classicMemoryRaw.setPixel32(tx,ty+1,pixel);changed=true;}
+            if(separateLogic)
+            {
+               memoryAlpha=Math.round(logicalMemory*255);
+               pixel=memoryAlpha==0?0:(memoryAlpha<<24)|(logicalGrey<<16)|(logicalGrey<<8)|logicalGrey;
+               if(tx==0 || ty==0)pixel=0xFF000000;
+               visibility=Math.round(255-logicalMemory*(255-logicalTarget));
+               visibilityPixel=(visibility<<16)|(visibility<<8)|visibility;
+               if(this.classicLogicVisibilitySamples.getPixel(tx,ty+1)!=visibilityPixel)
+               {this.classicLogicVisibilitySamples.setPixel(tx,ty+1,visibilityPixel);logicalChanged=true;}
+               if(this.classicLogicMemorySamples.getPixel32(tx,ty+1)!=pixel)
+               {this.classicLogicMemorySamples.setPixel32(tx,ty+1,pixel);logicalChanged=true;}
             }
          }
-         if(this.refreshWallField(loc,needFov,false)) changed = true;
+         if(this.refreshWallField(loc,needFov,false))changed=logicalChanged=true;
+         if(separateLogic && (logicalChanged || this.classicLogicCache==null))
+         {
+            for(var ly:int=1;ly<=this.spaceY;ly++)
+               this.classicLogicVisibilitySamples.setPixel(this.spaceX,ly,this.classicLogicVisibilitySamples.getPixel(this.spaceX-1,ly));
+            for(var lx:int=0;lx<=this.spaceX;lx++)
+            {
+               this.classicLogicVisibilitySamples.setPixel(lx,0,this.classicLogicVisibilitySamples.getPixel(lx,1));
+               this.classicLogicVisibilitySamples.setPixel(lx,this.spaceY+1,this.classicLogicVisibilitySamples.getPixel(lx,this.spaceY));
+            }
+            this.classicLogicCache=this.sizedScratch(this.classicLogicCache);
+            this.classicLogicRaw=this.sizedScratch(this.classicLogicRaw);
+            this.classicLogicVisibility=this.sizedScratch(this.classicLogicVisibility);
+            this.classicLogicWalls=this.sizedScratch(this.classicLogicWalls);
+            this.classicLogicCache.fillRect(this.fogRect,0xFF000000);
+            this.classicLogicDeltas=new Array(this.spaceX*this.spaceY);
+            this.classicLogicTiles=new Vector.<int>(this.spaceX*this.spaceY,true);
+            if(logicalChanged)this.fovVersion++;
+         }
+
          if(changed)
          {
             // 在白底上画原版黑雾，得到原版亮度；再以记忆进度为alpha混入
@@ -2481,8 +2513,10 @@ package
       }
 
       /** 墙保留原版基底，仅叠加中心遮挡；地板在墙外一格内接到同一边界值。 */
-      private function joinClassicWalls(loc:Location):void
+      private function joinClassicWalls(loc:Location, bounds:Rectangle = null, prepared:Boolean = false, visited:Vector.<int> = null):void
       {
+         if(!prepared)
+         {
          this.classicWallShade.fillRect(this.fogRect,0);
          // 遮挡场延伸过裁切边界，平滑采样不会混入墙外透明像素而形成亮缝。
          this.fogCache.copyPixels(this.classicVisibilityField,this.fogRect,this.fogPoint);
@@ -2501,17 +2535,33 @@ package
          this.fogCache.draw(this.wallRaw,this.classicLightMatrix,null,null,null,true);
          this.fogCache.draw(this.classicVisibilityField,null,null,"multiply");
          this.fogCache.colorTransform(this.fogRect,this.brightnessToFog);
+         }
+         var x0:int=bounds == null ? 0 : Math.max(0,int(bounds.x));
+         var y0:int=bounds == null ? 0 : Math.max(0,int(bounds.y));
+         var x1:int=bounds == null ? this.spaceX : Math.min(this.spaceX,int(bounds.right));
+         var y1:int=bounds == null ? this.spaceY : Math.min(this.spaceY,int(bounds.bottom));
+         if(x1<=x0 || y1<=y0) return;
          var wallPoint:Point = new Point();
-         for each(var wi:int in this.wallTiles)
+         var copyCount:int=bounds == null ? this.wallTiles.length : (x1-x0)*(y1-y0);
+         for(var copyIndex:int=0;copyIndex<copyCount;copyIndex++)
          {
+            var wi:int=bounds == null ? this.wallTiles[copyIndex] : x0+copyIndex%(x1-x0)+(y0+int(copyIndex/(x1-x0)))*this.spaceX;
+            if(visited != null && visited[wi]) continue;
+            if(bounds != null && loc.getTile(wi%this.spaceX,int(wi/this.spaceX)).opac<1) continue;
             wallPoint.x = this.fogCellRect.x = FOG_PAD+(wi%this.spaceX)*FOG_SUB;
             wallPoint.y = this.fogCellRect.y = FOG_PAD+int(wi/this.spaceX)*FOG_SUB;
             this.fogBmp.copyChannel(this.fogCache,this.fogCellRect,wallPoint,
                BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
          }
          var westCurve:Array = [], eastCurve:Array = [], northCurve:Array = [], southCurve:Array = [];
-         for(var ty:int = 0; ty < this.spaceY; ty++) for(var tx:int = 0; tx < this.spaceX; tx++)
+         for(var ty:int = y0; ty < y1; ty++) for(var tx:int = x0; tx < x1; tx++)
          {
+            if(visited != null)
+            {
+               var vi:int=tx+ty*this.spaceX;
+               if(visited[vi]) continue;
+               visited[vi]=1;
+            }
             if(loc.getTile(tx,ty).opac >= 1) continue;
             var west:Boolean = tx > 0 && loc.getTile(tx-1,ty).opac >= 1;
             var east:Boolean = tx+1 < this.spaceX && loc.getTile(tx+1,ty).opac >= 1;
@@ -2560,6 +2610,78 @@ package
                this.fogBmp.setPixel32(px,py,Math.max(0,Math.min(255,Math.round(a))) << 24);
             }
          }
+      }
+
+      /** Materialize each requested canonical tile once per refreshed field.
+       * New units and changed bounds can query additional tiles in the same frame.
+       * All arithmetic and raster inputs are those of the original full pass. */
+      private function classicLogicRegion(bounds:Rectangle):void
+      {
+         if(this.cfgMode != "classic" || this.cfgDim == 0.35 || this.classicLogicTiles == null) return;
+         var region:Rectangle=new Rectangle(FOG_PAD+bounds.x*FOG_SUB,FOG_PAD+bounds.y*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
+         var fresh:Boolean=false;
+         var tx:int,ty:int;
+         for(ty=bounds.y;ty<bounds.bottom && !fresh;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
+            if(!this.classicLogicTiles[tx+ty*this.spaceX]){fresh=true;break;}
+         if(fresh)
+         {
+            var raw:BitmapData=this.fogRaw,bmp:BitmapData=this.fogBmp,cache:BitmapData=this.fogCache;
+            var visibility:BitmapData=this.classicVisibilityField;
+            var deltas:Array=this.classicCornerDeltas;
+            try
+            {
+               this.fogRaw=this.classicLogicRaw;this.fogBmp=this.classicLogicCache;this.fogCache=this.classicLogicWalls;
+               this.classicVisibilityField=this.classicLogicVisibility;this.classicCornerDeltas=this.classicLogicDeltas;
+               // AIR's clipped smooth raster adds edge rounding with a one-pixel
+               // gutter. Two tiles of support match the full raster exactly.
+               var sample:Rectangle=region.clone();sample.inflate(16,16);sample=sample.intersection(this.fogRect);
+               this.fogRaw.fillRect(sample,0xFFFFFFFF);
+               this.fogRaw.draw(this.classicRaw,this.classicLightMatrix,null,null,sample,true);
+               this.fogRaw.draw(this.classicLogicMemorySamples,this.classicMemoryMatrix,null,null,sample,true);
+               this.fogRaw.colorTransform(sample,this.brightnessToFog);
+               this.classicVisibilityField.fillRect(sample,0xFFFFFFFF);
+               this.classicVisibilityField.draw(this.classicLogicVisibilitySamples,this.classicMemoryMatrix,null,null,sample,true);
+               this.fogCache.fillRect(region,0xFFFFFFFF);
+               this.fogCache.draw(this.wallRaw,this.classicLightMatrix,null,null,region,true);
+               this.fogCache.draw(this.classicVisibilityField,null,null,"multiply",region);
+               this.fogCache.colorTransform(region,this.brightnessToFog);
+               var cell:Rectangle=new Rectangle(0,0,FOG_SUB,FOG_SUB),point:Point=new Point();
+               for(ty=bounds.y;ty<bounds.bottom;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
+               {
+                  if(this.classicLogicTiles[tx+ty*this.spaceX]) continue;
+                  cell.x=point.x=FOG_PAD+tx*FOG_SUB;cell.y=point.y=FOG_PAD+ty*FOG_SUB;
+                  this.fogBmp.fillRect(cell,0);
+                  this.fogBmp.copyChannel(this.fogRaw,cell,point,BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+               }
+               for(ty=bounds.y;ty<=bounds.bottom && ty<this.spaceY;ty++) for(tx=bounds.x;tx<=bounds.right && tx<this.spaceX;tx++)
+               {
+                  var ci:int=tx+ty*this.spaceX;
+                  if(this.classicCornerDeltas[ci] !== undefined) continue;
+                  this.classicCornerDeltas[ci]=this.wallA[ci] === undefined ? 0 :
+                     this.classicWallDelta(this.wallA[ci],FOG_PAD+tx*FOG_SUB-0.5,FOG_PAD+ty*FOG_SUB-0.5);
+               }
+               this.joinClassicWalls(this.curLoc,bounds,true,this.classicLogicTiles);
+            }
+            finally
+            {
+               this.fogRaw=raw;this.fogBmp=bmp;this.fogCache=cache;
+               this.classicVisibilityField=visibility;this.classicCornerDeltas=deltas;
+            }
+         }
+         this.fogCache.copyPixels(this.classicLogicCache,region,new Point(region.x,region.y));
+      }
+
+      private function releaseClassicLogic():void
+      {
+         if(this.classicLogicMemorySamples != null) this.classicLogicMemorySamples.dispose();
+         if(this.classicLogicVisibilitySamples != null) this.classicLogicVisibilitySamples.dispose();
+         this.classicLogicMemorySamples=this.classicLogicVisibilitySamples=null;
+         if(this.classicLogicCache != null) this.classicLogicCache.dispose();
+         if(this.classicLogicRaw != null) this.classicLogicRaw.dispose();
+         if(this.classicLogicVisibility != null) this.classicLogicVisibility.dispose();
+         if(this.classicLogicWalls != null) this.classicLogicWalls.dispose();
+         this.classicLogicCache=this.classicLogicRaw=this.classicLogicVisibility=this.classicLogicWalls=null;
+         this.classicLogicDeltas=null;this.classicLogicTiles=null;
       }
 
       private function sizedScratch(b:BitmapData):BitmapData
@@ -2893,6 +3015,7 @@ package
             // 该路径只在 fovVersion 变化帧运行（fogCache 恰为本帧刷新）。
             // The old world -> tile -> subcell arithmetic resolves exactly
             // to this in-bounds integer rectangle (MASK_SUB == FOG_SUB).
+            this.classicLogicRegion(new Rectangle(x0,y0,x1-x0+1,y1-y0+1));
             bd.threshold(this.fogCache,
                new Rectangle(FOG_PAD+x0*MASK_SUB,FOG_PAD+y0*MASK_SUB,totx,toty),
                this.fogPoint,"<",uint(MASK_LIT_A)<<24,0xFFFFFFFF,0xFF000000,false);

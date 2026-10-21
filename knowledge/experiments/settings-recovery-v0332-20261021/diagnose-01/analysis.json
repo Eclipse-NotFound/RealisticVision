@@ -1,0 +1,276 @@
+[
+  {
+    "case": {
+      "dense": true,
+      "dim": 0.35,
+      "mode": "classic",
+      "bright": false
+    },
+    "update": [
+      {
+        "mean": 58.55,
+        "p95": 112,
+        "max": 142,
+        ">50": 80
+      },
+      {
+        "mean": 46.958,
+        "p95": 91,
+        "max": 132,
+        ">50": 78
+      }
+    ],
+    "total": [
+      {
+        "mean": 62.975,
+        "p95": 119,
+        "max": 146,
+        ">50": 80
+      },
+      {
+        "mean": 51.383,
+        "p95": 97,
+        "max": 135,
+        ">50": 80
+      }
+    ],
+    "stages": [
+      {
+        "computeFov": 160,
+        "maskGraphics": 10,
+        "enemyState": 11,
+        "maskRead": 17,
+        "updateWallSurface": 1472,
+        "maskCompare": 23,
+        "applyVisionClassic": 5088,
+        "maskSetup": 29,
+        "maskBlur": 60,
+        "hideEnemies": 221,
+        "applyMask": 158,
+        "refreshWallField": 291,
+        "joinClassicWalls": 3367
+      },
+      {
+        "computeFov": 163,
+        "maskGraphics": 15,
+        "enemyState": 17,
+        "maskRead": 21,
+        "updateWallSurface": 1200,
+        "maskCompare": 42,
+        "applyVisionClassic": 3947,
+        "maskSetup": 18,
+        "maskBlur": 59,
+        "hideEnemies": 246,
+        "applyMask": 173,
+        "refreshWallField": 315,
+        "joinClassicWalls": 2143
+      }
+    ],
+    "counts": [
+      {
+        "updateWallSurface": 120,
+        "applyMask": 4557,
+        "applyVisionClassic": 120,
+        "computeFov": 40,
+        "hideEnemies": 120,
+        "enemyState": 11520,
+        "refreshWallField": 80,
+        "joinClassicWalls": 80
+      },
+      {
+        "updateWallSurface": 120,
+        "applyMask": 4557,
+        "applyVisionClassic": 120,
+        "computeFov": 40,
+        "hideEnemies": 120,
+        "enemyState": 11520,
+        "refreshWallField": 80,
+        "joinClassicWalls": 80
+      }
+    ]
+  },
+  {
+    "case": {
+      "dense": true,
+      "dim": 0.6,
+      "mode": "classic",
+      "bright": false
+    },
+    "update": [
+      {
+        "mean": 62.592,
+        "p95": 120,
+        "max": 181,
+        ">50": 80
+      },
+      {
+        "mean": 84.567,
+        "p95": 145,
+        "max": 212,
+        ">50": 81
+      }
+    ],
+    "total": [
+      {
+        "mean": 67.492,
+        "p95": 123,
+        "max": 192,
+        ">50": 80
+      },
+      {
+        "mean": 89.667,
+        "p95": 153,
+        "max": 217,
+        ">50": 81
+      }
+    ],
+    "stages": [
+      {
+        "computeFov": 176,
+        "maskGraphics": 10,
+        "enemyState": 9,
+        "maskRead": 14,
+        "updateWallSurface": 1586,
+        "maskCompare": 36,
+        "applyVisionClassic": 5411,
+        "maskSetup": 35,
+        "maskBlur": 55,
+        "hideEnemies": 246,
+        "applyMask": 175,
+        "refreshWallField": 293,
+        "joinClassicWalls": 3622
+      },
+      {
+        "computeFov": 182,
+        "maskGraphics": 13,
+        "enemyState": 20,
+        "maskRead": 20,
+        "updateWallSurface": 1225,
+        "maskCompare": 37,
+        "applyVisionClassic": 12560,
+        "maskSetup": 24,
+        "maskBlur": 67,
+        "hideEnemies": 251,
+        "applyMask": 176,
+        "refreshWallField": 621,
+        "joinClassicWalls": 4534
+      }
+    ],
+    "counts": [
+      {
+        "updateWallSurface": 120,
+        "applyMask": 4557,
+        "applyVisionClassic": 120,
+        "computeFov": 40,
+        "hideEnemies": 120,
+        "enemyState": 11520,
+        "refreshWallField": 80,
+        "joinClassicWalls": 80
+      },
+      {
+        "updateWallSurface": 120,
+        "applyMask": 4557,
+        "applyVisionClassic": 200,
+        "computeFov": 40,
+        "hideEnemies": 120,
+        "enemyState": 11520,
+        "refreshWallField": 160,
+        "joinClassicWalls": 160
+      }
+    ]
+  },
+  {
+    "case": {
+      "dense": true,
+      "dim": 0.35,
+      "mode": "current",
+      "bright": false
+    },
+    "update": [
+      {
+        "mean": 39.858,
+        "p95": 61,
+        "max": 80,
+        ">50": 26
+      },
+      {
+        "mean": 34.625,
+        "p95": 54,
+        "max": 121,
+        ">50": 7
+      }
+    ],
+    "total": [
+      {
+        "mean": 44.85,
+        "p95": 66,
+        "max": 85,
+        ">50": 46
+      },
+      {
+        "mean": 39.642,
+        "p95": 57,
+        "max": 135,
+        ">50": 11
+      }
+    ],
+    "stages": [
+      {
+        "applyMask": 638,
+        "maskGraphics": 34,
+        "enemyState": 75,
+        "maskSetup": 67,
+        "prepareOcclusion": 114,
+        "updateWallSurface": 2081,
+        "maskCompare": 67,
+        "applyVision": 1259,
+        "maskRead": 21,
+        "maskBlur": 412,
+        "hideEnemies": 839,
+        "computeFov": 483,
+        "refreshWallField": 176,
+        "fillFogCache": 936
+      },
+      {
+        "applyMask": 653,
+        "maskGraphics": 38,
+        "enemyState": 65,
+        "maskSetup": 65,
+        "prepareOcclusion": 111,
+        "updateWallSurface": 1449,
+        "maskCompare": 78,
+        "applyVision": 1262,
+        "maskRead": 24,
+        "maskBlur": 413,
+        "hideEnemies": 852,
+        "computeFov": 479,
+        "refreshWallField": 177,
+        "fillFogCache": 937
+      }
+    ],
+    "counts": [
+      {
+        "prepareOcclusion": 120,
+        "updateWallSurface": 120,
+        "enemyState": 11520,
+        "applyVision": 120,
+        "applyMask": 5335,
+        "hideEnemies": 120,
+        "computeFov": 120,
+        "refreshWallField": 120,
+        "fillFogCache": 120
+      },
+      {
+        "prepareOcclusion": 120,
+        "updateWallSurface": 120,
+        "enemyState": 11520,
+        "applyVision": 120,
+        "applyMask": 5335,
+        "hideEnemies": 120,
+        "computeFov": 120,
+        "refreshWallField": 120,
+        "fillFogCache": 120
+      }
+    ]
+  }
+]

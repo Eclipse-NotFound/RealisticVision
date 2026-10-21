@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-21 **D35先回退，再修复并部署v0.33.2**：22:17恢复下午前D32；23:35准确安装7852F61E…BE86764（41,630B）。自定义亮度不再重复整图合成/地形扫描；显示与逻辑隔离、设置、阶梯和防溢出保留。1731项检查及8个原生射击窗口通过，正式路径init/设置注册/tick1/181/361通过。D32配对四组更新加绘制均值低3.8%～21.6%，current默认组最大值仍83→125ms，不能承诺无卡顿。生产源build/regression-recovery-output/production-singlepass/src，不含authority；回退备份before-settings-recovery-20261021-233515-ab290b为D32。详见[报告](../knowledge/experiments/2026-10-21-settings-performance-recovery.md)。
+
 > 2026-10-21 **D33合入D34，v0.33.1已部署**：墙轮廓线性扫描/紧凑缓存与classic零修正跳过；完整保留视野设置、阶梯与防溢出。471项/组通过，正式路径init/设置注册/tick1/181/361通过。SHA F2B8A973D9D2A374C9BD8F5DA9D29040266954C8F139B8C85BFA0AAAA749A561。大图配对更新加绘制均值下降6.9%–15.4%，持续射击classic更新约降18.3%、current基本持平；最大长帧未全面改善，不宣称卡顿全解。准确源build/motion-performance-output/merged-settings/production/src，不含authority。详见[报告](../knowledge/experiments/2026-10-21-motion-performance.md)。
 
 > 2026-10-21 **D34 v0.33.0已部署**：已探索区亮度、分模式柔化与0.5–3倍房间视距；默认画面与D32严格相同，251项通过，正式路径init/设置注册/tick1/181/361通过。SHA 8D4A19634770ACCA0B66C8C684955855EF4725E80FBDFF329451D69710C55BF1。准确源build/vision-settings-output/candidate/src，不含authority及未发布D33候选；后续性能合并不可覆盖设置。详见[报告](../knowledge/experiments/2026-10-21-vision-settings.md)。
@@ -72,7 +74,7 @@
 
 ## 3. 当前状态
 
-- 当前安装以顶部D33 v0.33.1为准；D34设置完整保留。正式源/包：build/motion-performance-output/merged-settings/production。
+- 当前安装D35 v0.33.2（7852F61E…BE86764）；D34全部设置、D32阶梯与防溢出、D33有效缓存保留。正式源/包：build/regression-recovery-output/production-singlepass；不从含authority的HEAD整包部署。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -96,7 +98,7 @@
 
 ## 4. 正在进行与停点
 
-- D33本轮实现、验证与部署完成，无待跑RV实例。旧Object缓存和过时v0.32.4不可部署，不重跑冻结测试；authority仍为独立未发布工作。
+- D35实现、验证、部署已完成；所有RV实例已退出。candidate至candidate-v5为历史失败/过渡方案，不部署、不重跑覆盖。authority仍为独立未发布工作。
 
 
 - 阶梯最小修复已冻结：src/RVWallSurface.as仅增加半高格顶部空气条件；准确生产源build/stair-shadow-output/candidate/src。统一发布应合入最新D31生产源，不用含authority的HEAD整包；无待跑阶梯AIR。
@@ -120,6 +122,8 @@
 
 ## 5. 已知问题与边界
 
+- D35解决自定义亮度的重复计算回退；平均改善不能当作长帧全解。current默认大图最大83→125ms，射击整帧峰值259ms而RV更新最大26ms；具体慢帧与全组合长期联机尚未完全归因。
+
 - D33仍有偶发长帧：配对classic最大135→328ms（其中绘图254ms），原生current整帧最大95→138ms，而RV更新最大33→30ms。部分开销改善不等于完整FPS达标，全模组/联机密集混战未验证。
 
 
@@ -138,7 +142,7 @@
 
 ## 6. 下一步
 
-- 用户正常保存并重启加载v0.33.1；若仍反馈高速/混战停顿，优先对完整组合的慢帧分段采样，保留画质及D34设置，不继续只按平均值优化。
+- 用户正常保存并重启加载v0.33.2；若仍反馈高速/混战停顿，按实际保存的设置和完整组合慢帧采样，不仅测默认值或按平均值优化。D35安全回退基线为D32，路径见顶部报告。
 
 
 - 阶梯修复已交获授权的统一发布会话合入D31并做组合验证；保留功能与严格图像诊断的不同结论，不直接部署325A旧生产线整包。
@@ -151,6 +155,8 @@
 4. 用户游戏不自动关闭；部署后需保存并正常重启。此前回滚点与stash保留。
 
 ## 7. 深入了解与复验
+
+- D35入口：knowledge/experiments/2026-10-21-settings-performance-recovery.md、build/regression-recovery/README.md。1731检查、8战斗窗、原始性能、失败与部署证据均保留；KB-000056用于测量方法；本轮非默认参数回退与局部缓存经验已回流KB-000106修订1。
 
 - D31入口：knowledge/experiments/2026-10-19-frame-performance.md、build/frame-performance/README.md；准确生产源与包位于build/frame-performance-output/production，证据归档frame-performance-v0322-20261019。禁止用含authority与阶梯WIP的HEAD整包覆盖。
 

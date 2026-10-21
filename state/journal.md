@@ -1,3 +1,12 @@
+## 2026-10-21 — D35先回退并修复非默认亮度的性能回退
+
+- 用户明确先回退下午修改：22:17将F2B8A恢复D32 76314B81，正式路径复验通过，真实配置/存档未改。
+- 根因：classic非35%记忆亮度递归完整渲染两次，用户实际约60%；此前默认值的性能收益不能覆盖此路径。改为一次地形遍历生成两组低图，固定逻辑高图按实际遮罩查询区完成，current复用距离衰减。
+- 验证：1731项和8个原生射击窗口通过；显示整图、所有逻辑可读像素严格一致。D32直接配对均值低3.8%～21.6%，用户classic60%为66.692→64.133ms；current默认最大83→125ms、原生整帧仍有259ms尖峰，未声称卡顿全解。失败的1px缓冲、首帧空缓存及仍回退候选均保留。
+- 部署：23:35:15准确v0.33.2 / 7852F61E083993E69431D5D8CA2FDF3C07D4068715946D04B3E796CECBE86764（41630B），仅RV，17项保护指纹及真实配置不变。独立正式init/设置注册/tick1/181/361通过，PID103276和描述符清理。备份build/backups/before-settings-recovery-20261021-233515-ab290b/RealisticVisionMod.before.swf为准确D32。
+- 源与证据：[报告](../knowledge/experiments/2026-10-21-settings-performance-recovery.md)、build/regression-recovery/README.md、准确生产源build/regression-recovery-output/production-singlepass/src。共享登记排队；遗留他方实例仅由所属会话清理。并行authority四项WIP保留，用户正常保存并重启生效。
+- 收尾：649份同哈希素材去重约1.30GiB；145份小体积证据归档，报告台账已登记，经验回流KB-000106修订1。
+
 ## 2026-10-21 — D33运动性能合入D34并部署v0.33.1
 
 - 完成：轮廓线性扫描与整数缓存、classic零修正写回跳过；合并D34全部设置，未发布authority。准确包40,686B，F2B8A973…AA749A561。
