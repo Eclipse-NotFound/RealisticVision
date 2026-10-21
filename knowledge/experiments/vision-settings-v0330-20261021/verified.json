@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "version": "v0.33.0-vision-settings",
+  "swf": "8d4a19634770acca0b66c8c684955855ef4725e80fbdff329451d69710c55bf1",
+  "checks": [
+    {
+      "appid": "pfe-modsettings-rv-settings-e9cfb56029be4a079235e91533ea660a",
+      "pid": 72576,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\checks\\SettingsChecks-c3bb1529.txt",
+      "passed": 90
+    },
+    {
+      "appid": "pfe-modsettings-rv-settings-c354ac9877994723bd332d1cc5518e99",
+      "pid": 109432,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\checks\\SoftHarness-572d3784.txt",
+      "passed": 16
+    },
+    {
+      "appid": "pfe-modsettings-rv-settings-13f2f9f635ca4f15af1bda2a8288285f",
+      "pid": 100052,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\checks\\SharedExplorationHarness-a4418821.txt",
+      "passed": 21
+    }
+  ],
+  "native": {
+    "appid": "pfe-modsettings-rv-settings-c24aed710653498d8a4213da15a6669e",
+    "pid": 96540,
+    "exit": 0,
+    "log": "build\\vision-settings-output\\native-final\\pfe-8531ee6a.txt",
+    "passed": 88
+  },
+  "options": [
+    {
+      "appid": "pfe-modsettings-rv-settings-final-931c265cdd674b5bad5c23582bf720eb",
+      "pid": 107244,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\options-final\\CandidateOptionsProbe-06de8ff3.txt",
+      "passed": 18
+    },
+    {
+      "appid": "pfe-modsettings-rv-settings-final-931c265cdd674b5bad5c23582bf720eb",
+      "pid": 107020,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\options-final\\CandidateOptionsProbe-5960d415.txt",
+      "passed": 18
+    }
+  ],
+  "classes": "001b984cdbc4dbdfcfbaf9bd7ed2a790f6d3cfdcf181aa64eaaa971b3cb488ed",
+  "count": 251
+}

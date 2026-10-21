@@ -61,6 +61,15 @@ package
       private var keybinds:RVKeybinds = new RVKeybinds();
       private var cfgMode:String = "current";   // vanilla=原版 / classic=v0.7.2 / current=当前
       private var cfgDim:Number = 0.35;
+      private var cfgViewScale:Number = 1;
+      private var cfgSoftCurrent:Number = 20;
+      private var cfgSoftClassic:Number = 0;
+      private var settingsDirty:Boolean = false;
+      private var rangeLight:Array;
+      private var rangeRoom:Location;
+      private var rangeMem:Object = {};
+      private var classicLogicCache:BitmapData;
+      private var classicSoftInput:BitmapData;
       private var cfgWallBright:Boolean = false;
       private var cfgDoorDim:Number = 0.5;      // 透光门/水后视野的亮度（比记忆暗色亮）
       private var cfgLitMin:Number = 0.6;
@@ -72,7 +81,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.32.2-frame-performance";
+      private static const VERSION:String = "v0.33.0-vision-settings";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -250,6 +259,8 @@ package
          var light:Number = Math.max(0,Math.min(1,loc.getTile(x,y).visi));
          if(!loc.retDark && this.sharedLight != null)
             light = Math.max(light,Number(this.sharedLight[x+y*this.spaceX]));
+         if(this.cfgViewScale != 1 && this.rangeRoom === loc && this.rangeLight != null)
+            light = Math.max(light,Number(this.rangeLight[x+y*this.spaceX]) || 0);
          return light;
       }
 
@@ -494,8 +505,11 @@ package
                }
                 else if(key == "dim")
                 {
-                   this.cfgDim = Number(val);
+                   this.cfgDim = settingNumber(val,0,1,0.35);
                 }
+               else if(key == "viewscale") this.cfgViewScale = settingNumber(val,0.5,3,1);
+               else if(key == "soft_current") this.cfgSoftCurrent = settingNumber(val,0,60,20);
+               else if(key == "soft_classic") this.cfgSoftClassic = settingNumber(val,0,40,0);
                 else if(key == "doordim")
                 {
                    this.cfgDoorDim = Number(val);
@@ -556,6 +570,72 @@ package
          }
       }
 
+      private static function settingNumber(v:*,lo:Number,hi:Number,fallback:Number):Number
+      {
+         if(v == null || String(v).replace(/\s/g,"") == "") return fallback;
+         var n:Number = Number(v);
+         return isFinite(n) ? Math.max(lo,Math.min(hi,n)) : fallback;
+      }
+
+      private function setVisualSetting(key:String,v:*):void
+      {
+         if(key == "dim") this.cfgDim = settingNumber(v,0,1,0.35);
+         else if(key == "viewscale") this.cfgViewScale = settingNumber(v,0.5,3,1);
+         else if(key == "soft_current") this.cfgSoftCurrent = settingNumber(v,0,60,20);
+         else if(key == "soft_classic") this.cfgSoftClassic = settingNumber(v,0,40,0);
+         else return;
+         // Repaint in place: resetting the room would discard subcell memory.
+         this.settingsDirty = true;
+         this.saveConfig();
+      }
+
+      private function updateViewDistances(loc:Location):void
+      {
+         var d1:Number = (loc.lDist1 > 0 ? loc.lDist1 : 300)*this.cfgViewScale;
+         var d2:Number = (loc.lDist2 > 0 ? loc.lDist2 : 1000)*this.cfgViewScale;
+         if(d1 != this.locDist1 || d2 != this.locDist2) this.settingsDirty = true;
+         this.locDist1 = d1; this.locDist2 = d2;
+         this.curBlur.blurX = this.curBlur.blurY = this.cfgSoftCurrent/5;
+      }
+
+      /** Native corner light sampling, in a mod-owned field. No native writes.
+       * Retain the native subtractive opacity and phase, including solid cores. */
+      private function updateRangeLight(loc:Location):void
+      {
+         if(this.cfgViewScale == 1) return;
+         if(this.rangeRoom !== loc || this.rangeLight == null || this.rangeLight.length != this.spaceX*this.spaceY)
+         {
+            this.rangeRoom = loc;
+            var saved:Object=this.rangeMem[loc.id];
+            if(saved == null || saved.width != this.spaceX || saved.height != this.spaceY)
+            {saved={width:this.spaceX,height:this.spaceY,values:new Array(this.spaceX*this.spaceY)};this.rangeMem[loc.id]=saved;}
+            this.rangeLight = saved.values;
+         }
+         var ex:Number = this.eyeX, ey:Number = this.eyeY;
+         for(var y:int=1;y<this.spaceY;y++) for(var x:int=1;x<this.spaceX;x++)
+         {
+            var dx:Number=x*Tile.tileX-ex,dy:Number=y*Tile.tileY-ey;
+            var value:Number=this.distFalloff(dx*dx+dy*dy);
+            if(value>0)
+            {
+               if(Math.abs(dx)==Math.abs(dy)) dy++;
+               var sx:Number,sy:Number,steps:int;
+               if(Math.abs(dx)>=Math.abs(dy)) {sx=dx>0?Tile.tileX:-Tile.tileX;sy=dy/dx*sx;steps=int(dx/sx);}
+               else {sy=dy>0?Tile.tileY:-Tile.tileY;sx=dx/dy*sy;steps=int(dy/sy);}
+               for(var k:int=1;k<=steps;k++)
+               {
+                  var t:Tile=loc.getTile(Math.floor((ex+k*sx)/Tile.tileX),Math.floor((ey+k*sy)/Tile.tileY));
+                  var opacity:Number=t.opac;
+                  if(t.water>0 && loc.opacWater>opacity) opacity=loc.opacWater;
+                  if(opacity>0) value-=opacity;
+                  if(value<=0) {value=0;break;}
+               }
+            }
+            var i:int=x+y*this.spaceX, previous:Number=Number(this.rangeLight[i]);
+            this.rangeLight[i]=loc.retDark?value:Math.max(value,isNaN(previous)?0:previous);
+         }
+      }
+
       private function saveConfig():void
       {
          try
@@ -572,6 +652,9 @@ package
                + "mode=" + this.cfgMode + "\n"
                + "wallbright=" + (this.cfgWallBright ? "1" : "0") + "\n"
                + "dim=" + this.cfgDim + "\n"
+               + "viewscale=" + this.cfgViewScale + "\n"
+               + "soft_current=" + this.cfgSoftCurrent + "\n"
+               + "soft_classic=" + this.cfgSoftClassic + "\n"
                + "doordim=" + this.cfgDoorDim + "\n"
                + "litmin=" + this.cfgLitMin + "\n"
                + "fadestep=" + this.cfgFadeStep + "\n"
@@ -847,6 +930,8 @@ package
             this.debugStep(w,loc,true);
             return;
          }
+         this.updateViewDistances(loc);
+         if(this.settingsDirty) {this.lastGX=-99999;this.fogDirty=true;this.settingsDirty=false;}
          // current 随每帧位移刷新；classic 保留既有节奏。
          var gg:UnitPlayer = loc.gg;
          var current:Boolean = this.cfgMode == "current";
@@ -916,6 +1001,7 @@ package
          this.explorationBits = null;
          this.fov = [];
          this.visCur = [];
+         this.rangeMem = {}; this.rangeRoom = null; this.rangeLight = null;
          this.roomMem = {};   // 世界重置（读档/加载）：跨房间记忆清空
          this.sharedRooms = new Dictionary(true);
          this.sharedLight = null;
@@ -1033,8 +1119,7 @@ package
          this.fovVersion++;
          this.normalApplied = false;
          this.restoreSharedExploration();
-         this.locDist1 = loc.lDist1 > 0 ? loc.lDist1 : 300;
-         this.locDist2 = loc.lDist2 > 0 ? loc.lDist2 : 1000;
+         this.updateViewDistances(loc);
          // 置为不可能值：进房首帧强制 needFov（立即重算 fogCache，避免首帧全黑）
          this.lastGX = -99999;
          this.lastGY = -99999;
@@ -1389,7 +1474,9 @@ package
             var ey:Number = gg.Y - gg.scY * 0.75;
             this.eyeX = ex;
             this.eyeY = ey;
-            var r:Number = loc.lDist2;
+            this.updateViewDistances(loc);
+            this.updateRangeLight(loc);
+            var r:Number = this.cfgViewScale == 1 ? loc.lDist2 : this.locDist2;
             if(r < Tile.tileX)
             {
                r = Tile.tileX;
@@ -1917,7 +2004,8 @@ package
                   a = 255;
                }
                this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,FOG_PAD + ty * FOG_SUB + sy,a << 24);
-               if(lit > 0.0001 && a < MASK_LIT_A && sdx*sdx+sdy*sdy <= this.locDist2*this.locDist2)
+               var logicalA:int=Math.round((1-Math.max(lit*this.distFalloff(sdx*sdx+sdy*sdy),doorView?floorF:0.35))*255);
+               if(lit > 0.0001 && logicalA < MASK_LIT_A && sdx*sdx+sdy*sdy <= this.locDist2*this.locDist2)
                   this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,0xFFFFFFFF);
             }
          }
@@ -1961,13 +2049,14 @@ package
                var dx:Number = subX - this.eyeX;
                var dy:Number = subY - this.eyeY;
                var f:Number = this.distFalloff(dx * dx + dy * dy);
+               var logicalF:Number = f;
                if(f < dimF)
                {
                   f = dimF;
                }
                this.fogCache.setPixel32(FOG_PAD + tx * FOG_SUB + sx,FOG_PAD + ty * FOG_SUB + sy,
                   Math.round((1 - f) * 255) << 24);
-               if(Math.round((1-f)*255)<MASK_LIT_A) this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,0xFFFFFFFF);
+               if(Math.round((1-Math.max(logicalF,0.35))*255)<MASK_LIT_A) this.currentSight.setPixel32(FOG_PAD+tx*FOG_SUB+sx,FOG_PAD+ty*FOG_SUB+sy,0xFFFFFFFF);
             }
          }
       }
@@ -2141,8 +2230,10 @@ package
       {
          if(tx <= 0 || ty <= 0 || tx >= this.spaceX || ty >= this.spaceY) return 255;
          var gv:Number = Math.max(0,Math.min(1,this.curLoc.getTile(tx,ty).visi));
+         if(this.cfgViewScale != 1 && this.rangeRoom === this.curLoc && this.rangeLight != null)
+            gv=Math.max(gv,Number(this.rangeLight[tx+ty*this.spaceX]) || 0);
          var cur:Number = this.memCur[tx+ty*this.spaceX];
-         return Math.round(255-gv*255*(1-cur+cur*this.cfgDim));
+         return Math.round(255-gv*255*(1-cur+cur*0.35));
       }
 
       /** 每格四角连续双线性插值，坐标相位等价于原版 (-20,-60)+(x,y+1)。 */
@@ -2154,10 +2245,10 @@ package
          var a01:Number = this.wallCornerAlpha(tx,ty+1);
          var a11:Number = this.wallCornerAlpha(tx+1,ty+1);
          // Shared wall brightness is visual memory, never additional unit sight.
-         var p00:Number = this.sharedLight == null ? a00 : this.personalWallAlpha(tx,ty);
-         var p10:Number = this.sharedLight == null ? a10 : this.personalWallAlpha(tx+1,ty);
-         var p01:Number = this.sharedLight == null ? a01 : this.personalWallAlpha(tx,ty+1);
-         var p11:Number = this.sharedLight == null ? a11 : this.personalWallAlpha(tx+1,ty+1);
+         var p00:Number = this.sharedLight == null && this.cfgDim == 0.35 ? a00 : this.personalWallAlpha(tx,ty);
+         var p10:Number = this.sharedLight == null && this.cfgDim == 0.35 ? a10 : this.personalWallAlpha(tx+1,ty);
+         var p01:Number = this.sharedLight == null && this.cfgDim == 0.35 ? a01 : this.personalWallAlpha(tx,ty+1);
+         var p11:Number = this.sharedLight == null && this.cfgDim == 0.35 ? a11 : this.personalWallAlpha(tx+1,ty+1);
          // Uniform corners interpolate to the same integer for every sample.
          // Preserve the tracking path, including its old threshold comparison.
          if(!trackMask && a00 == a10 && a00 == a01 && a00 == a11
@@ -2260,7 +2351,7 @@ package
       }
 
       /** classic：保留格角光照，中心FOV/记忆以自己的坐标合成，消除半格投影偏位。 */
-      private function applyVisionClassic(w:World, loc:Location, needFov:Boolean):void
+      private function applyVisionClassic(w:World, loc:Location, needFov:Boolean, logicOnly:Boolean = false):void
       {
          // 交替渲染帧或 FOV 变化帧更新；实际频率取决于宿主帧率。
          if((this.frameCount & 1) != 0 && !needFov)
@@ -2272,9 +2363,18 @@ package
          this.ensureFog(w);
          if(this.classicRaw == null) return;
          if(w.grafon != null) w.grafon.visLight.visible = false;
-         var changed:Boolean = needFov;
+         var separateLogic:Boolean = !logicOnly && this.cfgDim != 0.35;
+         if(separateLogic)
+         {
+            var displayDim:Number=this.cfgDim;
+            try {this.cfgDim=0.35;this.applyVisionClassic(w,loc,needFov,true);}
+            finally {this.cfgDim=displayDim;}
+            this.classicLogicCache=this.sizedScratch(this.classicLogicCache);
+            this.classicLogicCache.copyPixels(this.fogCache,this.fogRect,this.fogPoint);
+         }
+         var changed:Boolean = needFov || separateLogic;
          // 先推进全图，墙中心延续邻接地板的同一帧进度，避免遍历方向造成一帧差。
-         for(var mi:int = 0; mi < this.spaceX*this.spaceY; mi++) this.advanceMemory(loc,mi);
+         if(!separateLogic) for(var mi:int = 0; mi < this.spaceX*this.spaceY; mi++) this.advanceMemory(loc,mi);
          for(var ty:int = 0; ty < this.spaceY; ty++)
          {
             for(var tx:int = 0; tx < this.spaceX; tx++)
@@ -2364,6 +2464,18 @@ package
             this.joinClassicWalls(loc);
             // 部分敌人按本次合成后的实际场取样，不再读错行/错相位的1px源图。
             this.fogCache.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
+            if(!logicOnly && this.cfgSoftClassic > 0)
+            {
+               this.classicSoftInput=this.sizedScratch(this.classicSoftInput);
+               this.classicSoftInput.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
+               this.fogBlur.blurX=this.fogBlur.blurY=this.cfgSoftClassic/5;
+               this.fogBmp.applyFilter(this.classicSoftInput,this.fogRect,this.fogPoint,this.fogBlur);
+               // Reconnect the softened floor to the untouched native wall field.
+               this.fogRaw.copyChannel(this.fogBmp,this.fogRect,this.fogPoint,BitmapDataChannel.ALPHA,BitmapDataChannel.BLUE);
+               this.joinClassicWalls(loc);
+               this.fogCache.copyPixels(this.classicSoftInput,this.fogRect,this.fogPoint);
+            }
+            if(separateLogic) this.fogCache.copyPixels(this.classicLogicCache,this.fogRect,this.fogPoint);
             this.fovVersion++;
          }
       }
@@ -2435,6 +2547,13 @@ package
                this.fogBmp.setPixel32(px,py,Math.max(0,Math.min(255,Math.round(a))) << 24);
             }
          }
+      }
+
+      private function sizedScratch(b:BitmapData):BitmapData
+      {
+         if(b == null || b.width != this.fogBmp.width || b.height != this.fogBmp.height)
+         {if(b != null)b.dispose();b=new BitmapData(this.fogBmp.width,this.fogBmp.height,true,0);}
+         return b;
       }
 
       private function classicCornerDeltaAt(tx:int, ty:int):Number
@@ -3560,10 +3679,22 @@ package
             "min":0,"max":1,"step":1,"hint":"关闭后墙面随视野变暗；两种模式始终修正墙边阴影","def":false,
             "get":function():* { return self.cfgWallBright; },
             "set":function(v:*):void { self.setWallBright(v == true); }};
-         items[items.length] = {"key":"dim","label":"记忆区暗度","kind":"slider",
-            "min":0,"max":0.8,"step":0.05,"hint":"0=全亮 越大越暗","def":0.35,
+         items[items.length] = {"key":"dim","label":"已探索区域亮度","kind":"slider",
+            "min":0,"max":1,"step":0.05,"hint":"视野外已探索区域：0=全黑，1=最亮；不会显示隐藏敌人","def":0.35,
             "get":function():* { return self.cfgDim; },
-            "set":function(v:*):void { self.cfgDim = Number(v); }};
+            "set":function(v:*):void { self.setVisualSetting("dim",v); }};
+         items[items.length] = {"key":"viewscale","label":"最大视距倍率","kind":"slider",
+            "min":0.5,"max":3,"step":0.25,"hint":"1=房间默认；仍受墙门遮挡；扩大视距会保留探索记忆","def":1,
+            "get":function():* { return self.cfgViewScale; },
+            "set":function(v:*):void { self.setVisualSetting("viewscale",v); }};
+         items[items.length] = {"key":"soft_current","label":"平滑阴影渐变宽度","kind":"slider",
+            "min":0,"max":60,"step":5,"hint":"仅平滑阴影：0=硬边，20=原效果；数值为柔化尺度（像素）","def":20,
+            "get":function():* { return self.cfgSoftCurrent; },
+            "set":function(v:*):void { self.setVisualSetting("soft_current",v); }};
+         items[items.length] = {"key":"soft_classic","label":"仿原版额外柔化","kind":"slider",
+            "min":0,"max":40,"step":5,"hint":"仅仿原版：0=原效果；保留墙内渐变，不扩大可见范围","def":0,
+            "get":function():* { return self.cfgSoftClassic; },
+            "set":function(v:*):void { self.setVisualSetting("soft_classic",v); }};
          items[items.length] = {"key":"doordim","label":"透光门亮度","kind":"slider",
             "min":0,"max":1,"step":0.05,"hint":"门/水后的视野亮度","def":0.5,
             "get":function():* { return self.cfgDoorDim; },

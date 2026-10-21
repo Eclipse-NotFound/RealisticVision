@@ -1,5 +1,8 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-21 **D34 v0.33.0已部署**：已探索区亮度、分模式柔化与0.5–3倍房间视距；默认画面与D32严格相同，251项通过，正式路径init/设置注册/tick1/181/361通过。SHA 8D4A19634770ACCA0B66C8C684955855EF4725E80FBDFF329451D69710C55BF1。准确源build/vision-settings-output/candidate/src，不含authority及未发布D33候选；后续性能合并不可覆盖设置。详见[报告](../knowledge/experiments/2026-10-21-vision-settings.md)。
+
+
 > 2026-10-19 15:26:52 **D32 v0.32.3阶梯与性能合并已部署**：准确包76314B81…AF5C46B7（37,775B），D31六项优化保留，仅合D30高度条件。299项功能通过；8组每组500错误黑空气像素归零，墙材质/修正区外差0，ON参考1级残差保留。正式新init/设置注册/tick1/181/361通过，PID35268与描述符已清理，窗口交回RConnect。旧DECCA备份保留，用户正常重启生效。详见[部署回执](deployment-v0323-2026-10-19.md)及[报告](../knowledge/experiments/2026-10-19-stair-performance-merge.md)。
 
 > 2026-10-19 **D30阶梯候选已由D32合并部署**：原325A0DDC…F6770A92基于D29，不直接安装；局部helper高度条件已合入D31生产线并以76314B81…AF5C46B7完成新组合验证。原299项与独立严格18/8、隔离4/4保留历史，ON负1残差逐点原因未尽证。详见[原阶梯报告](../knowledge/experiments/2026-10-19-stair-shadow.md)。

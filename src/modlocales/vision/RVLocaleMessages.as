@@ -1,6 +1,15 @@
 package modlocales.vision {
    public class RVLocaleMessages {
       public static const DATA:Object = {
+  "已探索区域亮度": {"en": "Explored area brightness", "ru": "Яркость изученных областей"},
+  "视野外已探索区域：0=全黑，1=最亮；不会显示隐藏敌人": {"en": "Remembered areas outside sight: 0 = black, 1 = brightest; hidden enemies stay hidden.", "ru": "Изученные области вне обзора: 0 — чёрные, 1 — светлые; скрытые враги не появляются."},
+  "最大视距倍率": {"en": "Maximum view distance multiplier", "ru": "Множитель дальности обзора"},
+  "1=房间默认；仍受墙门遮挡；扩大视距会保留探索记忆": {"en": "1 = room default. Walls and doors still block sight; explored areas remain remembered.", "ru": "1 — стандарт комнаты. Стены и двери блокируют обзор; изученные области сохраняются в памяти."},
+  "平滑阴影渐变宽度": {"en": "Soft shadow transition width", "ru": "Ширина перехода мягких теней"},
+  "仅平滑阴影：0=硬边，20=原效果；数值为柔化尺度（像素）": {"en": "Soft shadows only: 0 = hard edge, 20 = original. Softening scale in pixels.", "ru": "Только мягкие тени: 0 — резкий край, 20 — исходный эффект. Масштаб размытия в пикселях."},
+  "仿原版额外柔化": {"en": "Classic additional softening", "ru": "Дополнительное размытие Classic"},
+  "仅仿原版：0=原效果；保留墙内渐变，不扩大可见范围": {"en": "Classic only: 0 = original. Preserves shading inside walls and does not extend sight.", "ru": "Только Classic: 0 — исходный эффект. Сохраняет тени внутри стен и не расширяет обзор."},
+
   "未绑定": {"en":"Unbound","ru":"Не назначено"},
   "总开关；快捷键可在本模组的快捷键页修改": {"en":"Enable vision. Edit its shortcut on this module's Shortcuts page.","ru":"Включить зрение. Клавиша меняется на странице «Клавиши» этого модуля."},
   "快捷键": {"en":"Shortcuts","ru":"Клавиши"},

@@ -1,0 +1,152 @@
+ModLoader[boot_start] v2 run=run_1792566013998_859762
+ModLoader[requested_SettingsNativeProbeMod] line 16
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_SettingsNativeProbeMod] init
+893 Интерфейс
+1498 Game init
+SURFACE GAME newGame
+959 Персонаж
+0 Местность
+838 Создание местности
+false
+416 Вход в местность
+990 Создание местности
+566 Вход в местность
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS classic native default final rendering pixel-identical case 0
+PASS classic default FOV and exploration identical 0
+FILE default-0.png
+PASS classic softening keeps logical mask 0
+PASS classic softening keeps exploration 0
+FILE soft-0.png
+PASS classic brightest memory keeps logical mask 0
+PASS classic brightest memory keeps exploration 0
+FILE bright-0.png
+PASS classic restore defaults returns identical final pixels 0
+PASS classic controls leave native visi/t_visi unchanged 0
+PASS classic larger range admits more unobstructed native cells 0
+PASS classic larger range still respects native walls 0
+PASS classic range leaves native parameters and light unchanged 0
+FILE range3-0.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS classic native default final rendering pixel-identical case 1
+PASS classic default FOV and exploration identical 1
+FILE default-1.png
+PASS classic softening keeps logical mask 1
+PASS classic softening keeps exploration 1
+FILE soft-1.png
+PASS classic brightest memory keeps logical mask 1
+PASS classic brightest memory keeps exploration 1
+FILE bright-1.png
+PASS classic restore defaults returns identical final pixels 1
+PASS classic controls leave native visi/t_visi unchanged 1
+PASS classic larger range admits more unobstructed native cells 1
+PASS classic larger range still respects native walls 1
+PASS classic range leaves native parameters and light unchanged 1
+FILE range3-1.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS classic native default final rendering pixel-identical case 2
+PASS classic default FOV and exploration identical 2
+FILE default-2.png
+PASS classic softening keeps logical mask 2
+PASS classic softening keeps exploration 2
+FILE soft-2.png
+PASS classic brightest memory keeps logical mask 2
+PASS classic brightest memory keeps exploration 2
+FILE bright-2.png
+PASS classic restore defaults returns identical final pixels 2
+PASS classic controls leave native visi/t_visi unchanged 2
+PASS classic larger range admits more unobstructed native cells 2
+PASS classic larger range still respects native walls 2
+PASS classic range leaves native parameters and light unchanged 2
+FILE range3-2.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS classic native default final rendering pixel-identical case 3
+PASS classic default FOV and exploration identical 3
+FILE default-3.png
+PASS classic softening keeps logical mask 3
+PASS classic softening keeps exploration 3
+FILE soft-3.png
+PASS classic brightest memory keeps logical mask 3
+PASS classic brightest memory keeps exploration 3
+FILE bright-3.png
+PASS classic restore defaults returns identical final pixels 3
+PASS classic controls leave native visi/t_visi unchanged 3
+PASS classic larger range admits more unobstructed native cells 3
+PASS classic larger range still respects native walls 3
+PASS classic range leaves native parameters and light unchanged 3
+FILE range3-3.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS current native default final rendering pixel-identical case 4
+PASS current default FOV and exploration identical 4
+FILE default-4.png
+PASS current softening keeps logical mask 4
+PASS current softening keeps exploration 4
+FILE soft-4.png
+PASS current brightest memory keeps logical mask 4
+PASS current brightest memory keeps exploration 4
+FILE bright-4.png
+PASS current restore defaults returns identical final pixels 4
+PASS current controls leave native visi/t_visi unchanged 4
+PASS current larger range admits more unobstructed native cells 4
+PASS current larger range still respects native walls 4
+PASS current range leaves native parameters and light unchanged 4
+FILE range3-4.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS current native default final rendering pixel-identical case 5
+PASS current default FOV and exploration identical 5
+FILE default-5.png
+PASS current softening keeps logical mask 5
+PASS current softening keeps exploration 5
+FILE soft-5.png
+PASS current brightest memory keeps logical mask 5
+PASS current brightest memory keeps exploration 5
+FILE bright-5.png
+PASS current restore defaults returns identical final pixels 5
+PASS current controls leave native visi/t_visi unchanged 5
+PASS current larger range admits more unobstructed native cells 5
+PASS current larger range still respects native walls 5
+PASS current range leaves native parameters and light unchanged 5
+FILE range3-5.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS current native default final rendering pixel-identical case 6
+PASS current default FOV and exploration identical 6
+FILE default-6.png
+PASS current softening keeps logical mask 6
+PASS current softening keeps exploration 6
+FILE soft-6.png
+PASS current brightest memory keeps logical mask 6
+PASS current brightest memory keeps exploration 6
+FILE bright-6.png
+PASS current restore defaults returns identical final pixels 6
+PASS current controls leave native visi/t_visi unchanged 6
+PASS current larger range admits more unobstructed native cells 6
+PASS current larger range still respects native walls 6
+PASS current range leaves native parameters and light unchanged 6
+FILE range3-6.png
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS current native default final rendering pixel-identical case 7
+PASS current default FOV and exploration identical 7
+FILE default-7.png
+PASS current softening keeps logical mask 7
+PASS current softening keeps exploration 7
+FILE soft-7.png
+PASS current brightest memory keeps logical mask 7
+PASS current brightest memory keeps exploration 7
+FILE bright-7.png
+PASS current restore defaults returns identical final pixels 7
+PASS current controls leave native visi/t_visi unchanged 7
+PASS current larger range admits more unobstructed native cells 7
+PASS current larger range still respects native walls 7
+PASS current range leaves native parameters and light unchanged 7
+FILE range3-7.png
+FILE result.json
+SURFACE GAME COMPLETE checks=88

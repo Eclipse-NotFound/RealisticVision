@@ -1,0 +1,19 @@
+{
+  "swf": "8a4340677f17be82c0b1e133c4437790d6866c676fef18ead29a6e7f20833218",
+  "runs": [
+    {
+      "appid": "pfe-modsettings-rv-settings-options-37905f4c04df4003a8f89af0d70c8ccd",
+      "pid": 89560,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\options\\CandidateOptionsProbe-b35a638b.txt",
+      "passed": 18
+    },
+    {
+      "appid": "pfe-modsettings-rv-settings-options-37905f4c04df4003a8f89af0d70c8ccd",
+      "pid": 14768,
+      "exit": 0,
+      "log": "build\\vision-settings-output\\options\\CandidateOptionsProbe-ed2c8645.txt",
+      "passed": 18
+    }
+  ]
+}

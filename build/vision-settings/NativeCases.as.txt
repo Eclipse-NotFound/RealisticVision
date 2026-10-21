@@ -1,0 +1,70 @@
+      private function same(a:BitmapData,b:BitmapData):Boolean {
+         var d:Object=a.compare(b);if(d is BitmapData){d.dispose();return false;}return d===0;
+      }
+      private function advance(m:*,w:*,n:int=24):void {for(var f:int=0;f<n;f++){m.frameCount++;m.onFrameInner();}}
+      private function fresh(name:String,w:*,mode:String,bright:Boolean):* {
+         var cls:Class=classes[name],m:*=new cls();m.mswRegistered=true;m.cfgMode=mode;m.cfgWallBright=bright;m.resetRoom(w,w.loc);advance(m,w);return m;
+      }
+      private function capture(w:*):Boolean {
+         var loc:*=w.loc;w.black=true;loc.black=true;loc.base=false;
+         var width:int=loc.spaceX*40,height:int=loc.spaceY*40;
+         if(captureState==null){
+            // Native half-height material, including the opaque C;F variant.
+            for(var sx:int=8;sx<16;sx++){
+               var sy:int=16+int((sx-8)/4);
+               for(var cy:int=16;cy<sy;cy++){loc.getTile(sx,cy).dec(" ");loc.getTile(sx,cy).opac=0;}
+               loc.getTile(sx,sy).dec("C"+["",",",";",":"][(sx-8)%4]+(sx>=12?"F":""));
+            }
+            for(var ky:int=14;ky<=19;ky++)for(var kx:int=6;kx<=17;kx++)loc.tileKontur(kx,ky,loc.getTile(kx,ky));
+            w.grafon.drawLoc(loc);w.cam.setLoc(loc);w.cam.setZoom();
+            captureState={index:0};return false;
+         }
+         var index:int=captureState.index,mode:String=index<4?"classic":"current",bright:Boolean=(index%4)>=2;
+         if(captureState.old){captureState.old.restoreAll(w,loc);captureState.old.fogVis.visible=false;captureState.old=null;}
+         if(captureState.current){captureState.current.restoreAll(w,loc);captureState.current.fogVis.visible=false;captureState.current=null;}
+         w.gg.setPos(index%2==0?320:480,620);w.gg.setVisPos();w.cam.calc(w.gg);
+         for(var lf:int=0;lf<24;lf++){loc.lighting();loc.lighting2();}
+         var before:String=lightState(loc);
+         var b:*=fresh("baseline",w,mode,bright),m:*=fresh("candidate",w,mode,bright);
+         captureState.old=b;captureState.current=m;
+         var oldFog:BitmapData=shot(b.fogVis,width,height),newFog:BitmapData=shot(m.fogVis,width,height);
+         check(same(oldFog,newFog),mode+" native default final rendering pixel-identical case "+index);
+         oldFog.dispose();newFog.dispose();
+         check(JSON.stringify(b.fov)==JSON.stringify(m.fov)&&JSON.stringify(b.seenSub)==JSON.stringify(m.seenSub),mode+" default FOV and exploration identical "+index);
+         var logic:BitmapData=(mode=="current"?m.currentSight:m.fogCache).clone();
+         var seen:String=JSON.stringify(m.seenSub)+JSON.stringify(m.explored);
+         emit("default-"+index,shot(m.fogVis,width,height));
+         m.setVisualSetting(mode=="current"?"soft_current":"soft_classic",40);advance(m,w);
+         check(same(logic,mode=="current"?m.currentSight:m.fogCache),mode+" softening keeps logical mask "+index);
+         check(seen==JSON.stringify(m.seenSub)+JSON.stringify(m.explored),mode+" softening keeps exploration "+index);
+         emit("soft-"+index,shot(m.fogVis,width,height));
+         m.setVisualSetting("dim",1);advance(m,w);
+         check(same(logic,mode=="current"?m.currentSight:m.fogCache),mode+" brightest memory keeps logical mask "+index);
+         check(seen==JSON.stringify(m.seenSub)+JSON.stringify(m.explored),mode+" brightest memory keeps exploration "+index);
+         emit("bright-"+index,shot(m.fogVis,width,height));
+         m.setVisualSetting("dim",0.35);m.setVisualSetting(mode=="current"?"soft_current":"soft_classic",mode=="current"?20:0);advance(m,w);
+         oldFog=shot(b.fogVis,width,height);newFog=shot(m.fogVis,width,height);
+         check(same(oldFog,newFog),mode+" restore defaults returns identical final pixels "+index);
+         oldFog.dispose();newFog.dispose();logic.dispose();
+         check(lightState(loc)==before,mode+" controls leave native visi/t_visi unchanged "+index);
+         // A shortened fixture radius exercises range inside this native room.
+         var d1:Number=loc.lDist1,d2:Number=loc.lDist2;loc.lDist1=120;loc.lDist2=300;
+         advance(m,w);var oldCount:int=0;for each(var f:int in m.fov)if(f>0)oldCount++;
+         m.setVisualSetting("viewscale",3);advance(m,w);
+         var newCount:int=0,leaks:int=0;
+         for(var y:int=0;y<loc.spaceY;y++)for(var x:int=0;x<loc.spaceX;x++){
+            if(m.fov[x+y*loc.spaceX]>0){
+               newCount++;
+               if(loc.getTile(x,y).opac<=0&&m.castRay(loc,m.eyeX,m.eyeY,(x+.5)*40,(y+.5)*40,x,y)<=0)leaks++;
+            }
+         }
+         check(newCount>oldCount,mode+" larger range admits more unobstructed native cells "+index);
+         check(leaks==0,mode+" larger range still respects native walls "+index);
+         check(loc.lDist1==120&&loc.lDist2==300&&lightState(loc)==before,mode+" range leaves native parameters and light unchanged "+index);
+         emit("range3-"+index,shot(m.fogVis,width,height));
+         loc.lDist1=d1;loc.lDist2=d2;
+         captureState.index++;
+         return captureState.index==8;
+      }
+   }
+}
