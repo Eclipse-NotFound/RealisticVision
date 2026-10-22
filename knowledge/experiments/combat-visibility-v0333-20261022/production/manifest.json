@@ -1,0 +1,21 @@
+{
+  "version": "v0.33.3-combat-visibility",
+  "swf": "ab461ff3bdf77544bfb3e7f45b67265429d52280721fa8b8321ba92be2f23871",
+  "bytes": 42400,
+  "sources": {
+    "RealisticVisionMod.as": "41869c1d54a42fd83564f843da696d8e9ceb6cc31773bd9ac5826d0b17aa830c",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "d5859b640d7c3d9876a2772fecbf09a7c41d63b7061117be4e5fb738dbe59c95",
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  },
+  "classes": [
+    "RVExplorationCarrier",
+    "RVKeybinds",
+    "RVWallSurface",
+    "RealisticVisionMod",
+    "modlocales.vision.RVLocale",
+    "modlocales.vision.RVLocaleMessages"
+  ]
+}

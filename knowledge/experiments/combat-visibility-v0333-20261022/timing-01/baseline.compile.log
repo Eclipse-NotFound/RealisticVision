@@ -1,0 +1,7 @@
+正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-visibility-output\timing-01\baseline.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-visibility-output\timing-01\baseline.swf（41547 字节）
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-visibility-output\timing-01\baseline-src\RVExplorationCarrier.as(5): 列: 17 警告: 没有为类 RVExplorationCarrier 指定构造函数。
+
+   public class RVExplorationCarrier extends Sprite
+                ^
+

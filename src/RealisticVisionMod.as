@@ -54,6 +54,10 @@ package
       // sight snapshot invalidates all summaries, including stationary changes.
       private var wallViewBounds:Rectangle;
       private var wallViewOwner:Location;
+      private var weaponVisuals:Dictionary = new Dictionary(true);
+      private var weaponPass:int = 0;
+      private var maskAlphaMap:Array;
+      private var maskZeroMap:Array;
       private var classifiedSight:Vector.<uint>;
       private var sightClasses:Vector.<int>;
       // ---- 默认配置（可被 config.txt 覆盖）----
@@ -90,7 +94,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.2-settings-performance";
+      private static const VERSION:String = "v0.33.3-combat-visibility";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1002,6 +1006,7 @@ package
 
       private function resetOff():void
       {
+         this.restoreWeaponVisuals();
          this.releaseClassicLogic();
          this.wallSurface.reset();
          this.wallViewBounds = null; this.wallViewOwner = null;
@@ -1027,6 +1032,7 @@ package
 
       private function resetRoom(w:World, loc:Location):void
       {
+         this.restoreWeaponVisuals();
          this.releaseClassicLogic();
          // 跨房间记忆（v0.22）：离开前保存当前房间的 explored（最后一次
          // FOV 重算后的状态），回到同 id 房间时恢复——原版靠 tile.visi 缓存
@@ -1352,6 +1358,7 @@ package
        *  显示树中被隐藏的附属对象（狮鹫手臂等）。门控：无残留时零开销。 */
       private function restoreAll(w:World, loc:Location):void
       {
+         this.restoreWeaponVisuals();
          var any:Boolean = false;
          for(var k:Object in this.unitVis) { any = true; break; }
          if(!any)
@@ -3078,14 +3085,7 @@ package
          if(this.cfgMode == "current")
          {
             // 只在可见侧淡出；地板的柔化不能揭露被挡住的敌人。
-            var eligible:Vector.<uint> = bd.getVector(bd.rect);
-            var soft:Vector.<uint> = bdb.getVector(bdb.rect);
-            for(var mi:int=0;mi<soft.length;mi++)
-            {
-               var ma:int = eligible[mi] == 0 ? 0 : Math.max(0,2*(soft[mi]>>>24)-255);
-               soft[mi] = ma == 0 ? 0 : uint((ma<<24)|0xFFFFFF);
-            }
-            bdb.setVector(bdb.rect,soft);
+            this.finishCurrentMask(bd,bdb);
          }
          // 位图填充绘制进矢量 Shape（smoothing → 双线性放大），alpha 渐变即软边
          // 注：beginBitmapFill 的 matrix 不跨调用复用（可能持引用，复用会串改
@@ -3098,6 +3098,7 @@ package
          g.endFill();
          s3.graphics.clear();
          s3.graphics.copyFrom(g);
+         rec.maskRevision = int(rec.maskRevision)+1;
          if(previousInput == null || previousInput.width != bd.width || previousInput.height != bd.height)
          {
             if(previousInput != null) previousInput.dispose();
@@ -3123,6 +3124,23 @@ package
             this.authorityView.write(u.hpbar,"cacheAsBitmap",true);
             this.authorityView.write(u.hpbar,"mask",rec.m3);
          }
+      }
+
+      /** Same alpha arithmetic as the pixel loop, without two temporary vectors. */
+      private function finishCurrentMask(eligible:BitmapData, soft:BitmapData):void
+      {
+         if(this.maskAlphaMap == null)
+         {
+            this.maskAlphaMap=[];this.maskZeroMap=[];
+            for(var i:int=0;i<256;i++)
+            {
+               var alpha:int=Math.max(0,2*i-255);
+               this.maskAlphaMap[i]=alpha==0?0:uint((alpha<<24)|0xFFFFFF);
+               this.maskZeroMap[i]=0;
+            }
+         }
+         soft.paletteMap(soft,soft.rect,this.fogPoint,this.maskZeroMap,this.maskZeroMap,this.maskZeroMap,this.maskAlphaMap);
+         soft.threshold(eligible,eligible.rect,this.fogPoint,"==",0,0,0xFFFFFFFF,false);
       }
 
       private function clearMask(u:Unit):void
@@ -3237,6 +3255,7 @@ package
          var visiblePos:Array = [];
          var exempt:Dictionary = new Dictionary(true);
          var units:Array = loc.units;
+         this.weaponPass++;
          var k:int;
          if(this.cfgAutoTest)
          {
@@ -3259,6 +3278,7 @@ package
                }
                if(u.player || u.npc || u.fraction == Unit.F_PLAYER || u.invis)
                {
+                  this.applyUnitWeapons(u,1,exempt);
                   visiblePos.push([u.X,u.Y]);
                   continue;
                }
@@ -3282,6 +3302,7 @@ package
                {
                   this.clearMask(u);
                   this.showUnit(u);
+                  this.applyUnitWeapons(u,1,exempt);
                   visiblePos.push([u.X,u.Y]);
                   continue;
                }
@@ -3312,6 +3333,7 @@ package
                   this.applyMask(w,u,this.unitBBox(loc,u));
                   visiblePos.push([u.X,u.Y]);
                }
+               this.applyUnitWeapons(u,st,exempt);
             }
          }
          // 敌方手持武器：跟随所属敌人的显示状态。
@@ -3335,41 +3357,12 @@ package
                      exempt[wpn.vis] = true;
                   }
                   var owner:Unit = wpn.owner;
-                  if(owner != null && owner != gg && !owner.player && !owner.npc && owner.fraction != Unit.F_PLAYER)
+                  var wr:Object = wpn.vis ? this.weaponVisuals[wpn.vis] : null;
+                  if(wr == null || wr.pass != this.weaponPass)
                   {
-                     // 按所属敌人当前瓦片实时判定（含尸体与被抓取状态；拖入暗处武器
-                     // 同样隐藏）
-                     var wst:int = this.enemyState(loc,owner);
-                     if(wst == 0)
-                     {
-                        this.setWeaponVis(wpn,false);
-                     }
-                     else if(wst == 2)
-                     {
-                        var orec2:Object = this.unitVis[owner];
-                        if(wpn.vis && orec2 != null && orec2.m2 != null)
-                        {
-                           this.authorityView.write(wpn.vis,"visible",true,true);
-                           // v0.24.6：武器挂掩膜同样必须 cacheAsBitmap=true——
-                           // 否则位图填充掩膜按路径光栅化（整块矩形），贴墙敌人
-                           // （bbox 含邻域点亮的墙瓦片 → state=2）在记忆区里武器
-                           // 全显（本体被掩膜正确裁掉，武器却整把可见）
-                           this.authorityView.write(wpn.vis,"cacheAsBitmap",true);
-                           this.authorityView.write(wpn.vis,"mask",orec2.m2);
-                        }
-                        else
-                        {
-                           this.setWeaponVis(wpn,true);
-                        }
-                     }
-                     else
-                     {
-                        this.setWeaponVis(wpn,true);
-                     }
-                  }
-                  else
-                  {
-                     this.setWeaponVis(wpn,true);
+                     var wst:int = owner != null && owner != gg && !owner.player && !owner.npc && owner.fraction != Unit.F_PLAYER && !owner.invis && owner.sost < 3
+                        ? this.enemyState(loc,owner) : 1;
+                     this.applyWeaponVisual(wpn,owner,wst);
                   }
                }
                obj = obj.nobj;
@@ -3380,11 +3373,85 @@ package
          {
             this.atWsSk++;
          }
+         // Rebuilt/removed native visuals must not retain a detached mask.
+         for(var oldVisual:Object in this.weaponVisuals)
+         {
+            var oldRecord:Object=this.weaponVisuals[oldVisual];
+            if(oldRecord.weapon.vis !== oldVisual || oldRecord.owner != oldRecord.weapon.owner || DisplayObject(oldVisual).parent == null)
+               this.releaseWeaponVisual(oldVisual as DisplayObject,oldRecord);
+         }
          // 显示树扫描：隐藏未被识别的子对象（狮鹫手臂等）；无全隐敌人时提前退出
          if((this.authorityView.active || needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
          {
             this.scanArms(w,hiddenPos,visiblePos,exempt);
          }
+      }
+
+      private function applyUnitWeapons(u:Unit, state:int, exempt:Dictionary):void
+      {
+         var children:Array=Object(u)["childObjs"] as Array;
+         if(children == null) return;
+         for each(var child:Object in children)
+         {
+            var weapon:Weapon=child as Weapon;
+            if(weapon == null || weapon.owner !== u) continue;
+            if(weapon.vis) exempt[weapon.vis]=true;
+            this.applyWeaponVisual(weapon,u,u.sost >= 3 ? 1 : state);
+         }
+      }
+
+      private function applyWeaponVisual(weapon:Weapon, owner:Unit, state:int):void
+      {
+         var visual:DisplayObject=weapon.vis;
+         if(visual == null) return;
+         var record:Object=this.weaponVisuals[visual];
+         if(state == 1)
+         {
+            if(record != null) this.releaseWeaponVisual(visual,record);
+            return;
+         }
+         if(record == null)
+         {
+            record={weapon:weapon,owner:owner,visible:visual.visible,cache:visual.cacheAsBitmap,mask:visual.mask,shape:null,revision:-1,hidden:false};
+            this.weaponVisuals[visual]=record;
+         }
+         record.pass=this.weaponPass;
+         var shape:Shape=record.shape as Shape;
+         if(state == 0)
+         {
+            this.authorityView.write(visual,"visible",false);record.hidden=true;
+            this.authorityView.write(visual,"mask",record.mask,true);this.authorityView.write(visual,"cacheAsBitmap",record.cache,true);
+            if(shape != null && shape.parent != null) shape.parent.removeChild(shape);
+            return;
+         }
+         var unitRecord:Object=this.unitVis[owner];
+         if(unitRecord == null || unitRecord.m2 == null || visual.parent == null) return;
+         if(record.hidden) {this.authorityView.write(visual,"visible",record.visible,true);record.hidden=false;}
+         if(shape == null) {shape=new Shape();shape.cacheAsBitmap=true;record.shape=shape;}
+         if(record.revision != unitRecord.maskRevision)
+         {
+            shape.graphics.copyFrom(Shape(unitRecord.m2).graphics);
+            record.revision=unitRecord.maskRevision;
+         }
+         if(shape.parent !== visual.parent) visual.parent.addChild(shape);
+         // Each display object owns a mask. Only the immutable raster is shared.
+         this.authorityView.write(visual,"cacheAsBitmap",true);this.authorityView.write(visual,"mask",shape);
+      }
+
+      private function releaseWeaponVisual(visual:DisplayObject, record:Object):void
+      {
+         if(record.hidden && (record.owner == null || record.owner.sost < 3)) this.authorityView.write(visual,"visible",record.visible,true);
+         if(visual.mask === record.shape || record.hidden) this.authorityView.write(visual,"mask",record.mask,true);
+         this.authorityView.write(visual,"cacheAsBitmap",record.cache,true);
+         var shape:Shape=record.shape as Shape;
+         if(shape != null && shape.parent != null) shape.parent.removeChild(shape);
+         delete this.weaponVisuals[visual];
+      }
+
+      private function restoreWeaponVisuals():void
+      {
+         for(var visual:Object in this.weaponVisuals)
+            this.releaseWeaponVisual(visual as DisplayObject,this.weaponVisuals[visual]);
       }
 
       private function setWeaponVis(wpn:Weapon, visB:Boolean):void

@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "version": "v0.33.3-combat-visibility",
+  "swf": "ab461ff3bdf77544bfb3e7f45b67265429d52280721fa8b8321ba92be2f23871",
+  "host": "befcf0509e11fac9fef7afb834708b8b93752a14ae3d5cd72b42aa6d42f9b82a",
+  "evidence": {
+    "checks-01/air-output.log": "1427eddb2910b3549a8a706f82bcedeea13693bcf9bcc4436509778928d1566b",
+    "checks-01/batch.json": "0469191d2cea9e2c44949a74866e79b63867131ff770a45f79f292d654a5ab59",
+    "checks-01/batch.txt": "c92e520c540eceb9e031c9f6d78b93fd0dcea7a0cafe74983a6f88a540f86784",
+    "checks-01/inputs.json": "2a18f392f44a6d0ba11818b3d516f5a6ed7f8094406ce07bf38dc9362c3b2868",
+    "checks-01/last-run.json": "d004892ff1735e1178481891d7454715b9fc127d9a734a902fda903136dbf375",
+    "checks-01/LazyClassicChecks.compile.log": "aa4573667226c468c1976a280b969be974c1b23b0cee950b5bcd747c9b734753",
+    "checks-01/LazyClassicChecks.txt": "bcb0992f97776e51d46c2bf4c48b8e9e90cc2904bc35f653bfcc6b4ab1e03925",
+    "checks-01/MaskBatchChecks.compile.log": "1745f9662647ff5c1e40e9a7f8da9346bd18b71f0c210748ca35f1e559848f32",
+    "checks-01/result.json": "ba59ed3a98bd662803c2e33e9fdc76f273dad1d539db40d5e17a47ea713547cf",
+    "checks-01/running.json": "7e4ff070911d0985acafc7cccbd948b0be08b53a87435401838f1390965b4b1b",
+    "checks-01/SettingsChecks.compile.log": "3caf0385321ce22949f6a7334c579b60632306df45e14f2e5bf156a9d33a0a74",
+    "checks-01/SettingsChecks.txt": "b40298f258167ee3a325be28fdb1832d1e8d42d52fed80361ca3406bc74f8b33",
+    "checks-01/SharedExplorationHarness.compile.log": "3158ab2252e6bdca4ae9ab2a5202dd09b85eb62e3cda5eb2eb06d87bca0ca495",
+    "checks-01/SharedExplorationHarness.txt": "84758c42ad45b51fb9e4375a7e80e3d1816506e37972b57427d56b77491df176",
+    "checks-01/SoftHarness.compile.log": "f0896be75e4f79e5d53006d44c407430435ae11564acd19ef715fcbc357b8caf",
+    "checks-01/SoftHarness.txt": "ee2fdbc39e09278b9911097e64ef0fb14c4b28116687cb68ae484c69fbb26083",
+    "regress-full-03/air-output.log": "dd48110712a198047236fb002db5ee7c5c431127cafc440d9c1813b382024e40",
+    "regress-full-03/baseline.compile.log": "3527d04ac3ad7e194d7b24fd96398e195e77cacd595f770ffbbc14d6a414fbfc",
+    "regress-full-03/build.json": "d6a3086ddfc09f6c96c7a181086878ed3e3eca5e5383d44ee90ba263520e0f38",
+    "regress-full-03/candidate.compile.log": "53bfbc00c249748303901a8a3c9e3b90ad6a1ef44cf65beafc31b760250139bb",
+    "regress-full-03/inventory.json": "ee9d95114b536d70c3022bbb73e28cd5c393743b07a11e7f37eae60baa5f6b58",
+    "regress-full-03/last-run.json": "93f3e9e127b8d2e70673fc63a84fc73d87ba57812890d7acd3730513db5bda97",
+    "regress-full-03/launch-state.json": "a3f9b4c4ab6c156bed354db1f51fc758717f9ed79ae51f78e6bfa38791e1a8fa",
+    "regress-full-03/running.json": "204ea8d145aec5107fe03e6c3fa3b99ec40f327db3be0006c0e854964d39266d",
+    "regress-full-03/selection.json": "d60cc3e80cf37069d64d451cfc28cfc467cf627c52542176c8eea6e394daae20",
+    "regress-full-03/evidence/baseline-classic-0.png": "a6e5bc2bbac75c3c036ba4188c57d6eb1945fa64f29f438d82b92c8f9951abeb",
+    "regress-full-03/evidence/baseline-current-0.png": "a6e5bc2bbac75c3c036ba4188c57d6eb1945fa64f29f438d82b92c8f9951abeb",
+    "regress-full-03/evidence/candidate-classic-0.png": "032bb1b9629786c691b4413f5cdb44f35ddce16ac7b43c7dd1c05e61759c545a",
+    "regress-full-03/evidence/candidate-current-0.png": "032bb1b9629786c691b4413f5cdb44f35ddce16ac7b43c7dd1c05e61759c545a",
+    "regress-full-03/evidence/result.json": "e5260c4824dc46544e619248a9d58831971c97c1fa5151e97996d001b9527746",
+    "regress-full-03/mods/loader-manifest.txt": "c734a416331469c31c6f230b28dace1486f2e1a1cd05db88d974865d2e7a715c",
+    "regress-full-03/mods/ModLoader/supported-mods.txt": "38a1a8812faa7e9b5e85bd29567ea69ff6d72144b4539894a2b305ad4d8dba1f",
+    "regress-full-03/mods/CombatVisibilityProbe/release/CombatVisibilityProbeMod.compile.log": "c46c94b3cb639e1d72a43add5822bc986d671d8c0d1058f3e94d30a9b01b5b64",
+    "regress-full-03/mods/PermanentInjury/release/config.json": "f506d9ab772ff81acab7b300da4f8dddafd19dfa44eb08fa9db0c2e815dc64d0",
+    "regress-full-03/mods/Rconnect/release/config.txt": "5ca72017f1f811b5f8a2b1f18f6cb8b2c24239e2240716c4059cbc073913fc0a",
+    "regress-full-03/mods/Sandevistan/release/config.txt": "d91c4c2889aba19b1bcfb356885921b0605a50188b270a9e7619d2116e7ebdc3",
+    "regress-full-03/mods/Sandevistan/release/说明.txt": "59965b2909eb9c3af4150633b63b193f37ad96679db6ca23f42d75e143877b9e",
+    "regress-full-03/mods/Sandevistan/release/音乐配置.txt": "bdd3005239cfedc9c6005ca03161982d5b0cb205f0d6210047b425490463ab00",
+    "regress-full-03/mods/WallBlend/release/config.json": "16bb3a56a74195de6d4589cebde88e80c378956c776ffcde1c848f0ed7d48a89",
+    "exact-01/air-output.log": "8a59df94baa9e62fa5ac3f1efff94742c1ec7f45f9e6e232f9b9afacf8ddeb4d",
+    "exact-01/baseline.compile.log": "0cff6e8b97e9a733a60bed13d9060892946a721c0e0ac6a5362b6ba96558ab55",
+    "exact-01/build.json": "2e782c7eabe16c43a353f29407b4bd0f55e3dc408abaa932a8db2a8c54a2ac4c",
+    "exact-01/candidate.compile.log": "7cdfc7035bf179680d7b0c57a819df7288735ec930b94618d3953197f4481d62",
+    "exact-01/environment.json": "25ac58f0687f1d1aa2453890b3acfabec645d10c550f994cd27908a3134c87ae",
+    "exact-01/last-run.json": "99b94f3b6c41db3992bb60b42cbef035f0d899dd47e8fbf03375169989d0b685",
+    "exact-01/launch-state.json": "7312ffabb9faa2ab31064b3ee4fbd3f098ffd23c18158163229ed5c32e62425d",
+    "exact-01/running.json": "0752f4a8216d3ee4a76167612eeced4303a58340319d2a738c6b3de4216f0e13",
+    "exact-01/selection.json": "7d41ec9d6f9eafd2ba5baf183dac076c2451bcd49217cff1d680088d90a6840d",
+    "exact-01/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "exact-01/evidence/result.json": "9cb5d3cd37ad7b3330b3125f2cc847fed3d67c1286802fcca90bb3ecf8c7fb10",
+    "exact-01/mods/loader-manifest.txt": "5afda3ea6ae25ac370057d172b93c5d732a9f0348930c9e8e957efc4bdd884a0",
+    "exact-01/mods/ModLoader/supported-mods.txt": "f111bee3f65466fbe2f0c79fa83bb20890883f3a3369fa9d8a66bdd65732edb7",
+    "exact-01/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "8c1614216a0ce7ee24f4f8b2d2d4bc73bcbd8da18548f24ec0c73712011754c0",
+    "timing-02/air-output.log": "3be3f0a84af0c911b371458a752275a4c04b030b87c3dd2de1376c6bf230a333",
+    "timing-02/baseline.compile.log": "2d0124e43f3b9a8035fcdbe6f939f9fa7a35133d6e8fc9699b158b6bf5497b95",
+    "timing-02/build.json": "eb0f744c140ae0ac2eba1faaddee743b3be83707477dc62bdaf5431e253afc10",
+    "timing-02/candidate.compile.log": "a6a1374fa436ad22cb091c28d89bc8b8f5d7251d45776dd9021d17f734dda8c4",
+    "timing-02/environment.json": "2998caf7f74d842a48fa1fa6ded50e461df724d99b6d6473880097b0fd4a603e",
+    "timing-02/last-run.json": "e9134eff9c23cfaf37b09edde507332a71cec502bcb0cb97802b0aa002e7fbaa",
+    "timing-02/launch-state.json": "258b40e367ed0e8d18cd749019f197c32cbd2649bd4983adc7b8be267d23f715",
+    "timing-02/running.json": "ef1b733c6c677a263794f9e423075b8818cae2206e2cd1844b5497439ffaa5bc",
+    "timing-02/selection.json": "39147cca639be5f223ed685131ce89330438a0aae7a9b2e599e6cac79bb2098d",
+    "timing-02/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "timing-02/evidence/result.json": "1729d2dc3c76a50a718654a32123bb184cd5f1b8ad268e86645ba5c4503ffb74",
+    "timing-02/mods/loader-manifest.txt": "5afda3ea6ae25ac370057d172b93c5d732a9f0348930c9e8e957efc4bdd884a0",
+    "timing-02/mods/ModLoader/supported-mods.txt": "f111bee3f65466fbe2f0c79fa83bb20890883f3a3369fa9d8a66bdd65732edb7",
+    "timing-02/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "85e4b5e5b330973bcc7d4c91580dca26987fc61042cb4f89b237c250edbfbd62",
+    "combat-02/air-output.log": "ae933e967ccd45c68ea299ff84cc9f495d1b6fd7c6536eb888a7814e4ddc64b4",
+    "combat-02/baseline.compile.log": "a1cad9d2173d2ecf2c412230c38790ee4e00b31688e79ef03cf39e51a067e3cb",
+    "combat-02/build.json": "0abe7fb7bf7d7fb7624a88941165566ec2d3147537359e53d52a3230644d7bcd",
+    "combat-02/candidate.compile.log": "3b12d4888f51e5826e992844abc792b5bb84029f52cbc04474ab26fedf86507a",
+    "combat-02/environment.json": "54958abbe00560e23b0aebc9dbdd8a13bf6979bd2e38f3eb3e36f275c46cdca9",
+    "combat-02/last-run.json": "aa0e2db7f2e41f9d662d0ffafa36217a12e22d149774fbd465087ffaa20f8d43",
+    "combat-02/launch-state.json": "0ea752faa6aebddd2928900a7dabd068600cb78f6c353b75618032705d014f4e",
+    "combat-02/running.json": "a29e7b2153436c54d38db42194d894cb39ceabea27320ee69cee1e0d43db461f",
+    "combat-02/selection.json": "15cab08988e73090e287206789fd096d6fe1fc83fb0e673c403f09b47027491b",
+    "combat-02/selection.log": "25693c1984014f40905ed00294bd194ef91fb41c0f07af7081db98c883d689de",
+    "combat-02/evidence/result.json": "a526308fd29ba4a8a94c8600a709bc8e5b039222a54eff7064a1d8735b458ebc",
+    "combat-02/mods/loader-manifest.txt": "5afda3ea6ae25ac370057d172b93c5d732a9f0348930c9e8e957efc4bdd884a0",
+    "combat-02/mods/ModLoader/supported-mods.txt": "f111bee3f65466fbe2f0c79fa83bb20890883f3a3369fa9d8a66bdd65732edb7",
+    "combat-02/mods/RecoveryFrameProbe/release/RecoveryFrameProbeMod.compile.log": "f3b279bacbc83292b048f814ce14f0b57e71b10090d789a633ef75017954f626",
+    "production/CandidateOptionsProbe.compile.log": "6867bfe397e226c4775e716e2464b3ddb404d197f05e5fb3046ef2718d503af8",
+    "production/classes.txt": "4233800572a86b6c15f0b68245e5a121395b33bf737599b22320557f2b4b5da6",
+    "production/manifest.json": "66f17489a70c358b2ae0441e9b90fb9a1595a8748ffafb8669a5ca8763cb78f9",
+    "production/RealisticVisionMod.compile.log": "9699e491326536470a5cc221eb7d1c8b26c1ae01baa5f00a48a9d8db00e1d72d",
+    "production/settings.json": "d2bcbfabc6a557a1722d2233a57a147b4a811f9c33c04987679ac60b0a1b7dd4",
+    "production/first/air-output.log": "70ef462ac2764b71aba98848990f0e6700151d129fedb08ed4f32b3028f65138",
+    "production/first/last-run.json": "55911ec1282c0ebe9a5f21c2e21039f47bf2b074e78accf5abf895521e1e9a68",
+    "production/first/running.json": "45e4fbb7b19bf7042563904f574bc302d93297740757eb1535d405fd4eabe611",
+    "production/restored/air-output.log": "572fb17ab8ed469cb162c01ec3001945dbbadb25500945da0d39793d4b613d75",
+    "production/restored/last-run.json": "406fbfcf7a3efa1310a7d16fbe784d35f654f94efbdfee182329d63063500d03",
+    "production/restored/running.json": "0fa88d6677d742985fcb57bbb2357fe5e1a3a77c3961da32593d58adce54f5cb"
+  },
+  "checks": 1848,
+  "combat_windows": 8,
+  "performance": [
+    {
+      "case": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.35,
+        "bright": false
+      },
+      "update": [
+        {
+          "mean": 44.45,
+          "p95": 85,
+          "max": 111
+        },
+        {
+          "mean": 44.983,
+          "p95": 86,
+          "max": 165
+        }
+      ],
+      "total": [
+        {
+          "mean": 49.35,
+          "p95": 91,
+          "max": 116
+        },
+        {
+          "mean": 50.133,
+          "p95": 92,
+          "max": 170
+        }
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.6,
+        "bright": false
+      },
+      "update": [
+        {
+          "mean": 62.4,
+          "p95": 110,
+          "max": 145
+        },
+        {
+          "mean": 63.317,
+          "p95": 110,
+          "max": 184
+        }
+      ],
+      "total": [
+        {
+          "mean": 67.442,
+          "p95": 117,
+          "max": 151
+        },
+        {
+          "mean": 68.167,
+          "p95": 117,
+          "max": 190
+        }
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.35,
+        "bright": false
+      },
+      "update": [
+        {
+          "mean": 33.408,
+          "p95": 51,
+          "max": 95
+        },
+        {
+          "mean": 32.533,
+          "p95": 54,
+          "max": 119
+        }
+      ],
+      "total": [
+        {
+          "mean": 38.325,
+          "p95": 56,
+          "max": 100
+        },
+        {
+          "mean": 37.275,
+          "p95": 60,
+          "max": 126
+        }
+      ]
+    },
+    {
+      "case": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.6,
+        "bright": false
+      },
+      "update": [
+        {
+          "mean": 33.008,
+          "p95": 57,
+          "max": 65
+        },
+        {
+          "mean": 31.925,
+          "p95": 54,
+          "max": 116
+        }
+      ],
+      "total": [
+        {
+          "mean": 37.992,
+          "p95": 62,
+          "max": 75
+        },
+        {
+          "mean": 37.042,
+          "p95": 59,
+          "max": 122
+        }
+      ]
+    }
+  ],
+  "limits": "Measured RV updates and fog draw, not overall FPS. Native combat remains nondeterministic."
+}

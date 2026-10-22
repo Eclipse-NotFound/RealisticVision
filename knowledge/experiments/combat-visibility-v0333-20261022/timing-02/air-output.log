@@ -1,0 +1,33 @@
+ModLoader[boot_start] v2 run=run_1792664116165_485308
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_ContinuousSceneMod] init
+709 Интерфейс
+1273 Game init
+1018 Персонаж
+1 Местность
+796 Создание местности
+false
+398 Вход в местность
+1090 Создание местности
+false
+37 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"dense":true,"mode":"classic","dim":0.35,"bright":false} size=192x75 units=96
+FRAME RESULT 0 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 1 {"dense":true,"mode":"classic","dim":0.6,"bright":false} size=192x75 units=96
+FRAME RESULT 1 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 2 {"dense":true,"mode":"current","dim":0.35,"bright":false} size=192x75 units=96
+FRAME RESULT 2 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 3 {"dense":true,"mode":"current","dim":0.6,"bright":false} size=192x75 units=96
+FRAME RESULT 3 {"helper":[],"stages":[],"counts":[]}
+FRAME COMPLETE

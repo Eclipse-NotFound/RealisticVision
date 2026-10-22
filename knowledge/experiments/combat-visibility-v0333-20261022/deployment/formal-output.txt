@@ -1,0 +1,33 @@
+ModLoader[boot_start] v2 run=run_1792664749401_739776
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_RealisticVisionMod] line 23
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_AddictionSystemMod] line 29
+ModLoader[requested_ContinuousSceneMod] line 30
+ModLoader[requested_FirearmAttachmentsMod] line 31
+ModLoader[requested_LightAndDarknessMod] line 32
+ModLoader[requested_WallBlendMod] line 33
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-combat-visibility-deploy-4d91e17629684c729307e0f0c4e8ab34
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_TDFCMod] init
+[RVision] init ok enabled=true
+ModLoader[ok_RealisticVisionMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+ModLoader[ok_LootEditorMod] init
+[AddictionSystem] heartbeat attached=false t=-

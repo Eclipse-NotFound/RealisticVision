@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-22 **D36 v0.33.3已部署**：原生手持武器漏扫childObjs导致记忆区泄露，现按所属单位每帧裁切并独立遮罩；806泄露像素归零，1848项和8原生射击窗通过。current软遮罩改批量处理，画面严格相同；实际耗时和长帧边界见[报告](../knowledge/experiments/2026-10-22-combat-visibility.md)。准确包AB461FF3…2F23871（42400B），生产源build/combat-visibility-output/production/src，无authority。正式init/设置注册/tick1/181/361通过；备份D35见deployment/receipt.json。
+
 > 2026-10-21 **D35先回退，再修复并部署v0.33.2**：22:17恢复下午前D32；23:35准确安装7852F61E…BE86764（41,630B）。自定义亮度不再重复整图合成/地形扫描；显示与逻辑隔离、设置、阶梯和防溢出保留。1731项检查及8个原生射击窗口通过，正式路径init/设置注册/tick1/181/361通过。D32配对四组更新加绘制均值低3.8%～21.6%，current默认组最大值仍83→125ms，不能承诺无卡顿。生产源build/regression-recovery-output/production-singlepass/src，不含authority；回退备份before-settings-recovery-20261021-233515-ab290b为D32。详见[报告](../knowledge/experiments/2026-10-21-settings-performance-recovery.md)。
 
 > 2026-10-21 **D33合入D34，v0.33.1已部署**：墙轮廓线性扫描/紧凑缓存与classic零修正跳过；完整保留视野设置、阶梯与防溢出。471项/组通过，正式路径init/设置注册/tick1/181/361通过。SHA F2B8A973D9D2A374C9BD8F5DA9D29040266954C8F139B8C85BFA0AAAA749A561。大图配对更新加绘制均值下降6.9%–15.4%，持续射击classic更新约降18.3%、current基本持平；最大长帧未全面改善，不宣称卡顿全解。准确源build/motion-performance-output/merged-settings/production/src，不含authority。详见[报告](../knowledge/experiments/2026-10-21-motion-performance.md)。
@@ -74,7 +76,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D35 v0.33.2（7852F61E…BE86764）；D34全部设置、D32阶梯与防溢出、D33有效缓存保留。正式源/包：build/regression-recovery-output/production-singlepass；不从含authority的HEAD整包部署。
+- 当前安装D36 v0.33.3（AB461FF3…2F23871）；武器附件遮挡与批量软遮罩处理。保留D35全部设置/墙面与既有优化。准确生产源build/combat-visibility-output/production/src；不从含authority的HEAD整包部署。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -98,7 +100,7 @@
 
 ## 4. 正在进行与停点
 
-- D35实现、验证、部署已完成；所有RV实例已退出。candidate至candidate-v5为历史失败/过渡方案，不部署、不重跑覆盖。authority仍为独立未发布工作。
+- D36实现、验证、部署已完成；所有本轮RV测试实例已退出。武器泄露复验归零；current平均开销略降，但实战更新基本持平、长帧未稳定改善。D35的candidate至candidate-v5和D36的timing-01为历史失败/过渡证据，不部署、不重跑覆盖。authority仍为独立未发布工作。
 
 
 - 阶梯最小修复已冻结：src/RVWallSurface.as仅增加半高格顶部空气条件；准确生产源build/stair-shadow-output/candidate/src。统一发布应合入最新D31生产源，不用含authority的HEAD整包；无待跑阶梯AIR。

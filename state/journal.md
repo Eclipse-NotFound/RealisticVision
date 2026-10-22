@@ -1,3 +1,10 @@
+## 2026-10-22 — D36武器泄露与遮罩批量处理
+
+- 根因与实现：手持武器在Unit.childObjs而不在房间链；按主人状态每帧处理、独立Shape共享像素，保留原生隐藏/死亡及恢复。current逐像素软遮罩转换改为相同映射的批量位图处理。
+- 证据：1848项/组及8原生射击窗，真实武器806→0；设置/墙影/逻辑图严格一致。性能范围和峰值照录，不承诺完全无卡顿；玩家截图存档、内部arm/标签及联机authority未验。
+- 已部署：ab461ff3bdf77544bfb3e7f45b67265429d52280721fa8b8321ba92be2f23871 / 42400B；正式路径init、设置注册、tick1/181/361通过。备份build\backups\before-combat-visibility-20261022-182545-6d09e8\RealisticVisionMod.before.swf；只改RV，四项外部WIP保留。
+- 源与边界：[报告](../knowledge/experiments/2026-10-22-combat-visibility.md)，build/combat-visibility/README.md。准确源production/src，不从含authority的HEAD整包安装。timing-01中断作废，timing-02为完整对照，所有本轮测试进程已退出。
+
 ## 2026-10-21 — D35先回退并修复非默认亮度的性能回退
 
 - 用户明确先回退下午修改：22:17将F2B8A恢复D32 76314B81，正式路径复验通过，真实配置/存档未改。

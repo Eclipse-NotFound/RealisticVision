@@ -14,6 +14,7 @@ package fe.unit
       public var invis:Boolean;
       public var sost:int;
       public var hpbar:Sprite;
+      public var childObjs:Array;
 
       public function visDetails():void
       {

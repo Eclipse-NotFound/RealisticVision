@@ -49,3 +49,5 @@ build/backups/before-vision-settings-*/
 build/regression-recovery-output/
 build/backups/before-afternoon-rollback-*/
 build/backups/before-settings-recovery-*/
+build/combat-visibility-output/
+build/backups/before-combat-visibility-*/
