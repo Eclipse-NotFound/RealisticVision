@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-22 **D39 v0.33.6已部署**：定位镜头跨墙面缓存边界的集中重建；复用重叠世界区域轮廓、预计算精确采样模板并保留异常失效。414项/组、96组严格图像及完整组合12窗通过；准确包83d8e590…205c7e65（44427B），正式init/注册/tick1/181/361通过。仍有非RV长更新的长帧，不声称全部卡顿消除；[报告](../knowledge/experiments/2026-10-22-long-frame-triggers.md)。生产源build/long-frame-output/production/src，无authority；D38备份见部署回执。
+
 > 2026-10-22 **D38 v0.33.5已部署**：classic按4×4格复用精确逻辑采样；两模式墙面支持区/补集一次生成。同输入更新下降classic约20.5%～21.6%；current约8.5%～9.0%，4987项/组、12原生射击窗及正式init/注册/tick1/181/361通过。准确包6593EE35…8FD6EC06（43818B）；[报告](../knowledge/experiments/2026-10-22-followup-performance.md)含完整帧间隔和长帧边界。生产源build/followup-performance-output/production/src，无authority；D37备份保留，正常重启生效。
 
 > 2026-10-22 **D37 v0.33.4已部署**：保持D36画面，classic视口合成/变化格重算、材质复制计划复用、FOV保守遍历及current本地子格缓存。8191项/组、12原生射击窗、准确包设置与正式init/注册/tick1/181/361通过。战斗帧间隔classic66.85→40.75ms、current45.87→37.48ms，同场off约33.3ms，仍未完全达原版。准确包187D287B…4111272（43816B），冻结生产源见本轮证据production/src，无authority；[报告](../knowledge/experiments/2026-10-22-native-performance.md)详录取图纠正/长帧边界与D36备份。
@@ -80,7 +82,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D38 v0.33.5（6593EE35…8FD6EC06）；精确采样复用与墙面行段优化。准确源build/followup-performance-output/production/src和knowledge/experiments/followup-performance-v0335-20261022/production/src，不从含authority的HEAD整包部署。
+- 当前安装D39 v0.33.6；镜头跨墙面缓存边界复用、采样模板优化。准确源build/long-frame-output/production/src；不从含authority的HEAD整包部署。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -103,6 +105,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D39已部署并完成归档；测试退出。已减少缓存边界重建开销，剩余偶发长帧需另行针对驱动、宿主计算或绘制取证；不使用旧EXIT_FRAME分段归因。
 
 - D38实现、验证、部署已完成；全部本轮测试实例退出。最终candidate-04合01+03，02无稳定收益已淘汰；同输入开销继续降低，仍不承诺所有战斗达到原版。exact-01-parent为继承工具错误，修正后另名复验，不重跑覆盖历史。authority仍独立未发布。
 

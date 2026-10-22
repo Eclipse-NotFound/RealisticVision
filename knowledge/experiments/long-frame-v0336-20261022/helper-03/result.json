@@ -1,0 +1,14 @@
+{
+  "candidate": "candidate-03",
+  "exit": 0,
+  "summary": [
+    "PASS ON fractional camera 1.25 exact pixels",
+    "",
+    "PASS OFF fractional camera 1.5 exact pixels",
+    "",
+    "PASS ON fractional camera 1.5 exact pixels",
+    "",
+    "DRAW ONCE COMPLETE passed=228 failed=0",
+    ""
+  ]
+}

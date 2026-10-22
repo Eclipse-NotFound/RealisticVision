@@ -26,6 +26,7 @@ package {
       // string signatures every frame. Dirty flags survive a callback throwing
       // halfway through a scan; partial cache writes must never hide a change.
       private var shapeDirty:Boolean = true;
+      private var terrainDirty:Boolean = true;
       private var fieldShapeDirty:Boolean = true;
       private var lightDirty:Boolean = true;
       private var previousBright:Boolean;
@@ -42,6 +43,10 @@ package {
       private var floorField:BitmapData;
       private var wallField:BitmapData;
       private var fieldStamp:BitmapData;
+      // Faces always lie on the 5px sampling grid. The same two kernels
+      // are reused at every face, preserving the original rounding exactly.
+      private var kernelOffsets:Array=[];
+      private var kernelAlphas:Array=[];
       private var sampleStarts:Vector.<int>;
       private var samplePixels:Vector.<int>;
       private var sampleAlphas:Vector.<int>;
@@ -76,6 +81,18 @@ package {
 
       public function RVWallSurface() {
          wallPixels.mouseEnabled=wallPixels.mouseChildren=false;
+         for each(var sign:int in [1,-1]){
+            var offsets:Vector.<int>=new Vector.<int>(),alphas:Vector.<int>=new Vector.<int>();
+            var low:int=Math.floor(-(sign>0?FRINGE:DEPTH)/STEP),high:int=Math.ceil((sign>0?DEPTH:FRINGE)/STEP);
+            for(var q:int=low;q<high;q++){
+               var distance:Number=(q+0.5)*STEP*sign;
+               if(distance < -FRINGE || distance>=DEPTH)continue;
+               var alpha:int=distance<=BRIGHT?255:Math.round(255*(DEPTH-distance)/(DEPTH-BRIGHT));
+               if(distance<0)alpha=Math.round(alpha*Math.min(1,(distance+FRINGE)/STEP));
+               offsets.push(q);alphas.push(alpha);
+            }
+            kernelOffsets.push(offsets);kernelAlphas.push(alphas);
+         }
          for(var i:int=0;i<256;i++){alphaMap[i]=uint(255-i)<<24;zeroMap[i]=0;}
       }
 
@@ -99,6 +116,10 @@ package {
          if(baseClip.parent != parent)parent.addChild(baseClip);
          parent.setChildIndex(wallPixels,parent.numChildren-1);
          wallPixels.visible = true;
+         var oldHeights:Vector.<int>=heights;
+         var oldLeft:int=left,oldTop:int=top,oldCols:int=cols,oldRows:int=rows;
+         var terrainChanged:Boolean=terrainDirty || owner!==loc || (alwaysBright && bounds!=null && !bounds.equals(view));
+         terrainDirty=terrainChanged;
          var reset:Boolean = owner !== loc || bounds == null || !bounds.equals(view);
          if(reset) {
             owner=loc; bounds=view.clone(); shapeDirty=fieldShapeDirty=lightDirty=true;
@@ -117,6 +138,14 @@ package {
             }
             wallPixels.x=left*CELL; wallPixels.y=top*CELL;
             heights=new Vector.<int>((cols+2)*(rows+2),true);
+            // Keep patches in the same world location when the viewport origin
+            // changes. Cached runs are local coordinates, so translate those too.
+            var dx:int=(oldLeft-left)*CELL,dy:int=(oldTop-top)*CELL;
+            if(!terrainChanged && (dx!=0 || dy!=0))for each(var movedPatch:Object in contourPieces){
+               movedPatch.rect.offset(dx,dy);
+               var movedRuns:Vector.<int>=movedPatch.runs as Vector.<int>;
+               if(movedRuns!=null)for(var ri:int=0;ri<movedRuns.length;ri+=5){movedRuns[ri]+=dx;movedRuns[ri+1]+=dy;}
+            }
             contourDirty=contourLayoutDirty=true;
          }
          // One-cell halo distinguishes exterior faces from joins, including two
@@ -124,19 +153,23 @@ package {
          var index:int=0;
          for(var y:int=top-1;y<=top+rows;y++) for(var x:int=left-1;x<=left+cols;x++) {
             var h:int=heightAt(loc,x,y);
+            if(reset){
+               if(oldHeights!=null && x>=oldLeft-1 && x<=oldLeft+oldCols && y>=oldTop-1 && y<=oldTop+oldRows
+                  && oldHeights[x-oldLeft+1+(y-oldTop+1)*(oldCols+2)]!=h)terrainDirty=terrainChanged=true;
+            }else if(heights[index]!=h)terrainDirty=terrainChanged=true;
             if(heights[index]!=h){shapeDirty=true;heights[index]=h;}
             index++;
          }
          if(shapeDirty) {
-            contourGeometryVersion++;
+            if(terrainChanged)contourGeometryVersion++;
             // Drop obsolete runs before rebuilding geometry. Packed integers
             // avoid keeping thousands of rectangle objects alive in the cache.
-            for each(var stalePatch:Object in contourPieces)stalePatch.runs=null;
+            if(terrainChanged)for each(var stalePatch:Object in contourPieces)stalePatch.runs=null;
             fieldShapeDirty=true;
             rebuildFaces(loc);
             rebuildSamples();
             seen.length=lights.length=faces.length/5;
-            shapeDirty=false;
+            shapeDirty=terrainDirty=false;
          }
          if(previousBright!=alwaysBright){lightDirty=true;previousBright=alwaysBright;}
          var count:int=0;
@@ -276,7 +309,7 @@ package {
          if(baseLight!=null)baseLight.dispose();baseLight=null;
          if(floorField!=null){floorField.dispose();wallField.dispose();fieldStamp.dispose();}floorField=wallField=fieldStamp=null;
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
-         owner=null;bounds=null;shapeDirty=fieldShapeDirty=lightDirty=true;
+         owner=null;bounds=null;terrainDirty=shapeDirty=fieldShapeDirty=lightDirty=true;
          faces=[];support=[];supportComplement=[];heights=null;seen.length=lights.length=0;
          sampleStarts=null;samplePixels=null;sampleAlphas=null;sampleCells=null;floorValues=null;
          if(airClip.parent)airClip.parent.removeChild(airClip);airClip.graphics.clear();wallPixels.mask=null;
@@ -594,30 +627,28 @@ package {
       /** Frozen geometry for each exposed face; exploration and light are
        * still sampled every update. A rebuilt shape regenerates this table. */
       private function rebuildSamples():void {
-         sampleStarts=new Vector.<int>();samplePixels=new Vector.<int>();sampleAlphas=new Vector.<int>();
+         var faceCount:int=faces.length/5,capacity:int=faceCount*Vector.<int>(kernelOffsets[0]).length;
+         sampleStarts=new Vector.<int>(faceCount+1);samplePixels=new Vector.<int>(capacity);sampleAlphas=new Vector.<int>(capacity);
          sampleCells=new Vector.<int>();floorValues=new Vector.<uint>(field.width*field.height,true);
          var registered:Vector.<Boolean>=new Vector.<Boolean>(floorValues.length,true);
+         var write:int=0,width:int=field.width,height:int=field.height;
          for(var i:int=0;i<faces.length;i+=5){
-            sampleStarts.push(samplePixels.length);
+            sampleStarts[int(i/5)]=write;
             var wx:Number=faces[i],wy:Number=faces[i+1],dir:int=faces[i+2];
-            var vertical:Boolean=dir>=2,sign:int=(dir==0||dir==2)?1:-1;
+            var vertical:Boolean=dir>=2,k:int=(dir==0||dir==2)?0:1;
+            var offsets:Vector.<int>=kernelOffsets[k],alphas:Vector.<int>=kernelAlphas[k];
             var along:int=Math.floor(((vertical?wy:wx)-(vertical?top:left)*CELL)/STEP);
-            var edge:Number=((vertical?wx:wy)-(vertical?left:top)*CELL)/STEP;
-            var low:int=Math.floor(edge-(sign>0?FRINGE:DEPTH)/STEP);
-            var high:int=Math.ceil(edge+(sign>0?DEPTH:FRINGE)/STEP);
-            for(var q:int=low;q<high;q++){
-               var distance:Number=(q+0.5-edge)*STEP*sign;
-               if(distance < -FRINGE || distance>=DEPTH)continue;
-               var a:int=distance<=BRIGHT?255:Math.round(255*(DEPTH-distance)/(DEPTH-BRIGHT));
-               if(distance<0)a=Math.round(a*Math.min(1,(distance+FRINGE)/STEP));
-               var px:int=vertical?q:along,py:int=vertical?along:q;
-               if(px<0||py<0||px>=field.width||py>=field.height)continue;
-               var cell:int=px+py*field.width;
-               samplePixels.push(cell);sampleAlphas.push(a);
+            var edge:int=((vertical?wx:wy)-(vertical?left:top)*CELL)/STEP;
+            for(var q:int=0;q<offsets.length;q++){
+               var across:int=edge+offsets[q];
+               var px:int=vertical?across:along,py:int=vertical?along:across;
+               if(px<0||py<0||px>=width||py>=height)continue;
+               var cell:int=px+py*width;
+               samplePixels[write]=cell;sampleAlphas[write]=alphas[q];write++;
                if(!registered[cell]){registered[cell]=true;sampleCells.push(cell);}
             }
          }
-         sampleStarts.push(samplePixels.length);
+         sampleStarts[faceCount]=write;samplePixels.length=sampleAlphas.length=write;
       }
    }
 }

@@ -1,0 +1,20 @@
+ModLoader[boot_start] v2 run=run_1792678816845_840172
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_ContinuousSceneMod] init
+518 Интерфейс
+1073 Game init
+792 Персонаж
+1 Местность
+672 Создание местности
+false
+350 Вход в местность
+1026 Создание местности
+false
+33 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 0 candidate current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 0 candidate
+FRAME COMPLETE live

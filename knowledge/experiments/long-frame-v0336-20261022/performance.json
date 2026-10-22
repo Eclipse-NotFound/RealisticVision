@@ -1,0 +1,1803 @@
+{
+  "paired": [
+    {
+      "case": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 22.708,
+          "p95": 42,
+          "max": 74,
+          "over50": 4,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 22.75,
+          "p95": 38,
+          "max": 78,
+          "over50": 3,
+          "over100": 0
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 26.992,
+          "p95": 46,
+          "max": 79,
+          "over50": 4,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 26.742,
+          "p95": 42,
+          "max": 81,
+          "over50": 3,
+          "over100": 0
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 23.533,
+          "p95": 51,
+          "max": 85,
+          "over50": 7,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 22.142,
+          "p95": 38,
+          "max": 77,
+          "over50": 2,
+          "over100": 0
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 28.1,
+          "p95": 56,
+          "max": 90,
+          "over50": 8,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 26.867,
+          "p95": 44,
+          "max": 82,
+          "over50": 3,
+          "over100": 0
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 20.358,
+          "p95": 40,
+          "max": 51,
+          "over50": 1,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 19.842,
+          "p95": 26,
+          "max": 81,
+          "over50": 1,
+          "over100": 0
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 25.358,
+          "p95": 45,
+          "max": 61,
+          "over50": 2,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 24.742,
+          "p95": 32,
+          "max": 87,
+          "over50": 1,
+          "over100": 0
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 21.633,
+          "p95": 42,
+          "max": 100,
+          "over50": 2,
+          "over100": 0
+        },
+        {
+          "n": 120,
+          "mean": 20.225,
+          "p95": 28,
+          "max": 45,
+          "over50": 0,
+          "over100": 0
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 26.85,
+          "p95": 47,
+          "max": 104,
+          "over50": 5,
+          "over100": 1
+        },
+        {
+          "n": 120,
+          "mean": 25.175,
+          "p95": 33,
+          "max": 57,
+          "over50": 1,
+          "over100": 0
+        }
+      ]
+    }
+  ],
+  "full_combo_sweep": [
+    {
+      "mode": "classic",
+      "variant": "off",
+      "interval": {
+        "n": 598,
+        "mean": 42.642,
+        "p95": 60,
+        "max": 120,
+        "over50": 110,
+        "over100": 4
+      },
+      "update": {
+        "n": 598,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 2,
+        "over50": 0,
+        "over100": 0
+      },
+      "viewChanges": null,
+      "viewChangeIntervals": null,
+      "outsideRV": {
+        "n": 598,
+        "mean": 42.634,
+        "p95": 60,
+        "max": 120,
+        "over50": 110,
+        "over100": 4
+      },
+      "slowWithRVUnder25": 110
+    },
+    {
+      "mode": "classic",
+      "variant": "baseline",
+      "interval": {
+        "n": 598,
+        "mean": 65.701,
+        "p95": 95,
+        "max": 186,
+        "over50": 475,
+        "over100": 19
+      },
+      "update": {
+        "n": 598,
+        "mean": 19.88,
+        "p95": 42,
+        "max": 132,
+        "over50": 17,
+        "over100": 2
+      },
+      "viewChanges": {
+        "n": 30,
+        "mean": 56.967,
+        "p95": 97,
+        "max": 132,
+        "over50": 14,
+        "over100": 2
+      },
+      "viewChangeIntervals": {
+        "n": 30,
+        "mean": 103.967,
+        "p95": 141,
+        "max": 186,
+        "over50": 30,
+        "over100": 11
+      },
+      "outsideRV": {
+        "n": 598,
+        "mean": 45.821,
+        "p95": 64,
+        "max": 153,
+        "over50": 140,
+        "over100": 1
+      },
+      "slowWithRVUnder25": 301
+    },
+    {
+      "mode": "classic",
+      "variant": "candidate",
+      "interval": {
+        "n": 598,
+        "mean": 66.552,
+        "p95": 100,
+        "max": 176,
+        "over50": 493,
+        "over100": 29
+      },
+      "update": {
+        "n": 598,
+        "mean": 19.169,
+        "p95": 34,
+        "max": 108,
+        "over50": 5,
+        "over100": 2
+      },
+      "viewChanges": {
+        "n": 30,
+        "mean": 38.133,
+        "p95": 61,
+        "max": 108,
+        "over50": 4,
+        "over100": 2
+      },
+      "viewChangeIntervals": {
+        "n": 30,
+        "mean": 89,
+        "p95": 142,
+        "max": 160,
+        "over50": 30,
+        "over100": 6
+      },
+      "outsideRV": {
+        "n": 598,
+        "mean": 47.383,
+        "p95": 73,
+        "max": 156,
+        "over50": 156,
+        "over100": 11
+      },
+      "slowWithRVUnder25": 297
+    },
+    {
+      "mode": "current",
+      "variant": "off",
+      "interval": {
+        "n": 598,
+        "mean": 42.935,
+        "p95": 67,
+        "max": 132,
+        "over50": 112,
+        "over100": 8
+      },
+      "update": {
+        "n": 598,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over50": 0,
+        "over100": 0
+      },
+      "viewChanges": null,
+      "viewChangeIntervals": null,
+      "outsideRV": {
+        "n": 598,
+        "mean": 42.935,
+        "p95": 67,
+        "max": 132,
+        "over50": 112,
+        "over100": 8
+      },
+      "slowWithRVUnder25": 112
+    },
+    {
+      "mode": "current",
+      "variant": "baseline",
+      "interval": {
+        "n": 598,
+        "mean": 61.376,
+        "p95": 87,
+        "max": 179,
+        "over50": 526,
+        "over100": 14
+      },
+      "update": {
+        "n": 598,
+        "mean": 17.388,
+        "p95": 35,
+        "max": 131,
+        "over50": 11,
+        "over100": 4
+      },
+      "viewChanges": {
+        "n": 30,
+        "mean": 57.867,
+        "p95": 106,
+        "max": 131,
+        "over50": 10,
+        "over100": 4
+      },
+      "viewChangeIntervals": {
+        "n": 30,
+        "mean": 103.233,
+        "p95": 162,
+        "max": 179,
+        "over50": 30,
+        "over100": 8
+      },
+      "outsideRV": {
+        "n": 598,
+        "mean": 43.988,
+        "p95": 58,
+        "max": 108,
+        "over50": 92,
+        "over100": 2
+      },
+      "slowWithRVUnder25": 484
+    },
+    {
+      "mode": "current",
+      "variant": "candidate",
+      "interval": {
+        "n": 598,
+        "mean": 60.082,
+        "p95": 79,
+        "max": 203,
+        "over50": 510,
+        "over100": 7
+      },
+      "update": {
+        "n": 598,
+        "mean": 15.881,
+        "p95": 24,
+        "max": 76,
+        "over50": 4,
+        "over100": 0
+      },
+      "viewChanges": {
+        "n": 30,
+        "mean": 29.8,
+        "p95": 53,
+        "max": 76,
+        "over50": 3,
+        "over100": 0
+      },
+      "viewChangeIntervals": {
+        "n": 30,
+        "mean": 76.9,
+        "p95": 104,
+        "max": 116,
+        "over50": 30,
+        "over100": 3
+      },
+      "outsideRV": {
+        "n": 598,
+        "mean": 44.201,
+        "p95": 60,
+        "max": 183,
+        "over50": 101,
+        "over100": 2
+      },
+      "slowWithRVUnder25": 481
+    }
+  ],
+  "loading": {
+    "exact-final-parent": [
+      "ContinuousSceneMod",
+      "RecoveryFrameProbeMod"
+    ],
+    "wide-final-parent": [
+      "ContinuousSceneMod",
+      "RecoveryFrameProbeMod"
+    ],
+    "timing-final-visible": [
+      "ContinuousSceneMod",
+      "RecoveryFrameProbeMod"
+    ],
+    "trace-final": [
+      "AddictionSystemMod",
+      "ContinuousSceneMod",
+      "FirearmAttachmentsMod",
+      "LightAndDarknessMod",
+      "LootEditorMod",
+      "ModLoaderMod",
+      "MoreSkillsWeaponsMod",
+      "PermanentInjuryMod",
+      "RConnectMod",
+      "RandomRoomsMod",
+      "RecoveryFrameProbeMod",
+      "SandevistanMod",
+      "TDFCMod",
+      "WallBlendMod"
+    ],
+    "weapon-final": [
+      "AddictionSystemMod",
+      "CombatVisibilityProbeMod",
+      "ContinuousSceneMod",
+      "FirearmAttachmentsMod",
+      "LightAndDarknessMod",
+      "LootEditorMod",
+      "ModLoaderMod",
+      "MoreSkillsWeaponsMod",
+      "PermanentInjuryMod",
+      "RConnectMod",
+      "RandomRoomsMod",
+      "SandevistanMod",
+      "TDFCMod",
+      "WallBlendMod"
+    ]
+  },
+  "environment": {
+    "exact-final-parent": {
+      "min_available_gib": 6.866,
+      "samples": 95,
+      "pid": 103884
+    },
+    "wide-final-parent": {
+      "min_available_gib": 6.589,
+      "samples": 188,
+      "pid": 12088
+    },
+    "timing-final-visible": {
+      "min_available_gib": 6.458,
+      "samples": 85,
+      "pid": 106784
+    },
+    "trace-final": {
+      "min_available_gib": 5.998,
+      "samples": 246,
+      "pid": 31004
+    }
+  },
+  "limits": "Same-input update/draw is not FPS. Full combo uses live NPC activity and scripted camera sweep; no deterministic whole-frame causality. EXIT_FRAME phase mapping rejected; outsideRV includes driver/camera/other scripts/render/scheduling.",
+  "longestIntervals": [
+    {
+      "mode": "current",
+      "variant": "off",
+      "frames": [
+        {
+          "ammo": 24,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 391,
+          "serial": 161,
+          "memoryBefore": 419147776,
+          "rv": 0,
+          "outsideRV": 106,
+          "host": 17,
+          "earlyTime": 28741,
+          "rvStart": 28770,
+          "age": 160,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 106,
+          "units": 149,
+          "memoryAfter": 419147776,
+          "rvEnd": 28770,
+          "liveStart": 28758,
+          "position": [
+            1320,
+            480,
+            -237,
+            0
+          ]
+        },
+        {
+          "ammo": 24,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 392,
+          "serial": 37,
+          "memoryBefore": 381960192,
+          "rv": 0,
+          "outsideRV": 102,
+          "host": 20,
+          "earlyTime": 24242,
+          "rvStart": 24262,
+          "age": 36,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 102,
+          "units": 149,
+          "memoryAfter": 381960192,
+          "rvEnd": 24262,
+          "liveStart": 24262,
+          "position": [
+            1392,
+            480,
+            -284,
+            0
+          ]
+        },
+        {
+          "ammo": 14,
+          "attack": 1,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 418,
+          "serial": 311,
+          "memoryBefore": 427192320,
+          "rv": 0,
+          "outsideRV": 101,
+          "host": 14,
+          "earlyTime": 35413,
+          "rvStart": 35427,
+          "age": 310,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 101,
+          "units": 149,
+          "memoryAfter": 427192320,
+          "rvEnd": 35427,
+          "liveStart": 35427,
+          "position": [
+            420,
+            480,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "variant": "baseline",
+      "frames": [
+        {
+          "ammo": 6,
+          "attack": 2,
+          "fovVersion": 247,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 419,
+          "serial": 576,
+          "memoryBefore": 394158080,
+          "rv": 124,
+          "outsideRV": 41,
+          "host": 19,
+          "earlyTime": 51799,
+          "rvStart": 51818,
+          "age": 245,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 1,
+          "nextInterval": 165,
+          "units": 149,
+          "memoryAfter": 397086720,
+          "rvEnd": 51942,
+          "liveStart": 51818,
+          "position": [
+            1230,
+            480,
+            -177,
+            0
+          ]
+        },
+        {
+          "ammo": 24,
+          "attack": 0,
+          "fovVersion": 176,
+          "helperCalls": {},
+          "view": [
+            9,
+            0,
+            61,
+            32
+          ],
+          "objects": 401,
+          "serial": 505,
+          "memoryBefore": 387112960,
+          "rv": 106,
+          "outsideRV": 56,
+          "host": 19,
+          "earlyTime": 47120,
+          "rvStart": 47139,
+          "age": 174,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 162,
+          "units": 149,
+          "memoryAfter": 390082560,
+          "rvEnd": 47245,
+          "liveStart": 47139,
+          "position": [
+            1572,
+            480,
+            -402,
+            0
+          ]
+        },
+        {
+          "ammo": 24,
+          "attack": 0,
+          "fovVersion": 183,
+          "helperCalls": {},
+          "view": [
+            12,
+            0,
+            61,
+            32
+          ],
+          "objects": 396,
+          "serial": 512,
+          "memoryBefore": 393908224,
+          "rv": 87,
+          "outsideRV": 37,
+          "host": 13,
+          "earlyTime": 47643,
+          "rvStart": 47656,
+          "age": 181,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 124,
+          "units": 149,
+          "memoryAfter": 396931072,
+          "rvEnd": 47743,
+          "liveStart": 47656,
+          "position": [
+            1698,
+            480,
+            -485,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "variant": "candidate",
+      "frames": [
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 183,
+          "helperCalls": {},
+          "view": [
+            12,
+            0,
+            61,
+            32
+          ],
+          "objects": 410,
+          "serial": 842,
+          "memoryBefore": 420966400,
+          "rv": 76,
+          "outsideRV": 40,
+          "host": 12,
+          "earlyTime": 67674,
+          "rvStart": 67686,
+          "age": 181,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 116,
+          "units": 149,
+          "memoryAfter": 364281856,
+          "rvEnd": 67762,
+          "liveStart": 67686,
+          "position": [
+            1698,
+            480,
+            -485,
+            0
+          ]
+        },
+        {
+          "ammo": 13,
+          "attack": 0,
+          "fovVersion": 253,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 419,
+          "serial": 912,
+          "memoryBefore": 431906816,
+          "rv": 15,
+          "outsideRV": 98,
+          "host": 20,
+          "earlyTime": 71874,
+          "rvStart": 71894,
+          "age": 251,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 113,
+          "units": 149,
+          "memoryAfter": 432046080,
+          "rvEnd": 71909,
+          "liveStart": 71894,
+          "position": [
+            1122,
+            480,
+            -106,
+            0
+          ]
+        },
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 77,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 412,
+          "serial": 736,
+          "memoryBefore": 422313984,
+          "rv": 70,
+          "outsideRV": 39,
+          "host": 14,
+          "earlyTime": 61575,
+          "rvStart": 61589,
+          "age": 75,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 109,
+          "units": 149,
+          "memoryAfter": 359624704,
+          "rvEnd": 61659,
+          "liveStart": 61589,
+          "position": [
+            690,
+            480,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "variant": "candidate",
+      "frames": [
+        {
+          "ammo": 17,
+          "attack": 0,
+          "fovVersion": 143,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 423,
+          "serial": 1132,
+          "memoryBefore": 526557184,
+          "rv": 20,
+          "outsideRV": 183,
+          "host": 25,
+          "earlyTime": 85103,
+          "rvStart": 85128,
+          "age": 141,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 203,
+          "units": 149,
+          "memoryAfter": 526581760,
+          "rvEnd": 85148,
+          "liveStart": 85128,
+          "position": [
+            978,
+            480,
+            -11,
+            0
+          ]
+        },
+        {
+          "ammo": 23,
+          "attack": 0,
+          "fovVersion": 243,
+          "helperCalls": {},
+          "view": [
+            3,
+            0,
+            61,
+            32
+          ],
+          "objects": 399,
+          "serial": 1232,
+          "memoryBefore": 482447360,
+          "rv": 14,
+          "outsideRV": 123,
+          "host": 15,
+          "earlyTime": 91653,
+          "rvStart": 91668,
+          "age": 241,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 137,
+          "units": 149,
+          "memoryAfter": 482619392,
+          "rvEnd": 91682,
+          "liveStart": 91668,
+          "position": [
+            1302,
+            480,
+            -225,
+            0
+          ]
+        },
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 214,
+          "helperCalls": {},
+          "view": [
+            15,
+            0,
+            61,
+            32
+          ],
+          "objects": 408,
+          "serial": 1203,
+          "memoryBefore": 427790336,
+          "rv": 53,
+          "outsideRV": 51,
+          "host": 23,
+          "earlyTime": 89718,
+          "rvStart": 89742,
+          "age": 212,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 104,
+          "units": 149,
+          "memoryAfter": 430837760,
+          "rvEnd": 89795,
+          "liveStart": 89741,
+          "position": [
+            1824,
+            480,
+            -568,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "variant": "baseline",
+      "frames": [
+        {
+          "ammo": 1,
+          "attack": 1,
+          "fovVersion": 234,
+          "helperCalls": {},
+          "view": [
+            6,
+            0,
+            61,
+            32
+          ],
+          "objects": 413,
+          "serial": 1553,
+          "memoryBefore": 406327296,
+          "rv": 131,
+          "outsideRV": 48,
+          "host": 22,
+          "earlyTime": 111371,
+          "rvStart": 111394,
+          "age": 232,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 1,
+          "nextInterval": 179,
+          "units": 149,
+          "memoryAfter": 409059328,
+          "rvEnd": 111525,
+          "liveStart": 111393,
+          "position": [
+            1464,
+            480,
+            -331,
+            0
+          ]
+        },
+        {
+          "ammo": 20,
+          "attack": 0,
+          "fovVersion": 163,
+          "helperCalls": {},
+          "view": [
+            3,
+            0,
+            61,
+            32
+          ],
+          "objects": 405,
+          "serial": 1482,
+          "memoryBefore": 394317824,
+          "rv": 105,
+          "outsideRV": 44,
+          "host": 15,
+          "earlyTime": 106698,
+          "rvStart": 106713,
+          "age": 161,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 2,
+          "nextInterval": 149,
+          "units": 149,
+          "memoryAfter": 397250560,
+          "rvEnd": 106818,
+          "liveStart": 106713,
+          "position": [
+            1338,
+            480,
+            -248,
+            0
+          ]
+        },
+        {
+          "ammo": 11,
+          "attack": 0,
+          "fovVersion": 196,
+          "helperCalls": {},
+          "view": [
+            18,
+            0,
+            61,
+            32
+          ],
+          "objects": 417,
+          "serial": 1515,
+          "memoryBefore": 432959488,
+          "rv": 98,
+          "outsideRV": 50,
+          "host": 22,
+          "earlyTime": 108888,
+          "rvStart": 108910,
+          "age": 194,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 1,
+          "nextInterval": 148,
+          "units": 149,
+          "memoryAfter": 366858240,
+          "rvEnd": 109008,
+          "liveStart": 108910,
+          "position": [
+            1932,
+            480,
+            -639,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "current",
+      "variant": "off",
+      "frames": [
+        {
+          "ammo": 12,
+          "attack": 1,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 407,
+          "serial": 1870,
+          "memoryBefore": 425168896,
+          "rv": 0,
+          "outsideRV": 132,
+          "host": 18,
+          "earlyTime": 127244,
+          "rvStart": 127262,
+          "age": 219,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 132,
+          "units": 149,
+          "memoryAfter": 425168896,
+          "rvEnd": 127262,
+          "liveStart": 127262,
+          "position": [
+            1698,
+            480,
+            -485,
+            0
+          ]
+        },
+        {
+          "ammo": 10,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 422,
+          "serial": 1759,
+          "memoryBefore": 439730176,
+          "rv": 0,
+          "outsideRV": 131,
+          "host": 14,
+          "earlyTime": 122250,
+          "rvStart": 122264,
+          "age": 108,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 131,
+          "units": 149,
+          "memoryAfter": 439730176,
+          "rvEnd": 122264,
+          "liveStart": 122264,
+          "position": [
+            384,
+            480,
+            0,
+            0
+          ]
+        },
+        {
+          "ammo": 10,
+          "attack": 2,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 417,
+          "serial": 1875,
+          "memoryBefore": 365633536,
+          "rv": 0,
+          "outsideRV": 122,
+          "host": 42,
+          "earlyTime": 127603,
+          "rvStart": 127645,
+          "age": 224,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 3,
+          "nextInterval": 122,
+          "units": 149,
+          "memoryAfter": 365633536,
+          "rvEnd": 127645,
+          "liveStart": 127645,
+          "position": [
+            1608,
+            480,
+            -426,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "off",
+      "frames": [
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 415,
+          "serial": 2040,
+          "memoryBefore": 429518848,
+          "rv": 0,
+          "outsideRV": 119,
+          "host": 15,
+          "earlyTime": 135077,
+          "rvStart": 135092,
+          "age": 59,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 119,
+          "units": 149,
+          "memoryAfter": 429518848,
+          "rvEnd": 135092,
+          "liveStart": 135092,
+          "position": [
+            978,
+            480,
+            -11,
+            0
+          ]
+        },
+        {
+          "ammo": 7,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 427,
+          "serial": 2255,
+          "memoryBefore": 429862912,
+          "rv": 0,
+          "outsideRV": 119,
+          "host": 16,
+          "earlyTime": 144132,
+          "rvStart": 144148,
+          "age": 274,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 119,
+          "units": 149,
+          "memoryAfter": 429867008,
+          "rvEnd": 144148,
+          "liveStart": 144148,
+          "position": [
+            708,
+            480,
+            0,
+            0
+          ]
+        },
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 410,
+          "serial": 2169,
+          "memoryBefore": 425168896,
+          "rv": 0,
+          "outsideRV": 94,
+          "host": 13,
+          "earlyTime": 140203,
+          "rvStart": 140216,
+          "age": 188,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 94,
+          "units": 149,
+          "memoryAfter": 425168896,
+          "rvEnd": 140216,
+          "liveStart": 140216,
+          "position": [
+            1824,
+            480,
+            -568,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "baseline",
+      "frames": [
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 392,
+          "helperCalls": {},
+          "view": [
+            6,
+            0,
+            61,
+            32
+          ],
+          "objects": 398,
+          "serial": 2543,
+          "memoryBefore": 479195136,
+          "rv": 132,
+          "outsideRV": 54,
+          "host": 13,
+          "earlyTime": 162266,
+          "rvStart": 162279,
+          "age": 232,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 186,
+          "units": 149,
+          "memoryAfter": 368111616,
+          "rvEnd": 162411,
+          "liveStart": 162279,
+          "position": [
+            1464,
+            480,
+            -331,
+            0
+          ]
+        },
+        {
+          "ammo": 20,
+          "attack": 2,
+          "fovVersion": 230,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 419,
+          "serial": 2445,
+          "memoryBefore": 518119424,
+          "rv": 24,
+          "outsideRV": 153,
+          "host": 19,
+          "earlyTime": 155475,
+          "rvStart": 155494,
+          "age": 134,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 177,
+          "units": 149,
+          "memoryAfter": 518148096,
+          "rvEnd": 155518,
+          "liveStart": 155494,
+          "position": [
+            852,
+            480,
+            0,
+            0
+          ]
+        },
+        {
+          "ammo": 5,
+          "attack": 2,
+          "fovVersion": 330,
+          "helperCalls": {},
+          "view": [
+            18,
+            0,
+            61,
+            32
+          ],
+          "objects": 422,
+          "serial": 2505,
+          "memoryBefore": 416227328,
+          "rv": 55,
+          "outsideRV": 75,
+          "host": 21,
+          "earlyTime": 159407,
+          "rvStart": 159428,
+          "age": 194,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 3,
+          "nextInterval": 130,
+          "units": 149,
+          "memoryAfter": 419131392,
+          "rvEnd": 159483,
+          "liveStart": 159428,
+          "position": [
+            1932,
+            480,
+            -639,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "candidate",
+      "frames": [
+        {
+          "ammo": 10,
+          "attack": 1,
+          "fovVersion": 147,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 422,
+          "serial": 2726,
+          "memoryBefore": 382836736,
+          "rv": 24,
+          "outsideRV": 152,
+          "host": 21,
+          "earlyTime": 174493,
+          "rvStart": 174514,
+          "age": 85,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 2,
+          "nextInterval": 176,
+          "units": 149,
+          "memoryAfter": 383102976,
+          "rvEnd": 174538,
+          "liveStart": 174514,
+          "position": [
+            510,
+            480,
+            0,
+            0
+          ]
+        },
+        {
+          "ammo": 4,
+          "attack": 0,
+          "fovVersion": 182,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 428,
+          "serial": 2747,
+          "memoryBefore": 395370496,
+          "rv": 5,
+          "outsideRV": 156,
+          "host": 28,
+          "earlyTime": 176358,
+          "rvStart": 176386,
+          "age": 106,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 161,
+          "units": 149,
+          "memoryAfter": 395382784,
+          "rvEnd": 176391,
+          "liveStart": 176386,
+          "position": [
+            348,
+            480,
+            0,
+            0
+          ]
+        },
+        {
+          "ammo": 20,
+          "attack": 1,
+          "fovVersion": 90,
+          "helperCalls": {},
+          "view": [
+            0,
+            0,
+            61,
+            32
+          ],
+          "objects": 425,
+          "serial": 2691,
+          "memoryBefore": 423915520,
+          "rv": 89,
+          "outsideRV": 64,
+          "host": 15,
+          "earlyTime": 171842,
+          "rvStart": 171857,
+          "age": 50,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 1,
+          "nextInterval": 153,
+          "units": 149,
+          "memoryAfter": 368246784,
+          "rvEnd": 171946,
+          "liveStart": 171857,
+          "position": [
+            1140,
+            480,
+            -118,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "candidate",
+      "frames": [
+        {
+          "ammo": 20,
+          "attack": 0,
+          "fovVersion": 382,
+          "helperCalls": {},
+          "view": [
+            9,
+            0,
+            61,
+            32
+          ],
+          "objects": 411,
+          "serial": 3196,
+          "memoryBefore": 402833408,
+          "rv": 55,
+          "outsideRV": 105,
+          "host": 13,
+          "earlyTime": 205835,
+          "rvStart": 205848,
+          "age": 225,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 0,
+          "nextInterval": 160,
+          "units": 149,
+          "memoryAfter": 406069248,
+          "rvEnd": 205903,
+          "liveStart": 205848,
+          "position": [
+            1590,
+            480,
+            -414,
+            0
+          ]
+        },
+        {
+          "ammo": 3,
+          "attack": 2,
+          "fovVersion": 275,
+          "helperCalls": {},
+          "view": [
+            3,
+            0,
+            61,
+            32
+          ],
+          "objects": 416,
+          "serial": 3132,
+          "memoryBefore": 403128320,
+          "rv": 101,
+          "outsideRV": 41,
+          "host": 34,
+          "earlyTime": 201408,
+          "rvStart": 201442,
+          "age": 161,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 2,
+          "nextInterval": 142,
+          "units": 149,
+          "memoryAfter": 406171648,
+          "rvEnd": 201543,
+          "liveStart": 201442,
+          "position": [
+            1338,
+            480,
+            -248,
+            0
+          ]
+        },
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 312,
+          "helperCalls": {},
+          "view": [
+            12,
+            0,
+            61,
+            32
+          ],
+          "objects": 407,
+          "serial": 3155,
+          "memoryBefore": 435564544,
+          "rv": 4,
+          "outsideRV": 119,
+          "host": 12,
+          "earlyTime": 203011,
+          "rvStart": 203023,
+          "age": 184,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 123,
+          "units": 149,
+          "memoryAfter": 435605504,
+          "rvEnd": 203027,
+          "liveStart": 203023,
+          "position": [
+            1752,
+            480,
+            -521,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "baseline",
+      "frames": [
+        {
+          "ammo": 3,
+          "attack": 0,
+          "fovVersion": 360,
+          "helperCalls": {},
+          "view": [
+            15,
+            0,
+            61,
+            32
+          ],
+          "objects": 408,
+          "serial": 3513,
+          "memoryBefore": 436449280,
+          "rv": 114,
+          "outsideRV": 44,
+          "host": 19,
+          "earlyTime": 226160,
+          "rvStart": 226179,
+          "age": 212,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 1,
+          "nextInterval": 158,
+          "units": 149,
+          "memoryAfter": 371421184,
+          "rvEnd": 226293,
+          "liveStart": 226179,
+          "position": [
+            1824,
+            480,
+            -568,
+            0
+          ]
+        },
+        {
+          "ammo": 11,
+          "attack": 2,
+          "fovVersion": 307,
+          "helperCalls": {},
+          "view": [
+            12,
+            0,
+            61,
+            32
+          ],
+          "objects": 417,
+          "serial": 3482,
+          "memoryBefore": 399306752,
+          "rv": 97,
+          "outsideRV": 44,
+          "host": 21,
+          "earlyTime": 224059,
+          "rvStart": 224080,
+          "age": 181,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 2,
+          "nextInterval": 141,
+          "units": 149,
+          "memoryAfter": 402378752,
+          "rvEnd": 224177,
+          "liveStart": 224080,
+          "position": [
+            1698,
+            480,
+            -485,
+            0
+          ]
+        },
+        {
+          "ammo": 9,
+          "attack": 2,
+          "fovVersion": 317,
+          "helperCalls": {},
+          "view": [
+            15,
+            0,
+            61,
+            32
+          ],
+          "objects": 420,
+          "serial": 3488,
+          "memoryBefore": 406061056,
+          "rv": 96,
+          "outsideRV": 41,
+          "host": 34,
+          "earlyTime": 224516,
+          "rvStart": 224550,
+          "age": 187,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": true,
+          "projectiles": 2,
+          "nextInterval": 137,
+          "units": 149,
+          "memoryAfter": 409247744,
+          "rvEnd": 224646,
+          "liveStart": 224550,
+          "position": [
+            1806,
+            480,
+            -556,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "classic",
+      "variant": "off",
+      "frames": [
+        {
+          "ammo": 4,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 422,
+          "serial": 3876,
+          "memoryBefore": 434978816,
+          "rv": 0,
+          "outsideRV": 120,
+          "host": 25,
+          "earlyTime": 245374,
+          "rvStart": 245399,
+          "age": 245,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 2,
+          "nextInterval": 120,
+          "units": 149,
+          "memoryAfter": 434978816,
+          "rvEnd": 245399,
+          "liveStart": 245399,
+          "position": [
+            1230,
+            480,
+            -177,
+            0
+          ]
+        },
+        {
+          "ammo": 0,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 398,
+          "serial": 3795,
+          "memoryBefore": 436006912,
+          "rv": 0,
+          "outsideRV": 106,
+          "host": 14,
+          "earlyTime": 241454,
+          "rvStart": 241469,
+          "age": 164,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 106,
+          "units": 149,
+          "memoryAfter": 436006912,
+          "rvEnd": 241469,
+          "liveStart": 241468,
+          "position": [
+            1392,
+            480,
+            -284,
+            0
+          ]
+        },
+        {
+          "ammo": 24,
+          "attack": 0,
+          "fovVersion": 1,
+          "helperCalls": {},
+          "view": null,
+          "objects": 391,
+          "serial": 3670,
+          "memoryBefore": 439947264,
+          "rv": 0,
+          "outsideRV": 88,
+          "host": 12,
+          "earlyTime": 236156,
+          "rvStart": 236168,
+          "age": 39,
+          "helper": {},
+          "rvStages": {},
+          "viewChanged": false,
+          "projectiles": 0,
+          "nextInterval": 88,
+          "units": 149,
+          "memoryAfter": 439947264,
+          "rvEnd": 236168,
+          "liveStart": 236168,
+          "position": [
+            1338,
+            480,
+            -248,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

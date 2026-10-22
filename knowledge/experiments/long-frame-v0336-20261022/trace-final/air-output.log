@@ -1,0 +1,92 @@
+ModLoader[boot_start] v2 run=run_1792680098944_892869
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_RecoveryFrameProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-e7dbe1c3d36d4bf58a8c5f7ec7ffbcc6
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_TDFCMod] init
+685 Интерфейс
+1205 Game init
+954 Персонаж
+0 Местность
+753 Создание местности
+false
+429 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+1158 Создание местности
+false
+213 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 0 off current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.163
+LIVE END 0 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 1 baseline current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.329
+LIVE END 1 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 2 candidate current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.496
+LIVE END 2 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 3 candidate current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.663
+LIVE END 3 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 4 baseline current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.829
+LIVE END 4 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 5 off current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.996
+LIVE END 5 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 6 off classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=1.163
+LIVE END 6 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 7 baseline classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=1.329
+[AddictionSystem] heartbeat attached=true t=1.496
+LIVE END 7 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 8 candidate classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=1.663
+LIVE END 8 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 9 candidate classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=1.829
+LIVE END 9 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 10 baseline classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=1.996
+LIVE END 10 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 11 off classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=2.163
+LIVE END 11 off
+FRAME COMPLETE live

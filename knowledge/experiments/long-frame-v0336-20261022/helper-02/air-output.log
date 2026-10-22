@@ -1,0 +1,229 @@
+PASS OFF remembered contour with blurred and masked base exact pixels
+PASS unchanged cached contour exact pixels
+PASS ON remembered contour with native alpha exact pixels
+PASS visible contour exact pixels
+PASS OFF visible contour exact pixels
+PASS unknown contour exact pixels
+PASS damaged alpha exact pixels
+PASS offset viewport exact pixels
+PASS resized viewport exact pixels
+PASS changed original fog exact pixels
+PASS room reset exact pixels
+PASS changing light, partial wall, alpha and option 0 exact pixels
+PASS changing light, partial wall, alpha and option 1 exact pixels
+PASS changing light, partial wall, alpha and option 2 exact pixels
+PASS changing light, partial wall, alpha and option 3 exact pixels
+PASS changing light, partial wall, alpha and option 4 exact pixels
+PASS changing light, partial wall, alpha and option 5 exact pixels
+PASS changing light, partial wall, alpha and option 6 exact pixels
+PASS changing light, partial wall, alpha and option 7 exact pixels
+PASS changing light, partial wall, alpha and option 8 exact pixels
+PASS changing light, partial wall, alpha and option 9 exact pixels
+PASS changing light, partial wall, alpha and option 10 exact pixels
+PASS changing light, partial wall, alpha and option 11 exact pixels
+PASS changing light, partial wall, alpha and option 12 exact pixels
+PASS changing light, partial wall, alpha and option 13 exact pixels
+PASS changing light, partial wall, alpha and option 14 exact pixels
+PASS changing light, partial wall, alpha and option 15 exact pixels
+PASS changing light, partial wall, alpha and option 16 exact pixels
+PASS changing light, partial wall, alpha and option 17 exact pixels
+PASS changing light, partial wall, alpha and option 18 exact pixels
+PASS changing light, partial wall, alpha and option 19 exact pixels
+PASS changing light, partial wall, alpha and option 20 exact pixels
+PASS changing light, partial wall, alpha and option 21 exact pixels
+PASS changing light, partial wall, alpha and option 22 exact pixels
+PASS changing light, partial wall, alpha and option 23 exact pixels
+PASS changing light, partial wall, alpha and option 24 exact pixels
+PASS changing light, partial wall, alpha and option 25 exact pixels
+PASS changing light, partial wall, alpha and option 26 exact pixels
+PASS changing light, partial wall, alpha and option 27 exact pixels
+PASS changing light, partial wall, alpha and option 28 exact pixels
+PASS changing light, partial wall, alpha and option 29 exact pixels
+PASS changing light, partial wall, alpha and option 30 exact pixels
+PASS changing light, partial wall, alpha and option 31 exact pixels
+PASS changing light, partial wall, alpha and option 32 exact pixels
+PASS changing light, partial wall, alpha and option 33 exact pixels
+PASS changing light, partial wall, alpha and option 34 exact pixels
+PASS changing light, partial wall, alpha and option 35 exact pixels
+PASS changing light, partial wall, alpha and option 36 exact pixels
+PASS changing light, partial wall, alpha and option 37 exact pixels
+PASS changing light, partial wall, alpha and option 38 exact pixels
+PASS changing light, partial wall, alpha and option 39 exact pixels
+PASS chunk scroll under ON exact pixels
+PASS overlapping translucent chunks ON exact pixels
+PASS hidden overlap ON exact pixels
+PASS transformed foreground ON exact pixels
+PASS transformed foreground OFF exact pixels
+PASS hidden foreground exact pixels
+PASS foreground shown again exact pixels
+PASS NaN light retains old coercion exact pixels
+PASS valid light after NaN exact pixels
+PASS moving cache, tile/alpha change false/0 exact pixels
+PASS moving cache, tile/alpha change false/1 exact pixels
+PASS moving cache, tile/alpha change false/2 exact pixels
+PASS moving cache, tile/alpha change false/3 exact pixels
+PASS moving cache, tile/alpha change false/4 exact pixels
+PASS moving cache, tile/alpha change false/5 exact pixels
+PASS moving cache, tile/alpha change false/6 exact pixels
+PASS moving cache, tile/alpha change false/7 exact pixels
+PASS moving cache, tile/alpha change false/8 exact pixels
+PASS moving cache, tile/alpha change false/9 exact pixels
+PASS moving cache, tile/alpha change false/10 exact pixels
+PASS moving cache, tile/alpha change false/11 exact pixels
+PASS moving cache, tile/alpha change false/12 exact pixels
+PASS moving cache, tile/alpha change false/13 exact pixels
+PASS moving cache, tile/alpha change false/14 exact pixels
+PASS moving cache, tile/alpha change false/15 exact pixels
+PASS moving cache, tile/alpha change false/16 exact pixels
+PASS moving cache, tile/alpha change false/17 exact pixels
+PASS moving cache, tile/alpha change false/18 exact pixels
+PASS moving cache, tile/alpha change false/19 exact pixels
+PASS moving cache, tile/alpha change false/20 exact pixels
+PASS moving cache, tile/alpha change false/21 exact pixels
+PASS moving cache, tile/alpha change false/22 exact pixels
+PASS moving cache, tile/alpha change false/23 exact pixels
+PASS moving cache, tile/alpha change false/24 exact pixels
+PASS moving cache, tile/alpha change false/25 exact pixels
+PASS moving cache, tile/alpha change false/26 exact pixels
+PASS moving cache, tile/alpha change false/27 exact pixels
+PASS moving cache, tile/alpha change false/28 exact pixels
+PASS moving cache, tile/alpha change false/29 exact pixels
+PASS moving cache, tile/alpha change false/30 exact pixels
+PASS moving cache, tile/alpha change false/31 exact pixels
+PASS moving cache, tile/alpha change false/32 exact pixels
+PASS moving cache, tile/alpha change false/33 exact pixels
+PASS moving cache, tile/alpha change false/34 exact pixels
+PASS moving cache, tile/alpha change false/35 exact pixels
+PASS moving cache, tile/alpha change false/36 exact pixels
+PASS moving cache, tile/alpha change false/37 exact pixels
+PASS moving cache, tile/alpha change false/38 exact pixels
+PASS moving cache, tile/alpha change false/39 exact pixels
+PASS moving cache, tile/alpha change false/40 exact pixels
+PASS moving cache, tile/alpha change false/41 exact pixels
+PASS moving cache, tile/alpha change false/42 exact pixels
+PASS moving cache, tile/alpha change false/43 exact pixels
+PASS moving cache, tile/alpha change false/44 exact pixels
+PASS moving cache, tile/alpha change false/45 exact pixels
+PASS moving cache, tile/alpha change false/46 exact pixels
+PASS moving cache, tile/alpha change false/47 exact pixels
+PASS moving cache, tile/alpha change false/48 exact pixels
+PASS moving cache, tile/alpha change false/49 exact pixels
+PASS moving cache, tile/alpha change false/50 exact pixels
+PASS moving cache, tile/alpha change false/51 exact pixels
+PASS moving cache, tile/alpha change false/52 exact pixels
+PASS moving cache, tile/alpha change false/53 exact pixels
+PASS moving cache, tile/alpha change false/54 exact pixels
+PASS moving cache, tile/alpha change false/55 exact pixels
+PASS moving cache, tile/alpha change false/56 exact pixels
+PASS moving cache, tile/alpha change false/57 exact pixels
+PASS moving cache, tile/alpha change false/58 exact pixels
+PASS moving cache, tile/alpha change false/59 exact pixels
+PASS moving cache, tile/alpha change false/60 exact pixels
+PASS moving cache, tile/alpha change false/61 exact pixels
+PASS moving cache, tile/alpha change false/62 exact pixels
+PASS moving cache, tile/alpha change false/63 exact pixels
+PASS moving cache, tile/alpha change false/64 exact pixels
+PASS moving cache, tile/alpha change false/65 exact pixels
+PASS moving cache, tile/alpha change false/66 exact pixels
+PASS moving cache, tile/alpha change false/67 exact pixels
+PASS moving cache, tile/alpha change false/68 exact pixels
+PASS moving cache, tile/alpha change false/69 exact pixels
+PASS moving cache, tile/alpha change false/70 exact pixels
+PASS moving cache, tile/alpha change false/71 exact pixels
+PASS moving cache, tile/alpha change false/72 exact pixels
+PASS moving cache, tile/alpha change false/73 exact pixels
+PASS moving cache, tile/alpha change false/74 exact pixels
+PASS moving cache, tile/alpha change false/75 exact pixels
+PASS moving cache, tile/alpha change false/76 exact pixels
+PASS moving cache, tile/alpha change false/77 exact pixels
+PASS moving cache, tile/alpha change false/78 exact pixels
+PASS moving cache, tile/alpha change false/79 exact pixels
+PASS moving cache, tile/alpha change true/0 exact pixels
+PASS moving cache, tile/alpha change true/1 exact pixels
+PASS moving cache, tile/alpha change true/2 exact pixels
+PASS moving cache, tile/alpha change true/3 exact pixels
+PASS moving cache, tile/alpha change true/4 exact pixels
+PASS moving cache, tile/alpha change true/5 exact pixels
+PASS moving cache, tile/alpha change true/6 exact pixels
+PASS moving cache, tile/alpha change true/7 exact pixels
+PASS moving cache, tile/alpha change true/8 exact pixels
+PASS moving cache, tile/alpha change true/9 exact pixels
+PASS moving cache, tile/alpha change true/10 exact pixels
+PASS moving cache, tile/alpha change true/11 exact pixels
+PASS moving cache, tile/alpha change true/12 exact pixels
+PASS moving cache, tile/alpha change true/13 exact pixels
+PASS moving cache, tile/alpha change true/14 exact pixels
+PASS moving cache, tile/alpha change true/15 exact pixels
+PASS moving cache, tile/alpha change true/16 exact pixels
+PASS moving cache, tile/alpha change true/17 exact pixels
+PASS moving cache, tile/alpha change true/18 exact pixels
+PASS moving cache, tile/alpha change true/19 exact pixels
+PASS moving cache, tile/alpha change true/20 exact pixels
+PASS moving cache, tile/alpha change true/21 exact pixels
+PASS moving cache, tile/alpha change true/22 exact pixels
+PASS moving cache, tile/alpha change true/23 exact pixels
+PASS moving cache, tile/alpha change true/24 exact pixels
+PASS moving cache, tile/alpha change true/25 exact pixels
+PASS moving cache, tile/alpha change true/26 exact pixels
+PASS moving cache, tile/alpha change true/27 exact pixels
+PASS moving cache, tile/alpha change true/28 exact pixels
+PASS moving cache, tile/alpha change true/29 exact pixels
+PASS moving cache, tile/alpha change true/30 exact pixels
+PASS moving cache, tile/alpha change true/31 exact pixels
+PASS moving cache, tile/alpha change true/32 exact pixels
+PASS moving cache, tile/alpha change true/33 exact pixels
+PASS moving cache, tile/alpha change true/34 exact pixels
+PASS moving cache, tile/alpha change true/35 exact pixels
+PASS moving cache, tile/alpha change true/36 exact pixels
+PASS moving cache, tile/alpha change true/37 exact pixels
+PASS moving cache, tile/alpha change true/38 exact pixels
+PASS moving cache, tile/alpha change true/39 exact pixels
+PASS moving cache, tile/alpha change true/40 exact pixels
+PASS moving cache, tile/alpha change true/41 exact pixels
+PASS moving cache, tile/alpha change true/42 exact pixels
+PASS moving cache, tile/alpha change true/43 exact pixels
+PASS moving cache, tile/alpha change true/44 exact pixels
+PASS moving cache, tile/alpha change true/45 exact pixels
+PASS moving cache, tile/alpha change true/46 exact pixels
+PASS moving cache, tile/alpha change true/47 exact pixels
+PASS moving cache, tile/alpha change true/48 exact pixels
+PASS moving cache, tile/alpha change true/49 exact pixels
+PASS moving cache, tile/alpha change true/50 exact pixels
+PASS moving cache, tile/alpha change true/51 exact pixels
+PASS moving cache, tile/alpha change true/52 exact pixels
+PASS moving cache, tile/alpha change true/53 exact pixels
+PASS moving cache, tile/alpha change true/54 exact pixels
+PASS moving cache, tile/alpha change true/55 exact pixels
+PASS moving cache, tile/alpha change true/56 exact pixels
+PASS moving cache, tile/alpha change true/57 exact pixels
+PASS moving cache, tile/alpha change true/58 exact pixels
+PASS moving cache, tile/alpha change true/59 exact pixels
+PASS moving cache, tile/alpha change true/60 exact pixels
+PASS moving cache, tile/alpha change true/61 exact pixels
+PASS moving cache, tile/alpha change true/62 exact pixels
+PASS moving cache, tile/alpha change true/63 exact pixels
+PASS moving cache, tile/alpha change true/64 exact pixels
+PASS moving cache, tile/alpha change true/65 exact pixels
+PASS moving cache, tile/alpha change true/66 exact pixels
+PASS moving cache, tile/alpha change true/67 exact pixels
+PASS moving cache, tile/alpha change true/68 exact pixels
+PASS moving cache, tile/alpha change true/69 exact pixels
+PASS moving cache, tile/alpha change true/70 exact pixels
+PASS moving cache, tile/alpha change true/71 exact pixels
+PASS moving cache, tile/alpha change true/72 exact pixels
+PASS moving cache, tile/alpha change true/73 exact pixels
+PASS moving cache, tile/alpha change true/74 exact pixels
+PASS moving cache, tile/alpha change true/75 exact pixels
+PASS moving cache, tile/alpha change true/76 exact pixels
+PASS moving cache, tile/alpha change true/77 exact pixels
+PASS moving cache, tile/alpha change true/78 exact pixels
+PASS moving cache, tile/alpha change true/79 exact pixels
+PASS OFF fractional camera 0.75 exact pixels
+PASS ON fractional camera 0.75 exact pixels
+PASS OFF fractional camera 1 exact pixels
+PASS ON fractional camera 1 exact pixels
+PASS OFF fractional camera 1.25 exact pixels
+PASS ON fractional camera 1.25 exact pixels
+PASS OFF fractional camera 1.5 exact pixels
+PASS ON fractional camera 1.5 exact pixels
+DRAW ONCE COMPLETE passed=228 failed=0
