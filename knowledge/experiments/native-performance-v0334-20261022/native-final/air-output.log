@@ -1,0 +1,53 @@
+ModLoader[boot_start] v2 run=run_1792671371112_183447
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+604 Интерфейс
+1161 Game init
+841 Персонаж
+0 Местность
+708 Создание местности
+false
+371 Вход в местность
+1086 Создание местности
+false
+41 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 0 off current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 0 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 1 baseline current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 1 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 2 candidate current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 2 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 3 candidate current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 3 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 4 baseline current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 4 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 5 off current anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 5 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 6 off classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 6 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 7 baseline classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 7 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 8 candidate classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 8 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 9 candidate classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 9 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 10 baseline classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 10 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 11 off classic anchor=641.8,480 enemy=raider1 weapon=smg10 tip=2
+LIVE END 11 off
+FRAME COMPLETE live

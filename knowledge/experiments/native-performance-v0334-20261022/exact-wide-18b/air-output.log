@@ -1,0 +1,28 @@
+ModLoader[boot_start] v2 run=run_1792670068415_649874
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+623 Интерфейс
+1246 Game init
+890 Персонаж
+0 Местность
+751 Создание местности
+false
+423 Вход в местность
+1078 Создание местности
+false
+41 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"dim":0.35,"soft":0,"mode":"classic","distance":1,"bright":false,"dense":true} size=192x75 units=96
+PASS exact native frame 0/0
+PASS exact native frame 0/15
+PASS exact native frame 0/30
+DIFFERENCE (x=805, y=72, w=2, h=16) camera=-943,-459 view=(x=14, y=5, w=35, h=22) frame=76
+FAIL Error: composited fog mismatch Error: composited fog mismatch
+	at RecoveryFrameProbeMod/verify()
+	at RecoveryFrameProbeMod/step()
+	at RecoveryFrameProbeMod/tick()
+	at flash.utils::Timer/tick()

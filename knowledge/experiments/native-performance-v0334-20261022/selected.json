@@ -1,0 +1,13 @@
+{
+  "candidate": "candidate-12",
+  "version": "v0.33.4-native-performance",
+  "changes_after_candidate": "version only",
+  "sources": {
+    "RealisticVisionMod.as": "dd2636cc6dd589d833c9042b89bb3e3fc966b47f8f71ec6863d272a21018de59",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "06e47a6bb025bb4327829a6688930ba555db57ba29495ba06835a6edd79da945",
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  }
+}

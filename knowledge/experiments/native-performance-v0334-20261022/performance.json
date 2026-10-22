@@ -1,0 +1,516 @@
+{
+  "paired": [
+    {
+      "case": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 46.683,
+          "p95": 86,
+          "max": 139,
+          "over50": 76
+        },
+        {
+          "n": 120,
+          "mean": 34.608,
+          "p95": 67,
+          "max": 100,
+          "over50": 34
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 51.867,
+          "p95": 91,
+          "max": 145,
+          "over50": 80
+        },
+        {
+          "n": 120,
+          "mean": 40.65,
+          "p95": 74,
+          "max": 186,
+          "over50": 42
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 62.217,
+          "p95": 117,
+          "max": 183,
+          "over50": 80
+        },
+        {
+          "n": 120,
+          "mean": 34.2,
+          "p95": 67,
+          "max": 115,
+          "over50": 24
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 67.892,
+          "p95": 126,
+          "max": 189,
+          "over50": 80
+        },
+        {
+          "n": 120,
+          "mean": 40.258,
+          "p95": 73,
+          "max": 139,
+          "over50": 47
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 33.3,
+          "p95": 56,
+          "max": 98,
+          "over50": 8
+        },
+        {
+          "n": 120,
+          "mean": 25.367,
+          "p95": 48,
+          "max": 78,
+          "over50": 5
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 38.9,
+          "p95": 60,
+          "max": 102,
+          "over50": 10
+        },
+        {
+          "n": 120,
+          "mean": 30.9,
+          "p95": 54,
+          "max": 83,
+          "over50": 7
+        }
+      ]
+    },
+    {
+      "case": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "update": [
+        {
+          "n": 120,
+          "mean": 31.958,
+          "p95": 56,
+          "max": 93,
+          "over50": 8
+        },
+        {
+          "n": 120,
+          "mean": 24.408,
+          "p95": 42,
+          "max": 90,
+          "over50": 5
+        }
+      ],
+      "total": [
+        {
+          "n": 120,
+          "mean": 37.483,
+          "p95": 63,
+          "max": 98,
+          "over50": 9
+        },
+        {
+          "n": 120,
+          "mean": 29.492,
+          "p95": 48,
+          "max": 97,
+          "over50": 5
+        }
+      ]
+    }
+  ],
+  "combat": [
+    {
+      "variant": "off",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 0.017,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 33.283,
+        "p95": 44,
+        "max": 89,
+        "over50": 2
+      },
+      "attacks": 24,
+      "maxProjectiles": 2
+    },
+    {
+      "variant": "baseline",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 19.4,
+        "p95": 22,
+        "max": 27,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 46.808,
+        "p95": 63,
+        "max": 101,
+        "over50": 22
+      },
+      "attacks": 24,
+      "maxProjectiles": 4
+    },
+    {
+      "variant": "candidate",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 12.342,
+        "p95": 16,
+        "max": 17,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 37.875,
+        "p95": 52,
+        "max": 77,
+        "over50": 9
+      },
+      "attacks": 32,
+      "maxProjectiles": 4
+    },
+    {
+      "variant": "candidate",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 12.333,
+        "p95": 15,
+        "max": 17,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 37.083,
+        "p95": 46,
+        "max": 55,
+        "over50": 2
+      },
+      "attacks": 33,
+      "maxProjectiles": 3
+    },
+    {
+      "variant": "baseline",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 19.733,
+        "p95": 23,
+        "max": 25,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 44.933,
+        "p95": 56,
+        "max": 93,
+        "over50": 12
+      },
+      "attacks": 31,
+      "maxProjectiles": 3
+    },
+    {
+      "variant": "off",
+      "mode": "current",
+      "update": {
+        "n": 120,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 33.308,
+        "p95": 40,
+        "max": 81,
+        "over50": 1
+      },
+      "attacks": 31,
+      "maxProjectiles": 3
+    },
+    {
+      "variant": "off",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 33.375,
+        "p95": 43,
+        "max": 78,
+        "over50": 2
+      },
+      "attacks": 35,
+      "maxProjectiles": 3
+    },
+    {
+      "variant": "baseline",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 39.017,
+        "p95": 65,
+        "max": 129,
+        "over50": 67
+      },
+      "interval": {
+        "n": 120,
+        "mean": 63.525,
+        "p95": 93,
+        "max": 153,
+        "over50": 80
+      },
+      "attacks": 30,
+      "maxProjectiles": 2
+    },
+    {
+      "variant": "candidate",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 14.925,
+        "p95": 24,
+        "max": 74,
+        "over50": 1
+      },
+      "interval": {
+        "n": 120,
+        "mean": 40.942,
+        "p95": 56,
+        "max": 108,
+        "over50": 18
+      },
+      "attacks": 27,
+      "maxProjectiles": 3
+    },
+    {
+      "variant": "candidate",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 14.792,
+        "p95": 23,
+        "max": 73,
+        "over50": 1
+      },
+      "interval": {
+        "n": 120,
+        "mean": 40.558,
+        "p95": 54,
+        "max": 95,
+        "over50": 15
+      },
+      "attacks": 33,
+      "maxProjectiles": 2
+    },
+    {
+      "variant": "baseline",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 40.767,
+        "p95": 69,
+        "max": 76,
+        "over50": 73
+      },
+      "interval": {
+        "n": 120,
+        "mean": 70.167,
+        "p95": 99,
+        "max": 218,
+        "over50": 82
+      },
+      "attacks": 33,
+      "maxProjectiles": 2
+    },
+    {
+      "variant": "off",
+      "mode": "classic",
+      "update": {
+        "n": 120,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 120,
+        "mean": 33.317,
+        "p95": 45,
+        "max": 103,
+        "over50": 4
+      },
+      "attacks": 27,
+      "maxProjectiles": 3
+    }
+  ],
+  "combat_pooled": [
+    {
+      "mode": "classic",
+      "variant": "off",
+      "update": {
+        "n": 240,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 240,
+        "mean": 33.346,
+        "p95": 43,
+        "max": 103,
+        "over50": 6
+      }
+    },
+    {
+      "mode": "classic",
+      "variant": "baseline",
+      "update": {
+        "n": 240,
+        "mean": 39.892,
+        "p95": 68,
+        "max": 129,
+        "over50": 140
+      },
+      "interval": {
+        "n": 240,
+        "mean": 66.846,
+        "p95": 95,
+        "max": 218,
+        "over50": 162
+      }
+    },
+    {
+      "mode": "classic",
+      "variant": "candidate",
+      "update": {
+        "n": 240,
+        "mean": 14.858,
+        "p95": 24,
+        "max": 74,
+        "over50": 2
+      },
+      "interval": {
+        "n": 240,
+        "mean": 40.75,
+        "p95": 55,
+        "max": 108,
+        "over50": 33
+      }
+    },
+    {
+      "mode": "current",
+      "variant": "off",
+      "update": {
+        "n": 240,
+        "mean": 0.013,
+        "p95": 0,
+        "max": 1,
+        "over50": 0
+      },
+      "interval": {
+        "n": 240,
+        "mean": 33.296,
+        "p95": 43,
+        "max": 89,
+        "over50": 3
+      }
+    },
+    {
+      "mode": "current",
+      "variant": "baseline",
+      "update": {
+        "n": 240,
+        "mean": 19.567,
+        "p95": 23,
+        "max": 27,
+        "over50": 0
+      },
+      "interval": {
+        "n": 240,
+        "mean": 45.871,
+        "p95": 59,
+        "max": 101,
+        "over50": 34
+      }
+    },
+    {
+      "mode": "current",
+      "variant": "candidate",
+      "update": {
+        "n": 240,
+        "mean": 12.338,
+        "p95": 15,
+        "max": 17,
+        "over50": 0
+      },
+      "interval": {
+        "n": 240,
+        "mean": 37.479,
+        "p95": 50,
+        "max": 77,
+        "over50": 11
+      }
+    }
+  ]
+}

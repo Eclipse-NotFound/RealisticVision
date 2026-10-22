@@ -1,0 +1,24 @@
+[
+  {
+    "name": "EquivalenceChecks",
+    "exit": 0,
+    "summary": [
+      "",
+      "PASS ON fractional camera 1.5 exact pixels",
+      "",
+      "DRAW ONCE COMPLETE passed=68 failed=0",
+      ""
+    ]
+  },
+  {
+    "name": "DirtyClassicChecks",
+    "exit": 0,
+    "summary": [
+      "",
+      "PASS 3072 exact display, canonical field, moving/new mask and terrain checks",
+      "",
+      "LAZY COMPLETE passed=3072 failed=0",
+      ""
+    ]
+  }
+]

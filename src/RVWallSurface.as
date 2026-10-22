@@ -70,6 +70,8 @@ package {
       private var onClip:Shape = new Shape();
       private var airPixels:Sprite = new Sprite();
       private var contourUpdates:int = 0;
+      private var contourSourceLayout:Array;
+      private var contourSourceVersion:int=0;
 
       public function RVWallSurface() {
          wallPixels.mouseEnabled=wallPixels.mouseChildren=false;
@@ -283,7 +285,7 @@ package {
          if(contourBitmap!=null){if(contourBitmap.parent)contourBitmap.parent.removeChild(contourBitmap);contourBitmap.bitmapData=null;contourBitmap=null;}
          for each(var patch:Object in contourPieces){patch.alpha.dispose();patch.next.dispose();patch.scratch.dispose();patch.pixels.dispose();}contourPieces=[];
          if(contourFog!=null)contourFog.dispose();contourFog=null;
-         contourDirty=contourLayoutDirty=true;mode=-1;
+         contourDirty=contourLayoutDirty=true;mode=-1;contourSourceLayout=null;contourSourceVersion++;
       }
 
       /** Default path leaves the original smooth wall field untouched on ALL
@@ -311,21 +313,32 @@ package {
             contourLayoutDirty=false;
          }
          var sources:Array=foregroundSources(front);
+         var sameSources:Boolean=sources!=null && contourSourceLayout!=null && sources.length==contourSourceLayout.length;
+         if(sameSources)for(var si:int=0;si<sources.length;si++){
+            var oldSource:Object=contourSourceLayout[si],newSource:Object=sources[si];
+            if(oldSource.data!==newSource.data || oldSource.x!=newSource.x || oldSource.y!=newSource.y || !Rectangle(oldSource.rect).equals(newSource.rect)){sameSources=false;break;}
+         }
+         if(!sameSources){contourSourceVersion++;contourSourceLayout=sources;}
          for each(patch in contourPieces){
-         var contourScratch:BitmapData=patch.scratch;contourScratch.fillRect(contourScratch.rect,0);
-         // copyPixels is the native bulk-copy path. Avoid extracting a channel
-         // on unchanged terrain; even a changing RGB decal only rebuilds masks
-         // when the subsequent alpha-only comparison actually differs.
-         if(sources!=null&&sources.length==1){
-            var s:Object=sources[0],r:Rectangle=patch.rect.intersection(s.rect);
-            var p:Point=new Point(r.x-patch.rect.x,r.y-patch.rect.y);r.offset(-s.x,-s.y);
-            contourScratch.copyPixels(s.data,r,p);
-         }else{
-            if(sources!=null)copyForeground(sources,patch.rect,contourScratch);
-            else{
-               var m:Matrix=front.transform.matrix;m.tx-=left*CELL+patch.rect.x;m.ty-=top*CELL+patch.rect.y;
-               contourScratch.draw(front,m,front.transform.colorTransform,null,null,true);
+         var contourScratch:BitmapData=patch.scratch;
+         if(sources!=null){
+            if(patch.copyVersion!==contourSourceVersion){
+               var plan:Array=[];
+               for each(var source:Object in sources){
+                  var region:Rectangle=patch.rect.intersection(source.rect);if(region.isEmpty())continue;
+                  var dest:Point=new Point(region.x-patch.rect.x,region.y-patch.rect.y);region.offset(-source.x,-source.y);
+                  plan.push({data:source.data,region:region,dest:dest});
+               }
+               patch.copyPlan=plan;patch.copyVersion=contourSourceVersion;
             }
+            plan=patch.copyPlan;
+            var full:Boolean=plan.length==1 && plan[0].dest.x==0 && plan[0].dest.y==0 && plan[0].region.width==contourScratch.width && plan[0].region.height==contourScratch.height;
+            if(!full)contourScratch.fillRect(contourScratch.rect,0);
+            for each(var command:Object in plan)contourScratch.copyPixels(command.data,command.region,command.dest,null,null,!full);
+         }else{
+            contourScratch.fillRect(contourScratch.rect,0);
+            var m:Matrix=front.transform.matrix;m.tx-=left*CELL+patch.rect.x;m.ty-=top*CELL+patch.rect.y;
+            contourScratch.draw(front,m,front.transform.colorTransform,null,null,true);
          }
          var delta:Object=contourScratch.compare(patch.pixels);
          if(delta is uint&&uint(delta)==0)continue;

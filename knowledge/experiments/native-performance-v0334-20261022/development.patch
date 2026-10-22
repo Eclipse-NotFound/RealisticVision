@@ -1,0 +1,425 @@
+--- a/src/RealisticVisionMod.as
++++ b/src/RealisticVisionMod.as
+@@ -94,7 +94,7 @@
+       private var cfgDebug:Boolean = false;
+ 
+       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
+-      private static const VERSION:String = "v0.33.3-combat-visibility";
++      private static const VERSION:String = "v0.33.4-native-performance";
+ 
+       private static const FOV_VISIBLE:int = 2;
+       private static const FOV_DIM:int = 1;
+@@ -140,6 +140,7 @@
+       private static const EXP_HEX:String = "0123456789abcdef";
+       // Packed local history only. Current brightness is read on every capture.
+       private var explorationBits:Array;
++      private var memoryTileState:Array;
+       private var sharedRooms:Dictionary = new Dictionary(true);
+       private var sharedLight:Array;
+       private var sharedSeen:Array;
+@@ -342,6 +343,11 @@
+       private var fogBase:Sprite = null;
+       private var wallSurface:RVWallSurface = new RVWallSurface();
+       private var classicCornerDeltas:Array = [];
++      private var classicCells:Object;
++      private var classicCellDim:Number=NaN;
++      private var classicCellDark:Boolean;
++      private var classicInputRegion:Rectangle;
++      private var classicRenderedTiles:Rectangle;
+       private var classicLightMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
+          FOG_PAD-FOG_SUB/2,FOG_PAD-FOG_SUB*1.5);
+       private var classicMemoryMatrix:Matrix = new Matrix(FOG_SUB,0,0,FOG_SUB,
+@@ -1005,6 +1011,8 @@
+ 
+       private function resetOff():void
+       {
++         this.classicRenderedTiles=null;
++         this.classicCells=null;
+          this.restoreWeaponVisuals();
+          this.releaseClassicLogic();
+          this.wallSurface.reset();
+@@ -1012,7 +1020,7 @@
+          this.curLoc = null;
+          this.classifiedSight = null; this.sightClasses = null;
+          this.explored = [];
+-         this.explorationBits = null;
++         this.explorationBits = null;this.memoryTileState=null;
+          this.fov = [];
+          this.visCur = [];
+          this.rangeMem = {}; this.rangeRoom = null; this.rangeLight = null;
+@@ -1031,6 +1039,8 @@
+ 
+       private function resetRoom(w:World, loc:Location):void
+       {
++         this.classicRenderedTiles=null;
++         this.classicCells=null;
+          this.restoreWeaponVisuals();
+          this.releaseClassicLogic();
+          // 跨房间记忆（v0.22）：离开前保存当前房间的 explored（最后一次
+@@ -1056,7 +1066,7 @@
+          this.wallCorners = [];
+          var n:int = this.spaceX * this.spaceY;
+          this.fullySeen = new Array(n);
+-         this.explorationBits = new Array(n);
++         this.explorationBits = new Array(n);this.memoryTileState=new Array(n);
+          this.fov = new Array(n);
+          this.visCur = new Array(n);
+          this.br = new Array(n);
+@@ -1357,6 +1367,8 @@
+        *  显示树中被隐藏的附属对象（狮鹫手臂等）。门控：无残留时零开销。 */
+       private function restoreAll(w:World, loc:Location):void
+       {
++         this.classicRenderedTiles=null;
++         this.classicCells=null;
+          this.restoreWeaponVisuals();
+          var any:Boolean = false;
+          for(var k:Object in this.unitVis) { any = true; break; }
+@@ -1591,11 +1603,16 @@
+                r = Tile.tileX;
+             }
+             var r2:Number = r * r;
++            var fx0:int=Math.max(0,Math.floor((ex-r)/Tile.tileX-0.5));
++            var fy0:int=Math.max(0,Math.floor((ey-r)/Tile.tileY-0.5));
++            var fx1:int=Math.min(this.spaceX,Math.ceil((ex+r)/Tile.tileX+0.5));
++            var fy1:int=Math.min(this.spaceY,Math.ceil((ey+r)/Tile.tileY+0.5));
++            for(var clearIndex:int=0;clearIndex<this.spaceX*this.spaceY;clearIndex++)this.fov[clearIndex]=FOV_NONE;
+             var tx:int;
+             var ty:int;
+-            for(tx = 0; tx < this.spaceX; tx++)
+-            {
+-               for(ty = 0; ty < this.spaceY; ty++)
++            for(tx = fx0; tx < fx1; tx++)
++            {
++               for(ty = fy0; ty < fy1; ty++)
+                {
+                   var i:int = tx + ty * this.spaceX;
+                   var cx:Number = (tx + 0.5) * Tile.tileX;
+@@ -1633,10 +1650,13 @@
+                   }
+                }
+             }
++            // Only an immediate neighbour of a visible non-wall can be lit.
++            fx0=Math.max(0,fx0-1);fy0=Math.max(0,fy0-1);
++            fx1=Math.min(this.spaceX,fx1+1);fy1=Math.min(this.spaceY,fy1+1);
+             // 墙可见性：只由"可见的非阻挡瓦片"点亮，不链式传播（厚墙内部保持暗）
+-            for(tx = 0; tx < this.spaceX; tx++)
+-            {
+-               for(ty = 0; ty < this.spaceY; ty++)
++            for(tx = fx0; tx < fx1; tx++)
++            {
++               for(ty = fy0; ty < fy1; ty++)
+                {
+                   var j:int = tx + ty * this.spaceX;
+                   if(this.fov[j] == FOV_VISIBLE)
+@@ -2034,7 +2054,7 @@
+                            // 可见角 → 子格"曾见"历史（记忆区↔未探索边界 5px 粒度；
+                            // 已探索瓦片同样标记，否则记忆区填充会出黑斑）
+                            this.seenSub[(ty * FOG_SUB + (sy == 0 ? 0 : FOG_SUB-1)) * this.subW + (tx * FOG_SUB + (sx == 0 ? 0 : FOG_SUB-1))] = 1;
+-                           this.explorationBits[tx + ty * this.spaceX] = null;
++                           this.explorationBits[tx + ty * this.spaceX] = null;this.memoryTileState[tx+ty*this.spaceX]=null;
+                         }
+                      }
+                   }
+@@ -2094,7 +2114,7 @@
+                if(lit > 0.0001)
+                {
+                   this.seenSub[(ty * FOG_SUB + sy) * this.subW + (tx * FOG_SUB + sx)] = 1;
+-                  this.explorationBits[tx + ty * this.spaceX] = null;
++                  this.explorationBits[tx + ty * this.spaceX] = null;this.memoryTileState[tx+ty*this.spaceX]=null;
+                }
+                var a:int;
+                if(doorView)
+@@ -2436,12 +2456,20 @@
+             this.fogCache.fillRect(this.fogCellRect,uint(dimA)<<24);
+             return;
+          }
++         // Shared exploration is merged independently. Keep its existing scan;
++         // local-only tiles reuse a classification until a seenSub write.
++         var tileIndex:int=tx+ty*this.spaceX;
++         var cached:*=this.sharedSeen==null && this.memoryTileState!=null?this.memoryTileState[tileIndex]:null;
++         if(cached===0 || cached===2){
++            this.fogCellRect.x=FOG_PAD+tx*FOG_SUB;this.fogCellRect.y=FOG_PAD+ty*FOG_SUB;
++            this.fogCache.fillRect(this.fogCellRect,cached===0?0xFF000000:uint(dimA)<<24);return;
++         }
+          var idxBase:int = ty * FOG_SUB * this.subW + tx * FOG_SUB;
+          var seenAll:Boolean = true;
+          var seenAny:Boolean = false;
+          var sx:int;
+          var sy:int;
+-         for(sx = 0; sx < FOG_SUB; sx++)
++         if(cached!==1) for(sx = 0; sx < FOG_SUB; sx++)
+          {
+             for(sy = 0; sy < FOG_SUB; sy++)
+             {
+@@ -2455,6 +2483,8 @@
+                }
+             }
+          }
++         if(cached===1){seenAll=false;seenAny=true;}
++         else if(this.sharedSeen==null && this.memoryTileState!=null)this.memoryTileState[tileIndex]=seenAll?2:(seenAny?1:0);
+          this.fogCellRect.x = FOG_PAD + tx * FOG_SUB;
+          this.fogCellRect.y = FOG_PAD + ty * FOG_SUB;
+          if(seenAll)
+@@ -2488,13 +2518,20 @@
+          if((this.frameCount & 1) != 0 && !needFov)
+          {
+             if(this.cfgAutoTest) this.atClsS++;
++            if(this.classicRenderedTiles!=null && this.classicRaw!=null){
++               var exposed:Rectangle=this.scenePaintBounds(),needed:Rectangle=exposed.clone();
++               needed.inflate(-2,-2);
++               if(!this.classicRenderedTiles.containsRect(needed))this.paintClassicDisplay(loc,exposed,logicOnly,true);
++            }
+             return;
+          }
+          if(this.cfgAutoTest) this.atClsF++;
+          this.ensureFog(w);
+          if(this.classicRaw == null) return;
+          if(w.grafon != null) w.grafon.visLight.visible = false;
+-         var separateLogic:Boolean = this.cfgDim != 0.35;
++         var large:Boolean=this.spaceX>48 || this.spaceY>25;
++         var paintTiles:Rectangle=large?this.scenePaintBounds():null;
++         var separateLogic:Boolean = this.cfgDim != 0.35 || large;
+          if(separateLogic && this.classicLogicMemorySamples == null)
+          {
+             this.classicLogicMemorySamples=new BitmapData(this.classicMemoryRaw.width,this.classicMemoryRaw.height,true,0xFF000000);
+@@ -2507,10 +2544,12 @@
+          // Both fields share terrain, light and memory progress. Only their
+          // grey values and deepest-neighbour choice may differ.
+          for(var mi:int=0;mi<this.spaceX*this.spaceY;mi++) this.advanceMemory(loc,mi);
++         this.prepareClassicCells(loc);
+          for(var ty:int=0;ty<this.spaceY;ty++) for(var tx:int=0;tx<this.spaceX;tx++)
+          {
+             var i:int=tx+ty*this.spaceX;
+-            var a:int=this.tileFogAlpha(loc,tx,ty);
++            if(!this.classicCells.dirty[i])continue;
++            var a:int=this.classicCells.alpha[i];
+             if(a != this.lastA[i])
+             {
+                this.lastA[i]=a;this.classicRaw.setPixel32(tx,ty+1,a<<24);
+@@ -2565,7 +2604,8 @@
+                {this.classicLogicMemorySamples.setPixel32(tx,ty+1,pixel);logicalChanged=true;}
+             }
+          }
+-         if(this.refreshWallField(loc,needFov,false))changed=logicalChanged=true;
++         if(this.refreshWallField(loc,this.wallGeometryDirty,false))changed=logicalChanged=true;
++         this.wallGeometryDirty=false;
+          if(separateLogic && (logicalChanged || this.classicLogicCache==null))
+          {
+             for(var ly:int=1;ly<=this.spaceY;ly++)
+@@ -2585,13 +2625,54 @@
+             if(logicalChanged)this.fovVersion++;
+          }
+ 
+-         if(changed)
+-         {
++         if(changed){this.paintClassicDisplay(loc,paintTiles,logicOnly,separateLogic);this.fovVersion++;}
++      }
++
++      /** Raster-only refresh: camera moves never advance the last sampled light,
++       * exploration, memory fade or logical sight. */
++      private function prepareClassicCells(loc:Location):void
++      {
++         var n:int=this.spaceX*this.spaceY;
++         var fresh:Boolean=this.classicCells==null || this.classicCells.alpha.length!=n;
++         if(fresh){
++            this.classicCells={alpha:new Vector.<int>(n,true),memory:new Vector.<Number>(n,true),
++               known:new Vector.<Boolean>(n,true),solid:new Vector.<Boolean>(n,true),dirty:new Vector.<Boolean>(n,true)};
++            this.wallGeometryDirty=true;
++         }
++         var cells:Object=this.classicCells;
++         var alphas:Vector.<int>=cells.alpha,memories:Vector.<Number>=cells.memory;
++         var knowns:Vector.<Boolean>=cells.known,solids:Vector.<Boolean>=cells.solid,dirtyCells:Vector.<Boolean>=cells.dirty;
++         var all:Boolean=fresh || this.classicCellDim!=this.cfgDim || this.classicCellDark!=loc.retDark;
++         this.classicCellDim=this.cfgDim;this.classicCellDark=loc.retDark;
++         for(var i:int=0;i<n;i++)dirtyCells[i]=all;
++         for(var y:int=0;y<this.spaceY;y++)for(var x:int=0;x<this.spaceX;x++){
++            i=x+y*this.spaceX;
++            var alpha:int=this.tileFogAlpha(loc,x,y),memory:Number=this.memCur[i];
++            var known:Boolean=this.memoryExplored(i),solid:Boolean=loc.getTile(x,y).opac>=1;
++            if(solids[i]!=solid)this.wallGeometryDirty=true;
++            if(!all && (alphas[i]!=alpha || memories[i]!=memory || knowns[i]!=known || solids[i]!=solid)){
++               for(var yy:int=Math.max(0,y-1);yy<=Math.min(this.spaceY-1,y+1);yy++)
++                  for(var xx:int=Math.max(0,x-1);xx<=Math.min(this.spaceX-1,x+1);xx++)dirtyCells[xx+yy*this.spaceX]=true;
++            }
++            alphas[i]=alpha;memories[i]=memory;knowns[i]=known;solids[i]=solid;
++         }
++         var x0:int=this.spaceX,y0:int=this.spaceY,x1:int=0,y1:int=0;
++         for(y=0;y<this.spaceY;y++)for(x=0;x<this.spaceX;x++)if(dirtyCells[x+y*this.spaceX]){
++            if(x<x0)x0=x;if(y<y0)y0=y;if(x+1>x1)x1=x+1;if(y+1>y1)y1=y+1;
++         }
++         this.classicInputRegion=x1>x0?new Rectangle(FOG_PAD+x0*FOG_SUB,FOG_PAD+y0*FOG_SUB,(x1-x0)*FOG_SUB,(y1-y0)*FOG_SUB):new Rectangle();
++      }
++
++      private function paintClassicDisplay(loc:Location,paintTiles:Rectangle,logicOnly:Boolean,separateLogic:Boolean):void
++      {
++         var paint:Rectangle=paintTiles==null?this.fogRect:new Rectangle(FOG_PAD+paintTiles.x*FOG_SUB,FOG_PAD+paintTiles.y*FOG_SUB,paintTiles.width*FOG_SUB,paintTiles.height*FOG_SUB);
++         if(paintTiles!=null){paint.inflate(16,16);paint=paint.intersection(this.fogRect);}
++         var paintPoint:Point=new Point(paint.x,paint.y);
+             // 在白底上画原版黑雾，得到原版亮度；再以记忆进度为alpha混入
+             // 格中心记忆亮度。不是叠加两层黑雾，弱光与地板记忆语义各自保留。
+-            this.fogRaw.fillRect(this.fogRect,0xFFFFFFFF);
+-            this.fogRaw.draw(this.classicRaw,this.classicLightMatrix,null,null,null,true);
+-            this.fogRaw.draw(this.classicMemoryRaw,this.classicMemoryMatrix,null,null,null,true);
++            this.fogRaw.fillRect(paint,0xFFFFFFFF);
++            this.fogRaw.draw(this.classicRaw,this.classicLightMatrix,null,null,paint,true);
++            this.fogRaw.draw(this.classicMemoryRaw,this.classicMemoryMatrix,null,null,paint,true);
+             // 可见性系数在房间外沿延续最后一个样本；外侧黑色仍由原光照负责。
+             for(var edgeY:int = 1; edgeY <= this.spaceY; edgeY++)
+                this.classicVisibilityRaw.setPixel(this.spaceX,edgeY,this.classicVisibilityRaw.getPixel(this.spaceX-1,edgeY));
+@@ -2600,56 +2681,59 @@
+                this.classicVisibilityRaw.setPixel(edgeX,0,this.classicVisibilityRaw.getPixel(edgeX,1));
+                this.classicVisibilityRaw.setPixel(edgeX,this.spaceY+1,this.classicVisibilityRaw.getPixel(edgeX,this.spaceY));
+             }
+-            this.classicVisibilityField.fillRect(this.fogRect,0xFFFFFF);
+-            this.classicVisibilityField.draw(this.classicVisibilityRaw,this.classicMemoryMatrix,null,null,null,true);
++            this.classicVisibilityField.fillRect(paint,0xFFFFFF);
++            this.classicVisibilityField.draw(this.classicVisibilityRaw,this.classicMemoryMatrix,null,null,paint,true);
+             // 先在不透明RGB上反相，再复制到alpha。直接反转目标alpha时，
+             // AIR会跳过alpha=0的像素，导致原本全黑的区域变成透明洞。
+-            this.fogRaw.colorTransform(this.fogRect,this.brightnessToFog);
+-            this.fogBmp.fillRect(this.fogRect,0);
+-            this.fogBmp.copyChannel(this.fogRaw,this.fogRect,this.fogPoint,
++            this.fogRaw.colorTransform(paint,this.brightnessToFog);
++            this.fogBmp.fillRect(paint,0);
++            this.fogBmp.copyChannel(this.fogRaw,paint,paintPoint,
+                BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+-            this.joinClassicWalls(loc);
++            this.joinClassicWalls(loc,paintTiles);
+             // 部分敌人按本次合成后的实际场取样，不再读错行/错相位的1px源图。
+-            this.fogCache.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
++            this.fogCache.copyPixels(this.fogBmp,paint,paintPoint);
+             if(!logicOnly && this.cfgSoftClassic > 0)
+             {
+                this.classicSoftInput=this.sizedScratch(this.classicSoftInput);
+-               this.classicSoftInput.copyPixels(this.fogBmp,this.fogRect,this.fogPoint);
++               this.classicSoftInput.copyPixels(this.fogBmp,paint,paintPoint);
+                this.fogBlur.blurX=this.fogBlur.blurY=this.cfgSoftClassic/5;
+-               this.fogBmp.applyFilter(this.classicSoftInput,this.fogRect,this.fogPoint,this.fogBlur);
++               this.fogBmp.applyFilter(this.classicSoftInput,paint,paintPoint,this.fogBlur);
+                // Reconnect the softened floor to the untouched native wall field.
+-               this.fogRaw.copyChannel(this.fogBmp,this.fogRect,this.fogPoint,BitmapDataChannel.ALPHA,BitmapDataChannel.BLUE);
+-               this.joinClassicWalls(loc);
+-               this.fogCache.copyPixels(this.classicSoftInput,this.fogRect,this.fogPoint);
++               this.fogRaw.copyChannel(this.fogBmp,paint,paintPoint,BitmapDataChannel.ALPHA,BitmapDataChannel.BLUE);
++               this.joinClassicWalls(loc,paintTiles);
++               this.fogCache.copyPixels(this.classicSoftInput,paint,paintPoint);
+             }
+             if(separateLogic) this.fogCache.copyPixels(this.classicLogicCache,this.fogRect,this.fogPoint);
+-            this.fovVersion++;
+-         }
++         this.classicRenderedTiles=paintTiles==null?null:paintTiles.clone();
+       }
+ 
+       /** 墙保留原版基底，仅叠加中心遮挡；地板在墙外一格内接到同一边界值。 */
+       private function joinClassicWalls(loc:Location, bounds:Rectangle = null, prepared:Boolean = false, visited:Vector.<int> = null):void
+       {
++         var paint:Rectangle=bounds==null?this.fogRect:new Rectangle(FOG_PAD+bounds.x*FOG_SUB,FOG_PAD+bounds.y*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
++         if(bounds!=null){paint.inflate(16,16);paint=paint.intersection(this.fogRect);}
++         var paintPoint:Point=new Point(paint.x,paint.y);
+          if(!prepared)
+          {
+-         this.classicWallShade.fillRect(this.fogRect,0);
++         this.classicWallShade.fillRect(paint,0);
+          // 遮挡场延伸过裁切边界，平滑采样不会混入墙外透明像素而形成亮缝。
+-         this.fogCache.copyPixels(this.classicVisibilityField,this.fogRect,this.fogPoint);
+-         this.fogCache.colorTransform(this.fogRect,this.brightnessToFog);
+-         this.classicWallShade.copyChannel(this.fogCache,this.fogRect,this.fogPoint,
++         this.fogCache.copyPixels(this.classicVisibilityField,paint,paintPoint);
++         this.fogCache.colorTransform(paint,this.brightnessToFog);
++         this.classicWallShade.copyChannel(this.fogCache,paint,paintPoint,
+             BitmapDataChannel.RED,BitmapDataChannel.ALPHA);
+          this.classicCornerDeltas = new Array(this.spaceX*this.spaceY);
+          for each(var ci:int in this.wallCorners)
+          {
++            if(bounds!=null && (ci%this.spaceX<bounds.x || ci%this.spaceX>bounds.right || int(ci/this.spaceX)<bounds.y || int(ci/this.spaceX)>bounds.bottom))continue;
+             this.classicCornerDeltas[ci] = this.classicWallDelta(this.wallA[ci],
+                FOG_PAD+(ci%this.spaceX)*FOG_SUB-0.5,
+                FOG_PAD+int(ci/this.spaceX)*FOG_SUB-0.5);
+          }
+          // 敌人取样缓存：让位图合成完成墙光×可见性，避免AS3逐子像素乘算。
+-         this.fogCache.fillRect(this.fogRect,0xFFFFFFFF);
+-         this.fogCache.draw(this.wallRaw,this.classicLightMatrix,null,null,null,true);
+-         this.fogCache.draw(this.classicVisibilityField,null,null,"multiply");
+-         this.fogCache.colorTransform(this.fogRect,this.brightnessToFog);
++         this.fogCache.fillRect(paint,0xFFFFFFFF);
++         this.fogCache.draw(this.wallRaw,this.classicLightMatrix,null,null,paint,true);
++         this.fogCache.draw(this.classicVisibilityField,null,null,"multiply",paint);
++         this.fogCache.colorTransform(paint,this.brightnessToFog);
+          }
+          var x0:int=bounds == null ? 0 : Math.max(0,int(bounds.x));
+          var y0:int=bounds == null ? 0 : Math.max(0,int(bounds.y));
+@@ -2732,7 +2816,7 @@
+        * All arithmetic and raster inputs are those of the original full pass. */
+       private function classicLogicRegion(bounds:Rectangle):void
+       {
+-         if(this.cfgMode != "classic" || this.cfgDim == 0.35 || this.classicLogicTiles == null) return;
++         if(this.cfgMode != "classic" || this.classicLogicTiles == null) return;
+          var region:Rectangle=new Rectangle(FOG_PAD+bounds.x*FOG_SUB,FOG_PAD+bounds.y*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
+          var fresh:Boolean=false;
+          var tx:int,ty:int;
+--- a/src/RVWallSurface.as
++++ b/src/RVWallSurface.as
+@@ -70,6 +70,8 @@
+       private var onClip:Shape = new Shape();
+       private var airPixels:Sprite = new Sprite();
+       private var contourUpdates:int = 0;
++      private var contourSourceLayout:Array;
++      private var contourSourceVersion:int=0;
+ 
+       public function RVWallSurface() {
+          wallPixels.mouseEnabled=wallPixels.mouseChildren=false;
+@@ -283,7 +285,7 @@
+          if(contourBitmap!=null){if(contourBitmap.parent)contourBitmap.parent.removeChild(contourBitmap);contourBitmap.bitmapData=null;contourBitmap=null;}
+          for each(var patch:Object in contourPieces){patch.alpha.dispose();patch.next.dispose();patch.scratch.dispose();patch.pixels.dispose();}contourPieces=[];
+          if(contourFog!=null)contourFog.dispose();contourFog=null;
+-         contourDirty=contourLayoutDirty=true;mode=-1;
++         contourDirty=contourLayoutDirty=true;mode=-1;contourSourceLayout=null;contourSourceVersion++;
+       }
+ 
+       /** Default path leaves the original smooth wall field untouched on ALL
+@@ -311,21 +313,32 @@
+             contourLayoutDirty=false;
+          }
+          var sources:Array=foregroundSources(front);
++         var sameSources:Boolean=sources!=null && contourSourceLayout!=null && sources.length==contourSourceLayout.length;
++         if(sameSources)for(var si:int=0;si<sources.length;si++){
++            var oldSource:Object=contourSourceLayout[si],newSource:Object=sources[si];
++            if(oldSource.data!==newSource.data || oldSource.x!=newSource.x || oldSource.y!=newSource.y || !Rectangle(oldSource.rect).equals(newSource.rect)){sameSources=false;break;}
++         }
++         if(!sameSources){contourSourceVersion++;contourSourceLayout=sources;}
+          for each(patch in contourPieces){
+-         var contourScratch:BitmapData=patch.scratch;contourScratch.fillRect(contourScratch.rect,0);
+-         // copyPixels is the native bulk-copy path. Avoid extracting a channel
+-         // on unchanged terrain; even a changing RGB decal only rebuilds masks
+-         // when the subsequent alpha-only comparison actually differs.
+-         if(sources!=null&&sources.length==1){
+-            var s:Object=sources[0],r:Rectangle=patch.rect.intersection(s.rect);
+-            var p:Point=new Point(r.x-patch.rect.x,r.y-patch.rect.y);r.offset(-s.x,-s.y);
+-            contourScratch.copyPixels(s.data,r,p);
++         var contourScratch:BitmapData=patch.scratch;
++         if(sources!=null){
++            if(patch.copyVersion!==contourSourceVersion){
++               var plan:Array=[];
++               for each(var source:Object in sources){
++                  var region:Rectangle=patch.rect.intersection(source.rect);if(region.isEmpty())continue;
++                  var dest:Point=new Point(region.x-patch.rect.x,region.y-patch.rect.y);region.offset(-source.x,-source.y);
++                  plan.push({data:source.data,region:region,dest:dest});
++               }
++               patch.copyPlan=plan;patch.copyVersion=contourSourceVersion;
++            }
++            plan=patch.copyPlan;
++            var full:Boolean=plan.length==1 && plan[0].dest.x==0 && plan[0].dest.y==0 && plan[0].region.width==contourScratch.width && plan[0].region.height==contourScratch.height;
++            if(!full)contourScratch.fillRect(contourScratch.rect,0);
++            for each(var command:Object in plan)contourScratch.copyPixels(command.data,command.region,command.dest,null,null,!full);
+          }else{
+-            if(sources!=null)copyForeground(sources,patch.rect,contourScratch);
+-            else{
+-               var m:Matrix=front.transform.matrix;m.tx-=left*CELL+patch.rect.x;m.ty-=top*CELL+patch.rect.y;
+-               contourScratch.draw(front,m,front.transform.colorTransform,null,null,true);
+-            }
++            contourScratch.fillRect(contourScratch.rect,0);
++            var m:Matrix=front.transform.matrix;m.tx-=left*CELL+patch.rect.x;m.ty-=top*CELL+patch.rect.y;
++            contourScratch.draw(front,m,front.transform.colorTransform,null,null,true);
+          }
+          var delta:Object=contourScratch.compare(patch.pixels);
+          if(delta is uint&&uint(delta)==0)continue;

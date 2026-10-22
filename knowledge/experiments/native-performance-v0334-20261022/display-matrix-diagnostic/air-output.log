@@ -1,0 +1,4 @@
+MATRIX DIFF scale=0.6583333333333333 offset=0 pixels=94 max=64 bounds=(x=26, y=81, w=47, h=40) actual=(x=26, y=81, w=47, h=40) composed=(x=26, y=81, w=47, h=40)
+MATRIX DIFF scale=0.6583333333333333 offset=120 pixels=94 max=64 bounds=(x=105, y=81, w=47, h=40) actual=(x=105, y=81, w=47, h=40) composed=(x=105, y=81, w=47, h=40)
+MATRIX DIFF scale=0.6583333333333333 offset=240 pixels=94 max=64 bounds=(x=184, y=81, w=47, h=40) actual=(x=184, y=81, w=47, h=40) composed=(x=184, y=81, w=47, h=40)
+DISPLAY MATRIX COMPLETE passed=24

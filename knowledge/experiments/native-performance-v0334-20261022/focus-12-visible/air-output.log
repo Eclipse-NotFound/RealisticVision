@@ -1,0 +1,29 @@
+ModLoader[boot_start] v2 run=run_1792670520856_707970
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+563 Интерфейс
+1217 Game init
+1047 Персонаж
+1 Местность
+745 Создание местности
+false
+417 Вход в местность
+1135 Создание местности
+false
+36 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"dense":true,"dim":0.35,"mode":"classic","bright":false,"distance":1,"soft":0} size=192x75 units=96
+PASS exact native frame 0/0
+PASS exact native frame 0/15
+PASS exact native frame 0/30
+PASS exact native frame 0/45
+PASS exact native frame 0/60
+PASS exact native frame 0/75
+PASS exact native frame 0/90
+PASS exact native frame 0/105
+FRAME RESULT 0 {"stages":[],"counts":[],"helper":[]}
+FRAME COMPLETE

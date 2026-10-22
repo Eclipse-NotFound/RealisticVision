@@ -1,0 +1,7 @@
+FAIL Error: composed matrix mismatch 0.6583333333333333/0 Error: composed matrix mismatch 0.6583333333333333/0
+	at DisplayMatrixChecks()
+	at runtime::ContentPlayer/playRawContent()
+	at runtime::ContentPlayer/playContent()
+	at runtime::AppRunner/run()
+	at ADLAppEntry/run()
+	at global/runtime::ADLEntry()
