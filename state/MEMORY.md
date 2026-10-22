@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-23 **D40整体性能试验完成，未发布**：六候选中05 classic合并逐格扫描通过96组严格图像与36设置；局部CPU略降，24原生跑动射击窗整体收益未稳定。正式仍D39 83D8…205C7E65，src/release未改。847ms长帧中RV22ms；另有内存下降相关峰值，根因未完全定位。外部高频监测证据标无效性能验收。[报告](../knowledge/experiments/2026-10-23-overall-flow.md)；候选/数据build/overall-flow-output，勿据功能通过自动部署。
+
 > 2026-10-22 **D39 v0.33.6已部署**：定位镜头跨墙面缓存边界的集中重建；复用重叠世界区域轮廓、预计算精确采样模板并保留异常失效。414项/组、96组严格图像及完整组合12窗通过；准确包83d8e590…205c7e65（44427B），正式init/注册/tick1/181/361通过。仍有非RV长更新的长帧，不声称全部卡顿消除；[报告](../knowledge/experiments/2026-10-22-long-frame-triggers.md)。生产源build/long-frame-output/production/src，无authority；D38备份见部署回执。
 
 > 2026-10-22 **D38 v0.33.5已部署**：classic按4×4格复用精确逻辑采样；两模式墙面支持区/补集一次生成。同输入更新下降classic约20.5%～21.6%；current约8.5%～9.0%，4987项/组、12原生射击窗及正式init/注册/tick1/181/361通过。准确包6593EE35…8FD6EC06（43818B）；[报告](../knowledge/experiments/2026-10-22-followup-performance.md)含完整帧间隔和长帧边界。生产源build/followup-performance-output/production/src，无authority；D37备份保留，正常重启生效。
@@ -105,6 +107,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D40已结束并保留候选，不自动重跑/部署；正式仍D39。后续针对原生跑动的非RV长停顿作低开销归因，详见顶部报告；不可把局部CPU下降当整体成功。
 
 - D39已部署并完成归档；测试退出。已减少缓存边界重建开销，剩余偶发长帧需另行针对驱动、宿主计算或绘制取证；不使用旧EXIT_FRAME分段归因。
 

@@ -1,0 +1,5 @@
+import json
+from prepare import OUT
+if __name__=='__main__':
+ data={'deployed':False,'installed':'v0.33.6-long-frame','candidate':'v0.33.7-classic-scan','reason':'candidate05虽消除了classic的重复逐格工作，但完整原生跑动射击正序的classic平均间隔61.098→66.835ms，反序低监测复验61.632→62.764ms，均未体现整体改善。current算法未改，两轮也有不利波动，说明不能用局部CPU下降归因全帧。NPC与世界持续演进，不能据这些窗口确证候选导致回退；同样不能以此通过整体性能发布门禁。故保留D39，冻结候选供后续合并，不自动安装。','resolved':'确认六种优化方向的视觉/局部计时边界，排除全部长帧仅由雾层绘制引起的说法；实际跑动复验可用','unresolved':'其余原生主循环/其他回调/调度长停顿的具体函数与因果链；内存下降相关RV峰值的根因'}
+ (OUT/'decision.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

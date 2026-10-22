@@ -1,0 +1,175 @@
+{
+  "run": "timing-classic-visible",
+  "minAvailableGiB": 6.026405334472656,
+  "cases": [
+    {
+      "spec": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 22.908,
+          "p95": 39,
+          "max": 83,
+          "over50": 3
+        },
+        {
+          "n": 120,
+          "mean": 21.042,
+          "p95": 36,
+          "max": 39,
+          "over50": 0
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.383,
+          "p95": 6,
+          "max": 13,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.192,
+          "p95": 6,
+          "max": 15,
+          "over50": 0
+        }
+      ],
+      "stages": [],
+      "helper": []
+    },
+    {
+      "spec": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "classic",
+        "dense": true
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 21.842,
+          "p95": 39,
+          "max": 44,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 21.783,
+          "p95": 38,
+          "max": 101,
+          "over50": 1
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.533,
+          "p95": 7,
+          "max": 11,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.808,
+          "p95": 7,
+          "max": 12,
+          "over50": 0
+        }
+      ],
+      "stages": [],
+      "helper": []
+    },
+    {
+      "spec": {
+        "dim": 0.35,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 19.967,
+          "p95": 26,
+          "max": 67,
+          "over50": 1
+        },
+        {
+          "n": 120,
+          "mean": 20.283,
+          "p95": 26,
+          "max": 79,
+          "over50": 2
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.983,
+          "p95": 7,
+          "max": 16,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.942,
+          "p95": 6,
+          "max": 11,
+          "over50": 0
+        }
+      ],
+      "stages": [],
+      "helper": []
+    },
+    {
+      "spec": {
+        "dim": 0.6,
+        "bright": false,
+        "mode": "current",
+        "dense": true
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 19.842,
+          "p95": 26,
+          "max": 63,
+          "over50": 1
+        },
+        {
+          "n": 120,
+          "mean": 20.133,
+          "p95": 27,
+          "max": 56,
+          "over50": 2
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.917,
+          "p95": 7,
+          "max": 11,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.892,
+          "p95": 7,
+          "max": 11,
+          "over50": 0
+        }
+      ],
+      "stages": [],
+      "helper": []
+    }
+  ],
+  "checks": 0
+}

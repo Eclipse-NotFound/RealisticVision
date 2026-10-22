@@ -1,0 +1,343 @@
+{
+  "run": "profile-alpha",
+  "minAvailableGiB": 4.074916839599609,
+  "cases": [
+    {
+      "spec": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.35,
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 24.05,
+          "p95": 41,
+          "max": 64,
+          "over50": 3
+        },
+        {
+          "n": 120,
+          "mean": 25.05,
+          "p95": 43,
+          "max": 104,
+          "over50": 3
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.35,
+          "p95": 7,
+          "max": 13,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.242,
+          "p95": 6,
+          "max": 10,
+          "over50": 0
+        }
+      ],
+      "stages": [
+        {
+          "enemyState": 16,
+          "computeFov": 41,
+          "refreshWallField": 103,
+          "classicLogicRegion": 675,
+          "applyMask": 838,
+          "prepareClassicCells": 276,
+          "hideEnemies": 902,
+          "joinClassicWalls": 469,
+          "applyVisionClassic": 1073,
+          "updateWallSurface": 777,
+          "paintClassicDisplay": 593
+        },
+        {
+          "enemyState": 10,
+          "computeFov": 51,
+          "refreshWallField": 99,
+          "classicLogicRegion": 641,
+          "applyMask": 824,
+          "prepareClassicCells": 265,
+          "hideEnemies": 898,
+          "joinClassicWalls": 514,
+          "applyVisionClassic": 1099,
+          "updateWallSurface": 875,
+          "paintClassicDisplay": 635
+        }
+      ],
+      "helper": [
+        {
+          "update": 776,
+          "updateContour": 365,
+          "buildContourClip": 42,
+          "rebuildSamples": 27,
+          "rebuildFaces": 11,
+          "rebuildSupport": 94
+        },
+        {
+          "update": 870,
+          "updateContour": 446,
+          "buildContourClip": 106,
+          "rebuildSamples": 34,
+          "rebuildFaces": 20,
+          "rebuildSupport": 92
+        }
+      ]
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "classic",
+        "dim": 0.6,
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 26.325,
+          "p95": 48,
+          "max": 103,
+          "over50": 5
+        },
+        {
+          "n": 120,
+          "mean": 26.192,
+          "p95": 49,
+          "max": 61,
+          "over50": 5
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.725,
+          "p95": 6,
+          "max": 13,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.842,
+          "p95": 8,
+          "max": 13,
+          "over50": 0
+        }
+      ],
+      "stages": [
+        {
+          "enemyState": 13,
+          "computeFov": 57,
+          "refreshWallField": 109,
+          "classicLogicRegion": 705,
+          "applyMask": 904,
+          "prepareClassicCells": 312,
+          "hideEnemies": 986,
+          "joinClassicWalls": 526,
+          "applyVisionClassic": 1186,
+          "updateWallSurface": 835,
+          "paintClassicDisplay": 650
+        },
+        {
+          "enemyState": 11,
+          "computeFov": 53,
+          "refreshWallField": 116,
+          "classicLogicRegion": 699,
+          "applyMask": 909,
+          "prepareClassicCells": 308,
+          "hideEnemies": 1000,
+          "joinClassicWalls": 504,
+          "applyVisionClassic": 1192,
+          "updateWallSurface": 816,
+          "paintClassicDisplay": 651
+        }
+      ],
+      "helper": [
+        {
+          "update": 835,
+          "updateContour": 374,
+          "buildContourClip": 45,
+          "rebuildSamples": 30,
+          "rebuildFaces": 10,
+          "rebuildSupport": 157
+        },
+        {
+          "update": 815,
+          "updateContour": 410,
+          "buildContourClip": 37,
+          "rebuildSamples": 34,
+          "rebuildFaces": 16,
+          "rebuildSupport": 90
+        }
+      ]
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.35,
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 21.383,
+          "p95": 29,
+          "max": 72,
+          "over50": 1
+        },
+        {
+          "n": 120,
+          "mean": 21.467,
+          "p95": 30,
+          "max": 42,
+          "over50": 0
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.583,
+          "p95": 6,
+          "max": 9,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.675,
+          "p95": 6,
+          "max": 9,
+          "over50": 0
+        }
+      ],
+      "stages": [
+        {
+          "enemyState": 83,
+          "computeFov": 123,
+          "refreshWallField": 167,
+          "fillFogCache": 433,
+          "applyMask": 453,
+          "prepareOcclusion": 126,
+          "applyVision": 747,
+          "updateWallSurface": 924,
+          "hideEnemies": 644
+        },
+        {
+          "enemyState": 73,
+          "computeFov": 129,
+          "refreshWallField": 175,
+          "fillFogCache": 429,
+          "applyMask": 397,
+          "prepareOcclusion": 119,
+          "applyVision": 755,
+          "updateWallSurface": 976,
+          "hideEnemies": 595
+        }
+      ],
+      "helper": [
+        {
+          "buildContourClip": 56,
+          "updateContour": 414,
+          "update": 919,
+          "rebuildSamples": 33,
+          "rebuildFaces": 10,
+          "rebuildSupport": 150
+        },
+        {
+          "buildContourClip": 59,
+          "updateContour": 452,
+          "update": 971,
+          "rebuildSamples": 38,
+          "rebuildFaces": 12,
+          "rebuildSupport": 155
+        }
+      ]
+    },
+    {
+      "spec": {
+        "dense": true,
+        "mode": "current",
+        "dim": 0.6,
+        "bright": false
+      },
+      "updates": [
+        {
+          "n": 120,
+          "mean": 21.3,
+          "p95": 30,
+          "max": 68,
+          "over50": 1
+        },
+        {
+          "n": 120,
+          "mean": 21.325,
+          "p95": 30,
+          "max": 59,
+          "over50": 1
+        }
+      ],
+      "draws": [
+        {
+          "n": 120,
+          "mean": 4.75,
+          "p95": 7,
+          "max": 9,
+          "over50": 0
+        },
+        {
+          "n": 120,
+          "mean": 4.467,
+          "p95": 6,
+          "max": 7,
+          "over50": 0
+        }
+      ],
+      "stages": [
+        {
+          "enemyState": 62,
+          "computeFov": 109,
+          "refreshWallField": 174,
+          "fillFogCache": 453,
+          "applyMask": 395,
+          "prepareOcclusion": 114,
+          "applyVision": 774,
+          "updateWallSurface": 966,
+          "hideEnemies": 590
+        },
+        {
+          "enemyState": 76,
+          "computeFov": 126,
+          "refreshWallField": 158,
+          "fillFogCache": 429,
+          "applyMask": 372,
+          "prepareOcclusion": 132,
+          "applyVision": 748,
+          "updateWallSurface": 972,
+          "hideEnemies": 579
+        }
+      ],
+      "helper": [
+        {
+          "buildContourClip": 60,
+          "updateContour": 409,
+          "update": 963,
+          "rebuildSamples": 73,
+          "rebuildFaces": 11,
+          "rebuildSupport": 153
+        },
+        {
+          "buildContourClip": 54,
+          "updateContour": 438,
+          "update": 969,
+          "rebuildSamples": 39,
+          "rebuildFaces": 13,
+          "rebuildSupport": 166
+        }
+      ]
+    }
+  ],
+  "checks": 0
+}
