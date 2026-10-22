@@ -1,0 +1,222 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+PASS classic default fog identical bright=false x=200
+
+PASS classic default eligibility identical false 200
+
+PASS classic default fog identical bright=false x=280
+
+PASS classic default eligibility identical false 280
+
+PASS classic default fog identical bright=false x=640
+
+PASS classic default eligibility identical false 640
+
+PASS classic default fog identical bright=false x=200
+
+PASS classic default eligibility identical false 200
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+PASS classic default fog identical bright=true x=200
+
+PASS classic default eligibility identical true 200
+
+PASS classic default fog identical bright=true x=280
+
+PASS classic default eligibility identical true 280
+
+PASS classic default fog identical bright=true x=640
+
+PASS classic default eligibility identical true 640
+
+PASS classic default fog identical bright=true x=200
+
+PASS classic default eligibility identical true 200
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+PASS current default fog identical bright=false x=200
+
+PASS current default eligibility identical false 200
+
+PASS current default fog identical bright=false x=280
+
+PASS current default eligibility identical false 280
+
+PASS current default fog identical bright=false x=640
+
+PASS current default eligibility identical false 640
+
+PASS current default fog identical bright=false x=200
+
+PASS current default eligibility identical false 200
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+PASS current default fog identical bright=true x=200
+
+PASS current default eligibility identical true 200
+
+PASS current default fog identical bright=true x=280
+
+PASS current default eligibility identical true 280
+
+PASS current default fog identical bright=true x=640
+
+PASS current default eligibility identical true 640
+
+PASS current default fog identical bright=true x=200
+
+PASS current default eligibility identical true 200
+
+[RVision] room motion-corner 24x18 lDist2=600 mode=classic
+
+PASS classic brightness independent of enemy mask 0
+
+PASS classic brightness preserves exploration 0
+
+PASS classic brightness independent of enemy mask 1
+
+PASS classic brightness preserves exploration 1
+
+PASS classic brightness independent of enemy mask 0.35
+
+PASS classic brightness preserves exploration 0.35
+
+PASS classic softening independent of enemy mask 0
+
+PASS classic softening preserves exploration 0
+
+PASS classic softening independent of enemy mask 40
+
+PASS classic softening preserves exploration 40
+
+PASS classic softening independent of enemy mask 20
+
+PASS classic softening preserves exploration 20
+
+PASS classic visual settings never write native state
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+PASS classic brightness fixture starts genuinely explored
+
+PASS classic slider visibly spans black to bright while region remains out of sight
+
+[RVision] room motion-corner 24x18 lDist2=300 mode=classic
+
+PASS classic distant target initially excluded
+
+PASS classic 2x admits unobstructed distant target
+
+PASS classic both falloff radii scale
+
+PASS classic extended light stays in mod-owned field
+
+PASS classic shrink removes current sight but keeps memory
+
+PASS classic range never writes native light or distances
+
+[RVision] room visited-range-room 24x18 lDist2=2500 mode=classic
+
+[RVision] room motion-corner 24x18 lDist2=300 mode=classic
+
+PASS classic mod corner-light memory survives a room round trip
+
+PASS classic 3x still cannot see through a solid wall
+
+PASS classic room distance updates while stationary
+
+[RVision] room motion-corner 24x18 lDist2=600 mode=current
+
+PASS current brightness independent of enemy mask 0
+
+PASS current brightness preserves exploration 0
+
+PASS current brightness independent of enemy mask 1
+
+PASS current brightness preserves exploration 1
+
+PASS current brightness independent of enemy mask 0.35
+
+PASS current brightness preserves exploration 0.35
+
+PASS current softening independent of enemy mask 0
+
+PASS current softening preserves exploration 0
+
+PASS current softening independent of enemy mask 40
+
+PASS current softening preserves exploration 40
+
+PASS current softening independent of enemy mask 20
+
+PASS current softening preserves exploration 20
+
+PASS current visual settings never write native state
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+PASS current brightness fixture starts genuinely explored
+
+PASS current slider visibly spans black to bright while region remains out of sight
+
+[RVision] room motion-corner 24x18 lDist2=300 mode=current
+
+PASS current distant target initially excluded
+
+PASS current 2x admits unobstructed distant target
+
+PASS current both falloff radii scale
+
+PASS current extended light stays in mod-owned field
+
+PASS current shrink removes current sight but keeps memory
+
+PASS current range never writes native light or distances
+
+[RVision] room visited-range-room 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=300 mode=current
+
+PASS current mod corner-light memory survives a room round trip
+
+PASS current 3x still cannot see through a solid wall
+
+PASS current room distance updates while stationary
+
+PASS eleven controls retain the original eight keys
+
+PASS localized control dim
+
+PASS localized control viewscale
+
+PASS localized control soft_current
+
+PASS localized control soft_classic
+
+PASS all preferences save and reload
+
+PASS old preferences migrate without loss
+
+PASS invalid and out-of-range preferences stay bounded
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=vanilla
+
+PASS vanilla bypass unaffected by custom settings
+
+PASS world reset releases custom range light memory
+
+SETTINGS COMPLETE passed=90 failed=0
+

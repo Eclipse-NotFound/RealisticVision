@@ -1,0 +1,24 @@
+ModLoader[boot_start] v2 run=run_1792675641457_567574
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_ContinuousSceneMod] init
+604 Интерфейс
+1158 Game init
+940 Персонаж
+1 Местность
+766 Создание местности
+false
+377 Вход в местность
+1177 Создание местности
+false
+46 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"dense":true,"dim":0.35,"mode":"classic","bright":false} size=192x75 units=96
+FAIL Error: pixel mismatch fogCache case=0 frame=0 Error: pixel mismatch fogCache case=0 frame=0
+	at RecoveryFrameProbeMod/verify()
+	at RecoveryFrameProbeMod/step()
+	at RecoveryFrameProbeMod/tick()
+	at flash.utils::Timer/tick()

@@ -1,0 +1,33 @@
+ModLoader[boot_start] v2 run=run_1792675423866_332928
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_ContinuousSceneMod] init
+534 Интерфейс
+1124 Game init
+1004 Персонаж
+0 Местность
+704 Создание местности
+false
+375 Вход в местность
+1090 Создание местности
+false
+38 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"dim":0.35,"bright":false,"mode":"classic","dense":true} size=192x75 units=96
+FRAME RESULT 0 {"stages":[{"applyVisionClassic":1112,"updateWallSurface":1135,"enemyState":21,"paintClassicDisplay":601,"computeFov":54,"refreshWallField":99,"classicLogicRegion":1322,"applyMask":1498,"prepareClassicCells":295,"hideEnemies":1595,"joinClassicWalls":482},{"applyVisionClassic":1120,"updateWallSurface":1088,"enemyState":23,"paintClassicDisplay":600,"computeFov":48,"refreshWallField":107,"classicLogicRegion":1381,"applyMask":1591,"prepareClassicCells":284,"hideEnemies":1682,"joinClassicWalls":496}],"counts":[{"applyVisionClassic":120,"updateWallSurface":120,"enemyState":11520,"paintClassicDisplay":81,"computeFov":40,"refreshWallField":80,"classicLogicRegion":3038,"applyMask":4557,"prepareClassicCells":80,"hideEnemies":120,"joinClassicWalls":3119},{"applyVisionClassic":120,"updateWallSurface":120,"enemyState":11520,"paintClassicDisplay":81,"computeFov":40,"refreshWallField":80,"classicLogicRegion":3038,"applyMask":4557,"prepareClassicCells":80,"hideEnemies":120,"joinClassicWalls":3119}],"helper":[{"rebuildSupport":129,"update":1133,"buildContourClip":180,"updateContour":596,"rebuildSamples":53,"rebuildFaces":11},{"rebuildSupport":138,"update":1086,"buildContourClip":182,"updateContour":552,"rebuildSamples":68,"rebuildFaces":16}]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 1 {"dim":0.6,"bright":false,"mode":"classic","dense":true} size=192x75 units=96
+FRAME RESULT 1 {"stages":[{"applyVisionClassic":1119,"updateWallSurface":1060,"enemyState":23,"paintClassicDisplay":605,"computeFov":52,"refreshWallField":103,"classicLogicRegion":1311,"applyMask":1523,"prepareClassicCells":292,"hideEnemies":1632,"joinClassicWalls":510},{"applyVisionClassic":1107,"updateWallSurface":1006,"enemyState":21,"paintClassicDisplay":596,"computeFov":55,"refreshWallField":102,"classicLogicRegion":1335,"applyMask":1541,"prepareClassicCells":288,"hideEnemies":1625,"joinClassicWalls":508}],"counts":[{"applyVisionClassic":120,"updateWallSurface":120,"enemyState":11520,"paintClassicDisplay":81,"computeFov":40,"refreshWallField":80,"classicLogicRegion":3038,"applyMask":4557,"prepareClassicCells":80,"hideEnemies":120,"joinClassicWalls":3119},{"applyVisionClassic":120,"updateWallSurface":120,"enemyState":11520,"paintClassicDisplay":81,"computeFov":40,"refreshWallField":80,"classicLogicRegion":3038,"applyMask":4557,"prepareClassicCells":80,"hideEnemies":120,"joinClassicWalls":3119}],"helper":[{"rebuildSupport":132,"update":1058,"buildContourClip":180,"updateContour":540,"rebuildSamples":49,"rebuildFaces":9},{"rebuildSupport":132,"update":1006,"buildContourClip":183,"updateContour":563,"rebuildSamples":49,"rebuildFaces":13}]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 2 {"dim":0.35,"bright":false,"mode":"current","dense":true} size=192x75 units=96
+FRAME RESULT 2 {"stages":[{"updateWallSurface":1382,"enemyState":81,"hideEnemies":582,"computeFov":122,"refreshWallField":180,"fillFogCache":415,"applyMask":389,"prepareOcclusion":118,"applyVision":743},{"updateWallSurface":1278,"enemyState":61,"hideEnemies":589,"computeFov":112,"refreshWallField":181,"fillFogCache":412,"applyMask":397,"prepareOcclusion":116,"applyVision":752}],"counts":[{"updateWallSurface":120,"enemyState":11520,"hideEnemies":120,"computeFov":120,"refreshWallField":120,"fillFogCache":120,"applyMask":5335,"prepareOcclusion":120,"applyVision":120},{"updateWallSurface":120,"enemyState":11520,"hideEnemies":120,"computeFov":120,"refreshWallField":120,"fillFogCache":120,"applyMask":5335,"prepareOcclusion":120,"applyVision":120}],"helper":[{"rebuildSupport":236,"update":1380,"buildContourClip":269,"updateContour":725,"rebuildSamples":88,"rebuildFaces":9},{"rebuildSupport":220,"update":1273,"buildContourClip":265,"updateContour":682,"rebuildSamples":49,"rebuildFaces":11}]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 3 {"dim":0.6,"bright":false,"mode":"current","dense":true} size=192x75 units=96
+FRAME RESULT 3 {"stages":[{"updateWallSurface":1260,"enemyState":55,"hideEnemies":641,"computeFov":124,"refreshWallField":177,"fillFogCache":422,"applyMask":483,"prepareOcclusion":109,"applyVision":761},{"updateWallSurface":1275,"enemyState":57,"hideEnemies":583,"computeFov":114,"refreshWallField":166,"fillFogCache":430,"applyMask":423,"prepareOcclusion":115,"applyVision":752}],"counts":[{"updateWallSurface":120,"enemyState":11520,"hideEnemies":120,"computeFov":120,"refreshWallField":120,"fillFogCache":120,"applyMask":5335,"prepareOcclusion":120,"applyVision":120},{"updateWallSurface":120,"enemyState":11520,"hideEnemies":120,"computeFov":120,"refreshWallField":120,"fillFogCache":120,"applyMask":5335,"prepareOcclusion":120,"applyVision":120}],"helper":[{"rebuildSupport":231,"update":1257,"buildContourClip":268,"updateContour":660,"rebuildSamples":50,"rebuildFaces":11},{"rebuildSupport":232,"update":1272,"buildContourClip":270,"updateContour":673,"rebuildSamples":59,"rebuildFaces":14}]}
+FRAME COMPLETE

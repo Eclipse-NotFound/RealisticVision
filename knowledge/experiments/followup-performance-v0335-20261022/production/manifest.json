@@ -1,0 +1,21 @@
+{
+  "version": "v0.33.5-followup-performance",
+  "swf": "6593ee35008a898bd2d2b1189693a17bd0767c387697bcbee73a387f8fd6ec06",
+  "bytes": 43818,
+  "sources": {
+    "RealisticVisionMod.as": "7081ca89bf281d528e920b82f14ad8039c2cec176be2fad3d86690d8c38cc440",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "580cf7a68d778a3020dc6575dcc474ea8803fe746e4b8f0796258572e6e49720",
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  },
+  "classes": [
+    "RVExplorationCarrier",
+    "RVKeybinds",
+    "RVWallSurface",
+    "RealisticVisionMod",
+    "modlocales.vision.RVLocale",
+    "modlocales.vision.RVLocaleMessages"
+  ]
+}

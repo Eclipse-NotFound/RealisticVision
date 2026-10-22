@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-22 **D38 v0.33.5已部署**：classic按4×4格复用精确逻辑采样；两模式墙面支持区/补集一次生成。同输入更新下降classic约20.5%～21.6%；current约8.5%～9.0%，4987项/组、12原生射击窗及正式init/注册/tick1/181/361通过。准确包6593EE35…8FD6EC06（43818B）；[报告](../knowledge/experiments/2026-10-22-followup-performance.md)含完整帧间隔和长帧边界。生产源build/followup-performance-output/production/src，无authority；D37备份保留，正常重启生效。
+
 > 2026-10-22 **D37 v0.33.4已部署**：保持D36画面，classic视口合成/变化格重算、材质复制计划复用、FOV保守遍历及current本地子格缓存。8191项/组、12原生射击窗、准确包设置与正式init/注册/tick1/181/361通过。战斗帧间隔classic66.85→40.75ms、current45.87→37.48ms，同场off约33.3ms，仍未完全达原版。准确包187D287B…4111272（43816B），冻结生产源见本轮证据production/src，无authority；[报告](../knowledge/experiments/2026-10-22-native-performance.md)详录取图纠正/长帧边界与D36备份。
 
 > 2026-10-22 **D36 v0.33.3已部署**：原生手持武器漏扫childObjs导致记忆区泄露，现按所属单位每帧裁切并独立遮罩；806泄露像素归零，1848项和8原生射击窗通过。current软遮罩改批量处理，画面严格相同；实际耗时和长帧边界见[报告](../knowledge/experiments/2026-10-22-combat-visibility.md)。准确包AB461FF3…2F23871（42400B），生产源build/combat-visibility-output/production/src，无authority。正式init/设置注册/tick1/181/361通过；备份D35见deployment/receipt.json。
@@ -78,7 +80,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D37 v0.33.4（187D287B…4111272）；两模式保持画面的性能优化，D36武器遮挡与全部设置/墙面保留。准确源build/native-performance-output/production/src及knowledge/experiments/native-performance-v0334-20261022/production/src；不从含authority的HEAD整包部署。
+- 当前安装D38 v0.33.5（6593EE35…8FD6EC06）；精确采样复用与墙面行段优化。准确源build/followup-performance-output/production/src和knowledge/experiments/followup-performance-v0335-20261022/production/src，不从含authority的HEAD整包部署。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -102,7 +104,7 @@
 
 ## 4. 正在进行与停点
 
-- D37实现、验证、部署已完成；所有本轮RV测试实例已退出。两模式更接近同场原生渲染，但平均帧间隔仍高约12.6%/22.2%（current/classic），长帧尚存。最终candidate-12；13～18为淘汰尝试。旧取图未算根位移/相机比例，最终父层取图已纠正并严格验收；勿重跑覆盖旧证据。authority仍为独立未发布工作。
+- D38实现、验证、部署已完成；全部本轮测试实例退出。最终candidate-04合01+03，02无稳定收益已淘汰；同输入开销继续降低，仍不承诺所有战斗达到原版。exact-01-parent为继承工具错误，修正后另名复验，不重跑覆盖历史。authority仍独立未发布。
 
 
 - 阶梯最小修复已冻结：src/RVWallSurface.as仅增加半高格顶部空气条件；准确生产源build/stair-shadow-output/candidate/src。统一发布应合入最新D31生产源，不用含authority的HEAD整包；无待跑阶梯AIR。

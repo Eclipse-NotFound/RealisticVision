@@ -51,5 +51,7 @@ build/backups/before-afternoon-rollback-*/
 build/backups/before-settings-recovery-*/
 build/combat-visibility-output/
 build/native-performance-output/
+build/followup-performance-output/
+build/backups/before-followup-performance-*/
 build/backups/before-native-performance-*/
 build/backups/before-combat-visibility-*/

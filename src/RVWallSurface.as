@@ -55,6 +55,7 @@ package {
       private var zeroMap:Array=[];
       private var origin:Point = new Point();
       private var support:Array=[];
+      private var supportComplement:Array=[];
       private var pieces:Array=[];
       private var terrainUpdates:int = 0;
       private var fieldUpdates:int = 0;
@@ -276,7 +277,7 @@ package {
          if(floorField!=null){floorField.dispose();wallField.dispose();fieldStamp.dispose();}floorField=wallField=fieldStamp=null;
          for each(var piece:Object in pieces)disposePiece(piece);pieces=[];
          owner=null;bounds=null;shapeDirty=fieldShapeDirty=lightDirty=true;
-         faces=[];support=[];heights=null;seen.length=lights.length=0;
+         faces=[];support=[];supportComplement=[];heights=null;seen.length=lights.length=0;
          sampleStarts=null;samplePixels=null;sampleAlphas=null;sampleCells=null;floorValues=null;
          if(airClip.parent)airClip.parent.removeChild(airClip);airClip.graphics.clear();wallPixels.mask=null;
          if(solidClip.parent)solidClip.parent.removeChild(solidClip);solidClip.graphics.clear();
@@ -368,7 +369,7 @@ package {
 
       private function buildContourClip(loc:*):void {
          rebuildClip(loc); // Positive complement of support patches, never holes.
-         rebuildClip(loc,onClip);
+         onClip.graphics.copyFrom(baseClip.graphics);
          baseClip.graphics.beginFill(0xffffff);onClip.graphics.beginFill(0xffffff);
          airClip.graphics.clear();airClip.graphics.beginFill(0xffffff);
          solidClip.graphics.clear();solidClip.graphics.beginFill(0xffffff);
@@ -448,25 +449,8 @@ package {
          clip.graphics.drawRect(-80,oy+h,loc.spaceX*CELL+160,loc.spaceY*CELL+80-oy-h);
          clip.graphics.drawRect(-80,oy,ox+80,h);
          clip.graphics.drawRect(ox+w,oy,loc.spaceX*CELL+80-ox-w,h);
-         var rectangles:Array=[],previous:Object={};
-         for(var y:int=0;y<h;y+=STEP){
-            var intervals:Array=[],current:Object={};
-            for each(var area:Rectangle in support)if(y>=area.top&&y<area.bottom)intervals.push(area);
-            intervals.sortOn("x",Array.NUMERIC);
-            var x:int=0;
-            for(var i:int=0;i<=intervals.length;i++){
-               var end:int=i<intervals.length?intervals[i].left:w;
-               if(end>x){
-                  var key:String=x+":"+end,rect:Rectangle=previous[key] as Rectangle;
-                  if(rect!=null)rect.height+=STEP;
-                  else{rect=new Rectangle(ox+x,oy+y,end-x,STEP);rectangles.push(rect);}
-                  current[key]=rect;
-               }
-               if(i<intervals.length)x=Math.max(x,intervals[i].right);
-            }
-            previous=current;
-         }
-         for each(rect in rectangles)clip.graphics.drawRect(rect.x,rect.y,rect.width,rect.height);
+         for each(var rect:Rectangle in supportComplement)
+            clip.graphics.drawRect(ox+rect.x,oy+rect.y,rect.width,rect.height);
          clip.graphics.endFill();
       }
 
@@ -503,25 +487,39 @@ package {
       /** Disjoint pixel rectangles around the nonzero field, with a 5px halo
        * for bilinear filtering. Avoid copying all the empty space between walls. */
       private function rebuildSupport():void {
-         support=[];
+         support=[];supportComplement=[];
          var width:int=field.width,height:int=field.height;
          var pixels:Vector.<uint>=field.getVector(field.rect);
          var active:Vector.<int>=new Vector.<int>(width*height,true);
-         for(var y:int=0;y<height;y++)for(var x:int=0;x<width;x++)if(pixels[x+y*width]>>>24)
-            for(var yy:int=Math.max(0,y-1);yy<=Math.min(height-1,y+1);yy++)
-               for(var xx:int=Math.max(0,x-1);xx<=Math.min(width-1,x+1);xx++)active[xx+yy*width]=1;
-         var previous:Object={};
-         for(y=0;y<height;y++){
-            var current:Object={};x=0;
+         // Dilate contiguous source runs by the same one-sample square halo.
+         for(var y:int=0;y<height;y++){
+            var x:int=0,row:int=y*width;
             while(x<width){
-               if(!active[x+y*width]){x++;continue;}
-               var begin:int=x;while(x<width&&active[x+y*width])x++;
+               if(!(pixels[row+x]>>>24)){x++;continue;}
+               var begin:int=x;while(x<width && pixels[row+x]>>>24)x++;
+               var lo:int=Math.max(0,begin-1),hi:int=Math.min(width,x+1);
+               for(var yy:int=Math.max(0,y-1);yy<=Math.min(height-1,y+1);yy++)
+                  for(var xx:int=lo,base:int=yy*width;xx<hi;xx++)active[base+xx]=1;
+            }
+         }
+         // Emit the same maximal support rectangles and their positive
+         // complement in one pass. Both masks share this geometry.
+         var previous:Object={},outsidePrevious:Object={};
+         for(y=0;y<height;y++){
+            var current:Object={},outsideCurrent:Object={};x=0;row=y*width;
+            while(x<width){
+               var inside:int=active[row+x];begin=x;
+               while(x<width && active[row+x]==inside)x++;
                var key:String=begin+":"+x;
-               var rect:Rectangle=previous[key] as Rectangle;
+               var prior:Object=inside?previous:outsidePrevious;
+               var next:Object=inside?current:outsideCurrent;
+               var list:Array=inside?support:supportComplement;
+               var rect:Rectangle=prior[key] as Rectangle;
                if(rect!=null)rect.height+=STEP;
-               else {rect=new Rectangle(begin*STEP,y*STEP,(x-begin)*STEP,STEP);support.push(rect);}
-               current[key]=rect;
-            }previous=current;
+               else{rect=new Rectangle(begin*STEP,y*STEP,(x-begin)*STEP,STEP);list.push(rect);}
+               next[key]=rect;
+            }
+            previous=current;outsidePrevious=outsideCurrent;
          }
       }
 

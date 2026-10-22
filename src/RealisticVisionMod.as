@@ -94,7 +94,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.4-native-performance";
+      private static const VERSION:String = "v0.33.5-followup-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -2716,6 +2716,13 @@ package
             if(!this.classicLogicTiles[tx+ty*this.spaceX]){fresh=true;break;}
          if(fresh)
          {
+            // Adjacent masks share canonical samples. Batch a small tile block
+            // without changing the samples, support gutter, or queried sight.
+            var bx:int=Math.max(0,int(bounds.x/4)*4),by:int=Math.max(0,int(bounds.y/4)*4);
+            var br:int=Math.min(this.spaceX,Math.ceil(bounds.right/4)*4);
+            var bb:int=Math.min(this.spaceY,Math.ceil(bounds.bottom/4)*4);
+            bounds=new Rectangle(bx,by,br-bx,bb-by);
+            region=new Rectangle(FOG_PAD+bx*FOG_SUB,FOG_PAD+by*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
             var raw:BitmapData=this.fogRaw,bmp:BitmapData=this.fogBmp,cache:BitmapData=this.fogCache;
             var visibility:BitmapData=this.classicVisibilityField;
             var deltas:Array=this.classicCornerDeltas;

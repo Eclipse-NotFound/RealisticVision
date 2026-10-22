@@ -1,0 +1,1047 @@
+[
+  {
+    "time": 1792675837.2196617,
+    "available_bytes": 7162814464,
+    "processes": []
+  },
+  {
+    "time": 1792675838.230957,
+    "available_bytes": 7121690624,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675839.2556581,
+    "available_bytes": 7110729728,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675840.2737188,
+    "available_bytes": 7018807296,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675841.2932234,
+    "available_bytes": 6862581760,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675842.3217175,
+    "available_bytes": 6849396736,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675843.3379934,
+    "available_bytes": 6828793856,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675844.3500726,
+    "available_bytes": 6839287808,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675845.3629184,
+    "available_bytes": 6810079232,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675846.375963,
+    "available_bytes": 6649319424,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675847.3964255,
+    "available_bytes": 6605873152,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675848.4211593,
+    "available_bytes": 6614790144,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675849.4547932,
+    "available_bytes": 6559174656,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675850.4667742,
+    "available_bytes": 6551711744,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675851.4791887,
+    "available_bytes": 6538428416,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675852.5030482,
+    "available_bytes": 6465740800,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675853.5230308,
+    "available_bytes": 6470836224,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675854.538788,
+    "available_bytes": 6456348672,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675855.555523,
+    "available_bytes": 6380961792,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675856.5769715,
+    "available_bytes": 6430867456,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675857.5932493,
+    "available_bytes": 6412902400,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675858.606674,
+    "available_bytes": 6434009088,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675859.6228037,
+    "available_bytes": 6387986432,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675860.642617,
+    "available_bytes": 6358683648,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675861.6644638,
+    "available_bytes": 6754963456,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675862.6807508,
+    "available_bytes": 6756655104,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675863.7046885,
+    "available_bytes": 6723153920,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675864.725777,
+    "available_bytes": 6727221248,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675865.7538445,
+    "available_bytes": 6526951424,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675866.7705317,
+    "available_bytes": 6735429632,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675867.7895703,
+    "available_bytes": 6721798144,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675868.8126945,
+    "available_bytes": 6570934272,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675869.8259616,
+    "available_bytes": 6728839168,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675870.8432913,
+    "available_bytes": 6728773632,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675871.8594108,
+    "available_bytes": 6762856448,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675872.8728912,
+    "available_bytes": 6755106816,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675873.885975,
+    "available_bytes": 6757994496,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675874.9065118,
+    "available_bytes": 6767288320,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675875.923416,
+    "available_bytes": 6789320704,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675876.9363003,
+    "available_bytes": 6799093760,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675877.953341,
+    "available_bytes": 6832144384,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675878.9697804,
+    "available_bytes": 6818422784,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675879.9886858,
+    "available_bytes": 6805962752,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675881.0009532,
+    "available_bytes": 6790860800,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675882.019965,
+    "available_bytes": 6803554304,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675883.0411735,
+    "available_bytes": 6797512704,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675884.0523956,
+    "available_bytes": 6804500480,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675885.0737047,
+    "available_bytes": 6777044992,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675886.0835013,
+    "available_bytes": 6803845120,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675887.1047492,
+    "available_bytes": 6808363008,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675888.1125753,
+    "available_bytes": 6824108032,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675889.1347928,
+    "available_bytes": 6805626880,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675890.1529915,
+    "available_bytes": 6820638720,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675891.1742413,
+    "available_bytes": 6834757632,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675892.1949465,
+    "available_bytes": 6875430912,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675893.2180727,
+    "available_bytes": 6865989632,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675894.2380285,
+    "available_bytes": 6878371840,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675895.2575274,
+    "available_bytes": 6869831680,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675896.280927,
+    "available_bytes": 6864293888,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675897.3013012,
+    "available_bytes": 6868566016,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675898.322455,
+    "available_bytes": 6912380928,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675899.3333127,
+    "available_bytes": 6858317824,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675900.3515277,
+    "available_bytes": 6826512384,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675901.3728435,
+    "available_bytes": 6727045120,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675902.3950236,
+    "available_bytes": 6661074944,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675903.4061897,
+    "available_bytes": 6760923136,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675904.438021,
+    "available_bytes": 6720393216,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675905.4705424,
+    "available_bytes": 6606893056,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675906.4918134,
+    "available_bytes": 6820143104,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675907.511473,
+    "available_bytes": 6822522880,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675908.5222228,
+    "available_bytes": 6815715328,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675909.5426993,
+    "available_bytes": 6822445056,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675910.5588632,
+    "available_bytes": 6833508352,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675911.5871685,
+    "available_bytes": 6834589696,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675912.6062477,
+    "available_bytes": 6881480704,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675913.6225152,
+    "available_bytes": 6869811200,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675914.6373782,
+    "available_bytes": 6871437312,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675915.656615,
+    "available_bytes": 6863859712,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675916.6792934,
+    "available_bytes": 6885326848,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675917.699422,
+    "available_bytes": 6868537344,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675918.7125802,
+    "available_bytes": 6842023936,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675919.7311103,
+    "available_bytes": 6890663936,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675920.745124,
+    "available_bytes": 6854754304,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675921.7636762,
+    "available_bytes": 6864465920,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675922.7829525,
+    "available_bytes": 6850338816,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675923.7981658,
+    "available_bytes": 6912290816,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675924.8241966,
+    "available_bytes": 6936461312,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675925.884736,
+    "available_bytes": 6879383552,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675926.9001777,
+    "available_bytes": 6859501568,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675927.9072452,
+    "available_bytes": 6990958592,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675928.9284565,
+    "available_bytes": 6942089216,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675929.9534295,
+    "available_bytes": 6960607232,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675930.9716318,
+    "available_bytes": 6955442176,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675931.998349,
+    "available_bytes": 7004872704,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675933.0162895,
+    "available_bytes": 7025045504,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675934.025005,
+    "available_bytes": 7016878080,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675935.03276,
+    "available_bytes": 7018086400,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675936.0508075,
+    "available_bytes": 6982455296,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675937.069635,
+    "available_bytes": 6868353024,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675938.0849702,
+    "available_bytes": 6945259520,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675939.1027043,
+    "available_bytes": 6985060352,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675940.1262734,
+    "available_bytes": 6910984192,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675941.142146,
+    "available_bytes": 7040188416,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675942.1588182,
+    "available_bytes": 7034691584,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  },
+  {
+    "time": 1792675943.1742575,
+    "available_bytes": 7033548800,
+    "processes": [
+      {
+        "name": "adl64.exe",
+        "pid": 80484
+      }
+    ]
+  }
+]
