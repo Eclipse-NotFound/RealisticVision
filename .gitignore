@@ -61,3 +61,5 @@ build/overall-flow-output/
 build/boundary-load-output/
 build/backups/before-boundary-performance-*/
 build/backups/before-overall-flow-*/
+build/effect-visibility-output/
+build/backups/before-effect-visibility-*/

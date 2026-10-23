@@ -1,0 +1,33 @@
+{
+  "time": "20261023-231933-799d23",
+  "version": "v0.33.8-effect-visibility",
+  "old": "6dbbae60eb09ff8f42d34e31edc92fb9f83009ba918e9145980c6d289723d8ba",
+  "new": "0dbe0d7a95b8e496fb393d7fcd75f88d60c34a1d0fabb33266b122e3fa04f2bf",
+  "backup": "build\\backups\\before-effect-visibility-20261023-231933-799d23\\RealisticVisionMod.before.swf",
+  "before": {
+    "pfe.swf": "80cfd8cf3138ee59cbf6eda0a1824a9ec960f413bd95e4b90d41dd0322b4fd3d",
+    "application.xml": "70dd3b085e5f6c66c03693cf68ce5e93a4e4136dd745d40d1a5b2a49863ba236",
+    "mods/loader-manifest.txt": "33de189e1209fdd397e811a52e9ac67ff0dedaeeae5cfeff4b7d15d4536eb133",
+    "mods/RealisticVision/release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "mods/ModLoader/release/ModLoaderMod.swf": "bd71b6f31774b97841d4c158451da0353b53bc46ac72f8e2a7fe2c3f3f4908b1",
+    "mods/Sandevistan/release/SandevistanMod.swf": "cec6a3061cb90380579d8a95aa1254e0328bd0dae6e239fc4ca5205d6cccf942",
+    "mods/Rconnect/release/RConnectMod.swf": "df0fa0e2ca952e77e5132e75d71e73558dc919c7b8cdeba5da05fc9e94dc01e7",
+    "mods/MoreSkills&Weapons/release/MoreSkillsWeaponsMod.swf": "526a6fd09297fb4f502236076b4252bf97bb50d2f77000b13763cf118546ab71",
+    "mods/TDFC/release/TDFCMod.swf": "7acd45193109267dbbf875240528048ad6f1d09fa3b8b36baa6f98ebb5fddce5",
+    "mods/RandomRooms/release/RandomRoomsMod.swf": "3f8789c62f9b2ef8efc082597f672a2fea230a0d7fce3be90c04efd9582e5145",
+    "mods/RModifier/release/LootEditorMod.swf": "4f1d6cf19979f4ea4960f8ccd8377c1d3cac490bed9949866885357d073c8625",
+    "mods/PermanentInjury/release/PermanentInjuryMod.swf": "d4f6a096ee06f8869fffb316801c6325df26f54260a34666ac17ec24ad8bd083",
+    "mods/AddictionSystem/release/AddictionSystemMod.swf": "5a4d9a405777867826061bb50178df931591987ea0737580bd0aa8a89458b9b3",
+    "mods/ContinuousScene/release/ContinuousSceneMod.swf": "7f1f2961c6e299d949423591f3c65c610c2eaefa7fc72e8a583a402770d6b51f",
+    "mods/FirearmAttachments/release/FirearmAttachmentsMod.swf": "b3304596eb7e08796f9de2cf02e1e7cccff10e188d26fedfa960aa6370d2a4b9",
+    "mods/LightAndDarkness/release/LightAndDarknessMod.swf": "8adba6914df5aada4df12a646b6c22df4b95b9630a55dd05ca7f713621c7e3ef",
+    "mods/WallBlend/release/WallBlendMod.swf": "14112da06214bca51c6875d2527e73246dcb4c985caadda719eb4f77f1c0920d"
+  },
+  "user_config_sha256": "99f4e8be238d459e047518afbb257bf35d442f3aead9d40b872177681ee3080a",
+  "appid": "pfe-modsettings-rv-effect-visibility-deploy-32db763c1bc94706a0536e425d3f687f",
+  "result": "PASS",
+  "authorization": "GOVERNANCE 6 continuous local deployment",
+  "pid": 103124,
+  "descriptor_removed": true,
+  "own_process_closed": true
+}

@@ -1,0 +1,114 @@
+ModLoader[boot_start] v2 run=run_1792764737253_227755
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_EffectVisibilityProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-0b6e562f40ca48a7aa86edaa53bc8cf4
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_EffectVisibilityProbeMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_TDFCMod] init
+719 Интерфейс
+1319 Game init
+1117 Персонаж
+6 Местность
+822 Создание местности
+false
+465 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+805 Создание местности
+383 Вход в местность
+PASS native mercenary arm found
+PASS native emitter iskr_bul
+PASS native emitter iskr
+PASS native emitter expl
+PASS native emitter gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS reproduced current merc-arm 0
+PASS reproduced current visualBullet 0
+PASS reproduced current visbullaser 0
+PASS reproduced current iskr_bul 0
+PASS reproduced current iskr 0
+PASS reproduced current expl 0
+PASS reproduced current gilza 0
+PASS reproduced current merc-arm 1
+PASS reproduced current visualBullet 1
+PASS reproduced current visbullaser 1
+PASS reproduced current iskr_bul 1
+PASS reproduced current iskr 1
+PASS reproduced current expl 1
+PASS reproduced current gilza 1
+PASS reproduced current merc-arm 2
+PASS reproduced current visualBullet 2
+PASS reproduced current visbullaser 2
+PASS reproduced current iskr_bul 2
+PASS reproduced current iskr 2
+PASS reproduced current expl 2
+PASS reproduced current gilza 2
+PASS reproduced current merc-arm 3
+PASS reproduced current visualBullet 3
+PASS reproduced current visbullaser 3
+PASS reproduced current iskr_bul 3
+PASS reproduced current iskr 3
+PASS reproduced current expl 3
+PASS reproduced current gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS fixed dark current merc-arm 0
+PASS fixed dark current merc-weapon 0
+PASS fixed dark current visualBullet 0
+PASS fixed dark current visbullaser 0
+PASS fixed dark current iskr_bul 0
+PASS fixed dark current iskr 0
+PASS fixed dark current expl 0
+PASS fixed dark current gilza 0
+PASS fixed dark current merc-arm 1
+PASS fixed dark current merc-weapon 1
+PASS fixed dark current visualBullet 1
+PASS fixed dark current visbullaser 1
+PASS fixed dark current iskr_bul 1
+PASS fixed dark current iskr 1
+PASS fixed dark current expl 1
+PASS fixed dark current gilza 1
+PASS fixed dark current merc-arm 2
+PASS fixed dark current merc-weapon 2
+PASS fixed dark current visualBullet 2
+PASS fixed dark current visbullaser 2
+PASS fixed dark current iskr_bul 2
+PASS fixed dark current iskr 2
+PASS fixed dark current expl 2
+PASS fixed dark current gilza 2
+PASS fixed dark current merc-arm 3
+PASS fixed dark current merc-weapon 3
+PASS fixed dark current visualBullet 3
+PASS fixed dark current visbullaser 3
+PASS fixed dark current iskr_bul 3
+PASS fixed dark current iskr 3
+PASS fixed dark current expl 3
+PASS fixed dark current gilza 3
+FAIL visible pixel identity current merc-arm
+FAIL Error: visible pixel identity current merc-arm Error: visible pixel identity current merc-arm
+	at EffectVisibilityProbeMod/check()
+	at EffectVisibilityProbeMod/inspectEffects()
+	at EffectVisibilityProbeMod/tick()
+	at flash.utils::Timer/tick()

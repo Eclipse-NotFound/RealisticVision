@@ -56,6 +56,11 @@ package
       private var wallViewOwner:Location;
       private var weaponVisuals:Dictionary = new Dictionary(true);
       private var weaponPass:int = 0;
+      private var worldVisuals:Dictionary = new Dictionary(true);
+      private var worldMasks:Object = {};
+      private var worldTypes:Dictionary = new Dictionary(true);
+      private var worldPass:int = 0;
+
       private var maskAlphaMap:Array;
       private var maskZeroMap:Array;
       private var classifiedSight:Vector.<uint>;
@@ -94,7 +99,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.7-boundary-performance";
+      private static const VERSION:String = "v0.33.8-effect-visibility";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -1015,6 +1020,7 @@ package
       {
          this.classicRenderedTiles=null;
          this.classicCells=null;
+         this.restoreWorldVisuals();
          this.restoreWeaponVisuals();
          this.releaseClassicLogic();
          this.wallSurface.reset();
@@ -1043,6 +1049,7 @@ package
       {
          this.classicRenderedTiles=null;
          this.classicCells=null;
+         this.restoreWorldVisuals();
          this.restoreWeaponVisuals();
          this.releaseClassicLogic();
          // 跨房间记忆（v0.22）：离开前保存当前房间的 explored（最后一次
@@ -1372,6 +1379,7 @@ package
       {
          this.classicRenderedTiles=null;
          this.classicCells=null;
+         this.restoreWorldVisuals();
          this.restoreWeaponVisuals();
          var any:Boolean = false;
          for(var k:Object in this.unitVis) { any = true; break; }
@@ -3012,6 +3020,21 @@ package
             rec = {state:1,m2:null,m3:null,m2d:null,m2e:null,lastFov:-1,lastBb:""};
             this.unitVis[u] = rec;
          }
+         this.refreshMask(rec,bb);
+         var s2:Shape=rec.m2 as Shape,s3:Shape=rec.m3 as Shape;
+         s2.cacheAsBitmap=true;s3.cacheAsBitmap=true;
+         if(u.vis != null && u.vis.parent != null) {
+            if(s2.parent !== u.vis.parent)u.vis.parent.addChild(s2);
+            this.authorityView.write(u.vis,"cacheAsBitmap",true);this.authorityView.write(u.vis,"mask",s2);
+         } else if(s2.parent != null)s2.parent.removeChild(s2);
+         if(u.hpbar != null && u.hpbar.parent != null) {
+            if(s3.parent !== u.hpbar.parent)u.hpbar.parent.addChild(s3);
+            this.authorityView.write(u.hpbar,"cacheAsBitmap",true);this.authorityView.write(u.hpbar,"mask",s3);
+         } else if(s3.parent != null)s3.parent.removeChild(s3);
+      }
+
+      private function refreshMask(rec:Object,bb:Array):void
+      {
          var x0:int = bb[0] - MASK_PAD_X;
          var y0:int = bb[1] - MASK_PAD_TOP;
          var x1:int = bb[2] + MASK_PAD_X;
@@ -3035,7 +3058,6 @@ package
          var sig:String = x0 + "," + y0 + "," + x1 + "," + y1;
          if(rec.lastFov == this.fovVersion && rec.lastBb == sig)
          {
-            if(this.authorityView.active) this.rebindAuthorityMask(w,u,rec);
             return;
          }
          rec.lastFov = this.fovVersion;
@@ -3074,41 +3096,6 @@ package
          {
             s3 = new Shape();
             rec.m3 = s3;
-         }
-         if(w.grafon != null)
-         {
-            if(u.vis != null)
-            {
-               if(s2.parent != w.grafon.visObjs[2]) { w.grafon.visObjs[2].addChild(s2); }
-            }
-            else if(s2.parent != null) { s2.parent.removeChild(s2); }
-            if(u.hpbar != null)
-            {
-               if(s3.parent != w.grafon.visObjs[3]) { w.grafon.visObjs[3].addChild(s3); }
-            }
-            else if(s3.parent != null) { s3.parent.removeChild(s3); }
-         }
-         try
-         {
-            // v0.24.4：alpha 掩膜（软边）要求**掩膜与被掩膜对象都
-            // cacheAsBitmap=true**（Flash 文档明确：否则掩膜按二值覆盖光栅化、
-            // 位图填充内容甚至不渲染 → 敌人"全出现-全消失"二分——v0.24.3 即
-            // 此失败）。只在本路径（state=2 部分可见）开启，clearMask 还原。
-            s2.cacheAsBitmap = true;
-            s3.cacheAsBitmap = true;
-            if(u.vis)
-            {
-               this.authorityView.write(u.vis,"cacheAsBitmap",true);
-               this.authorityView.write(u.vis,"mask",s2);
-            }
-            if(u.hpbar)
-            {
-               this.authorityView.write(u.hpbar,"cacheAsBitmap",true);
-               this.authorityView.write(u.hpbar,"mask",s3);
-            }
-         }
-         catch(err:Error)
-         {
          }
          // 子格级判定（5px）：castRay -1（墙）回退 fov（墙炮塔不消失）
          var cs:Number = Tile.tileX / MASK_SUB;
@@ -3495,11 +3482,7 @@ package
             if(oldRecord.weapon.vis !== oldVisual || oldRecord.owner != oldRecord.weapon.owner || DisplayObject(oldVisual).parent == null)
                this.releaseWeaponVisual(oldVisual as DisplayObject,oldRecord);
          }
-         // 显示树扫描：隐藏未被识别的子对象（狮鹫手臂等）；无全隐敌人时提前退出
-         if((this.authorityView.active || needFov || this.frameCount % 3 == 0) && (hiddenPos.length > 0 || this.managedCount > 0))
-         {
-            this.scanArms(w,hiddenPos,visiblePos,exempt);
-         }
+         this.applyWorldVisuals(w,loc);
       }
 
       private function applyUnitWeapons(u:Unit, state:int, exempt:Dictionary):void
@@ -3585,52 +3568,146 @@ package
          }
       }
 
-      private function scanArms(w:World, hiddenPos:Array, visiblePos:Array, exempt:Dictionary):void
+      /** Native transient visuals are independent of their shooter. Never change
+       * visible/alpha or reparent content: native animation and lifetime own them. */
+      private function applyWorldVisuals(w:World,loc:Location):void
       {
-         if(w.grafon == null)
+         this.worldPass++;
+         var obj:Pt=loc.firstObj,guard:int=0;
+         while(obj != null && guard++<5000)
          {
-            return;
+            var cls:Object=Object(obj).constructor;
+            var kind:*=this.worldTypes[cls];
+            if(kind === undefined)
+            {
+               var name:String=getQualifiedClassName(obj);
+               kind=name=="fe.graph::Part" || name=="fe.weapon::Bullet" || name=="fe.weapon::PhisBullet" || name=="fe.weapon::SmartBullet";
+               this.worldTypes[cls]=kind;
+            }
+            if(kind && obj.vis != null)this.applyWorldVisual(obj.vis);
+            obj=obj.nobj;
          }
-         var layer:Sprite = w.grafon.visObjs[2];
-         var i:int;
-         for(i = 0; i < layer.numChildren; i++)
+         // UnitMerc.arm is package-internal, but its native display class is
+         // unambiguous. Spatial clipping also works with overlapping mercenaries.
+         if(w.grafon != null) for(var layerIndex:int=0;layerIndex<w.grafon.visObjs.length;layerIndex++)
          {
-            var c:DisplayObject = layer.getChildAt(i);
-            if(c == null || exempt[c] == true)
+            var layer:DisplayObjectContainer=w.grafon.visObjs[layerIndex];
+            // Releasing a now-fully-lit mask removes a sibling. Walk backwards
+            // so that native reattachment and mask removal cannot stale length.
+            for(var i:int=layer.numChildren-1;i>=0;i--)
             {
-               continue;
+               var child:DisplayObject=layer.getChildAt(i);
+               if(child is Shape)continue;
+               cls=Object(child).constructor;kind=this.worldTypes[cls];
+               if(kind === undefined){kind=getQualifiedClassName(child).indexOf("visualGrifArm")==0;this.worldTypes[cls]=kind;}
+               if(kind)this.applyWorldVisual(child);
             }
-            var nearHidden:Boolean = this.nearAny(c,hiddenPos);
-            if(nearHidden && !this.nearAny(c,visiblePos))
+         }
+         // A fully visible body can carry a long gun beyond its own bounds.
+         for each(var unit:Unit in loc.units)
+         {
+            if(unit == null || unit.player || unit.npc || unit.invis || unit.fraction==Unit.F_PLAYER || unit.sost>=3)continue;
+            var ur:Object=this.unitVis[unit];
+            if(ur == null || ur.state!=1)continue;
+            var children:Array=Object(unit)["childObjs"] as Array;
+            if(children == null)continue;
+            for each(var entry:Object in children)
             {
-               if(c.visible)
-               {
-                  this.authorityView.write(c,"visible",false);
-                  this.managedHidden[c] = true;
-                  this.managedCount++;
-               }
+               var weapon:Weapon=entry as Weapon;
+               if(weapon != null && weapon.owner===unit && weapon.vis != null)this.applyWorldVisual(weapon.vis);
             }
-            else if(this.managedHidden[c] == true)
+         }
+         for(var visual:Object in this.worldVisuals)
+         {
+            var record:Object=this.worldVisuals[visual];
+            if(record.pass!=this.worldPass || DisplayObject(visual).parent==null)this.releaseWorldVisual(visual as DisplayObject,record);
+         }
+         if(this.worldPass%60==0)for(var key:String in this.worldMasks)
+         {
+            var raster:Object=this.worldMasks[key];
+            if(this.worldPass-int(raster.used)>120)
             {
-               this.authorityView.write(c,"visible",true,true);
-               delete this.managedHidden[c];
-               this.managedCount--;
+               this.disposeWorldMask(raster);delete this.worldMasks[key];
             }
          }
       }
 
-      private function nearAny(c:DisplayObject, pos:Array):Boolean
+      private function applyWorldVisual(visual:DisplayObject):void
       {
-         for each(var p:Array in pos)
+         if(visual.parent==null)return;
+         var record:Object=this.worldVisuals[visual];
+         if(record != null && visual.mask !== record.shape && visual.mask !== record.baseMask)
          {
-            var dx:Number = c.x - p[0];
-            var dy:Number = c.y - p[1];
-            if(dx > -ARM_SCAN_R && dx < ARM_SCAN_R && dy > -ARM_SCAN_R && dy < ARM_SCAN_R)
-            {
-               return true;
-            }
+            this.releaseWorldVisual(visual,record);record=null;
          }
-         return false;
+         // Respect masks owned by the game or another mod. Existing native
+         // projectile/particle/griffon visuals have none; unit masks stay separate.
+         if(record==null && visual.mask!=null)return;
+         if(!visual.visible && record==null)return;
+         var bounds:Rectangle=visual.getBounds(visual.parent);
+         var x0:int=Math.max(0,Math.floor(bounds.left/Tile.tileX));
+         var y0:int=Math.max(0,Math.floor(bounds.top/Tile.tileY));
+         var x1:int=Math.min(this.spaceX-1,Math.floor(bounds.right/Tile.tileX));
+         var y1:int=Math.min(this.spaceY-1,Math.floor(bounds.bottom/Tile.tileY));
+         if(x0>x1 || y0>y1)return;
+         var key:String=x0+","+y0+","+x1+","+y1;
+         var raster:Object=this.worldMasks[key];
+         if(raster==null){raster={lastFov:-1,lastBb:"",m2:null,m3:null,m2d:null,m2e:null};this.worldMasks[key]=raster;}
+         raster.used=this.worldPass;
+         this.refreshMask(raster,[x0,y0,x1,y1]);
+         // Leave fully lit native visuals untouched. Besides avoiding needless
+         // caches, this preserves subpixel animation rendering exactly.
+         if(raster.coverageFov!==this.fovVersion)
+         {
+            var rx:int=(x0-Math.max(0,x0-MASK_PAD_X))*MASK_SUB;
+            var ry:int=(y0-Math.max(0,y0-MASK_PAD_TOP))*MASK_SUB;
+            var pixels:Vector.<uint>=BitmapData(raster.m2e).getVector(new Rectangle(rx,ry,(x1-x0+1)*MASK_SUB,(y1-y0+1)*MASK_SUB));
+            var lit:Boolean=true;
+            for each(var pixel:uint in pixels)if((pixel>>>24)!=255){lit=false;break;}
+            // Include the full support region, including any native glow, in
+            // the empty-mask fast path; it is exactly zero everywhere.
+            var dark:Boolean=BitmapData(raster.m2e).getColorBoundsRect(0xff000000,0,false).isEmpty();
+            raster.fullyLit=lit;raster.fullyDark=dark;raster.coverageFov=this.fovVersion;
+         }
+         if(raster.fullyLit)
+         {
+            if(record!=null)this.releaseWorldVisual(visual,record);
+            return;
+         }
+         if(record==null)
+         {
+            record={shape:new Shape(),baseMask:visual.mask,cache:visual.cacheAsBitmap,raster:null,revision:-1};
+            this.worldVisuals[visual]=record;
+         }
+         record.pass=this.worldPass;
+         var shape:Shape=record.shape as Shape;
+         if(record.raster!==raster || record.revision!=raster.maskRevision || record.dark!==raster.fullyDark)
+         {
+            if(raster.fullyDark)shape.graphics.clear();
+            else shape.graphics.copyFrom(Shape(raster.m2).graphics);
+            record.raster=raster;record.revision=raster.maskRevision;record.dark=raster.fullyDark;
+         }
+         if(shape.parent!==visual.parent)visual.parent.addChild(shape);
+         shape.cacheAsBitmap=!raster.fullyDark;this.authorityView.write(visual,"cacheAsBitmap",raster.fullyDark?record.cache:true);this.authorityView.write(visual,"mask",shape);
+      }
+
+      private function releaseWorldVisual(visual:DisplayObject,record:Object):void
+      {
+         if(visual.mask===record.shape){this.authorityView.write(visual,"mask",record.baseMask,true);this.authorityView.write(visual,"cacheAsBitmap",record.cache,true);}
+         var shape:Shape=record.shape as Shape;
+         if(shape.parent!=null)shape.parent.removeChild(shape);
+         delete this.worldVisuals[visual];
+      }
+      private function disposeWorldMask(record:Object):void
+      {
+         for each(var key:String in ["m2d","m2e","maskInput"])
+            if(record[key] != null)BitmapData(record[key]).dispose();
+      }
+      private function restoreWorldVisuals():void
+      {
+         for(var visual:Object in this.worldVisuals)this.releaseWorldVisual(visual as DisplayObject,this.worldVisuals[visual]);
+         for each(var raster:Object in this.worldMasks)this.disposeWorldMask(raster);
+         this.worldMasks={};this.worldPass=0;
       }
 
       // ==================== 念力规则 ====================

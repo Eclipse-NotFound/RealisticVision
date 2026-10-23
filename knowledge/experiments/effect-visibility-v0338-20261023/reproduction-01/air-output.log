@@ -1,0 +1,30 @@
+ModLoader[boot_start] v2 run=run_1792764342814_660634
+ModLoader[requested_EffectVisibilityProbeMod] line 16
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_EffectVisibilityProbeMod] init
+580 Интерфейс
+1068 Game init
+1017 Персонаж
+1 Местность
+934 Создание местности
+false
+380 Вход в местность
+818 Создание местности
+478 Вход в местность
+PASS native mercenary arm found
+PASS native emitter iskr_bul
+PASS native emitter iskr
+PASS native emitter expl
+PASS native emitter gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS reproduced current merc-arm 0
+PASS reproduced current visualBullet 0
+PASS reproduced current visbullaser 0
+PASS reproduced current iskr_bul 0
+PASS reproduced current iskr 0
+FAIL reproduced current expl 0
+FAIL Error: reproduced current expl 0 Error: reproduced current expl 0
+	at EffectVisibilityProbeMod/check()
+	at EffectVisibilityProbeMod/inspectEffects()
+	at EffectVisibilityProbeMod/tick()
+	at flash.utils::Timer/tick()

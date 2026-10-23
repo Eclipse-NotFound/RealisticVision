@@ -1,3 +1,9 @@
+## 2026-10-23 — D42弹道与狮鹫手臂/武器遮挡修复
+
+- 原生独立特效遗漏、近邻猜归属和身体外枪口漏裁切；改为每帧按世界位置裁切，共享栅格，明区透传，全黑空遮罩。原生逻辑/伤害/动画不改。
+- 1000项/组、12完整组合战斗窗及正式路径启动通过；部署v0.33.8-effect-visibility，SHA 0dbe0d7a95b8e496fb393d7fcd75f88d60c34a1d0fabb33266b122e3fa04f2bf，备份build\backups\before-effect-visibility-20261023-231933-799d23\RealisticVisionMod.before.swf。
+- [报告](../knowledge/experiments/2026-10-23-effect-visibility.md)记录性能开销、失败修正与边界。四项authority WIP保留，生产源不含authority。
+
 ## 2026-10-23 — D41移动边界/敌人遮罩优化部署
 
 - 用户确认两模式都有；三项不降画质优化，747项/组及12原生方向键跑动射击窗口通过。局部收益与整体限度分开记录，current整体仍基本持平，classic最大帧仍有反例。

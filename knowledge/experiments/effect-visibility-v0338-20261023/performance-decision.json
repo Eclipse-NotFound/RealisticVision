@@ -1,0 +1,93 @@
+{
+  "accepted": true,
+  "native_result": "92d64be259c90fe5b5a69184aacba93cbe4cf30695abbd640edb2c7cdb6a10bf",
+  "candidate_source": "b4864e964bb6d862fdc3ca60b3c115f938207784793c2e009a1ddcd4d26f8e83",
+  "scope": "D42 correctness fix; full-combination native mercenary shooting and directional movement",
+  "reason": "Accept the visibility fix with the measured extra updater cost recorded. Same-session whole-frame results are considered separately from RV update cost; this is not a claim of performance parity with vanilla or elimination of long frames. Native world evolution and warm-up prevent a deterministic FPS causal claim.",
+  "measurements": [
+    {
+      "mode": "current",
+      "variant": "off",
+      "interval": {
+        "mean": 42.55,
+        "p95": 59,
+        "max": 151
+      },
+      "update": {
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1
+      }
+    },
+    {
+      "mode": "current",
+      "variant": "baseline",
+      "interval": {
+        "mean": 64.046,
+        "p95": 96,
+        "max": 334
+      },
+      "update": {
+        "mean": 13.117,
+        "p95": 16,
+        "max": 23
+      }
+    },
+    {
+      "mode": "current",
+      "variant": "candidate",
+      "interval": {
+        "mean": 64.741,
+        "p95": 89,
+        "max": 144
+      },
+      "update": {
+        "mean": 15.467,
+        "p95": 20,
+        "max": 68
+      }
+    },
+    {
+      "mode": "classic",
+      "variant": "off",
+      "interval": {
+        "mean": 44.264,
+        "p95": 77,
+        "max": 266
+      },
+      "update": {
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1
+      }
+    },
+    {
+      "mode": "classic",
+      "variant": "baseline",
+      "interval": {
+        "mean": 67.163,
+        "p95": 101,
+        "max": 161
+      },
+      "update": {
+        "mean": 17.188,
+        "p95": 28,
+        "max": 80
+      }
+    },
+    {
+      "mode": "classic",
+      "variant": "candidate",
+      "interval": {
+        "mean": 66.933,
+        "p95": 89,
+        "max": 317
+      },
+      "update": {
+        "mean": 20.368,
+        "p95": 33,
+        "max": 89
+      }
+    }
+  ]
+}

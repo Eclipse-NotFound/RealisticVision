@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-23 **D42 v0.33.8已部署**：按世界位置裁切原生弹体/激光/粒子、狮鹫独立手臂和身体外敌方武器；明区原生绘制、全零支持区空遮罩。1000项/组及12完整组合跑动射击窗、正式init/注册/tick1/181/361通过。SHA 0dbe0d7a95b8e496fb393d7fcd75f88d60c34a1d0fabb33266b122e3fa04f2bf，45600B；准确源build/effect-visibility-output/production-final/src。尚未达原版流畅度、第三方自有遮罩优先。[报告](../knowledge/experiments/2026-10-23-effect-visibility.md)。
+
 > 2026-10-23 **D41 v0.33.7已部署**：复用身体/血条/武器遮罩图形，classic仅补算未缓存视野区，current局部清理并保留静止墙光失效。747项/组、12原生战斗窗与正式init/注册/tick1/181/361通过。准确包6dbbae60eb09…（44604B），生产源build/boundary-load-output/production/src。密集移动更新classic约11%下降、current约3%–4%；完整帧classic60.2→57.2ms，current基本持平54.7→55.3ms，未达原版，长帧未全解。[报告](../knowledge/experiments/2026-10-23-boundary-load.md)。
 
 > 2026-10-23 **D40整体性能试验完成，未发布**：六候选中05 classic合并逐格扫描通过96组严格图像与36设置；局部CPU略降，24原生跑动射击窗整体收益未稳定。正式仍D39 83D8…205C7E65，src/release未改。847ms长帧中RV22ms；另有内存下降相关峰值，根因未完全定位。外部高频监测证据标无效性能验收。[报告](../knowledge/experiments/2026-10-23-overall-flow.md)；候选/数据build/overall-flow-output，勿据功能通过自动部署。
@@ -86,7 +88,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D41 v0.33.7；保留D39墙面缓存优化，新增遮罩图形复用、classic未缓存区补算、current局部视野清理。准确源build/boundary-load-output/production/src；不从含authority的HEAD整包部署。仍有长帧，current整体流畅度尚未明显改善。
+- 当前安装D42 v0.33.8；原生特效与狮鹫独立视觉按位置裁切。准确生产源build/effect-visibility-output/production-final/src；不含authority。性能仍未达到关闭RV，详见顶部报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -109,6 +111,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D42已完成验证、部署及收尾，当前无待跑RV实例；以下均为历史停点，不自动重跑。后续反馈以D42准确生产源为基线，不能混入D40候选或authority。
 
 - D40已结束并保留候选，不自动重跑/部署；正式仍D39。后续针对原生跑动的非RV长停顿作低开销归因，详见顶部报告；不可把局部CPU下降当整体成功。
 
@@ -153,10 +157,12 @@
 
 - 候选仍为5px逻辑采样及四角快速分类，不是连续多边形可见性重写。未覆盖任意窄缝/全部缩放相位、用户精确存档、长时间战斗和六模组共同负载。单位掩膜零泄漏断言针对采样点，不是任意亚像素几何证明。
 - 一次67ms峰值未定位；宽/适中间约零点几毫秒差视为噪声，不据此选档。完整训练房视距3000/10000，与普通房不同。
-- classic既有40px粗格掠角（一个方向与连续切线差21px）、薄墙可见侧约20px渐变仍保留。旧 F12 app:/ 保存错误已由 ModSettings 迁移修复，配置写入本端应用存储。狮鹫internal手臂、SATS记忆扫描/抓暗敌瞬间报警等旧限制保留。
+- classic既有40px粗格掠角（一个方向与连续切线差21px）、薄墙可见侧约20px渐变仍保留。旧 F12 app:/ 保存错误已由 ModSettings 迁移修复，配置写入本端应用存储。SATS记忆扫描/抓暗敌瞬间报警等旧限制保留。
 - 同尺寸resetRoom清黑共用三图、fogBlurPending及原版墙角相位等旧修复保留；新currentSightData随房间清空重建。
 
 ## 6. 下一步
+
+- 当前D42 v0.33.8需用户正常保存并重启加载。原生特效与狮鹫泄露已修复；后续长帧仍需实测归因。下方旧版本行动仅留历史，不据此回退当前安装。
 
 - 用户正常保存并重启加载v0.33.2；若仍反馈高速/混战停顿，按实际保存的设置和完整组合慢帧采样，不仅测默认值或按平均值优化。D35安全回退基线为D32，路径见顶部报告。
 
@@ -180,7 +186,7 @@
 
 - 本轮入口：`knowledge/experiments/2026-10-15-wall-bright-option.md`、D27、`build/wall-options/README.md`；最终指纹/图像/日志在wall-options-v0311-20261015。D26旧记录仍留原址。SDK在本区 `mods/Sandevistan/build/tools/`，仅只读使用。
 
-- 最新发布：state/deployment-v0323-2026-10-19.md与state/deployment-v0323/；D31回执保留历史。准确安装76314B81…AF5C46B7，正式启动和299项组合功能通过。工具build/stair-merge/，证据knowledge/experiments/stair-performance-v0323-20261019/。
+- 历史D32发布：state/deployment-v0323-2026-10-19.md与state/deployment-v0323/；D31回执保留历史。准确安装76314B81…AF5C46B7，正式启动和299项组合功能通过。工具build/stair-merge/，证据knowledge/experiments/stair-performance-v0323-20261019/。
 - 新候选：2026-09-20-current-soft-candidate.md / current-soft-v0290/ / D25。新SoftHarness.as与motion-tests/README.md列完整命令，--checks专项、soft-medium/soft-wide、run-game和bench-game --soft。
 - 原调查：2026-09-20-current-motion-investigation.md / current-motion-20260920/。证实三帧+次帧约10Hz、只提频会饿死显示、max硬钳制台阶、角点误写亮点。全图2.5px成本高，四点积分收益小。
 - 既有classic修复：2026-09-19-classic-wall-seam-fix.md / classic-seams-v0282/ / D24；部署2026-09-19-v0282-deployment.md。D22/D23旧报告与念力交接见journal。

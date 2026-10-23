@@ -1,0 +1,144 @@
+ModLoader[boot_start] v2 run=run_1792764546237_370076
+ModLoader[requested_EffectVisibilityProbeMod] line 16
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_EffectVisibilityProbeMod] init
+588 Интерфейс
+1165 Game init
+937 Персонаж
+0 Местность
+775 Создание местности
+false
+359 Вход в местность
+741 Создание местности
+442 Вход в местность
+PASS native mercenary arm found
+PASS native emitter iskr_bul
+PASS native emitter iskr
+PASS native emitter expl
+PASS native emitter gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS reproduced current merc-arm 0
+PASS reproduced current visualBullet 0
+PASS reproduced current visbullaser 0
+PASS reproduced current iskr_bul 0
+PASS reproduced current iskr 0
+PASS reproduced current expl 0
+PASS reproduced current gilza 0
+PASS reproduced current merc-arm 1
+PASS reproduced current visualBullet 1
+PASS reproduced current visbullaser 1
+PASS reproduced current iskr_bul 1
+PASS reproduced current iskr 1
+PASS reproduced current expl 1
+PASS reproduced current gilza 1
+PASS reproduced current merc-arm 2
+PASS reproduced current visualBullet 2
+PASS reproduced current visbullaser 2
+PASS reproduced current iskr_bul 2
+PASS reproduced current iskr 2
+PASS reproduced current expl 2
+PASS reproduced current gilza 2
+PASS reproduced current merc-arm 3
+PASS reproduced current visualBullet 3
+PASS reproduced current visbullaser 3
+PASS reproduced current iskr_bul 3
+PASS reproduced current iskr 3
+PASS reproduced current expl 3
+PASS reproduced current gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS fixed dark current merc-arm 0
+PASS fixed dark current merc-weapon 0
+PASS fixed dark current visualBullet 0
+PASS fixed dark current visbullaser 0
+PASS fixed dark current iskr_bul 0
+PASS fixed dark current iskr 0
+PASS fixed dark current expl 0
+PASS fixed dark current gilza 0
+PASS fixed dark current merc-arm 1
+PASS fixed dark current merc-weapon 1
+PASS fixed dark current visualBullet 1
+PASS fixed dark current visbullaser 1
+PASS fixed dark current iskr_bul 1
+PASS fixed dark current iskr 1
+PASS fixed dark current expl 1
+PASS fixed dark current gilza 1
+PASS fixed dark current merc-arm 2
+PASS fixed dark current merc-weapon 2
+PASS fixed dark current visualBullet 2
+PASS fixed dark current visbullaser 2
+PASS fixed dark current iskr_bul 2
+PASS fixed dark current iskr 2
+PASS fixed dark current expl 2
+PASS fixed dark current gilza 2
+PASS fixed dark current merc-arm 3
+PASS fixed dark current merc-weapon 3
+PASS fixed dark current visualBullet 3
+PASS fixed dark current visbullaser 3
+PASS fixed dark current iskr_bul 3
+PASS fixed dark current iskr 3
+PASS fixed dark current expl 3
+PASS fixed dark current gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS reproduced classic merc-arm 0
+PASS reproduced classic visualBullet 0
+PASS reproduced classic visbullaser 0
+PASS reproduced classic iskr_bul 0
+PASS reproduced classic iskr 0
+PASS reproduced classic expl 0
+PASS reproduced classic gilza 0
+PASS reproduced classic merc-arm 1
+PASS reproduced classic visualBullet 1
+PASS reproduced classic visbullaser 1
+PASS reproduced classic iskr_bul 1
+PASS reproduced classic iskr 1
+PASS reproduced classic expl 1
+PASS reproduced classic gilza 1
+PASS reproduced classic merc-arm 2
+PASS reproduced classic visualBullet 2
+PASS reproduced classic visbullaser 2
+PASS reproduced classic iskr_bul 2
+PASS reproduced classic iskr 2
+PASS reproduced classic expl 2
+PASS reproduced classic gilza 2
+PASS reproduced classic merc-arm 3
+PASS reproduced classic visualBullet 3
+PASS reproduced classic visbullaser 3
+PASS reproduced classic iskr_bul 3
+PASS reproduced classic iskr 3
+PASS reproduced classic expl 3
+PASS reproduced classic gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS fixed dark classic merc-arm 0
+PASS fixed dark classic merc-weapon 0
+PASS fixed dark classic visualBullet 0
+PASS fixed dark classic visbullaser 0
+PASS fixed dark classic iskr_bul 0
+PASS fixed dark classic iskr 0
+PASS fixed dark classic expl 0
+PASS fixed dark classic gilza 0
+PASS fixed dark classic merc-arm 1
+PASS fixed dark classic merc-weapon 1
+PASS fixed dark classic visualBullet 1
+PASS fixed dark classic visbullaser 1
+PASS fixed dark classic iskr_bul 1
+PASS fixed dark classic iskr 1
+PASS fixed dark classic expl 1
+PASS fixed dark classic gilza 1
+PASS fixed dark classic merc-arm 2
+PASS fixed dark classic merc-weapon 2
+PASS fixed dark classic visualBullet 2
+PASS fixed dark classic visbullaser 2
+PASS fixed dark classic iskr_bul 2
+PASS fixed dark classic iskr 2
+PASS fixed dark classic expl 2
+PASS fixed dark classic gilza 2
+PASS fixed dark classic merc-arm 3
+PASS fixed dark classic merc-weapon 3
+PASS fixed dark classic visualBullet 3
+PASS fixed dark classic visbullaser 3
+PASS fixed dark classic iskr_bul 3
+PASS fixed dark classic iskr 3
+PASS fixed dark classic expl 3
+PASS fixed dark classic gilza 3
+D42 EFFECT {"rows":[{"pixels":622,"mode":"current","frame":0,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"current","frame":0,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"current","frame":0,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"current","frame":0,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"current","frame":0,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"current","frame":0,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"current","frame":0,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"current","frame":1,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"current","frame":1,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"current","frame":1,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"current","frame":1,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"current","frame":1,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"current","frame":1,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"current","frame":1,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"current","frame":2,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"current","frame":2,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"current","frame":2,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"current","frame":2,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"current","frame":2,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"current","frame":2,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"current","frame":2,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"current","frame":3,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"current","frame":3,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"current","frame":3,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"current","frame":3,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"current","frame":3,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"current","frame":3,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"current","frame":3,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"current","frame":0,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":0,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"current","frame":1,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":1,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"current","frame":2,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":2,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"current","frame":3,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"current","frame":3,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":622,"mode":"classic","frame":0,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"classic","frame":0,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"classic","frame":0,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"classic","frame":0,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"classic","frame":0,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"classic","frame":0,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"classic","frame":0,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"classic","frame":1,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"classic","frame":1,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"classic","frame":1,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"classic","frame":1,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"classic","frame":1,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"classic","frame":1,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"classic","frame":1,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"classic","frame":2,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"classic","frame":2,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"classic","frame":2,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"classic","frame":2,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"classic","frame":2,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"classic","frame":2,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"classic","frame":2,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":622,"mode":"classic","frame":3,"kind":"merc-arm","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"merc-weapon","mask":false,"variant":"baseline","visible":false},{"pixels":547,"mode":"classic","frame":3,"kind":"visualBullet","mask":false,"variant":"baseline","visible":true},{"pixels":1600,"mode":"classic","frame":3,"kind":"visbullaser","mask":false,"variant":"baseline","visible":true},{"pixels":5,"mode":"classic","frame":3,"kind":"iskr_bul","mask":false,"variant":"baseline","visible":true},{"pixels":9,"mode":"classic","frame":3,"kind":"iskr","mask":false,"variant":"baseline","visible":true},{"pixels":2216,"mode":"classic","frame":3,"kind":"expl","mask":false,"variant":"baseline","visible":true},{"pixels":30,"mode":"classic","frame":3,"kind":"gilza","mask":false,"variant":"baseline","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"classic","frame":0,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":0,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"classic","frame":1,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":1,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"classic","frame":2,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":2,"kind":"gilza","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"merc-arm","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"merc-weapon","mask":false,"variant":"candidate","visible":false},{"pixels":0,"mode":"classic","frame":3,"kind":"visualBullet","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"visbullaser","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"iskr_bul","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"iskr","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"expl","mask":true,"variant":"candidate","visible":true},{"pixels":0,"mode":"classic","frame":3,"kind":"gilza","mask":true,"variant":"candidate","visible":true}],"checks":[{"label":"native mercenary arm found","pass":true},{"label":"native emitter iskr_bul","pass":true},{"label":"native emitter iskr","pass":true},{"label":"native emitter expl","pass":true},{"label":"native emitter gilza","pass":true},{"label":"reproduced current merc-arm 0","pass":true},{"label":"reproduced current visualBullet 0","pass":true},{"label":"reproduced current visbullaser 0","pass":true},{"label":"reproduced current iskr_bul 0","pass":true},{"label":"reproduced current iskr 0","pass":true},{"label":"reproduced current expl 0","pass":true},{"label":"reproduced current gilza 0","pass":true},{"label":"reproduced current merc-arm 1","pass":true},{"label":"reproduced current visualBullet 1","pass":true},{"label":"reproduced current visbullaser 1","pass":true},{"label":"reproduced current iskr_bul 1","pass":true},{"label":"reproduced current iskr 1","pass":true},{"label":"reproduced current expl 1","pass":true},{"label":"reproduced current gilza 1","pass":true},{"label":"reproduced current merc-arm 2","pass":true},{"label":"reproduced current visualBullet 2","pass":true},{"label":"reproduced current visbullaser 2","pass":true},{"label":"reproduced current iskr_bul 2","pass":true},{"label":"reproduced current iskr 2","pass":true},{"label":"reproduced current expl 2","pass":true},{"label":"reproduced current gilza 2","pass":true},{"label":"reproduced current merc-arm 3","pass":true},{"label":"reproduced current visualBullet 3","pass":true},{"label":"reproduced current visbullaser 3","pass":true},{"label":"reproduced current iskr_bul 3","pass":true},{"label":"reproduced current iskr 3","pass":true},{"label":"reproduced current expl 3","pass":true},{"label":"reproduced current gilza 3","pass":true},{"label":"fixed dark current merc-arm 0","pass":true},{"label":"fixed dark current merc-weapon 0","pass":true},{"label":"fixed dark current visualBullet 0","pass":true},{"label":"fixed dark current visbullaser 0","pass":true},{"label":"fixed dark current iskr_bul 0","pass":true},{"label":"fixed dark current iskr 0","pass":true},{"label":"fixed dark current expl 0","pass":true},{"label":"fixed dark current gilza 0","pass":true},{"label":"fixed dark current merc-arm 1","pass":true},{"label":"fixed dark current merc-weapon 1","pass":true},{"label":"fixed dark current visualBullet 1","pass":true},{"label":"fixed dark current visbullaser 1","pass":true},{"label":"fixed dark current iskr_bul 1","pass":true},{"label":"fixed dark current iskr 1","pass":true},{"label":"fixed dark current expl 1","pass":true},{"label":"fixed dark current gilza 1","pass":true},{"label":"fixed dark current merc-arm 2","pass":true},{"label":"fixed dark current merc-weapon 2","pass":true},{"label":"fixed dark current visualBullet 2","pass":true},{"label":"fixed dark current visbullaser 2","pass":true},{"label":"fixed dark current iskr_bul 2","pass":true},{"label":"fixed dark current iskr 2","pass":true},{"label":"fixed dark current expl 2","pass":true},{"label":"fixed dark current gilza 2","pass":true},{"label":"fixed dark current merc-arm 3","pass":true},{"label":"fixed dark current merc-weapon 3","pass":true},{"label":"fixed dark current visualBullet 3","pass":true},{"label":"fixed dark current visbullaser 3","pass":true},{"label":"fixed dark current iskr_bul 3","pass":true},{"label":"fixed dark current iskr 3","pass":true},{"label":"fixed dark current expl 3","pass":true},{"label":"fixed dark current gilza 3","pass":true},{"label":"reproduced classic merc-arm 0","pass":true},{"label":"reproduced classic visualBullet 0","pass":true},{"label":"reproduced classic visbullaser 0","pass":true},{"label":"reproduced classic iskr_bul 0","pass":true},{"label":"reproduced classic iskr 0","pass":true},{"label":"reproduced classic expl 0","pass":true},{"label":"reproduced classic gilza 0","pass":true},{"label":"reproduced classic merc-arm 1","pass":true},{"label":"reproduced classic visualBullet 1","pass":true},{"label":"reproduced classic visbullaser 1","pass":true},{"label":"reproduced classic iskr_bul 1","pass":true},{"label":"reproduced classic iskr 1","pass":true},{"label":"reproduced classic expl 1","pass":true},{"label":"reproduced classic gilza 1","pass":true},{"label":"reproduced classic merc-arm 2","pass":true},{"label":"reproduced classic visualBullet 2","pass":true},{"label":"reproduced classic visbullaser 2","pass":true},{"label":"reproduced classic iskr_bul 2","pass":true},{"label":"reproduced classic iskr 2","pass":true},{"label":"reproduced classic expl 2","pass":true},{"label":"reproduced classic gilza 2","pass":true},{"label":"reproduced classic merc-arm 3","pass":true},{"label":"reproduced classic visualBullet 3","pass":true},{"label":"reproduced classic visbullaser 3","pass":true},{"label":"reproduced classic iskr_bul 3","pass":true},{"label":"reproduced classic iskr 3","pass":true},{"label":"reproduced classic expl 3","pass":true},{"label":"reproduced classic gilza 3","pass":true},{"label":"fixed dark classic merc-arm 0","pass":true},{"label":"fixed dark classic merc-weapon 0","pass":true},{"label":"fixed dark classic visualBullet 0","pass":true},{"label":"fixed dark classic visbullaser 0","pass":true},{"label":"fixed dark classic iskr_bul 0","pass":true},{"label":"fixed dark classic iskr 0","pass":true},{"label":"fixed dark classic expl 0","pass":true},{"label":"fixed dark classic gilza 0","pass":true},{"label":"fixed dark classic merc-arm 1","pass":true},{"label":"fixed dark classic merc-weapon 1","pass":true},{"label":"fixed dark classic visualBullet 1","pass":true},{"label":"fixed dark classic visbullaser 1","pass":true},{"label":"fixed dark classic iskr_bul 1","pass":true},{"label":"fixed dark classic iskr 1","pass":true},{"label":"fixed dark classic expl 1","pass":true},{"label":"fixed dark classic gilza 1","pass":true},{"label":"fixed dark classic merc-arm 2","pass":true},{"label":"fixed dark classic merc-weapon 2","pass":true},{"label":"fixed dark classic visualBullet 2","pass":true},{"label":"fixed dark classic visbullaser 2","pass":true},{"label":"fixed dark classic iskr_bul 2","pass":true},{"label":"fixed dark classic iskr 2","pass":true},{"label":"fixed dark classic expl 2","pass":true},{"label":"fixed dark classic gilza 2","pass":true},{"label":"fixed dark classic merc-arm 3","pass":true},{"label":"fixed dark classic merc-weapon 3","pass":true},{"label":"fixed dark classic visualBullet 3","pass":true},{"label":"fixed dark classic visbullaser 3","pass":true},{"label":"fixed dark classic iskr_bul 3","pass":true},{"label":"fixed dark classic iskr 3","pass":true},{"label":"fixed dark classic expl 3","pass":true},{"label":"fixed dark classic gilza 3","pass":true}],"cases":[]}
+FRAME COMPLETE
