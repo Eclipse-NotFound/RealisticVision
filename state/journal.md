@@ -1,3 +1,9 @@
+## 2026-10-23 — D41移动边界/敌人遮罩优化部署
+
+- 用户确认两模式都有；三项不降画质优化，747项/组及12原生方向键跑动射击窗口通过。局部收益与整体限度分开记录，current整体仍基本持平，classic最大帧仍有反例。
+- 已部署v0.33.7-boundary-performance，SHA 6dbbae60eb09ff8f42d34e31edc92fb9f83009ba918e9145980c6d289723d8ba；D39回退备份build\backups\before-boundary-performance-20261023-164545-e04a1b\RealisticVisionMod.before.swf，正式路径init/注册/tick1/181/361通过。
+- 仅RV本轮修改，authority四项外部WIP保留；[报告](../knowledge/experiments/2026-10-23-boundary-load.md)，后续不要混入D40未发布候选。
+
 ## 2026-10-23 — D40整体流畅度试验，候选未发布
 
 - 六候选筛选：无效写入跳过、直接alpha、组合查表无稳定收益；局部显示位图严格画面失败。05 classic单次扫描通过132项/组，但两轮24原生跑动射击窗未确立稳定整帧收益，保持D39正式安装。

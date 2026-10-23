@@ -1,0 +1,77 @@
+--- a/src/RealisticVisionMod.as
++++ b/src/RealisticVisionMod.as
+@@ -96,3 +96,3 @@
+       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
+-      private static const VERSION:String = "v0.33.6-long-frame";
++      private static const VERSION:String = "v0.33.7-boundary-performance";
+ 
+@@ -313,2 +313,3 @@
+       private var currentSight:BitmapData;
++      private var currentSightWritten:Rectangle;
+       private var currentSightData:Vector.<uint>;
+@@ -1055,2 +1056,3 @@
+          this.currentSightData = null;
++         this.currentSightWritten = null;
+          this.wallViewBounds = null; this.wallViewOwner = null;
+@@ -1869,2 +1871,3 @@
+             this.currentSight = new BitmapData(this.fogCache.width,this.fogCache.height,true,0);
++            this.currentSightWritten = null;
+          }
+@@ -1875,2 +1878,4 @@
+             var maskChanged:Boolean = false;
++            // Static native lighting can rewrite wall samples outside the view.
++            this.currentSightWritten = null;
+             for each(var wi:int in this.wallTiles)
+@@ -2001,3 +2006,8 @@
+          this.rayBatch = true;
+-         this.currentSight.fillRect(this.currentSight.rect,0);
++         // Every write in this pass lies in sceneBounds. Clear the previous
++         // write extent, including camera jumps; all other pixels remain zero.
++         // Room/allocation/static-wall changes invalidate the extent above.
++         this.currentSight.fillRect(this.currentSightWritten==null?this.currentSight.rect:this.currentSightWritten,0);
++         this.currentSightWritten=new Rectangle(FOG_PAD+sceneBounds.x*FOG_SUB,FOG_PAD+sceneBounds.y*FOG_SUB,
++            sceneBounds.width*FOG_SUB,sceneBounds.height*FOG_SUB);
+          try
+@@ -2822,4 +2832,9 @@
+          var tx:int,ty:int;
+-         for(ty=bounds.y;ty<bounds.bottom && !fresh;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
+-            if(!this.classicLogicTiles[tx+ty*this.spaceX]){fresh=true;break;}
++         var freshLeft:int=this.spaceX,freshTop:int=this.spaceY,freshRight:int=0,freshBottom:int=0;
++         for(ty=bounds.y;ty<bounds.bottom;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
++            if(!this.classicLogicTiles[tx+ty*this.spaceX]){
++               fresh=true;
++               if(tx<freshLeft)freshLeft=tx;if(ty<freshTop)freshTop=ty;
++               if(tx+1>freshRight)freshRight=tx+1;if(ty+1>freshBottom)freshBottom=ty+1;
++            }
+          if(fresh)
+@@ -2828,5 +2843,5 @@
+             // without changing the samples, support gutter, or queried sight.
+-            var bx:int=Math.max(0,int(bounds.x/4)*4),by:int=Math.max(0,int(bounds.y/4)*4);
+-            var br:int=Math.min(this.spaceX,Math.ceil(bounds.right/4)*4);
+-            var bb:int=Math.min(this.spaceY,Math.ceil(bounds.bottom/4)*4);
++            var bx:int=Math.max(0,int(freshLeft/4)*4),by:int=Math.max(0,int(freshTop/4)*4);
++            var br:int=Math.min(this.spaceX,Math.ceil(freshRight/4)*4);
++            var bb:int=Math.min(this.spaceY,Math.ceil(freshBottom/4)*4);
+             bounds=new Rectangle(bx,by,br-bx,bb-by);
+@@ -2875,4 +2890,6 @@
+             }
+-         }
+-         this.fogCache.copyPixels(this.classicLogicCache,region,new Point(region.x,region.y));
++            // Only the newly materialized rectangle needs publishing. Every
++            // previously valid tile was already copied in this field generation.
++            this.fogCache.copyPixels(this.classicLogicCache,region,new Point(region.x,region.y));
++         }
+       }
+@@ -3290,2 +3307,7 @@
+          // 前一个敌人的填充）——每次新建，成本可忽略（仅 FOV 变化时调用）
++         // Bitmap fill keeps the raster reference. Updating its pixels does not
++         // change the fill geometry; retain body/bar/weapon shapes until the
++         // world rectangle or raster allocation changes.
++         if(rec.maskDrawBitmap !== bdb || rec.maskBounds != sig)
++         {
+          var g:flash.display.Graphics = s2.graphics;
+@@ -3299,2 +3321,4 @@
+          rec.maskRevision = int(rec.maskRevision)+1;
++            rec.maskDrawBitmap=bdb;
++         }
+          if(previousInput == null || previousInput.width != bd.width || previousInput.height != bd.height)

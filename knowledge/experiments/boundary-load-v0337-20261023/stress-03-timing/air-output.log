@@ -1,0 +1,57 @@
+ModLoader[boot_start] v2 run=run_1792743555393_19668
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+555 Интерфейс
+1193 Game init
+849 Персонаж
+0 Местность
+734 Создание местности
+false
+374 Вход в местность
+1104 Создание местности
+false
+40 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"speed":36,"bright":false,"dense":false,"dim":0.35,"count":0,"mode":"classic"} size=192x75 units=0
+FRAME RESULT 0 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 1 {"speed":36,"bright":false,"dense":true,"dim":0.35,"count":24,"mode":"classic"} size=192x75 units=24
+FRAME RESULT 1 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 2 {"speed":0,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"classic"} size=192x75 units=96
+FRAME RESULT 2 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 3 {"speed":4,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"classic"} size=192x75 units=96
+FRAME RESULT 3 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 4 {"speed":36,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"classic"} size=192x75 units=96
+FRAME RESULT 4 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 5 {"speed":36,"bright":false,"dense":false,"dim":0.35,"count":0,"mode":"current"} size=192x75 units=0
+FRAME RESULT 5 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 6 {"speed":36,"bright":false,"dense":true,"dim":0.35,"count":24,"mode":"current"} size=192x75 units=24
+FRAME RESULT 6 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 7 {"speed":0,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"current"} size=192x75 units=96
+FRAME RESULT 7 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 8 {"speed":4,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"current"} size=192x75 units=96
+FRAME RESULT 8 {"counts":[],"helper":[],"stages":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 9 {"speed":36,"bright":false,"dense":true,"dim":0.35,"count":96,"mode":"current"} size=192x75 units=96
+FRAME RESULT 9 {"counts":[],"helper":[],"stages":[]}
+FRAME COMPLETE

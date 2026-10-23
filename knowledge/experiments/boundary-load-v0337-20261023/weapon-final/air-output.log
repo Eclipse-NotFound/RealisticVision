@@ -1,0 +1,101 @@
+ModLoader[boot_start] v2 run=run_1792744659012_287905
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_CombatVisibilityProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-830d27590b924190b1988d49ecba1234
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_CombatVisibilityProbeMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_TDFCMod] init
+668 Интерфейс
+1194 Game init
+1028 Персонаж
+0 Местность
+788 Создание местности
+false
+412 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+817 Создание местности
+401 Вход в местность
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS baseline current pixel reproduction 0
+PASS baseline current pixel reproduction 1
+PASS baseline current pixel reproduction 2
+PASS baseline current pixel reproduction 3
+PASS baseline current pixel reproduction 4
+PASS baseline current pixel reproduction 5
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS candidate current pixel reproduction 0
+PASS current independent mask 0
+PASS candidate current pixel reproduction 1
+PASS current independent mask 1
+PASS candidate current pixel reproduction 2
+PASS current independent mask 2
+PASS candidate current pixel reproduction 3
+PASS current independent mask 3
+PASS candidate current pixel reproduction 4
+PASS current independent mask 4
+PASS candidate current pixel reproduction 5
+PASS current independent mask 5
+PASS current hidden native child
+PASS current restored visible child
+PASS current attached again
+PASS current rebuilt visual mask
+PASS current switch off restores
+PASS current native hidden preserved
+PASS current dead weapon stays hidden
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS current room reset restores weapon
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS baseline classic pixel reproduction 0
+PASS baseline classic pixel reproduction 1
+PASS baseline classic pixel reproduction 2
+PASS baseline classic pixel reproduction 3
+PASS baseline classic pixel reproduction 4
+PASS baseline classic pixel reproduction 5
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS candidate classic pixel reproduction 0
+PASS classic independent mask 0
+PASS candidate classic pixel reproduction 1
+PASS classic independent mask 1
+PASS candidate classic pixel reproduction 2
+PASS classic independent mask 2
+PASS candidate classic pixel reproduction 3
+PASS classic independent mask 3
+PASS candidate classic pixel reproduction 4
+PASS classic independent mask 4
+PASS candidate classic pixel reproduction 5
+PASS classic independent mask 5
+PASS classic hidden native child
+PASS classic restored visible child
+PASS classic attached again
+PASS classic rebuilt visual mask
+PASS classic switch off restores
+PASS classic native hidden preserved
+PASS classic dead weapon stays hidden
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS classic room reset restores weapon
+D36 WEAPON {"rows":[{"bodyVisible":true,"frame":0,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":1,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":2,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":3,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":4,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":5,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":0,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":1,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":2,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":3,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":4,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":5,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"current","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":0,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":1,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":2,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":3,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":4,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":5,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":false,"weaponVisible":true,"variant":"baseline","state":2,"pixels":806,"weaponMask":false},{"bodyVisible":true,"frame":0,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":1,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":2,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":3,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":4,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true},{"bodyVisible":true,"frame":5,"bodyMask":true,"sameMask":false,"bodyCache":true,"mode":"classic","weaponCache":true,"weaponVisible":true,"variant":"candidate","state":2,"pixels":0,"weaponMask":true}],"checks":[{"label":"baseline current pixel reproduction 0","pass":true},{"label":"baseline current pixel reproduction 1","pass":true},{"label":"baseline current pixel reproduction 2","pass":true},{"label":"baseline current pixel reproduction 3","pass":true},{"label":"baseline current pixel reproduction 4","pass":true},{"label":"baseline current pixel reproduction 5","pass":true},{"label":"candidate current pixel reproduction 0","pass":true},{"label":"current independent mask 0","pass":true},{"label":"candidate current pixel reproduction 1","pass":true},{"label":"current independent mask 1","pass":true},{"label":"candidate current pixel reproduction 2","pass":true},{"label":"current independent mask 2","pass":true},{"label":"candidate current pixel reproduction 3","pass":true},{"label":"current independent mask 3","pass":true},{"label":"candidate current pixel reproduction 4","pass":true},{"label":"current independent mask 4","pass":true},{"label":"candidate current pixel reproduction 5","pass":true},{"label":"current independent mask 5","pass":true},{"label":"current hidden native child","pass":true},{"label":"current restored visible child","pass":true},{"label":"current attached again","pass":true},{"label":"current rebuilt visual mask","pass":true},{"label":"current switch off restores","pass":true},{"label":"current native hidden preserved","pass":true},{"label":"current dead weapon stays hidden","pass":true},{"label":"current room reset restores weapon","pass":true},{"label":"baseline classic pixel reproduction 0","pass":true},{"label":"baseline classic pixel reproduction 1","pass":true},{"label":"baseline classic pixel reproduction 2","pass":true},{"label":"baseline classic pixel reproduction 3","pass":true},{"label":"baseline classic pixel reproduction 4","pass":true},{"label":"baseline classic pixel reproduction 5","pass":true},{"label":"candidate classic pixel reproduction 0","pass":true},{"label":"classic independent mask 0","pass":true},{"label":"candidate classic pixel reproduction 1","pass":true},{"label":"classic independent mask 1","pass":true},{"label":"candidate classic pixel reproduction 2","pass":true},{"label":"classic independent mask 2","pass":true},{"label":"candidate classic pixel reproduction 3","pass":true},{"label":"classic independent mask 3","pass":true},{"label":"candidate classic pixel reproduction 4","pass":true},{"label":"classic independent mask 4","pass":true},{"label":"candidate classic pixel reproduction 5","pass":true},{"label":"classic independent mask 5","pass":true},{"label":"classic hidden native child","pass":true},{"label":"classic restored visible child","pass":true},{"label":"classic attached again","pass":true},{"label":"classic rebuilt visual mask","pass":true},{"label":"classic switch off restores","pass":true},{"label":"classic native hidden preserved","pass":true},{"label":"classic dead weapon stays hidden","pass":true},{"label":"classic room reset restores weapon","pass":true}],"cases":[],"weapon":{"id":"smg10","inChain":false,"bodyParent":"[object Sprite]","weaponParent":"[object Sprite]"}}
+FRAME COMPLETE

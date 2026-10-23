@@ -94,7 +94,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.6-long-frame";
+      private static const VERSION:String = "v0.33.7-boundary-performance";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -312,6 +312,7 @@ package
       private var wallGeometryDirty:Boolean = true;
       // 柔化前的单位可见性；提高记忆区亮度也不能使敌人显形。
       private var currentSight:BitmapData;
+      private var currentSightWritten:Rectangle;
       private var currentSightData:Vector.<uint>;
 
       // FOV 门控
@@ -1054,6 +1055,7 @@ package
          this.rayLoc = null;
          this.rayBatch = false;
          this.currentSightData = null;
+         this.currentSightWritten = null;
          this.wallViewBounds = null; this.wallViewOwner = null;
          this.classifiedSight = null; this.sightClasses = null;
          this.wallGeometryDirty = true;
@@ -1765,12 +1767,15 @@ package
          {
             if(this.currentSight != null) this.currentSight.dispose();
             this.currentSight = new BitmapData(this.fogCache.width,this.fogCache.height,true,0);
+            this.currentSightWritten = null;
          }
          var wallChanged:Boolean = this.refreshWallField(loc,this.wallGeometryDirty);
          this.wallGeometryDirty = false;
          if(wallChanged && !needFov)
          {
             var maskChanged:Boolean = false;
+            // Static native lighting can rewrite wall samples outside the view.
+            this.currentSightWritten = null;
             for each(var wi:int in this.wallTiles)
             {
                if(this.fillWallTile(wi % this.spaceX,int(wi / this.spaceX),true)) maskChanged = true;
@@ -1897,7 +1902,12 @@ package
       {
          var sceneBounds:Rectangle = this.scenePaintBounds();
          this.rayBatch = true;
-         this.currentSight.fillRect(this.currentSight.rect,0);
+         // Every write in this pass lies in sceneBounds. Clear the previous
+         // write extent, including camera jumps; all other pixels remain zero.
+         // Room/allocation/static-wall changes invalidate the extent above.
+         this.currentSight.fillRect(this.currentSightWritten==null?this.currentSight.rect:this.currentSightWritten,0);
+         this.currentSightWritten=new Rectangle(FOG_PAD+sceneBounds.x*FOG_SUB,FOG_PAD+sceneBounds.y*FOG_SUB,
+            sceneBounds.width*FOG_SUB,sceneBounds.height*FOG_SUB);
          try
          {
             var dimF:Number = this.cfgDim;
@@ -2712,15 +2722,20 @@ package
          var region:Rectangle=new Rectangle(FOG_PAD+bounds.x*FOG_SUB,FOG_PAD+bounds.y*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
          var fresh:Boolean=false;
          var tx:int,ty:int;
-         for(ty=bounds.y;ty<bounds.bottom && !fresh;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
-            if(!this.classicLogicTiles[tx+ty*this.spaceX]){fresh=true;break;}
+         var freshLeft:int=this.spaceX,freshTop:int=this.spaceY,freshRight:int=0,freshBottom:int=0;
+         for(ty=bounds.y;ty<bounds.bottom;ty++) for(tx=bounds.x;tx<bounds.right;tx++)
+            if(!this.classicLogicTiles[tx+ty*this.spaceX]){
+               fresh=true;
+               if(tx<freshLeft)freshLeft=tx;if(ty<freshTop)freshTop=ty;
+               if(tx+1>freshRight)freshRight=tx+1;if(ty+1>freshBottom)freshBottom=ty+1;
+            }
          if(fresh)
          {
             // Adjacent masks share canonical samples. Batch a small tile block
             // without changing the samples, support gutter, or queried sight.
-            var bx:int=Math.max(0,int(bounds.x/4)*4),by:int=Math.max(0,int(bounds.y/4)*4);
-            var br:int=Math.min(this.spaceX,Math.ceil(bounds.right/4)*4);
-            var bb:int=Math.min(this.spaceY,Math.ceil(bounds.bottom/4)*4);
+            var bx:int=Math.max(0,int(freshLeft/4)*4),by:int=Math.max(0,int(freshTop/4)*4);
+            var br:int=Math.min(this.spaceX,Math.ceil(freshRight/4)*4);
+            var bb:int=Math.min(this.spaceY,Math.ceil(freshBottom/4)*4);
             bounds=new Rectangle(bx,by,br-bx,bb-by);
             region=new Rectangle(FOG_PAD+bx*FOG_SUB,FOG_PAD+by*FOG_SUB,bounds.width*FOG_SUB,bounds.height*FOG_SUB);
             var raw:BitmapData=this.fogRaw,bmp:BitmapData=this.fogBmp,cache:BitmapData=this.fogCache;
@@ -2765,8 +2780,10 @@ package
                this.fogRaw=raw;this.fogBmp=bmp;this.fogCache=cache;
                this.classicVisibilityField=visibility;this.classicCornerDeltas=deltas;
             }
+            // Only the newly materialized rectangle needs publishing. Every
+            // previously valid tile was already copied in this field generation.
+            this.fogCache.copyPixels(this.classicLogicCache,region,new Point(region.x,region.y));
          }
-         this.fogCache.copyPixels(this.classicLogicCache,region,new Point(region.x,region.y));
       }
 
       private function releaseClassicLogic():void
@@ -3181,6 +3198,11 @@ package
          // 位图填充绘制进矢量 Shape（smoothing → 双线性放大），alpha 渐变即软边
          // 注：beginBitmapFill 的 matrix 不跨调用复用（可能持引用，复用会串改
          // 前一个敌人的填充）——每次新建，成本可忽略（仅 FOV 变化时调用）
+         // Bitmap fill keeps the raster reference. Updating its pixels does not
+         // change the fill geometry; retain body/bar/weapon shapes until the
+         // world rectangle or raster allocation changes.
+         if(rec.maskDrawBitmap !== bdb || rec.maskBounds != sig)
+         {
          var g:flash.display.Graphics = s2.graphics;
          g.clear();
          var m:Matrix = new Matrix(cs,0,0,cs,x0 * Tile.tileX,y0 * Tile.tileY);
@@ -3190,6 +3212,8 @@ package
          s3.graphics.clear();
          s3.graphics.copyFrom(g);
          rec.maskRevision = int(rec.maskRevision)+1;
+            rec.maskDrawBitmap=bdb;
+         }
          if(previousInput == null || previousInput.width != bd.width || previousInput.height != bd.height)
          {
             if(previousInput != null) previousInput.dispose();

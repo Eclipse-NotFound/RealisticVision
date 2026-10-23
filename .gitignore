@@ -58,4 +58,6 @@ build/backups/before-followup-performance-*/
 build/backups/before-native-performance-*/
 build/backups/before-combat-visibility-*/
 build/overall-flow-output/
+build/boundary-load-output/
+build/backups/before-boundary-performance-*/
 build/backups/before-overall-flow-*/

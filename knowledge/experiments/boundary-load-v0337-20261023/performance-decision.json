@@ -1,0 +1,6 @@
+{
+  "accepted": true,
+  "performance_sha256": "64d7b03cc0277ea2382ebd552359a05713c1c417e41ec8e3925efad66de76eff",
+  "reason": "Classic dense moving masks improve in profiled and unprofiled pairs; native classic mean/P95 improve. Current same-input updates improve modestly; full-frame mean +1.26%, P95 unchanged, maximum lower: treated as essentially unchanged, not a proven whole-frame improvement.",
+  "limits": "All tail latency is not solved. Native NPC/world evolution is nondeterministic; no FPS conversion from local replay. Both modes remain slower than RV-off in this fixture. Functional and deployment gates still required."
+}

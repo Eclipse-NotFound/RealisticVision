@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-23 **D41 v0.33.7已部署**：复用身体/血条/武器遮罩图形，classic仅补算未缓存视野区，current局部清理并保留静止墙光失效。747项/组、12原生战斗窗与正式init/注册/tick1/181/361通过。准确包6dbbae60eb09…（44604B），生产源build/boundary-load-output/production/src。密集移动更新classic约11%下降、current约3%–4%；完整帧classic60.2→57.2ms，current基本持平54.7→55.3ms，未达原版，长帧未全解。[报告](../knowledge/experiments/2026-10-23-boundary-load.md)。
+
 > 2026-10-23 **D40整体性能试验完成，未发布**：六候选中05 classic合并逐格扫描通过96组严格图像与36设置；局部CPU略降，24原生跑动射击窗整体收益未稳定。正式仍D39 83D8…205C7E65，src/release未改。847ms长帧中RV22ms；另有内存下降相关峰值，根因未完全定位。外部高频监测证据标无效性能验收。[报告](../knowledge/experiments/2026-10-23-overall-flow.md)；候选/数据build/overall-flow-output，勿据功能通过自动部署。
 
 > 2026-10-22 **D39 v0.33.6已部署**：定位镜头跨墙面缓存边界的集中重建；复用重叠世界区域轮廓、预计算精确采样模板并保留异常失效。414项/组、96组严格图像及完整组合12窗通过；准确包83d8e590…205c7e65（44427B），正式init/注册/tick1/181/361通过。仍有非RV长更新的长帧，不声称全部卡顿消除；[报告](../knowledge/experiments/2026-10-22-long-frame-triggers.md)。生产源build/long-frame-output/production/src，无authority；D38备份见部署回执。
@@ -84,7 +86,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D39 v0.33.6；镜头跨墙面缓存边界复用、采样模板优化。准确源build/long-frame-output/production/src；不从含authority的HEAD整包部署。
+- 当前安装D41 v0.33.7；保留D39墙面缓存优化，新增遮罩图形复用、classic未缓存区补算、current局部视野清理。准确源build/boundary-load-output/production/src；不从含authority的HEAD整包部署。仍有长帧，current整体流畅度尚未明显改善。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。

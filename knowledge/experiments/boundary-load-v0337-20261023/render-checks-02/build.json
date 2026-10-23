@@ -1,0 +1,12 @@
+{
+  "swf": "5cb20b78a7ea21e923bc69604b9e0576bb21738d986facfb0887ad1d09ff6d84",
+  "sources": {
+    "BaselineVision.as": "3975e727172eb3c96f0199b99bb9fd8f61f5bf2b43d602c8c458de0527c56130",
+    "RealisticVisionMod.as": "0bf8ddafecbd833fcf94b405e6bf25bc191b54efa2d6f16224f89879e1ce3779",
+    "RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+    "RVKeybinds.as": "9ba3169ef9af6ea2d223653c51613f61ffa4614d5863f1659fd17358069dc144",
+    "RVWallSurface.as": "f833fa4bdc8912a25de098eed20072eb85bf3ae119ff546d7a037ea4414d2eb7",
+    "modlocales\\vision\\RVLocale.as": "bc8a966f883f8afba3cadc1c18ba5a5e59bea8e9b03f14cb4cce78fc98752a3f",
+    "modlocales\\vision\\RVLocaleMessages.as": "b0e16965e21f6c3182b1339a15a07d828c1300c4fde063333319084c61541339"
+  }
+}
