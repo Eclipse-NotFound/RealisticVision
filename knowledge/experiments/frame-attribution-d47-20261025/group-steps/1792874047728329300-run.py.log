@@ -1,0 +1,7 @@
+D47 START 0 {"n":6,"mode":"current","variant":"normal"}
+D47 END 0 normal shots=174 bullets=10
+D47 START 1 {"n":6,"mode":"classic","variant":"normal"}
+D47 END 1 normal shots=174 bullets=11
+D47 COMPLETE
+{"n": 6, "mode": "current", "variant": "normal", "pairedFrames": 89, "mean": 54.91, "p95": 70, "max": 110, ">100": 1, "rv": 11.92, "masks": 194, "bullets": 10, "particles": 99, "units": 20, "objects": 133, "retained": {"previousPixels": 1632960, "worldPass": 210, "emptyVisuals": 34, "softPixels": 1632960, "visuals": 60, "rasters": 860, "rawPixels": 1870080, "extraEmptyVisuals": 27}}
+{"n": 6, "mode": "classic", "variant": "normal", "pairedFrames": 89, "mean": 58.81, "p95": 84, "max": 137, ">100": 1, "rv": 12.91, "masks": 184, "bullets": 11, "particles": 107, "units": 20, "objects": 142, "retained": {"previousPixels": 1719488, "worldPass": 210, "emptyVisuals": 19, "softPixels": 1719488, "visuals": 73, "rasters": 902, "rawPixels": 1962688, "extraEmptyVisuals": 17}}

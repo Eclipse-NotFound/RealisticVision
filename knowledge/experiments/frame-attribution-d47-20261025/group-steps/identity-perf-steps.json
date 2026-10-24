@@ -1,0 +1,26 @@
+[
+  {
+    "args": [
+      "perf.py",
+      "build",
+      "identity-combat-01",
+      "--full",
+      "--candidate",
+      "identity",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792874756127419400-perf.py.log"
+  },
+  {
+    "args": [
+      "perf.py",
+      "run",
+      "identity-combat-01"
+    ],
+    "log": "group-steps\\1792874764687401100-perf.py.log"
+  }
+]

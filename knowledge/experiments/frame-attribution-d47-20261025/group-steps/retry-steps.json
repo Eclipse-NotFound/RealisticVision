@@ -1,0 +1,24 @@
+[
+  {
+    "args": [
+      "run.py",
+      "build",
+      "native-timing-02",
+      "--full",
+      "--controlled",
+      "--frames",
+      "180",
+      "--warmup",
+      "120"
+    ],
+    "log": "group-steps\\1792873579248630700-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "native-timing-02"
+    ],
+    "log": "group-steps\\1792873586120587400-run.py.log"
+  }
+]

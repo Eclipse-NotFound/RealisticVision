@@ -1,0 +1,10 @@
+{
+  "host": "a796827173af7d6fab9885fb66ecc62182ab5335918a30c7cce4c44914a238b7",
+  "mainFE": "26eb8cc4052d513acf32ab0f1bebe5918bcaea2935adec2ea150c82e3551026b",
+  "mainMenu": "277eb7199768a9c8a4cc38cc5e257850107e6dce7db33e6f3fa438d424f50956",
+  "verified": [
+    "native mainMenu created before manifest loading",
+    "native stage mainStep listener default priority zero"
+  ],
+  "scope": "Specific host only; serial and world-step runtime checks are in native-timing-02"
+}

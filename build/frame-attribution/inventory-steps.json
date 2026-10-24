@@ -1,0 +1,5 @@
+[
+  ["order.py"],
+  ["run.py", "build", "cache-inventory-01", "--full", "--controlled", "--inventory", "--frames", "90", "--warmup", "120"],
+  ["run.py", "run", "cache-inventory-01"]
+]

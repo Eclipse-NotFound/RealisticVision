@@ -1,0 +1,31 @@
+[
+  {
+    "args": [
+      "order.py"
+    ],
+    "log": "group-steps\\1792874038047021000-order.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "cache-inventory-01",
+      "--full",
+      "--controlled",
+      "--inventory",
+      "--frames",
+      "90",
+      "--warmup",
+      "120"
+    ],
+    "log": "group-steps\\1792874041135715100-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "cache-inventory-01"
+    ],
+    "log": "group-steps\\1792874047728329300-run.py.log"
+  }
+]

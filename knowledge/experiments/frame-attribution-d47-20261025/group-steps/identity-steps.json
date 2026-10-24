@@ -1,0 +1,38 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "identity-pixels-01",
+      "--candidate",
+      "identity"
+    ],
+    "log": "group-steps\\1792874451967283500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "identity-pixels-01"
+    ],
+    "log": "group-steps\\1792874454273200500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "identity-native-01",
+      "--candidate",
+      "identity"
+    ],
+    "log": "group-steps\\1792874510235133300-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "identity-native-01"
+    ],
+    "log": "group-steps\\1792874518930674300-validate.py.log"
+  }
+]

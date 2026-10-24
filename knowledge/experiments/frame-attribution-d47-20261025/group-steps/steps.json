@@ -1,0 +1,28 @@
+[
+  {
+    "args": [
+      "assets.py"
+    ],
+    "log": "group-steps\\1792873357855439400-assets.py.log"
+  },
+  {
+    "args": [
+      "source.py"
+    ],
+    "log": "group-steps\\1792873360276438300-source.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "native-timing-01",
+      "--full",
+      "--controlled",
+      "--frames",
+      "180",
+      "--warmup",
+      "120"
+    ],
+    "log": "group-steps\\1792873363642107200-run.py.log"
+  }
+]

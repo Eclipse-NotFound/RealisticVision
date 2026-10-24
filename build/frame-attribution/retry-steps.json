@@ -1,0 +1,4 @@
+[
+  ["run.py", "build", "native-timing-02", "--full", "--controlled", "--frames", "180", "--warmup", "120"],
+  ["run.py", "run", "native-timing-02"]
+]

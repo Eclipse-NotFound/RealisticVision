@@ -1,0 +1,26 @@
+[
+  [
+    "validate.py",
+    "dense-build",
+    "identity-pixels-01",
+    "--candidate",
+    "identity"
+  ],
+  [
+    "validate.py",
+    "dense-run",
+    "identity-pixels-01"
+  ],
+  [
+    "validate.py",
+    "native-build",
+    "identity-native-01",
+    "--candidate",
+    "identity"
+  ],
+  [
+    "validate.py",
+    "native-run",
+    "identity-native-01"
+  ]
+]

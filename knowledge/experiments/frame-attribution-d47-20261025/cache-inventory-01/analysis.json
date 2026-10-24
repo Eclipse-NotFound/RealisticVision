@@ -1,0 +1,64 @@
+{
+  "verified": true,
+  "windows": [
+    {
+      "mode": "current",
+      "stats": {
+        "hiddenVisuals": {
+          "n": 90,
+          "mean": 15.177777777777777,
+          "p95": 35,
+          "max": 41,
+          ">100": 0,
+          ">200": 0
+        },
+        "hiddenForcedCache": {
+          "n": 90,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0,
+          ">200": 0
+        },
+        "hiddenPlainCache": {
+          "n": 90,
+          "mean": 0.7444444444444445,
+          "p95": 2,
+          "max": 4,
+          ">100": 0,
+          ">200": 0
+        }
+      }
+    },
+    {
+      "mode": "classic",
+      "stats": {
+        "hiddenVisuals": {
+          "n": 90,
+          "mean": 3.3333333333333335,
+          "p95": 12,
+          "max": 19,
+          ">100": 0,
+          ">200": 0
+        },
+        "hiddenForcedCache": {
+          "n": 90,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0,
+          ">200": 0
+        },
+        "hiddenPlainCache": {
+          "n": 90,
+          "mean": 0.1,
+          "p95": 1,
+          "max": 2,
+          ">100": 0,
+          ">200": 0
+        }
+      }
+    }
+  ],
+  "limitations": "Counts only originally cached (record.cache===true) hidden world visuals; not every filtered object. Inventory overhead means this is not a performance comparison."
+}

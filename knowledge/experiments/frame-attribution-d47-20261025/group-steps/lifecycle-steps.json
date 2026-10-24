@@ -1,0 +1,18 @@
+[
+  {
+    "args": [
+      "lifecycle.py",
+      "build",
+      "identity-lifecycle-01"
+    ],
+    "log": "group-steps\\1792875088122061100-lifecycle.py.log"
+  },
+  {
+    "args": [
+      "lifecycle.py",
+      "run",
+      "identity-lifecycle-01"
+    ],
+    "log": "group-steps\\1792875090067120300-lifecycle.py.log"
+  }
+]

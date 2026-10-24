@@ -1,0 +1,24 @@
+[
+  [
+    "assets.py"
+  ],
+  [
+    "source.py"
+  ],
+  [
+    "run.py",
+    "build",
+    "native-timing-01",
+    "--full",
+    "--controlled",
+    "--frames",
+    "180",
+    "--warmup",
+    "120"
+  ],
+  [
+    "run.py",
+    "run",
+    "native-timing-01"
+  ]
+]

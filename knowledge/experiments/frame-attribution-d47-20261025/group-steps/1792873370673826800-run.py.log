@@ -1,0 +1,16 @@
+D47 START 0 {"variant":"off","n":0,"mode":"current"}
+FAIL ReferenceError: Error #1069 ReferenceError: Error #1069
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\frame-attribution\group.py", line 28, in main
+    with log.open('w',encoding='utf-8') as out,contextlib.redirect_stdout(out),contextlib.redirect_stderr(out):runpy.run_path(str(HERE/args[0]),run_name='__main__')
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\frame-attribution\run.py", line 83, in <module>
+    elif x.action=='run':run(x.name)
+                         ^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\frame-attribution\run.py", line 71, in run
+    assert code==0 and 'D47 COMPLETE' in log and 'FAIL ' not in log
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

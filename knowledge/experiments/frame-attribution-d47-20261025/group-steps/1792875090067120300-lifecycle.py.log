@@ -1,0 +1,133 @@
+8 lDist2=2500 mode=current
+
+PASS identity positive current/false
+
+PASS identity retains raster cache
+
+PASS restore original cache preference
+
+PASS identity reentry
+
+PASS new root filter restores mask
+
+PASS remove root filter returns identity
+
+PASS nested filter retains mask
+
+PASS identity after child removal
+
+PASS whole cell fully lit releases identity
+
+PASS identity after field change
+
+PASS dark reentry attaches mask
+
+PASS dark to identity removes mask
+
+PASS third party mask and cache retained
+
+PASS identity after third party releases
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+PASS room reset restores identity
+
+PASS identity positive current/true
+
+PASS identity retains raster cache
+
+PASS restore original cache preference
+
+PASS identity reentry
+
+PASS new root filter restores mask
+
+PASS remove root filter returns identity
+
+PASS nested filter retains mask
+
+PASS identity after child removal
+
+PASS whole cell fully lit releases identity
+
+PASS identity after field change
+
+PASS dark reentry attaches mask
+
+PASS dark to identity removes mask
+
+PASS third party mask and cache retained
+
+PASS identity after third party releases
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+PASS room reset restores identity
+
+PASS identity positive classic/false
+
+PASS identity retains raster cache
+
+PASS restore original cache preference
+
+PASS identity reentry
+
+PASS new root filter restores mask
+
+PASS remove root filter returns identity
+
+PASS nested filter retains mask
+
+PASS identity after child removal
+
+PASS whole cell fully lit releases identity
+
+PASS identity after field change
+
+PASS dark reentry attaches mask
+
+PASS dark to identity removes mask
+
+PASS third party mask and cache retained
+
+PASS identity after third party releases
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+PASS room reset restores identity
+
+PASS identity positive classic/true
+
+PASS identity retains raster cache
+
+PASS restore original cache preference
+
+PASS identity reentry
+
+PASS new root filter restores mask
+
+PASS remove root filter returns identity
+
+PASS nested filter retains mask
+
+PASS identity after child removal
+
+PASS whole cell fully lit releases identity
+
+PASS identity after field change
+
+PASS dark reentry attaches mask
+
+PASS dark to identity removes mask
+
+PASS third party mask and cache retained
+
+PASS identity after third party releases
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+
+PASS room reset restores identity
+
+LIFECYCLE COMPLETE passed=60
+
+
