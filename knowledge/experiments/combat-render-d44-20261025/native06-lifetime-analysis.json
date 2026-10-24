@@ -1,0 +1,83 @@
+{
+  "scope": "D43 native-06 only; not a new game test or proof of overall cause",
+  "method": "fresh instance starts worldPass=0; at most one increment per update; all 150 updates precede first possible stale-raster disposal at pass 180",
+  "firstPossiblePeriodicDisposalPass": 180,
+  "cases": [
+    {
+      "case": 2,
+      "mode": "current",
+      "timedFrames": 119,
+      "maxInvocations": 150,
+      "possiblePeriodicDisposals": 0,
+      "longest": {
+        "age": 81,
+        "nextInterval": 145,
+        "rv": 6,
+        "outsideRV": 139,
+        "objects": 485,
+        "projectiles": 1,
+        "viewChanged": false
+      }
+    },
+    {
+      "case": 3,
+      "mode": "current",
+      "timedFrames": 119,
+      "maxInvocations": 150,
+      "possiblePeriodicDisposals": 0,
+      "longest": {
+        "age": 54,
+        "nextInterval": 218,
+        "rv": 7,
+        "outsideRV": 211,
+        "objects": 457,
+        "projectiles": 0,
+        "viewChanged": false
+      }
+    },
+    {
+      "case": 8,
+      "mode": "classic",
+      "timedFrames": 119,
+      "maxInvocations": 150,
+      "possiblePeriodicDisposals": 0,
+      "longest": {
+        "age": 143,
+        "nextInterval": 134,
+        "rv": 18,
+        "outsideRV": 116,
+        "objects": 498,
+        "projectiles": 3,
+        "viewChanged": false
+      }
+    },
+    {
+      "case": 9,
+      "mode": "classic",
+      "timedFrames": 119,
+      "maxInvocations": 150,
+      "possiblePeriodicDisposals": 0,
+      "longest": {
+        "age": 92,
+        "nextInterval": 285,
+        "rv": 5,
+        "outsideRV": 280,
+        "objects": 484,
+        "projectiles": 6,
+        "viewChanged": false
+      }
+    }
+  ],
+  "limits": [
+    "Periodic dictionary scanning still occurs at passes 60/120.",
+    "Other BitmapData disposal/reallocation and GC remain possible.",
+    "outsideRV includes final Flash rendering; not proof of unrelated cost.",
+    "Longer-lived real play can reach cache eviction; it is not covered by these short windows."
+  ],
+  "inputs": {
+    "build/effect-load-v3-output/native-06/RecoveryFrameProbeMod.as": "e5519417561379e08bb96942907f8a0a9de3a629e497f8812bd83f992f2737a4",
+    "build/effect-load-v3-output/native-06/candidate-src/RealisticVisionMod.as": "925e6308e75b12c9151205f7491ec09eb32b75b1cd5208e79ee8849a3549536a",
+    "build/effect-load-v3-output/native-06/build.json": "609f98fa93b054b97727b2cd5732d0d2dbe47e52e6eef6da1588941f3980eddc",
+    "build/effect-load-v3-output/native-06/evidence/result.json": "47fc1e3637b790eb527d41ef8a6a851453765dd493d96963523827c48a2b973f"
+  }
+}

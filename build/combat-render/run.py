@@ -9,12 +9,13 @@ r=module('d44_runtime',MOD/'build/motion-performance/run.py')
 policy=module('d44_policy',MOD/'build/effect-load-v3/policy_capture.py')
 r.HiddenProcess=policy.wrap(r.HiddenProcess,True)
 BASE=MOD/'build/effect-load-v3-output/production-final/src'
-def build(name,full=False,large=False,frames=90):
+def build(name,full=False,large=False,frames=90,warmup=30):
+    assert 1<=frames<=600 and 0<=warmup<=600,'Bound the diagnostic duration'
     folder=OUT/name;assert not folder.exists(),'Use a fresh name'
     folder.mkdir(parents=True)
     with r.Registration(owner='RealisticVision / D44 绘制归因构建',purpose=name,run_dir=folder,evidence=folder/'build.json',resource='offline') as rec:
         r.runtime(folder)
-        s=(HERE/'CombatRenderProbeMod.as').read_text(encoding='utf-8').replace('SAMPLE_COUNT=90','SAMPLE_COUNT='+str(frames)).replace('LARGE=false','LARGE='+str(large).lower())
+        s=(HERE/'CombatRenderProbeMod.as').read_text(encoding='utf-8').replace('SAMPLE_COUNT=90','SAMPLE_COUNT='+str(frames)).replace('WARMUP_COUNT=30','WARMUP_COUNT='+str(warmup)).replace('LARGE=false','LARGE='+str(large).lower())
         (folder/'CombatRenderProbeMod.as').write_text(s,encoding='utf-8',newline='\n')
         r.runner.compile(folder/'CombatRenderProbeMod.as',folder/'mods/CombatRenderProbe/release/CombatRenderProbeMod.swf',[folder])
         r.public(BASE,folder/'rv-src')
@@ -30,7 +31,7 @@ def build(name,full=False,large=False,frames=90):
         (folder/'installed-inventory.json').write_text(scan.stdout,encoding='utf-8');assert scan.returncode==0
         scan=subprocess.run([str(GAME/'mods/ModLoader/RemainsModLauncher.exe'),'--root',str(folder),'--only',','.join(selected),'--no-ui','--report',str(folder/'selection.json')],capture_output=True,text=True,encoding='utf-8',timeout=60)
         (folder/'selection.log').write_text(scan.stdout+scan.stderr,encoding='utf-8');assert scan.returncode==0
-        r.save(folder/'build.json',{'baseline':'D43','installed':r.sha(MOD/'release/RealisticVisionMod.swf'),'full':full,'large':large,'selected':selected,'files':{str(p.relative_to(folder)):r.sha(p) for p in folder.rglob('*') if p.is_file() and p.suffix in ('.as','.swf','.xml','.txt')}})
+        r.save(folder/'build.json',{'baseline':'D43','installed':r.sha(MOD/'release/RealisticVisionMod.swf'),'full':full,'large':large,'samples':frames,'warmup':warmup,'selected':selected,'files':{str(p.relative_to(folder)):r.sha(p) for p in folder.rglob('*') if p.is_file() and p.suffix in ('.as','.swf','.xml','.txt')}})
         rec.outcome='passed';rec.note='隔离诊断构建；尚未运行'
 def run(name):
     assert not (OUT/'TESTS-PAUSED.json').exists(),'User paused game tests; resume only after explicit user steering'
@@ -45,7 +46,9 @@ def run(name):
         r.save(folder/'environment-start.json',env)
         assert not [p for p in env['processes'] if (p['name'] or '').lower() in ('adl64.exe','adl.exe')],'Other AIR active; no trial launched'
         assert env['available']>5*1024**3,'Less than 5 GiB available'
-        code,log=r.air(folder,'pfe.swf',rec,timeout=650)
+        build=json.loads((folder/'build.json').read_text())
+        timeout=max(650,120+42*(build.get('samples',90)+build.get('warmup',30))//10)
+        code,log=r.air(folder,'pfe.swf',rec,timeout=timeout)
         print('\n'.join(x[:700] for x in log.splitlines() if x.startswith(('D44','FAIL')))[-7000:],flush=True)
         assert code==0 and 'D44 COMPLETE' in log and 'FAIL ' not in log
         rec.outcome='passed';rec.note='归因窗口完成；诊断性显示差异，非生产验收'
@@ -53,10 +56,11 @@ def run(name):
 def report(name):
     d=json.loads((OUT/name/'evidence/result.json').read_text())
     for c in d['cases']:
-        a=sorted(c['intervals']);u=c['updates']
-        print(json.dumps({'n':c['crowd'],'mode':c['mode'],'variant':c['variant'],'mean':round(sum(a)/len(a),2),'p95':a[int(.95*(len(a)-1))],'max':a[-1],'>100':sum(x>100 for x in a),'rv':round(sum(u)/len(u),2),'masks':max(c['masks']),'bullets':c['maxProjectiles'],'units':c['units'],'objects':c['maxObjects']},ensure_ascii=False),flush=True)
+        frames=[f for f in c.get('frames',[]) if 'nextInterval' in f]
+        a=sorted(f['nextInterval'] for f in frames) if frames else sorted(c['intervals']);u=[f['rv'] for f in frames] if frames else c['updates']
+        print(json.dumps({'n':c['crowd'],'mode':c['mode'],'variant':c['variant'],'pairedFrames':len(frames),'mean':round(sum(a)/len(a),2),'p95':a[int(.95*(len(a)-1))],'max':a[-1],'>100':sum(x>100 for x in a),'rv':round(sum(u)/len(u),2),'masks':max(c['masks']),'bullets':c['maxProjectiles'],'particles':c.get('maxParticles'),'units':c['units'],'objects':c['maxObjects'],'retained':c.get('retained')},ensure_ascii=False),flush=True)
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('action',choices=['build','run','report']);a.add_argument('name');a.add_argument('--full',action='store_true');a.add_argument('--large',action='store_true');a.add_argument('--frames',type=int,default=90);x=a.parse_args()
-    if x.action=='build':build(x.name,x.full,x.large,x.frames)
+    a=argparse.ArgumentParser();a.add_argument('action',choices=['build','run','report']);a.add_argument('name');a.add_argument('--full',action='store_true');a.add_argument('--large',action='store_true');a.add_argument('--frames',type=int,default=90);a.add_argument('--warmup',type=int,default=30);x=a.parse_args()
+    if x.action=='build':build(x.name,x.full,x.large,x.frames,x.warmup)
     elif x.action=='run':run(x.name)
     else:report(x.name)

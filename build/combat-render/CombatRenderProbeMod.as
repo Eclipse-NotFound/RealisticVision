@@ -9,13 +9,14 @@ package {
  import flash.desktop.NativeApplication;
  public class CombatRenderProbeMod extends Sprite {
   private static const SAMPLE_COUNT=90;
+  private static const WARMUP_COUNT=30;
   private static const LARGE=false;
   private static var instance:CombatRenderProbeMod;
   public static function init(main:*):void {instance=new CombatRenderProbeMod(main);}
   private var host:*,wc:Class,rvClass:Class,loader:Loader=new Loader(),timer:Timer=new Timer(150);
   private var phase:int=0,ticks:int=0,settle:int=0,index:int=0,age:int=0,last:int=0;
   private var plan:Array=[],crowd:Array=[],restore:Array=[],row:Object,rv:*,floor:Number,low:Number,high:Number;
-  private var result:Object={cases:[],checks:[]},shots:Dictionary=new Dictionary(true);
+  private var result:Object={cases:[],checks:[]},shots:Dictionary=new Dictionary(true),previousFrame:Object=null,sceneLoc:*;
   public function CombatRenderProbeMod(main:* = null) {
    if(main==null)return;host=main;wc=host.loaderInfo.applicationDomain.getDefinition('fe.World') as Class;
    loader.contentLoaderInfo.addEventListener(Event.COMPLETE,function(e:Event):void {rvClass=loader.contentLoaderInfo.applicationDomain.getDefinition('RealisticVisionMod') as Class;});
@@ -56,7 +57,7 @@ package {
      w.black=true;w.loc.black=true;w.loc.base=false;w.godMode=true;w.gg.invulner=false;
      w.gg.setPos(low+80,floor-1);w.gg.setVisPos();w.ctr.clearAll();w.gg.ggControl=true;
      result.scene={large:LARGE,size:[w.loc.spaceX,w.loc.spaceY],nativeUnits:w.loc.units.length,platform:[low,high,floor],fps:host.stage.frameRate};
-     timer.stop();start(w);host.stage.addEventListener(Event.ENTER_FRAME,step,false,-10000);
+     sceneLoc=w.loc;timer.stop();start(w);host.stage.addEventListener(Event.ENTER_FRAME,step,false,-10000);
     }
    }catch(e:Error){fail(e);}
   }
@@ -72,7 +73,7 @@ package {
     u.putLoc(w.loc,low+210+crowd.length*55,floor-1);u.invulner=true;w.loc.addObj(u);w.loc.units.push(u);u.step();crowd.push(u);
    }
    rv=new rvClass();rv.cfgDim=.6;rv.cfgSoftCurrent=25;rv.cfgMode=p.mode;rv.cfgEnabled=p.variant!='off';rv.cfgWallBright=false;rv.mswRegistered=true;rv.cfgBaseRooms={};rv.resetRoom(w,w.loc);
-   age=0;last=0;row={crowd:p.n,mode:p.mode,variant:p.variant,intervals:[],updates:[],diagnosticMs:[],masks:[],memory:[],positions:[],units:w.loc.units.length,maxObjects:0,maxProjectiles:0,attacks:0};
+   age=0;last=0;previousFrame=null;row={crowd:p.n,mode:p.mode,variant:p.variant,warmup:WARMUP_COUNT,sampleFrames:SAMPLE_COUNT,intervals:[],updates:[],diagnosticMs:[],masks:[],memory:[],positions:[],frames:[],units:w.loc.units.length,maxObjects:0,maxProjectiles:0,maxParticles:0,attacks:0};
    trace('D44 START '+index+' '+JSON.stringify(p));
   }
   private function alter(v:DisplayObject,seen:Dictionary,owned:Dictionary):int {
@@ -85,8 +86,11 @@ package {
   private function step(e:Event):void {
    try {
     var w:*=wc['w'];if(w.verror&&w.verror.visible)throw new Error(w.verror.txt.text);
-    var now:int=getTimer();if(age>=30&&last)row.intervals.push(now-last);last=now;
+    if(w.loc!==sceneLoc||w.allStat!=1||w.mm.active)throw new Error('scene/menu/SATS changed during timing');
+    var now:int=getTimer();if(previousFrame)previousFrame.nextInterval=now-last;
+    if(age>=WARMUP_COUNT&&last)row.intervals.push(now-last);last=now;
     undo();w.ctr.clearAll();w.gg.ggControl=true;
+    var memStart:Number=System.totalMemory;
     var t:int=getTimer();rv.frameCount++;rv.onFrameInner();var ms:int=getTimer()-t;
     t=getTimer();var masks:int=0,seen:Dictionary=new Dictionary(true),owned:Dictionary=new Dictionary(true),kind:String=row.variant;
     if(kind=='nomask'){
@@ -99,10 +103,11 @@ package {
       for each(var child:* in unit.childObjs)if(child.vis)masks+=alter(child.vis,seen,owned);
      }
     }
-    var obj:*=w.loc.firstObj,count:int=0,projectiles:int=0;
+    var obj:*=w.loc.firstObj,count:int=0,projectiles:int=0,particles:int=0;
     while(obj&&count++<5000){
      var name:String=getQualifiedClassName(obj);
      if(name.indexOf('Bullet')>=0)projectiles++;
+     if(name=='fe.graph::Part')particles++;
      if(kind=='nomask'&&(name.indexOf('Bullet')>=0||name=='fe.graph::Part')&&obj.vis)masks+=alter(obj.vis,seen,owned);
      obj=obj.nobj;
     }
@@ -118,10 +123,22 @@ package {
      // not enemy-only cost, and needs the zero-enemy control to interpret.
      if(kind=='noobjects'){restore.push({v:layer,layer:true,visible:layer.visible});layer.visible=false;}
     }
-    if(age>=30){row.updates.push(ms);row.diagnosticMs.push(getTimer()-t);row.masks.push(masks);row.memory.push(System.totalMemory);row.positions.push([w.gg.X,w.gg.Y]);}
-    row.maxObjects=Math.max(count,row.maxObjects);row.maxProjectiles=Math.max(projectiles,row.maxProjectiles);
+    previousFrame={age:age,rv:ms,diagnosticMs:getTimer()-t,worldPass:rv.worldPass,objects:count,projectiles:projectiles,particles:particles,masks:masks,memoryBefore:memStart,memoryAfter:System.totalMemory};
+    if(age>=WARMUP_COUNT){row.updates.push(ms);row.diagnosticMs.push(previousFrame.diagnosticMs);row.masks.push(masks);row.memory.push(System.totalMemory);row.positions.push([w.gg.X,w.gg.Y]);row.frames.push(previousFrame);}
+    row.maxObjects=Math.max(count,row.maxObjects);row.maxProjectiles=Math.max(projectiles,row.maxProjectiles);row.maxParticles=Math.max(particles,row.maxParticles);
     for each(var fighter:* in crowd){fighter.setCel(w.gg);if(age%6==0)fighter.currentWeapon.attack();var weapon:*=fighter.currentWeapon;if(weapon.t_attack>int(shots[weapon]))row.attacks++;shots[weapon]=weapon.t_attack;}
-    if(++age<30+SAMPLE_COUNT)return;
+    if(++age<WARMUP_COUNT+SAMPLE_COUNT)return;
+    // Sample cache sizes outside the timed frame sequence. Pixel bytes exclude
+    // Flash's own render caches; never label this as total application memory.
+    var retained:Object={rasters:0,rawPixels:0,softPixels:0,previousPixels:0,visuals:0,worldPass:rv.worldPass};
+    for each(var raster:Object in rv.worldMasks){
+     retained.rasters++;
+     if(raster.m2d)retained.rawPixels+=BitmapData(raster.m2d).width*BitmapData(raster.m2d).height;
+     if(raster.m2e)retained.softPixels+=BitmapData(raster.m2e).width*BitmapData(raster.m2e).height;
+     if(raster.maskInput)retained.previousPixels+=BitmapData(raster.maskInput).width*BitmapData(raster.maskInput).height;
+    }
+    for(var visualKey:Object in rv.worldVisuals)retained.visuals++;
+    row.retained=retained;
     result.cases.push(row);save();trace('D44 END '+index+' '+row.variant+' shots='+row.attacks+' bullets='+row.maxProjectiles);
     if(++index<plan.length){start(w);return;}
     undo();host.stage.removeEventListener(Event.ENTER_FRAME,step);trace('D44 COMPLETE');NativeApplication.nativeApplication.exit(0);
