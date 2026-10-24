@@ -70,3 +70,4 @@ build/backups/before-effect-load-*/
 build/combat-render-output/
 build/backups/before-mask-binding-*/
 build/mask-area-output/
+build/mask-lifecycle-output/

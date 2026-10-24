@@ -1,0 +1,62 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "carry-pixels-01",
+      "--candidate",
+      "carry"
+    ],
+    "log": "group-steps\\1792872386718380400-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "carry-pixels-01"
+    ],
+    "log": "group-steps\\1792872389170694800-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "carry-native-01",
+      "--candidate",
+      "carry"
+    ],
+    "log": "group-steps\\1792872446914224400-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "carry-native-01"
+    ],
+    "log": "group-steps\\1792872455598193400-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "carry-controlled-01",
+      "--full",
+      "--controlled",
+      "--candidate",
+      "carry",
+      "--frames",
+      "180",
+      "--warmup",
+      "210"
+    ],
+    "log": "group-steps\\1792872486971334500-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "carry-controlled-01"
+    ],
+    "log": "group-steps\\1792872495921128300-run.py.log"
+  }
+]

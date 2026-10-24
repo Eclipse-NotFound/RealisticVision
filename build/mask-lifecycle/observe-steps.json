@@ -1,0 +1,18 @@
+[
+  [
+    "run.py",
+    "build",
+    "release-observe-01",
+    "--full",
+    "--controlled",
+    "--frames",
+    "540",
+    "--warmup",
+    "60"
+  ],
+  [
+    "run.py",
+    "run",
+    "release-observe-01"
+  ]
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "args": [
+      "run.py",
+      "build",
+      "release-observe-01",
+      "--full",
+      "--controlled",
+      "--frames",
+      "540",
+      "--warmup",
+      "60"
+    ],
+    "log": "group-steps\\1792871942602318200-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "release-observe-01"
+    ],
+    "log": "group-steps\\1792871949379527100-run.py.log"
+  }
+]
