@@ -1,0 +1,12 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "reference-pixels-01",
+      "--candidate",
+      "reference"
+    ],
+    "log": "group-steps\\1792876598008939900-validate.py.log"
+  }
+]

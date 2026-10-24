@@ -1,0 +1,62 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "shared-v2-pixels-01",
+      "--candidate",
+      "shared-v2"
+    ],
+    "log": "group-steps\\1792876996926060000-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "shared-v2-pixels-01"
+    ],
+    "log": "group-steps\\1792876999447728900-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "shared-v2-native-01",
+      "--candidate",
+      "shared-v2"
+    ],
+    "log": "group-steps\\1792877062872277600-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "shared-v2-native-01"
+    ],
+    "log": "group-steps\\1792877071800192100-validate.py.log"
+  },
+  {
+    "args": [
+      "perf.py",
+      "build",
+      "shared-v2-combat-01",
+      "--full",
+      "--candidate",
+      "shared-v2",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792877104232850900-perf.py.log"
+  },
+  {
+    "args": [
+      "perf.py",
+      "run",
+      "shared-v2-combat-01"
+    ],
+    "log": "group-steps\\1792877113391238500-perf.py.log"
+  }
+]

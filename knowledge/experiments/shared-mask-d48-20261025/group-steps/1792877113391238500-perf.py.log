@@ -1,0 +1,37 @@
+D48P START 0 {"variant":"off","n":6,"mode":"current"}
+D48P END 0 off shots=318 bullets=10
+D48P START 1 {"variant":"normal","n":6,"mode":"current"}
+D48P END 1 normal shots=318 bullets=12
+D48P START 2 {"variant":"candidate","n":6,"mode":"current"}
+D48P END 2 candidate shots=318 bullets=11
+D48P START 3 {"variant":"candidate","n":6,"mode":"current"}
+D48P END 3 candidate shots=318 bullets=12
+D48P START 4 {"variant":"normal","n":6,"mode":"current"}
+D48P END 4 normal shots=312 bullets=11
+D48P START 5 {"variant":"off","n":6,"mode":"current"}
+D48P END 5 off shots=288 bullets=11
+D48P START 6 {"variant":"off","n":6,"mode":"classic"}
+D48P END 6 off shots=318 bullets=11
+D48P START 7 {"variant":"normal","n":6,"mode":"classic"}
+D48P END 7 normal shots=318 bullets=11
+D48P START 8 {"variant":"candidate","n":6,"mode":"classic"}
+D48P END 8 candidate shots=318 bullets=11
+D48P START 9 {"variant":"candidate","n":6,"mode":"classic"}
+D48P END 9 candidate shots=318 bullets=11
+D48P START 10 {"variant":"normal","n":6,"mode":"classic"}
+D48P END 10 normal shots=312 bullets=10
+D48P START 11 {"variant":"off","n":6,"mode":"classic"}
+D48P END 11 off shots=288 bullets=11
+D48P COMPLETE
+{"n": 6, "mode": "current", "variant": "off", "pairedFrames": 179, "mean": 49.01, "p95": 81, "max": 103, ">100": 2, "rv": 0.01, "masks": 0, "bullets": 10, "particles": 106, "units": 20, "objects": 140, "retained": {"rawPixels": 0, "previousPixels": 0, "worldPass": 0, "rasters": 0, "sharedFillVisuals": 0, "emptyVisuals": 0, "softPixels": 0, "sharedBlocks": 0, "visuals": 0, "extraEmptyVisuals": 0}}
+{"n": 6, "mode": "current", "variant": "normal", "pairedFrames": 179, "mean": 64.42, "p95": 90, "max": 140, ">100": 2, "rv": 14.25, "masks": 232, "bullets": 12, "particles": 106, "units": 20, "objects": 142, "retained": {"rawPixels": 1986816, "previousPixels": 1752256, "worldPass": 390, "rasters": 917, "sharedFillVisuals": 0, "emptyVisuals": 30, "softPixels": 1752256, "sharedBlocks": 0, "visuals": 57, "extraEmptyVisuals": 29}}
+{"n": 6, "mode": "current", "variant": "candidate", "pairedFrames": 179, "mean": 72.37, "p95": 119, "max": 236, ">100": 21, "rv": 13.65, "masks": 226, "bullets": 11, "particles": 103, "units": 20, "objects": 137, "retained": {"rawPixels": 1873024, "previousPixels": 1642688, "worldPass": 390, "rasters": 864, "sharedFillVisuals": 0, "emptyVisuals": 38, "softPixels": 1642688, "sharedBlocks": 24, "visuals": 67, "extraEmptyVisuals": 19}}
+{"n": 6, "mode": "current", "variant": "candidate", "pairedFrames": 179, "mean": 67.64, "p95": 104, "max": 248, ">100": 11, "rv": 14.34, "masks": 234, "bullets": 12, "particles": 106, "units": 20, "objects": 141, "retained": {"rawPixels": 1844672, "previousPixels": 1624896, "worldPass": 390, "rasters": 830, "sharedFillVisuals": 0, "emptyVisuals": 37, "softPixels": 1624896, "sharedBlocks": 22, "visuals": 65, "extraEmptyVisuals": 24}}
+{"n": 6, "mode": "current", "variant": "normal", "pairedFrames": 179, "mean": 71.74, "p95": 111, "max": 157, ">100": 13, "rv": 14.12, "masks": 226, "bullets": 11, "particles": 105, "units": 20, "objects": 140, "retained": {"rawPixels": 2015232, "previousPixels": 1783872, "worldPass": 390, "rasters": 922, "sharedFillVisuals": 0, "emptyVisuals": 28, "softPixels": 1783872, "sharedBlocks": 0, "visuals": 47, "extraEmptyVisuals": 20}}
+{"n": 6, "mode": "current", "variant": "off", "pairedFrames": 179, "mean": 53.53, "p95": 84, "max": 188, ">100": 3, "rv": 0.01, "masks": 0, "bullets": 11, "particles": 106, "units": 20, "objects": 140, "retained": {"rawPixels": 0, "previousPixels": 0, "worldPass": 0, "rasters": 0, "sharedFillVisuals": 0, "emptyVisuals": 0, "softPixels": 0, "sharedBlocks": 0, "visuals": 0, "extraEmptyVisuals": 0}}
+{"n": 6, "mode": "classic", "variant": "off", "pairedFrames": 179, "mean": 45.01, "p95": 62, "max": 87, ">100": 0, "rv": 0.0, "masks": 0, "bullets": 11, "particles": 110, "units": 20, "objects": 144, "retained": {"rawPixels": 0, "previousPixels": 0, "worldPass": 0, "rasters": 0, "sharedFillVisuals": 0, "emptyVisuals": 0, "softPixels": 0, "sharedBlocks": 0, "visuals": 0, "extraEmptyVisuals": 0}}
+{"n": 6, "mode": "classic", "variant": "normal", "pairedFrames": 179, "mean": 76.38, "p95": 128, "max": 213, ">100": 28, "rv": 14.77, "masks": 200, "bullets": 11, "particles": 103, "units": 20, "objects": 137, "retained": {"rawPixels": 1924544, "previousPixels": 1708736, "worldPass": 390, "rasters": 876, "sharedFillVisuals": 0, "emptyVisuals": 13, "softPixels": 1708736, "sharedBlocks": 0, "visuals": 69, "extraEmptyVisuals": 13}}
+{"n": 6, "mode": "classic", "variant": "candidate", "pairedFrames": 179, "mean": 72.31, "p95": 118, "max": 408, ">100": 22, "rv": 14.39, "masks": 208, "bullets": 11, "particles": 107, "units": 20, "objects": 141, "retained": {"rawPixels": 1960576, "previousPixels": 1732992, "worldPass": 390, "rasters": 888, "sharedFillVisuals": 0, "emptyVisuals": 5, "softPixels": 1732992, "sharedBlocks": 18, "visuals": 58, "extraEmptyVisuals": 5}}
+{"n": 6, "mode": "classic", "variant": "candidate", "pairedFrames": 179, "mean": 70.7, "p95": 101, "max": 162, ">100": 11, "rv": 14.34, "masks": 196, "bullets": 11, "particles": 104, "units": 20, "objects": 139, "retained": {"rawPixels": 2002880, "previousPixels": 1761728, "worldPass": 390, "rasters": 908, "sharedFillVisuals": 0, "emptyVisuals": 16, "softPixels": 1761728, "sharedBlocks": 15, "visuals": 72, "extraEmptyVisuals": 16}}
+{"n": 6, "mode": "classic", "variant": "normal", "pairedFrames": 179, "mean": 67.41, "p95": 94, "max": 239, ">100": 7, "rv": 13.77, "masks": 212, "bullets": 10, "particles": 107, "units": 20, "objects": 142, "retained": {"rawPixels": 2052800, "previousPixels": 1808064, "worldPass": 390, "rasters": 923, "sharedFillVisuals": 0, "emptyVisuals": 8, "softPixels": 1808064, "sharedBlocks": 0, "visuals": 53, "extraEmptyVisuals": 8}}
+{"n": 6, "mode": "classic", "variant": "off", "pairedFrames": 179, "mean": 45.22, "p95": 60, "max": 97, ">100": 0, "rv": 0.01, "masks": 0, "bullets": 11, "particles": 109, "units": 20, "objects": 143, "retained": {"rawPixels": 0, "previousPixels": 0, "worldPass": 0, "rasters": 0, "sharedFillVisuals": 0, "emptyVisuals": 0, "softPixels": 0, "sharedBlocks": 0, "visuals": 0, "extraEmptyVisuals": 0}}

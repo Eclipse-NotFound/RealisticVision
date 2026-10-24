@@ -1,0 +1,258 @@
+{
+  "changed": [
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\frame-attribution-output\\cache-inventory-01\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-combat-01\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\frame-attribution-output\\identity-native-01\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-01\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\frame-attribution-output\\native-timing-02\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\sound.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound.swf",
+      "sha256": "8f120cb5ed009e0953ee034e715b146c4845792acc29b913d69178f307994ee1",
+      "bytes": 14023007
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\sound_unit.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_unit.swf",
+      "sha256": "1fe0208c783410e273efb65916b53092febcfa73507d79e7ca669dadf50e86fb",
+      "bytes": 8412512
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\sound_weapon.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sound_weapon.swf",
+      "sha256": "2b2674d4654844efd1ee2e7a30c10abe9d40c50702bd792d46ad1a13331a43d6",
+      "bytes": 13142090
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\sprite.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite.swf",
+      "sha256": "49b459d129a16daa065d471cee5ebf9d59914d682a9f07e5a28caf2e52050246",
+      "bytes": 13220252
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\sprite1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\sprite1.swf",
+      "sha256": "de792cbda95f06e55a91e0ca7604770f1ced6387a42026951a4bf0a70ec11e4a",
+      "bytes": 8378700
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\texture.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture.swf",
+      "sha256": "ef4842a1e78f8f8661e84590c82701c3ea54efb71245116bb7a712fed8985ed8",
+      "bytes": 15166051
+    },
+    {
+      "path": "build\\shared-mask-output\\shared-native-01\\texture1.swf",
+      "source": "build\\mask-area-output\\cacheoff-controlled-01\\texture1.swf",
+      "sha256": "6646ccf91f912a7384875a5ed40a33c907041645f558a79277fc5f2dc8164678",
+      "bytes": 8367667
+    }
+  ],
+  "uniqueBytesReleased": 484261674,
+  "rule": "same module; completed trials only; exact hashes; immutable native media; no game host or mod binaries"
+}

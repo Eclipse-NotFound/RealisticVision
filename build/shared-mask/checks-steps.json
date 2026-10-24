@@ -1,0 +1,26 @@
+[
+  [
+    "validate.py",
+    "dense-build",
+    "shared-pixels-01",
+    "--candidate",
+    "shared"
+  ],
+  [
+    "validate.py",
+    "dense-run",
+    "shared-pixels-01"
+  ],
+  [
+    "validate.py",
+    "native-build",
+    "shared-native-01",
+    "--candidate",
+    "shared"
+  ],
+  [
+    "validate.py",
+    "native-run",
+    "shared-native-01"
+  ]
+]

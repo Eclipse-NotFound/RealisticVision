@@ -1,0 +1,44 @@
+[
+  {
+    "run": "reference-pixels-01",
+    "changedPixels": 24,
+    "bounds": [
+      895,
+      182,
+      897,
+      493
+    ],
+    "maxChannelDelta": [
+      1,
+      0,
+      18,
+      2
+    ],
+    "sha256": {
+      "baseline-164.png": "b0c94f6d4229f9fad76cf2028d8d89abac777ba270a8d780dbcad7a60be0ccc0",
+      "candidate-164.png": "8b3957da44df2dbe289c86be7ca9a32fc8dcfb4300499c502a78b03616d81d2c",
+      "difference-164.png": "9cb9f2f0cbee2f6db833ea04c4bd6bea6eaf630f2e430530dc06b94836b43df6"
+    }
+  },
+  {
+    "run": "reference-v2-pixels-01",
+    "changedPixels": 24,
+    "bounds": [
+      895,
+      182,
+      897,
+      493
+    ],
+    "maxChannelDelta": [
+      1,
+      0,
+      18,
+      2
+    ],
+    "sha256": {
+      "baseline-164.png": "b0c94f6d4229f9fad76cf2028d8d89abac777ba270a8d780dbcad7a60be0ccc0",
+      "candidate-164.png": "8b3957da44df2dbe289c86be7ca9a32fc8dcfb4300499c502a78b03616d81d2c",
+      "difference-164.png": "9cb9f2f0cbee2f6db833ea04c4bd6bea6eaf630f2e430530dc06b94836b43df6"
+    }
+  }
+]

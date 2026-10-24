@@ -1,0 +1,8 @@
+{
+  "qualification": "diagnostic_only",
+  "reason": "Owned completed-trial asset deduplication ran during this live combat trial. It read about 0.45 GiB and lasted 3.23 seconds; transient CPU/IO contention cannot be excluded.",
+  "deduplicationReceipt": "../asset-deduplication-01.json",
+  "deduplicationFinishedLocal": "2026-10-25T05:11:00+08:00",
+  "exactAffectedFrames": "Not instrumented; do not infer precise frame range from later log polling.",
+  "action": "Preserve raw data. Do not use this trial as release performance qualification; run a clean paired comparison if advancing this candidate. No further heavy IO/compilation during timing."
+}

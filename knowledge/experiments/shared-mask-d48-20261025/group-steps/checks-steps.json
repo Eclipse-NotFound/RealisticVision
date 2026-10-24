@@ -1,0 +1,38 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "shared-pixels-01",
+      "--candidate",
+      "shared"
+    ],
+    "log": "group-steps\\1792875846102039500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "shared-pixels-01"
+    ],
+    "log": "group-steps\\1792875848367422400-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "shared-native-01",
+      "--candidate",
+      "shared"
+    ],
+    "log": "group-steps\\1792875904236149300-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "shared-native-01"
+    ],
+    "log": "group-steps\\1792875912853154200-validate.py.log"
+  }
+]

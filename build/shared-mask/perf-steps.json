@@ -1,0 +1,4 @@
+[
+ ["perf.py", "build", "shared-combat-01", "--full", "--candidate", "shared", "--controlled", "--warmup", "210", "--frames", "180"],
+ ["perf.py", "run", "shared-combat-01"]
+]

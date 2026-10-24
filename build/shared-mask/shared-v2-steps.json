@@ -1,0 +1,8 @@
+[
+ ["validate.py", "dense-build", "shared-v2-pixels-01", "--candidate", "shared-v2"],
+ ["validate.py", "dense-run", "shared-v2-pixels-01"],
+ ["validate.py", "native-build", "shared-v2-native-01", "--candidate", "shared-v2"],
+ ["validate.py", "native-run", "shared-v2-native-01"],
+ ["perf.py", "build", "shared-v2-combat-01", "--full", "--candidate", "shared-v2", "--controlled", "--warmup", "210", "--frames", "180"],
+ ["perf.py", "run", "shared-v2-combat-01"]
+]

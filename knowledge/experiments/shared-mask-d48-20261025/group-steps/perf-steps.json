@@ -1,0 +1,26 @@
+[
+  {
+    "args": [
+      "perf.py",
+      "build",
+      "shared-combat-01",
+      "--full",
+      "--candidate",
+      "shared",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792876185619539500-perf.py.log"
+  },
+  {
+    "args": [
+      "perf.py",
+      "run",
+      "shared-combat-01"
+    ],
+    "log": "group-steps\\1792876194235356200-perf.py.log"
+  }
+]

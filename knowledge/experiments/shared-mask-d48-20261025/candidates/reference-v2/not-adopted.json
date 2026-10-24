@@ -1,0 +1,4 @@
+{
+  "adopted": false,
+  "reason": "Separating cache keys leaves same 24-pixel difference; rejected."
+}

@@ -1,0 +1,4 @@
+{
+  "adopted": false,
+  "reason": "Diagnostic performance only; mixed-filter key alias not isolated."
+}
