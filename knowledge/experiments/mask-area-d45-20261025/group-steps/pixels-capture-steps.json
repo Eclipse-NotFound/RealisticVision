@@ -1,0 +1,12 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "tileclip-pixels-02",
+      "--candidate",
+      "tileclip"
+    ],
+    "log": "group-steps\\1792868333478721100-validate.py.log"
+  }
+]

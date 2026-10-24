@@ -1,0 +1,7 @@
+[
+  ["precise.py"],
+  ["validate.py", "dense-build", "precise-pixels-01", "--candidate", "precise"],
+  ["validate.py", "dense-run", "precise-pixels-01"],
+  ["validate.py", "native-build", "precise-native-01", "--candidate", "precise"],
+  ["validate.py", "native-run", "precise-native-01"]
+]

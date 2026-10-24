@@ -1,0 +1,2938 @@
+{
+  "precise-controlled-01": {
+    "source": "4dbbc3cf565819f6d8b5f9e77ba2d023d39dc7bece7d87f97d5cc926b9367bab",
+    "scene": {
+      "fps": 30,
+      "large": false,
+      "nativeUnits": 14,
+      "platform": [
+        360,
+        840,
+        640
+      ],
+      "controlled": true,
+      "size": [
+        48,
+        25
+      ]
+    },
+    "groups": {
+      "6/current/off": {
+        "frame": {
+          "n": 358,
+          "mean": 45.402234636871505,
+          "p95": 64,
+          "max": 116,
+          ">100": 1
+        },
+        "rv": {
+          "n": 358,
+          "mean": 0.002793296089385475,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0670391061452514,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          0,
+          5
+        ]
+      },
+      "6/current/normal": {
+        "frame": {
+          "n": 358,
+          "mean": 65.41061452513966,
+          "p95": 92,
+          "max": 284,
+          ">100": 15
+        },
+        "rv": {
+          "n": 358,
+          "mean": 14.053072625698324,
+          "p95": 20,
+          "max": 65,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0670391061452514,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          1,
+          4
+        ]
+      },
+      "6/current/candidate": {
+        "frame": {
+          "n": 358,
+          "mean": 65.24301675977654,
+          "p95": 96,
+          "max": 141,
+          ">100": 17
+        },
+        "rv": {
+          "n": 358,
+          "mean": 13.899441340782124,
+          "p95": 20,
+          "max": 97,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0670391061452514,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          2,
+          3
+        ]
+      },
+      "6/classic/off": {
+        "frame": {
+          "n": 358,
+          "mean": 46.17877094972067,
+          "p95": 71,
+          "max": 123,
+          ">100": 3
+        },
+        "rv": {
+          "n": 358,
+          "mean": 0.002793296089385475,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.055865921787709494,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          6,
+          11
+        ]
+      },
+      "6/classic/normal": {
+        "frame": {
+          "n": 358,
+          "mean": 70.87709497206704,
+          "p95": 115,
+          "max": 341,
+          ">100": 38
+        },
+        "rv": {
+          "n": 358,
+          "mean": 13.19832402234637,
+          "p95": 22,
+          "max": 29,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.05307262569832402,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          7,
+          10
+        ]
+      },
+      "6/classic/candidate": {
+        "frame": {
+          "n": 358,
+          "mean": 76.08379888268156,
+          "p95": 130,
+          "max": 886,
+          ">100": 46
+        },
+        "rv": {
+          "n": 358,
+          "mean": 13.243016759776536,
+          "p95": 22,
+          "max": 49,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0670391061452514,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          8,
+          9
+        ]
+      }
+    },
+    "windows": [
+      {
+        "index": 0,
+        "key": "6/current/off",
+        "frame": {
+          "n": 179,
+          "mean": 44.87709497206704,
+          "p95": 65,
+          "max": 95,
+          ">100": 0
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 102,
+        "retained": {
+          "rasters": 0,
+          "worldPass": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "softPixels": 0,
+          "visuals": 0
+        }
+      },
+      {
+        "index": 1,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 179,
+          "mean": 65.93296089385476,
+          "p95": 88,
+          "max": 284,
+          ">100": 6
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.854748603351956,
+          "p95": 20,
+          "max": 65,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 10,
+        "maxParticles": 110,
+        "retained": {
+          "rasters": 891,
+          "worldPass": 390,
+          "previousPixels": 1716672,
+          "emptyVisuals": 20,
+          "extraEmptyVisuals": 17,
+          "rawPixels": 1959552,
+          "softPixels": 1716672,
+          "visuals": 53
+        }
+      },
+      {
+        "index": 2,
+        "key": "6/current/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 63.31843575418994,
+          "p95": 90,
+          "max": 141,
+          ">100": 4
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.910614525139664,
+          "p95": 21,
+          "max": 97,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 114,
+        "retained": {
+          "rasters": 842,
+          "worldPass": 390,
+          "previousPixels": 1604608,
+          "emptyVisuals": 28,
+          "extraEmptyVisuals": 23,
+          "rawPixels": 1835584,
+          "softPixels": 1604608,
+          "visuals": 59
+        }
+      },
+      {
+        "index": 3,
+        "key": "6/current/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 67.16759776536313,
+          "p95": 105,
+          "max": 134,
+          ">100": 13
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.888268156424582,
+          "p95": 19,
+          "max": 58,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "rasters": 866,
+          "worldPass": 390,
+          "previousPixels": 1664000,
+          "emptyVisuals": 21,
+          "extraEmptyVisuals": 16,
+          "rawPixels": 1892800,
+          "softPixels": 1664000,
+          "visuals": 48
+        }
+      },
+      {
+        "index": 4,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 179,
+          "mean": 64.88826815642459,
+          "p95": 98,
+          "max": 126,
+          ">100": 9
+        },
+        "rv": {
+          "n": 179,
+          "mean": 14.251396648044693,
+          "p95": 20,
+          "max": 57,
+          ">100": 0
+        },
+        "attacks": 312,
+        "maxProjectiles": 11,
+        "maxParticles": 109,
+        "retained": {
+          "rasters": 887,
+          "worldPass": 390,
+          "previousPixels": 1717696,
+          "emptyVisuals": 25,
+          "extraEmptyVisuals": 20,
+          "rawPixels": 1958336,
+          "softPixels": 1717696,
+          "visuals": 50
+        }
+      },
+      {
+        "index": 5,
+        "key": "6/current/off",
+        "frame": {
+          "n": 179,
+          "mean": 45.927374301675975,
+          "p95": 63,
+          "max": 116,
+          ">100": 1
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.00558659217877095,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "attacks": 288,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "rasters": 0,
+          "worldPass": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "softPixels": 0,
+          "visuals": 0
+        }
+      },
+      {
+        "index": 6,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 179,
+          "mean": 49.374301675977655,
+          "p95": 86,
+          "max": 123,
+          ">100": 2
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "rasters": 0,
+          "worldPass": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "softPixels": 0,
+          "visuals": 0
+        }
+      },
+      {
+        "index": 7,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 179,
+          "mean": 76.63128491620111,
+          "p95": 124,
+          "max": 341,
+          ">100": 29
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.497206703910615,
+          "p95": 23,
+          "max": 29,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 10,
+        "maxParticles": 110,
+        "retained": {
+          "rasters": 877,
+          "worldPass": 390,
+          "previousPixels": 1702464,
+          "emptyVisuals": 19,
+          "extraEmptyVisuals": 19,
+          "rawPixels": 1937216,
+          "softPixels": 1702464,
+          "visuals": 75
+        }
+      },
+      {
+        "index": 8,
+        "key": "6/classic/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 87.59776536312849,
+          "p95": 213,
+          "max": 886,
+          ">100": 39
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.184357541899441,
+          "p95": 23,
+          "max": 31,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 107,
+        "retained": {
+          "rasters": 854,
+          "worldPass": 390,
+          "previousPixels": 1650432,
+          "emptyVisuals": 14,
+          "extraEmptyVisuals": 14,
+          "rawPixels": 1870912,
+          "softPixels": 1650432,
+          "visuals": 64
+        }
+      },
+      {
+        "index": 9,
+        "key": "6/classic/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 64.56983240223464,
+          "p95": 97,
+          "max": 123,
+          ">100": 7
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.30167597765363,
+          "p95": 22,
+          "max": 49,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 12,
+        "maxParticles": 108,
+        "retained": {
+          "rasters": 917,
+          "worldPass": 390,
+          "previousPixels": 1793280,
+          "emptyVisuals": 16,
+          "extraEmptyVisuals": 16,
+          "rawPixels": 2037696,
+          "softPixels": 1793280,
+          "visuals": 70
+        }
+      },
+      {
+        "index": 10,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 179,
+          "mean": 65.12290502793296,
+          "p95": 97,
+          "max": 131,
+          ">100": 9
+        },
+        "rv": {
+          "n": 179,
+          "mean": 12.899441340782124,
+          "p95": 22,
+          "max": 25,
+          ">100": 0
+        },
+        "attacks": 312,
+        "maxProjectiles": 11,
+        "maxParticles": 109,
+        "retained": {
+          "rasters": 1004,
+          "worldPass": 390,
+          "previousPixels": 1985216,
+          "emptyVisuals": 10,
+          "extraEmptyVisuals": 10,
+          "rawPixels": 2210304,
+          "softPixels": 1985216,
+          "visuals": 64
+        }
+      },
+      {
+        "index": 11,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 179,
+          "mean": 42.98324022346369,
+          "p95": 58,
+          "max": 106,
+          ">100": 1
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.00558659217877095,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "attacks": 288,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "rasters": 0,
+          "worldPass": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "softPixels": 0,
+          "visuals": 0
+        }
+      }
+    ]
+  },
+  "split-controlled-01": {
+    "source": "4ff8e94410c02e2b9602ec7a63840840772d88ef2cd10eeb17ed073dac003686",
+    "scene": {
+      "large": false,
+      "fps": 30,
+      "controlled": true,
+      "platform": [
+        360,
+        840,
+        640
+      ],
+      "size": [
+        48,
+        25
+      ],
+      "nativeUnits": 14
+    },
+    "groups": {
+      "6/current/off": {
+        "frame": {
+          "n": 178,
+          "mean": 47.674157303370784,
+          "p95": 72,
+          "max": 107,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.07865168539325842,
+          "p95": 1,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          0,
+          9
+        ]
+      },
+      "6/current/normal": {
+        "frame": {
+          "n": 178,
+          "mean": 58.58988764044944,
+          "p95": 86,
+          "max": 121,
+          ">100": 4
+        },
+        "rv": {
+          "n": 178,
+          "mean": 13.331460674157304,
+          "p95": 21,
+          "max": 59,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.056179775280898875,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          1,
+          8
+        ]
+      },
+      "6/current/noeffects": {
+        "frame": {
+          "n": 178,
+          "mean": 58.32022471910113,
+          "p95": 83,
+          "max": 117,
+          ">100": 3
+        },
+        "rv": {
+          "n": 178,
+          "mean": 13.48876404494382,
+          "p95": 20,
+          "max": 57,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.16292134831460675,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          2,
+          7
+        ]
+      },
+      "6/current/noactors": {
+        "frame": {
+          "n": 178,
+          "mean": 68.84269662921348,
+          "p95": 108,
+          "max": 150,
+          ">100": 14
+        },
+        "rv": {
+          "n": 178,
+          "mean": 13.308988764044944,
+          "p95": 19,
+          "max": 26,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.19662921348314608,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          3,
+          6
+        ]
+      },
+      "6/current/nomask": {
+        "frame": {
+          "n": 178,
+          "mean": 57.80898876404494,
+          "p95": 78,
+          "max": 104,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.92134831460674,
+          "p95": 19,
+          "max": 53,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.2247191011235955,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          4,
+          5
+        ]
+      },
+      "6/classic/off": {
+        "frame": {
+          "n": 178,
+          "mean": 42.11797752808989,
+          "p95": 58,
+          "max": 85,
+          ">100": 0
+        },
+        "rv": {
+          "n": 178,
+          "mean": 0.0056179775280898875,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.05056179775280899,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          10,
+          19
+        ]
+      },
+      "6/classic/normal": {
+        "frame": {
+          "n": 178,
+          "mean": 61.81460674157304,
+          "p95": 95,
+          "max": 138,
+          ">100": 4
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.904494382022472,
+          "p95": 22,
+          "max": 52,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.056179775280898875,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          11,
+          18
+        ]
+      },
+      "6/classic/noeffects": {
+        "frame": {
+          "n": 178,
+          "mean": 56.23033707865169,
+          "p95": 85,
+          "max": 182,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.842696629213483,
+          "p95": 21,
+          "max": 25,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.19662921348314608,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          12,
+          17
+        ]
+      },
+      "6/classic/noactors": {
+        "frame": {
+          "n": 178,
+          "mean": 60.1123595505618,
+          "p95": 85,
+          "max": 123,
+          ">100": 2
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.674157303370787,
+          "p95": 20,
+          "max": 55,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.1348314606741573,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          13,
+          16
+        ]
+      },
+      "6/classic/nomask": {
+        "frame": {
+          "n": 178,
+          "mean": 55.06741573033708,
+          "p95": 77,
+          "max": 101,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.730337078651685,
+          "p95": 22,
+          "max": 53,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.17415730337078653,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          14,
+          15
+        ]
+      }
+    },
+    "windows": [
+      {
+        "index": 0,
+        "key": "6/current/off",
+        "frame": {
+          "n": 89,
+          "mean": 46.842696629213485,
+          "p95": 72,
+          "max": 107,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 112,
+        "retained": {
+          "rawPixels": 0,
+          "emptyVisuals": 0,
+          "softPixels": 0,
+          "visuals": 0,
+          "rasters": 0,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 0,
+          "worldPass": 0
+        }
+      },
+      {
+        "index": 1,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 89,
+          "mean": 58.853932584269664,
+          "p95": 82,
+          "max": 121,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.438202247191011,
+          "p95": 21,
+          "max": 59,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "rawPixels": 1778560,
+          "emptyVisuals": 0,
+          "softPixels": 1555264,
+          "visuals": 10,
+          "rasters": 825,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1555264,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 2,
+        "key": "6/current/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 56.07865168539326,
+          "p95": 71,
+          "max": 117,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.876404494382022,
+          "p95": 20,
+          "max": 54,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 12,
+        "maxParticles": 109,
+        "retained": {
+          "rawPixels": 1737408,
+          "emptyVisuals": 0,
+          "softPixels": 1515136,
+          "visuals": 8,
+          "rasters": 808,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1515136,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 3,
+        "key": "6/current/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 68.58426966292134,
+          "p95": 104,
+          "max": 126,
+          ">100": 6
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.235955056179776,
+          "p95": 19,
+          "max": 24,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "rawPixels": 1735616,
+          "emptyVisuals": 0,
+          "softPixels": 1508608,
+          "visuals": 9,
+          "rasters": 814,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1508608,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 4,
+        "key": "6/current/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 56.10112359550562,
+          "p95": 79,
+          "max": 99,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.168539325842696,
+          "p95": 17,
+          "max": 20,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 105,
+        "retained": {
+          "rawPixels": 1765632,
+          "emptyVisuals": 0,
+          "softPixels": 1539264,
+          "visuals": 7,
+          "rasters": 831,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1539264,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 5,
+        "key": "6/current/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 59.51685393258427,
+          "p95": 75,
+          "max": 104,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.674157303370787,
+          "p95": 19,
+          "max": 53,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "rawPixels": 1763200,
+          "emptyVisuals": 0,
+          "softPixels": 1536576,
+          "visuals": 6,
+          "rasters": 839,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1536576,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 6,
+        "key": "6/current/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 69.10112359550561,
+          "p95": 109,
+          "max": 150,
+          ">100": 8
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.382022471910112,
+          "p95": 18,
+          "max": 26,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "rawPixels": 1699328,
+          "emptyVisuals": 0,
+          "softPixels": 1455936,
+          "visuals": 8,
+          "rasters": 785,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1455936,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 7,
+        "key": "6/current/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 60.561797752808985,
+          "p95": 87,
+          "max": 113,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.101123595505618,
+          "p95": 17,
+          "max": 57,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 110,
+        "retained": {
+          "rawPixels": 1655360,
+          "emptyVisuals": 0,
+          "softPixels": 1441920,
+          "visuals": 8,
+          "rasters": 770,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1441920,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 8,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 89,
+          "mean": 58.325842696629216,
+          "p95": 89,
+          "max": 121,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.224719101123595,
+          "p95": 20,
+          "max": 55,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 104,
+        "retained": {
+          "rawPixels": 1723776,
+          "emptyVisuals": 0,
+          "softPixels": 1507968,
+          "visuals": 8,
+          "rasters": 803,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1507968,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 9,
+        "key": "6/current/off",
+        "frame": {
+          "n": 89,
+          "mean": 48.50561797752809,
+          "p95": 70,
+          "max": 87,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "rawPixels": 0,
+          "emptyVisuals": 0,
+          "softPixels": 0,
+          "visuals": 0,
+          "rasters": 0,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 0,
+          "worldPass": 0
+        }
+      },
+      {
+        "index": 10,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 89,
+          "mean": 44.21348314606742,
+          "p95": 64,
+          "max": 85,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.011235955056179775,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 106,
+        "retained": {
+          "rawPixels": 0,
+          "emptyVisuals": 0,
+          "softPixels": 0,
+          "visuals": 0,
+          "rasters": 0,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 0,
+          "worldPass": 0
+        }
+      },
+      {
+        "index": 11,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 89,
+          "mean": 63.056179775280896,
+          "p95": 95,
+          "max": 137,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.02247191011236,
+          "p95": 23,
+          "max": 27,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "rawPixels": 1824512,
+          "emptyVisuals": 0,
+          "softPixels": 1600384,
+          "visuals": 14,
+          "rasters": 842,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1600384,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 12,
+        "key": "6/classic/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 54.87640449438202,
+          "p95": 81,
+          "max": 94,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.797752808988765,
+          "p95": 21,
+          "max": 23,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 113,
+        "retained": {
+          "rawPixels": 1896064,
+          "emptyVisuals": 0,
+          "softPixels": 1664640,
+          "visuals": 13,
+          "rasters": 884,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1664640,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 13,
+        "key": "6/classic/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 60.51685393258427,
+          "p95": 88,
+          "max": 110,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.157303370786517,
+          "p95": 21,
+          "max": 55,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "rawPixels": 1795328,
+          "emptyVisuals": 0,
+          "softPixels": 1576448,
+          "visuals": 12,
+          "rasters": 834,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1576448,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 14,
+        "key": "6/classic/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 56.8876404494382,
+          "p95": 76,
+          "max": 90,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.831460674157304,
+          "p95": 19,
+          "max": 25,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 101,
+        "retained": {
+          "rawPixels": 1766400,
+          "emptyVisuals": 0,
+          "softPixels": 1536384,
+          "visuals": 14,
+          "rasters": 812,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1536384,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 15,
+        "key": "6/classic/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 53.247191011235955,
+          "p95": 75,
+          "max": 101,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.629213483146067,
+          "p95": 23,
+          "max": 53,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 107,
+        "retained": {
+          "rawPixels": 1825664,
+          "emptyVisuals": 0,
+          "softPixels": 1604928,
+          "visuals": 14,
+          "rasters": 846,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1604928,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 16,
+        "key": "6/classic/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 59.70786516853933,
+          "p95": 81,
+          "max": 123,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.191011235955056,
+          "p95": 19,
+          "max": 24,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 105,
+        "retained": {
+          "rawPixels": 1752704,
+          "emptyVisuals": 0,
+          "softPixels": 1519808,
+          "visuals": 13,
+          "rasters": 803,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1519808,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 17,
+        "key": "6/classic/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 57.58426966292135,
+          "p95": 86,
+          "max": 182,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.887640449438202,
+          "p95": 21,
+          "max": 25,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 103,
+        "retained": {
+          "rawPixels": 1762688,
+          "emptyVisuals": 0,
+          "softPixels": 1546368,
+          "visuals": 16,
+          "rasters": 811,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1546368,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 18,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 89,
+          "mean": 60.57303370786517,
+          "p95": 92,
+          "max": 138,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.786516853932584,
+          "p95": 20,
+          "max": 52,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 102,
+        "retained": {
+          "rawPixels": 1807616,
+          "emptyVisuals": 0,
+          "softPixels": 1577536,
+          "visuals": 13,
+          "rasters": 838,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 1577536,
+          "worldPass": 180
+        }
+      },
+      {
+        "index": 19,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 89,
+          "mean": 40.02247191011236,
+          "p95": 55,
+          "max": 73,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "rawPixels": 0,
+          "emptyVisuals": 0,
+          "softPixels": 0,
+          "visuals": 0,
+          "rasters": 0,
+          "extraEmptyVisuals": 0,
+          "previousPixels": 0,
+          "worldPass": 0
+        }
+      }
+    ]
+  },
+  "split-controlled-02": {
+    "source": "aba97fbd0dbe05741ceaaba9e537f7bcc0b138d3cfaba14e9ce27901ac3b3da4",
+    "scene": {
+      "controlled": true,
+      "fps": 30,
+      "large": false,
+      "platform": [
+        360,
+        840,
+        640
+      ],
+      "nativeUnits": 14,
+      "size": [
+        48,
+        25
+      ]
+    },
+    "groups": {
+      "6/current/off": {
+        "frame": {
+          "n": 178,
+          "mean": 44.59550561797753,
+          "p95": 66,
+          "max": 118,
+          ">100": 2
+        },
+        "rv": {
+          "n": 178,
+          "mean": 0.0056179775280898875,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.06741573033707865,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          0,
+          9
+        ]
+      },
+      "6/current/normal": {
+        "frame": {
+          "n": 178,
+          "mean": 55.01685393258427,
+          "p95": 72,
+          "max": 107,
+          ">100": 2
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.859550561797754,
+          "p95": 18,
+          "max": 64,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.06179775280898876,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          1,
+          8
+        ]
+      },
+      "6/current/noeffects": {
+        "frame": {
+          "n": 178,
+          "mean": 53.69101123595506,
+          "p95": 71,
+          "max": 119,
+          ">100": 2
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.825842696629213,
+          "p95": 19,
+          "max": 58,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.033707865168539325,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          2,
+          7
+        ]
+      },
+      "6/current/noactors": {
+        "frame": {
+          "n": 178,
+          "mean": 59.68539325842696,
+          "p95": 86,
+          "max": 219,
+          ">100": 5
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.707865168539326,
+          "p95": 18,
+          "max": 57,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.0449438202247191,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          3,
+          6
+        ]
+      },
+      "6/current/nomask": {
+        "frame": {
+          "n": 178,
+          "mean": 56.140449438202246,
+          "p95": 74,
+          "max": 113,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.595505617977528,
+          "p95": 18,
+          "max": 58,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.033707865168539325,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          4,
+          5
+        ]
+      },
+      "6/classic/off": {
+        "frame": {
+          "n": 178,
+          "mean": 40.28089887640449,
+          "p95": 56,
+          "max": 81,
+          ">100": 0
+        },
+        "rv": {
+          "n": 178,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.07865168539325842,
+          "p95": 1,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          10,
+          19
+        ]
+      },
+      "6/classic/normal": {
+        "frame": {
+          "n": 178,
+          "mean": 57.8876404494382,
+          "p95": 84,
+          "max": 184,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.730337078651685,
+          "p95": 21,
+          "max": 28,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.028089887640449437,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          11,
+          18
+        ]
+      },
+      "6/classic/noeffects": {
+        "frame": {
+          "n": 178,
+          "mean": 52.668539325842694,
+          "p95": 73,
+          "max": 103,
+          ">100": 1
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.241573033707866,
+          "p95": 20,
+          "max": 27,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.05056179775280899,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          12,
+          17
+        ]
+      },
+      "6/classic/noactors": {
+        "frame": {
+          "n": 178,
+          "mean": 66.98876404494382,
+          "p95": 104,
+          "max": 384,
+          ">100": 11
+        },
+        "rv": {
+          "n": 178,
+          "mean": 12.955056179775282,
+          "p95": 22,
+          "max": 32,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.033707865168539325,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          13,
+          16
+        ]
+      },
+      "6/classic/nomask": {
+        "frame": {
+          "n": 178,
+          "mean": 52.02808988764045,
+          "p95": 72,
+          "max": 95,
+          ">100": 0
+        },
+        "rv": {
+          "n": 178,
+          "mean": 11.640449438202246,
+          "p95": 19,
+          "max": 26,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 178,
+          "mean": 0.033707865168539325,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          14,
+          15
+        ]
+      }
+    },
+    "windows": [
+      {
+        "index": 0,
+        "key": "6/current/off",
+        "frame": {
+          "n": 89,
+          "mean": 42.146067415730336,
+          "p95": 59,
+          "max": 72,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 1,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 89,
+          "mean": 54.168539325842694,
+          "p95": 72,
+          "max": 104,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.9438202247191,
+          "p95": 18,
+          "max": 51,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 105,
+        "retained": {
+          "softPixels": 1446144,
+          "previousPixels": 1446144,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1664576,
+          "worldPass": 180,
+          "visuals": 6,
+          "rasters": 775
+        }
+      },
+      {
+        "index": 2,
+        "key": "6/current/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 51.168539325842694,
+          "p95": 68,
+          "max": 119,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.02247191011236,
+          "p95": 20,
+          "max": 58,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 107,
+        "retained": {
+          "softPixels": 1522816,
+          "previousPixels": 1522816,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1757568,
+          "worldPass": 180,
+          "visuals": 6,
+          "rasters": 819
+        }
+      },
+      {
+        "index": 3,
+        "key": "6/current/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 61.46067415730337,
+          "p95": 91,
+          "max": 219,
+          ">100": 4
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.842696629213483,
+          "p95": 17,
+          "max": 57,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 12,
+        "maxParticles": 103,
+        "retained": {
+          "softPixels": 1604672,
+          "previousPixels": 1604672,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1820864,
+          "worldPass": 180,
+          "visuals": 1,
+          "rasters": 854
+        }
+      },
+      {
+        "index": 4,
+        "key": "6/current/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 53.674157303370784,
+          "p95": 72,
+          "max": 100,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 11.820224719101123,
+          "p95": 17,
+          "max": 23,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 109,
+        "retained": {
+          "softPixels": 1516608,
+          "previousPixels": 1516608,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1736256,
+          "worldPass": 180,
+          "visuals": 0,
+          "rasters": 806
+        }
+      },
+      {
+        "index": 5,
+        "key": "6/current/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 58.60674157303371,
+          "p95": 74,
+          "max": 113,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.370786516853933,
+          "p95": 17,
+          "max": 58,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 102,
+        "retained": {
+          "softPixels": 1431936,
+          "previousPixels": 1431936,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1664128,
+          "worldPass": 180,
+          "visuals": 0,
+          "rasters": 774
+        }
+      },
+      {
+        "index": 6,
+        "key": "6/current/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 57.91011235955056,
+          "p95": 81,
+          "max": 106,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.573033707865168,
+          "p95": 18,
+          "max": 52,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 103,
+        "retained": {
+          "softPixels": 1478848,
+          "previousPixels": 1478848,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1703808,
+          "worldPass": 180,
+          "visuals": 2,
+          "rasters": 789
+        }
+      },
+      {
+        "index": 7,
+        "key": "6/current/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 56.21348314606742,
+          "p95": 71,
+          "max": 104,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.629213483146067,
+          "p95": 17,
+          "max": 58,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 103,
+        "retained": {
+          "softPixels": 1435456,
+          "previousPixels": 1435456,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1661248,
+          "worldPass": 180,
+          "visuals": 6,
+          "rasters": 773
+        }
+      },
+      {
+        "index": 8,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 89,
+          "mean": 55.86516853932584,
+          "p95": 71,
+          "max": 107,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.775280898876405,
+          "p95": 17,
+          "max": 64,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 102,
+        "retained": {
+          "softPixels": 1487488,
+          "previousPixels": 1487488,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1699776,
+          "worldPass": 180,
+          "visuals": 7,
+          "rasters": 793
+        }
+      },
+      {
+        "index": 9,
+        "key": "6/current/off",
+        "frame": {
+          "n": 89,
+          "mean": 47.04494382022472,
+          "p95": 80,
+          "max": 118,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.011235955056179775,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 100,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 10,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 89,
+          "mean": 39.70786516853933,
+          "p95": 55,
+          "max": 81,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 11,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 89,
+          "mean": 58.70786516853933,
+          "p95": 83,
+          "max": 184,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.02247191011236,
+          "p95": 22,
+          "max": 28,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "softPixels": 1580224,
+          "previousPixels": 1580224,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1807744,
+          "worldPass": 180,
+          "visuals": 13,
+          "rasters": 827
+        }
+      },
+      {
+        "index": 12,
+        "key": "6/classic/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 53.97752808988764,
+          "p95": 75,
+          "max": 103,
+          ">100": 1
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.415730337078651,
+          "p95": 20,
+          "max": 25,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 105,
+        "retained": {
+          "softPixels": 1644352,
+          "previousPixels": 1644352,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1853824,
+          "worldPass": 180,
+          "visuals": 12,
+          "rasters": 858
+        }
+      },
+      {
+        "index": 13,
+        "key": "6/classic/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 71.61797752808988,
+          "p95": 109,
+          "max": 384,
+          ">100": 9
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.876404494382022,
+          "p95": 21,
+          "max": 25,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 103,
+        "retained": {
+          "softPixels": 1538496,
+          "previousPixels": 1538496,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1783296,
+          "worldPass": 180,
+          "visuals": 2,
+          "rasters": 829
+        }
+      },
+      {
+        "index": 14,
+        "key": "6/classic/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 51.30337078651685,
+          "p95": 70,
+          "max": 95,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 11.44943820224719,
+          "p95": 18,
+          "max": 26,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "softPixels": 1538688,
+          "previousPixels": 1538688,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1762624,
+          "worldPass": 180,
+          "visuals": 0,
+          "rasters": 814
+        }
+      },
+      {
+        "index": 15,
+        "key": "6/classic/nomask",
+        "frame": {
+          "n": 89,
+          "mean": 52.752808988764045,
+          "p95": 76,
+          "max": 95,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 11.831460674157304,
+          "p95": 18,
+          "max": 24,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 109,
+        "retained": {
+          "softPixels": 1610880,
+          "previousPixels": 1610880,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1856064,
+          "worldPass": 180,
+          "visuals": 0,
+          "rasters": 868
+        }
+      },
+      {
+        "index": 16,
+        "key": "6/classic/noactors",
+        "frame": {
+          "n": 89,
+          "mean": 62.359550561797754,
+          "p95": 89,
+          "max": 106,
+          ">100": 2
+        },
+        "rv": {
+          "n": 89,
+          "mean": 13.03370786516854,
+          "p95": 22,
+          "max": 32,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 101,
+        "retained": {
+          "softPixels": 1545216,
+          "previousPixels": 1545216,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1754368,
+          "worldPass": 180,
+          "visuals": 3,
+          "rasters": 809
+        }
+      },
+      {
+        "index": 17,
+        "key": "6/classic/noeffects",
+        "frame": {
+          "n": 89,
+          "mean": 51.359550561797754,
+          "p95": 66,
+          "max": 94,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.067415730337078,
+          "p95": 19,
+          "max": 27,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 11,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 1637312,
+          "previousPixels": 1637312,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1849920,
+          "worldPass": 180,
+          "visuals": 12,
+          "rasters": 861
+        }
+      },
+      {
+        "index": 18,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 89,
+          "mean": 57.06741573033708,
+          "p95": 84,
+          "max": 100,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 12.438202247191011,
+          "p95": 20,
+          "max": 22,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 105,
+        "retained": {
+          "softPixels": 1455360,
+          "previousPixels": 1455360,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 1680256,
+          "worldPass": 180,
+          "visuals": 13,
+          "rasters": 777
+        }
+      },
+      {
+        "index": 19,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 89,
+          "mean": 40.853932584269664,
+          "p95": 56,
+          "max": 80,
+          ">100": 0
+        },
+        "rv": {
+          "n": 89,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 144,
+        "maxProjectiles": 10,
+        "maxParticles": 105,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      }
+    ]
+  },
+  "cacheoff-controlled-01": {
+    "source": "eca3b370c72b0c9e895ec00e39366a07d02e89a9b1266bbf085b9adabf4ef76e",
+    "scene": {
+      "large": false,
+      "fps": 30,
+      "nativeUnits": 14,
+      "platform": [
+        360,
+        840,
+        640
+      ],
+      "controlled": true,
+      "size": [
+        48,
+        25
+      ]
+    },
+    "groups": {
+      "6/current/off": {
+        "frame": {
+          "n": 358,
+          "mean": 47.79329608938548,
+          "p95": 70,
+          "max": 170,
+          ">100": 3
+        },
+        "rv": {
+          "n": 358,
+          "mean": 0.013966480446927373,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.04748603351955307,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          0,
+          5
+        ]
+      },
+      "6/current/normal": {
+        "frame": {
+          "n": 358,
+          "mean": 67.64525139664805,
+          "p95": 101,
+          "max": 158,
+          ">100": 21
+        },
+        "rv": {
+          "n": 358,
+          "mean": 14.195530726256983,
+          "p95": 22,
+          "max": 60,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.05865921787709497,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          1,
+          4
+        ]
+      },
+      "6/current/candidate": {
+        "frame": {
+          "n": 358,
+          "mean": 64.39106145251397,
+          "p95": 98,
+          "max": 254,
+          ">100": 17
+        },
+        "rv": {
+          "n": 358,
+          "mean": 13.544692737430168,
+          "p95": 20,
+          "max": 63,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0446927374301676,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "windows": [
+          2,
+          3
+        ]
+      },
+      "6/classic/off": {
+        "frame": {
+          "n": 358,
+          "mean": 50.150837988826815,
+          "p95": 84,
+          "max": 111,
+          ">100": 5
+        },
+        "rv": {
+          "n": 358,
+          "mean": 0.002793296089385475,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.06983240223463687,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          6,
+          11
+        ]
+      },
+      "6/classic/normal": {
+        "frame": {
+          "n": 358,
+          "mean": 66.8072625698324,
+          "p95": 106,
+          "max": 160,
+          ">100": 20
+        },
+        "rv": {
+          "n": 358,
+          "mean": 13.79050279329609,
+          "p95": 23,
+          "max": 55,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.05027932960893855,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          7,
+          10
+        ]
+      },
+      "6/classic/candidate": {
+        "frame": {
+          "n": 358,
+          "mean": 76.14525139664805,
+          "p95": 145,
+          "max": 200,
+          ">100": 58
+        },
+        "rv": {
+          "n": 358,
+          "mean": 14.64804469273743,
+          "p95": 26,
+          "max": 66,
+          ">100": 0
+        },
+        "diagnostic": {
+          "n": 358,
+          "mean": 0.0782122905027933,
+          "p95": 1,
+          "max": 2,
+          ">100": 0
+        },
+        "windows": [
+          8,
+          9
+        ]
+      }
+    },
+    "windows": [
+      {
+        "index": 0,
+        "key": "6/current/off",
+        "frame": {
+          "n": 179,
+          "mean": 50.43016759776536,
+          "p95": 70,
+          "max": 104,
+          ">100": 2
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 107,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 1,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 179,
+          "mean": 62.502793296089386,
+          "p95": 85,
+          "max": 132,
+          ">100": 3
+        },
+        "rv": {
+          "n": 179,
+          "mean": 14.335195530726256,
+          "p95": 21,
+          "max": 60,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 109,
+        "retained": {
+          "softPixels": 1592512,
+          "previousPixels": 1592512,
+          "emptyVisuals": 27,
+          "extraEmptyVisuals": 25,
+          "rawPixels": 1824192,
+          "worldPass": 390,
+          "visuals": 56,
+          "rasters": 824
+        }
+      },
+      {
+        "index": 2,
+        "key": "6/current/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 67.66480446927375,
+          "p95": 104,
+          "max": 254,
+          ">100": 12
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.832402234636872,
+          "p95": 21,
+          "max": 60,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 110,
+        "retained": {
+          "softPixels": 1696384,
+          "previousPixels": 1696384,
+          "emptyVisuals": 38,
+          "extraEmptyVisuals": 21,
+          "rawPixels": 1937408,
+          "worldPass": 390,
+          "visuals": 62,
+          "rasters": 896
+        }
+      },
+      {
+        "index": 3,
+        "key": "6/current/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 61.11731843575419,
+          "p95": 83,
+          "max": 124,
+          ">100": 5
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.256983240223464,
+          "p95": 18,
+          "max": 63,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "softPixels": 1620416,
+          "previousPixels": 1620416,
+          "emptyVisuals": 34,
+          "extraEmptyVisuals": 26,
+          "rawPixels": 1855936,
+          "worldPass": 390,
+          "visuals": 54,
+          "rasters": 837
+        }
+      },
+      {
+        "index": 4,
+        "key": "6/current/normal",
+        "frame": {
+          "n": 179,
+          "mean": 72.7877094972067,
+          "p95": 108,
+          "max": 158,
+          ">100": 18
+        },
+        "rv": {
+          "n": 179,
+          "mean": 14.05586592178771,
+          "p95": 22,
+          "max": 60,
+          ">100": 0
+        },
+        "attacks": 312,
+        "maxProjectiles": 11,
+        "maxParticles": 103,
+        "retained": {
+          "softPixels": 1725440,
+          "previousPixels": 1725440,
+          "emptyVisuals": 29,
+          "extraEmptyVisuals": 28,
+          "rawPixels": 1948352,
+          "worldPass": 390,
+          "visuals": 49,
+          "rasters": 890
+        }
+      },
+      {
+        "index": 5,
+        "key": "6/current/off",
+        "frame": {
+          "n": 179,
+          "mean": 45.15642458100559,
+          "p95": 70,
+          "max": 170,
+          ">100": 1
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.027932960893854747,
+          "p95": 0,
+          "max": 2,
+          ">100": 0
+        },
+        "attacks": 288,
+        "maxProjectiles": 10,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 6,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 179,
+          "mean": 50.92178770949721,
+          "p95": 89,
+          "max": 111,
+          ">100": 3
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.00558659217877095,
+          "p95": 0,
+          "max": 1,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      },
+      {
+        "index": 7,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 179,
+          "mean": 67.64245810055866,
+          "p95": 108,
+          "max": 152,
+          ">100": 11
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.64245810055866,
+          "p95": 23,
+          "max": 28,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 1740608,
+          "previousPixels": 1740608,
+          "emptyVisuals": 12,
+          "extraEmptyVisuals": 12,
+          "rawPixels": 1977984,
+          "worldPass": 390,
+          "visuals": 58,
+          "rasters": 879
+        }
+      },
+      {
+        "index": 8,
+        "key": "6/classic/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 66.49162011173185,
+          "p95": 90,
+          "max": 200,
+          ">100": 7
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.76536312849162,
+          "p95": 24,
+          "max": 66,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 11,
+        "maxParticles": 104,
+        "retained": {
+          "softPixels": 1812608,
+          "previousPixels": 1812608,
+          "emptyVisuals": 12,
+          "extraEmptyVisuals": 12,
+          "rawPixels": 2030976,
+          "worldPass": 390,
+          "visuals": 65,
+          "rasters": 927
+        }
+      },
+      {
+        "index": 9,
+        "key": "6/classic/candidate",
+        "frame": {
+          "n": 179,
+          "mean": 85.79888268156425,
+          "p95": 156,
+          "max": 191,
+          ">100": 51
+        },
+        "rv": {
+          "n": 179,
+          "mean": 15.53072625698324,
+          "p95": 28,
+          "max": 49,
+          ">100": 0
+        },
+        "attacks": 318,
+        "maxProjectiles": 10,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 1730048,
+          "previousPixels": 1730048,
+          "emptyVisuals": 11,
+          "extraEmptyVisuals": 11,
+          "rawPixels": 1955264,
+          "worldPass": 390,
+          "visuals": 78,
+          "rasters": 893
+        }
+      },
+      {
+        "index": 10,
+        "key": "6/classic/normal",
+        "frame": {
+          "n": 179,
+          "mean": 65.97206703910615,
+          "p95": 99,
+          "max": 160,
+          ">100": 9
+        },
+        "rv": {
+          "n": 179,
+          "mean": 13.938547486033519,
+          "p95": 23,
+          "max": 55,
+          ">100": 0
+        },
+        "attacks": 312,
+        "maxProjectiles": 11,
+        "maxParticles": 108,
+        "retained": {
+          "softPixels": 1831040,
+          "previousPixels": 1831040,
+          "emptyVisuals": 3,
+          "extraEmptyVisuals": 3,
+          "rawPixels": 2072896,
+          "worldPass": 390,
+          "visuals": 49,
+          "rasters": 947
+        }
+      },
+      {
+        "index": 11,
+        "key": "6/classic/off",
+        "frame": {
+          "n": 179,
+          "mean": 49.37988826815643,
+          "p95": 77,
+          "max": 108,
+          ">100": 2
+        },
+        "rv": {
+          "n": 179,
+          "mean": 0.0,
+          "p95": 0,
+          "max": 0,
+          ">100": 0
+        },
+        "attacks": 288,
+        "maxProjectiles": 11,
+        "maxParticles": 106,
+        "retained": {
+          "softPixels": 0,
+          "previousPixels": 0,
+          "emptyVisuals": 0,
+          "extraEmptyVisuals": 0,
+          "rawPixels": 0,
+          "worldPass": 0,
+          "visuals": 0,
+          "rasters": 0
+        }
+      }
+    ]
+  }
+}

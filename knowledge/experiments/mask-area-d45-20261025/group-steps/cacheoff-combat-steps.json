@@ -1,0 +1,26 @@
+[
+  {
+    "args": [
+      "run.py",
+      "build",
+      "cacheoff-controlled-01",
+      "--full",
+      "--candidate",
+      "cacheoff",
+      "--controlled",
+      "--frames",
+      "180",
+      "--warmup",
+      "210"
+    ],
+    "log": "group-steps\\1792871079530615700-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "cacheoff-controlled-01"
+    ],
+    "log": "group-steps\\1792871087803652900-run.py.log"
+  }
+]

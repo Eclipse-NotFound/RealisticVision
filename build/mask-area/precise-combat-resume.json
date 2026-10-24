@@ -1,0 +1,5 @@
+[
+  ["run.py", "run", "precise-controlled-01"],
+  ["run.py", "build", "split-controlled-01", "--full", "--split", "--controlled", "--frames", "90", "--warmup", "90"],
+  ["run.py", "run", "split-controlled-01"]
+]

@@ -1,0 +1,4 @@
+[
+  ["validate.py", "dense-build", "tileclip-pixels-02", "--candidate", "tileclip"],
+  ["validate.py", "dense-run", "tileclip-pixels-02"]
+]

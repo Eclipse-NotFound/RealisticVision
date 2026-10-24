@@ -1,0 +1,10 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+LOAD ROW {"candidate":[5,2,2,4,6,7,2,2,4,3,6,5,2,3,3,3,6,6,3,3,2,3,5,8,1,1,2,2,7,4],"mode":"current","baseline":[6,2,3,2,8,7,1,2,4,2,6,7,4,1,2,2,5,5,2,2,3,1,6,8,2,3,4,3,7,6],"rasters":[1141,1141],"memory":19881984,"state":0,"count":100}
+LOAD ROW {"candidate":[6,8,14,9,24,22,8,11,8,8,23,18,12,8,10,10,19,21,8,8,7,7,19,20,5,6,8,5,21,17],"mode":"current","baseline":[9,10,10,9,21,21,6,9,7,9,20,20,8,9,9,10,24,20,7,8,9,8,20,19,6,7,8,8,21,16],"rasters":[1613,1613],"memory":26615808,"state":0,"count":500}
+LOAD ROW {"candidate":[1,1,2,2,2,1,2,2,1,2,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,2,0,2,1],"mode":"current","baseline":[2,1,1,1,1,1,1,2,1,0,2,1,1,1,2,3,1,1,1,0,1,2,1,1,1,1,1,1,2,1],"rasters":[1141,1141],"memory":27795456,"state":1,"count":100}
+LOAD ROW {"candidate":[7,5,4,5,3,5,5,5,5,4,3,4,5,4,4,3,3,5,6,4,6,7,4,6,4,3,4,4,5,3],"mode":"current","baseline":[7,4,6,4,7,4,4,3,8,3,4,3,4,4,5,5,4,3,3,5,4,5,4,9,3,4,4,4,3,4],"rasters":[1613,1613],"memory":32583680,"state":1,"count":500}
+DIFFERENCE bounds=(x=195, y=110, w=196, h=424)
+FAIL Error: exact dense moving visuals f=121 Error: exact dense moving visuals f=121
+	at EffectLoadChecks/check()
+	at EffectLoadChecks/step()

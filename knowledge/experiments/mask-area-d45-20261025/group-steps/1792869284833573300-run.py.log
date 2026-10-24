@@ -1,0 +1,61 @@
+D45 START 0 {"variant":"off","n":6,"mode":"current"}
+D45 END 0 off shots=144 bullets=11
+D45 START 1 {"variant":"normal","n":6,"mode":"current"}
+D45 END 1 normal shots=144 bullets=11
+D45 START 2 {"variant":"noeffects","n":6,"mode":"current"}
+D45 END 2 noeffects shots=144 bullets=12
+D45 START 3 {"variant":"noactors","n":6,"mode":"current"}
+D45 END 3 noactors shots=144 bullets=11
+D45 START 4 {"variant":"nomask","n":6,"mode":"current"}
+D45 END 4 nomask shots=144 bullets=10
+D45 START 5 {"variant":"nomask","n":6,"mode":"current"}
+D45 END 5 nomask shots=144 bullets=11
+D45 START 6 {"variant":"noactors","n":6,"mode":"current"}
+D45 END 6 noactors shots=144 bullets=11
+D45 START 7 {"variant":"noeffects","n":6,"mode":"current"}
+D45 END 7 noeffects shots=144 bullets=11
+D45 START 8 {"variant":"normal","n":6,"mode":"current"}
+D45 END 8 normal shots=144 bullets=10
+D45 START 9 {"variant":"off","n":6,"mode":"current"}
+D45 END 9 off shots=144 bullets=11
+D45 START 10 {"variant":"off","n":6,"mode":"classic"}
+D45 END 10 off shots=144 bullets=11
+D45 START 11 {"variant":"normal","n":6,"mode":"classic"}
+D45 END 11 normal shots=144 bullets=11
+D45 START 12 {"variant":"noeffects","n":6,"mode":"classic"}
+D45 END 12 noeffects shots=144 bullets=11
+D45 START 13 {"variant":"noactors","n":6,"mode":"classic"}
+D45 END 13 noactors shots=144 bullets=11
+D45 START 14 {"variant":"nomask","n":6,"mode":"classic"}
+D45 END 14 nomask shots=144 bullets=10
+D45 START 15 {"variant":"nomask","n":6,"mode":"classic"}
+D45 END 15 nomask shots=144 bullets=11
+D45 START 16 {"variant":"noactors","n":6,"mode":"classic"}
+D45 END 16 noactors shots=144 bullets=10
+D45 START 17 {"variant":"noeffects","n":6,"mode":"classic"}
+D45 END 17 noeffects shots=144 bullets=10
+D45 START 18 {"variant":"normal","n":6,"mode":"classic"}
+D45 END 18 normal shots=144 bullets=11
+D45 START 19 {"variant":"off","n":6,"mode":"classic"}
+D45 END 19 off shots=144 bullets=11
+D45 COMPLETE
+{"n": 6, "mode": "current", "variant": "off", "pairedFrames": 89, "mean": 46.84, "p95": 72, "max": 107, ">100": 1, "rv": 0.0, "masks": 0, "bullets": 11, "particles": 112, "units": 20, "objects": 147, "retained": {"rawPixels": 0, "emptyVisuals": 0, "softPixels": 0, "visuals": 0, "rasters": 0, "extraEmptyVisuals": 0, "previousPixels": 0, "worldPass": 0}}
+{"n": 6, "mode": "current", "variant": "normal", "pairedFrames": 89, "mean": 58.85, "p95": 82, "max": 121, ">100": 2, "rv": 13.44, "masks": 242, "bullets": 11, "particles": 104, "units": 20, "objects": 140, "retained": {"rawPixels": 1778560, "emptyVisuals": 0, "softPixels": 1555264, "visuals": 10, "rasters": 825, "extraEmptyVisuals": 0, "previousPixels": 1555264, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "noeffects", "pairedFrames": 89, "mean": 56.08, "p95": 71, "max": 117, ">100": 1, "rv": 13.88, "masks": 135, "bullets": 12, "particles": 109, "units": 20, "objects": 145, "retained": {"rawPixels": 1737408, "emptyVisuals": 0, "softPixels": 1515136, "visuals": 8, "rasters": 808, "extraEmptyVisuals": 0, "previousPixels": 1515136, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "noactors", "pairedFrames": 89, "mean": 68.58, "p95": 104, "max": 126, ">100": 6, "rv": 13.24, "masks": 34, "bullets": 11, "particles": 105, "units": 20, "objects": 140, "retained": {"rawPixels": 1735616, "emptyVisuals": 0, "softPixels": 1508608, "visuals": 9, "rasters": 814, "extraEmptyVisuals": 0, "previousPixels": 1508608, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "nomask", "pairedFrames": 89, "mean": 56.1, "p95": 79, "max": 99, ">100": 0, "rv": 12.17, "masks": 105, "bullets": 10, "particles": 105, "units": 20, "objects": 139, "retained": {"rawPixels": 1765632, "emptyVisuals": 0, "softPixels": 1539264, "visuals": 7, "rasters": 831, "extraEmptyVisuals": 0, "previousPixels": 1539264, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "nomask", "pairedFrames": 89, "mean": 59.52, "p95": 75, "max": 104, ">100": 1, "rv": 13.67, "masks": 102, "bullets": 11, "particles": 105, "units": 20, "objects": 139, "retained": {"rawPixels": 1763200, "emptyVisuals": 0, "softPixels": 1536576, "visuals": 6, "rasters": 839, "extraEmptyVisuals": 0, "previousPixels": 1536576, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "noactors", "pairedFrames": 89, "mean": 69.1, "p95": 109, "max": 150, ">100": 8, "rv": 13.38, "masks": 34, "bullets": 11, "particles": 104, "units": 20, "objects": 138, "retained": {"rawPixels": 1699328, "emptyVisuals": 0, "softPixels": 1455936, "visuals": 8, "rasters": 785, "extraEmptyVisuals": 0, "previousPixels": 1455936, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "noeffects", "pairedFrames": 89, "mean": 60.56, "p95": 87, "max": 113, ">100": 2, "rv": 13.1, "masks": 142, "bullets": 11, "particles": 110, "units": 20, "objects": 145, "retained": {"rawPixels": 1655360, "emptyVisuals": 0, "softPixels": 1441920, "visuals": 8, "rasters": 770, "extraEmptyVisuals": 0, "previousPixels": 1441920, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "normal", "pairedFrames": 89, "mean": 58.33, "p95": 89, "max": 121, ">100": 2, "rv": 13.22, "masks": 216, "bullets": 10, "particles": 104, "units": 20, "objects": 138, "retained": {"rawPixels": 1723776, "emptyVisuals": 0, "softPixels": 1507968, "visuals": 8, "rasters": 803, "extraEmptyVisuals": 0, "previousPixels": 1507968, "worldPass": 180}}
+{"n": 6, "mode": "current", "variant": "off", "pairedFrames": 89, "mean": 48.51, "p95": 70, "max": 87, ">100": 0, "rv": 0.0, "masks": 0, "bullets": 11, "particles": 104, "units": 20, "objects": 139, "retained": {"rawPixels": 0, "emptyVisuals": 0, "softPixels": 0, "visuals": 0, "rasters": 0, "extraEmptyVisuals": 0, "previousPixels": 0, "worldPass": 0}}
+{"n": 6, "mode": "classic", "variant": "off", "pairedFrames": 89, "mean": 44.21, "p95": 64, "max": 85, ">100": 0, "rv": 0.01, "masks": 0, "bullets": 11, "particles": 106, "units": 20, "objects": 140, "retained": {"rawPixels": 0, "emptyVisuals": 0, "softPixels": 0, "visuals": 0, "rasters": 0, "extraEmptyVisuals": 0, "previousPixels": 0, "worldPass": 0}}
+{"n": 6, "mode": "classic", "variant": "normal", "pairedFrames": 89, "mean": 63.06, "p95": 95, "max": 137, ">100": 2, "rv": 13.02, "masks": 206, "bullets": 11, "particles": 108, "units": 20, "objects": 143, "retained": {"rawPixels": 1824512, "emptyVisuals": 0, "softPixels": 1600384, "visuals": 14, "rasters": 842, "extraEmptyVisuals": 0, "previousPixels": 1600384, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "noeffects", "pairedFrames": 89, "mean": 54.88, "p95": 81, "max": 94, ">100": 0, "rv": 12.8, "masks": 126, "bullets": 11, "particles": 113, "units": 20, "objects": 148, "retained": {"rawPixels": 1896064, "emptyVisuals": 0, "softPixels": 1664640, "visuals": 13, "rasters": 884, "extraEmptyVisuals": 0, "previousPixels": 1664640, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "noactors", "pairedFrames": 89, "mean": 60.52, "p95": 88, "max": 110, ">100": 1, "rv": 13.16, "masks": 20, "bullets": 11, "particles": 104, "units": 20, "objects": 139, "retained": {"rawPixels": 1795328, "emptyVisuals": 0, "softPixels": 1576448, "visuals": 12, "rasters": 834, "extraEmptyVisuals": 0, "previousPixels": 1576448, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "nomask", "pairedFrames": 89, "mean": 56.89, "p95": 76, "max": 90, ">100": 0, "rv": 12.83, "masks": 105, "bullets": 10, "particles": 101, "units": 20, "objects": 136, "retained": {"rawPixels": 1766400, "emptyVisuals": 0, "softPixels": 1536384, "visuals": 14, "rasters": 812, "extraEmptyVisuals": 0, "previousPixels": 1536384, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "nomask", "pairedFrames": 89, "mean": 53.25, "p95": 75, "max": 101, ">100": 1, "rv": 12.63, "masks": 96, "bullets": 11, "particles": 107, "units": 20, "objects": 142, "retained": {"rawPixels": 1825664, "emptyVisuals": 0, "softPixels": 1604928, "visuals": 14, "rasters": 846, "extraEmptyVisuals": 0, "previousPixels": 1604928, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "noactors", "pairedFrames": 89, "mean": 59.71, "p95": 81, "max": 123, ">100": 1, "rv": 12.19, "masks": 20, "bullets": 10, "particles": 105, "units": 20, "objects": 140, "retained": {"rawPixels": 1752704, "emptyVisuals": 0, "softPixels": 1519808, "visuals": 13, "rasters": 803, "extraEmptyVisuals": 0, "previousPixels": 1519808, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "noeffects", "pairedFrames": 89, "mean": 57.58, "p95": 86, "max": 182, ">100": 1, "rv": 12.89, "masks": 113, "bullets": 10, "particles": 103, "units": 20, "objects": 137, "retained": {"rawPixels": 1762688, "emptyVisuals": 0, "softPixels": 1546368, "visuals": 16, "rasters": 811, "extraEmptyVisuals": 0, "previousPixels": 1546368, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "normal", "pairedFrames": 89, "mean": 60.57, "p95": 92, "max": 138, ">100": 2, "rv": 12.79, "masks": 192, "bullets": 11, "particles": 102, "units": 20, "objects": 136, "retained": {"rawPixels": 1807616, "emptyVisuals": 0, "softPixels": 1577536, "visuals": 13, "rasters": 838, "extraEmptyVisuals": 0, "previousPixels": 1577536, "worldPass": 180}}
+{"n": 6, "mode": "classic", "variant": "off", "pairedFrames": 89, "mean": 40.02, "p95": 55, "max": 73, ">100": 0, "rv": 0.0, "masks": 0, "bullets": 11, "particles": 105, "units": 20, "objects": 139, "retained": {"rawPixels": 0, "emptyVisuals": 0, "softPixels": 0, "visuals": 0, "rasters": 0, "extraEmptyVisuals": 0, "previousPixels": 0, "worldPass": 0}}

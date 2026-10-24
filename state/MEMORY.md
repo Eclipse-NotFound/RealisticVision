@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-25 **D45结束，三候选均未采用，正式仍D44**：tileclip有19像素差异；precise及cacheoff严格图像通过，但完整战斗性能未达标。四轮64窗包含40窗受限分组诊断，不能算生产验收；源指纹、实际14项加载与真实开火已核对。cacheoff的classic均值66.81→76.15ms、>100ms次数20→58，拒绝部署。旧mask计数含Shape反向链接，已纠正。两簇长停顿从60帧清理点开始，仍只是关联；下一步测释放数量/像素量。所有本轮AIR和队列结束。详见[报告](../knowledge/experiments/2026-10-25-mask-area.md)，工具build/mask-area，冻结证据knowledge/experiments/mask-area-d45-20261025。
+
 > 2026-10-25 **D44 v0.33.10已部署**：跳过相同mask/cache/visible写入，完全透明支持区用空遮罩，复用临时矩形。1284项/组及完整14模组24战斗窗通过；四组均值减少约16%–19%，P95及>100ms次数均下降，仍未达到同组合关闭RV的流畅度。准确包638E2D40…FE343710（46110B），生产源build/combat-render-output/production-final2/src，不含authority；正式init/设置注册/tick1/181/361通过，旧BF4A已备份。开发线保留active authority记录调用，单独编译通过，未将其发布。详见[报告](../knowledge/experiments/2026-10-25-combat-render-attribution.md)。
 
 > 2026-10-24 **D43 v0.33.9已部署**：在独立特效的原有采样中判断全亮/全暗，跳过不需要的模糊及辅助图，不重复classic采样；边界与宽滤镜沿用原算法。1131项/组、36原生六敌战斗窗与正式启动通过。SHA bf4ac9cd87272b03fae7ec22ee67d045f037362f412ee801cad3f9ba9fe3afef，45826B；准确源build/effect-load-v3-output/production-final/src，不含authority。两版失败方案与环境异常保留；受控测试RV更新current约少20%、classic约少6%，完整帧基本持平，最长帧未解决，测试调度策略未部署。[报告](../knowledge/experiments/2026-10-24-effect-load.md)。
@@ -92,7 +94,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D43 v0.33.9；独立特效单次采样跳过全亮/全暗区域多余模糊，遮挡与墙面保留；准确源build/effect-load-v3-output/production-final/src，不含authority。性能边界见顶部报告。
+- 当前安装D44 v0.33.10；准确生产源build/combat-render-output/production-final2/src，排除authority。D45尚在验证，正式安装未改，性能边界见顶部报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -116,7 +118,7 @@
 
 ## 4. 正在进行与停点
 
-- D43已完成，当前无待跑测试；后续以D43准确生产源为基线。下方为历史停点。
+- D45已结束，三候选不采用，当前没有RV测试或队列。下一步基于D44准确源验证集中释放与长帧的关联，再决定是否分帧释放；不降低画质/刷新率，不重跑覆盖D45已结束目录。目标尚未解决。下方为历史停点。
 
 - D42已完成验证、部署及收尾，当前无待跑RV实例；以下均为历史停点，不自动重跑。后续反馈以D42准确生产源为基线，不能混入D40候选或authority。
 

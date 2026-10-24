@@ -1,0 +1,67 @@
+[
+  {
+    "args": [
+      "cacheoff.py"
+    ],
+    "log": "group-steps\\1792870613900689300-cacheoff.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "positive-build",
+      "cacheoff-pixels-01",
+      "--candidate",
+      "cacheoff"
+    ],
+    "log": "group-steps\\1792870613929439000-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "cacheoff-pixels-01"
+    ],
+    "log": "group-steps\\1792870616202490500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "cacheoff-native-01",
+      "--candidate",
+      "cacheoff"
+    ],
+    "log": "group-steps\\1792870668218930700-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "cacheoff-native-01"
+    ],
+    "log": "group-steps\\1792870676431220100-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "split-controlled-02",
+      "--full",
+      "--split",
+      "--controlled",
+      "--frames",
+      "90",
+      "--warmup",
+      "90"
+    ],
+    "log": "group-steps\\1792870705686069400-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "split-controlled-02"
+    ],
+    "log": "group-steps\\1792870712288138700-run.py.log"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  ["validate.py", "positive-build", "precise-positive-01", "--candidate", "precise"],
+  ["validate.py", "dense-run", "precise-positive-01"],
+  ["run.py", "build", "precise-controlled-01", "--full", "--candidate", "precise", "--controlled", "--frames", "180", "--warmup", "210"],
+  ["run.py", "run", "precise-controlled-01"],
+  ["run.py", "build", "split-controlled-01", "--full", "--split", "--controlled", "--frames", "90", "--warmup", "90"],
+  ["run.py", "run", "split-controlled-01"]
+]

@@ -1,0 +1,8 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+LOAD ROW {"rasters":[1141,1141],"mode":"current","state":0,"baseline":[4,2,3,3,8,5,4,1,2,2,11,6,3,3,3,2,6,6,3,1,4,2,9,5,5,3,2,4,4,5],"memory":19873792,"candidate":[5,2,2,2,7,7,1,4,2,3,7,6,3,3,3,2,4,9,1,6,3,3,6,8,7,2,2,3,6,6],"count":100}
+LOAD ROW {"rasters":[1613,1613],"mode":"current","state":0,"baseline":[8,9,8,8,23,27,7,9,8,10,19,21,7,7,8,8,20,24,8,5,7,10,17,18,7,6,7,9,23,17],"memory":26886144,"candidate":[8,9,8,7,25,22,8,8,13,8,19,20,7,14,7,8,21,21,6,5,8,8,19,19,8,6,8,7,17,18],"count":500}
+LOAD ROW {"rasters":[1141,1141],"mode":"current","state":1,"baseline":[3,1,0,2,2,1,1,1,0,2,2,2,2,1,2,1,1,0,4,1,1,2,2,1,1,0,2,2,1,1],"memory":28053504,"candidate":[2,2,2,1,1,1,1,1,1,1,0,1,1,2,1,1,0,2,1,2,1,1,1,2,0,1,1,1,1,2],"count":100}
+LOAD ROW {"rasters":[1613,1613],"mode":"current","state":1,"baseline":[7,6,8,6,4,5,5,4,4,3,6,4,3,5,6,4,2,3,6,4,5,2,4,6,3,4,5,3,3,3],"memory":32854016,"candidate":[8,4,3,5,4,5,4,4,5,5,6,5,4,3,4,3,3,4,4,3,4,7,3,5,4,4,3,6,2,3],"count":500}
+FAIL SecurityError: fileWriteResource SecurityError: fileWriteResource
+	at EffectLoadChecks/step()

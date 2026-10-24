@@ -1,0 +1,4 @@
+[
+  ["run.py", "build", "cacheoff-controlled-01", "--full", "--candidate", "cacheoff", "--controlled", "--frames", "180", "--warmup", "210"],
+  ["run.py", "run", "cacheoff-controlled-01"]
+]

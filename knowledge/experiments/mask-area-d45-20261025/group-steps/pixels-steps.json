@@ -1,0 +1,18 @@
+[
+  {
+    "args": [
+      "prepare.py"
+    ],
+    "log": "group-steps\\1792868054781239100-prepare.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "tileclip-pixels-01",
+      "--candidate",
+      "tileclip"
+    ],
+    "log": "group-steps\\1792868054816040100-validate.py.log"
+  }
+]

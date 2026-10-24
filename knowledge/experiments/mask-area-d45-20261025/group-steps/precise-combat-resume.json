@@ -1,0 +1,33 @@
+[
+  {
+    "args": [
+      "run.py",
+      "run",
+      "precise-controlled-01"
+    ],
+    "log": "group-steps\\1792868961160680400-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "split-controlled-01",
+      "--full",
+      "--split",
+      "--controlled",
+      "--frames",
+      "90",
+      "--warmup",
+      "90"
+    ],
+    "log": "group-steps\\1792869277182949000-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "split-controlled-01"
+    ],
+    "log": "group-steps\\1792869284833573300-run.py.log"
+  }
+]

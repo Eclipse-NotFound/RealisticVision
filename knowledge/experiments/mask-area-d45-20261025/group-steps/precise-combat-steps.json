@@ -1,0 +1,36 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "positive-build",
+      "precise-positive-01",
+      "--candidate",
+      "precise"
+    ],
+    "log": "group-steps\\1792868776705914200-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "precise-positive-01"
+    ],
+    "log": "group-steps\\1792868778933291600-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "precise-controlled-01",
+      "--full",
+      "--candidate",
+      "precise",
+      "--controlled",
+      "--frames",
+      "180",
+      "--warmup",
+      "210"
+    ],
+    "log": "group-steps\\1792868830985924500-run.py.log"
+  }
+]

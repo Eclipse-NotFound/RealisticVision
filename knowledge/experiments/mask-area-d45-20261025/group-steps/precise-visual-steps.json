@@ -1,0 +1,44 @@
+[
+  {
+    "args": [
+      "precise.py"
+    ],
+    "log": "group-steps\\1792868628249983200-precise.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "precise-pixels-01",
+      "--candidate",
+      "precise"
+    ],
+    "log": "group-steps\\1792868628282457700-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "precise-pixels-01"
+    ],
+    "log": "group-steps\\1792868630503675800-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "precise-native-01",
+      "--candidate",
+      "precise"
+    ],
+    "log": "group-steps\\1792868685518227000-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "precise-native-01"
+    ],
+    "log": "group-steps\\1792868694116155900-validate.py.log"
+  }
+]
