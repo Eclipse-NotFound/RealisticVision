@@ -1,0 +1,77 @@
+r":[],"stages":[],"counts":[]}
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+FRAME CASE 5 {"soft":40,"distance":3,"dim":0.6,"mode":"current","bright":false,"dense":true} size=192x75 units=96
+
+PASS exact native frame 5/0
+
+PASS exact native frame 5/15
+
+PASS exact native frame 5/30
+
+PASS exact native frame 5/45
+
+PASS exact native frame 5/60
+
+PASS exact native frame 5/75
+
+PASS exact native frame 5/90
+
+PASS exact native frame 5/105
+
+FRAME RESULT 5 {"helper":[],"stages":[],"counts":[]}
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+FRAME CASE 6 {"soft":0,"distance":0.5,"dim":0,"mode":"current","bright":true,"dense":true} size=192x75 units=96
+
+PASS exact native frame 6/0
+
+PASS exact native frame 6/15
+
+PASS exact native frame 6/30
+
+PASS exact native frame 6/45
+
+PASS exact native frame 6/60
+
+PASS exact native frame 6/75
+
+PASS exact native frame 6/90
+
+PASS exact native frame 6/105
+
+FRAME RESULT 6 {"helper":[],"stages":[],"counts":[]}
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+
+FRAME CASE 7 {"soft":40,"distance":1,"dim":1,"mode":"current","bright":true,"dense":true} size=192x75 units=96
+
+PASS exact native frame 7/0
+
+PASS exact native frame 7/15
+
+PASS exact native frame 7/30
+
+PASS exact native frame 7/45
+
+PASS exact native frame 7/60
+
+PASS exact native frame 7/75
+
+PASS exact native frame 7/90
+
+PASS exact native frame 7/105
+
+FRAME RESULT 7 {"helper":[],"stages":[],"counts":[]}
+
+FRAME COMPLETE
+
+

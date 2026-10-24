@@ -1,0 +1,5 @@
+[
+  ["perf.py","build","combat-01","--candidate","guard","--full","--controlled","--frames","180","--warmup","210"],
+  ["perf.py","run","combat-01"],
+  ["verify-results.py","combat","combat-01"]
+]

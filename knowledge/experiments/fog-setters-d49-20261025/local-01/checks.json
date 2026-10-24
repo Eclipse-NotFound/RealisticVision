@@ -1,0 +1,12 @@
+[
+  {
+    "test": "FogChecks",
+    "summary": "",
+    "exit": 0
+  },
+  {
+    "test": "EquivalenceChecks",
+    "summary": "",
+    "exit": 0
+  }
+]

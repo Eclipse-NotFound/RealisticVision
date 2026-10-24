@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-25 **D49结束，正式仍D44**：雾层同值setter跳过通过414项严格画面检查；完整战斗current61.47→61.77ms、classic65.70→66.44ms，>100ms未降，不采用。原始D44嵌套热点：current fillFogCache4.56ms，classic classicLogicRegion3.46ms，滤镜树0.02–0.04ms；不能相加或当性能验收。下一步检查classic原始插值工作图复用，仍只按旧查询范围发布，不扩大fogCache范围。所有本轮AIR已退出；详见[报告](../knowledge/experiments/2026-10-25-fog-setters.md)，证据fog-setters-d49-20261025。
+
 > 2026-10-25 **D48结束，正式仍D44**：共享4×4格模糊场的shared/shared-v2各通过361+888项，但直接引用大位图的reference两版均在帧164出现24像素差异，淘汰。首轮计时受自有去重IO干扰，仅诊断；shared-v2干净12窗current68.08→70.00ms、classic71.89→71.51ms且最大408ms，无稳定收益，不采用。所有本轮AIR/队列结束。下一步检查ensureFog/RVWallSurface每帧重复设置相同显示属性是否造成大雾层重建，不叠加本轮候选。详见[报告](../knowledge/experiments/2026-10-25-shared-mask.md)，证据shared-mask-d48-20261025。
 
 > 2026-10-25 **D47结束，正式仍D44**：2864个完整间隔已区分原生函数/其它监听/RV/剩余，六敌场景RV约13–14ms；318ms峰值发生于关闭RV且无弹体，不能把剩余全部归GPU。恒亮实际范围撤mask候选通过1309项，但12战斗窗current67.69→68.16ms、classic70.75→69.25ms，尾部不一致，无稳定收益，不采用。所有本轮AIR和队列结束；下一步验证相邻动画共用模糊场，先证明局部边界等价。详见[报告](../knowledge/experiments/2026-10-25-frame-attribution.md)，证据frame-attribution-d47-20261025；方法已补KB-000107 r3，目标仍未完成。
@@ -123,6 +125,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D49已结束，无RV测试占用；guard无收益不采用。基线仍准确D44。下一步先核对classicLogicRegion的重复raw/visibility/wall插值：私有工作图可扩大预计算，但fogCache只能按旧查询确切范围发布，避免D40显示副作用；current另看fillFogCache。D49profile含计时插桩，仅定位。CS请求后续窗口，已停止追加游戏，归档等待既有测试。下方为历史停点。
 
 - D48已结束，无RV游戏实例/排队；所有共享场候选不采用，准确正式源仍D44。新方向：ensureFog重复写scrollRect/colorTransform/blendMode和RVWallSurface重复挂air/base mask及setChildIndex；只是源码发现，性能原因未证实。下一轮从D44独立验证同值设置跳过，保留第三方状态变化恢复和实际画面。D48原图/错误/受干扰计时均保留，不重跑旧目录。下方为历史停点。
 

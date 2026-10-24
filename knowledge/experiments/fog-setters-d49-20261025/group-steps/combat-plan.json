@@ -1,0 +1,34 @@
+[
+  {
+    "args": [
+      "perf.py",
+      "build",
+      "combat-01",
+      "--candidate",
+      "guard",
+      "--full",
+      "--controlled",
+      "--frames",
+      "180",
+      "--warmup",
+      "210"
+    ],
+    "log": "group-steps\\1792878423937725700-perf.py.log"
+  },
+  {
+    "args": [
+      "perf.py",
+      "run",
+      "combat-01"
+    ],
+    "log": "group-steps\\1792878432507937000-perf.py.log"
+  },
+  {
+    "args": [
+      "verify-results.py",
+      "combat",
+      "combat-01"
+    ],
+    "log": "group-steps\\1792878732016617700-verify-results.py.log"
+  }
+]
