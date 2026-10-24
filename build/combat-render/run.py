@@ -1,0 +1,62 @@
+"""D44 isolated rendering attribution. Diagnostic omissions never ship."""
+from pathlib import Path
+import argparse,importlib.util,json,re,shutil,subprocess,sys,time
+HERE=Path(__file__).resolve().parent
+MOD=HERE.parents[1];GAME=MOD.parents[1];OUT=MOD/'build/combat-render-output'
+def module(name,path):
+    spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+r=module('d44_runtime',MOD/'build/motion-performance/run.py')
+policy=module('d44_policy',MOD/'build/effect-load-v3/policy_capture.py')
+r.HiddenProcess=policy.wrap(r.HiddenProcess,True)
+BASE=MOD/'build/effect-load-v3-output/production-final/src'
+def build(name,full=False,large=False,frames=90):
+    folder=OUT/name;assert not folder.exists(),'Use a fresh name'
+    folder.mkdir(parents=True)
+    with r.Registration(owner='RealisticVision / D44 绘制归因构建',purpose=name,run_dir=folder,evidence=folder/'build.json',resource='offline') as rec:
+        r.runtime(folder)
+        s=(HERE/'CombatRenderProbeMod.as').read_text(encoding='utf-8').replace('SAMPLE_COUNT=90','SAMPLE_COUNT='+str(frames)).replace('LARGE=false','LARGE='+str(large).lower())
+        (folder/'CombatRenderProbeMod.as').write_text(s,encoding='utf-8',newline='\n')
+        r.runner.compile(folder/'CombatRenderProbeMod.as',folder/'mods/CombatRenderProbe/release/CombatRenderProbeMod.swf',[folder])
+        r.public(BASE,folder/'rv-src')
+        r.runner.compile(folder/'rv-src/RealisticVisionMod.as',folder/'rv.swf',[folder/'rv-src'],stubs=True)
+        selected=['CombatRenderProbeMod']
+        for line in (GAME/'mods/loader-manifest.txt').read_text(encoding='utf-8-sig').splitlines():
+            c=line.split('|')
+            if len(c)>=3 and not line.startswith('#') and c[2]=='1' and c[1]!='RealisticVisionMod' and (full or large and c[1]=='ContinuousSceneMod'):
+                selected.append(c[1]);shutil.copytree(GAME/'mods'/c[0]/'release',folder/'mods'/c[0]/'release',dirs_exist_ok=True)
+        catalog=folder/'mods/ModLoader';catalog.mkdir(parents=True,exist_ok=True)
+        (catalog/'supported-mods.txt').write_text((GAME/'mods/ModLoader/supported-mods.txt').read_text(encoding='utf-8-sig')+'\nCombatRenderProbe|CombatRenderProbeMod|1|0|0\n',encoding='utf-8')
+        scan=subprocess.run([str(GAME/'mods/ModLoader/RemainsModLauncher.exe'),'--list','--json','--no-ui'],capture_output=True,text=True,encoding='utf-8',timeout=60)
+        (folder/'installed-inventory.json').write_text(scan.stdout,encoding='utf-8');assert scan.returncode==0
+        scan=subprocess.run([str(GAME/'mods/ModLoader/RemainsModLauncher.exe'),'--root',str(folder),'--only',','.join(selected),'--no-ui','--report',str(folder/'selection.json')],capture_output=True,text=True,encoding='utf-8',timeout=60)
+        (folder/'selection.log').write_text(scan.stdout+scan.stderr,encoding='utf-8');assert scan.returncode==0
+        r.save(folder/'build.json',{'baseline':'D43','installed':r.sha(MOD/'release/RealisticVisionMod.swf'),'full':full,'large':large,'selected':selected,'files':{str(p.relative_to(folder)):r.sha(p) for p in folder.rglob('*') if p.is_file() and p.suffix in ('.as','.swf','.xml','.txt')}})
+        rec.outcome='passed';rec.note='隔离诊断构建；尚未运行'
+def run(name):
+    assert not (OUT/'TESTS-PAUSED.json').exists(),'User paused game tests; resume only after explicit user steering'
+    folder=OUT/name;assert not (folder/'last-run.json').exists()
+    assert not (folder/'invalidated.json').exists(),'Retired diagnostic fixture; build a fresh name'
+    for rel,digest in json.loads((folder/'build.json').read_text())['files'].items():assert r.sha(folder/rel)==digest,rel
+    with r.Registration(owner='RealisticVision / D44 绘制归因',purpose=name,run_dir=folder,evidence=folder/'evidence/result.json',wait=900) as rec:
+        import psutil
+        env={'time':time.time(),'available':psutil.virtual_memory().available,'processes':[],'hostCpu':psutil.cpu_percent(interval=2)}
+        for p in psutil.process_iter(['pid','name','cmdline','exe']):
+            if (p.info['name'] or '').lower() in ('adl64.exe','adl.exe','java.exe','javaw.exe'):env['processes'].append(p.info)
+        r.save(folder/'environment-start.json',env)
+        assert not [p for p in env['processes'] if (p['name'] or '').lower() in ('adl64.exe','adl.exe')],'Other AIR active; no trial launched'
+        assert env['available']>5*1024**3,'Less than 5 GiB available'
+        code,log=r.air(folder,'pfe.swf',rec,timeout=650)
+        print('\n'.join(x[:700] for x in log.splitlines() if x.startswith(('D44','FAIL')))[-7000:],flush=True)
+        assert code==0 and 'D44 COMPLETE' in log and 'FAIL ' not in log
+        rec.outcome='passed';rec.note='归因窗口完成；诊断性显示差异，非生产验收'
+    report(name)
+def report(name):
+    d=json.loads((OUT/name/'evidence/result.json').read_text())
+    for c in d['cases']:
+        a=sorted(c['intervals']);u=c['updates']
+        print(json.dumps({'n':c['crowd'],'mode':c['mode'],'variant':c['variant'],'mean':round(sum(a)/len(a),2),'p95':a[int(.95*(len(a)-1))],'max':a[-1],'>100':sum(x>100 for x in a),'rv':round(sum(u)/len(u),2),'masks':max(c['masks']),'bullets':c['maxProjectiles'],'units':c['units'],'objects':c['maxObjects']},ensure_ascii=False),flush=True)
+if __name__=='__main__':
+    a=argparse.ArgumentParser();a.add_argument('action',choices=['build','run','report']);a.add_argument('name');a.add_argument('--full',action='store_true');a.add_argument('--large',action='store_true');a.add_argument('--frames',type=int,default=90);x=a.parse_args()
+    if x.action=='build':build(x.name,x.full,x.large,x.frames)
+    elif x.action=='run':run(x.name)
+    else:report(x.name)

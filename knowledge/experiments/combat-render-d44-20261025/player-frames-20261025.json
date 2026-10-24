@@ -1,0 +1,1072 @@
+{
+  "session": "1792855080916-12e4",
+  "startedEpochMs": 1792855080916,
+  "directoryFormat": "frame-recorder/schema-1",
+  "from": "2026-10-24T23:48:02.423+08:00",
+  "to": "2026-10-24T23:53:16.513+08:00",
+  "sampleCount": 300,
+  "recordedSeconds": 314.09,
+  "weightedFps": 15.737527460282084,
+  "maxMs": 975,
+  "longFrames": 447,
+  "omittedMarks": 48,
+  "missingSamplesInsideRange": 0,
+  "droppedSamples": 0,
+  "selfPeakMs": 6,
+  "loader": {
+    "loaded": [
+      "RandomRoomsMod",
+      "AddictionSystemMod",
+      "RConnectMod",
+      "TDFCMod",
+      "FirearmAttachmentsMod",
+      "LootEditorMod",
+      "SandevistanMod",
+      "ContinuousSceneMod",
+      "WallBlendMod",
+      "PermanentInjuryMod",
+      "LightAndDarknessMod",
+      "MoreSkillsWeaponsMod",
+      "ModLoaderMod",
+      "RealisticVisionMod"
+    ],
+    "errors": [],
+    "session": "run_1792855079647_98439",
+    "truncated": false
+  },
+  "recorder": {
+    "snapshotPeakMs": 6,
+    "samples": 1386,
+    "version": "1.0.0",
+    "droppedSamples": 0,
+    "overBudgetEvents": 1,
+    "exportError": "",
+    "writes": 0,
+    "clockOriginMs": 4836,
+    "active": true,
+    "mode": "memory-until-exit",
+    "bufferedSamples": 300,
+    "selfPeakMs": 6,
+    "reason": "",
+    "exportMs": 0,
+    "session": "1792855080916-12e4",
+    "directory": "C:\\Users\\hello\\AppData\\Roaming\\pfe\\Local Store\\frame-recorder"
+  },
+  "warnings": [],
+  "worstWindows": [
+    {
+      "time": "2026-10-24T23:49:29.068+08:00",
+      "fps": 5.477308294209703,
+      "before": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 1862.5,
+        "units": 4,
+        "targetFps": 30,
+        "y": 320,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 394555392,
+        "menu": false,
+        "allStat": 1,
+        "focus": true
+      },
+      "omittedMarks": 0,
+      "sequence": 1168,
+      "stalls": [
+        {
+          "endMs": 1888152,
+          "after": {
+            "y": 320,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 34,
+            "menu": false,
+            "allStat": 1,
+            "focus": true
+          },
+          "dtMs": 975,
+          "time": "2026-10-24T23:49:29.068+08:00"
+        }
+      ],
+      "frames": 7,
+      "slowFrames": 5,
+      "maxMs": 975,
+      "elapsedMs": 1278,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 34,
+        "units": 4,
+        "targetFps": 30,
+        "y": 320,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 352124928,
+        "menu": false,
+        "allStat": 1,
+        "focus": true
+      },
+      "longFrames": 1,
+      "startMs": 1886874,
+      "endMs": 1888152,
+      "clues": [
+        "采样窗口内发生场景切换",
+        "内存下降；仅与回收相符，不能认定 GC 是原因"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:49:08.233+08:00",
+      "fps": 8.415147265077138,
+      "before": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 39.130237952,
+        "units": 4,
+        "targetFps": 30,
+        "y": 480,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 496541696,
+        "menu": false,
+        "allStat": 2,
+        "focus": true
+      },
+      "omittedMarks": 0,
+      "sequence": 1148,
+      "stalls": [
+        {
+          "endMs": 1867317,
+          "after": {
+            "y": 480,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc2_4",
+            "x": 39.130237952,
+            "menu": false,
+            "allStat": 1,
+            "focus": true
+          },
+          "dtMs": 859,
+          "time": "2026-10-24T23:49:08.233+08:00"
+        }
+      ],
+      "frames": 12,
+      "slowFrames": 7,
+      "maxMs": 859,
+      "elapsedMs": 1426,
+      "after": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 39.130237952,
+        "units": 4,
+        "targetFps": 30,
+        "y": 480,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 502030336,
+        "menu": false,
+        "allStat": 1,
+        "focus": true
+      },
+      "longFrames": 1,
+      "startMs": 1865891,
+      "endMs": 1867317,
+      "clues": []
+    },
+    {
+      "time": "2026-10-24T23:48:37.788+08:00",
+      "fps": 3.125,
+      "before": {
+        "grenades": 0,
+        "loc": "loc1_4",
+        "x": 855.1100000000018,
+        "units": 7,
+        "targetFps": 30,
+        "y": 320,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 32,
+        "memoryBytes": 370036736,
+        "menu": false,
+        "allStat": 1,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1119,
+      "stalls": [
+        {
+          "endMs": 1836490,
+          "after": {
+            "y": 434.49668352,
+            "paused": true,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc2_4",
+            "x": 39.130237952,
+            "menu": false,
+            "allStat": 1,
+            "focus": false
+          },
+          "dtMs": 801,
+          "time": "2026-10-24T23:48:37.406+08:00"
+        },
+        {
+          "endMs": 1836872,
+          "after": {
+            "y": 435.49668352,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc2_4",
+            "x": 39.130237952,
+            "menu": false,
+            "allStat": 1,
+            "focus": false
+          },
+          "dtMs": 382,
+          "time": "2026-10-24T23:48:37.788+08:00"
+        }
+      ],
+      "frames": 4,
+      "slowFrames": 3,
+      "maxMs": 801,
+      "elapsedMs": 1280,
+      "after": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 39.130237952,
+        "units": 5,
+        "targetFps": 30,
+        "y": 435.49668352,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 381112320,
+        "menu": false,
+        "allStat": 1,
+        "focus": false
+      },
+      "longFrames": 2,
+      "startMs": 1835592,
+      "endMs": 1836872,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "采样窗口内发生场景切换"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:51:54.397+08:00",
+      "fps": 3.3869602032176123,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 366268416,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1308,
+      "stalls": [
+        {
+          "endMs": 2032604,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 209,
+          "time": "2026-10-24T23:51:53.520+08:00"
+        },
+        {
+          "endMs": 2032710,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 106,
+          "time": "2026-10-24T23:51:53.626+08:00"
+        },
+        {
+          "endMs": 2033481,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 771,
+          "time": "2026-10-24T23:51:54.397+08:00"
+        }
+      ],
+      "frames": 4,
+      "slowFrames": 4,
+      "maxMs": 771,
+      "elapsedMs": 1181,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 367108096,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 3,
+      "startMs": 2032300,
+      "endMs": 2033481,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:52:19.275+08:00",
+      "fps": 1.5910898965791567,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 426201088,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1331,
+      "stalls": [
+        {
+          "endMs": 2057858,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 756,
+          "time": "2026-10-24T23:52:18.774+08:00"
+        },
+        {
+          "endMs": 2058359,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 501,
+          "time": "2026-10-24T23:52:19.275+08:00"
+        }
+      ],
+      "frames": 2,
+      "slowFrames": 2,
+      "maxMs": 756,
+      "elapsedMs": 1257,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 358006784,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 2,
+      "startMs": 2057102,
+      "endMs": 2058359,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态",
+        "内存下降；仅与回收相符，不能认定 GC 是原因"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:53:13.558+08:00",
+      "fps": 6.686478454680535,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 423256064,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1382,
+      "stalls": [
+        {
+          "endMs": 2111562,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 120,
+          "time": "2026-10-24T23:53:12.478+08:00"
+        },
+        {
+          "endMs": 2111692,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 130,
+          "time": "2026-10-24T23:53:12.608+08:00"
+        },
+        {
+          "endMs": 2112071,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 106,
+          "time": "2026-10-24T23:53:12.987+08:00"
+        },
+        {
+          "endMs": 2112642,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 571,
+          "time": "2026-10-24T23:53:13.558+08:00"
+        }
+      ],
+      "frames": 9,
+      "slowFrames": 9,
+      "maxMs": 571,
+      "elapsedMs": 1346,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 358387712,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 4,
+      "startMs": 2111296,
+      "endMs": 2112642,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态",
+        "内存下降；仅与回收相符，不能认定 GC 是原因"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:52:18.018+08:00",
+      "fps": 7.910349373764008,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 421044224,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1330,
+      "stalls": [
+        {
+          "endMs": 2056104,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 276,
+          "time": "2026-10-24T23:52:17.020+08:00"
+        },
+        {
+          "endMs": 2056460,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 139,
+          "time": "2026-10-24T23:52:17.376+08:00"
+        },
+        {
+          "endMs": 2057102,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 552,
+          "time": "2026-10-24T23:52:18.018+08:00"
+        }
+      ],
+      "frames": 12,
+      "slowFrames": 9,
+      "maxMs": 552,
+      "elapsedMs": 1517,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 426201088,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 3,
+      "startMs": 2055585,
+      "endMs": 2057102,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:51:44.855+08:00",
+      "fps": 6.704980842911877,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 399917056,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1299,
+      "stalls": [
+        {
+          "endMs": 2023620,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 541,
+          "time": "2026-10-24T23:51:44.536+08:00"
+        }
+      ],
+      "frames": 7,
+      "slowFrames": 7,
+      "maxMs": 541,
+      "elapsedMs": 1044,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 402591744,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 1,
+      "startMs": 2022895,
+      "endMs": 2023939,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:51:49.996+08:00",
+      "fps": 7,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 427225088,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1304,
+      "stalls": [
+        {
+          "endMs": 2028668,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 516,
+          "time": "2026-10-24T23:51:49.584+08:00"
+        },
+        {
+          "endMs": 2028838,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 170,
+          "time": "2026-10-24T23:51:49.754+08:00"
+        }
+      ],
+      "frames": 7,
+      "slowFrames": 6,
+      "maxMs": 516,
+      "elapsedMs": 1000,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 359661568,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 2,
+      "startMs": 2028080,
+      "endMs": 2029080,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态",
+        "内存下降；仅与回收相符，不能认定 GC 是原因"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:48:55.543+08:00",
+      "fps": 17.18213058419244,
+      "before": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 39.130237952,
+        "units": 4,
+        "targetFps": 30,
+        "y": 480,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 396451840,
+        "menu": false,
+        "allStat": 1,
+        "focus": true
+      },
+      "omittedMarks": 0,
+      "sequence": 1136,
+      "stalls": [
+        {
+          "endMs": 1854627,
+          "after": {
+            "y": 480,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc2_4",
+            "x": 39.130237952,
+            "menu": false,
+            "allStat": 2,
+            "focus": true
+          },
+          "dtMs": 493,
+          "time": "2026-10-24T23:48:55.543+08:00"
+        }
+      ],
+      "frames": 20,
+      "slowFrames": 2,
+      "maxMs": 493,
+      "elapsedMs": 1164,
+      "after": {
+        "grenades": 0,
+        "loc": "loc2_4",
+        "x": 39.130237952,
+        "units": 4,
+        "targetFps": 30,
+        "y": 480,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 11,
+        "memoryBytes": 366043136,
+        "menu": false,
+        "allStat": 2,
+        "focus": true
+      },
+      "longFrames": 1,
+      "startMs": 1853463,
+      "endMs": 1854627,
+      "clues": [
+        "菜单/暂停/非正常游玩状态",
+        "内存下降；仅与回收相符，不能认定 GC 是原因"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:52:48.201+08:00",
+      "fps": 8.78048780487805,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 383500288,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 0,
+      "sequence": 1358,
+      "stalls": [
+        {
+          "endMs": 2087132,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 480,
+          "time": "2026-10-24T23:52:48.048+08:00"
+        }
+      ],
+      "frames": 9,
+      "slowFrames": 8,
+      "maxMs": 480,
+      "elapsedMs": 1025,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 386523136,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 1,
+      "startMs": 2086260,
+      "endMs": 2087285,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态"
+      ]
+    },
+    {
+      "time": "2026-10-24T23:51:55.805+08:00",
+      "fps": 7.8125,
+      "before": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 367108096,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "omittedMarks": 1,
+      "sequence": 1309,
+      "stalls": [
+        {
+          "endMs": 2033583,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 102,
+          "time": "2026-10-24T23:51:54.499+08:00"
+        },
+        {
+          "endMs": 2033737,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 154,
+          "time": "2026-10-24T23:51:54.653+08:00"
+        },
+        {
+          "endMs": 2033847,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 110,
+          "time": "2026-10-24T23:51:54.763+08:00"
+        },
+        {
+          "endMs": 2034329,
+          "after": {
+            "y": 160,
+            "paused": false,
+            "land": "random_mane",
+            "error": false,
+            "loc": "loc3_4",
+            "x": 674.1522256372268,
+            "menu": false,
+            "allStat": 2,
+            "focus": false
+          },
+          "dtMs": 148,
+          "time": "2026-10-24T23:51:55.245+08:00"
+        }
+      ],
+      "frames": 11,
+      "slowFrames": 10,
+      "maxMs": 466,
+      "elapsedMs": 1408,
+      "after": {
+        "grenades": 0,
+        "loc": "loc3_4",
+        "x": 674.1522256372268,
+        "units": 4,
+        "targetFps": 30,
+        "y": 160,
+        "paused": false,
+        "land": "random_mane",
+        "error": false,
+        "objects": 31,
+        "memoryBytes": 370618368,
+        "menu": false,
+        "allStat": 2,
+        "focus": false
+      },
+      "longFrames": 5,
+      "startMs": 2033481,
+      "endMs": 2034889,
+      "clues": [
+        "窗口不在前台；需用相同焦点条件对照",
+        "菜单/暂停/非正常游玩状态"
+      ]
+    }
+  ],
+  "limits": "帧事件间隔不是显示器呈现帧率或模组 CPU 用时；线索仅表示同时发生。每窗最多保留前4次长帧位置；窗口仍统计全部长帧及最大间隔。只保留最近300个窗口，约5分钟。正常退出时保存；崩溃、强退或保存失败会丢失本轮内存记录。没有近期日志不证明游戏正常或记录器仍在工作；务必核对会话时间。",
+  "logDirectory": "C:\\Users\\hello\\AppData\\Roaming\\pfe\\Local Store\\frame-recorder"
+}

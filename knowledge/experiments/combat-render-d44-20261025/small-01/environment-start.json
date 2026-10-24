@@ -1,0 +1,31 @@
+{
+  "time": 1792858253.7603962,
+  "available": 6040395776,
+  "processes": [
+    {
+      "name": "adl64.exe",
+      "exe": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RConnect\\build\\ab\\b3-playable-190\\game\\adl64.exe",
+      "pid": 88248,
+      "cmdline": [
+        "adl64.exe",
+        "-runtime",
+        "runtimes\\air\\win64",
+        "player-1.xml",
+        "-nodebug"
+      ]
+    },
+    {
+      "name": "adl64.exe",
+      "exe": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RConnect\\build\\ab\\b3-playable-190\\game\\adl64.exe",
+      "pid": 91064,
+      "cmdline": [
+        "adl64.exe",
+        "-runtime",
+        "runtimes\\air\\win64",
+        "player-2.xml",
+        "-nodebug"
+      ]
+    }
+  ],
+  "hostCpu": 51.6
+}

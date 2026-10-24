@@ -1,0 +1,26 @@
+{
+  "filter": "before/after focus true, unpaused, no menu/error, allStat=1, same land/loc; not proof of combat or exact version",
+  "rawSha256": "3843d63d711e7851d4dc388c953df8bf95a9309e6f0d991323b80cd4b700f407",
+  "groups": [
+    {
+      "land": "random_mane",
+      "room": "loc2_4",
+      "units": 4,
+      "windows": 19,
+      "weightedFps": 19.22585263588485,
+      "maxMs": 200,
+      "longFrames": 4,
+      "seconds": 19.557
+    },
+    {
+      "land": "random_mane",
+      "room": "loc3_4",
+      "units": 4,
+      "windows": 93,
+      "weightedFps": 18.08863745485669,
+      "maxMs": 265,
+      "longFrames": 36,
+      "seconds": 95.806
+    }
+  ]
+}

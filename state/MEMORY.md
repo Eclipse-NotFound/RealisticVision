@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-25 **D44归因准备，游戏测试暂停**：用户明确保留B190双侧试玩、暂缓运行测试。已读正式上次游玩记录，过滤后普通随机房4单位112窗约18–19FPS、最长265ms；只能确认小场景整帧问题，未定位归属。small-01编译后因其它AIR存活未启动，离线审查发现隐藏子对象影响原生粒子，已标invalidated；源改为隐藏父图层，未再编译。正式仍D43 BF4A…，不自动等待后启动，用户恢复测试后从新目录继续。[记录](../knowledge/experiments/2026-10-25-combat-render-attribution.md)。
+
 > 2026-10-24 **D43 v0.33.9已部署**：在独立特效的原有采样中判断全亮/全暗，跳过不需要的模糊及辅助图，不重复classic采样；边界与宽滤镜沿用原算法。1131项/组、36原生六敌战斗窗与正式启动通过。SHA bf4ac9cd87272b03fae7ec22ee67d045f037362f412ee801cad3f9ba9fe3afef，45826B；准确源build/effect-load-v3-output/production-final/src，不含authority。两版失败方案与环境异常保留；受控测试RV更新current约少20%、classic约少6%，完整帧基本持平，最长帧未解决，测试调度策略未部署。[报告](../knowledge/experiments/2026-10-24-effect-load.md)。
 
 > 2026-10-23 **D42 v0.33.8已部署**：按世界位置裁切原生弹体/激光/粒子、狮鹫独立手臂和身体外敌方武器；明区原生绘制、全零支持区空遮罩。1000项/组及12完整组合跑动射击窗、正式init/注册/tick1/181/361通过。SHA 0dbe0d7a95b8e496fb393d7fcd75f88d60c34a1d0fabb33266b122e3fa04f2bf，45600B；准确源build/effect-visibility-output/production-final/src。尚未达原版流畅度、第三方自有遮罩优先。[报告](../knowledge/experiments/2026-10-23-effect-visibility.md)。

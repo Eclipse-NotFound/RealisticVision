@@ -1,0 +1,6 @@
+{
+  "reason": "编译后离线审查发现nodraw直接改vis.visible会影响Unit.step移动粒子；此旧夹具不得运行",
+  "nativeEvidence": "game-reference/decompiled/1.02/src102/scripts/fe/unit/Unit.as:3213",
+  "replacement": "工作脚本已改为只隐藏对象父图层；新修订未编译/运行",
+  "preflight": "另两份B190实例存活，旧夹具没有启动AIR"
+}
