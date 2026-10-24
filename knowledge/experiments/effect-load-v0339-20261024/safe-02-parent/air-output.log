@@ -1,0 +1,113 @@
+ModLoader[boot_start] v2 run=run_1792815575739_868511
+ModLoader[requested_RecoveryFrameProbeMod] line 17
+ModLoader[requested_ContinuousSceneMod] line 18
+ModLoader[boot] v2 col=2 requested=2
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RecoveryFrameProbeMod] init
+580 Интерфейс
+1236 Game init
+1057 Персонаж
+1 Местность
+798 Создание местности
+false
+379 Вход в местность
+1259 Создание местности
+false
+43 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 0 {"mode":"classic","dense":true,"distance":1,"soft":0,"bright":false,"dim":0.35} size=192x75 units=96
+PASS exact native frame 0/0
+PASS exact native frame 0/15
+PASS exact native frame 0/30
+PASS exact native frame 0/45
+PASS exact native frame 0/60
+PASS exact native frame 0/75
+PASS exact native frame 0/90
+PASS exact native frame 0/105
+FRAME RESULT 0 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 1 {"mode":"classic","dense":true,"distance":3,"soft":40,"bright":false,"dim":0.6} size=192x75 units=96
+PASS exact native frame 1/0
+PASS exact native frame 1/15
+PASS exact native frame 1/30
+PASS exact native frame 1/45
+PASS exact native frame 1/60
+PASS exact native frame 1/75
+PASS exact native frame 1/90
+PASS exact native frame 1/105
+FRAME RESULT 1 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 2 {"mode":"classic","dense":true,"distance":0.5,"soft":0,"bright":true,"dim":0} size=192x75 units=96
+PASS exact native frame 2/0
+PASS exact native frame 2/15
+PASS exact native frame 2/30
+PASS exact native frame 2/45
+PASS exact native frame 2/60
+PASS exact native frame 2/75
+PASS exact native frame 2/90
+PASS exact native frame 2/105
+FRAME RESULT 2 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+FRAME CASE 3 {"mode":"classic","dense":true,"distance":1,"soft":40,"bright":true,"dim":1} size=192x75 units=96
+PASS exact native frame 3/0
+PASS exact native frame 3/15
+PASS exact native frame 3/30
+PASS exact native frame 3/45
+PASS exact native frame 3/60
+PASS exact native frame 3/75
+PASS exact native frame 3/90
+PASS exact native frame 3/105
+FRAME RESULT 3 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 4 {"mode":"current","dense":true,"distance":1,"soft":0,"bright":false,"dim":0.35} size=192x75 units=96
+PASS exact native frame 4/0
+PASS exact native frame 4/15
+PASS exact native frame 4/30
+PASS exact native frame 4/45
+PASS exact native frame 4/60
+PASS exact native frame 4/75
+PASS exact native frame 4/90
+PASS exact native frame 4/105
+FRAME RESULT 4 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 5 {"mode":"current","dense":true,"distance":3,"soft":40,"bright":false,"dim":0.6} size=192x75 units=96
+PASS exact native frame 5/0
+PASS exact native frame 5/15
+PASS exact native frame 5/30
+PASS exact native frame 5/45
+PASS exact native frame 5/60
+PASS exact native frame 5/75
+PASS exact native frame 5/90
+PASS exact native frame 5/105
+FRAME RESULT 5 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 6 {"mode":"current","dense":true,"distance":0.5,"soft":0,"bright":true,"dim":0} size=192x75 units=96
+PASS exact native frame 6/0
+PASS exact native frame 6/15
+PASS exact native frame 6/30
+PASS exact native frame 6/45
+PASS exact native frame 6/60
+PASS exact native frame 6/75
+PASS exact native frame 6/90
+PASS exact native frame 6/105
+FRAME RESULT 6 {"helper":[],"stages":[],"counts":[]}
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+FRAME CASE 7 {"mode":"current","dense":true,"distance":1,"soft":40,"bright":true,"dim":1} size=192x75 units=96
+PASS exact native frame 7/0
+PASS exact native frame 7/15
+PASS exact native frame 7/30
+PASS exact native frame 7/45
+PASS exact native frame 7/60
+PASS exact native frame 7/75
+PASS exact native frame 7/90
+PASS exact native frame 7/105
+FRAME RESULT 7 {"helper":[],"stages":[],"counts":[]}
+FRAME COMPLETE

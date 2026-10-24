@@ -1,0 +1,20 @@
+PASS exact native frame 7/60
+
+PASS exact native frame 7/75
+
+PASS exact native frame 7/90
+
+PASS exact native frame 7/105
+
+FRAME RESULT 7 {"helper":[],"stages":[],"counts":[]}
+
+FRAME COMPLETE
+
+{"spec": {"mode": "classic", "dense": true, "distance": 1, "soft": 0, "bright": false, "dim": 0.35}, "meanUpdates": [26.0, 25.62], "stages": [], "helper": []}
+{"spec": {"mode": "classic", "dense": true, "distance": 3, "soft": 40, "bright": false, "dim": 0.6}, "meanUpdates": [35.78, 35.42], "stages": [], "helper": []}
+{"spec": {"mode": "classic", "dense": true, "distance": 0.5, "soft": 0, "bright": true, "dim": 0}, "meanUpdates": [49.41, 50.33], "stages": [], "helper": []}
+{"spec": {"mode": "classic", "dense": true, "distance": 1, "soft": 40, "bright": true, "dim": 1}, "meanUpdates": [58.41, 58.09], "stages": [], "helper": []}
+{"spec": {"mode": "current", "dense": true, "distance": 1, "soft": 0, "bright": false, "dim": 0.35}, "meanUpdates": [24.13, 22.82], "stages": [], "helper": []}
+{"spec": {"mode": "current", "dense": true, "distance": 3, "soft": 40, "bright": false, "dim": 0.6}, "meanUpdates": [31.18, 32.06], "stages": [], "helper": []}
+{"spec": {"mode": "current", "dense": true, "distance": 0.5, "soft": 0, "bright": true, "dim": 0}, "meanUpdates": [43.83, 43.1], "stages": [], "helper": []}
+{"spec": {"mode": "current", "dense": true, "distance": 1, "soft": 40, "bright": true, "dim": 1}, "meanUpdates": [49.89, 52.64], "stages": [], "helper": []}

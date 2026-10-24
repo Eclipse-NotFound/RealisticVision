@@ -1,0 +1,93 @@
+{
+  "elapsed_seconds": 44.43700000003446,
+  "cpu_percent": 37.0,
+  "logical_processors": 16,
+  "available_gib": 6.283931732177734,
+  "top_cpu": [
+    {
+      "pid": 0,
+      "name": "System Idle Process",
+      "cpu_seconds": 450.109,
+      "logical_core_percent": 1012.92,
+      "rss_mib": 0.0
+    },
+    {
+      "pid": 68952,
+      "name": "dwm.exe",
+      "cpu_seconds": 15.891,
+      "logical_core_percent": 35.76,
+      "rss_mib": 240.8
+    },
+    {
+      "pid": 46848,
+      "name": "promecefpluginhost.exe",
+      "cpu_seconds": 12.266,
+      "logical_core_percent": 27.6,
+      "rss_mib": 37.5
+    },
+    {
+      "pid": 55192,
+      "name": "DeepSeek Harness.exe",
+      "cpu_seconds": 10.406,
+      "logical_core_percent": 23.42,
+      "rss_mib": 150.3
+    },
+    {
+      "pid": 4,
+      "name": "System",
+      "cpu_seconds": 9.812,
+      "logical_core_percent": 22.08,
+      "rss_mib": 0.0
+    },
+    {
+      "pid": 119660,
+      "name": "python.exe",
+      "cpu_seconds": 8.547,
+      "logical_core_percent": 19.23,
+      "rss_mib": 37.8
+    },
+    {
+      "pid": 2816,
+      "name": "explorer.exe",
+      "cpu_seconds": 7.219,
+      "logical_core_percent": 16.24,
+      "rss_mib": 319.3
+    },
+    {
+      "pid": 4892,
+      "name": "avp.exe",
+      "cpu_seconds": 7.141,
+      "logical_core_percent": 16.07,
+      "rss_mib": 253.9
+    },
+    {
+      "pid": 88080,
+      "name": "Taskmgr.exe",
+      "cpu_seconds": 6.625,
+      "logical_core_percent": 14.91,
+      "rss_mib": 98.6
+    },
+    {
+      "pid": 13144,
+      "name": "PCAppStoreAppOM.exe",
+      "cpu_seconds": 4.453,
+      "logical_core_percent": 10.02,
+      "rss_mib": 15.6
+    },
+    {
+      "pid": 63756,
+      "name": "Obsidian.exe",
+      "cpu_seconds": 4.453,
+      "logical_core_percent": 10.02,
+      "rss_mib": 78.8
+    },
+    {
+      "pid": 3224,
+      "name": "svchost.exe",
+      "cpu_seconds": 4.047,
+      "logical_core_percent": 9.11,
+      "rss_mib": 16.4
+    }
+  ],
+  "air_launched": false
+}

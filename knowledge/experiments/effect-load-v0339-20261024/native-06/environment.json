@@ -1,0 +1,1707 @@
+[
+  {
+    "time": 1792825846.9331973,
+    "available_bytes": 8135774208,
+    "processes": [],
+    "scope": "global pre/post launch",
+    "sampleDurationMs": 7.4253082275390625,
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 427.3125,
+        "rss": 568569856,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792825847.9462209,
+    "available_bytes": 8150913024,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 3.385305404663086
+  },
+  {
+    "time": 1792825848.956684,
+    "available_bytes": 8162279424,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.973794937133789
+  },
+  {
+    "time": 1792825849.965251,
+    "available_bytes": 8092065792,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0504722595214844
+  },
+  {
+    "time": 1792825850.9690602,
+    "available_bytes": 7920156672,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9665489196777344
+  },
+  {
+    "time": 1792825851.9739282,
+    "available_bytes": 7860842496,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9338855743408203
+  },
+  {
+    "time": 1792825852.9827075,
+    "available_bytes": 7807348736,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3713836669921875
+  },
+  {
+    "time": 1792825853.9983199,
+    "available_bytes": 7787028480,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0039806365966797
+  },
+  {
+    "time": 1792825855.0075426,
+    "available_bytes": 7820730368,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.7647743225097656
+  },
+  {
+    "time": 1792825856.0183082,
+    "available_bytes": 7628251136,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 3.4837722778320312
+  },
+  {
+    "time": 1792825857.0286994,
+    "available_bytes": 7581224960,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4729499816894531
+  },
+  {
+    "time": 1792825858.035392,
+    "available_bytes": 7560192000,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0178089141845703
+  },
+  {
+    "time": 1792825859.0427146,
+    "available_bytes": 7632859136,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.7965564727783203
+  },
+  {
+    "time": 1792825860.0501974,
+    "available_bytes": 7594868736,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0142326354980469
+  },
+  {
+    "time": 1792825861.059375,
+    "available_bytes": 7510167552,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9827613830566406
+  },
+  {
+    "time": 1792825862.0714374,
+    "available_bytes": 7513288704,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5180110931396484
+  },
+  {
+    "time": 1792825863.077771,
+    "available_bytes": 7449296896,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.313924789428711
+  },
+  {
+    "time": 1792825864.0938404,
+    "available_bytes": 7328944128,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.237630844116211
+  },
+  {
+    "time": 1792825865.1007602,
+    "available_bytes": 7257391104,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.8060932159423828
+  },
+  {
+    "time": 1792825866.1057427,
+    "available_bytes": 7247826944,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9989738464355469
+  },
+  {
+    "time": 1792825867.1173275,
+    "available_bytes": 7235485696,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4181137084960938
+  },
+  {
+    "time": 1792825868.1230385,
+    "available_bytes": 7215288320,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.5083084106445312
+  },
+  {
+    "time": 1792825869.1307123,
+    "available_bytes": 7133032448,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4736652374267578
+  },
+  {
+    "time": 1792825870.140825,
+    "available_bytes": 7228702720,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.00653076171875
+  },
+  {
+    "time": 1792825871.1455424,
+    "available_bytes": 7194288128,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9653568267822266
+  },
+  {
+    "time": 1792825872.1526756,
+    "available_bytes": 7144476672,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9577274322509766
+  },
+  {
+    "time": 1792825873.15972,
+    "available_bytes": 7168438272,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.2691020965576172
+  },
+  {
+    "time": 1792825874.1675441,
+    "available_bytes": 7171051520,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0056495666503906
+  },
+  {
+    "time": 1792825875.1823072,
+    "available_bytes": 7150473216,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.508951187133789
+  },
+  {
+    "time": 1792825876.1985517,
+    "available_bytes": 7155310592,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0089874267578125
+  },
+  {
+    "time": 1792825877.2068884,
+    "available_bytes": 7150850048,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.009153366088867
+  },
+  {
+    "time": 1792825878.2159262,
+    "available_bytes": 7137095680,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0821819305419922
+  },
+  {
+    "time": 1792825879.2195406,
+    "available_bytes": 7133884416,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.7390975952148438
+  },
+  {
+    "time": 1792825880.2259243,
+    "available_bytes": 7100321792,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0039806365966797
+  },
+  {
+    "time": 1792825881.2358432,
+    "available_bytes": 7127326720,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9982585906982422
+  },
+  {
+    "time": 1792825882.245162,
+    "available_bytes": 7110492160,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.933979034423828
+  },
+  {
+    "time": 1792825883.257673,
+    "available_bytes": 7052316672,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  },
+  {
+    "time": 1792825884.266164,
+    "available_bytes": 7108280320,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.057313919067383
+  },
+  {
+    "time": 1792825885.26949,
+    "available_bytes": 7108608000,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.6446113586425781
+  },
+  {
+    "time": 1792825886.2815838,
+    "available_bytes": 7097303040,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.9314289093017578
+  },
+  {
+    "time": 1792825887.29333,
+    "available_bytes": 7106691072,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.1632442474365234
+  },
+  {
+    "time": 1792825888.305587,
+    "available_bytes": 7115108352,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3644695281982422
+  },
+  {
+    "time": 1792825889.3174396,
+    "available_bytes": 7131303936,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.8618106842041016
+  },
+  {
+    "time": 1792825890.3303118,
+    "available_bytes": 7130816512,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4984607696533203
+  },
+  {
+    "time": 1792825891.3447359,
+    "available_bytes": 7126355968,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3117790222167969
+  },
+  {
+    "time": 1792825892.3566663,
+    "available_bytes": 7111364608,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0204315185546875
+  },
+  {
+    "time": 1792825893.3693516,
+    "available_bytes": 7082397696,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3093948364257812
+  },
+  {
+    "time": 1792825894.3792927,
+    "available_bytes": 7061159936,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3124942779541016
+  },
+  {
+    "time": 1792825895.3886423,
+    "available_bytes": 7183564800,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5103816986083984
+  },
+  {
+    "time": 1792825896.4016025,
+    "available_bytes": 7202066432,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.0258426666259766
+  },
+  {
+    "time": 1792825897.4109416,
+    "available_bytes": 7246872576,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0099411010742188
+  },
+  {
+    "time": 1792825898.4250772,
+    "available_bytes": 7282745344,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5137195587158203
+  },
+  {
+    "time": 1792825899.4345088,
+    "available_bytes": 7292252160,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.6322135925292969
+  },
+  {
+    "time": 1792825900.4420877,
+    "available_bytes": 7291351040,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.001596450805664
+  },
+  {
+    "time": 1792825901.4516165,
+    "available_bytes": 7285022720,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0068416595458984
+  },
+  {
+    "time": 1792825902.4653704,
+    "available_bytes": 7284895744,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9863376617431641
+  },
+  {
+    "time": 1792825903.4724045,
+    "available_bytes": 7286448128,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4579296112060547
+  },
+  {
+    "time": 1792825904.4816415,
+    "available_bytes": 7286681600,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.5044937133789062
+  },
+  {
+    "time": 1792825905.489727,
+    "available_bytes": 7272779776,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 10.08296012878418
+  },
+  {
+    "time": 1792825906.5031307,
+    "available_bytes": 7191588864,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.218557357788086
+  },
+  {
+    "time": 1792825907.5134652,
+    "available_bytes": 7225565184,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4777183532714844
+  },
+  {
+    "time": 1792825908.5220027,
+    "available_bytes": 7276126208,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0013580322265625
+  },
+  {
+    "time": 1792825909.531283,
+    "available_bytes": 7233822720,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0106563568115234
+  },
+  {
+    "time": 1792825910.5359592,
+    "available_bytes": 7295791104,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0099411010742188
+  },
+  {
+    "time": 1792825911.5457077,
+    "available_bytes": 7303987200,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.2359619140625
+  },
+  {
+    "time": 1792825912.5564828,
+    "available_bytes": 7295168512,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  },
+  {
+    "time": 1792825913.5715883,
+    "available_bytes": 7297081344,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5048980712890625
+  },
+  {
+    "time": 1792825914.5818176,
+    "available_bytes": 7279218688,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.2955665588378906
+  },
+  {
+    "time": 1792825915.5933506,
+    "available_bytes": 7227658240,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.2428035736083984
+  },
+  {
+    "time": 1792825916.6025677,
+    "available_bytes": 7286050816,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4846324920654297
+  },
+  {
+    "time": 1792825917.6144226,
+    "available_bytes": 7288053760,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.6870498657226562
+  },
+  {
+    "time": 1792825918.628082,
+    "available_bytes": 7307821056,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5139579772949219
+  },
+  {
+    "time": 1792825919.6375825,
+    "available_bytes": 7306838016,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.5048255920410156
+  },
+  {
+    "time": 1792825920.6507695,
+    "available_bytes": 7304687616,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0080337524414062
+  },
+  {
+    "time": 1792825921.6601808,
+    "available_bytes": 7302225920,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0013580322265625
+  },
+  {
+    "time": 1792825922.662453,
+    "available_bytes": 7323987968,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.2614727020263672
+  },
+  {
+    "time": 1792825923.6702588,
+    "available_bytes": 7294398464,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0104179382324219
+  },
+  {
+    "time": 1792825924.680749,
+    "available_bytes": 7297085440,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.9098987579345703
+  },
+  {
+    "time": 1792825925.6876624,
+    "available_bytes": 7268519936,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  },
+  {
+    "time": 1792825926.6970441,
+    "available_bytes": 7217876992,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0027885437011719
+  },
+  {
+    "time": 1792825927.710515,
+    "available_bytes": 7247998976,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9775161743164062
+  },
+  {
+    "time": 1792825928.7173722,
+    "available_bytes": 7335776256,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  },
+  {
+    "time": 1792825929.7233515,
+    "available_bytes": 7295488000,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0068416595458984
+  },
+  {
+    "time": 1792825930.73519,
+    "available_bytes": 7365672960,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.003265380859375
+  },
+  {
+    "time": 1792825931.743701,
+    "available_bytes": 7372394496,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3916492462158203
+  },
+  {
+    "time": 1792825932.7540557,
+    "available_bytes": 7373459456,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9825229644775391
+  },
+  {
+    "time": 1792825933.7654326,
+    "available_bytes": 7372460032,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5511512756347656
+  },
+  {
+    "time": 1792825934.7791877,
+    "available_bytes": 7379947520,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3604164123535156
+  },
+  {
+    "time": 1792825935.7888458,
+    "available_bytes": 7383932928,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.6164779663085938
+  },
+  {
+    "time": 1792825936.8032918,
+    "available_bytes": 7318155264,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.0008087158203125
+  },
+  {
+    "time": 1792825937.8111653,
+    "available_bytes": 7310630912,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.1281967163085938
+  },
+  {
+    "time": 1792825938.8152988,
+    "available_bytes": 7309737984,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4879703521728516
+  },
+  {
+    "time": 1792825939.827719,
+    "available_bytes": 7335923712,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.1474361419677734
+  },
+  {
+    "time": 1792825940.8342419,
+    "available_bytes": 7323492352,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3222694396972656
+  },
+  {
+    "time": 1792825941.8362021,
+    "available_bytes": 7323533312,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9791851043701172
+  },
+  {
+    "time": 1792825942.847018,
+    "available_bytes": 7318695936,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0113716125488281
+  },
+  {
+    "time": 1792825943.8531425,
+    "available_bytes": 7302045696,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9973049163818359
+  },
+  {
+    "time": 1792825944.8647022,
+    "available_bytes": 7246438400,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.275777816772461
+  },
+  {
+    "time": 1792825945.8722172,
+    "available_bytes": 7273250816,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 3.091096878051758
+  },
+  {
+    "time": 1792825946.8813617,
+    "available_bytes": 7283675136,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5039443969726562
+  },
+  {
+    "time": 1792825947.8938637,
+    "available_bytes": 7217143808,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.251220703125
+  },
+  {
+    "time": 1792825948.906131,
+    "available_bytes": 7293251584,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5094280242919922
+  },
+  {
+    "time": 1792825949.9141402,
+    "available_bytes": 7297921024,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0352134704589844
+  },
+  {
+    "time": 1792825950.916464,
+    "available_bytes": 7297363968,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0051727294921875
+  },
+  {
+    "time": 1792825951.928589,
+    "available_bytes": 7300141056,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5072822570800781
+  },
+  {
+    "time": 1792825952.935342,
+    "available_bytes": 7330570240,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.010894775390625
+  },
+  {
+    "time": 1792825953.9462821,
+    "available_bytes": 7311720448,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.2896060943603516
+  },
+  {
+    "time": 1792825954.9611676,
+    "available_bytes": 7293104128,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.001119613647461
+  },
+  {
+    "time": 1792825955.969545,
+    "available_bytes": 7316140032,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5146732330322266
+  },
+  {
+    "time": 1792825956.973971,
+    "available_bytes": 7322517504,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9980201721191406
+  },
+  {
+    "time": 1792825957.9841757,
+    "available_bytes": 7324807168,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 3.602266311645508
+  },
+  {
+    "time": 1792825958.9935691,
+    "available_bytes": 7305863168,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4100074768066406
+  },
+  {
+    "time": 1792825960.0022814,
+    "available_bytes": 7313457152,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 3.0035972595214844
+  },
+  {
+    "time": 1792825961.012636,
+    "available_bytes": 7313870848,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  },
+  {
+    "time": 1792825962.0202923,
+    "available_bytes": 7346462720,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9546279907226562
+  },
+  {
+    "time": 1792825963.0278032,
+    "available_bytes": 7346130944,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.5184879302978516
+  },
+  {
+    "time": 1792825964.0335987,
+    "available_bytes": 7346491392,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9815692901611328
+  },
+  {
+    "time": 1792825965.0432928,
+    "available_bytes": 7341531136,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9911060333251953
+  },
+  {
+    "time": 1792825966.0539966,
+    "available_bytes": 7341355008,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0035037994384766
+  },
+  {
+    "time": 1792825967.0643823,
+    "available_bytes": 7341596672,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0013580322265625
+  },
+  {
+    "time": 1792825968.0718536,
+    "available_bytes": 7341486080,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.138448715209961
+  },
+  {
+    "time": 1792825969.0844953,
+    "available_bytes": 7340544000,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9620189666748047
+  },
+  {
+    "time": 1792825970.0963838,
+    "available_bytes": 7316606976,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.867055892944336
+  },
+  {
+    "time": 1792825971.1032553,
+    "available_bytes": 7341547520,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.3003349304199219
+  },
+  {
+    "time": 1792825972.1147225,
+    "available_bytes": 7351214080,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 2.6230812072753906
+  },
+  {
+    "time": 1792825973.1259654,
+    "available_bytes": 7334830080,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9424686431884766
+  },
+  {
+    "time": 1792825974.1337955,
+    "available_bytes": 7281963008,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.7393360137939453
+  },
+  {
+    "time": 1792825975.1413963,
+    "available_bytes": 7229599744,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.523733139038086
+  },
+  {
+    "time": 1792825976.150258,
+    "available_bytes": 7275315200,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.001119613647461
+  },
+  {
+    "time": 1792825977.163969,
+    "available_bytes": 7271202816,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.012563705444336
+  },
+  {
+    "time": 1792825978.1754234,
+    "available_bytes": 7220436992,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.53350830078125
+  },
+  {
+    "time": 1792825979.1839635,
+    "available_bytes": 7301705728,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4390945434570312
+  },
+  {
+    "time": 1792825980.1941853,
+    "available_bytes": 7289303040,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0106563568115234
+  },
+  {
+    "time": 1792825981.1994596,
+    "available_bytes": 7305474048,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.52587890625
+  },
+  {
+    "time": 1792825982.2070134,
+    "available_bytes": 7335694336,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.0449886322021484
+  },
+  {
+    "time": 1792825983.2155397,
+    "available_bytes": 7342346240,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9400844573974609
+  },
+  {
+    "time": 1792825984.2306507,
+    "available_bytes": 7345160192,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4462471008300781
+  },
+  {
+    "time": 1792825985.235548,
+    "available_bytes": 7357030400,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.354217529296875
+  },
+  {
+    "time": 1792825986.244256,
+    "available_bytes": 7353798656,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.9622573852539062
+  },
+  {
+    "time": 1792825987.248202,
+    "available_bytes": 7390814208,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 1.4600753784179688
+  },
+  {
+    "time": 1792825988.2580564,
+    "available_bytes": 7414874112,
+    "processes": [
+      {
+        "pid": 129436,
+        "name": "adl64.exe"
+      }
+    ],
+    "scope": "owned process only during play",
+    "sampleDurationMs": 0.0
+  }
+]

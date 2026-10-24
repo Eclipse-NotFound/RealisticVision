@@ -1,0 +1,16 @@
+{
+  "latest": "native-06",
+  "earlier_changes": {
+    "native-03": {
+      "mods/ModLoader/release/ModLoaderMod.swf": {
+        "before": "bd71b6f31774b97841d4c158451da0353b53bc46ac72f8e2a7fe2c3f3f4908b1",
+        "after": "2050e023205e87fdfdf7fba4b54b9bad7769868e51767d0bfbe1742cdc7542e2"
+      },
+      "mods/Rconnect/release/RConnectMod.swf": {
+        "before": "df0fa0e2ca952e77e5132e75d71e73558dc919c7b8cdeba5da05fc9e94dc01e7",
+        "after": "78c052aea963f1689b705ae1e14d274916ae1a1f7e81933390caf8d1a88f4699"
+      }
+    }
+  },
+  "reason": "RConnect roomfix5 and ModLoader2050 independently deployed between rounds; each round compares both RV variants within the same frozen process. No cross-round absolute timing attribution."
+}

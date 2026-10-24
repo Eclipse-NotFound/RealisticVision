@@ -1,0 +1,24 @@
+FRAME CASE 6 {"dense":true,"dim":0,"mode":"current","distance":0.5,"soft":0,"bright":true} size=192x75 units=96
+
+PASS exact native frame 6/0
+
+PASS exact native frame 6/15
+
+PASS exact native frame 6/30
+
+PASS exact native frame 6/45
+
+PASS exact native frame 6/60
+
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\group_gate.py", line 29, in step
+    runpy.run_path(str(HERE/args[0]),run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\measure.py", line 7, in <module>
+    exec(compile(s,str(HERE/'measure.py'),'exec'),globals())
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\measure.py", line 42, in <module>
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\measure.py", line 83, in run
+  File "<string>", line 16, in run
+AssertionError

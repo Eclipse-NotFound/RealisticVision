@@ -1,0 +1,86 @@
+ModLoader[boot_start] v2 run=run_1792816798217_750126
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_RecoveryFrameProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-637eace3054b449f815357d68bd467e7
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_WallBlendMod] init
+1235 Интерфейс
+2345 Game init
+1829 Персонаж
+0 Местность
+1444 Создание местности
+false
+682 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+2030 Создание местности
+false
+448 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+NATIVE WALK floor=480 range=160,640
+LIVE START 0 off current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 0 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 1 candidate current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.159
+LIVE END 1 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 2 baseline current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 2 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 3 baseline current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.326
+LIVE END 3 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 4 candidate current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 4 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+LIVE START 5 off current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.493
+LIVE END 5 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 6 off classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 6 off
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 7 candidate classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.659
+LIVE END 7 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 8 baseline classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 8 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 9 baseline classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.826
+LIVE END 9 baseline
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 10 candidate classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+LIVE END 10 candidate
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+LIVE START 11 off classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+[AddictionSystem] heartbeat attached=true t=0.993
+LIVE END 11 off
+FRAME COMPLETE live

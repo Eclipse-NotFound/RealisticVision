@@ -1,0 +1,47 @@
+ModLoader[boot_start] v2 run=run_1792805997616_3077
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_RecoveryFrameProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_RecoveryFrameProbeMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-c52ded14f275422c9430a94084c9144c
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_WallBlendMod] init
+628 Интерфейс
+1229 Game init
+1039 Персонаж
+0 Местность
+763 Создание местности
+false
+441 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+1244 Создание местности
+false
+130 Вход в местность
+[RVision] room loc0_0 192x75 lDist2=1000 mode=current
+NATIVE WALK floor=480 range=160,640
+LIVE START 0 off current anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+FAIL Error: native walk left validated floor 711.6468490487022,464.06088440227944 Error: native walk left validated floor 711.6468490487022,464.06088440227944
+	at RecoveryFrameProbeMod/liveStep()

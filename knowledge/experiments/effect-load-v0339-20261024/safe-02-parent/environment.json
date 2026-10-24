@@ -1,0 +1,6717 @@
+[
+  {
+    "time": 1792815570.3216338,
+    "available_bytes": 7369744384,
+    "processes": [],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.078125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815571.3309617,
+    "available_bytes": 7284969472,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.078125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815572.3514347,
+    "available_bytes": 7269679104,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.09375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815573.3727667,
+    "available_bytes": 7332978688,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.109375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815574.396995,
+    "available_bytes": 7319375872,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.109375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815575.4203997,
+    "available_bytes": 7352287232,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815576.4863331,
+    "available_bytes": 7281610752,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815577.5028903,
+    "available_bytes": 8626819072,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815578.5278203,
+    "available_bytes": 8627761152,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.21875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815579.552011,
+    "available_bytes": 8622014464,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.21875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815580.5767121,
+    "available_bytes": 8623550464,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.25,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815581.6003246,
+    "available_bytes": 8552038400,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.25,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815582.62094,
+    "available_bytes": 8568819712,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815583.6456437,
+    "available_bytes": 8521863168,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815584.6557662,
+    "available_bytes": 8526168064,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815585.6750827,
+    "available_bytes": 8471326720,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815586.695392,
+    "available_bytes": 8342073344,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.328125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815587.718027,
+    "available_bytes": 8247173120,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.453125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815588.7406108,
+    "available_bytes": 8213594112,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.46875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815589.7687106,
+    "available_bytes": 8281321472,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.46875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815590.7896395,
+    "available_bytes": 8261615616,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.5,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815591.8146462,
+    "available_bytes": 8252727296,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.5,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815592.8367157,
+    "available_bytes": 8230653952,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.53125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815593.858494,
+    "available_bytes": 8121221120,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.53125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815594.8789835,
+    "available_bytes": 8088330240,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.53125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815595.8976536,
+    "available_bytes": 8087560192,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.5625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815596.9207401,
+    "available_bytes": 8078721024,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815597.9325757,
+    "available_bytes": 8068915200,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.65625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815598.9594312,
+    "available_bytes": 8044744704,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.65625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815599.981389,
+    "available_bytes": 7768072192,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.71875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815600.9922998,
+    "available_bytes": 7761367040,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.71875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815602.0145533,
+    "available_bytes": 7804985344,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.734375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815603.0366828,
+    "available_bytes": 7778525184,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.75,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815604.0579119,
+    "available_bytes": 7769440256,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.765625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815605.07685,
+    "available_bytes": 7749894144,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.796875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815606.0942628,
+    "available_bytes": 7815274496,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.796875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815607.118853,
+    "available_bytes": 7676391424,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.796875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815608.1434069,
+    "available_bytes": 7571808256,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.796875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815609.1658578,
+    "available_bytes": 7626321920,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.8125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815610.1884997,
+    "available_bytes": 7590875136,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.8125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815611.2091022,
+    "available_bytes": 7497203712,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.8125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815612.2337794,
+    "available_bytes": 7404892160,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815613.2576067,
+    "available_bytes": 7471656960,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815614.285425,
+    "available_bytes": 7393419264,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815615.3109949,
+    "available_bytes": 7404683264,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.890625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815616.3204224,
+    "available_bytes": 7387217920,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.921875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815617.343755,
+    "available_bytes": 7478816768,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.921875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815618.368837,
+    "available_bytes": 7443066880,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.953125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815619.3874087,
+    "available_bytes": 7037423616,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.984375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815620.4027853,
+    "available_bytes": 7507890176,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.984375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815621.42318,
+    "available_bytes": 7528226816,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 332.984375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815622.4473374,
+    "available_bytes": 7557619712,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.015625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815623.468437,
+    "available_bytes": 7526584320,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.015625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815624.4902387,
+    "available_bytes": 7531241472,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.03125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815625.5005538,
+    "available_bytes": 7538147328,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.03125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815626.5121531,
+    "available_bytes": 7562846208,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.109375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815627.535765,
+    "available_bytes": 7562424320,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.109375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815628.5585425,
+    "available_bytes": 7528067072,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.140625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815629.5785508,
+    "available_bytes": 7617769472,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815630.6047132,
+    "available_bytes": 7569231872,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815631.6177483,
+    "available_bytes": 7564017664,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815632.6409442,
+    "available_bytes": 7577567232,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.15625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815633.6575403,
+    "available_bytes": 7583248384,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.265625,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815634.6683953,
+    "available_bytes": 7594708992,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815635.680349,
+    "available_bytes": 7582724096,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815636.6912358,
+    "available_bytes": 7588958208,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.296875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815637.7122033,
+    "available_bytes": 7562678272,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.328125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815638.7317154,
+    "available_bytes": 7582330880,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.34375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815639.740168,
+    "available_bytes": 7553728512,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.34375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815640.7666917,
+    "available_bytes": 7482236928,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.34375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815641.7765737,
+    "available_bytes": 7480541184,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815642.8017213,
+    "available_bytes": 7410569216,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815643.8301058,
+    "available_bytes": 7477157888,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815644.8409162,
+    "available_bytes": 7388131328,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.421875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815645.8644176,
+    "available_bytes": 7562059776,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.421875,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815646.8870492,
+    "available_bytes": 7500251136,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.4375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815647.8979645,
+    "available_bytes": 7552757760,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.4375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815648.9253879,
+    "available_bytes": 7505125376,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.4375,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815649.9491456,
+    "available_bytes": 7558479872,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.453125,
+        "rss": 721072128,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815650.9731488,
+    "available_bytes": 7557550080,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.453125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815651.9973793,
+    "available_bytes": 7540748288,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.515625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815653.007396,
+    "available_bytes": 7535984640,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.515625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815654.0248187,
+    "available_bytes": 7536029696,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.5625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815655.0456383,
+    "available_bytes": 7464779776,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.609375,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815656.0568027,
+    "available_bytes": 7528591360,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.703125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815657.067703,
+    "available_bytes": 7518318592,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.703125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815658.0754442,
+    "available_bytes": 7495524352,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.78125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815659.099633,
+    "available_bytes": 7491391488,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.78125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815660.1218903,
+    "available_bytes": 7450255360,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.796875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815661.1473844,
+    "available_bytes": 7446261760,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.796875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815662.162498,
+    "available_bytes": 7441514496,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.796875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815663.1714926,
+    "available_bytes": 7427481600,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.796875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815664.1968856,
+    "available_bytes": 7454785536,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.828125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815665.2192414,
+    "available_bytes": 7320989696,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.828125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815666.2409973,
+    "available_bytes": 7302934528,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.828125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815667.2631347,
+    "available_bytes": 7223209984,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.828125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815668.2849114,
+    "available_bytes": 7244357632,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.828125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815669.3091772,
+    "available_bytes": 7239073792,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.890625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815670.3202531,
+    "available_bytes": 7197675520,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.890625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815671.3294275,
+    "available_bytes": 7193554944,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.890625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815672.3387978,
+    "available_bytes": 7227752448,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.921875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815673.3607323,
+    "available_bytes": 7214288896,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.921875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815674.3698514,
+    "available_bytes": 7199748096,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.921875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815675.3801365,
+    "available_bytes": 7201202176,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.921875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815676.4049442,
+    "available_bytes": 7321788416,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 333.921875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815677.4205341,
+    "available_bytes": 7448371200,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.0625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815678.4394875,
+    "available_bytes": 7450439680,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.0625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815679.460992,
+    "available_bytes": 7430279168,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.078125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815680.471425,
+    "available_bytes": 7467368448,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.078125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815681.4785223,
+    "available_bytes": 7449276416,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815682.4889975,
+    "available_bytes": 7415586816,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815683.500161,
+    "available_bytes": 7361335296,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.171875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815684.5242004,
+    "available_bytes": 7247978496,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.1875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815685.5462766,
+    "available_bytes": 7345164288,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.203125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815686.5548058,
+    "available_bytes": 7321165824,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.25,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815687.5821548,
+    "available_bytes": 7277056000,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.25,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815688.6020935,
+    "available_bytes": 7244279808,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.265625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815689.6165044,
+    "available_bytes": 7272722432,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.265625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815690.630558,
+    "available_bytes": 7280803840,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.265625,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815691.652799,
+    "available_bytes": 7276290048,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.28125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815692.6689484,
+    "available_bytes": 7269998592,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.296875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815693.6797237,
+    "available_bytes": 7268880384,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.296875,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815694.6999972,
+    "available_bytes": 7237500928,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.3125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815695.7127616,
+    "available_bytes": 7282491392,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.3125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815696.7269797,
+    "available_bytes": 7288680448,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.3125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815697.7507014,
+    "available_bytes": 7278632960,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.3125,
+        "rss": 721076224,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815698.7610588,
+    "available_bytes": 7260315648,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.40625,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815699.771515,
+    "available_bytes": 7270342656,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.40625,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815700.794093,
+    "available_bytes": 7271174144,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.421875,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815701.8067458,
+    "available_bytes": 7216148480,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.4375,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815702.8180447,
+    "available_bytes": 7233306624,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.4375,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815703.831147,
+    "available_bytes": 7349706752,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.4375,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815704.8561862,
+    "available_bytes": 7352688640,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.484375,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815705.8672237,
+    "available_bytes": 7302340608,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.484375,
+        "rss": 722698240,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815706.8808236,
+    "available_bytes": 7353401344,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.484375,
+        "rss": 722808832,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815707.8912337,
+    "available_bytes": 7359119360,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.484375,
+        "rss": 723206144,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815708.9123242,
+    "available_bytes": 7357341696,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.484375,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815709.9204602,
+    "available_bytes": 7473971200,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.53125,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815710.9295454,
+    "available_bytes": 7482064896,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.53125,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815711.954607,
+    "available_bytes": 7407591424,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.53125,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815712.9661355,
+    "available_bytes": 7399313408,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.5625,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815713.9930072,
+    "available_bytes": 7429107712,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.5625,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815715.003004,
+    "available_bytes": 7427653632,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.5625,
+        "rss": 723443712,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815716.014528,
+    "available_bytes": 7477510144,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.59375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815717.038701,
+    "available_bytes": 7561687040,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.609375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815718.051282,
+    "available_bytes": 7710285824,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.609375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815719.0648382,
+    "available_bytes": 7849803776,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.609375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815720.0770292,
+    "available_bytes": 8017915904,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.65625,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815721.1030474,
+    "available_bytes": 8040587264,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.6875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815722.114246,
+    "available_bytes": 8031928320,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.6875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815723.1260703,
+    "available_bytes": 8041074688,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.75,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815724.1383193,
+    "available_bytes": 8170323968,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.796875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815725.1500769,
+    "available_bytes": 8135553024,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.796875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815726.1602104,
+    "available_bytes": 8184385536,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.796875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815727.1739702,
+    "available_bytes": 8179716096,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.796875,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815728.1821334,
+    "available_bytes": 8165015552,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815729.1944838,
+    "available_bytes": 8150499328,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815730.2091286,
+    "available_bytes": 8094117888,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815731.2270653,
+    "available_bytes": 7979491328,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815732.2527475,
+    "available_bytes": 7904145408,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815733.2747934,
+    "available_bytes": 7734841344,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.8125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815734.29435,
+    "available_bytes": 7721259008,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.828125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815735.3127205,
+    "available_bytes": 7727116288,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.828125,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815736.3382905,
+    "available_bytes": 7638839296,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.84375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815737.3643627,
+    "available_bytes": 7300784128,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.84375,
+        "rss": 585846784,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815738.3822875,
+    "available_bytes": 7212122112,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.84375,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815739.4209793,
+    "available_bytes": 6992080896,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.859375,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815740.4449089,
+    "available_bytes": 6798458880,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815741.4691725,
+    "available_bytes": 6811938816,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815742.4892194,
+    "available_bytes": 6658822144,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.890625,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815743.4990218,
+    "available_bytes": 6678720512,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.890625,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815744.52286,
+    "available_bytes": 6752067584,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.96875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815745.545549,
+    "available_bytes": 6855909376,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.96875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815746.569352,
+    "available_bytes": 6796894208,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 334.96875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815747.5921333,
+    "available_bytes": 6788902912,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.015625,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815748.6145973,
+    "available_bytes": 6783774720,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.046875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815749.6379707,
+    "available_bytes": 6954520576,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.046875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815750.6616461,
+    "available_bytes": 6972641280,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.046875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815751.670913,
+    "available_bytes": 6971510784,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.09375,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815752.6794808,
+    "available_bytes": 6927196160,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.140625,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815753.6990924,
+    "available_bytes": 6867050496,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.171875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815754.7212572,
+    "available_bytes": 6861119488,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.171875,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815755.7472787,
+    "available_bytes": 6954119168,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.203125,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815756.7585778,
+    "available_bytes": 6909853696,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.203125,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815757.774927,
+    "available_bytes": 6947864576,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.203125,
+        "rss": 585850880,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815758.7998028,
+    "available_bytes": 6999756800,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.203125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815759.8173916,
+    "available_bytes": 6999818240,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.203125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815760.840769,
+    "available_bytes": 7005028352,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.21875,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815761.8595161,
+    "available_bytes": 7005745152,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.21875,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815762.8699863,
+    "available_bytes": 7003238400,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.234375,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815763.8928459,
+    "available_bytes": 6990356480,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.234375,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815764.9015744,
+    "available_bytes": 6989623296,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.28125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815765.911201,
+    "available_bytes": 7001493504,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.28125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815766.9210868,
+    "available_bytes": 6995603456,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.296875,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815767.9342382,
+    "available_bytes": 6984716288,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.328125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815768.9448717,
+    "available_bytes": 6993735680,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.328125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815769.9526849,
+    "available_bytes": 6976339968,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.328125,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815770.9753666,
+    "available_bytes": 6996873216,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.359375,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815771.988172,
+    "available_bytes": 6952423424,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.359375,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815772.9976728,
+    "available_bytes": 6948237312,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.421875,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815774.0214458,
+    "available_bytes": 6885724160,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.421875,
+        "rss": 585764864,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815775.0423841,
+    "available_bytes": 6892355584,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.453125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815776.0543892,
+    "available_bytes": 6881861632,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.46875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815777.0721266,
+    "available_bytes": 6918455296,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.484375,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815778.0950382,
+    "available_bytes": 6875017216,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.484375,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815779.1137753,
+    "available_bytes": 6895394816,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.53125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815780.1282287,
+    "available_bytes": 6856335360,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.53125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815781.1410136,
+    "available_bytes": 6896697344,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.546875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815782.1647117,
+    "available_bytes": 7446208512,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.5625,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815783.1859424,
+    "available_bytes": 7417618432,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.65625,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815784.2104185,
+    "available_bytes": 7314038784,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.6875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815785.222954,
+    "available_bytes": 7354195968,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.6875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815786.2479408,
+    "available_bytes": 7148732416,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.734375,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815787.2608411,
+    "available_bytes": 7143063552,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.765625,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815788.2872913,
+    "available_bytes": 7258976256,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.765625,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815789.3067446,
+    "available_bytes": 7352717312,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.78125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815790.3244207,
+    "available_bytes": 7357054976,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.796875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815791.3464482,
+    "available_bytes": 7376760832,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.796875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815792.3697896,
+    "available_bytes": 7369506816,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.796875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815793.3897526,
+    "available_bytes": 7377403904,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.828125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815794.4123805,
+    "available_bytes": 7497494528,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.84375,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815795.4352832,
+    "available_bytes": 7475679232,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815796.4568064,
+    "available_bytes": 7518937088,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815797.4760034,
+    "available_bytes": 7662039040,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.953125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815798.4933608,
+    "available_bytes": 7607857152,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.953125,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815799.5275946,
+    "available_bytes": 7685275648,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.96875,
+        "rss": 585768960,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815800.5493228,
+    "available_bytes": 7697395712,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.96875,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815801.570811,
+    "available_bytes": 7643078656,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.96875,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815802.5830233,
+    "available_bytes": 7543021568,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.96875,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815803.5941277,
+    "available_bytes": 7586955264,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 335.96875,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815804.6183953,
+    "available_bytes": 7531302912,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.03125,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815805.6302056,
+    "available_bytes": 7568154624,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.03125,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815806.650319,
+    "available_bytes": 7427313664,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.078125,
+        "rss": 585773056,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815807.6709383,
+    "available_bytes": 7507263488,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.078125,
+        "rss": 585777152,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815808.689475,
+    "available_bytes": 7556820992,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.09375,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815809.7150488,
+    "available_bytes": 7554883584,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.125,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815810.733844,
+    "available_bytes": 7536623616,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.140625,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815811.7511501,
+    "available_bytes": 7576043520,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.15625,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815812.7714062,
+    "available_bytes": 7588700160,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.15625,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  },
+  {
+    "time": 1792815813.7861342,
+    "available_bytes": 8573992960,
+    "processes": [
+      {
+        "pid": 73612,
+        "name": "adl64.exe"
+      }
+    ],
+    "background_java": [
+      {
+        "pid": 90944,
+        "name": "java.exe",
+        "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+        "args": [
+          "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+          "-Xms1G",
+          "-Xmx2G",
+          "-jar",
+          "server.jar",
+          "nogui"
+        ],
+        "cpu_seconds": 336.1875,
+        "rss": 585781248,
+        "reason": "Minecraft server, not Flex/FFDec compilation"
+      }
+    ]
+  }
+]

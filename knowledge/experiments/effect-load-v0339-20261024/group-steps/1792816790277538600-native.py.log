@@ -1,0 +1,24 @@
+LIVE END 10 candidate
+
+[RVision] room loc0_0 192x75 lDist2=1000 mode=classic
+
+LIVE START 11 off classic anchor=480,479 enemy=merc1 weapon=smg10 tip=2
+
+[AddictionSystem] heartbeat attached=true t=0.993
+
+LIVE END 11 off
+
+FRAME COMPLETE live
+
+{"mode": "current", "variant": "off", "frames": 120, "attacks": 144}
+{"mode": "current", "variant": "candidate", "frames": 120, "attacks": 166}
+{"mode": "current", "variant": "baseline", "frames": 120, "attacks": 205}
+{"mode": "current", "variant": "baseline", "frames": 120, "attacks": 204}
+{"mode": "current", "variant": "candidate", "frames": 120, "attacks": 152}
+{"mode": "current", "variant": "off", "frames": 120, "attacks": 188}
+{"mode": "classic", "variant": "off", "frames": 120, "attacks": 177}
+{"mode": "classic", "variant": "candidate", "frames": 120, "attacks": 136}
+{"mode": "classic", "variant": "baseline", "frames": 120, "attacks": 150}
+{"mode": "classic", "variant": "baseline", "frames": 120, "attacks": 166}
+{"mode": "classic", "variant": "candidate", "frames": 120, "attacks": 158}
+{"mode": "classic", "variant": "off", "frames": 120, "attacks": 148}

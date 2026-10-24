@@ -99,7 +99,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.8-effect-visibility";
+      private static const VERSION:String = "v0.33.9-effect-load";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -3077,7 +3077,7 @@ package
                bdb.dispose();
             }
             bd = new BitmapData(totx,toty,true,0);
-            bdb = new BitmapData(totx,toty,true,0);
+            bdb = null;
             rec.m2d = bd;
             rec.m2e = bdb;
          }
@@ -3085,22 +3085,11 @@ package
          {
             bd.fillRect(bd.rect,0);   // 清透明（复用）
          }
-         var s2:Shape = rec.m2 as Shape;
-         var s3:Shape = rec.m3 as Shape;
-         if(s2 == null)
-         {
-            s2 = new Shape();
-            rec.m2 = s2;
-         }
-         if(s3 == null)
-         {
-            s3 = new Shape();
-            rec.m3 = s3;
-         }
          // 子格级判定（5px）：castRay -1（墙）回退 fov（墙炮塔不消失）
          var cs:Number = Tile.tileX / MASK_SUB;
          var scx:int;
          var scy:int;
+         var matches:int=-1;
          bd.lock();
          if(this.cfgMode == "current" && this.currentSight != null)
          {
@@ -3118,7 +3107,7 @@ package
             // The old world -> tile -> subcell arithmetic resolves exactly
             // to this in-bounds integer rectangle (MASK_SUB == FOG_SUB).
             this.classicLogicRegion(new Rectangle(x0,y0,x1-x0+1,y1-y0+1));
-            bd.threshold(this.fogCache,
+            matches=bd.threshold(this.fogCache,
                new Rectangle(FOG_PAD+x0*MASK_SUB,FOG_PAD+y0*MASK_SUB,totx,toty),
                this.fogPoint,"<",uint(MASK_LIT_A)<<24,0xFFFFFFFF,0xFF000000,false);
          }
@@ -3155,6 +3144,40 @@ package
          bd.unlock();
          // 按模式模糊（classic/current 各自对齐雾层边界宽度）；0=关闭（硬边）
          var blur:BlurFilter = this.cfgMode == "classic" ? this.maskBlurClassic : this.maskBlurCurrent;
+         // Independent visuals can use native drawing / an empty shape when
+         // the complete support field is uniform. Classify the samples already
+         // written above; mixed fields never repeat classicLogicRegion/threshold.
+         if(rec.worldRaster === true)
+         {
+            var dark:Boolean,uniformLit:Boolean;
+            if(matches>=0){dark=matches==0;uniformLit=matches==totx*toty;}
+            else {
+               var first:uint=bd.getPixel32(0,0)>>>24;
+               dark=first==0 && !bd.hitTest(this.fogPoint,1,bd.rect);
+               uniformLit=first==255 && bd.getColorBoundsRect(0xff000000,0xff000000,false).isEmpty();
+            }
+            if(uniformLit && (bb[0]-x0<MASK_PAD_X || bb[1]-y0<MASK_PAD_TOP || x1-bb[2]<MASK_PAD_X || y1-bb[3]<MASK_PAD_BOTTOM
+               || blur.blurX*blur.quality/2+2>MASK_PAD_X*MASK_SUB
+               || blur.blurY*blur.quality/2+2>MASK_PAD_BOTTOM*MASK_SUB))uniformLit=false;
+            if(dark || uniformLit){
+               rec.fullyDark=dark;rec.fullyLit=uniformLit;rec.coverageFov=this.fovVersion;
+               rec.maskValid=false;
+               return;
+            }
+         }
+         if(bdb==null){bdb=new BitmapData(totx,toty,true,0);rec.m2e=bdb;}
+         var s2:Shape = rec.m2 as Shape;
+         var s3:Shape = rec.m3 as Shape;
+         if(s2 == null)
+         {
+            s2 = new Shape();
+            rec.m2 = s2;
+         }
+         if(s3 == null)
+         {
+            s3 = new Shape();
+            rec.m3 = s3;
+         }
          // Every eligible sample is still refreshed above. Reuse the rendered
          // mask only when its complete input, world rectangle and filter match.
          // Display attachment/restoration above always runs, even on a hit.
@@ -3652,7 +3675,7 @@ package
          if(x0>x1 || y0>y1)return;
          var key:String=x0+","+y0+","+x1+","+y1;
          var raster:Object=this.worldMasks[key];
-         if(raster==null){raster={lastFov:-1,lastBb:"",m2:null,m3:null,m2d:null,m2e:null};this.worldMasks[key]=raster;}
+         if(raster==null){raster={worldRaster:true,lastFov:-1,lastBb:"",m2:null,m3:null,m2d:null,m2e:null};this.worldMasks[key]=raster;}
          raster.used=this.worldPass;
          this.refreshMask(raster,[x0,y0,x1,y1]);
          // Leave fully lit native visuals untouched. Besides avoiding needless

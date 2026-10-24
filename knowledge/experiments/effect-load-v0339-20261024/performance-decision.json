@@ -1,0 +1,12 @@
+{
+  "accepted": true,
+  "scope": "measured mask-update reduction; overall smoothness remains limited",
+  "swf": "bf4ac9cd87272b03fae7ec22ee67d045f037362f412ee801cad3f9ba9fe3afef",
+  "performance": "b6a5065368aa72f4db9fc257aff67ab41dc3e6d4bdb45a31f9858e4b478f2348",
+  "reason": "接受范围限定为降低特效遮罩开销：720帧与64组父层严格图像、311原生显示及36设置通过。native03两模式完整帧改善；native05系统管理策略下current平均回退约7%，同一基线窗口177.71/133.02ms差异较大，不能证明具体成因。native06仅自建测试进程HighQoS且固定计算2–4ms，current更新9.655→7.697ms、完整帧74.651→75.223ms（约+0.8%，基本持平）、P95110→109、>100ms24→18；classic更新13.391→12.605ms、完整帧74.609→73.244ms、P95100→91、>100ms12→8。最长帧139→218/137→285ms仍未解决。生产启动器和系统电源计划未改；不宣称已达到原版流畅度或所有环境稳定提升。",
+  "trials": [
+    "native-03",
+    "native-05",
+    "native-06"
+  ]
+}

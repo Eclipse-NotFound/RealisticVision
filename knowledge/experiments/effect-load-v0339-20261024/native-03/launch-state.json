@@ -1,0 +1,27 @@
+{
+  "time": 1792812965.02209,
+  "available_bytes": 6807396352,
+  "processes": [],
+  "scope": "global pre/post launch",
+  "sampleDurationMs": 371.753454208374,
+  "background_java": [
+    {
+      "name": "java.exe",
+      "pid": 90944,
+      "executable": "c:/users/hello/appdata/roaming/.minecraft/runtime/java-runtime-beta/bin/java.exe",
+      "args": [
+        "C:\\Users\\hello\\AppData\\Roaming\\.minecraft\\runtime\\java-runtime-beta\\bin\\java.exe",
+        "-Xms1G",
+        "-Xmx2G",
+        "-jar",
+        "server.jar",
+        "nogui"
+      ],
+      "cpu_seconds": 267.609375,
+      "rss": 965013504,
+      "reason": "Minecraft server, not Flex/FFDec compilation"
+    }
+  ],
+  "host_cpu_percent_before_air": 52.9,
+  "host_cpu_sample_seconds": 3.0
+}

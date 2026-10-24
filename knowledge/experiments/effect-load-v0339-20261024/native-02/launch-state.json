@@ -1,0 +1,14 @@
+{
+  "time": 1792811126.6981192,
+  "available_bytes": 6149971968,
+  "processes": [
+    {
+      "name": "java.exe",
+      "pid": 90944
+    }
+  ],
+  "scope": "global pre/post launch",
+  "sampleDurationMs": 4466.46523475647,
+  "host_cpu_percent_before_air": 39.4,
+  "host_cpu_sample_seconds": 3.030999999959022
+}

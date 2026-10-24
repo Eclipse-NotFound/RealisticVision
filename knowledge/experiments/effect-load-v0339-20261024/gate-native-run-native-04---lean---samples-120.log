@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\native.py", line 47, in <module>
+    t.build(x.name,True,'candidate',False,True) if x.action=='build' else t.run(x.name)
+                                                                          ^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\trace.py", line 95, in run
+    
+  File "<string>", line 7, in run
+AssertionError: Less than 5 GiB physical memory available; no AIR started

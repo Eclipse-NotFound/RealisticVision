@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-24 **D43 v0.33.9已部署**：在独立特效的原有采样中判断全亮/全暗，跳过不需要的模糊及辅助图，不重复classic采样；边界与宽滤镜沿用原算法。1131项/组、36原生六敌战斗窗与正式启动通过。SHA bf4ac9cd87272b03fae7ec22ee67d045f037362f412ee801cad3f9ba9fe3afef，45826B；准确源build/effect-load-v3-output/production-final/src，不含authority。两版失败方案与环境异常保留；受控测试RV更新current约少20%、classic约少6%，完整帧基本持平，最长帧未解决，测试调度策略未部署。[报告](../knowledge/experiments/2026-10-24-effect-load.md)。
+
 > 2026-10-23 **D42 v0.33.8已部署**：按世界位置裁切原生弹体/激光/粒子、狮鹫独立手臂和身体外敌方武器；明区原生绘制、全零支持区空遮罩。1000项/组及12完整组合跑动射击窗、正式init/注册/tick1/181/361通过。SHA 0dbe0d7a95b8e496fb393d7fcd75f88d60c34a1d0fabb33266b122e3fa04f2bf，45600B；准确源build/effect-visibility-output/production-final/src。尚未达原版流畅度、第三方自有遮罩优先。[报告](../knowledge/experiments/2026-10-23-effect-visibility.md)。
 
 > 2026-10-23 **D41 v0.33.7已部署**：复用身体/血条/武器遮罩图形，classic仅补算未缓存视野区，current局部清理并保留静止墙光失效。747项/组、12原生战斗窗与正式init/注册/tick1/181/361通过。准确包6dbbae60eb09…（44604B），生产源build/boundary-load-output/production/src。密集移动更新classic约11%下降、current约3%–4%；完整帧classic60.2→57.2ms，current基本持平54.7→55.3ms，未达原版，长帧未全解。[报告](../knowledge/experiments/2026-10-23-boundary-load.md)。
@@ -88,7 +90,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D42 v0.33.8；原生特效与狮鹫独立视觉按位置裁切。准确生产源build/effect-visibility-output/production-final/src；不含authority。性能仍未达到关闭RV，详见顶部报告。
+- 当前安装D43 v0.33.9；独立特效单次采样跳过全亮/全暗区域多余模糊，遮挡与墙面保留；准确源build/effect-load-v3-output/production-final/src，不含authority。性能边界见顶部报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -111,6 +113,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D43已完成，当前无待跑测试；后续以D43准确生产源为基线。下方为历史停点。
 
 - D42已完成验证、部署及收尾，当前无待跑RV实例；以下均为历史停点，不自动重跑。后续反馈以D42准确生产源为基线，不能混入D40候选或authority。
 

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\group_gate.py", line 29, in step
+    runpy.run_path(str(HERE/args[0]),run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-load-v3\review.py", line 3, in <module>
+    r=p.run;OUT=p.OUT
+                ^^^^^
+AttributeError: module 'package' has no attribute 'OUT'

@@ -1,0 +1,9 @@
+{
+  "files": {
+    "pfe.swf": "a796827173af7d6fab9885fb66ecc62182ab5335918a30c7cce4c44914a238b7",
+    "mods/ModLoader/release/ModLoaderMod.swf": "2050e023205e87fdfdf7fba4b54b9bad7769868e51767d0bfbe1742cdc7542e2",
+    "mods/ModLoader/release/telemetry.json": "a050ef06ea542b8fd8781f1e945f9adcd03c7ae5190719e66ba826e2059fce12"
+  },
+  "runtime_contains_frame_recorder": true,
+  "runtime_contains_telemetry_path": true
+}
