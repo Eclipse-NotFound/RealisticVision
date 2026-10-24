@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "package.py",
+      "build"
+    ],
+    "log": "group-steps\\1792866900608660500-package.py.log"
+  },
+  {
+    "args": [
+      "package.py",
+      "inspect"
+    ],
+    "log": "group-steps\\1792866903783250800-package.py.log"
+  },
+  {
+    "args": [
+      "package.py",
+      "check"
+    ],
+    "log": "group-steps\\1792866904856988400-package.py.log"
+  },
+  {
+    "args": [
+      "gate.py"
+    ],
+    "log": "group-steps\\1792866924400886700-gate.py.log"
+  }
+]

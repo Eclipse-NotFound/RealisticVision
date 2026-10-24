@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "sources": {
+    "RealisticVisionMod.as": "b05c9ba5525bccf34a37f21b79763212c0d99e59cd42b093de7be9ce4332b1a7",
+    "RVAuthorityCarrier.as": "e466b64fb7346dfb643d1662afa8145d342b8addbd751eebcfa95b42bc7b266b",
+    "RVAuthorityView.as": "39bd7e8f02cca38dbd5c785a74bdf4f78f4371d48313a8af74c6537131d0695b",
+    "RVExplorationCarrier.as": "87fde379f51faecddf0cb8b0e84da4b2b58c8f1724d637e18abd21a6210e1082",
+    "RVKeybinds.as": "50ba8a05b41c3b188f3e78b3deb060ecd152c5e8e940590a78c08ab9b65c334e",
+    "RVWallSurface.as": "cf151dae1d96e4b641eaff1bd3c6d1adb092dcaeb4aaa46f565d8166e12879c2",
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "cd8bdb0745db8b9375edb31a59540115d619584638cbac397449b9291a340074"
+  },
+  "scope": "Compile only; active authority runtime remains separate, not included in release",
+  "binary": "6d65d9e4b311a8fb6d0bc7ed9a91131046f4c83d65c449279a723cefaef4ed51"
+}

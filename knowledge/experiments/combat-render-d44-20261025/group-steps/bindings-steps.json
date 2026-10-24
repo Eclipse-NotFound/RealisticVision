@@ -1,0 +1,92 @@
+[
+  {
+    "args": [
+      "candidates.py",
+      "bindings"
+    ],
+    "log": "group-steps\\1792865558444774000-candidates.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "bindings-pixels-01",
+      "--candidate",
+      "bindings"
+    ],
+    "log": "group-steps\\1792865558515770800-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "bindings-pixels-01"
+    ],
+    "log": "group-steps\\1792865561082784900-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "bindings-native-01",
+      "--candidate",
+      "bindings"
+    ],
+    "log": "group-steps\\1792865614627347900-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "bindings-native-01"
+    ],
+    "log": "group-steps\\1792865623239816200-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "bindings-controlled-01",
+      "--candidate",
+      "bindings",
+      "--full",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792865654268770900-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "bindings-controlled-01"
+    ],
+    "log": "group-steps\\1792865663030147500-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "bindings-free-01",
+      "--candidate",
+      "bindings",
+      "--full",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792865965865098300-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "bindings-free-01"
+    ],
+    "log": "group-steps\\1792865974584203600-run.py.log"
+  }
+]

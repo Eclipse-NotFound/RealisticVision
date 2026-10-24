@@ -1,0 +1,9 @@
+[
+ ["validate.py","native-build","support-native-04","--candidate","support"],
+ ["validate.py","native-run","support-native-04"],
+ ["run.py","build","support-free-02","--candidate","support","--full","--warmup","210","--frames","180"],
+ ["run.py","run","support-free-02"],
+ ["package.py","build"],
+ ["package.py","inspect"],
+ ["package.py","check"]
+]

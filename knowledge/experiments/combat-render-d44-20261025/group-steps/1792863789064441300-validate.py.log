@@ -1,0 +1,92 @@
+ native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS visible pixel identity classic merc-arm
+
+PASS visible pixel identity classic merc-weapon
+
+PASS visible pixel identity classic visualBullet
+
+PASS visible pixel identity classic visbullaser
+
+PASS visible pixel identity classic iskr_bul
+
+PASS visible pixel identity classic iskr
+
+PASS visible pixel identity classic expl
+
+PASS visible pixel identity classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS long weapon native positive classic
+
+PASS body classification unchanged classic
+
+PASS long weapon outside body hidden classic
+
+PASS native particle animation cannot reveal classic 0
+
+PASS native particle animation cannot reveal classic 1
+
+PASS native particle animation cannot reveal classic 2
+
+PASS native particle animation cannot reveal classic 3
+
+PASS native particle animation cannot reveal classic 4
+
+PASS native particle animation cannot reveal classic 5
+
+PASS native particle animation cannot reveal classic 6
+
+PASS native particle animation cannot reveal classic 7
+
+PASS native dead arm preserved classic
+
+PASS removed effect released classic
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+PASS room reset releases effects classic
+
+FAIL ArgumentError: Error #2005 ArgumentError: Error #2005
+
+	at EffectVisibilityProbeMod/inspectEffects()
+
+	at EffectVisibilityProbeMod/tick()
+
+	at flash.utils::Timer/tick()
+
+
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\group.py", line 28, in main
+    with log.open('w',encoding='utf-8') as out,contextlib.redirect_stdout(out),contextlib.redirect_stderr(out):runpy.run_path(str(HERE/args[0]),run_name='__main__')
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 75, in <module>
+    {'dense-build':lambda n:dense_build(n,a.candidate),'native-build':lambda n:native_build(n,a.candidate),'dense-run':lambda n:execute(n,True),'native-run':execute}[a.action](a.name)
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 71, in execute
+    r.save(folder/'validation.json',{'pass':ok,'checks':count,'exit':code,'log':r.sha(folder/'result.txt')});print(log[-1800:]);assert ok;rec.outcome='passed'
+                                                                                                                                       ^^
+AssertionError

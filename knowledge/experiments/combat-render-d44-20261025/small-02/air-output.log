@@ -1,0 +1,141 @@
+ModLoader[boot_start] v2 run=run_1792860700920_147403
+ModLoader[requested_CombatRenderProbeMod] line 16
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_CombatRenderProbeMod] init
+536 Интерфейс
+1102 Game init
+798 Персонаж
+0 Местность
+756 Создание местности
+false
+352 Вход в местность
+758 Создание местности
+490 Вход в местность
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 0 {"variant":"off","n":0,"mode":"current"}
+D44 END 0 off shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 1 {"variant":"normal","n":0,"mode":"current"}
+D44 END 1 normal shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 2 {"variant":"nomask","n":0,"mode":"current"}
+D44 END 2 nomask shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 3 {"variant":"noobjects","n":0,"mode":"current"}
+D44 END 3 noobjects shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 4 {"variant":"nomask","n":0,"mode":"current"}
+D44 END 4 nomask shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 5 {"variant":"normal","n":0,"mode":"current"}
+D44 END 5 normal shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 6 {"variant":"off","n":0,"mode":"current"}
+D44 END 6 off shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 7 {"variant":"off","n":0,"mode":"classic"}
+D44 END 7 off shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 8 {"variant":"normal","n":0,"mode":"classic"}
+D44 END 8 normal shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 9 {"variant":"nomask","n":0,"mode":"classic"}
+D44 END 9 nomask shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 10 {"variant":"noobjects","n":0,"mode":"classic"}
+D44 END 10 noobjects shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 11 {"variant":"nomask","n":0,"mode":"classic"}
+D44 END 11 nomask shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 12 {"variant":"normal","n":0,"mode":"classic"}
+D44 END 12 normal shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 13 {"variant":"off","n":0,"mode":"classic"}
+D44 END 13 off shots=0 bullets=0
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 14 {"variant":"off","n":1,"mode":"current"}
+D44 END 14 off shots=20 bullets=2
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 15 {"variant":"normal","n":1,"mode":"current"}
+D44 END 15 normal shots=14 bullets=2
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 16 {"variant":"nomask","n":1,"mode":"current"}
+D44 END 16 nomask shots=14 bullets=2
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 17 {"variant":"noobjects","n":1,"mode":"current"}
+D44 END 17 noobjects shots=20 bullets=2
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 18 {"variant":"nomask","n":1,"mode":"current"}
+D44 END 18 nomask shots=14 bullets=1
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 19 {"variant":"normal","n":1,"mode":"current"}
+D44 END 19 normal shots=14 bullets=1
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 20 {"variant":"off","n":1,"mode":"current"}
+D44 END 20 off shots=20 bullets=1
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 21 {"variant":"off","n":1,"mode":"classic"}
+D44 END 21 off shots=14 bullets=1
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 22 {"variant":"normal","n":1,"mode":"classic"}
+D44 END 22 normal shots=18 bullets=2
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 23 {"variant":"nomask","n":1,"mode":"classic"}
+D44 END 23 nomask shots=26 bullets=3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 24 {"variant":"noobjects","n":1,"mode":"classic"}
+D44 END 24 noobjects shots=24 bullets=3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 25 {"variant":"nomask","n":1,"mode":"classic"}
+D44 END 25 nomask shots=25 bullets=3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 26 {"variant":"normal","n":1,"mode":"classic"}
+D44 END 26 normal shots=23 bullets=3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 27 {"variant":"off","n":1,"mode":"classic"}
+D44 END 27 off shots=27 bullets=4
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 28 {"variant":"off","n":6,"mode":"current"}
+D44 END 28 off shots=146 bullets=15
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 29 {"variant":"normal","n":6,"mode":"current"}
+D44 END 29 normal shots=147 bullets=15
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 30 {"variant":"nomask","n":6,"mode":"current"}
+D44 END 30 nomask shots=147 bullets=12
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 31 {"variant":"noobjects","n":6,"mode":"current"}
+D44 END 31 noobjects shots=151 bullets=12
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 32 {"variant":"nomask","n":6,"mode":"current"}
+D44 END 32 nomask shots=154 bullets=11
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 33 {"variant":"normal","n":6,"mode":"current"}
+D44 END 33 normal shots=157 bullets=12
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+D44 START 34 {"variant":"off","n":6,"mode":"current"}
+D44 END 34 off shots=149 bullets=10
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 35 {"variant":"off","n":6,"mode":"classic"}
+D44 END 35 off shots=150 bullets=12
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 36 {"variant":"normal","n":6,"mode":"classic"}
+D44 END 36 normal shots=153 bullets=9
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 37 {"variant":"nomask","n":6,"mode":"classic"}
+D44 END 37 nomask shots=154 bullets=10
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 38 {"variant":"noobjects","n":6,"mode":"classic"}
+D44 END 38 noobjects shots=154 bullets=9
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 39 {"variant":"nomask","n":6,"mode":"classic"}
+D44 END 39 nomask shots=153 bullets=10
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 40 {"variant":"normal","n":6,"mode":"classic"}
+flushed
+D44 END 40 normal shots=161 bullets=10
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+D44 START 41 {"variant":"off","n":6,"mode":"classic"}
+D44 END 41 off shots=154 bullets=10
+D44 COMPLETE

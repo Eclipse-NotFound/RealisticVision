@@ -11,9 +11,12 @@ package {
   private static const SAMPLE_COUNT=90;
   private static const WARMUP_COUNT=30;
   private static const LARGE=false;
+  private static const EXPERIMENT=false;
+  private static const CONTROLLED=false;
+  private static const PROFILE=false;
   private static var instance:CombatRenderProbeMod;
   public static function init(main:*):void {instance=new CombatRenderProbeMod(main);}
-  private var host:*,wc:Class,rvClass:Class,loader:Loader=new Loader(),timer:Timer=new Timer(150);
+  private var host:*,wc:Class,rvClass:Class,candidateClass:Class,loader:Loader=new Loader(),candidateLoader:Loader=new Loader(),timer:Timer=new Timer(150);
   private var phase:int=0,ticks:int=0,settle:int=0,index:int=0,age:int=0,last:int=0;
   private var plan:Array=[],crowd:Array=[],restore:Array=[],row:Object,rv:*,floor:Number,low:Number,high:Number;
   private var result:Object={cases:[],checks:[]},shots:Dictionary=new Dictionary(true),previousFrame:Object=null,sceneLoc:*;
@@ -21,7 +24,11 @@ package {
    if(main==null)return;host=main;wc=host.loaderInfo.applicationDomain.getDefinition('fe.World') as Class;
    loader.contentLoaderInfo.addEventListener(Event.COMPLETE,function(e:Event):void {rvClass=loader.contentLoaderInfo.applicationDomain.getDefinition('RealisticVisionMod') as Class;});
    var ctx:LoaderContext=new LoaderContext(false,new ApplicationDomain(host.loaderInfo.applicationDomain));ctx.allowCodeImport=true;loader.load(new URLRequest('app:/rv.swf'),ctx);
-   for each(var n:int in [0,1,6]) for each(var mode:String in ['current','classic']) for each(var variant:String in ['off','normal','nomask','noobjects','nomask','normal','off'])plan.push({n:n,mode:mode,variant:variant});
+   if(EXPERIMENT){
+    candidateLoader.contentLoaderInfo.addEventListener(Event.COMPLETE,function(e:Event):void {candidateClass=candidateLoader.contentLoaderInfo.applicationDomain.getDefinition('RealisticVisionMod') as Class;});
+    var candidateCtx:LoaderContext=new LoaderContext(false,new ApplicationDomain(host.loaderInfo.applicationDomain));candidateCtx.allowCodeImport=true;candidateLoader.load(new URLRequest('app:/candidate.swf'),candidateCtx);
+   }
+   for each(var n:int in (EXPERIMENT?[6]:[0,1,6])) for each(var mode:String in ['current','classic']) for each(var variant:String in (PROFILE?['candidate']:(EXPERIMENT?['off','normal','candidate','candidate','normal','off']:['off','normal','nomask','noobjects','nomask','normal','off'])))plan.push({n:n,mode:mode,variant:variant});
    timer.addEventListener(TimerEvent.TIMER,tick);timer.start();
   }
   private function save():void {
@@ -32,7 +39,7 @@ package {
   private function tick(e:Event):void {
    try {
     var w:*=wc['w'];if(++ticks>1200)throw new Error('boot timeout '+phase);
-    if(!rvClass||!w||!w.allLandsLoaded||!w.landData)return;if(w.verror&&w.verror.visible)throw new Error(w.verror.txt.text);
+    if(!rvClass||(EXPERIMENT&&!candidateClass)||!w||!w.allLandsLoaded||!w.landData)return;if(w.verror&&w.verror.visible)throw new Error(w.verror.txt.text);
     if(phase==0){w.mm.active=false;w.newGame(-1,'LP',null);phase=1;return;}
     if(phase==1&&w.gg&&w.loc&&w.loc.active&&w.game.curLandId){
      if(LARGE){var c:*=host.getChildByName('ContinuousSceneCarrier');if(!c||!c.sceneAPI.ready||w.t_exit!=0||!w.game.lands.continuous_scene)return;}
@@ -56,7 +63,7 @@ package {
      if(!found)throw new Error('native platform not found');
      w.black=true;w.loc.black=true;w.loc.base=false;w.godMode=true;w.gg.invulner=false;
      w.gg.setPos(low+80,floor-1);w.gg.setVisPos();w.ctr.clearAll();w.gg.ggControl=true;
-     result.scene={large:LARGE,size:[w.loc.spaceX,w.loc.spaceY],nativeUnits:w.loc.units.length,platform:[low,high,floor],fps:host.stage.frameRate};
+     result.scene={large:LARGE,controlled:CONTROLLED,size:[w.loc.spaceX,w.loc.spaceY],nativeUnits:w.loc.units.length,platform:[low,high,floor],fps:host.stage.frameRate};
      sceneLoc=w.loc;timer.stop();start(w);host.stage.addEventListener(Event.ENTER_FRAME,step,false,-10000);
     }
    }catch(e:Error){fail(e);}
@@ -72,7 +79,8 @@ package {
     var cls:Class=host.loaderInfo.applicationDomain.getDefinition('fe.unit.UnitMerc') as Class;var u:*=new cls('1',10,null,{weap:'smg10'});
     u.putLoc(w.loc,low+210+crowd.length*55,floor-1);u.invulner=true;w.loc.addObj(u);w.loc.units.push(u);u.step();crowd.push(u);
    }
-   rv=new rvClass();rv.cfgDim=.6;rv.cfgSoftCurrent=25;rv.cfgMode=p.mode;rv.cfgEnabled=p.variant!='off';rv.cfgWallBright=false;rv.mswRegistered=true;rv.cfgBaseRooms={};rv.resetRoom(w,w.loc);
+   var clsRV:Class=p.variant=='candidate'?candidateClass:rvClass;
+   rv=new clsRV();rv.cfgDim=.6;rv.cfgSoftCurrent=25;rv.cfgMode=p.mode;rv.cfgEnabled=p.variant!='off';rv.cfgWallBright=false;rv.mswRegistered=true;rv.cfgBaseRooms={};rv.resetRoom(w,w.loc);
    age=0;last=0;previousFrame=null;row={crowd:p.n,mode:p.mode,variant:p.variant,warmup:WARMUP_COUNT,sampleFrames:SAMPLE_COUNT,intervals:[],updates:[],diagnosticMs:[],masks:[],memory:[],positions:[],frames:[],units:w.loc.units.length,maxObjects:0,maxProjectiles:0,maxParticles:0,attacks:0};
    trace('D44 START '+index+' '+JSON.stringify(p));
   }
@@ -90,7 +98,16 @@ package {
     var now:int=getTimer();if(previousFrame)previousFrame.nextInterval=now-last;
     if(age>=WARMUP_COUNT&&last)row.intervals.push(now-last);last=now;
     undo();w.ctr.clearAll();w.gg.ggControl=true;
+    if(CONTROLLED){
+     // Reproducible rendering stimulus only: real AI, weapons and projectiles
+     // still advance, but knockback/flight cannot change the next test's view.
+     w.gg.setPos(low+80+60*Math.sin(age/15),floor-1);w.gg.setVisPos();
+     for(var fighterIndex:int=0;fighterIndex<crowd.length;fighterIndex++){
+      var fixedFighter:*=crowd[fighterIndex];fixedFighter.setPos(low+210+fighterIndex*55,floor-1);fixedFighter.setVisPos();
+     }
+    }
     var memStart:Number=System.totalMemory;
+    if(PROFILE&&age==WARMUP_COUNT){rv.profile={};rv.calls={};}
     var t:int=getTimer();rv.frameCount++;rv.onFrameInner();var ms:int=getTimer()-t;
     t=getTimer();var masks:int=0,seen:Dictionary=new Dictionary(true),owned:Dictionary=new Dictionary(true),kind:String=row.variant;
     if(kind=='nomask'){
@@ -137,8 +154,13 @@ package {
      if(raster.m2e)retained.softPixels+=BitmapData(raster.m2e).width*BitmapData(raster.m2e).height;
      if(raster.maskInput)retained.previousPixels+=BitmapData(raster.maskInput).width*BitmapData(raster.maskInput).height;
     }
-    for(var visualKey:Object in rv.worldVisuals)retained.visuals++;
+    retained.emptyVisuals=0;retained.extraEmptyVisuals=0;
+    for(var visualKey:Object in rv.worldVisuals){
+     retained.visuals++;var worldRecord:Object=rv.worldVisuals[visualKey];
+     if(worldRecord.dark){retained.emptyVisuals++;if(!worldRecord.raster.fullyDark)retained.extraEmptyVisuals++;}
+    }
     row.retained=retained;
+    if(PROFILE){row.profile=rv.profile;row.calls=rv.calls;}
     result.cases.push(row);save();trace('D44 END '+index+' '+row.variant+' shots='+row.attacks+' bullets='+row.maxProjectiles);
     if(++index<plan.length){start(w);return;}
     undo();host.stage.removeEventListener(Event.ENTER_FRAME,step);trace('D44 COMPLETE');NativeApplication.nativeApplication.exit(0);

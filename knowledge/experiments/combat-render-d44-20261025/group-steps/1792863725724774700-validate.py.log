@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\group.py", line 28, in main
+    with log.open('w',encoding='utf-8') as out,contextlib.redirect_stdout(out),contextlib.redirect_stderr(out):runpy.run_path(str(HERE/args[0]),run_name='__main__')
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 74, in <module>
+    {'dense-build':lambda n:dense_build(n,a.candidate),'native-build':lambda n:native_build(n,a.candidate),'dense-run':lambda n:execute(n,True),'native-run':execute}[a.action](a.name)
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 74, in <lambda>
+    {'dense-build':lambda n:dense_build(n,a.candidate),'native-build':lambda n:native_build(n,a.candidate),'dense-run':lambda n:execute(n,True),'native-run':execute}[a.action](a.name)
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 56, in native_build
+    try:f.build(name,True)
+        ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\effect-visibility\run.py", line 19, in build
+    r.runner.compile(entry,folder/'mods/EffectVisibilityProbe/release/EffectVisibilityProbeMod.swf',[folder],definitions=['-define=CONFIG::largeScene,false','-define=CONFIG::verifyPixels,false','-define=CONFIG::liveFrames,false'])
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\validate.py", line 45, in compile_local
+    return original_compile(entry,*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\wall-surface\run.py", line 26, in compile
+    if result.returncode:raise RuntimeError(result.stdout+result.stderr)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render-output\support-native-02\mods\EffectVisibilityProbe\release\EffectVisibilityProbeMod.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render-output\support-native-02\EffectVisibilityProbeMod.as(198): 列: 108 错误: 访问的属性 flash 未定义。
+
+                  visualRow.vis.filters=Array(filtersIdentity[filterIndex++]).concat(ageIdentity%3==0?[new flash.filters.GlowFilter(0xff44aa,1,20,20,2,1)]:[]);
+                                                                                                           ^
+
+

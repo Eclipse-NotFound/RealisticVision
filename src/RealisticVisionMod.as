@@ -58,6 +58,7 @@ package
       private var weaponPass:int = 0;
       private var worldVisuals:Dictionary = new Dictionary(true);
       private var worldMasks:Object = {};
+      private var worldSupportRect:Rectangle = new Rectangle();
       private var worldTypes:Dictionary = new Dictionary(true);
       private var worldPass:int = 0;
 
@@ -99,7 +100,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.9-effect-load";
+      private static const VERSION:String = "v0.33.10-render-cache";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -3022,14 +3023,14 @@ package
          }
          this.refreshMask(rec,bb);
          var s2:Shape=rec.m2 as Shape,s3:Shape=rec.m3 as Shape;
-         s2.cacheAsBitmap=true;s3.cacheAsBitmap=true;
+         if(!s2.cacheAsBitmap)s2.cacheAsBitmap=true;if(!s3.cacheAsBitmap)s3.cacheAsBitmap=true;
          if(u.vis != null && u.vis.parent != null) {
             if(s2.parent !== u.vis.parent)u.vis.parent.addChild(s2);
-            this.authorityView.write(u.vis,"cacheAsBitmap",true);this.authorityView.write(u.vis,"mask",s2);
+            if(this.authorityView.active || !u.vis.cacheAsBitmap)this.authorityView.write(u.vis,"cacheAsBitmap",true);if(this.authorityView.active || u.vis.mask!==s2)this.authorityView.write(u.vis,"mask",s2);
          } else if(s2.parent != null)s2.parent.removeChild(s2);
          if(u.hpbar != null && u.hpbar.parent != null) {
             if(s3.parent !== u.hpbar.parent)u.hpbar.parent.addChild(s3);
-            this.authorityView.write(u.hpbar,"cacheAsBitmap",true);this.authorityView.write(u.hpbar,"mask",s3);
+            if(this.authorityView.active || !u.hpbar.cacheAsBitmap)this.authorityView.write(u.hpbar,"cacheAsBitmap",true);if(this.authorityView.active || u.hpbar.mask!==s3)this.authorityView.write(u.hpbar,"mask",s3);
          } else if(s3.parent != null)s3.parent.removeChild(s3);
       }
 
@@ -3279,13 +3280,13 @@ package
          {
             if(u.vis)
             {
-               this.authorityView.write(u.vis,"mask",null,true);
-               this.authorityView.write(u.vis,"cacheAsBitmap",false,true);
+               if(this.authorityView.active || u.vis.mask != null)this.authorityView.write(u.vis,"mask",null,true);
+               if(this.authorityView.active || u.vis.cacheAsBitmap)this.authorityView.write(u.vis,"cacheAsBitmap",false,true);
             }
             if(u.hpbar)
             {
-               this.authorityView.write(u.hpbar,"mask",null,true);
-               this.authorityView.write(u.hpbar,"cacheAsBitmap",false,true);
+               if(this.authorityView.active || u.hpbar.mask != null)this.authorityView.write(u.hpbar,"mask",null,true);
+               if(this.authorityView.active || u.hpbar.cacheAsBitmap)this.authorityView.write(u.hpbar,"cacheAsBitmap",false,true);
             }
          }
          catch(err:Error)
@@ -3331,11 +3332,11 @@ package
          {
             if(u.vis)
             {
-               this.authorityView.write(u.vis,"visible",false);
+               if(this.authorityView.active || u.vis.visible)this.authorityView.write(u.vis,"visible",false);
             }
             if(u.hpbar)
             {
-               this.authorityView.write(u.hpbar,"visible",false);
+               if(this.authorityView.active || u.hpbar.visible)this.authorityView.write(u.hpbar,"visible",false);
             }
             this.authorityView.write(u,"prior",0);
          }
@@ -3351,7 +3352,7 @@ package
          {
             if(u.vis)
             {
-               this.authorityView.write(u.vis,"visible",true,true);
+               if(this.authorityView.active || !u.vis.visible)this.authorityView.write(u.vis,"visible",true,true);
             }
             this.authorityView.write(u,"prior",1,true);
          }
@@ -3540,7 +3541,7 @@ package
          var shape:Shape=record.shape as Shape;
          if(state == 0)
          {
-            this.authorityView.write(visual,"visible",false);record.hidden=true;
+            if(this.authorityView.active || visual.visible)this.authorityView.write(visual,"visible",false);record.hidden=true;
             this.authorityView.write(visual,"mask",record.mask,true);this.authorityView.write(visual,"cacheAsBitmap",record.cache,true);
             if(shape != null && shape.parent != null) shape.parent.removeChild(shape);
             return;
@@ -3556,7 +3557,7 @@ package
          }
          if(shape.parent !== visual.parent) visual.parent.addChild(shape);
          // Each display object owns a mask. Only the immutable raster is shared.
-         this.authorityView.write(visual,"cacheAsBitmap",true);this.authorityView.write(visual,"mask",shape);
+         if(this.authorityView.active || !visual.cacheAsBitmap)this.authorityView.write(visual,"cacheAsBitmap",true);if(this.authorityView.active || visual.mask!==shape)this.authorityView.write(visual,"mask",shape);
       }
 
       private function releaseWeaponVisual(visual:DisplayObject, record:Object):void
@@ -3583,7 +3584,7 @@ package
             {
                this.authorityView.write(wpn.vis,"mask",null,true);
                this.authorityView.write(wpn.vis,"cacheAsBitmap",false,true);   // v0.24.6：无掩膜即关缓存（防残留开销）
-               this.authorityView.write(wpn.vis,"visible",visB,visB);
+               if(this.authorityView.active || wpn.vis.visible != visB)this.authorityView.write(wpn.vis,"visible",visB,visB);
             }
          }
          catch(err:Error)
@@ -3697,6 +3698,20 @@ package
             if(record!=null)this.releaseWorldVisual(visual,record);
             return;
          }
+         var drawDark:Boolean=raster.fullyDark;
+         if(!drawDark){
+            var supportData:BitmapData=raster.m2e as BitmapData;
+            var supportX:int=(x0-Math.max(0,x0-MASK_PAD_X))*MASK_SUB;
+            var supportY:int=(y0-Math.max(0,y0-MASK_PAD_TOP))*MASK_SUB;
+            // Keep bilinear neighbours, reusing one synchronous scratch rect.
+            this.worldSupportRect.x=Math.max(0,supportX-1);
+            this.worldSupportRect.y=Math.max(0,supportY-1);
+            this.worldSupportRect.width=Math.min(supportData.width,supportX+(x1-x0+1)*MASK_SUB+1)-this.worldSupportRect.x;
+            this.worldSupportRect.height=Math.min(supportData.height,supportY+(y1-y0+1)*MASK_SUB+1)-this.worldSupportRect.y;
+            // Reading filters clones their array. Inspect that tree only when
+            // the alpha test has established a possible transparent shortcut.
+            if(!supportData.hitTest(this.fogPoint,1,this.worldSupportRect) && !this.worldVisualHasFilters(visual))drawDark=true;
+         }
          if(record==null)
          {
             record={shape:new Shape(),baseMask:visual.mask,cache:visual.cacheAsBitmap,raster:null,revision:-1};
@@ -3704,14 +3719,26 @@ package
          }
          record.pass=this.worldPass;
          var shape:Shape=record.shape as Shape;
-         if(record.raster!==raster || record.revision!=raster.maskRevision || record.dark!==raster.fullyDark)
+         if(record.raster!==raster || record.revision!=raster.maskRevision || record.dark!==drawDark)
          {
-            if(raster.fullyDark)shape.graphics.clear();
+            if(drawDark)shape.graphics.clear();
             else shape.graphics.copyFrom(Shape(raster.m2).graphics);
-            record.raster=raster;record.revision=raster.maskRevision;record.dark=raster.fullyDark;
+            record.raster=raster;record.revision=raster.maskRevision;record.dark=drawDark;
          }
          if(shape.parent!==visual.parent)visual.parent.addChild(shape);
-         shape.cacheAsBitmap=!raster.fullyDark;this.authorityView.write(visual,"cacheAsBitmap",raster.fullyDark?record.cache:true);this.authorityView.write(visual,"mask",shape);
+         if(shape.cacheAsBitmap!==!drawDark)shape.cacheAsBitmap=!drawDark;
+         var useCache:Boolean=drawDark?record.cache:true;
+         if(this.authorityView.active || visual.cacheAsBitmap!==useCache)this.authorityView.write(visual,"cacheAsBitmap",useCache);
+         if(this.authorityView.active || visual.mask!==shape)this.authorityView.write(visual,"mask",shape);
+      }
+
+      private function worldVisualHasFilters(visual:DisplayObject):Boolean
+      {
+         if(visual.filters.length>0)return true;
+         var container:DisplayObjectContainer=visual as DisplayObjectContainer;
+         if(container!=null)for(var i:int=0;i<container.numChildren;i++)
+            if(this.worldVisualHasFilters(container.getChildAt(i)))return true;
+         return false;
       }
 
       private function releaseWorldVisual(visual:DisplayObject,record:Object):void

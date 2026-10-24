@@ -1,0 +1,985 @@
+ModLoader[boot_start] v2 run=run_1792864033969_684255
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_EffectVisibilityProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_EffectVisibilityProbeMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-5d4c1c7720be4495883604bc390867e9
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_ModLoaderMod] init
+626 Интерфейс
+1153 Game init
+1060 Персонаж
+0 Местность
+757 Создание местности
+false
+395 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+734 Создание местности
+360 Вход в местность
+PASS native mercenary arm found
+PASS native emitter iskr_bul
+PASS native emitter iskr
+PASS native emitter expl
+PASS native emitter gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS baseline dark current merc-arm 0
+PASS baseline dark current visualBullet 0
+PASS baseline dark current visbullaser 0
+PASS baseline dark current iskr_bul 0
+PASS baseline dark current iskr 0
+PASS baseline dark current expl 0
+PASS baseline dark current gilza 0
+PASS baseline dark current merc-arm 1
+PASS baseline dark current visualBullet 1
+PASS baseline dark current visbullaser 1
+PASS baseline dark current iskr_bul 1
+PASS baseline dark current iskr 1
+PASS baseline dark current expl 1
+PASS baseline dark current gilza 1
+PASS baseline dark current merc-arm 2
+PASS baseline dark current visualBullet 2
+PASS baseline dark current visbullaser 2
+PASS baseline dark current iskr_bul 2
+PASS baseline dark current iskr 2
+PASS baseline dark current expl 2
+PASS baseline dark current gilza 2
+PASS baseline dark current merc-arm 3
+PASS baseline dark current visualBullet 3
+PASS baseline dark current visbullaser 3
+PASS baseline dark current iskr_bul 3
+PASS baseline dark current iskr 3
+PASS baseline dark current expl 3
+PASS baseline dark current gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS fixed dark current merc-arm 0
+PASS fixed dark current merc-weapon 0
+PASS fixed dark current visualBullet 0
+PASS fixed dark current visbullaser 0
+PASS fixed dark current iskr_bul 0
+PASS fixed dark current iskr 0
+PASS fixed dark current expl 0
+PASS fixed dark current gilza 0
+PASS fixed dark current merc-arm 1
+PASS fixed dark current merc-weapon 1
+PASS fixed dark current visualBullet 1
+PASS fixed dark current visbullaser 1
+PASS fixed dark current iskr_bul 1
+PASS fixed dark current iskr 1
+PASS fixed dark current expl 1
+PASS fixed dark current gilza 1
+PASS fixed dark current merc-arm 2
+PASS fixed dark current merc-weapon 2
+PASS fixed dark current visualBullet 2
+PASS fixed dark current visbullaser 2
+PASS fixed dark current iskr_bul 2
+PASS fixed dark current iskr 2
+PASS fixed dark current expl 2
+PASS fixed dark current gilza 2
+PASS fixed dark current merc-arm 3
+PASS fixed dark current merc-weapon 3
+PASS fixed dark current visualBullet 3
+PASS fixed dark current visbullaser 3
+PASS fixed dark current iskr_bul 3
+PASS fixed dark current iskr 3
+PASS fixed dark current expl 3
+PASS fixed dark current gilza 3
+PASS visible pixel identity current merc-arm
+PASS visible pixel identity current merc-weapon
+PASS visible pixel identity current visualBullet
+PASS visible pixel identity current visbullaser
+PASS visible pixel identity current iskr_bul
+PASS visible pixel identity current iskr
+PASS visible pixel identity current expl
+PASS visible pixel identity current gilza
+PASS restored native mask current merc-arm
+PASS restored native mask current merc-weapon
+PASS restored native mask current visualBullet
+PASS restored native mask current visbullaser
+PASS restored native mask current iskr_bul
+PASS restored native mask current iskr
+PASS restored native mask current expl
+PASS restored native mask current gilza
+PASS partial hidden side current merc-arm
+PASS partial hidden side current visualBullet
+PASS partial hidden side current visbullaser
+PASS partial hidden side current iskr_bul
+PASS partial hidden side current iskr
+PASS partial hidden side current expl
+PASS partial hidden side current gilza
+PASS restored native mask current merc-arm
+PASS restored native mask current merc-weapon
+PASS restored native mask current visualBullet
+PASS restored native mask current visbullaser
+PASS restored native mask current iskr_bul
+PASS restored native mask current iskr
+PASS restored native mask current expl
+PASS restored native mask current gilza
+PASS visible pixel identity current merc-arm
+PASS visible pixel identity current merc-weapon
+PASS visible pixel identity current visualBullet
+PASS visible pixel identity current visbullaser
+PASS visible pixel identity current iskr_bul
+PASS visible pixel identity current iskr
+PASS visible pixel identity current expl
+PASS visible pixel identity current gilza
+PASS restored native mask current merc-arm
+PASS restored native mask current merc-weapon
+PASS restored native mask current visualBullet
+PASS restored native mask current visbullaser
+PASS restored native mask current iskr_bul
+PASS restored native mask current iskr
+PASS restored native mask current expl
+PASS restored native mask current gilza
+PASS reentry dark current merc-arm
+PASS reentry dark current merc-weapon
+PASS reentry dark current visualBullet
+PASS reentry dark current visbullaser
+PASS reentry dark current iskr_bul
+PASS reentry dark current iskr
+PASS reentry dark current expl
+PASS reentry dark current gilza
+PASS restored native mask current merc-arm
+PASS restored native mask current merc-weapon
+PASS restored native mask current visualBullet
+PASS restored native mask current visbullaser
+PASS restored native mask current iskr_bul
+PASS restored native mask current iskr
+PASS restored native mask current expl
+PASS restored native mask current gilza
+PASS visible pixel identity current merc-arm
+PASS visible pixel identity current merc-weapon
+PASS visible pixel identity current visualBullet
+PASS visible pixel identity current visbullaser
+PASS visible pixel identity current iskr_bul
+PASS visible pixel identity current iskr
+PASS visible pixel identity current expl
+PASS visible pixel identity current gilza
+PASS restored native mask current merc-arm
+PASS restored native mask current merc-weapon
+PASS restored native mask current visualBullet
+PASS restored native mask current visbullaser
+PASS restored native mask current iskr_bul
+PASS restored native mask current iskr
+PASS restored native mask current expl
+PASS restored native mask current gilza
+PASS long weapon native positive current
+PASS body classification unchanged current
+PASS long weapon outside body hidden current
+PASS native particle animation cannot reveal current 0
+PASS native particle animation cannot reveal current 1
+PASS native particle animation cannot reveal current 2
+PASS native particle animation cannot reveal current 3
+PASS native particle animation cannot reveal current 4
+PASS native particle animation cannot reveal current 5
+PASS native particle animation cannot reveal current 6
+PASS native particle animation cannot reveal current 7
+PASS native dead arm preserved current
+PASS removed effect released current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS room reset releases effects current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS baseline dark classic merc-arm 0
+PASS baseline dark classic visualBullet 0
+PASS baseline dark classic visbullaser 0
+PASS baseline dark classic iskr_bul 0
+PASS baseline dark classic iskr 0
+PASS baseline dark classic expl 0
+PASS baseline dark classic gilza 0
+PASS baseline dark classic merc-arm 1
+PASS baseline dark classic visualBullet 1
+PASS baseline dark classic visbullaser 1
+PASS baseline dark classic iskr_bul 1
+PASS baseline dark classic iskr 1
+PASS baseline dark classic expl 1
+PASS baseline dark classic gilza 1
+PASS baseline dark classic merc-arm 2
+PASS baseline dark classic visualBullet 2
+PASS baseline dark classic visbullaser 2
+PASS baseline dark classic iskr_bul 2
+PASS baseline dark classic iskr 2
+PASS baseline dark classic expl 2
+PASS baseline dark classic gilza 2
+PASS baseline dark classic merc-arm 3
+PASS baseline dark classic visualBullet 3
+PASS baseline dark classic visbullaser 3
+PASS baseline dark classic iskr_bul 3
+PASS baseline dark classic iskr 3
+PASS baseline dark classic expl 3
+PASS baseline dark classic gilza 3
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS fixed dark classic merc-arm 0
+PASS fixed dark classic merc-weapon 0
+PASS fixed dark classic visualBullet 0
+PASS fixed dark classic visbullaser 0
+PASS fixed dark classic iskr_bul 0
+PASS fixed dark classic iskr 0
+PASS fixed dark classic expl 0
+PASS fixed dark classic gilza 0
+PASS fixed dark classic merc-arm 1
+PASS fixed dark classic merc-weapon 1
+PASS fixed dark classic visualBullet 1
+PASS fixed dark classic visbullaser 1
+PASS fixed dark classic iskr_bul 1
+PASS fixed dark classic iskr 1
+PASS fixed dark classic expl 1
+PASS fixed dark classic gilza 1
+PASS fixed dark classic merc-arm 2
+PASS fixed dark classic merc-weapon 2
+PASS fixed dark classic visualBullet 2
+PASS fixed dark classic visbullaser 2
+PASS fixed dark classic iskr_bul 2
+PASS fixed dark classic iskr 2
+PASS fixed dark classic expl 2
+PASS fixed dark classic gilza 2
+PASS fixed dark classic merc-arm 3
+PASS fixed dark classic merc-weapon 3
+PASS fixed dark classic visualBullet 3
+PASS fixed dark classic visbullaser 3
+PASS fixed dark classic iskr_bul 3
+PASS fixed dark classic iskr 3
+PASS fixed dark classic expl 3
+PASS fixed dark classic gilza 3
+PASS visible pixel identity classic merc-arm
+PASS visible pixel identity classic merc-weapon
+PASS visible pixel identity classic visualBullet
+PASS visible pixel identity classic visbullaser
+PASS visible pixel identity classic iskr_bul
+PASS visible pixel identity classic iskr
+PASS visible pixel identity classic expl
+PASS visible pixel identity classic gilza
+PASS restored native mask classic merc-arm
+PASS restored native mask classic merc-weapon
+PASS restored native mask classic visualBullet
+PASS restored native mask classic visbullaser
+PASS restored native mask classic iskr_bul
+PASS restored native mask classic iskr
+PASS restored native mask classic expl
+PASS restored native mask classic gilza
+PASS partial hidden side classic merc-arm
+PASS partial hidden side classic visualBullet
+PASS partial hidden side classic visbullaser
+PASS partial hidden side classic iskr_bul
+PASS partial hidden side classic iskr
+PASS partial hidden side classic expl
+PASS partial hidden side classic gilza
+PASS restored native mask classic merc-arm
+PASS restored native mask classic merc-weapon
+PASS restored native mask classic visualBullet
+PASS restored native mask classic visbullaser
+PASS restored native mask classic iskr_bul
+PASS restored native mask classic iskr
+PASS restored native mask classic expl
+PASS restored native mask classic gilza
+PASS visible pixel identity classic merc-arm
+PASS visible pixel identity classic merc-weapon
+PASS visible pixel identity classic visualBullet
+PASS visible pixel identity classic visbullaser
+PASS visible pixel identity classic iskr_bul
+PASS visible pixel identity classic iskr
+PASS visible pixel identity classic expl
+PASS visible pixel identity classic gilza
+PASS restored native mask classic merc-arm
+PASS restored native mask classic merc-weapon
+PASS restored native mask classic visualBullet
+PASS restored native mask classic visbullaser
+PASS restored native mask classic iskr_bul
+PASS restored native mask classic iskr
+PASS restored native mask classic expl
+PASS restored native mask classic gilza
+PASS reentry dark classic merc-arm
+PASS reentry dark classic merc-weapon
+PASS reentry dark classic visualBullet
+PASS reentry dark classic visbullaser
+PASS reentry dark classic iskr_bul
+PASS reentry dark classic iskr
+PASS reentry dark classic expl
+PASS reentry dark classic gilza
+PASS restored native mask classic merc-arm
+PASS restored native mask classic merc-weapon
+PASS restored native mask classic visualBullet
+PASS restored native mask classic visbullaser
+PASS restored native mask classic iskr_bul
+PASS restored native mask classic iskr
+PASS restored native mask classic expl
+PASS restored native mask classic gilza
+PASS visible pixel identity classic merc-arm
+PASS visible pixel identity classic merc-weapon
+PASS visible pixel identity classic visualBullet
+PASS visible pixel identity classic visbullaser
+PASS visible pixel identity classic iskr_bul
+PASS visible pixel identity classic iskr
+PASS visible pixel identity classic expl
+PASS visible pixel identity classic gilza
+PASS restored native mask classic merc-arm
+PASS restored native mask classic merc-weapon
+PASS restored native mask classic visualBullet
+PASS restored native mask classic visbullaser
+PASS restored native mask classic iskr_bul
+PASS restored native mask classic iskr
+PASS restored native mask classic expl
+PASS restored native mask classic gilza
+PASS long weapon native positive classic
+PASS body classification unchanged classic
+PASS long weapon outside body hidden classic
+PASS native particle animation cannot reveal classic 0
+PASS native particle animation cannot reveal classic 1
+PASS native particle animation cannot reveal classic 2
+PASS native particle animation cannot reveal classic 3
+PASS native particle animation cannot reveal classic 4
+PASS native particle animation cannot reveal classic 5
+PASS native particle animation cannot reveal classic 6
+PASS native particle animation cannot reveal classic 7
+PASS native dead arm preserved classic
+PASS removed effect released classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS room reset releases effects classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 0 0 merc-arm
+PASS exact native repeated mask current 0 0 merc-weapon
+PASS exact native repeated mask current 0 0 visualBullet
+PASS exact native repeated mask current 0 0 visbullaser
+PASS exact native repeated mask current 0 0 iskr_bul
+PASS exact native repeated mask current 0 0 iskr
+PASS exact native repeated mask current 0 0 expl
+PASS exact native repeated mask current 0 0 gilza
+PASS exact native repeated mask current 0 1 merc-arm
+PASS exact native repeated mask current 0 1 merc-weapon
+PASS exact native repeated mask current 0 1 visualBullet
+PASS exact native repeated mask current 0 1 visbullaser
+PASS exact native repeated mask current 0 1 iskr_bul
+PASS exact native repeated mask current 0 1 iskr
+PASS exact native repeated mask current 0 1 expl
+PASS exact native repeated mask current 0 1 gilza
+PASS exact native repeated mask current 0 2 merc-arm
+PASS exact native repeated mask current 0 2 merc-weapon
+PASS exact native repeated mask current 0 2 visualBullet
+PASS exact native repeated mask current 0 2 visbullaser
+PASS exact native repeated mask current 0 2 iskr_bul
+PASS exact native repeated mask current 0 2 iskr
+PASS exact native repeated mask current 0 2 expl
+PASS exact native repeated mask current 0 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 1 0 merc-arm
+PASS exact native repeated mask current 1 0 merc-weapon
+PASS exact native repeated mask current 1 0 visualBullet
+PASS exact native repeated mask current 1 0 visbullaser
+PASS exact native repeated mask current 1 0 iskr_bul
+PASS exact native repeated mask current 1 0 iskr
+PASS exact native repeated mask current 1 0 expl
+PASS exact native repeated mask current 1 0 gilza
+PASS exact native repeated mask current 1 1 merc-arm
+PASS exact native repeated mask current 1 1 merc-weapon
+PASS exact native repeated mask current 1 1 visualBullet
+PASS exact native repeated mask current 1 1 visbullaser
+PASS exact native repeated mask current 1 1 iskr_bul
+PASS exact native repeated mask current 1 1 iskr
+PASS exact native repeated mask current 1 1 expl
+PASS exact native repeated mask current 1 1 gilza
+PASS exact native repeated mask current 1 2 merc-arm
+PASS exact native repeated mask current 1 2 merc-weapon
+PASS exact native repeated mask current 1 2 visualBullet
+PASS exact native repeated mask current 1 2 visbullaser
+PASS exact native repeated mask current 1 2 iskr_bul
+PASS exact native repeated mask current 1 2 iskr
+PASS exact native repeated mask current 1 2 expl
+PASS exact native repeated mask current 1 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 2 0 merc-arm
+PASS exact native repeated mask current 2 0 merc-weapon
+PASS exact native repeated mask current 2 0 visualBullet
+PASS exact native repeated mask current 2 0 visbullaser
+PASS exact native repeated mask current 2 0 iskr_bul
+PASS exact native repeated mask current 2 0 iskr
+PASS exact native repeated mask current 2 0 expl
+PASS exact native repeated mask current 2 0 gilza
+PASS exact native repeated mask current 2 1 merc-arm
+PASS exact native repeated mask current 2 1 merc-weapon
+PASS exact native repeated mask current 2 1 visualBullet
+PASS exact native repeated mask current 2 1 visbullaser
+PASS exact native repeated mask current 2 1 iskr_bul
+PASS exact native repeated mask current 2 1 iskr
+PASS exact native repeated mask current 2 1 expl
+PASS exact native repeated mask current 2 1 gilza
+PASS exact native repeated mask current 2 2 merc-arm
+PASS exact native repeated mask current 2 2 merc-weapon
+PASS exact native repeated mask current 2 2 visualBullet
+PASS exact native repeated mask current 2 2 visbullaser
+PASS exact native repeated mask current 2 2 iskr_bul
+PASS exact native repeated mask current 2 2 iskr
+PASS exact native repeated mask current 2 2 expl
+PASS exact native repeated mask current 2 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 3 0 merc-arm
+PASS exact native repeated mask current 3 0 merc-weapon
+PASS exact native repeated mask current 3 0 visualBullet
+PASS exact native repeated mask current 3 0 visbullaser
+PASS exact native repeated mask current 3 0 iskr_bul
+PASS exact native repeated mask current 3 0 iskr
+PASS exact native repeated mask current 3 0 expl
+PASS exact native repeated mask current 3 0 gilza
+PASS exact native repeated mask current 3 1 merc-arm
+PASS exact native repeated mask current 3 1 merc-weapon
+PASS exact native repeated mask current 3 1 visualBullet
+PASS exact native repeated mask current 3 1 visbullaser
+PASS exact native repeated mask current 3 1 iskr_bul
+PASS exact native repeated mask current 3 1 iskr
+PASS exact native repeated mask current 3 1 expl
+PASS exact native repeated mask current 3 1 gilza
+PASS exact native repeated mask current 3 2 merc-arm
+PASS exact native repeated mask current 3 2 merc-weapon
+PASS exact native repeated mask current 3 2 visualBullet
+PASS exact native repeated mask current 3 2 visbullaser
+PASS exact native repeated mask current 3 2 iskr_bul
+PASS exact native repeated mask current 3 2 iskr
+PASS exact native repeated mask current 3 2 expl
+PASS exact native repeated mask current 3 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 4 0 merc-arm
+PASS exact native repeated mask current 4 0 merc-weapon
+PASS exact native repeated mask current 4 0 visualBullet
+PASS exact native repeated mask current 4 0 visbullaser
+PASS exact native repeated mask current 4 0 iskr_bul
+PASS exact native repeated mask current 4 0 iskr
+PASS exact native repeated mask current 4 0 expl
+PASS exact native repeated mask current 4 0 gilza
+PASS exact native repeated mask current 4 1 merc-arm
+PASS exact native repeated mask current 4 1 merc-weapon
+PASS exact native repeated mask current 4 1 visualBullet
+PASS exact native repeated mask current 4 1 visbullaser
+PASS exact native repeated mask current 4 1 iskr_bul
+PASS exact native repeated mask current 4 1 iskr
+PASS exact native repeated mask current 4 1 expl
+PASS exact native repeated mask current 4 1 gilza
+PASS exact native repeated mask current 4 2 merc-arm
+PASS exact native repeated mask current 4 2 merc-weapon
+PASS exact native repeated mask current 4 2 visualBullet
+PASS exact native repeated mask current 4 2 visbullaser
+PASS exact native repeated mask current 4 2 iskr_bul
+PASS exact native repeated mask current 4 2 iskr
+PASS exact native repeated mask current 4 2 expl
+PASS exact native repeated mask current 4 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 5 0 merc-arm
+PASS exact native repeated mask current 5 0 merc-weapon
+PASS exact native repeated mask current 5 0 visualBullet
+PASS exact native repeated mask current 5 0 visbullaser
+PASS exact native repeated mask current 5 0 iskr_bul
+PASS exact native repeated mask current 5 0 iskr
+PASS exact native repeated mask current 5 0 expl
+PASS exact native repeated mask current 5 0 gilza
+PASS exact native repeated mask current 5 1 merc-arm
+PASS exact native repeated mask current 5 1 merc-weapon
+PASS exact native repeated mask current 5 1 visualBullet
+PASS exact native repeated mask current 5 1 visbullaser
+PASS exact native repeated mask current 5 1 iskr_bul
+PASS exact native repeated mask current 5 1 iskr
+PASS exact native repeated mask current 5 1 expl
+PASS exact native repeated mask current 5 1 gilza
+PASS exact native repeated mask current 5 2 merc-arm
+PASS exact native repeated mask current 5 2 merc-weapon
+PASS exact native repeated mask current 5 2 visualBullet
+PASS exact native repeated mask current 5 2 visbullaser
+PASS exact native repeated mask current 5 2 iskr_bul
+PASS exact native repeated mask current 5 2 iskr
+PASS exact native repeated mask current 5 2 expl
+PASS exact native repeated mask current 5 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 6 0 merc-arm
+PASS exact native repeated mask current 6 0 merc-weapon
+PASS exact native repeated mask current 6 0 visualBullet
+PASS exact native repeated mask current 6 0 visbullaser
+PASS exact native repeated mask current 6 0 iskr_bul
+PASS exact native repeated mask current 6 0 iskr
+PASS exact native repeated mask current 6 0 expl
+PASS exact native repeated mask current 6 0 gilza
+PASS exact native repeated mask current 6 1 merc-arm
+PASS exact native repeated mask current 6 1 merc-weapon
+PASS exact native repeated mask current 6 1 visualBullet
+PASS exact native repeated mask current 6 1 visbullaser
+PASS exact native repeated mask current 6 1 iskr_bul
+PASS exact native repeated mask current 6 1 iskr
+PASS exact native repeated mask current 6 1 expl
+PASS exact native repeated mask current 6 1 gilza
+PASS exact native repeated mask current 6 2 merc-arm
+PASS exact native repeated mask current 6 2 merc-weapon
+PASS exact native repeated mask current 6 2 visualBullet
+PASS exact native repeated mask current 6 2 visbullaser
+PASS exact native repeated mask current 6 2 iskr_bul
+PASS exact native repeated mask current 6 2 iskr
+PASS exact native repeated mask current 6 2 expl
+PASS exact native repeated mask current 6 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 7 0 merc-arm
+PASS exact native repeated mask current 7 0 merc-weapon
+PASS exact native repeated mask current 7 0 visualBullet
+PASS exact native repeated mask current 7 0 visbullaser
+PASS exact native repeated mask current 7 0 iskr_bul
+PASS exact native repeated mask current 7 0 iskr
+PASS exact native repeated mask current 7 0 expl
+PASS exact native repeated mask current 7 0 gilza
+PASS exact native repeated mask current 7 1 merc-arm
+PASS exact native repeated mask current 7 1 merc-weapon
+PASS exact native repeated mask current 7 1 visualBullet
+PASS exact native repeated mask current 7 1 visbullaser
+PASS exact native repeated mask current 7 1 iskr_bul
+PASS exact native repeated mask current 7 1 iskr
+PASS exact native repeated mask current 7 1 expl
+PASS exact native repeated mask current 7 1 gilza
+PASS exact native repeated mask current 7 2 merc-arm
+PASS exact native repeated mask current 7 2 merc-weapon
+PASS exact native repeated mask current 7 2 visualBullet
+PASS exact native repeated mask current 7 2 visbullaser
+PASS exact native repeated mask current 7 2 iskr_bul
+PASS exact native repeated mask current 7 2 iskr
+PASS exact native repeated mask current 7 2 expl
+PASS exact native repeated mask current 7 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 8 0 merc-arm
+PASS exact native repeated mask current 8 0 merc-weapon
+PASS exact native repeated mask current 8 0 visualBullet
+PASS exact native repeated mask current 8 0 visbullaser
+PASS exact native repeated mask current 8 0 iskr_bul
+PASS exact native repeated mask current 8 0 iskr
+PASS exact native repeated mask current 8 0 expl
+PASS exact native repeated mask current 8 0 gilza
+PASS exact native repeated mask current 8 1 merc-arm
+PASS exact native repeated mask current 8 1 merc-weapon
+PASS exact native repeated mask current 8 1 visualBullet
+PASS exact native repeated mask current 8 1 visbullaser
+PASS exact native repeated mask current 8 1 iskr_bul
+PASS exact native repeated mask current 8 1 iskr
+PASS exact native repeated mask current 8 1 expl
+PASS exact native repeated mask current 8 1 gilza
+PASS exact native repeated mask current 8 2 merc-arm
+PASS exact native repeated mask current 8 2 merc-weapon
+PASS exact native repeated mask current 8 2 visualBullet
+PASS exact native repeated mask current 8 2 visbullaser
+PASS exact native repeated mask current 8 2 iskr_bul
+PASS exact native repeated mask current 8 2 iskr
+PASS exact native repeated mask current 8 2 expl
+PASS exact native repeated mask current 8 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 9 0 merc-arm
+PASS exact native repeated mask current 9 0 merc-weapon
+PASS exact native repeated mask current 9 0 visualBullet
+PASS exact native repeated mask current 9 0 visbullaser
+PASS exact native repeated mask current 9 0 iskr_bul
+PASS exact native repeated mask current 9 0 iskr
+PASS exact native repeated mask current 9 0 expl
+PASS exact native repeated mask current 9 0 gilza
+PASS exact native repeated mask current 9 1 merc-arm
+PASS exact native repeated mask current 9 1 merc-weapon
+PASS exact native repeated mask current 9 1 visualBullet
+PASS exact native repeated mask current 9 1 visbullaser
+PASS exact native repeated mask current 9 1 iskr_bul
+PASS exact native repeated mask current 9 1 iskr
+PASS exact native repeated mask current 9 1 expl
+PASS exact native repeated mask current 9 1 gilza
+PASS exact native repeated mask current 9 2 merc-arm
+PASS exact native repeated mask current 9 2 merc-weapon
+PASS exact native repeated mask current 9 2 visualBullet
+PASS exact native repeated mask current 9 2 visbullaser
+PASS exact native repeated mask current 9 2 iskr_bul
+PASS exact native repeated mask current 9 2 iskr
+PASS exact native repeated mask current 9 2 expl
+PASS exact native repeated mask current 9 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 10 0 merc-arm
+PASS exact native repeated mask current 10 0 merc-weapon
+PASS exact native repeated mask current 10 0 visualBullet
+PASS exact native repeated mask current 10 0 visbullaser
+PASS exact native repeated mask current 10 0 iskr_bul
+PASS exact native repeated mask current 10 0 iskr
+PASS exact native repeated mask current 10 0 expl
+PASS exact native repeated mask current 10 0 gilza
+PASS exact native repeated mask current 10 1 merc-arm
+PASS exact native repeated mask current 10 1 merc-weapon
+PASS exact native repeated mask current 10 1 visualBullet
+PASS exact native repeated mask current 10 1 visbullaser
+PASS exact native repeated mask current 10 1 iskr_bul
+PASS exact native repeated mask current 10 1 iskr
+PASS exact native repeated mask current 10 1 expl
+PASS exact native repeated mask current 10 1 gilza
+PASS exact native repeated mask current 10 2 merc-arm
+PASS exact native repeated mask current 10 2 merc-weapon
+PASS exact native repeated mask current 10 2 visualBullet
+PASS exact native repeated mask current 10 2 visbullaser
+PASS exact native repeated mask current 10 2 iskr_bul
+PASS exact native repeated mask current 10 2 iskr
+PASS exact native repeated mask current 10 2 expl
+PASS exact native repeated mask current 10 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+PASS exact native repeated mask current 11 0 merc-arm
+PASS exact native repeated mask current 11 0 merc-weapon
+PASS exact native repeated mask current 11 0 visualBullet
+PASS exact native repeated mask current 11 0 visbullaser
+PASS exact native repeated mask current 11 0 iskr_bul
+PASS exact native repeated mask current 11 0 iskr
+PASS exact native repeated mask current 11 0 expl
+PASS exact native repeated mask current 11 0 gilza
+PASS exact native repeated mask current 11 1 merc-arm
+PASS exact native repeated mask current 11 1 merc-weapon
+PASS exact native repeated mask current 11 1 visualBullet
+PASS exact native repeated mask current 11 1 visbullaser
+PASS exact native repeated mask current 11 1 iskr_bul
+PASS exact native repeated mask current 11 1 iskr
+PASS exact native repeated mask current 11 1 expl
+PASS exact native repeated mask current 11 1 gilza
+PASS exact native repeated mask current 11 2 merc-arm
+PASS exact native repeated mask current 11 2 merc-weapon
+PASS exact native repeated mask current 11 2 visualBullet
+PASS exact native repeated mask current 11 2 visbullaser
+PASS exact native repeated mask current 11 2 iskr_bul
+PASS exact native repeated mask current 11 2 iskr
+PASS exact native repeated mask current 11 2 expl
+PASS exact native repeated mask current 11 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 0 0 merc-arm
+PASS exact native repeated mask classic 0 0 merc-weapon
+PASS exact native repeated mask classic 0 0 visualBullet
+PASS exact native repeated mask classic 0 0 visbullaser
+PASS exact native repeated mask classic 0 0 iskr_bul
+PASS exact native repeated mask classic 0 0 iskr
+PASS exact native repeated mask classic 0 0 expl
+PASS exact native repeated mask classic 0 0 gilza
+PASS exact native repeated mask classic 0 1 merc-arm
+PASS exact native repeated mask classic 0 1 merc-weapon
+PASS exact native repeated mask classic 0 1 visualBullet
+PASS exact native repeated mask classic 0 1 visbullaser
+PASS exact native repeated mask classic 0 1 iskr_bul
+PASS exact native repeated mask classic 0 1 iskr
+PASS exact native repeated mask classic 0 1 expl
+PASS exact native repeated mask classic 0 1 gilza
+PASS exact native repeated mask classic 0 2 merc-arm
+PASS exact native repeated mask classic 0 2 merc-weapon
+PASS exact native repeated mask classic 0 2 visualBullet
+PASS exact native repeated mask classic 0 2 visbullaser
+PASS exact native repeated mask classic 0 2 iskr_bul
+PASS exact native repeated mask classic 0 2 iskr
+PASS exact native repeated mask classic 0 2 expl
+PASS exact native repeated mask classic 0 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 1 0 merc-arm
+PASS exact native repeated mask classic 1 0 merc-weapon
+PASS exact native repeated mask classic 1 0 visualBullet
+PASS exact native repeated mask classic 1 0 visbullaser
+PASS exact native repeated mask classic 1 0 iskr_bul
+PASS exact native repeated mask classic 1 0 iskr
+PASS exact native repeated mask classic 1 0 expl
+PASS exact native repeated mask classic 1 0 gilza
+PASS exact native repeated mask classic 1 1 merc-arm
+PASS exact native repeated mask classic 1 1 merc-weapon
+PASS exact native repeated mask classic 1 1 visualBullet
+PASS exact native repeated mask classic 1 1 visbullaser
+PASS exact native repeated mask classic 1 1 iskr_bul
+PASS exact native repeated mask classic 1 1 iskr
+PASS exact native repeated mask classic 1 1 expl
+PASS exact native repeated mask classic 1 1 gilza
+PASS exact native repeated mask classic 1 2 merc-arm
+PASS exact native repeated mask classic 1 2 merc-weapon
+PASS exact native repeated mask classic 1 2 visualBullet
+PASS exact native repeated mask classic 1 2 visbullaser
+PASS exact native repeated mask classic 1 2 iskr_bul
+PASS exact native repeated mask classic 1 2 iskr
+PASS exact native repeated mask classic 1 2 expl
+PASS exact native repeated mask classic 1 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 2 0 merc-arm
+PASS exact native repeated mask classic 2 0 merc-weapon
+PASS exact native repeated mask classic 2 0 visualBullet
+PASS exact native repeated mask classic 2 0 visbullaser
+PASS exact native repeated mask classic 2 0 iskr_bul
+PASS exact native repeated mask classic 2 0 iskr
+PASS exact native repeated mask classic 2 0 expl
+PASS exact native repeated mask classic 2 0 gilza
+PASS exact native repeated mask classic 2 1 merc-arm
+PASS exact native repeated mask classic 2 1 merc-weapon
+PASS exact native repeated mask classic 2 1 visualBullet
+PASS exact native repeated mask classic 2 1 visbullaser
+PASS exact native repeated mask classic 2 1 iskr_bul
+PASS exact native repeated mask classic 2 1 iskr
+PASS exact native repeated mask classic 2 1 expl
+PASS exact native repeated mask classic 2 1 gilza
+PASS exact native repeated mask classic 2 2 merc-arm
+PASS exact native repeated mask classic 2 2 merc-weapon
+PASS exact native repeated mask classic 2 2 visualBullet
+PASS exact native repeated mask classic 2 2 visbullaser
+PASS exact native repeated mask classic 2 2 iskr_bul
+PASS exact native repeated mask classic 2 2 iskr
+PASS exact native repeated mask classic 2 2 expl
+PASS exact native repeated mask classic 2 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 3 0 merc-arm
+PASS exact native repeated mask classic 3 0 merc-weapon
+PASS exact native repeated mask classic 3 0 visualBullet
+PASS exact native repeated mask classic 3 0 visbullaser
+PASS exact native repeated mask classic 3 0 iskr_bul
+PASS exact native repeated mask classic 3 0 iskr
+PASS exact native repeated mask classic 3 0 expl
+PASS exact native repeated mask classic 3 0 gilza
+PASS exact native repeated mask classic 3 1 merc-arm
+PASS exact native repeated mask classic 3 1 merc-weapon
+PASS exact native repeated mask classic 3 1 visualBullet
+PASS exact native repeated mask classic 3 1 visbullaser
+PASS exact native repeated mask classic 3 1 iskr_bul
+PASS exact native repeated mask classic 3 1 iskr
+PASS exact native repeated mask classic 3 1 expl
+PASS exact native repeated mask classic 3 1 gilza
+PASS exact native repeated mask classic 3 2 merc-arm
+PASS exact native repeated mask classic 3 2 merc-weapon
+PASS exact native repeated mask classic 3 2 visualBullet
+PASS exact native repeated mask classic 3 2 visbullaser
+PASS exact native repeated mask classic 3 2 iskr_bul
+PASS exact native repeated mask classic 3 2 iskr
+PASS exact native repeated mask classic 3 2 expl
+PASS exact native repeated mask classic 3 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 4 0 merc-arm
+PASS exact native repeated mask classic 4 0 merc-weapon
+PASS exact native repeated mask classic 4 0 visualBullet
+PASS exact native repeated mask classic 4 0 visbullaser
+PASS exact native repeated mask classic 4 0 iskr_bul
+PASS exact native repeated mask classic 4 0 iskr
+PASS exact native repeated mask classic 4 0 expl
+PASS exact native repeated mask classic 4 0 gilza
+PASS exact native repeated mask classic 4 1 merc-arm
+PASS exact native repeated mask classic 4 1 merc-weapon
+PASS exact native repeated mask classic 4 1 visualBullet
+PASS exact native repeated mask classic 4 1 visbullaser
+PASS exact native repeated mask classic 4 1 iskr_bul
+PASS exact native repeated mask classic 4 1 iskr
+PASS exact native repeated mask classic 4 1 expl
+PASS exact native repeated mask classic 4 1 gilza
+PASS exact native repeated mask classic 4 2 merc-arm
+PASS exact native repeated mask classic 4 2 merc-weapon
+PASS exact native repeated mask classic 4 2 visualBullet
+PASS exact native repeated mask classic 4 2 visbullaser
+PASS exact native repeated mask classic 4 2 iskr_bul
+PASS exact native repeated mask classic 4 2 iskr
+PASS exact native repeated mask classic 4 2 expl
+PASS exact native repeated mask classic 4 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 5 0 merc-arm
+PASS exact native repeated mask classic 5 0 merc-weapon
+PASS exact native repeated mask classic 5 0 visualBullet
+PASS exact native repeated mask classic 5 0 visbullaser
+PASS exact native repeated mask classic 5 0 iskr_bul
+PASS exact native repeated mask classic 5 0 iskr
+PASS exact native repeated mask classic 5 0 expl
+PASS exact native repeated mask classic 5 0 gilza
+PASS exact native repeated mask classic 5 1 merc-arm
+PASS exact native repeated mask classic 5 1 merc-weapon
+PASS exact native repeated mask classic 5 1 visualBullet
+PASS exact native repeated mask classic 5 1 visbullaser
+PASS exact native repeated mask classic 5 1 iskr_bul
+PASS exact native repeated mask classic 5 1 iskr
+PASS exact native repeated mask classic 5 1 expl
+PASS exact native repeated mask classic 5 1 gilza
+PASS exact native repeated mask classic 5 2 merc-arm
+PASS exact native repeated mask classic 5 2 merc-weapon
+PASS exact native repeated mask classic 5 2 visualBullet
+PASS exact native repeated mask classic 5 2 visbullaser
+PASS exact native repeated mask classic 5 2 iskr_bul
+PASS exact native repeated mask classic 5 2 iskr
+PASS exact native repeated mask classic 5 2 expl
+PASS exact native repeated mask classic 5 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 6 0 merc-arm
+PASS exact native repeated mask classic 6 0 merc-weapon
+PASS exact native repeated mask classic 6 0 visualBullet
+PASS exact native repeated mask classic 6 0 visbullaser
+PASS exact native repeated mask classic 6 0 iskr_bul
+PASS exact native repeated mask classic 6 0 iskr
+PASS exact native repeated mask classic 6 0 expl
+PASS exact native repeated mask classic 6 0 gilza
+PASS exact native repeated mask classic 6 1 merc-arm
+PASS exact native repeated mask classic 6 1 merc-weapon
+PASS exact native repeated mask classic 6 1 visualBullet
+PASS exact native repeated mask classic 6 1 visbullaser
+PASS exact native repeated mask classic 6 1 iskr_bul
+PASS exact native repeated mask classic 6 1 iskr
+PASS exact native repeated mask classic 6 1 expl
+PASS exact native repeated mask classic 6 1 gilza
+PASS exact native repeated mask classic 6 2 merc-arm
+PASS exact native repeated mask classic 6 2 merc-weapon
+PASS exact native repeated mask classic 6 2 visualBullet
+PASS exact native repeated mask classic 6 2 visbullaser
+PASS exact native repeated mask classic 6 2 iskr_bul
+PASS exact native repeated mask classic 6 2 iskr
+PASS exact native repeated mask classic 6 2 expl
+PASS exact native repeated mask classic 6 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 7 0 merc-arm
+PASS exact native repeated mask classic 7 0 merc-weapon
+PASS exact native repeated mask classic 7 0 visualBullet
+PASS exact native repeated mask classic 7 0 visbullaser
+PASS exact native repeated mask classic 7 0 iskr_bul
+PASS exact native repeated mask classic 7 0 iskr
+PASS exact native repeated mask classic 7 0 expl
+PASS exact native repeated mask classic 7 0 gilza
+PASS exact native repeated mask classic 7 1 merc-arm
+PASS exact native repeated mask classic 7 1 merc-weapon
+PASS exact native repeated mask classic 7 1 visualBullet
+PASS exact native repeated mask classic 7 1 visbullaser
+PASS exact native repeated mask classic 7 1 iskr_bul
+PASS exact native repeated mask classic 7 1 iskr
+PASS exact native repeated mask classic 7 1 expl
+PASS exact native repeated mask classic 7 1 gilza
+PASS exact native repeated mask classic 7 2 merc-arm
+PASS exact native repeated mask classic 7 2 merc-weapon
+PASS exact native repeated mask classic 7 2 visualBullet
+PASS exact native repeated mask classic 7 2 visbullaser
+PASS exact native repeated mask classic 7 2 iskr_bul
+PASS exact native repeated mask classic 7 2 iskr
+PASS exact native repeated mask classic 7 2 expl
+PASS exact native repeated mask classic 7 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 8 0 merc-arm
+PASS exact native repeated mask classic 8 0 merc-weapon
+PASS exact native repeated mask classic 8 0 visualBullet
+PASS exact native repeated mask classic 8 0 visbullaser
+PASS exact native repeated mask classic 8 0 iskr_bul
+PASS exact native repeated mask classic 8 0 iskr
+PASS exact native repeated mask classic 8 0 expl
+PASS exact native repeated mask classic 8 0 gilza
+PASS exact native repeated mask classic 8 1 merc-arm
+PASS exact native repeated mask classic 8 1 merc-weapon
+PASS exact native repeated mask classic 8 1 visualBullet
+PASS exact native repeated mask classic 8 1 visbullaser
+PASS exact native repeated mask classic 8 1 iskr_bul
+PASS exact native repeated mask classic 8 1 iskr
+PASS exact native repeated mask classic 8 1 expl
+PASS exact native repeated mask classic 8 1 gilza
+PASS exact native repeated mask classic 8 2 merc-arm
+PASS exact native repeated mask classic 8 2 merc-weapon
+PASS exact native repeated mask classic 8 2 visualBullet
+PASS exact native repeated mask classic 8 2 visbullaser
+PASS exact native repeated mask classic 8 2 iskr_bul
+PASS exact native repeated mask classic 8 2 iskr
+PASS exact native repeated mask classic 8 2 expl
+PASS exact native repeated mask classic 8 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 9 0 merc-arm
+PASS exact native repeated mask classic 9 0 merc-weapon
+PASS exact native repeated mask classic 9 0 visualBullet
+PASS exact native repeated mask classic 9 0 visbullaser
+PASS exact native repeated mask classic 9 0 iskr_bul
+PASS exact native repeated mask classic 9 0 iskr
+PASS exact native repeated mask classic 9 0 expl
+PASS exact native repeated mask classic 9 0 gilza
+PASS exact native repeated mask classic 9 1 merc-arm
+PASS exact native repeated mask classic 9 1 merc-weapon
+PASS exact native repeated mask classic 9 1 visualBullet
+PASS exact native repeated mask classic 9 1 visbullaser
+PASS exact native repeated mask classic 9 1 iskr_bul
+PASS exact native repeated mask classic 9 1 iskr
+PASS exact native repeated mask classic 9 1 expl
+PASS exact native repeated mask classic 9 1 gilza
+PASS exact native repeated mask classic 9 2 merc-arm
+PASS exact native repeated mask classic 9 2 merc-weapon
+PASS exact native repeated mask classic 9 2 visualBullet
+PASS exact native repeated mask classic 9 2 visbullaser
+PASS exact native repeated mask classic 9 2 iskr_bul
+PASS exact native repeated mask classic 9 2 iskr
+PASS exact native repeated mask classic 9 2 expl
+PASS exact native repeated mask classic 9 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 10 0 merc-arm
+PASS exact native repeated mask classic 10 0 merc-weapon
+PASS exact native repeated mask classic 10 0 visualBullet
+PASS exact native repeated mask classic 10 0 visbullaser
+PASS exact native repeated mask classic 10 0 iskr_bul
+PASS exact native repeated mask classic 10 0 iskr
+PASS exact native repeated mask classic 10 0 expl
+PASS exact native repeated mask classic 10 0 gilza
+PASS exact native repeated mask classic 10 1 merc-arm
+PASS exact native repeated mask classic 10 1 merc-weapon
+PASS exact native repeated mask classic 10 1 visualBullet
+PASS exact native repeated mask classic 10 1 visbullaser
+PASS exact native repeated mask classic 10 1 iskr_bul
+PASS exact native repeated mask classic 10 1 iskr
+PASS exact native repeated mask classic 10 1 expl
+PASS exact native repeated mask classic 10 1 gilza
+PASS exact native repeated mask classic 10 2 merc-arm
+PASS exact native repeated mask classic 10 2 merc-weapon
+PASS exact native repeated mask classic 10 2 visualBullet
+PASS exact native repeated mask classic 10 2 visbullaser
+PASS exact native repeated mask classic 10 2 iskr_bul
+PASS exact native repeated mask classic 10 2 iskr
+PASS exact native repeated mask classic 10 2 expl
+PASS exact native repeated mask classic 10 2 gilza
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+PASS exact native repeated mask classic 11 0 merc-arm
+PASS exact native repeated mask classic 11 0 merc-weapon
+PASS exact native repeated mask classic 11 0 visualBullet
+PASS exact native repeated mask classic 11 0 visbullaser
+PASS exact native repeated mask classic 11 0 iskr_bul
+PASS exact native repeated mask classic 11 0 iskr
+PASS exact native repeated mask classic 11 0 expl
+PASS exact native repeated mask classic 11 0 gilza
+PASS exact native repeated mask classic 11 1 merc-arm
+PASS exact native repeated mask classic 11 1 merc-weapon
+PASS exact native repeated mask classic 11 1 visualBullet
+PASS exact native repeated mask classic 11 1 visbullaser
+PASS exact native repeated mask classic 11 1 iskr_bul
+PASS exact native repeated mask classic 11 1 iskr
+PASS exact native repeated mask classic 11 1 expl
+PASS exact native repeated mask classic 11 1 gilza
+PASS exact native repeated mask classic 11 2 merc-arm
+PASS exact native repeated mask classic 11 2 merc-weapon
+PASS exact native repeated mask classic 11 2 visualBullet
+PASS exact native repeated mask classic 11 2 visbullaser
+PASS exact native repeated mask classic 11 2 iskr_bul
+PASS exact native repeated mask classic 11 2 iskr
+PASS exact native repeated mask classic 11 2 expl
+PASS exact native repeated mask classic 11 2 gilza
+PASS transparent-support shortcut actually exercised
+D42 EFFECT {"rows":[{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":0,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":1,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":2,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"current","frame":3,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":0,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":1,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":2,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"current","frame":3,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":0,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":1,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":2,"kind":"gilza","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"merc-arm","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"visualBullet","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"visbullaser","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"iskr","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"expl","mask":true,"visible":true},{"variant":"baseline","pixels":0,"mode":"classic","frame":3,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":0,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":1,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":2,"kind":"gilza","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"merc-arm","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"merc-weapon","mask":false,"visible":false},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"visualBullet","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"visbullaser","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"iskr_bul","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"iskr","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"expl","mask":true,"visible":true},{"variant":"candidate","pixels":0,"mode":"classic","frame":3,"kind":"gilza","mask":true,"visible":true}],"checks":[{"pass":true,"label":"native mercenary arm found"},{"pass":true,"label":"native emitter iskr_bul"},{"pass":true,"label":"native emitter iskr"},{"pass":true,"label":"native emitter expl"},{"pass":true,"label":"native emitter gilza"},{"pass":true,"label":"baseline dark current merc-arm 0"},{"pass":true,"label":"baseline dark current visualBullet 0"},{"pass":true,"label":"baseline dark current visbullaser 0"},{"pass":true,"label":"baseline dark current iskr_bul 0"},{"pass":true,"label":"baseline dark current iskr 0"},{"pass":true,"label":"baseline dark current expl 0"},{"pass":true,"label":"baseline dark current gilza 0"},{"pass":true,"label":"baseline dark current merc-arm 1"},{"pass":true,"label":"baseline dark current visualBullet 1"},{"pass":true,"label":"baseline dark current visbullaser 1"},{"pass":true,"label":"baseline dark current iskr_bul 1"},{"pass":true,"label":"baseline dark current iskr 1"},{"pass":true,"label":"baseline dark current expl 1"},{"pass":true,"label":"baseline dark current gilza 1"},{"pass":true,"label":"baseline dark current merc-arm 2"},{"pass":true,"label":"baseline dark current visualBullet 2"},{"pass":true,"label":"baseline dark current visbullaser 2"},{"pass":true,"label":"baseline dark current iskr_bul 2"},{"pass":true,"label":"baseline dark current iskr 2"},{"pass":true,"label":"baseline dark current expl 2"},{"pass":true,"label":"baseline dark current gilza 2"},{"pass":true,"label":"baseline dark current merc-arm 3"},{"pass":true,"label":"baseline dark current visualBullet 3"},{"pass":true,"label":"baseline dark current visbullaser 3"},{"pass":true,"label":"baseline dark current iskr_bul 3"},{"pass":true,"label":"baseline dark current iskr 3"},{"pass":true,"label":"baseline dark current expl 3"},{"pass":true,"label":"baseline dark current gilza 3"},{"pass":true,"label":"fixed dark current merc-arm 0"},{"pass":true,"label":"fixed dark current merc-weapon 0"},{"pass":true,"label":"fixed dark current visualBullet 0"},{"pass":true,"label":"fixed dark current visbullaser 0"},{"pass":true,"label":"fixed dark current iskr_bul 0"},{"pass":true,"label":"fixed dark current iskr 0"},{"pass":true,"label":"fixed dark current expl 0"},{"pass":true,"label":"fixed dark current gilza 0"},{"pass":true,"label":"fixed dark current merc-arm 1"},{"pass":true,"label":"fixed dark current merc-weapon 1"},{"pass":true,"label":"fixed dark current visualBullet 1"},{"pass":true,"label":"fixed dark current visbullaser 1"},{"pass":true,"label":"fixed dark current iskr_bul 1"},{"pass":true,"label":"fixed dark current iskr 1"},{"pass":true,"label":"fixed dark current expl 1"},{"pass":true,"label":"fixed dark current gilza 1"},{"pass":true,"label":"fixed dark current merc-arm 2"},{"pass":true,"label":"fixed dark current merc-weapon 2"},{"pass":true,"label":"fixed dark current visualBullet 2"},{"pass":true,"label":"fixed dark current visbullaser 2"},{"pass":true,"label":"fixed dark current iskr_bul 2"},{"pass":true,"label":"fixed dark current iskr 2"},{"pass":true,"label":"fixed dark current expl 2"},{"pass":true,"label":"fixed dark current gilza 2"},{"pass":true,"label":"fixed dark current merc-arm 3"},{"pass":true,"label":"fixed dark current merc-weapon 3"},{"pass":true,"label":"fixed dark current visualBullet 3"},{"pass":true,"label":"fixed dark current visbullaser 3"},{"pass":true,"label":"fixed dark current iskr_bul 3"},{"pass":true,"label":"fixed dark current iskr 3"},{"pass":true,"label":"fixed dark current expl 3"},{"pass":true,"label":"fixed dark current gilza 3"},{"pass":true,"label":"visible pixel identity current merc-arm"},{"pass":true,"label":"visible pixel identity current merc-weapon"},{"pass":true,"label":"visible pixel identity current visualBullet"},{"pass":true,"label":"visible pixel identity current visbullaser"},{"pass":true,"label":"visible pixel identity current iskr_bul"},{"pass":true,"label":"visible pixel identity current iskr"},{"pass":true,"label":"visible pixel identity current expl"},{"pass":true,"label":"visible pixel identity current gilza"},{"pass":true,"label":"restored native mask current merc-arm"},{"pass":true,"label":"restored native mask current merc-weapon"},{"pass":true,"label":"restored native mask current visualBullet"},{"pass":true,"label":"restored native mask current visbullaser"},{"pass":true,"label":"restored native mask current iskr_bul"},{"pass":true,"label":"restored native mask current iskr"},{"pass":true,"label":"restored native mask current expl"},{"pass":true,"label":"restored native mask current gilza"},{"pass":true,"label":"partial hidden side current merc-arm"},{"pass":true,"label":"partial hidden side current visualBullet"},{"pass":true,"label":"partial hidden side current visbullaser"},{"pass":true,"label":"partial hidden side current iskr_bul"},{"pass":true,"label":"partial hidden side current iskr"},{"pass":true,"label":"partial hidden side current expl"},{"pass":true,"label":"partial hidden side current gilza"},{"pass":true,"label":"restored native mask current merc-arm"},{"pass":true,"label":"restored native mask current merc-weapon"},{"pass":true,"label":"restored native mask current visualBullet"},{"pass":true,"label":"restored native mask current visbullaser"},{"pass":true,"label":"restored native mask current iskr_bul"},{"pass":true,"label":"restored native mask current iskr"},{"pass":true,"label":"restored native mask current expl"},{"pass":true,"label":"restored native mask current gilza"},{"pass":true,"label":"visible pixel identity current merc-arm"},{"pass":true,"label":"visible pixel identity current merc-weapon"},{"pass":true,"label":"visible pixel identity current visualBullet"},{"pass":true,"label":"visible pixel identity current visbullaser"},{"pass":true,"label":"visible pixel identity current iskr_bul"},{"pass":true,"label":"visible pixel identity current iskr"},{"pass":true,"label":"visible pixel identity current expl"},{"pass":true,"label":"visible pixel identity current gilza"},{"pass":true,"label":"restored native mask current merc-arm"},{"pass":true,"label":"restored native mask current merc-weapon"},{"pass":true,"label":"restored native mask current visualBullet"},{"pass":true,"label":"restored native mask current visbullaser"},{"pass":true,"label":"restored native mask current iskr_bul"},{"pass":true,"label":"restored native mask current iskr"},{"pass":true,"label":"restored native mask current expl"},{"pass":true,"label":"restored native mask current gilza"},{"pass":true,"label":"reentry dark current merc-arm"},{"pass":true,"label":"reentry dark current merc-weapon"},{"pass":true,"label":"reentry dark current visualBullet"},{"pass":true,"label":"reentry dark current visbullaser"},{"pass":true,"label":"reentry dark current iskr_bul"},{"pass":true,"label":"reentry dark current iskr"},{"pass":true,"label":"reentry dark current expl"},{"pass":true,"label":"reentry dark current gilza"},{"pass":true,"label":"restored native mask current merc-arm"},{"pass":true,"label":"restored native mask current merc-weapon"},{"pass":true,"label":"restored native mask current visualBullet"},{"pass":true,"label":"restored native mask current visbullaser"},{"pass":true,"label":"restored native mask current iskr_bul"},{"pass":true,"label":"restored native mask current iskr"},{"pass":true,"label":"restored native mask current expl"},{"pass":true,"label":"restored native mask current gilza"},{"pass":true,"label":"visible pixel identity current merc-arm"},{"pass":true,"label":"visible pixel identity current merc-weapon"},{"pass":true,"label":"visible pixel identity current visualBullet"},{"pass":true,"label":"visible pixel identity current visbullaser"},{"pass":true,"label":"visible pixel identity current iskr_bul"},{"pass":true,"label":"visible pixel identity current iskr"},{"pass":true,"label":"visible pixel identity current expl"},{"pass":true,"label":"visible pixel identity current gilza"},{"pass":true,"label":"restored native mask current merc-arm"},{"pass":true,"label":"restored native mask current merc-weapon"},{"pass":true,"label":"restored native mask current visualBullet"},{"pass":true,"label":"restored native mask current visbullaser"},{"pass":true,"label":"restored native mask current iskr_bul"},{"pass":true,"label":"restored native mask current iskr"},{"pass":true,"label":"restored native mask current expl"},{"pass":true,"label":"restored native mask current gilza"},{"pass":true,"label":"long weapon native positive current"},{"pass":true,"label":"body classification unchanged current"},{"pass":true,"label":"long weapon outside body hidden current"},{"pass":true,"label":"native particle animation cannot reveal current 0"},{"pass":true,"label":"native particle animation cannot reveal current 1"},{"pass":true,"label":"native particle animation cannot reveal current 2"},{"pass":true,"label":"native particle animation cannot reveal current 3"},{"pass":true,"label":"native particle animation cannot reveal current 4"},{"pass":true,"label":"native particle animation cannot reveal current 5"},{"pass":true,"label":"native particle animation cannot reveal current 6"},{"pass":true,"label":"native particle animation cannot reveal current 7"},{"pass":true,"label":"native dead arm preserved current"},{"pass":true,"label":"removed effect released current"},{"pass":true,"label":"room reset releases effects current"},{"pass":true,"label":"baseline dark classic merc-arm 0"},{"pass":true,"label":"baseline dark classic visualBullet 0"},{"pass":true,"label":"baseline dark classic visbullaser 0"},{"pass":true,"label":"baseline dark classic iskr_bul 0"},{"pass":true,"label":"baseline dark classic iskr 0"},{"pass":true,"label":"baseline dark classic expl 0"},{"pass":true,"label":"baseline dark classic gilza 0"},{"pass":true,"label":"baseline dark classic merc-arm 1"},{"pass":true,"label":"baseline dark classic visualBullet 1"},{"pass":true,"label":"baseline dark classic visbullaser 1"},{"pass":true,"label":"baseline dark classic iskr_bul 1"},{"pass":true,"label":"baseline dark classic iskr 1"},{"pass":true,"label":"baseline dark classic expl 1"},{"pass":true,"label":"baseline dark classic gilza 1"},{"pass":true,"label":"baseline dark classic merc-arm 2"},{"pass":true,"label":"baseline dark classic visualBullet 2"},{"pass":true,"label":"baseline dark classic visbullaser 2"},{"pass":true,"label":"baseline dark classic iskr_bul 2"},{"pass":true,"label":"baseline dark classic iskr 2"},{"pass":true,"label":"baseline dark classic expl 2"},{"pass":true,"label":"baseline dark classic gilza 2"},{"pass":true,"label":"baseline dark classic merc-arm 3"},{"pass":true,"label":"baseline dark classic visualBullet 3"},{"pass":true,"label":"baseline dark classic visbullaser 3"},{"pass":true,"label":"baseline dark classic iskr_bul 3"},{"pass":true,"label":"baseline dark classic iskr 3"},{"pass":true,"label":"baseline dark classic expl 3"},{"pass":true,"label":"baseline dark classic gilza 3"},{"pass":true,"label":"fixed dark classic merc-arm 0"},{"pass":true,"label":"fixed dark classic merc-weapon 0"},{"pass":true,"label":"fixed dark classic visualBullet 0"},{"pass":true,"label":"fixed dark classic visbullaser 0"},{"pass":true,"label":"fixed dark classic iskr_bul 0"},{"pass":true,"label":"fixed dark classic iskr 0"},{"pass":true,"label":"fixed dark classic expl 0"},{"pass":true,"label":"fixed dark classic gilza 0"},{"pass":true,"label":"fixed dark classic merc-arm 1"},{"pass":true,"label":"fixed dark classic merc-weapon 1"},{"pass":true,"label":"fixed dark classic visualBullet 1"},{"pass":true,"label":"fixed dark classic visbullaser 1"},{"pass":true,"label":"fixed dark classic iskr_bul 1"},{"pass":true,"label":"fixed dark classic iskr 1"},{"pass":true,"label":"fixed dark classic expl 1"},{"pass":true,"label":"fixed dark classic gilza 1"},{"pass":true,"label":"fixed dark classic merc-arm 2"},{"pass":true,"label":"fixed dark classic merc-weapon 2"},{"pass":true,"label":"fixed dark classic visualBullet 2"},{"pass":true,"label":"fixed dark classic visbullaser 2"},{"pass":true,"label":"fixed dark classic iskr_bul 2"},{"pass":true,"label":"fixed dark classic iskr 2"},{"pass":true,"label":"fixed dark classic expl 2"},{"pass":true,"label":"fixed dark classic gilza 2"},{"pass":true,"label":"fixed dark classic merc-arm 3"},{"pass":true,"label":"fixed dark classic merc-weapon 3"},{"pass":true,"label":"fixed dark classic visualBullet 3"},{"pass":true,"label":"fixed dark classic visbullaser 3"},{"pass":true,"label":"fixed dark classic iskr_bul 3"},{"pass":true,"label":"fixed dark classic iskr 3"},{"pass":true,"label":"fixed dark classic expl 3"},{"pass":true,"label":"fixed dark classic gilza 3"},{"pass":true,"label":"visible pixel identity classic merc-arm"},{"pass":true,"label":"visible pixel identity classic merc-weapon"},{"pass":true,"label":"visible pixel identity classic visualBullet"},{"pass":true,"label":"visible pixel identity classic visbullaser"},{"pass":true,"label":"visible pixel identity classic iskr_bul"},{"pass":true,"label":"visible pixel identity classic iskr"},{"pass":true,"label":"visible pixel identity classic expl"},{"pass":true,"label":"visible pixel identity classic gilza"},{"pass":true,"label":"restored native mask classic merc-arm"},{"pass":true,"label":"restored native mask classic merc-weapon"},{"pass":true,"label":"restored native mask classic visualBullet"},{"pass":true,"label":"restored native mask classic visbullaser"},{"pass":true,"label":"restored native mask classic iskr_bul"},{"pass":true,"label":"restored native mask classic iskr"},{"pass":true,"label":"restored native mask classic expl"},{"pass":true,"label":"restored native mask classic gilza"},{"pass":true,"label":"partial hidden side classic merc-arm"},{"pass":true,"label":"partial hidden side classic visualBullet"},{"pass":true,"label":"partial hidden side classic visbullaser"},{"pass":true,"label":"partial hidden side classic iskr_bul"},{"pass":true,"label":"partial hidden side classic iskr"},{"pass":true,"label":"partial hidden side classic expl"},{"pass":true,"label":"partial hidden side classic gilza"},{"pass":true,"label":"restored native mask classic merc-arm"},{"pass":true,"label":"restored native mask classic merc-weapon"},{"pass":true,"label":"restored native mask classic visualBullet"},{"pass":true,"label":"restored native mask classic visbullaser"},{"pass":true,"label":"restored native mask classic iskr_bul"},{"pass":true,"label":"restored native mask classic iskr"},{"pass":true,"label":"restored native mask classic expl"},{"pass":true,"label":"restored native mask classic gilza"},{"pass":true,"label":"visible pixel identity classic merc-arm"},{"pass":true,"label":"visible pixel identity classic merc-weapon"},{"pass":true,"label":"visible pixel identity classic visualBullet"},{"pass":true,"label":"visible pixel identity classic visbullaser"},{"pass":true,"label":"visible pixel identity classic iskr_bul"},{"pass":true,"label":"visible pixel identity classic iskr"},{"pass":true,"label":"visible pixel identity classic expl"},{"pass":true,"label":"visible pixel identity classic gilza"},{"pass":true,"label":"restored native mask classic merc-arm"},{"pass":true,"label":"restored native mask classic merc-weapon"},{"pass":true,"label":"restored native mask classic visualBullet"},{"pass":true,"label":"restored native mask classic visbullaser"},{"pass":true,"label":"restored native mask classic iskr_bul"},{"pass":true,"label":"restored native mask classic iskr"},{"pass":true,"label":"restored native mask classic expl"},{"pass":true,"label":"restored native mask classic gilza"},{"pass":true,"label":"reentry dark classic merc-arm"},{"pass":true,"label":"reentry dark classic merc-weapon"},{"pass":true,"label":"reentry dark classic visualBullet"},{"pass":true,"label":"reentry dark classic visbullaser"},{"pass":true,"label":"reentry dark classic iskr_bul"},{"pass":true,"label":"reentry dark classic iskr"},{"pass":true,"label":"reentry dark classic expl"},{"pass":true,"label":"reentry dark classic gilza"},{"pass":true,"label":"restored native mask classic merc-arm"},{"pass":true,"label":"restored native mask classic merc-weapon"},{"pass":true,"label":"restored native mask classic visualBullet"},{"pass":true,"label":"restored native mask classic visbullaser"},{"pass":true,"label":"restored native mask classic iskr_bul"},{"pass":true,"label":"restored native mask classic iskr"},{"pass":true,"label":"restored native mask classic expl"},{"pass":true,"label":"restored native mask classic gilza"},{"pass":true,"label":"visible pixel identity classic merc-arm"},{"pass":true,"label":"visible pixel identity classic merc-weapon"},{"pass":true,"label":"visible pixel identity classic visualBullet"},{"pass":true,"label":"visible pixel identity classic visbullaser"},{"pass":true,"label":"visible pixel identity classic iskr_bul"},{"pass":true,"label":"visible pixel identity classic iskr"},{"pass":true,"label":"visible pixel identity classic expl"},{"pass":true,"label":"visible pixel identity classic gilza"},{"pass":true,"label":"restored native mask classic merc-arm"},{"pass":true,"label":"restored native mask classic merc-weapon"},{"pass":true,"label":"restored native mask classic visualBullet"},{"pass":true,"label":"restored native mask classic visbullaser"},{"pass":true,"label":"restored native mask classic iskr_bul"},{"pass":true,"label":"restored native mask classic iskr"},{"pass":true,"label":"restored native mask classic expl"},{"pass":true,"label":"restored native mask classic gilza"},{"pass":true,"label":"long weapon native positive classic"},{"pass":true,"label":"body classification unchanged classic"},{"pass":true,"label":"long weapon outside body hidden classic"},{"pass":true,"label":"native particle animation cannot reveal classic 0"},{"pass":true,"label":"native particle animation cannot reveal classic 1"},{"pass":true,"label":"native particle animation cannot reveal classic 2"},{"pass":true,"label":"native particle animation cannot reveal classic 3"},{"pass":true,"label":"native particle animation cannot reveal classic 4"},{"pass":true,"label":"native particle animation cannot reveal classic 5"},{"pass":true,"label":"native particle animation cannot reveal classic 6"},{"pass":true,"label":"native particle animation cannot reveal classic 7"},{"pass":true,"label":"native dead arm preserved classic"},{"pass":true,"label":"removed effect released classic"},{"pass":true,"label":"room reset releases effects classic"},{"pass":true,"label":"exact native repeated mask current 0 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 0 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 0 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 0 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 0 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 0 0 iskr"},{"pass":true,"label":"exact native repeated mask current 0 0 expl"},{"pass":true,"label":"exact native repeated mask current 0 0 gilza"},{"pass":true,"label":"exact native repeated mask current 0 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 0 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 0 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 0 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 0 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 0 1 iskr"},{"pass":true,"label":"exact native repeated mask current 0 1 expl"},{"pass":true,"label":"exact native repeated mask current 0 1 gilza"},{"pass":true,"label":"exact native repeated mask current 0 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 0 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 0 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 0 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 0 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 0 2 iskr"},{"pass":true,"label":"exact native repeated mask current 0 2 expl"},{"pass":true,"label":"exact native repeated mask current 0 2 gilza"},{"pass":true,"label":"exact native repeated mask current 1 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 1 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 1 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 1 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 1 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 1 0 iskr"},{"pass":true,"label":"exact native repeated mask current 1 0 expl"},{"pass":true,"label":"exact native repeated mask current 1 0 gilza"},{"pass":true,"label":"exact native repeated mask current 1 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 1 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 1 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 1 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 1 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 1 1 iskr"},{"pass":true,"label":"exact native repeated mask current 1 1 expl"},{"pass":true,"label":"exact native repeated mask current 1 1 gilza"},{"pass":true,"label":"exact native repeated mask current 1 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 1 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 1 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 1 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 1 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 1 2 iskr"},{"pass":true,"label":"exact native repeated mask current 1 2 expl"},{"pass":true,"label":"exact native repeated mask current 1 2 gilza"},{"pass":true,"label":"exact native repeated mask current 2 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 2 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 2 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 2 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 2 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 2 0 iskr"},{"pass":true,"label":"exact native repeated mask current 2 0 expl"},{"pass":true,"label":"exact native repeated mask current 2 0 gilza"},{"pass":true,"label":"exact native repeated mask current 2 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 2 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 2 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 2 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 2 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 2 1 iskr"},{"pass":true,"label":"exact native repeated mask current 2 1 expl"},{"pass":true,"label":"exact native repeated mask current 2 1 gilza"},{"pass":true,"label":"exact native repeated mask current 2 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 2 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 2 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 2 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 2 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 2 2 iskr"},{"pass":true,"label":"exact native repeated mask current 2 2 expl"},{"pass":true,"label":"exact native repeated mask current 2 2 gilza"},{"pass":true,"label":"exact native repeated mask current 3 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 3 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 3 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 3 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 3 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 3 0 iskr"},{"pass":true,"label":"exact native repeated mask current 3 0 expl"},{"pass":true,"label":"exact native repeated mask current 3 0 gilza"},{"pass":true,"label":"exact native repeated mask current 3 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 3 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 3 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 3 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 3 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 3 1 iskr"},{"pass":true,"label":"exact native repeated mask current 3 1 expl"},{"pass":true,"label":"exact native repeated mask current 3 1 gilza"},{"pass":true,"label":"exact native repeated mask current 3 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 3 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 3 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 3 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 3 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 3 2 iskr"},{"pass":true,"label":"exact native repeated mask current 3 2 expl"},{"pass":true,"label":"exact native repeated mask current 3 2 gilza"},{"pass":true,"label":"exact native repeated mask current 4 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 4 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 4 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 4 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 4 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 4 0 iskr"},{"pass":true,"label":"exact native repeated mask current 4 0 expl"},{"pass":true,"label":"exact native repeated mask current 4 0 gilza"},{"pass":true,"label":"exact native repeated mask current 4 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 4 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 4 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 4 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 4 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 4 1 iskr"},{"pass":true,"label":"exact native repeated mask current 4 1 expl"},{"pass":true,"label":"exact native repeated mask current 4 1 gilza"},{"pass":true,"label":"exact native repeated mask current 4 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 4 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 4 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 4 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 4 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 4 2 iskr"},{"pass":true,"label":"exact native repeated mask current 4 2 expl"},{"pass":true,"label":"exact native repeated mask current 4 2 gilza"},{"pass":true,"label":"exact native repeated mask current 5 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 5 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 5 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 5 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 5 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 5 0 iskr"},{"pass":true,"label":"exact native repeated mask current 5 0 expl"},{"pass":true,"label":"exact native repeated mask current 5 0 gilza"},{"pass":true,"label":"exact native repeated mask current 5 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 5 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 5 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 5 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 5 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 5 1 iskr"},{"pass":true,"label":"exact native repeated mask current 5 1 expl"},{"pass":true,"label":"exact native repeated mask current 5 1 gilza"},{"pass":true,"label":"exact native repeated mask current 5 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 5 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 5 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 5 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 5 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 5 2 iskr"},{"pass":true,"label":"exact native repeated mask current 5 2 expl"},{"pass":true,"label":"exact native repeated mask current 5 2 gilza"},{"pass":true,"label":"exact native repeated mask current 6 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 6 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 6 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 6 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 6 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 6 0 iskr"},{"pass":true,"label":"exact native repeated mask current 6 0 expl"},{"pass":true,"label":"exact native repeated mask current 6 0 gilza"},{"pass":true,"label":"exact native repeated mask current 6 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 6 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 6 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 6 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 6 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 6 1 iskr"},{"pass":true,"label":"exact native repeated mask current 6 1 expl"},{"pass":true,"label":"exact native repeated mask current 6 1 gilza"},{"pass":true,"label":"exact native repeated mask current 6 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 6 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 6 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 6 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 6 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 6 2 iskr"},{"pass":true,"label":"exact native repeated mask current 6 2 expl"},{"pass":true,"label":"exact native repeated mask current 6 2 gilza"},{"pass":true,"label":"exact native repeated mask current 7 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 7 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 7 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 7 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 7 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 7 0 iskr"},{"pass":true,"label":"exact native repeated mask current 7 0 expl"},{"pass":true,"label":"exact native repeated mask current 7 0 gilza"},{"pass":true,"label":"exact native repeated mask current 7 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 7 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 7 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 7 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 7 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 7 1 iskr"},{"pass":true,"label":"exact native repeated mask current 7 1 expl"},{"pass":true,"label":"exact native repeated mask current 7 1 gilza"},{"pass":true,"label":"exact native repeated mask current 7 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 7 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 7 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 7 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 7 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 7 2 iskr"},{"pass":true,"label":"exact native repeated mask current 7 2 expl"},{"pass":true,"label":"exact native repeated mask current 7 2 gilza"},{"pass":true,"label":"exact native repeated mask current 8 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 8 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 8 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 8 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 8 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 8 0 iskr"},{"pass":true,"label":"exact native repeated mask current 8 0 expl"},{"pass":true,"label":"exact native repeated mask current 8 0 gilza"},{"pass":true,"label":"exact native repeated mask current 8 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 8 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 8 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 8 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 8 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 8 1 iskr"},{"pass":true,"label":"exact native repeated mask current 8 1 expl"},{"pass":true,"label":"exact native repeated mask current 8 1 gilza"},{"pass":true,"label":"exact native repeated mask current 8 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 8 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 8 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 8 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 8 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 8 2 iskr"},{"pass":true,"label":"exact native repeated mask current 8 2 expl"},{"pass":true,"label":"exact native repeated mask current 8 2 gilza"},{"pass":true,"label":"exact native repeated mask current 9 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 9 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 9 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 9 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 9 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 9 0 iskr"},{"pass":true,"label":"exact native repeated mask current 9 0 expl"},{"pass":true,"label":"exact native repeated mask current 9 0 gilza"},{"pass":true,"label":"exact native repeated mask current 9 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 9 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 9 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 9 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 9 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 9 1 iskr"},{"pass":true,"label":"exact native repeated mask current 9 1 expl"},{"pass":true,"label":"exact native repeated mask current 9 1 gilza"},{"pass":true,"label":"exact native repeated mask current 9 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 9 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 9 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 9 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 9 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 9 2 iskr"},{"pass":true,"label":"exact native repeated mask current 9 2 expl"},{"pass":true,"label":"exact native repeated mask current 9 2 gilza"},{"pass":true,"label":"exact native repeated mask current 10 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 10 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 10 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 10 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 10 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 10 0 iskr"},{"pass":true,"label":"exact native repeated mask current 10 0 expl"},{"pass":true,"label":"exact native repeated mask current 10 0 gilza"},{"pass":true,"label":"exact native repeated mask current 10 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 10 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 10 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 10 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 10 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 10 1 iskr"},{"pass":true,"label":"exact native repeated mask current 10 1 expl"},{"pass":true,"label":"exact native repeated mask current 10 1 gilza"},{"pass":true,"label":"exact native repeated mask current 10 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 10 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 10 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 10 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 10 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 10 2 iskr"},{"pass":true,"label":"exact native repeated mask current 10 2 expl"},{"pass":true,"label":"exact native repeated mask current 10 2 gilza"},{"pass":true,"label":"exact native repeated mask current 11 0 merc-arm"},{"pass":true,"label":"exact native repeated mask current 11 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 11 0 visualBullet"},{"pass":true,"label":"exact native repeated mask current 11 0 visbullaser"},{"pass":true,"label":"exact native repeated mask current 11 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 11 0 iskr"},{"pass":true,"label":"exact native repeated mask current 11 0 expl"},{"pass":true,"label":"exact native repeated mask current 11 0 gilza"},{"pass":true,"label":"exact native repeated mask current 11 1 merc-arm"},{"pass":true,"label":"exact native repeated mask current 11 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 11 1 visualBullet"},{"pass":true,"label":"exact native repeated mask current 11 1 visbullaser"},{"pass":true,"label":"exact native repeated mask current 11 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 11 1 iskr"},{"pass":true,"label":"exact native repeated mask current 11 1 expl"},{"pass":true,"label":"exact native repeated mask current 11 1 gilza"},{"pass":true,"label":"exact native repeated mask current 11 2 merc-arm"},{"pass":true,"label":"exact native repeated mask current 11 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask current 11 2 visualBullet"},{"pass":true,"label":"exact native repeated mask current 11 2 visbullaser"},{"pass":true,"label":"exact native repeated mask current 11 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask current 11 2 iskr"},{"pass":true,"label":"exact native repeated mask current 11 2 expl"},{"pass":true,"label":"exact native repeated mask current 11 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 0 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 0 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 0 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 0 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 0 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 0 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 0 0 expl"},{"pass":true,"label":"exact native repeated mask classic 0 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 0 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 0 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 0 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 0 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 0 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 0 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 0 1 expl"},{"pass":true,"label":"exact native repeated mask classic 0 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 0 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 0 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 0 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 0 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 0 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 0 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 0 2 expl"},{"pass":true,"label":"exact native repeated mask classic 0 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 1 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 1 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 1 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 1 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 1 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 1 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 1 0 expl"},{"pass":true,"label":"exact native repeated mask classic 1 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 1 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 1 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 1 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 1 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 1 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 1 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 1 1 expl"},{"pass":true,"label":"exact native repeated mask classic 1 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 1 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 1 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 1 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 1 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 1 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 1 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 1 2 expl"},{"pass":true,"label":"exact native repeated mask classic 1 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 2 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 2 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 2 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 2 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 2 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 2 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 2 0 expl"},{"pass":true,"label":"exact native repeated mask classic 2 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 2 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 2 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 2 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 2 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 2 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 2 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 2 1 expl"},{"pass":true,"label":"exact native repeated mask classic 2 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 2 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 2 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 2 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 2 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 2 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 2 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 2 2 expl"},{"pass":true,"label":"exact native repeated mask classic 2 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 3 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 3 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 3 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 3 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 3 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 3 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 3 0 expl"},{"pass":true,"label":"exact native repeated mask classic 3 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 3 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 3 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 3 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 3 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 3 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 3 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 3 1 expl"},{"pass":true,"label":"exact native repeated mask classic 3 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 3 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 3 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 3 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 3 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 3 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 3 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 3 2 expl"},{"pass":true,"label":"exact native repeated mask classic 3 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 4 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 4 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 4 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 4 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 4 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 4 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 4 0 expl"},{"pass":true,"label":"exact native repeated mask classic 4 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 4 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 4 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 4 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 4 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 4 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 4 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 4 1 expl"},{"pass":true,"label":"exact native repeated mask classic 4 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 4 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 4 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 4 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 4 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 4 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 4 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 4 2 expl"},{"pass":true,"label":"exact native repeated mask classic 4 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 5 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 5 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 5 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 5 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 5 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 5 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 5 0 expl"},{"pass":true,"label":"exact native repeated mask classic 5 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 5 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 5 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 5 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 5 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 5 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 5 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 5 1 expl"},{"pass":true,"label":"exact native repeated mask classic 5 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 5 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 5 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 5 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 5 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 5 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 5 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 5 2 expl"},{"pass":true,"label":"exact native repeated mask classic 5 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 6 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 6 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 6 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 6 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 6 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 6 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 6 0 expl"},{"pass":true,"label":"exact native repeated mask classic 6 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 6 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 6 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 6 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 6 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 6 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 6 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 6 1 expl"},{"pass":true,"label":"exact native repeated mask classic 6 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 6 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 6 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 6 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 6 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 6 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 6 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 6 2 expl"},{"pass":true,"label":"exact native repeated mask classic 6 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 7 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 7 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 7 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 7 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 7 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 7 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 7 0 expl"},{"pass":true,"label":"exact native repeated mask classic 7 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 7 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 7 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 7 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 7 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 7 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 7 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 7 1 expl"},{"pass":true,"label":"exact native repeated mask classic 7 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 7 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 7 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 7 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 7 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 7 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 7 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 7 2 expl"},{"pass":true,"label":"exact native repeated mask classic 7 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 8 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 8 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 8 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 8 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 8 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 8 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 8 0 expl"},{"pass":true,"label":"exact native repeated mask classic 8 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 8 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 8 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 8 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 8 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 8 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 8 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 8 1 expl"},{"pass":true,"label":"exact native repeated mask classic 8 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 8 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 8 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 8 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 8 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 8 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 8 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 8 2 expl"},{"pass":true,"label":"exact native repeated mask classic 8 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 9 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 9 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 9 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 9 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 9 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 9 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 9 0 expl"},{"pass":true,"label":"exact native repeated mask classic 9 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 9 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 9 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 9 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 9 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 9 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 9 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 9 1 expl"},{"pass":true,"label":"exact native repeated mask classic 9 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 9 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 9 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 9 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 9 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 9 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 9 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 9 2 expl"},{"pass":true,"label":"exact native repeated mask classic 9 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 10 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 10 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 10 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 10 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 10 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 10 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 10 0 expl"},{"pass":true,"label":"exact native repeated mask classic 10 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 10 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 10 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 10 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 10 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 10 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 10 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 10 1 expl"},{"pass":true,"label":"exact native repeated mask classic 10 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 10 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 10 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 10 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 10 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 10 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 10 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 10 2 expl"},{"pass":true,"label":"exact native repeated mask classic 10 2 gilza"},{"pass":true,"label":"exact native repeated mask classic 11 0 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 11 0 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 11 0 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 11 0 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 11 0 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 11 0 iskr"},{"pass":true,"label":"exact native repeated mask classic 11 0 expl"},{"pass":true,"label":"exact native repeated mask classic 11 0 gilza"},{"pass":true,"label":"exact native repeated mask classic 11 1 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 11 1 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 11 1 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 11 1 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 11 1 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 11 1 iskr"},{"pass":true,"label":"exact native repeated mask classic 11 1 expl"},{"pass":true,"label":"exact native repeated mask classic 11 1 gilza"},{"pass":true,"label":"exact native repeated mask classic 11 2 merc-arm"},{"pass":true,"label":"exact native repeated mask classic 11 2 merc-weapon"},{"pass":true,"label":"exact native repeated mask classic 11 2 visualBullet"},{"pass":true,"label":"exact native repeated mask classic 11 2 visbullaser"},{"pass":true,"label":"exact native repeated mask classic 11 2 iskr_bul"},{"pass":true,"label":"exact native repeated mask classic 11 2 iskr"},{"pass":true,"label":"exact native repeated mask classic 11 2 expl"},{"pass":true,"label":"exact native repeated mask classic 11 2 gilza"},{"pass":true,"label":"transparent-support shortcut actually exercised"}],"cases":[]}
+FRAME COMPLETE

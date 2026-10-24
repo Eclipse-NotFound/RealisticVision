@@ -1,0 +1,44 @@
+[
+  {
+    "args": [
+      "run.py",
+      "build",
+      "guard-profile-01",
+      "--candidate",
+      "guard",
+      "--full",
+      "--controlled",
+      "--profile",
+      "--warmup",
+      "60",
+      "--frames",
+      "120"
+    ],
+    "log": "group-steps\\1792862863977287300-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "guard-profile-01"
+    ],
+    "log": "group-steps\\1792862872393744900-run.py.log"
+  },
+  {
+    "args": [
+      "candidates.py",
+      "trim"
+    ],
+    "log": "group-steps\\1792862922229663100-candidates.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "trim-pixels-01",
+      "--candidate",
+      "trim"
+    ],
+    "log": "group-steps\\1792862922240903400-validate.py.log"
+  }
+]

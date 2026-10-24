@@ -1,0 +1,7 @@
+[
+ ["candidates.py","bitmap"],
+ ["validate.py","dense-build","bitmap-pixels-01","--candidate","bitmap"],
+ ["validate.py","dense-run","bitmap-pixels-01"],
+ ["run.py","build","bitmap-controlled-01","--candidate","bitmap","--full","--controlled","--warmup","210","--frames","180"],
+ ["run.py","run","bitmap-controlled-01"]
+]

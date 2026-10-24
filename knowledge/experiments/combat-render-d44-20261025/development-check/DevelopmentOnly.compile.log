@@ -1,0 +1,17 @@
+正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render-output\development-check\DevelopmentOnly.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render-output\development-check\DevelopmentOnly.swf（47182 字节）
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\src\RVAuthorityView.as(7): 列: 23 警告: 没有为类 RVAuthorityView 指定构造函数。
+
+   public final class RVAuthorityView {
+                      ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\src\RVExplorationCarrier.as(5): 列: 17 警告: 没有为类 RVExplorationCarrier 指定构造函数。
+
+   public class RVExplorationCarrier extends Sprite
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\src\RVAuthorityCarrier.as(4): 列: 23 警告: 没有为类 RVAuthorityCarrier 指定构造函数。
+
+   public final class RVAuthorityCarrier extends Sprite {public var authorityAPI:Object;}
+                      ^
+

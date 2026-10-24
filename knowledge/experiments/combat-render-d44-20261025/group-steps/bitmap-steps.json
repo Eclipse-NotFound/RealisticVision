@@ -1,0 +1,19 @@
+[
+  {
+    "args": [
+      "candidates.py",
+      "bitmap"
+    ],
+    "log": "group-steps\\1792862665605673800-candidates.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "bitmap-pixels-01",
+      "--candidate",
+      "bitmap"
+    ],
+    "log": "group-steps\\1792862665646644500-validate.py.log"
+  }
+]

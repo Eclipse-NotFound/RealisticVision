@@ -1,0 +1,6 @@
+[
+  ["package.py", "build"],
+  ["package.py", "inspect"],
+  ["package.py", "check"],
+  ["gate.py"]
+]

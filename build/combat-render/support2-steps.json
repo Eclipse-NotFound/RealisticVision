@@ -1,0 +1,11 @@
+[
+ ["candidates.py","support2"],
+ ["validate.py","dense-build","support2-pixels-01","--candidate","support2"],
+ ["validate.py","dense-run","support2-pixels-01"],
+ ["validate.py","native-build","support2-native-01","--candidate","support2"],
+ ["validate.py","native-run","support2-native-01"],
+ ["run.py","build","support2-controlled-01","--candidate","support2","--full","--controlled","--warmup","210","--frames","180"],
+ ["run.py","run","support2-controlled-01"],
+ ["run.py","build","support2-free-01","--candidate","support2","--full","--warmup","210","--frames","180"],
+ ["run.py","run","support2-free-01"]
+]

@@ -1,0 +1,6 @@
+[
+ ["run.py","build","guard-controlled-03","--candidate","guard","--full","--controlled","--warmup","210","--frames","180"],
+ ["validate.py","native-build","native-pixels-02"],
+ ["validate.py","native-run","native-pixels-02"],
+ ["run.py","run","guard-controlled-03"]
+]

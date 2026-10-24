@@ -1,0 +1,264 @@
+{
+  "note": "Memory drops are association only; outside the RV call includes native final rendering and scheduling. No samples excluded.",
+  "runs": {
+    "guard-controlled-03": [
+      {
+        "case": 2,
+        "mode": "current",
+        "variant": "candidate",
+        "age": 231,
+        "intervalMs": 322,
+        "rvMs": 13,
+        "particles": 94,
+        "projectiles": 9,
+        "masks": 188,
+        "worldPass": 232,
+        "memoryBetweenMiB": 0.5859375
+      }
+    ],
+    "support-free-02": [
+      {
+        "case": 0,
+        "mode": "current",
+        "variant": "off",
+        "age": 257,
+        "intervalMs": 303,
+        "rvMs": 0,
+        "particles": 71,
+        "projectiles": 5,
+        "masks": 0,
+        "worldPass": 0,
+        "memoryBetweenMiB": 0.125
+      },
+      {
+        "case": 0,
+        "mode": "current",
+        "variant": "off",
+        "age": 369,
+        "intervalMs": 342,
+        "rvMs": 0,
+        "particles": 29,
+        "projectiles": 7,
+        "masks": 0,
+        "worldPass": 0,
+        "memoryBetweenMiB": 0.33203125
+      },
+      {
+        "case": 2,
+        "mode": "current",
+        "variant": "candidate",
+        "age": 288,
+        "intervalMs": 297,
+        "rvMs": 12,
+        "particles": 77,
+        "projectiles": 7,
+        "masks": 99,
+        "worldPass": 289,
+        "memoryBetweenMiB": 0.70703125
+      }
+    ],
+    "support2-controlled-01": [
+      {
+        "case": 2,
+        "mode": "current",
+        "variant": "candidate",
+        "age": 377,
+        "intervalMs": 539,
+        "rvMs": 13,
+        "particles": 80,
+        "projectiles": 4,
+        "masks": 160,
+        "worldPass": 378,
+        "memoryBetweenMiB": 0.51171875
+      },
+      {
+        "case": 5,
+        "mode": "current",
+        "variant": "off",
+        "age": 285,
+        "intervalMs": 254,
+        "rvMs": 0,
+        "particles": 94,
+        "projectiles": 10,
+        "masks": 0,
+        "worldPass": 0,
+        "memoryBetweenMiB": 0.54296875
+      }
+    ],
+    "support2-free-01": [
+      {
+        "case": 1,
+        "mode": "current",
+        "variant": "normal",
+        "age": 283,
+        "intervalMs": 205,
+        "rvMs": 6,
+        "particles": 52,
+        "projectiles": 8,
+        "masks": 128,
+        "worldPass": 284,
+        "memoryBetweenMiB": 0.66796875
+      },
+      {
+        "case": 2,
+        "mode": "current",
+        "variant": "candidate",
+        "age": 331,
+        "intervalMs": 240,
+        "rvMs": 22,
+        "particles": 88,
+        "projectiles": 8,
+        "masks": 104,
+        "worldPass": 332,
+        "memoryBetweenMiB": 0.26171875
+      },
+      {
+        "case": 4,
+        "mode": "current",
+        "variant": "normal",
+        "age": 231,
+        "intervalMs": 227,
+        "rvMs": 3,
+        "particles": 87,
+        "projectiles": 5,
+        "masks": 148,
+        "worldPass": 232,
+        "memoryBetweenMiB": 0.3984375
+      },
+      {
+        "case": 4,
+        "mode": "current",
+        "variant": "normal",
+        "age": 260,
+        "intervalMs": 505,
+        "rvMs": 4,
+        "particles": 93,
+        "projectiles": 3,
+        "masks": 121,
+        "worldPass": 261,
+        "memoryBetweenMiB": 0.40234375
+      },
+      {
+        "case": 4,
+        "mode": "current",
+        "variant": "normal",
+        "age": 314,
+        "intervalMs": 406,
+        "rvMs": 5,
+        "particles": 106,
+        "projectiles": 5,
+        "masks": 178,
+        "worldPass": 315,
+        "memoryBetweenMiB": 0.5625
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 299,
+        "intervalMs": 877,
+        "rvMs": 22,
+        "particles": 51,
+        "projectiles": 7,
+        "masks": 101,
+        "worldPass": 300,
+        "memoryBetweenMiB": 0.515625
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 300,
+        "intervalMs": 395,
+        "rvMs": 3,
+        "particles": 52,
+        "projectiles": 4,
+        "masks": 95,
+        "worldPass": 301,
+        "memoryBetweenMiB": 0.80078125
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 301,
+        "intervalMs": 924,
+        "rvMs": 20,
+        "particles": 65,
+        "projectiles": 8,
+        "masks": 109,
+        "worldPass": 302,
+        "memoryBetweenMiB": 0.48046875
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 302,
+        "intervalMs": 402,
+        "rvMs": 20,
+        "particles": 61,
+        "projectiles": 7,
+        "masks": 105,
+        "worldPass": 303,
+        "memoryBetweenMiB": 0.34765625
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 305,
+        "intervalMs": 243,
+        "rvMs": 21,
+        "particles": 64,
+        "projectiles": 6,
+        "masks": 99,
+        "worldPass": 306,
+        "memoryBetweenMiB": 0.48046875
+      },
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 307,
+        "intervalMs": 227,
+        "rvMs": 20,
+        "particles": 81,
+        "projectiles": 9,
+        "masks": 117,
+        "worldPass": 308,
+        "memoryBetweenMiB": 0.57421875
+      }
+    ],
+    "bindings-controlled-01": [
+      {
+        "case": 10,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 215,
+        "intervalMs": 338,
+        "rvMs": 15,
+        "particles": 31,
+        "projectiles": 0,
+        "masks": 74,
+        "worldPass": 216,
+        "memoryBetweenMiB": 0.3828125
+      }
+    ],
+    "bindings-free-01": [
+      {
+        "case": 7,
+        "mode": "classic",
+        "variant": "normal",
+        "age": 231,
+        "intervalMs": 282,
+        "rvMs": 14,
+        "particles": 72,
+        "projectiles": 6,
+        "masks": 154,
+        "worldPass": 232,
+        "memoryBetweenMiB": 0.421875
+      }
+    ]
+  }
+}

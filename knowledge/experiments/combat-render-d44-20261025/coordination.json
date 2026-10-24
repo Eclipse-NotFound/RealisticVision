@@ -1,0 +1,11 @@
+{
+  "outboundMessage": "Automatic review rejected ambiguous thread authorization; not sent and not retried.",
+  "registry": "All game/compile groups used shared registration; no other session process was stopped.",
+  "deferredPrototype": {
+    "plan": "tileclip-pixels-steps.json",
+    "ownedQueuePid": 86220,
+    "state": "Stopped before any build or game launch after verifying its command line; prototype remains untested."
+  },
+  "releasedWindow": "bindings finished 2026-10-25 02:24:19; next package group began 02:35:00, allowing earlier serial work.",
+  "boundary": "No gameplay or user save state changed by test coordination."
+}

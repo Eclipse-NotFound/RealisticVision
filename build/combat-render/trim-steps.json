@@ -1,0 +1,11 @@
+[
+ ["run.py","build","guard-profile-01","--candidate","guard","--full","--controlled","--profile","--warmup","60","--frames","120"],
+ ["run.py","run","guard-profile-01"],
+ ["candidates.py","trim"],
+ ["validate.py","dense-build","trim-pixels-01","--candidate","trim"],
+ ["validate.py","dense-run","trim-pixels-01"],
+ ["validate.py","native-build","trim-native-01","--candidate","trim"],
+ ["validate.py","native-run","trim-native-01"],
+ ["run.py","build","trim-controlled-01","--candidate","trim","--full","--controlled","--warmup","210","--frames","180"],
+ ["run.py","run","trim-controlled-01"]
+]

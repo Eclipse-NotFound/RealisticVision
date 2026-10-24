@@ -1,0 +1,64 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "support-native-04",
+      "--candidate",
+      "support"
+    ],
+    "log": "group-steps\\1792864021589165900-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "support-native-04"
+    ],
+    "log": "group-steps\\1792864030166776300-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "support-free-02",
+      "--candidate",
+      "support",
+      "--full",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792864059843978300-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "support-free-02"
+    ],
+    "log": "group-steps\\1792864068705601400-run.py.log"
+  },
+  {
+    "args": [
+      "package.py",
+      "build"
+    ],
+    "log": "group-steps\\1792864344778078100-package.py.log"
+  },
+  {
+    "args": [
+      "package.py",
+      "inspect"
+    ],
+    "log": "group-steps\\1792864347991044700-package.py.log"
+  },
+  {
+    "args": [
+      "package.py",
+      "check"
+    ],
+    "log": "group-steps\\1792864349286154500-package.py.log"
+  }
+]

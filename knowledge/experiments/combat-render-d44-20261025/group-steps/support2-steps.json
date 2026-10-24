@@ -1,0 +1,92 @@
+[
+  {
+    "args": [
+      "candidates.py",
+      "support2"
+    ],
+    "log": "group-steps\\1792864690603966500-candidates.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-build",
+      "support2-pixels-01",
+      "--candidate",
+      "support2"
+    ],
+    "log": "group-steps\\1792864690638494100-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "dense-run",
+      "support2-pixels-01"
+    ],
+    "log": "group-steps\\1792864692905909500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "support2-native-01",
+      "--candidate",
+      "support2"
+    ],
+    "log": "group-steps\\1792864748594544100-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "support2-native-01"
+    ],
+    "log": "group-steps\\1792864756775165900-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "support2-controlled-01",
+      "--candidate",
+      "support2",
+      "--full",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792864786199118500-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "support2-controlled-01"
+    ],
+    "log": "group-steps\\1792864794623312100-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "build",
+      "support2-free-01",
+      "--candidate",
+      "support2",
+      "--full",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792865095554560700-run.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "support2-free-01"
+    ],
+    "log": "group-steps\\1792865104060236000-run.py.log"
+  }
+]

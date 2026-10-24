@@ -1,0 +1,42 @@
+[
+  {
+    "args": [
+      "run.py",
+      "build",
+      "guard-controlled-03",
+      "--candidate",
+      "guard",
+      "--full",
+      "--controlled",
+      "--warmup",
+      "210",
+      "--frames",
+      "180"
+    ],
+    "log": "group-steps\\1792862057285768500-run.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "native-pixels-02"
+    ],
+    "log": "group-steps\\1792862065478676500-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "native-pixels-02"
+    ],
+    "log": "group-steps\\1792862075200979400-validate.py.log"
+  },
+  {
+    "args": [
+      "run.py",
+      "run",
+      "guard-controlled-03"
+    ],
+    "log": "group-steps\\1792862105727116700-run.py.log"
+  }
+]

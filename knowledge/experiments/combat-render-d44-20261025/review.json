@@ -1,0 +1,21 @@
+{
+  "candidate": "bindings",
+  "productionBase": "D43",
+  "visualChecks": 1248,
+  "fullCombatWindows": 24,
+  "scope": "Display setter guards and exact transparent-support path only",
+  "logic": "Native exploration/AI/physics and FOV sampling are unchanged",
+  "risks": "Filtered independent visuals keep original masks. Scratch rectangle is synchronous. Real battle timings remain stochastic.",
+  "pixelInspection": [
+    "classic-merc-arm.png",
+    "current-visualBullet.png"
+  ],
+  "unadopted": [
+    "bitmap",
+    "trim",
+    "support",
+    "support2"
+  ],
+  "unrunPrototype": "tileclip",
+  "patchSHA256": "afca211303236946393bf4054e731d62f814c582c272cea33195c20210e9378b"
+}

@@ -1,0 +1,7 @@
+D44 START 0 {"variant":"candidate","n":6,"mode":"current"}
+D44 END 0 candidate shots=144 bullets=11
+D44 START 1 {"variant":"candidate","n":6,"mode":"classic"}
+D44 END 1 candidate shots=144 bullets=11
+D44 COMPLETE
+{"n": 6, "mode": "current", "variant": "candidate", "pairedFrames": 119, "mean": 64.51, "p95": 99, "max": 124, ">100": 5, "rv": 13.24, "masks": 220, "bullets": 11, "particles": 102, "units": 20, "objects": 137, "retained": {"rasters": 848, "previousPixels": 1619072, "worldPass": 180, "rawPixels": 1827392, "visuals": 8, "softPixels": 1619072}}
+{"n": 6, "mode": "classic", "variant": "candidate", "pairedFrames": 119, "mean": 55.98, "p95": 79, "max": 107, ">100": 2, "rv": 12.56, "masks": 208, "bullets": 11, "particles": 102, "units": 20, "objects": 135, "retained": {"rasters": 848, "previousPixels": 1611648, "worldPass": 180, "rawPixels": 1840576, "visuals": 14, "softPixels": 1611648}}

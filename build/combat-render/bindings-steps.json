@@ -1,0 +1,11 @@
+[
+  ["candidates.py", "bindings"],
+  ["validate.py", "dense-build", "bindings-pixels-01", "--candidate", "bindings"],
+  ["validate.py", "dense-run", "bindings-pixels-01"],
+  ["validate.py", "native-build", "bindings-native-01", "--candidate", "bindings"],
+  ["validate.py", "native-run", "bindings-native-01"],
+  ["run.py", "build", "bindings-controlled-01", "--candidate", "bindings", "--full", "--controlled", "--warmup", "210", "--frames", "180"],
+  ["run.py", "run", "bindings-controlled-01"],
+  ["run.py", "build", "bindings-free-01", "--candidate", "bindings", "--full", "--warmup", "210", "--frames", "180"],
+  ["run.py", "run", "bindings-free-01"]
+]

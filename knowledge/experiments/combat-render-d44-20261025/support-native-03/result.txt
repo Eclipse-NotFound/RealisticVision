@@ -1,0 +1,724 @@
+ModLoader[boot_start] v2 run=run_1792863792908_881699
+
+ModLoader[requested_ModLoaderMod] line 20
+
+ModLoader[requested_SandevistanMod] line 21
+
+ModLoader[requested_RConnectMod] line 22
+
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+
+ModLoader[requested_TDFCMod] line 25
+
+ModLoader[requested_RandomRoomsMod] line 26
+
+ModLoader[requested_LootEditorMod] line 27
+
+ModLoader[requested_PermanentInjuryMod] line 28
+
+ModLoader[requested_EffectVisibilityProbeMod] line 29
+
+ModLoader[requested_AddictionSystemMod] line 30
+
+ModLoader[requested_ContinuousSceneMod] line 31
+
+ModLoader[requested_FirearmAttachmentsMod] line 32
+
+ModLoader[requested_LightAndDarknessMod] line 33
+
+ModLoader[requested_WallBlendMod] line 34
+
+ModLoader[boot] v2 col=2 requested=14
+
+ModLoader[ok_WallBlendMod] init
+
+ModLoader[ok_SandevistanMod] init
+
+ModLoader[ok_MoreSkillsWeaponsMod] init
+
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-5d941c6e3b4842a98d7003b8eb54cb3b
+
+ModLoader[ok_AddictionSystemMod] init
+
+ModLoader[ok_FirearmAttachmentsMod] init
+
+ModLoader[ok_ContinuousSceneMod] init
+
+ModLoader[ok_LightAndDarknessMod] init
+
+ModLoader[ok_EffectVisibilityProbeMod] init
+
+ModLoader[ok_PermanentInjuryMod] init
+
+ModLoader[ok_LootEditorMod] init
+
+ModLoader[ok_RandomRoomsMod] init
+
+ModLoader[ok_RConnectMod] init
+
+ModLoader[ok_ModLoaderMod] init
+
+ModLoader[ok_TDFCMod] init
+
+662 Интерфейс
+
+1232 Game init
+
+957 Персонаж
+
+0 Местность
+
+773 Создание местности
+
+false
+
+377 Вход в местность
+
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=true
+
+753 Создание местности
+
+359 Вход в местность
+
+PASS native mercenary arm found
+
+PASS native emitter iskr_bul
+
+PASS native emitter iskr
+
+PASS native emitter expl
+
+PASS native emitter gilza
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+PASS baseline dark current merc-arm 0
+
+PASS baseline dark current visualBullet 0
+
+PASS baseline dark current visbullaser 0
+
+PASS baseline dark current iskr_bul 0
+
+PASS baseline dark current iskr 0
+
+PASS baseline dark current expl 0
+
+PASS baseline dark current gilza 0
+
+PASS baseline dark current merc-arm 1
+
+PASS baseline dark current visualBullet 1
+
+PASS baseline dark current visbullaser 1
+
+PASS baseline dark current iskr_bul 1
+
+PASS baseline dark current iskr 1
+
+PASS baseline dark current expl 1
+
+PASS baseline dark current gilza 1
+
+PASS baseline dark current merc-arm 2
+
+PASS baseline dark current visualBullet 2
+
+PASS baseline dark current visbullaser 2
+
+PASS baseline dark current iskr_bul 2
+
+PASS baseline dark current iskr 2
+
+PASS baseline dark current expl 2
+
+PASS baseline dark current gilza 2
+
+PASS baseline dark current merc-arm 3
+
+PASS baseline dark current visualBullet 3
+
+PASS baseline dark current visbullaser 3
+
+PASS baseline dark current iskr_bul 3
+
+PASS baseline dark current iskr 3
+
+PASS baseline dark current expl 3
+
+PASS baseline dark current gilza 3
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+PASS fixed dark current merc-arm 0
+
+PASS fixed dark current merc-weapon 0
+
+PASS fixed dark current visualBullet 0
+
+PASS fixed dark current visbullaser 0
+
+PASS fixed dark current iskr_bul 0
+
+PASS fixed dark current iskr 0
+
+PASS fixed dark current expl 0
+
+PASS fixed dark current gilza 0
+
+PASS fixed dark current merc-arm 1
+
+PASS fixed dark current merc-weapon 1
+
+PASS fixed dark current visualBullet 1
+
+PASS fixed dark current visbullaser 1
+
+PASS fixed dark current iskr_bul 1
+
+PASS fixed dark current iskr 1
+
+PASS fixed dark current expl 1
+
+PASS fixed dark current gilza 1
+
+PASS fixed dark current merc-arm 2
+
+PASS fixed dark current merc-weapon 2
+
+PASS fixed dark current visualBullet 2
+
+PASS fixed dark current visbullaser 2
+
+PASS fixed dark current iskr_bul 2
+
+PASS fixed dark current iskr 2
+
+PASS fixed dark current expl 2
+
+PASS fixed dark current gilza 2
+
+PASS fixed dark current merc-arm 3
+
+PASS fixed dark current merc-weapon 3
+
+PASS fixed dark current visualBullet 3
+
+PASS fixed dark current visbullaser 3
+
+PASS fixed dark current iskr_bul 3
+
+PASS fixed dark current iskr 3
+
+PASS fixed dark current expl 3
+
+PASS fixed dark current gilza 3
+
+PASS visible pixel identity current merc-arm
+
+PASS visible pixel identity current merc-weapon
+
+PASS visible pixel identity current visualBullet
+
+PASS visible pixel identity current visbullaser
+
+PASS visible pixel identity current iskr_bul
+
+PASS visible pixel identity current iskr
+
+PASS visible pixel identity current expl
+
+PASS visible pixel identity current gilza
+
+PASS restored native mask current merc-arm
+
+PASS restored native mask current merc-weapon
+
+PASS restored native mask current visualBullet
+
+PASS restored native mask current visbullaser
+
+PASS restored native mask current iskr_bul
+
+PASS restored native mask current iskr
+
+PASS restored native mask current expl
+
+PASS restored native mask current gilza
+
+PASS partial hidden side current merc-arm
+
+PASS partial hidden side current visualBullet
+
+PASS partial hidden side current visbullaser
+
+PASS partial hidden side current iskr_bul
+
+PASS partial hidden side current iskr
+
+PASS partial hidden side current expl
+
+PASS partial hidden side current gilza
+
+PASS restored native mask current merc-arm
+
+PASS restored native mask current merc-weapon
+
+PASS restored native mask current visualBullet
+
+PASS restored native mask current visbullaser
+
+PASS restored native mask current iskr_bul
+
+PASS restored native mask current iskr
+
+PASS restored native mask current expl
+
+PASS restored native mask current gilza
+
+PASS visible pixel identity current merc-arm
+
+PASS visible pixel identity current merc-weapon
+
+PASS visible pixel identity current visualBullet
+
+PASS visible pixel identity current visbullaser
+
+PASS visible pixel identity current iskr_bul
+
+PASS visible pixel identity current iskr
+
+PASS visible pixel identity current expl
+
+PASS visible pixel identity current gilza
+
+PASS restored native mask current merc-arm
+
+PASS restored native mask current merc-weapon
+
+PASS restored native mask current visualBullet
+
+PASS restored native mask current visbullaser
+
+PASS restored native mask current iskr_bul
+
+PASS restored native mask current iskr
+
+PASS restored native mask current expl
+
+PASS restored native mask current gilza
+
+PASS reentry dark current merc-arm
+
+PASS reentry dark current merc-weapon
+
+PASS reentry dark current visualBullet
+
+PASS reentry dark current visbullaser
+
+PASS reentry dark current iskr_bul
+
+PASS reentry dark current iskr
+
+PASS reentry dark current expl
+
+PASS reentry dark current gilza
+
+PASS restored native mask current merc-arm
+
+PASS restored native mask current merc-weapon
+
+PASS restored native mask current visualBullet
+
+PASS restored native mask current visbullaser
+
+PASS restored native mask current iskr_bul
+
+PASS restored native mask current iskr
+
+PASS restored native mask current expl
+
+PASS restored native mask current gilza
+
+PASS visible pixel identity current merc-arm
+
+PASS visible pixel identity current merc-weapon
+
+PASS visible pixel identity current visualBullet
+
+PASS visible pixel identity current visbullaser
+
+PASS visible pixel identity current iskr_bul
+
+PASS visible pixel identity current iskr
+
+PASS visible pixel identity current expl
+
+PASS visible pixel identity current gilza
+
+PASS restored native mask current merc-arm
+
+PASS restored native mask current merc-weapon
+
+PASS restored native mask current visualBullet
+
+PASS restored native mask current visbullaser
+
+PASS restored native mask current iskr_bul
+
+PASS restored native mask current iskr
+
+PASS restored native mask current expl
+
+PASS restored native mask current gilza
+
+PASS long weapon native positive current
+
+PASS body classification unchanged current
+
+PASS long weapon outside body hidden current
+
+PASS native particle animation cannot reveal current 0
+
+PASS native particle animation cannot reveal current 1
+
+PASS native particle animation cannot reveal current 2
+
+PASS native particle animation cannot reveal current 3
+
+PASS native particle animation cannot reveal current 4
+
+PASS native particle animation cannot reveal current 5
+
+PASS native particle animation cannot reveal current 6
+
+PASS native particle animation cannot reveal current 7
+
+PASS native dead arm preserved current
+
+PASS removed effect released current
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=current
+
+PASS room reset releases effects current
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+PASS baseline dark classic merc-arm 0
+
+PASS baseline dark classic visualBullet 0
+
+PASS baseline dark classic visbullaser 0
+
+PASS baseline dark classic iskr_bul 0
+
+PASS baseline dark classic iskr 0
+
+PASS baseline dark classic expl 0
+
+PASS baseline dark classic gilza 0
+
+PASS baseline dark classic merc-arm 1
+
+PASS baseline dark classic visualBullet 1
+
+PASS baseline dark classic visbullaser 1
+
+PASS baseline dark classic iskr_bul 1
+
+PASS baseline dark classic iskr 1
+
+PASS baseline dark classic expl 1
+
+PASS baseline dark classic gilza 1
+
+PASS baseline dark classic merc-arm 2
+
+PASS baseline dark classic visualBullet 2
+
+PASS baseline dark classic visbullaser 2
+
+PASS baseline dark classic iskr_bul 2
+
+PASS baseline dark classic iskr 2
+
+PASS baseline dark classic expl 2
+
+PASS baseline dark classic gilza 2
+
+PASS baseline dark classic merc-arm 3
+
+PASS baseline dark classic visualBullet 3
+
+PASS baseline dark classic visbullaser 3
+
+PASS baseline dark classic iskr_bul 3
+
+PASS baseline dark classic iskr 3
+
+PASS baseline dark classic expl 3
+
+PASS baseline dark classic gilza 3
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+PASS fixed dark classic merc-arm 0
+
+PASS fixed dark classic merc-weapon 0
+
+PASS fixed dark classic visualBullet 0
+
+PASS fixed dark classic visbullaser 0
+
+PASS fixed dark classic iskr_bul 0
+
+PASS fixed dark classic iskr 0
+
+PASS fixed dark classic expl 0
+
+PASS fixed dark classic gilza 0
+
+PASS fixed dark classic merc-arm 1
+
+PASS fixed dark classic merc-weapon 1
+
+PASS fixed dark classic visualBullet 1
+
+PASS fixed dark classic visbullaser 1
+
+PASS fixed dark classic iskr_bul 1
+
+PASS fixed dark classic iskr 1
+
+PASS fixed dark classic expl 1
+
+PASS fixed dark classic gilza 1
+
+PASS fixed dark classic merc-arm 2
+
+PASS fixed dark classic merc-weapon 2
+
+PASS fixed dark classic visualBullet 2
+
+PASS fixed dark classic visbullaser 2
+
+PASS fixed dark classic iskr_bul 2
+
+PASS fixed dark classic iskr 2
+
+PASS fixed dark classic expl 2
+
+PASS fixed dark classic gilza 2
+
+PASS fixed dark classic merc-arm 3
+
+PASS fixed dark classic merc-weapon 3
+
+PASS fixed dark classic visualBullet 3
+
+PASS fixed dark classic visbullaser 3
+
+PASS fixed dark classic iskr_bul 3
+
+PASS fixed dark classic iskr 3
+
+PASS fixed dark classic expl 3
+
+PASS fixed dark classic gilza 3
+
+PASS visible pixel identity classic merc-arm
+
+PASS visible pixel identity classic merc-weapon
+
+PASS visible pixel identity classic visualBullet
+
+PASS visible pixel identity classic visbullaser
+
+PASS visible pixel identity classic iskr_bul
+
+PASS visible pixel identity classic iskr
+
+PASS visible pixel identity classic expl
+
+PASS visible pixel identity classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS partial hidden side classic merc-arm
+
+PASS partial hidden side classic visualBullet
+
+PASS partial hidden side classic visbullaser
+
+PASS partial hidden side classic iskr_bul
+
+PASS partial hidden side classic iskr
+
+PASS partial hidden side classic expl
+
+PASS partial hidden side classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS visible pixel identity classic merc-arm
+
+PASS visible pixel identity classic merc-weapon
+
+PASS visible pixel identity classic visualBullet
+
+PASS visible pixel identity classic visbullaser
+
+PASS visible pixel identity classic iskr_bul
+
+PASS visible pixel identity classic iskr
+
+PASS visible pixel identity classic expl
+
+PASS visible pixel identity classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS reentry dark classic merc-arm
+
+PASS reentry dark classic merc-weapon
+
+PASS reentry dark classic visualBullet
+
+PASS reentry dark classic visbullaser
+
+PASS reentry dark classic iskr_bul
+
+PASS reentry dark classic iskr
+
+PASS reentry dark classic expl
+
+PASS reentry dark classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS visible pixel identity classic merc-arm
+
+PASS visible pixel identity classic merc-weapon
+
+PASS visible pixel identity classic visualBullet
+
+PASS visible pixel identity classic visbullaser
+
+PASS visible pixel identity classic iskr_bul
+
+PASS visible pixel identity classic iskr
+
+PASS visible pixel identity classic expl
+
+PASS visible pixel identity classic gilza
+
+PASS restored native mask classic merc-arm
+
+PASS restored native mask classic merc-weapon
+
+PASS restored native mask classic visualBullet
+
+PASS restored native mask classic visbullaser
+
+PASS restored native mask classic iskr_bul
+
+PASS restored native mask classic iskr
+
+PASS restored native mask classic expl
+
+PASS restored native mask classic gilza
+
+PASS long weapon native positive classic
+
+PASS body classification unchanged classic
+
+PASS long weapon outside body hidden classic
+
+PASS native particle animation cannot reveal classic 0
+
+PASS native particle animation cannot reveal classic 1
+
+PASS native particle animation cannot reveal classic 2
+
+PASS native particle animation cannot reveal classic 3
+
+PASS native particle animation cannot reveal classic 4
+
+PASS native particle animation cannot reveal classic 5
+
+PASS native particle animation cannot reveal classic 6
+
+PASS native particle animation cannot reveal classic 7
+
+PASS native dead arm preserved classic
+
+PASS removed effect released classic
+
+[RVision] room loc1_0 48x25 lDist2=10000 mode=classic
+
+PASS room reset releases effects classic
+
+FAIL ArgumentError: Error #2005 ArgumentError: Error #2005
+
+	at EffectVisibilityProbeMod/inspectEffects()
+
+	at EffectVisibilityProbeMod/tick()
+
+	at flash.utils::Timer/tick()
+

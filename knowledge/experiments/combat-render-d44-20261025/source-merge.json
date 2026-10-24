@@ -1,0 +1,7 @@
+{
+  "before": "8a3c71835e278c2d9d448eafd9ca1937404ab3fc2588939cab0c631e6c57f259",
+  "after": "b05c9ba5525bccf34a37f21b79763212c0d99e59cd42b093de7be9ce4332b1a7",
+  "production_source": "cb729dea25c7e2e2418212553e1f30f0153f34b3582a4a62b7825376762ba41d",
+  "patch": "8a71bd1ffd7eea9d4a279617a69d12c787d0a39b17d11ce8af9c98ef06442880",
+  "scope": "D43 to D44 delta adapted to existing HEAD recorder. Active authority keeps every original write; production remains the separately tested six-class package."
+}

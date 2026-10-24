@@ -1,0 +1,5 @@
+{
+  "old": "bd9663d71ffce4f030fba3bf7285472e2fab87ce8f71d180d20c14060d0c42a1",
+  "new": "22fbbaf420c02162319ce8bc454055d73074826fd695682d6a2b2979eee08875",
+  "reason": "Preserve byte-exact CRCRLF logs, blank EOF, patch context and frozen source copies; normal source/build/documentation checks remain enabled. Only artifact metadata changed; all measured evidence hashes were verified unchanged."
+}

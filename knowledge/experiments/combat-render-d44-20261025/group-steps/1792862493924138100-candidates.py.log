@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\group.py", line 18, in main
+    with log.open('w',encoding='utf-8') as out,contextlib.redirect_stdout(out),contextlib.redirect_stderr(out):runpy.run_path(str(HERE/args[0]),run_name='__main__')
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\candidates.py", line 47, in <module>
+    print(prepare(sys.argv[1]))
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-render\candidates.py", line 37, in prepare
+    assert part.count(a)==1,a
+           ^^^^^^^^^^^^^^^^
+AssertionError: var shape:Shape=record.shape as Shape;

@@ -1,0 +1,14 @@
+[
+  {
+    "args": [
+      "development.py"
+    ],
+    "log": "group-steps\\1792867175748685100-development.py.log"
+  },
+  {
+    "args": [
+      "deploy.py"
+    ],
+    "log": "group-steps\\1792867177737874700-deploy.py.log"
+  }
+]

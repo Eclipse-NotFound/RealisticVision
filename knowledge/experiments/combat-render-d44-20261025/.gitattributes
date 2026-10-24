@@ -1,1 +1,7 @@
 ** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Immutable runtime/compiler output and exact tested-source copies retain their
+# original bytes. Active src/ and build scripts keep normal whitespace checks.
+*.log -whitespace
+*.txt -whitespace
+*.patch -whitespace
+*.as -whitespace

@@ -1,10 +1,10 @@
-被测技能：diagnosing-bugs；remains-runtime-debug；remains-auto-testing；remains-mod-build
+被测技能：diagnosing-bugs；remains-runtime-debug；remains-auto-testing；remains-mod-build；remains-release-gate；remains-swf-patching
 技能归属：用户级（diagnosing-bugs）；Remains工作区（其余）
 测试工作区：D:/Program Files/Steam/steamapps/common/Remains/mods/RealisticVision
 
-# D44：普通房间敌人与弹道卡顿的绘制归因准备
+# D44：敌人、弹道遮罩与密集战斗绘制优化
 
-2026-10-25；目标未完成，用户已暂缓游戏测试。未改生产源码或正式安装。
+2026-10-25；用户恢复测试后，bindings通过图像/原生/设置检查与两轮完整战斗对照，已部署v0.33.10。四组均值降低约16%–19%，仍未达到关闭RV的流畅度，目标未全部完成。早前暂停与失败候选保留为历史记录。
 
 ## 实际证据
 
@@ -21,7 +21,7 @@
 
 读取的本机RV配置：current，已探索亮度0.6，视距倍率1，current额外柔化25，墙边常亮关闭。未写入真实存储。原始日志SHA256：3843d63d711e7851d4dc388c953df8bf95a9309e6f0d991323b80cd4b700f407。
 
-## 本轮执行与停点
+## 暂停期间的经过（现已恢复）
 
 - 冻结D43准确生产源构建small-01：探针5075B、公开测试成员版RV45745B；只用于隔离。正式D43仍45826B，SHA256 BF4AC9CD87272B03FAE7EC22EE67D045F037362F412EE801CAD3F9BA9FE3AFEF。
 - 共享登记表当时无running/waiting记录；提升权限预检发现B190的player-1.xml、player-2.xml仍运行。PID88248/91064，创建于约23:55，路径均在RConnect/build/ab/b3-playable-190/game。未启动本轮AIR、未操作这些进程。预检以异常退出，不能计作游戏功能失败或性能结果。
@@ -29,14 +29,14 @@
 - 当前夹具计划0/1/6名新增原生雇佣兵，current/classic，关闭/正常/撤RV动态遮罩/隐藏对象父图层，往返测量整帧间隔、更新成本、真实弹体和掩膜数。用户恢复测试前不运行。
 - 编译后的离线审查发现原nodraw方案会改子对象visible；原版Unit.as:3213用vis.visible决定移动粒子生成，故旧small-01标invalidated。当前源改为隐藏对象父图层，保留子对象可见字段；它也隐藏玩家/道具，只能解释为对象层成本，需0敌人对照。撤遮罩也已限制为RV拥有的掩膜。**修订后尚未编译/运行**。
 
-## 待证伪的原因与限制
+## 恢复测试前列出的假设
 
 1. 正常RV与仅撤动态遮罩差异显著：支持最终遮罩绘制是主要成本；还需测重复mask/cacheAsBitmap赋值是否触发失效。
 2. 隐藏对象父图层显著快、撤遮罩不显著：优先检查原生动画绘制与其它模组交互，不能因此删动画。
 3. 单开普通房不复现、完整组合复现：继续精确组合排除与加回复现。只用大图或局部函数耗时不足以完成目标。
 4. 内存下降伴随慢帧只作回收线索；本轮未采集堆分配归因，不称已定位GC。
 
-没有新性能结果、视觉等价结果或优化部署。不把D43此前的更新函数下降当作整体流畅达标。目标继续有效；游戏测试暂停依用户决定，不能后台自动重试。
+当时没有新性能结果、视觉等价结果或优化部署，按用户要求保持暂停。用户随后明确恢复；新结果与当前安装状态见下方“恢复测试后的实证”，不把D43此前的更新函数下降当作整体流畅达标。
 
 ## 技能实战边界
 
@@ -62,3 +62,115 @@
 归档核验另发现Git自动换行使7份JSON的索引字节与本地证据不同；第一次校验失败后PowerShell仍执行了后续提交（3cb2f9c），不能算指纹通过。已在此证据目录关闭文本换行转换，重新暂存原始字节并在提交前逐项核验；原始游玩JSONL未受影响。后续验收与提交必须在同一失败即退出流程内执行。
 
 证据位于同目录combat-render-d44-20261025；当前工具build/combat-render，原始完整运行素材保留在build/combat-render-output/small-01。没有清理任何既有证据、备份或其它模组文件。
+
+## 恢复测试后的实证（2026-10-25）
+
+用户明确“可进行测试”后，提升权限预检无其它AIR/Java、可用内存6.18GiB，保留原暂停标记并从新目录运行。使用独立AIR应用ID、隐藏桌面、共享登记；HighQoS仅用于自建测试进程，未修改玩家启动策略。普通训练房独立组原有7单位，完整组合原有14单位；6是额外生成的原生雇佣兵，并非场内总单位数。
+
+所有整帧统计都将本帧RV调用与下一次同一监听器到达间隔配对，排除每窗末帧。每种条件两窗往返；原生AI、武器和弹体继续执行。固定路线另限制玩家和测试敌人位置以减少击退/飞行带来的视角差异，它是受控刺激，不能冒称原生自由游玩。不同进程的绝对耗时不直接比较。
+
+### 归因与候选选择
+
+small-02共42窗：无新增敌人时两模式接近33ms；六敌普通遮罩约42–60ms，仅撤掉RV自己拥有的动态遮罩回到约33ms。隐藏对象父层也接近33ms；未改子对象visible，保留原生粒子生成逻辑。撤罩/隐藏仅供归因，未进入候选。
+
+- guard：只在值或对象身份变化时设置mask/cacheAsBitmap，原位图、几何和采样不变。独立房间有效；完整组合自由战斗的current出现不利结果，已保留，不据单轮好数据发布。
+- bitmap：直接缩放原遮罩位图；首个混合明暗帧（f=120）不满足严格像素一致，停止，未跑性能或发布。
+- trim：缩小无滤镜对象周围遮罩矩形；同样在f=120失败，停止，未发布。
+- support：保留guard，仍使用原遮罩绘图。只在对象覆盖格及双线性相邻样本全部透明、对象和所有子对象都无滤镜时，使用空几何遮罩并恢复原缓存状态；不改visible/alpha/动画。其它情况完整保留原路径，不裁短非透明掩膜。
+
+- support2：与support画面规则相同；复用一个同步临时矩形，用整数边界代替两个临时矩形，先检查透明度，再按需读取原生滤镜列表。360组图像及888原生检查通过。固定路线current仍有539ms峰值，未隐去或归为已解决。
+- bindings：在support2上补齐clearMask的空mask/false缓存，以及身体、血条、武器相同visible值的重复设置保护；不跳过原生状态检查、动画、采样或更新帧。
+- tileclip：进一步检验保留原始瓦片采样格的缩小矩形，与此前trim的任意整数裁切分开；其图像结果独立判断，未通过就不采用。
+
+### 整帧结果
+
+单位ms；P95表示95%的采样不超过此值。“>100”为超过100ms的次数。表内每行仅代表该轮同进程结果；保留最大值，不因平均改善宣称所有长帧解决。
+
+| 轮次 | 模式 | 条件 | 帧数 | 均值 | P95 | 最大 | >100 | RV更新均值 |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| guard-01 | current | 关闭RV | 178 | 33.28 | 40 | 100 | 0 | 0.01 |
+| guard-01 | current | 正式D43 | 178 | 39.69 | 51 | 86 | 0 | 3.56 |
+| guard-01 | current | 候选 | 178 | 33.34 | 44 | 91 | 0 | 4.09 |
+| guard-01 | classic | 关闭RV | 178 | 33.34 | 39 | 78 | 0 | 0.01 |
+| guard-01 | classic | 正式D43 | 178 | 50.72 | 75 | 113 | 2 | 8.66 |
+| guard-01 | classic | 候选 | 178 | 39.96 | 56 | 76 | 0 | 10.85 |
+| guard-full-02 | current | 关闭RV | 358 | 38.52 | 54 | 103 | 2 | 0.00 |
+| guard-full-02 | current | 正式D43 | 358 | 61.31 | 92 | 141 | 11 | 6.30 |
+| guard-full-02 | current | 候选 | 358 | 64.04 | 95 | 139 | 11 | 10.81 |
+| guard-full-02 | classic | 关闭RV | 358 | 38.01 | 58 | 82 | 0 | 0.01 |
+| guard-full-02 | classic | 正式D43 | 358 | 62.74 | 93 | 211 | 16 | 8.79 |
+| guard-full-02 | classic | 候选 | 358 | 56.65 | 95 | 215 | 12 | 8.89 |
+| guard-controlled-03 | current | 关闭RV | 358 | 43.48 | 65 | 178 | 1 | 0.02 |
+| guard-controlled-03 | current | 正式D43 | 358 | 67.27 | 89 | 119 | 8 | 12.81 |
+| guard-controlled-03 | current | 候选 | 358 | 58.10 | 80 | 322 | 3 | 12.49 |
+| guard-controlled-03 | classic | 关闭RV | 358 | 42.20 | 60 | 93 | 0 | 0.01 |
+| guard-controlled-03 | classic | 正式D43 | 358 | 68.80 | 98 | 157 | 15 | 12.56 |
+| guard-controlled-03 | classic | 候选 | 358 | 61.13 | 84 | 157 | 7 | 12.62 |
+| support-controlled-01 | current | 关闭RV | 358 | 48.46 | 74 | 126 | 3 | 0.01 |
+| support-controlled-01 | current | 正式D43 | 358 | 81.54 | 148 | 288 | 60 | 13.24 |
+| support-controlled-01 | current | 候选 | 358 | 59.97 | 83 | 121 | 5 | 12.85 |
+| support-controlled-01 | classic | 关闭RV | 358 | 43.88 | 67 | 143 | 2 | 0.01 |
+| support-controlled-01 | classic | 正式D43 | 358 | 67.95 | 96 | 143 | 13 | 12.62 |
+| support-controlled-01 | classic | 候选 | 358 | 64.42 | 94 | 158 | 10 | 13.22 |
+| support-free-02 | current | 关闭RV | 358 | 45.00 | 72 | 342 | 7 | 0.00 |
+| support-free-02 | current | 正式D43 | 358 | 60.69 | 86 | 119 | 6 | 7.49 |
+| support-free-02 | current | 候选 | 358 | 55.99 | 87 | 297 | 11 | 8.37 |
+| support-free-02 | classic | 关闭RV | 358 | 37.93 | 55 | 81 | 0 | 0.01 |
+| support-free-02 | classic | 正式D43 | 358 | 62.41 | 87 | 119 | 6 | 9.68 |
+| support-free-02 | classic | 候选 | 358 | 51.53 | 68 | 104 | 1 | 9.03 |
+| support2-controlled-01 | current | 关闭RV | 358 | 43.38 | 61 | 254 | 1 | 0.00 |
+| support2-controlled-01 | current | 正式D43 | 358 | 70.73 | 99 | 131 | 16 | 13.23 |
+| support2-controlled-01 | current | 候选 | 358 | 62.94 | 86 | 539 | 9 | 13.05 |
+| support2-controlled-01 | classic | 关闭RV | 358 | 43.59 | 65 | 145 | 3 | 0.01 |
+| support2-controlled-01 | classic | 正式D43 | 358 | 66.02 | 89 | 125 | 5 | 12.47 |
+| support2-controlled-01 | classic | 候选 | 358 | 59.62 | 85 | 122 | 8 | 12.73 |
+| support2-free-01 | current | 关闭RV | 358 | 40.42 | 59 | 86 | 0 | 0.01 |
+| support2-free-01 | current | 正式D43 | 358 | 78.08 | 133 | 505 | 54 | 5.60 |
+| support2-free-01 | current | 候选 | 358 | 67.04 | 131 | 240 | 44 | 8.92 |
+| support2-free-01 | classic | 关闭RV | 358 | 39.12 | 54 | 97 | 0 | 0.01 |
+| support2-free-01 | classic | 正式D43 | 358 | 75.44 | 121 | 924 | 33 | 11.45 |
+| support2-free-01 | classic | 候选 | 358 | 55.51 | 79 | 125 | 3 | 10.46 |
+| bindings-controlled-01 | current | 关闭RV | 358 | 42.40 | 58 | 111 | 1 | 0.00 |
+| bindings-controlled-01 | current | 正式D43 | 358 | 71.84 | 97 | 135 | 13 | 13.31 |
+| bindings-controlled-01 | current | 候选 | 358 | 58.80 | 84 | 130 | 4 | 12.75 |
+| bindings-controlled-01 | classic | 关闭RV | 358 | 44.85 | 65 | 196 | 1 | 0.00 |
+| bindings-controlled-01 | classic | 正式D43 | 358 | 73.01 | 105 | 338 | 27 | 13.12 |
+| bindings-controlled-01 | classic | 候选 | 358 | 61.65 | 86 | 188 | 7 | 12.99 |
+| bindings-free-01 | current | 关闭RV | 358 | 42.50 | 64 | 106 | 2 | 0.00 |
+| bindings-free-01 | current | 正式D43 | 358 | 69.50 | 105 | 178 | 25 | 8.48 |
+| bindings-free-01 | current | 候选 | 358 | 56.43 | 87 | 133 | 8 | 6.43 |
+| bindings-free-01 | classic | 关闭RV | 358 | 39.66 | 56 | 92 | 0 | 0.01 |
+| bindings-free-01 | classic | 正式D43 | 358 | 65.17 | 88 | 282 | 6 | 7.78 |
+| bindings-free-01 | classic | 候选 | 358 | 53.58 | 74 | 116 | 3 | 8.08 |
+
+固定路线采样前预热210帧、采样180帧，跨过240/300/360次缓存清理扫描；早前150帧短窗排除第180次处置的结论仅适用于旧短窗。自由战斗不同窗口的射击量和镜头仍会变化，原始记录含实际弹体/粒子数及位置，不以名义开火次数替代真实工作量。
+
+### 视觉、机制及工具验证
+
+- pixels-01：通过，360项/组。
+- native-pixels-02：通过，887项/组。
+- support-pixels-01：通过，360项/组。
+- support-native-01：通过，887项/组。
+- support-native-04：通过，888项/组。
+- support2-pixels-01：通过，360项/组。
+- support2-native-01：通过，888项/组。
+- bindings-pixels-01：通过，360项/组。
+- bindings-native-01：通过，888项/组。
+- support密集图像包含100/500个移动对象、六档柔化、明暗切换、房间边界以及0.5/0.75/1/1.5/2倍取图；整图严格相同。原生对照覆盖独立手臂、武器、弹体、激光、火花、爆炸和弹壳。新增滤镜切换对照及“透明区域分支实际触发”断言。
+- native-pixels-01在所有断言后因继承的输出目录检查失败，整体不算通过；native-pixels-02修正后完成。support-native-02缺滤镜导入导致夹具编译失败；03误用Array构造造成嵌套滤镜数组（#2005）；04改用as Array并完成。均保留原始失败，没有改候选来迁就测试。
+- bitmap候选生成器最初对两个类型声明误要求单次匹配，启动游戏前中止；修正计数后才执行像素检查。
+- 共享登记存在等待者非FIFO获取占用的现象。本侧让已较早登记的指定测试完成后再加入，并在一次真实占用内顺序编译/测试；未修改公共登记器、未结束其它会话进程。
+- 一次向既有RConnect对话的协调消息被自动审批拒绝，理由为无法确认此前授权覆盖该对话编号；消息未发送，未绕行，后续使用共享登记。
+
+### 更新函数归因（不用于性能验收）
+
+guard-profile-01在固定路线下记录嵌套函数计时。current：applyVision约4.98ms（其中fillFogCache3.38）、updateWallSurface2.45、hideEnemies5.13（其中applyWorldVisuals3.87）。classic：applyVisionClassic3.00、updateWallSurface2.76、hideEnemies6.38（其中applyWorldVisuals4.36）。嵌套项不能相加；计时插桩本身有开销，没有混入正式性能对照或生产包。
+
+### 发布状态
+
+正式路径结果：PASS；v0.33.10-render-cache，SHA256 638e2d408e2cf46683c41114f75773829a1b4417d74bffe9d08855a4fe343710，46110B。备份：build\backups\before-mask-binding-20261025-023937-31a309\RealisticVisionMod.before.swf。正式init、设置注册及tick1/181/361与保护文件指纹见receipt。
+准确包含6类、两进程36设置检查通过；加上360严格图像与888原生检查共1284项/组，完整组合24窗另计。bindings固定路线与自由战斗四组平均帧耗时减少约16%–19%，P95及超过100ms的次数均下降。自由战斗current69.50→56.43ms、classic65.17→53.58ms，仍高于同场关闭RV的42.50/39.66ms；不宣称接近原版或全部长帧已解决。
+开发线直套生产差分在git apply --check阶段因既有authority包装而失败，未写源码。随后保留active authority每次记录，仅在inactive路径应用同值保护；开发线单独编译通过，未发布authority类或验证其新运行行为。正式包始终使用production-final2准确源。
+本地保护曾拦截混合“写源码审查记录+读取SWF指纹”的命令，整条未执行；拆为独立记录和只读指纹后通过，没有关闭护栏。tileclip排队进程在任何构建/AIR启动前由本侧核对后停止；只准备原型，未采用。
+长帧原始记录见outliers.json。support2的539ms峰值中RV调用13ms、帧间内存增加约0.51MiB，不能据此断定GC，也不能将其余间隔归为非RV（包含最终绘制）。最终bindings两轮候选没有>200ms帧，但仍有>100ms帧；未排除任何不利样本。
+回退仅恢复本轮BF4A单文件备份并核对SHA256，保留其它模组与宿主；正常重启生效。回执与步骤见state/deployment-v03310-2026-10-25.md。

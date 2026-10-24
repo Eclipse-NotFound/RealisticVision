@@ -1,0 +1,15 @@
+{
+  "pid": 14240,
+  "fixture_changes_policy": true,
+  "sample": "startup only",
+  "lifetime": "owned test process only; ends with process",
+  "read_ok": true,
+  "error": 0,
+  "version": 1,
+  "control_mask": 0,
+  "state_mask": 0,
+  "policy_applied": true,
+  "policy_verified": true,
+  "after_control_mask": 1,
+  "after_state_mask": 0
+}
