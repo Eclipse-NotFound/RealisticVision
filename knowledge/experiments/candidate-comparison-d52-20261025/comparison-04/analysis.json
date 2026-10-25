@@ -1,0 +1,882 @@
+{
+  "verified": true,
+  "measurementNote": null,
+  "selected": [
+    "AddictionSystemMod",
+    "CombatRenderProbeMod",
+    "ContinuousSceneMod",
+    "FirearmAttachmentsMod",
+    "LightAndDarknessMod",
+    "LootEditorMod",
+    "ModLoaderMod",
+    "MoreSkillsWeaponsMod",
+    "PermanentInjuryMod",
+    "RConnectMod",
+    "RandomRoomsMod",
+    "SandevistanMod",
+    "TDFCMod",
+    "WallBlendMod"
+  ],
+  "groups": {
+    "classic/off": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 40.03138075313807,
+        "p95": 58,
+        "max": 88,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.060669456066945605,
+        "p95": 1,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "classic/ray": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 54.53347280334728,
+        "p95": 78,
+        "max": 123,
+        ">100": 3,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 12.311715481171548,
+        "p95": 20,
+        "max": 62,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.029288702928870293,
+        "p95": 0,
+        "max": 1,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "classic/candidate": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 54.91422594142259,
+        "p95": 81,
+        "max": 137,
+        ">100": 4,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 11.07112970711297,
+        "p95": 18,
+        "max": 57,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.03765690376569038,
+        "p95": 0,
+        "max": 1,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "classic/normal": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 54.15062761506276,
+        "p95": 77,
+        "max": 115,
+        ">100": 4,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 12.069037656903765,
+        "p95": 20,
+        "max": 59,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.043933054393305436,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "current/off": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 39.2092050209205,
+        "p95": 54,
+        "max": 94,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 0.008368200836820083,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.04184100418410042,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "current/ray": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 52.49163179916318,
+        "p95": 69,
+        "max": 106,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 11.841004184100418,
+        "p95": 17,
+        "max": 64,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.0397489539748954,
+        "p95": 0,
+        "max": 1,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "current/candidate": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 51.52719665271967,
+        "p95": 70,
+        "max": 118,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 11.51673640167364,
+        "p95": 16,
+        "max": 55,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.02301255230125523,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      }
+    },
+    "current/normal": {
+      "nextInterval": {
+        "n": 478,
+        "mean": 52.98117154811715,
+        "p95": 74,
+        "max": 127,
+        ">100": 2,
+        ">200": 0
+      },
+      "rv": {
+        "n": 478,
+        "mean": 11.642259414225942,
+        "p95": 18,
+        "max": 53,
+        ">100": 0,
+        ">200": 0
+      },
+      "diagnosticMs": {
+        "n": 478,
+        "mean": 0.05230125523012552,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      }
+    }
+  },
+  "windows": [
+    {
+      "index": 0,
+      "group": "classic/off",
+      "interval": {
+        "n": 239,
+        "mean": 43.13389121338912,
+        "p95": 61,
+        "max": 88,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 104,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 0,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "types": {},
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0
+      }
+    },
+    {
+      "index": 1,
+      "group": "classic/ray",
+      "interval": {
+        "n": 239,
+        "mean": 51.50209205020921,
+        "p95": 73,
+        "max": 103,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.619246861924687,
+        "p95": 19,
+        "max": 50,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 107,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 22,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 22,
+        "owned": 22,
+        "types": {
+          "hpBar": 4,
+          "vissmg10": 6,
+          "visualNumb": 2,
+          "visualTrainArmor": 2,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 22,
+        "duplicateLayers": 0,
+        "visible": 18
+      }
+    },
+    {
+      "index": 2,
+      "group": "classic/candidate",
+      "interval": {
+        "n": 239,
+        "mean": 51.87866108786611,
+        "p95": 71,
+        "max": 108,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 10.292887029288703,
+        "p95": 16,
+        "max": 20,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 103,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 82,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 82,
+        "owned": 82,
+        "types": {
+          "visualGilza": 7,
+          "flash.display::MovieClip": 49,
+          "hpBar": 4,
+          "visualBullet": 4,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 2,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 82,
+        "duplicateLayers": 0,
+        "visible": 78
+      }
+    },
+    {
+      "index": 3,
+      "group": "classic/normal",
+      "interval": {
+        "n": 239,
+        "mean": 52.51046025104603,
+        "p95": 72,
+        "max": 112,
+        ">100": 2,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.912133891213388,
+        "p95": 19,
+        "max": 59,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 103,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 21,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 21,
+        "owned": 21,
+        "types": {
+          "hpBar": 4,
+          "vissmg10": 6,
+          "visualNumb": 1,
+          "visualTrainArmor": 2,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 21,
+        "duplicateLayers": 0,
+        "visible": 17
+      }
+    },
+    {
+      "index": 4,
+      "group": "classic/normal",
+      "interval": {
+        "n": 239,
+        "mean": 55.7907949790795,
+        "p95": 80,
+        "max": 115,
+        ">100": 2,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 12.225941422594142,
+        "p95": 20,
+        "max": 31,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 107,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 70,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 70,
+        "owned": 70,
+        "types": {
+          "visualGilza": 7,
+          "flash.display::MovieClip": 37,
+          "hpBar": 4,
+          "visualBullet": 3,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 3,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 70,
+        "duplicateLayers": 0,
+        "visible": 66
+      }
+    },
+    {
+      "index": 5,
+      "group": "classic/candidate",
+      "interval": {
+        "n": 239,
+        "mean": 57.94979079497908,
+        "p95": 84,
+        "max": 137,
+        ">100": 3,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.849372384937238,
+        "p95": 19,
+        "max": 57,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 101,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 22,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 22,
+        "owned": 22,
+        "types": {
+          "visReplic": 1,
+          "hpBar": 4,
+          "vissmg10": 6,
+          "visualNumb": 1,
+          "visualTrainArmor": 2,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 22,
+        "duplicateLayers": 0,
+        "visible": 18
+      }
+    },
+    {
+      "index": 6,
+      "group": "classic/ray",
+      "interval": {
+        "n": 239,
+        "mean": 57.56485355648535,
+        "p95": 79,
+        "max": 123,
+        ">100": 2,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 13.00418410041841,
+        "p95": 21,
+        "max": 62,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 108,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 65,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 65,
+        "owned": 65,
+        "types": {
+          "visualGilza": 6,
+          "flash.display::MovieClip": 34,
+          "hpBar": 4,
+          "visualBullet": 3,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 2,
+          "visualTrain": 2,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 65,
+        "duplicateLayers": 0,
+        "visible": 61
+      }
+    },
+    {
+      "index": 7,
+      "group": "classic/off",
+      "interval": {
+        "n": 239,
+        "mean": 36.92887029288703,
+        "p95": 52,
+        "max": 75,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 103,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 0,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "types": {},
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0
+      }
+    },
+    {
+      "index": 8,
+      "group": "current/off",
+      "interval": {
+        "n": 239,
+        "mean": 39.02928870292887,
+        "p95": 52,
+        "max": 86,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 0.008368200836820083,
+        "p95": 0,
+        "max": 2,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 105,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 0,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "types": {},
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0
+      }
+    },
+    {
+      "index": 9,
+      "group": "current/ray",
+      "interval": {
+        "n": 239,
+        "mean": 51.21757322175732,
+        "p95": 68,
+        "max": 99,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.569037656903765,
+        "p95": 17,
+        "max": 55,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 117,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 35,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 35,
+        "owned": 35,
+        "types": {
+          "visualNumb": 1,
+          "flash.display::MovieClip": 6,
+          "hpBar": 11,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 35,
+        "duplicateLayers": 0,
+        "visible": 24
+      }
+    },
+    {
+      "index": 10,
+      "group": "current/candidate",
+      "interval": {
+        "n": 239,
+        "mean": 53.2928870292887,
+        "p95": 72,
+        "max": 96,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.698744769874477,
+        "p95": 16,
+        "max": 50,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 102,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 84,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 84,
+        "owned": 84,
+        "types": {
+          "visualGilza": 6,
+          "flash.display::MovieClip": 44,
+          "hpBar": 11,
+          "visualBullet": 3,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 3,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 84,
+        "duplicateLayers": 0,
+        "visible": 73
+      }
+    },
+    {
+      "index": 11,
+      "group": "current/normal",
+      "interval": {
+        "n": 239,
+        "mean": 51.23430962343096,
+        "p95": 66,
+        "max": 85,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.280334728033473,
+        "p95": 17,
+        "max": 42,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 103,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 35,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 35,
+        "owned": 35,
+        "types": {
+          "visualNumb": 1,
+          "flash.display::MovieClip": 6,
+          "hpBar": 11,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 35,
+        "duplicateLayers": 0,
+        "visible": 24
+      }
+    },
+    {
+      "index": 12,
+      "group": "current/normal",
+      "interval": {
+        "n": 239,
+        "mean": 54.72803347280335,
+        "p95": 76,
+        "max": 127,
+        ">100": 2,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 12.00418410041841,
+        "p95": 18,
+        "max": 53,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 105,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 76,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 76,
+        "owned": 76,
+        "types": {
+          "visualGilza": 5,
+          "flash.display::MovieClip": 36,
+          "hpBar": 11,
+          "visualBullet": 4,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 3,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 76,
+        "duplicateLayers": 0,
+        "visible": 65
+      }
+    },
+    {
+      "index": 13,
+      "group": "current/candidate",
+      "interval": {
+        "n": 239,
+        "mean": 49.76150627615063,
+        "p95": 64,
+        "max": 118,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 11.334728033472803,
+        "p95": 16,
+        "max": 55,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 106,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 34,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 34,
+        "owned": 34,
+        "types": {
+          "flash.display::MovieClip": 6,
+          "hpBar": 11,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 34,
+        "duplicateLayers": 0,
+        "visible": 23
+      }
+    },
+    {
+      "index": 14,
+      "group": "current/ray",
+      "interval": {
+        "n": 239,
+        "mean": 53.76569037656904,
+        "p95": 70,
+        "max": 106,
+        ">100": 1,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 12.112970711297072,
+        "p95": 18,
+        "max": 64,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 378,
+      "particles": 102,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 94,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 94,
+        "owned": 94,
+        "types": {
+          "visualGilza": 8,
+          "flash.display::MovieClip": 51,
+          "hpBar": 11,
+          "visualBullet": 4,
+          "vissmg10": 6,
+          "visualTrainArmor": 2,
+          "visualNumb": 3,
+          "visualTrain": 3,
+          "visualGrifArm1": 6
+        },
+        "reciprocalPairs": 94,
+        "duplicateLayers": 0,
+        "visible": 83
+      }
+    },
+    {
+      "index": 15,
+      "group": "current/off",
+      "interval": {
+        "n": 239,
+        "mean": 39.38912133891213,
+        "p95": 57,
+        "max": 94,
+        ">100": 0,
+        ">200": 0
+      },
+      "rv": {
+        "n": 239,
+        "mean": 0.008368200836820083,
+        "p95": 0,
+        "max": 1,
+        ">100": 0,
+        ">200": 0
+      },
+      "attacks": 342,
+      "particles": 113,
+      "projectiles": 11,
+      "maskInventory": {
+        "masked": 0,
+        "unrecognized": 0,
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "types": {},
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0
+      }
+    }
+  ],
+  "limitations": "Complete same-process controlled combat; native random animation/AI still advances. Endpoint mask counts are not same-input branch-hit measurements."
+}

@@ -1,0 +1,1017 @@
+{
+  "runs": [
+    {
+      "name": "comparison-01",
+      "groups": {
+        "current/off": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 38.08100558659218,
+            "p95": 53,
+            "max": 116,
+            ">100": 1,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 0.00558659217877095,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.0335195530726257,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/normal": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 51.40502793296089,
+            "p95": 68,
+            "max": 104,
+            ">100": 2,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 11.64804469273743,
+            "p95": 17,
+            "max": 55,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.05027932960893855,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/candidate": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 53.013966480446925,
+            "p95": 70,
+            "max": 112,
+            ">100": 1,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 12.307262569832401,
+            "p95": 19,
+            "max": 53,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.0446927374301676,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/ray": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 51.90782122905028,
+            "p95": 70,
+            "max": 106,
+            ">100": 1,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 11.740223463687151,
+            "p95": 18,
+            "max": 55,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.0446927374301676,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/off": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 36.391061452513966,
+            "p95": 48,
+            "max": 81,
+            ">100": 0,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 0.00558659217877095,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.04189944134078212,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/normal": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 54.64804469273743,
+            "p95": 76,
+            "max": 182,
+            ">100": 3,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 12.44413407821229,
+            "p95": 20,
+            "max": 49,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.027932960893854747,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/candidate": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 55.986033519553075,
+            "p95": 84,
+            "max": 122,
+            ">100": 2,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 11.38268156424581,
+            "p95": 19,
+            "max": 57,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.06983240223463687,
+            "p95": 1,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/ray": {
+          "nextInterval": {
+            "n": 358,
+            "mean": 52.125698324022345,
+            "p95": 75,
+            "max": 118,
+            ">100": 2,
+            ">200": 0
+          },
+          "rv": {
+            "n": 358,
+            "mean": 11.79050279329609,
+            "p95": 20,
+            "max": 51,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 358,
+            "mean": 0.05865921787709497,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        }
+      },
+      "targetChanges": {
+        "classic": {
+          "baseline": {
+            "n": 358,
+            "mean": 54.64804469273743,
+            "p95": 76,
+            "max": 182,
+            ">100": 3,
+            ">200": 0
+          },
+          "candidate": {
+            "n": 358,
+            "mean": 55.986033519553075,
+            "p95": 84,
+            "max": 122,
+            ">100": 2,
+            ">200": 0
+          },
+          "meanChangePercent": 2.4483745655285327
+        },
+        "current": {
+          "baseline": {
+            "n": 358,
+            "mean": 51.40502793296089,
+            "p95": 68,
+            "max": 104,
+            ">100": 2,
+            ">200": 0
+          },
+          "candidate": {
+            "n": 358,
+            "mean": 51.90782122905028,
+            "p95": 70,
+            "max": 106,
+            ">100": 1,
+            ">200": 0
+          },
+          "meanChangePercent": 0.9781013965114438
+        }
+      },
+      "longFrames": [
+        {
+          "window": 1,
+          "mode": "current",
+          "variant": "normal",
+          "memoryBefore": 326393856,
+          "masks": 162,
+          "particles": 79,
+          "objects": 108,
+          "rv": 11,
+          "nextInterval": 104,
+          "memoryAfter": 326270976,
+          "projectiles": 4,
+          "diagnosticMs": 0,
+          "worldPass": 217,
+          "age": 216
+        },
+        {
+          "window": 1,
+          "mode": "current",
+          "variant": "normal",
+          "memoryBefore": 295452672,
+          "masks": 154,
+          "particles": 76,
+          "objects": 103,
+          "rv": 9,
+          "nextInterval": 104,
+          "memoryAfter": 295342080,
+          "projectiles": 2,
+          "diagnosticMs": 0,
+          "worldPass": 299,
+          "age": 298
+        },
+        {
+          "window": 3,
+          "mode": "current",
+          "variant": "ray",
+          "memoryBefore": 313090048,
+          "masks": 138,
+          "particles": 71,
+          "objects": 100,
+          "rv": 14,
+          "nextInterval": 106,
+          "memoryAfter": 312967168,
+          "projectiles": 4,
+          "diagnosticMs": 0,
+          "worldPass": 325,
+          "age": 324
+        },
+        {
+          "window": 5,
+          "mode": "current",
+          "variant": "candidate",
+          "memoryBefore": 329658368,
+          "masks": 188,
+          "particles": 91,
+          "objects": 125,
+          "rv": 15,
+          "nextInterval": 112,
+          "memoryAfter": 329568256,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 254,
+          "age": 253
+        },
+        {
+          "window": 7,
+          "mode": "current",
+          "variant": "off",
+          "memoryBefore": 320385024,
+          "masks": 0,
+          "particles": 82,
+          "objects": 116,
+          "rv": 0,
+          "nextInterval": 116,
+          "memoryAfter": 320385024,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 0,
+          "age": 259
+        },
+        {
+          "window": 9,
+          "mode": "classic",
+          "variant": "normal",
+          "memoryBefore": 313221120,
+          "masks": 116,
+          "particles": 71,
+          "objects": 99,
+          "rv": 6,
+          "nextInterval": 182,
+          "memoryAfter": 313262080,
+          "projectiles": 3,
+          "diagnosticMs": 0,
+          "worldPass": 307,
+          "age": 306
+        },
+        {
+          "window": 11,
+          "mode": "classic",
+          "variant": "ray",
+          "memoryBefore": 327507968,
+          "masks": 170,
+          "particles": 92,
+          "objects": 126,
+          "rv": 16,
+          "nextInterval": 118,
+          "memoryAfter": 327589888,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 272,
+          "age": 271
+        },
+        {
+          "window": 11,
+          "mode": "classic",
+          "variant": "ray",
+          "memoryBefore": 302940160,
+          "masks": 170,
+          "particles": 97,
+          "objects": 131,
+          "rv": 16,
+          "nextInterval": 103,
+          "memoryAfter": 302899200,
+          "projectiles": 9,
+          "diagnosticMs": 1,
+          "worldPass": 298,
+          "age": 297
+        },
+        {
+          "window": 13,
+          "mode": "classic",
+          "variant": "candidate",
+          "memoryBefore": 321851392,
+          "masks": 158,
+          "particles": 90,
+          "objects": 124,
+          "rv": 21,
+          "nextInterval": 122,
+          "memoryAfter": 321859584,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 212,
+          "age": 211
+        },
+        {
+          "window": 13,
+          "mode": "classic",
+          "variant": "candidate",
+          "memoryBefore": 328499200,
+          "masks": 164,
+          "particles": 92,
+          "objects": 125,
+          "rv": 57,
+          "nextInterval": 104,
+          "memoryAfter": 291418112,
+          "projectiles": 8,
+          "diagnosticMs": 0,
+          "worldPass": 221,
+          "age": 220
+        },
+        {
+          "window": 14,
+          "mode": "classic",
+          "variant": "normal",
+          "memoryBefore": 327573504,
+          "masks": 174,
+          "particles": 97,
+          "objects": 131,
+          "rv": 47,
+          "nextInterval": 107,
+          "memoryAfter": 291684352,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 225,
+          "age": 224
+        },
+        {
+          "window": 14,
+          "mode": "classic",
+          "variant": "normal",
+          "memoryBefore": 326320128,
+          "masks": 178,
+          "particles": 91,
+          "objects": 125,
+          "rv": 16,
+          "nextInterval": 108,
+          "memoryAfter": 326397952,
+          "projectiles": 9,
+          "diagnosticMs": 0,
+          "worldPass": 368,
+          "age": 367
+        }
+      ],
+      "availableGiB": 14.171939849853516,
+      "hostCpuSnapshot": 25.1,
+      "selected": [
+        "AddictionSystemMod",
+        "CombatRenderProbeMod",
+        "ContinuousSceneMod",
+        "FirearmAttachmentsMod",
+        "LightAndDarknessMod",
+        "LootEditorMod",
+        "ModLoaderMod",
+        "MoreSkillsWeaponsMod",
+        "PermanentInjuryMod",
+        "RConnectMod",
+        "RandomRoomsMod",
+        "SandevistanMod",
+        "TDFCMod",
+        "WallBlendMod"
+      ],
+      "buildSamples": 180,
+      "scene": {
+        "fps": 30,
+        "controlled": true,
+        "nativeUnits": 14,
+        "platform": [
+          360,
+          840,
+          640
+        ],
+        "size": [
+          48,
+          25
+        ],
+        "large": false
+      }
+    },
+    {
+      "name": "comparison-04",
+      "groups": {
+        "classic/off": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 40.03138075313807,
+            "p95": 58,
+            "max": 88,
+            ">100": 0,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 0.0,
+            "p95": 0,
+            "max": 0,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.060669456066945605,
+            "p95": 1,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/ray": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 54.53347280334728,
+            "p95": 78,
+            "max": 123,
+            ">100": 3,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 12.311715481171548,
+            "p95": 20,
+            "max": 62,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.029288702928870293,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/candidate": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 54.91422594142259,
+            "p95": 81,
+            "max": 137,
+            ">100": 4,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 11.07112970711297,
+            "p95": 18,
+            "max": 57,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.03765690376569038,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "classic/normal": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 54.15062761506276,
+            "p95": 77,
+            "max": 115,
+            ">100": 4,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 12.069037656903765,
+            "p95": 20,
+            "max": 59,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.043933054393305436,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/off": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 39.2092050209205,
+            "p95": 54,
+            "max": 94,
+            ">100": 0,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 0.008368200836820083,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.04184100418410042,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/ray": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 52.49163179916318,
+            "p95": 69,
+            "max": 106,
+            ">100": 1,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 11.841004184100418,
+            "p95": 17,
+            "max": 64,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.0397489539748954,
+            "p95": 0,
+            "max": 1,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/candidate": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 51.52719665271967,
+            "p95": 70,
+            "max": 118,
+            ">100": 1,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 11.51673640167364,
+            "p95": 16,
+            "max": 55,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.02301255230125523,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        },
+        "current/normal": {
+          "nextInterval": {
+            "n": 478,
+            "mean": 52.98117154811715,
+            "p95": 74,
+            "max": 127,
+            ">100": 2,
+            ">200": 0
+          },
+          "rv": {
+            "n": 478,
+            "mean": 11.642259414225942,
+            "p95": 18,
+            "max": 53,
+            ">100": 0,
+            ">200": 0
+          },
+          "diagnosticMs": {
+            "n": 478,
+            "mean": 0.05230125523012552,
+            "p95": 0,
+            "max": 2,
+            ">100": 0,
+            ">200": 0
+          }
+        }
+      },
+      "targetChanges": {
+        "classic": {
+          "baseline": {
+            "n": 478,
+            "mean": 54.15062761506276,
+            "p95": 77,
+            "max": 115,
+            ">100": 4,
+            ">200": 0
+          },
+          "candidate": {
+            "n": 478,
+            "mean": 54.91422594142259,
+            "p95": 81,
+            "max": 137,
+            ">100": 4,
+            ">200": 0
+          },
+          "meanChangePercent": 1.410137536702205
+        },
+        "current": {
+          "baseline": {
+            "n": 478,
+            "mean": 52.98117154811715,
+            "p95": 74,
+            "max": 127,
+            ">100": 2,
+            ">200": 0
+          },
+          "candidate": {
+            "n": 478,
+            "mean": 52.49163179916318,
+            "p95": 69,
+            "max": 106,
+            ">100": 1,
+            ">200": 0
+          },
+          "meanChangePercent": -0.9239881539980233
+        }
+      },
+      "longFrames": [
+        {
+          "window": 1,
+          "mode": "classic",
+          "variant": "ray",
+          "diagnosticMs": 0,
+          "memoryAfter": 322408448,
+          "objects": 112,
+          "age": 353,
+          "particles": 80,
+          "rv": 17,
+          "projectiles": 7,
+          "worldPass": 354,
+          "nextInterval": 103,
+          "memoryBefore": 322482176,
+          "masks": 164
+        },
+        {
+          "window": 2,
+          "mode": "classic",
+          "variant": "candidate",
+          "diagnosticMs": 0,
+          "memoryAfter": 314896384,
+          "objects": 26,
+          "age": 359,
+          "particles": 1,
+          "rv": 11,
+          "projectiles": 0,
+          "worldPass": 360,
+          "nextInterval": 108,
+          "memoryBefore": 315039744,
+          "masks": 42
+        },
+        {
+          "window": 3,
+          "mode": "classic",
+          "variant": "normal",
+          "diagnosticMs": 0,
+          "memoryAfter": 324648960,
+          "objects": 111,
+          "age": 320,
+          "particles": 77,
+          "rv": 6,
+          "projectiles": 9,
+          "worldPass": 321,
+          "nextInterval": 109,
+          "memoryBefore": 324804608,
+          "masks": 134
+        },
+        {
+          "window": 3,
+          "mode": "classic",
+          "variant": "normal",
+          "diagnosticMs": 0,
+          "memoryAfter": 289030144,
+          "objects": 116,
+          "age": 385,
+          "particles": 81,
+          "rv": 59,
+          "projectiles": 10,
+          "worldPass": 386,
+          "nextInterval": 112,
+          "memoryBefore": 325619712,
+          "masks": 136
+        },
+        {
+          "window": 4,
+          "mode": "classic",
+          "variant": "normal",
+          "diagnosticMs": 2,
+          "memoryAfter": 314155008,
+          "objects": 104,
+          "age": 312,
+          "particles": 75,
+          "rv": 4,
+          "projectiles": 4,
+          "worldPass": 313,
+          "nextInterval": 104,
+          "memoryBefore": 314347520,
+          "masks": 138
+        },
+        {
+          "window": 4,
+          "mode": "classic",
+          "variant": "normal",
+          "diagnosticMs": 0,
+          "memoryAfter": 297615360,
+          "objects": 106,
+          "age": 419,
+          "particles": 76,
+          "rv": 17,
+          "projectiles": 5,
+          "worldPass": 420,
+          "nextInterval": 115,
+          "memoryBefore": 297771008,
+          "masks": 126
+        },
+        {
+          "window": 5,
+          "mode": "classic",
+          "variant": "candidate",
+          "diagnosticMs": 0,
+          "memoryAfter": 289329152,
+          "objects": 101,
+          "age": 344,
+          "particles": 66,
+          "rv": 57,
+          "projectiles": 10,
+          "worldPass": 345,
+          "nextInterval": 119,
+          "memoryBefore": 324354048,
+          "masks": 116
+        },
+        {
+          "window": 5,
+          "mode": "classic",
+          "variant": "candidate",
+          "diagnosticMs": 0,
+          "memoryAfter": 304861184,
+          "objects": 112,
+          "age": 376,
+          "particles": 78,
+          "rv": 7,
+          "projectiles": 9,
+          "worldPass": 377,
+          "nextInterval": 101,
+          "memoryBefore": 304910336,
+          "masks": 154
+        },
+        {
+          "window": 5,
+          "mode": "classic",
+          "variant": "candidate",
+          "diagnosticMs": 0,
+          "memoryAfter": 325984256,
+          "objects": 116,
+          "age": 409,
+          "particles": 82,
+          "rv": 17,
+          "projectiles": 9,
+          "worldPass": 410,
+          "nextInterval": 137,
+          "memoryBefore": 326094848,
+          "masks": 150
+        },
+        {
+          "window": 6,
+          "mode": "classic",
+          "variant": "ray",
+          "diagnosticMs": 0,
+          "memoryAfter": 289198080,
+          "objects": 120,
+          "age": 223,
+          "particles": 86,
+          "rv": 62,
+          "projectiles": 9,
+          "worldPass": 224,
+          "nextInterval": 114,
+          "memoryBefore": 325861376,
+          "masks": 168
+        },
+        {
+          "window": 6,
+          "mode": "classic",
+          "variant": "ray",
+          "diagnosticMs": 0,
+          "memoryAfter": 326029312,
+          "objects": 118,
+          "age": 432,
+          "particles": 90,
+          "rv": 7,
+          "projectiles": 3,
+          "worldPass": 433,
+          "nextInterval": 123,
+          "memoryBefore": 326053888,
+          "masks": 174
+        },
+        {
+          "window": 12,
+          "mode": "current",
+          "variant": "normal",
+          "diagnosticMs": 0,
+          "memoryAfter": 325541888,
+          "objects": 119,
+          "age": 254,
+          "particles": 85,
+          "rv": 15,
+          "projectiles": 9,
+          "worldPass": 255,
+          "nextInterval": 121,
+          "memoryBefore": 325513216,
+          "masks": 176
+        },
+        {
+          "window": 12,
+          "mode": "current",
+          "variant": "normal",
+          "diagnosticMs": 0,
+          "memoryAfter": 328658944,
+          "objects": 116,
+          "age": 259,
+          "particles": 81,
+          "rv": 7,
+          "projectiles": 10,
+          "worldPass": 260,
+          "nextInterval": 127,
+          "memoryBefore": 328843264,
+          "masks": 164
+        },
+        {
+          "window": 13,
+          "mode": "current",
+          "variant": "candidate",
+          "diagnosticMs": 0,
+          "memoryAfter": 292622336,
+          "objects": 117,
+          "age": 289,
+          "particles": 82,
+          "rv": 55,
+          "projectiles": 10,
+          "worldPass": 290,
+          "nextInterval": 118,
+          "memoryBefore": 329170944,
+          "masks": 184
+        },
+        {
+          "window": 14,
+          "mode": "current",
+          "variant": "ray",
+          "diagnosticMs": 0,
+          "memoryAfter": 293974016,
+          "objects": 129,
+          "age": 388,
+          "particles": 94,
+          "rv": 64,
+          "projectiles": 10,
+          "worldPass": 389,
+          "nextInterval": 106,
+          "memoryBefore": 330682368,
+          "masks": 190
+        }
+      ],
+      "availableGiB": 9.991168975830078,
+      "hostCpuSnapshot": 67.4,
+      "selected": [
+        "AddictionSystemMod",
+        "CombatRenderProbeMod",
+        "ContinuousSceneMod",
+        "FirearmAttachmentsMod",
+        "LightAndDarknessMod",
+        "LootEditorMod",
+        "ModLoaderMod",
+        "MoreSkillsWeaponsMod",
+        "PermanentInjuryMod",
+        "RConnectMod",
+        "RandomRoomsMod",
+        "SandevistanMod",
+        "TDFCMod",
+        "WallBlendMod"
+      ],
+      "buildSamples": 240,
+      "scene": {
+        "fps": 30,
+        "nativeUnits": 14,
+        "platform": [
+          360,
+          840,
+          640
+        ],
+        "size": [
+          48,
+          25
+        ],
+        "controlled": true,
+        "large": false
+      }
+    }
+  ],
+  "adopted": false,
+  "formal": "D44 v0.33.10-render-cache",
+  "reason": "Neither candidate has a consistent full-frame improvement across both comparisons; no merge or deployment."
+}

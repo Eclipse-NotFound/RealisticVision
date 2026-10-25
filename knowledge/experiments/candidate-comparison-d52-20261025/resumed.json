@@ -1,0 +1,26 @@
+{
+  "user_instruction": "可进行测试",
+  "date": "2026-10-25",
+  "candidates": {
+    "classic": {
+      "RealisticVisionMod.as": "5c51cc180b252ec34993a98fd60fa36d99de6491ffef8dafdb9fcbe9a4e2fe64",
+      "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+      "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+      "RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+      "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+      "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+    },
+    "ray": {
+      "RealisticVisionMod.as": "ea8608fd2b3314a808bd2e1e1fbbed0dc0dc53b1faef7e249b78121c025c134e",
+      "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+      "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+      "RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+      "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+      "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+    }
+  },
+  "prior_pauses": {
+    "build\\classic-inputs-output\\PERFORMANCE-PAUSED.json": "d0aa36090cbc1fa5dbbeefb79ca4458f07c387a37f8e303b77c2bcc5a54f8b7f",
+    "build\\ray-clearance-output\\PERFORMANCE-PAUSED.json": "93f282d04f2b778283bd1b3ef5aaa4877c4dfdd6410ed38f8fa9bd4ae374f3f5"
+  }
+}

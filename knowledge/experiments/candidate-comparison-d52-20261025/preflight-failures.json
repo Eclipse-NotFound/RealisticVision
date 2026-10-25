@@ -1,0 +1,10 @@
+{
+  "comparison-02": {
+    "airStarted": false,
+    "reason": "Recompiled same-source vision SWFs differ in bytes; repeat changed to frozen first-run binaries."
+  },
+  "comparison-03": {
+    "airStarted": false,
+    "reason": "Forward-slash exclusion missed Windows probe path; use Path.parts to exclude only the intentionally changed probe."
+  }
+}
