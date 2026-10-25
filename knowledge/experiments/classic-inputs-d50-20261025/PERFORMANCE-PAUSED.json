@@ -1,0 +1,7 @@
+{
+  "scope": "independent performance timing only",
+  "reason": "User explicitly chose to retain player-1 and player-2 and continue code and visual checks on 2026-10-25.",
+  "functional_checks_allowed": true,
+  "resume_requires": "Explicit user steering to resume independent timing and fresh environment/registry verification.",
+  "do_not_terminate": ["player-1.xml", "player-2.xml"]
+}

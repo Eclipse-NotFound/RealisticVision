@@ -1,0 +1,8 @@
+[
+ ["validate.py","local","all-local-01","--candidate","all"],
+ ["validate.py","native-build","all-native-01","--candidate","all"],
+ ["validate.py","native-run","all-native-01","--candidate","all"],
+ ["perf.py","build","all-combat-01","--candidate","all","--full","--controlled","--frames","180","--warmup","210"],
+ ["perf.py","run","all-combat-01"],
+ ["verify-results.py","combat","all-combat-01"]
+]

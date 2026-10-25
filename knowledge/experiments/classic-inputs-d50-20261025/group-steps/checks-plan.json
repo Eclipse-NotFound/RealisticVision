@@ -1,0 +1,26 @@
+[
+  {
+    "args": [
+      "validate.py",
+      "local",
+      "local-01"
+    ],
+    "log": "group-steps\\1792879425221163000-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-build",
+      "native-01"
+    ],
+    "log": "group-steps\\1792879431629550400-validate.py.log"
+  },
+  {
+    "args": [
+      "validate.py",
+      "native-run",
+      "native-01"
+    ],
+    "log": "group-steps\\1792879438548826400-validate.py.log"
+  }
+]

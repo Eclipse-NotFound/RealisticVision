@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\classic-inputs\group.py", line 28, in main
+    with log.open('w',encoding='utf-8') as out,contextlib.redirect_stdout(out),contextlib.redirect_stderr(out):runpy.run_path(str(HERE/args[0]),run_name='__main__')
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\classic-inputs\validate.py", line 56, in <module>
+    p=argparse.ArgumentParser();p.add_argument('action');p.add_argument('name');p.add_argument('--candidate',default='raw');x=p.parse_args();CAND=OUT/'candidates'/x.candidate/'src';{'local':lambda:local(x.name),'native-build':lambda:native(x.name,True),'native-run':lambda:native(x.name)}[x.action]()
+                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\classic-inputs\validate.py", line 56, in <lambda>
+    p=argparse.ArgumentParser();p.add_argument('action');p.add_argument('name');p.add_argument('--candidate',default='raw');x=p.parse_args();CAND=OUT/'candidates'/x.candidate/'src';{'local':lambda:local(x.name),'native-build':lambda:native(x.name,True),'native-run':lambda:native(x.name)}[x.action]()
+                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\classic-inputs\validate.py", line 53, in native
+    else:v.native_run(name)
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\fog-setters\validate.py", line 61, in native_run
+    env=r.environment();r.save(folder/'environment.json',env);assert not env['processes'] and env['available_bytes']>5*1024**3,env
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'time': 1792911897.2909899, 'available_bytes': 11805810688, 'processes': [{'name': 'adl64.exe', 'pid': 2060}, {'name': 'adl64.exe', 'pid': 26060}]}

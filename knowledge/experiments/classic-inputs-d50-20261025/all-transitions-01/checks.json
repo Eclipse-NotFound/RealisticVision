@@ -1,0 +1,11 @@
+{
+  "pass": false,
+  "exit": 1,
+  "summary": [
+    "SIZE 24x18 privateReady=380",
+    "SIZE 48x25 privateReady=380",
+    "FAIL ReferenceError: Error #1069 ReferenceError: Error #1069",
+    "LAZY COMPLETE passed=29698 failed=1"
+  ],
+  "performance_evidence": false
+}

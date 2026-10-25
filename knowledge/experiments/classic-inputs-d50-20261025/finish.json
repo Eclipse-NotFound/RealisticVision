@@ -1,0 +1,21 @@
+{
+  "formalUnchanged": {
+    "release/RealisticVisionMod.swf": "638e2d408e2cf46683c41114f75773829a1b4417d74bffe9d08855a4fe343710",
+    "release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f",
+    "../../pfe.swf": "a796827173af7d6fab9885fb66ecc62182ab5335918a30c7cce4c44914a238b7"
+  },
+  "adopted": false,
+  "status": "pending-performance",
+  "functional": {
+    "rawLocal": 6529,
+    "rawNative": 64,
+    "allLocal": 6529,
+    "allNative": 64,
+    "allTransitions": 59397
+  },
+  "rawCombatPairedIntervals": 2148,
+  "allCombatRan": false,
+  "failedFixtureRetained": "all-transitions-01",
+  "userChoice": "保留试玩，先做代码和画面检查",
+  "activeOwnedGameTests": 0
+}

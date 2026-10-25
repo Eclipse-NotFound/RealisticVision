@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "exit": 0,
+  "summary": [
+    "SIZE 24x18 privateReady=380",
+    "SIZE 48x25 privateReady=380",
+    "SIZE 49x25 privateReady=0",
+    "SIZE 48x26 privateReady=0",
+    "READY 760",
+    "LAZY COMPLETE passed=59397 failed=0"
+  ],
+  "performance_evidence": false
+}

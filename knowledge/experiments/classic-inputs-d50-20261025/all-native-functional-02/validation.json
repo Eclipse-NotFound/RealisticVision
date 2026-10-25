@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "checks": 64,
+  "pass": true,
+  "pins_match": true,
+  "selected": [
+    "ContinuousSceneMod",
+    "RecoveryFrameProbeMod"
+  ],
+  "performance_evidence": false,
+  "retained_other_processes": [
+    {
+      "name": "adl64.exe",
+      "pid": 2060
+    },
+    {
+      "name": "adl64.exe",
+      "pid": 26060
+    }
+  ]
+}
