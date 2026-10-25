@@ -1,0 +1,7 @@
+SIZE 24,18 fast=1371 steps=50345/35581
+SIZE 48,25 fast=1129 steps=82547/60462
+SIZE 49,25 fast=1149 steps=83169/60458
+SIZE 48,26 fast=1157 steps=87623/64378
+SIZE 192,75 fast=1010 steps=264446/188239
+FAIL same invalidation
+RAY COMPLETE {"fastHits":5816,"performanceEvidence":false,"failed":1,"passed":134826,"newSteps":409118,"comparisons":21128,"oldSteps":568130}

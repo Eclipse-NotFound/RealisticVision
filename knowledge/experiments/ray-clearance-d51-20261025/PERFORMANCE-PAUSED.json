@@ -1,0 +1,7 @@
+{
+  "scope": "independent performance timing and adoption decision",
+  "reason": "User retains both play windows and authorizes code and visual checks only until performance testing is explicitly resumed.",
+  "functional_checks_allowed": true,
+  "candidate": "candidate-v2",
+  "deployed": false
+}

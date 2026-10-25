@@ -1,0 +1,6 @@
+{
+  "status": "superseded-before-testing",
+  "reason": "Static review found that equal-length summary storage with a changed row stride could retain old zero-padding entries. candidate-v2 drops the summary storage whenever the opacity snapshot changes owner or dimensions.",
+  "tested": false,
+  "deployed": false
+}

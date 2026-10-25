@@ -1,0 +1,18 @@
+{
+  "files": {
+    "RayClearanceChecks.compile.log": "69ad0479bb1792e60831e691ad28b911425d5f90dcc5b5cdc7be94ac0153f5fe",
+    "RayClearanceChecks.compiler.xml": "b3092bef22d29bd698671b031cb4343a19c8b3bfc5e50f2f8cb869529cc8e632",
+    "RayClearanceChecks.swf": "85492e4ec04390592f50cd436c75269b49a9bba0b39fff59510feb4bde896d89",
+    "src\\BaselineVision.as": "b24a21c9967fc02e4931db79fa023ca098067a6fa0dfe05e3e71e76017f1bf40",
+    "src\\RayClearanceChecks.as": "5a4e20eb3aeb592744df3dcc706e2d79dcda68e34c2443d6cea74bbcf5385ac9",
+    "src\\RayTestLocation.as": "2dda88cb106e13e2aa83c214d4881e29a47a4645809db2416e745bf1ffaa74de",
+    "src\\RealisticVisionMod.as": "d11e87461f285d4f3d03b4c6ac731c9f2b4fab078156032adec97ff6b07e1188",
+    "src\\RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "src\\RVKeybinds.as": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "src\\RVWallSurface.as": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "src\\fe\\loc\\Location.as": "a470e5f5702422cb54a205ada7460a856bd3c9fac4a2556b555a7cd670955423",
+    "src\\modlocales\\vision\\RVLocale.as": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "src\\modlocales\\vision\\RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  },
+  "performance_evidence": false
+}

@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "checks": 64,
+  "pass": true,
+  "selected": [
+    "ContinuousSceneMod",
+    "RecoveryFrameProbeMod"
+  ],
+  "clearHits": 368918,
+  "oldSteps": 33896533,
+  "newSteps": 29561650,
+  "performance_evidence": false
+}

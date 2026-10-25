@@ -1,0 +1,6 @@
+SIZE 24,18 fast=1371 steps=50345/35581
+SIZE 48,25 fast=1129 steps=82547/60462
+SIZE 49,25 fast=1149 steps=83169/60458
+SIZE 48,26 fast=1157 steps=87623/64378
+SIZE 192,75 fast=1010 steps=264446/188239
+RAY COMPLETE {"newSteps":409118,"fastHits":5816,"comparisons":21129,"failed":0,"performanceEvidence":false,"passed":134827,"oldSteps":568130}

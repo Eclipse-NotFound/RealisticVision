@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-25 **D51功能完成，性能仍暂缓，正式仍D44**：独立候选candidate-v2用原遮光快照证明空矩形后省略逐格射线，墙/门/水/异常值回退；21129条射线及134827项检查、192×75原生64次严格画面全部通过。原生回放快速路径368918次、循环33896533→29561650，只是步骤计数，未证明帧率收益。用户保留试玩的选择有效，无独立计时/部署。自有AIR均退出。详见[报告](../knowledge/experiments/2026-10-25-ray-clearance.md)，证据ray-clearance-d51-20261025。
+
 > 2026-10-25 **D50功能完成，独立计时暂缓，正式仍D44**：classic私有插值raw候选6529+64检查通过，亮度0.6普通房间战斗均值51.89→50.79ms，current52.87→53.48ms；单轮小收益未采用。all再缓存私有墙场，6529局部+64原生+59397临界尺寸/设置/模式/换房检查严格相同，尚无性能数据。用户选择保留player-1/player-2、先做代码和画面检查；暂停独立计时，不关试玩。所有自有AIR退出。详见[报告](../knowledge/experiments/2026-10-25-classic-inputs.md)，证据classic-inputs-d50-20261025。
 
 > 2026-10-25 **D49结束，正式仍D44**：雾层同值setter跳过通过414项严格画面检查；完整战斗current61.47→61.77ms、classic65.70→66.44ms，>100ms未降，不采用。原始D44嵌套热点：current fillFogCache4.56ms，classic classicLogicRegion3.46ms，滤镜树0.02–0.04ms；不能相加或当性能验收。下一步检查classic原始插值工作图复用，仍只按旧查询范围发布，不扩大fogCache范围。所有本轮AIR已退出；详见[报告](../knowledge/experiments/2026-10-25-fog-setters.md)，证据fog-setters-d49-20261025。
@@ -104,7 +106,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D44 v0.33.10；准确生产源build/combat-render-output/production-final2/src，排除authority。D50候选功能通过，独立性能按用户选择暂缓；正式安装未改，详见顶部报告。
+- 当前安装D44 v0.33.10；准确生产源build/combat-render-output/production-final2/src，排除authority。D50/D51独立候选功能通过，完整性能按用户选择暂缓；正式安装未改，详见顶部报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -127,6 +129,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D51与D50均功能通过、性能待定，未合并或部署。用户保留试玩、只做代码和画面检查的选择继续有效；两个输出目录均有PERFORMANCE-PAUSED.json。D51准确候选build/ray-clearance-output/candidate-v2/src，首稿未测试即因行宽改变风险淘汰。rays-01为夹具中断不对称失败，rays-02及native-large-01已结束且严格通过。没有可采用的D51时间数据；恢复独立计时后先核对环境/组合，再用无测试计数的生产源对D44做完整战斗复验。目标未完成。下方为历史停点。
 
 - D50：raw/all均待判定，未部署；用户明确保留试玩、只做代码和画面检查，独立计时暂停标志build/classic-inputs-output/PERFORMANCE-PAUSED.json。不要重跑已结束all-plan或覆盖all-native-01；all-native-functional-02只做像素，不可用于计时。四尺寸转换测试已通过，新路径仅小房间且主要用于非默认亮度。待用户明确恢复独立性能测试后，重新核对试玩/登记/包组合，在新目录测all并复验。正式准确源仍D44；目标未完成。下方为历史停点。
 
