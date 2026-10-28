@@ -1,0 +1,14 @@
+{
+  "formalUnchanged": {
+    "release/RealisticVisionMod.swf": "638e2d408e2cf46683c41114f75773829a1b4417d74bffe9d08855a4fe343710",
+    "release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f"
+  },
+  "windows": 32,
+  "intervals": 7168,
+  "shots": 3060,
+  "adopted": false,
+  "deployed": false,
+  "performanceEligible": false,
+  "pending": "User confirmation of formal launcher vs B190 actual reproduction environment",
+  "rootHostSha256": "b84f24280b3c676f4068e1cdc5a6ebee89988f62bcf7a44d4dd71a4771360184"
+}

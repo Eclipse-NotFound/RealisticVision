@@ -1,0 +1,43 @@
+{
+  "atMs": 1793184204542,
+  "memory": {
+    "load": 73,
+    "totalPhysical": 33879638016,
+    "availablePhysical": 9015476224,
+    "commitLimit": 58533253120,
+    "availableCommit": 12665610240
+  },
+  "air": {
+    "processes": [
+      {
+        "pid": 80640,
+        "exe": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RConnect\\build\\ab\\b3-playable-190\\game\\adl64.exe"
+      },
+      {
+        "pid": 89504,
+        "exe": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RConnect\\build\\ab\\b3-playable-190\\game\\adl64.exe"
+      }
+    ],
+    "unreadableProcessCount": 171,
+    "scope": "endpoints only; absence is not proof of an idle computer"
+  },
+  "runner": {
+    "cpuPriorityClass": 32,
+    "errors": [],
+    "memoryPriority": 5,
+    "powerThrottling": {
+      "controlMask": 0,
+      "stateMask": 0,
+      "highQoS": false
+    },
+    "inJob": true,
+    "innermostJobLimits": {
+      "flags": 10240,
+      "processCommitCap": null,
+      "jobCommitCap": null,
+      "workingSetCap": null,
+      "boundary": "current innermost job only; nested ancestors may impose further limits"
+    }
+  },
+  "warnings": []
+}

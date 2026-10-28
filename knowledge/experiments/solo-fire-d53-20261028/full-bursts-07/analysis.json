@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": false,
+    "reasons": [
+      "other AIR processes observed at trial endpoints: 80640,89504"
+    ],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "normal-burst": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 33.54735376044568,
+        "p95": 42,
+        "max": 138,
+        ">100": 1
+      },
+      "rv": {
+        "n": 718,
+        "mean": 2.745125348189415,
+        "p95": 6,
+        "max": 109,
+        ">100": 1
+      }
+    },
+    "off-burst": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 33.3050139275766,
+        "p95": 41,
+        "max": 85,
+        ">100": 0
+      },
+      "rv": {
+        "n": 718,
+        "mean": 0.008356545961002786,
+        "p95": 0,
+        "max": 1,
+        ">100": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "full-profile-01": "SoundMixer import missing; compile failed, no AIR",
+  "full-profile-02": "AIR completed but shots=0; rejected by postvalidation; not performance evidence",
+  "full-split-04": "Read-only media hardlink denied before AIR; fresh 05 requested normal escalation"
+}

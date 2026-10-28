@@ -1,0 +1,76 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": false,
+    "reasons": [
+      "other AIR processes observed at trial endpoints: 80640,89504"
+    ],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "normal": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 38.26815642458101,
+        "p95": 58,
+        "max": 113,
+        ">100": 1
+      },
+      "rv": {
+        "n": 358,
+        "mean": 3.4329608938547485,
+        "p95": 5,
+        "max": 45,
+        ">100": 0
+      }
+    },
+    "nomouse": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 39.089385474860336,
+        "p95": 58,
+        "max": 129,
+        ">100": 3
+      },
+      "rv": {
+        "n": 358,
+        "mean": 3.041899441340782,
+        "p95": 5,
+        "max": 9,
+        ">100": 0
+      }
+    },
+    "nodraw": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 35.245810055865924,
+        "p95": 48,
+        "max": 77,
+        ">100": 0
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.874301675977654,
+        "p95": 4,
+        "max": 15,
+        ">100": 0
+      }
+    },
+    "noeffects": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 36.770949720670394,
+        "p95": 54,
+        "max": 93,
+        ">100": 0
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.2569832402234637,
+        "p95": 3,
+        "max": 9,
+        ">100": 0
+      }
+    }
+  }
+}

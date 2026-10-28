@@ -1,0 +1,26 @@
+{
+  "requested": "test",
+  "before": {
+    "cpuPriorityClass": 32,
+    "errors": [],
+    "memoryPriority": 5,
+    "powerThrottling": {
+      "controlMask": 0,
+      "stateMask": 0,
+      "highQoS": false
+    },
+    "inJob": true
+  },
+  "after": {
+    "cpuPriorityClass": 32,
+    "errors": [],
+    "memoryPriority": 5,
+    "powerThrottling": {
+      "controlMask": 1,
+      "stateMask": 0,
+      "highQoS": true
+    },
+    "inJob": true
+  },
+  "errors": []
+}
