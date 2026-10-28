@@ -1,0 +1,90 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "off-idle": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 34.01675977653631,
+        "p95": 40,
+        "max": 222,
+        ">100": 1
+      },
+      "rv": {
+        "n": 358,
+        "mean": 0.00558659217877095,
+        "p95": 0,
+        "max": 1,
+        ">100": 0
+      }
+    },
+    "normal-idle": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 33.332402234636874,
+        "p95": 40,
+        "max": 97,
+        ">100": 0
+      },
+      "rv": {
+        "n": 358,
+        "mean": 1.4720670391061452,
+        "p95": 3,
+        "max": 6,
+        ">100": 0
+      }
+    },
+    "off": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 33.6536312849162,
+        "p95": 42,
+        "max": 90,
+        ">100": 0
+      },
+      "rv": {
+        "n": 358,
+        "mean": 0.008379888268156424,
+        "p95": 0,
+        "max": 2,
+        ">100": 0
+      }
+    },
+    "normal": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 33.63128491620112,
+        "p95": 42,
+        "max": 87,
+        ">100": 0
+      },
+      "rv": {
+        "n": 358,
+        "mean": 1.829608938547486,
+        "p95": 3,
+        "max": 7,
+        ">100": 0
+      }
+    },
+    "noeffects": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 35.10335195530726,
+        "p95": 46,
+        "max": 109,
+        ">100": 1
+      },
+      "rv": {
+        "n": 358,
+        "mean": 1.4217877094972067,
+        "p95": 3,
+        "max": 9,
+        ">100": 0
+      }
+    }
+  }
+}

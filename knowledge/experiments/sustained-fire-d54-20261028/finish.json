@@ -1,0 +1,516 @@
+{
+  "formalUnchanged": {
+    "release/RealisticVisionMod.swf": "638e2d408e2cf46683c41114f75773829a1b4417d74bffe9d08855a4fe343710",
+    "release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f"
+  },
+  "adopted": false,
+  "deployed": false,
+  "resolved": false,
+  "allOwnedRunsFinished": true,
+  "timingRuns": {
+    "integer-present-20": {
+      "windows": 6,
+      "intervals": 1074,
+      "shots": 784,
+      "windowVisible": true,
+      "scene": {
+        "fps": 30,
+        "nativeUnits": 1,
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "black": true,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "roomBlack": true,
+        "land": "random_mane"
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "integer-v2-present-27": {
+      "windows": 12,
+      "intervals": 2148,
+      "shots": 1527,
+      "windowVisible": true,
+      "scene": {
+        "roomBlack": true,
+        "nativeUnits": 1,
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "black": true,
+        "fps": 30,
+        "base": false,
+        "land": "random_mane",
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "platform": [
+          920,
+          1500,
+          959
+        ]
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "pixel-cache-present-30": {
+      "windows": 6,
+      "intervals": 1074,
+      "shots": 777,
+      "windowVisible": true,
+      "scene": {
+        "land": "random_mane",
+        "fps": 30,
+        "roomBlack": true,
+        "loc": "loc1_3",
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "nativeUnits": 1,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "size": [
+          48,
+          25
+        ],
+        "black": true
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "saved-native-04": {
+      "windows": 10,
+      "intervals": 1790,
+      "shots": 810,
+      "windowVisible": null,
+      "scene": {
+        "fps": 30,
+        "loc": "loc1_3",
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "roomBlack": true,
+        "platform": [
+          1241.8,
+          1821.8,
+          960
+        ],
+        "base": false,
+        "nativeUnits": 17,
+        "size": [
+          48,
+          25
+        ],
+        "land": "random_mane"
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "saved-native-08": {
+      "windows": 10,
+      "intervals": 1790,
+      "shots": 766,
+      "windowVisible": null,
+      "scene": {
+        "land": "random_mane",
+        "fps": 30,
+        "roomBlack": true,
+        "loc": "loc1_3",
+        "screen": [
+          1920,
+          1080
+        ],
+        "zoom": 1,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "size": [
+          48,
+          25
+        ],
+        "black": true,
+        "nativeUnits": 11
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "saved-profile-03": {
+      "windows": 10,
+      "intervals": 1790,
+      "shots": 810,
+      "windowVisible": null,
+      "scene": {
+        "fps": 30,
+        "loc": "loc0_0",
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "roomBlack": false,
+        "platform": [
+          886,
+          1466,
+          800
+        ],
+        "base": true,
+        "nativeUnits": 37,
+        "size": [
+          48,
+          25
+        ],
+        "land": "rbl"
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "saved-visual-07": {
+      "windows": 1,
+      "intervals": 179,
+      "shots": 129,
+      "windowVisible": null,
+      "scene": {
+        "fps": 30,
+        "loc": "loc1_3",
+        "screen": [
+          1920,
+          1080
+        ],
+        "size": [
+          48,
+          25
+        ],
+        "zoom": 1,
+        "black": true,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "roomBlack": true,
+        "nativeUnits": 14,
+        "land": "random_mane"
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "trailing-present-16": {
+      "windows": 6,
+      "intervals": 1074,
+      "shots": 796,
+      "windowVisible": true,
+      "scene": {
+        "land": "random_mane",
+        "fps": 30,
+        "roomBlack": true,
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "black": true,
+        "nativeUnits": 1
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "trailing-solo-10": {
+      "windows": 6,
+      "intervals": 1074,
+      "shots": 798,
+      "windowVisible": null,
+      "scene": {
+        "nativeUnits": 1,
+        "fps": 30,
+        "loc": "loc1_3",
+        "roomBlack": true,
+        "zoom": 1,
+        "black": true,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "screen": [
+          1920,
+          1080
+        ],
+        "size": [
+          48,
+          25
+        ],
+        "land": "random_mane"
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "trailing-solo-12": {
+      "windows": 12,
+      "intervals": 2148,
+      "shots": 1572,
+      "windowVisible": false,
+      "scene": {
+        "fps": 30,
+        "roomBlack": true,
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "black": true,
+        "land": "random_mane",
+        "base": false,
+        "nativeUnits": 1,
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "platform": [
+          920,
+          1500,
+          959
+        ]
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "trailing-visible-14": {
+      "windows": 6,
+      "intervals": 1074,
+      "shots": 790,
+      "windowVisible": false,
+      "scene": {
+        "land": "random_mane",
+        "fps": 30,
+        "roomBlack": true,
+        "loc": "loc1_3",
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "platform": [
+          920,
+          1500,
+          959
+        ],
+        "base": false,
+        "size": [
+          48,
+          25
+        ],
+        "black": true,
+        "nativeUnits": 1
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    },
+    "visible-split-28": {
+      "windows": 8,
+      "intervals": 1432,
+      "shots": 1055,
+      "windowVisible": true,
+      "scene": {
+        "land": "random_mane",
+        "roomBlack": true,
+        "nativeUnits": 1,
+        "loc": "loc1_3",
+        "screen": [
+          2560,
+          1521
+        ],
+        "zoom": 1,
+        "fps": 30,
+        "base": false,
+        "size": [
+          48,
+          25
+        ],
+        "black": true,
+        "platform": [
+          920,
+          1500,
+          959
+        ]
+      },
+      "environment": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      }
+    }
+  },
+  "visualChecks": {
+    "cell-pixels-24": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "direct-cache-pixels-31": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "direct-v2-pixels-32": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "grid-pixels-22": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "integer-pixels-18": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "integer-pixels-19": {
+      "passed": true,
+      "exit": 0,
+      "checks": 361
+    },
+    "integer-pixels-23": {
+      "passed": true,
+      "exit": 0,
+      "checks": 721
+    },
+    "integer-v2-native-26": {
+      "passed": true,
+      "exit": 0,
+      "checks": 888
+    },
+    "integer-v2-pixels-25": {
+      "passed": true,
+      "exit": 0,
+      "checks": 721
+    },
+    "pixel-cache-pixels-29": {
+      "passed": true,
+      "exit": 0,
+      "checks": 721
+    },
+    "scroll-pixels-17": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "tight-pixels-21": {
+      "passed": false,
+      "exit": 1,
+      "checks": 0
+    },
+    "trailing-native-13": {
+      "passed": true,
+      "exit": 0,
+      "checks": 888
+    },
+    "trailing-native-15": {
+      "passed": true,
+      "exit": 0,
+      "checks": 888
+    },
+    "trailing-pixels-09": {
+      "passed": true,
+      "exit": 0,
+      "checks": 361
+    },
+    "trailing-pixels-11": {
+      "passed": true,
+      "exit": 0,
+      "checks": 361
+    }
+  },
+  "rootHostSha256": "b84f24280b3c676f4068e1cdc5a6ebee89988f62bcf7a44d4dd71a4771360184",
+  "boundary": "Different processes regenerated random layouts; compare conditions within each process only. Private-desktop visible is not foreground human verification."
+}

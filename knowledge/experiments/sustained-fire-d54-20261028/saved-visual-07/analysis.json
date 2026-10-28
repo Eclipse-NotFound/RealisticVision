@@ -1,0 +1,26 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "normal": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 51.53072625698324,
+        "p95": 96,
+        "max": 144,
+        ">100": 7
+      },
+      "rv": {
+        "n": 179,
+        "mean": 3.206703910614525,
+        "p95": 5,
+        "max": 11,
+        ">100": 0
+      }
+    }
+  }
+}

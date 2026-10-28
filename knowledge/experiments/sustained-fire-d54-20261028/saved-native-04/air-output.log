@@ -1,0 +1,82 @@
+ModLoader[boot_start] v2 run=run_1793186813569_85770
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_CombatRenderProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-f09d484372df4c8f974cc110fcc70e52
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_CombatRenderProbeMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_TDFCMod] init
+622 Интерфейс
+1304 Game init
+1355 Персонаж
+0 Местность
+704 Создание местности
+507 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+RConnectRndSeed  random_mane 3682087976
+3773 Создание местности
+false
+589 Вход в местность
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 0 {"variant":"off-idle","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.348
+D54 END 0 off-idle shots=0 bullets=0
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 1 {"variant":"normal-idle","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.515
+D54 END 1 normal-idle shots=0 bullets=0
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 2 {"variant":"off","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.682
+D54 END 2 off shots=135 bullets=4
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 3 {"variant":"normal","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.848
+D54 END 3 normal shots=135 bullets=4
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 4 {"variant":"noeffects","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.015
+D54 END 4 noeffects shots=135 bullets=4
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 5 {"variant":"noeffects","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.182
+D54 END 5 noeffects shots=135 bullets=4
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 6 {"variant":"normal","n":0,"mode":"current"}
+D54 END 6 normal shots=135 bullets=4
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 7 {"variant":"off","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.348
+D54 END 7 off shots=135 bullets=3
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 8 {"variant":"normal-idle","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.515
+D54 END 8 normal-idle shots=0 bullets=2
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D54 START 9 {"variant":"off-idle","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.682
+D54 END 9 off-idle shots=0 bullets=0
+D54 COMPLETE

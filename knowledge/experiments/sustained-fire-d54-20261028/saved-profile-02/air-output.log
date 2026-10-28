@@ -1,0 +1,57 @@
+ModLoader[boot_start] v2 run=run_1793186151747_842824
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_CombatRenderProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_CombatRenderProbeMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-4e5380f96c6c45acbe028d692b513ae6
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_WallBlendMod] init
+623 Интерфейс
+1265 Game init
+1451 Персонаж
+0 Местность
+742 Создание местности
+657 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+[AddictionSystem] heartbeat attached=true t=22.349
+[AddictionSystem] heartbeat attached=true t=22.516
+[AddictionSystem] heartbeat attached=true t=22.683
+[AddictionSystem] heartbeat attached=true t=22.849
+[AddictionSystem] heartbeat attached=true t=23.016
+[AddictionSystem] heartbeat attached=true t=23.183
+[AddictionSystem] heartbeat attached=true t=23.349
+[AddictionSystem] heartbeat attached=true t=23.516
+[AddictionSystem] heartbeat attached=true t=23.683
+[AddictionSystem] heartbeat attached=true t=23.849
+[AddictionSystem] heartbeat attached=true t=24.016
+[AddictionSystem] heartbeat attached=true t=24.183
+[AddictionSystem] heartbeat attached=true t=24.349
+[AddictionSystem] heartbeat attached=true t=24.516
+[AddictionSystem] heartbeat attached=true t=24.683
+[AddictionSystem] heartbeat attached=true t=24.849
+FAIL Error: boot timeout 3 Error: boot timeout 3
+	at CombatRenderProbeMod/tick()
+	at flash.utils::Timer/tick()
