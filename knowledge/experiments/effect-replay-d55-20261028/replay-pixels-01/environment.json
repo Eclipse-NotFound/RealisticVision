@@ -1,0 +1,8 @@
+{
+  "profile": "benchmark",
+  "performanceEligible": false,
+  "reasons": [
+    "other AIR processes observed at trial endpoints: 48640,49164"
+  ],
+  "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+}

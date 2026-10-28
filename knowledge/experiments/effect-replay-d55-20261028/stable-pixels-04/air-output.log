@@ -1,0 +1,5 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+FAIL TypeError: Error #1009 TypeError: Error #1009
+	at RealisticVisionMod/applyWorldVisual()
+	at EffectLoadChecks/step()

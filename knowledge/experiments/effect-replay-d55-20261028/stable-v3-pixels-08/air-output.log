@@ -1,0 +1,25 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+LOAD ROW {"mode":"current","memory":20013056,"baseline":[5,2,2,3,6,5,2,2,3,2,5,4,2,4,2,1,7,5,2,1,3,1,4,4,2,2,3,1,5,5],"rasters":[1141,1141],"state":0,"candidate":[5,2,2,2,5,5,2,1,2,3,5,6,2,1,2,3,4,6,1,3,2,5,6,5,3,3,3,2,4,6],"count":100}
+LOAD ROW {"mode":"current","memory":26968064,"baseline":[9,8,11,11,20,22,8,8,9,10,20,22,8,8,9,11,24,26,11,8,12,11,25,17,7,7,8,10,18,18],"rasters":[1613,1613],"state":0,"candidate":[7,7,10,8,22,23,9,10,5,7,22,17,5,6,9,6,28,27,6,9,9,9,25,19,6,8,9,8,18,17],"count":500}
+LOAD ROW {"mode":"current","memory":28467200,"baseline":[1,1,2,1,1,1,3,1,2,1,1,1,1,2,2,2,3,1,3,2,1,1,1,1,1,2,1,1,0,1],"rasters":[1141,925],"state":1,"candidate":[4,1,2,1,2,1,1,2,2,1,3,1,0,1,1,1,3,1,0,1,1,1,1,2,1,1,1,1,2,2],"count":100}
+LOAD ROW {"mode":"current","memory":34746368,"baseline":[9,6,7,5,6,5,4,5,3,2,6,3,2,4,5,2,3,3,6,4,4,4,6,3,6,4,6,4,6,5],"rasters":[1613,1512],"state":1,"candidate":[10,7,7,8,6,5,3,6,4,7,6,6,6,5,4,6,5,5,6,7,6,6,6,6,7,8,6,6,7,9],"count":500}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=78, y=597, w=9, h=8)","bounds":"(x=68.9, y=594.6, w=35.599999999999994, h=14.350000000000023)","baseline":"0,11,4,16","frame":121,"stable":[1,14,2,15],"baselineLit":false,"index":16,"candidate":"0,11,4,16","candidateLit":false,"position":[73.3,597.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=435, y=107, w=2, h=5)","bounds":"(x=435.15, y=107.45, w=36.200000000000045, h=6.5)","baseline":"8,0,13,3","frame":121,"stable":[10,2,11,2],"baselineLit":false,"index":22,"candidate":"8,0,13,3","candidateLit":false,"position":[439.3,109.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=688, y=256, w=10, h=6)","bounds":"(x=679.05, y=255.15, w=22.350000000000023, h=7.049999999999983)","baseline":"14,3,19,7","frame":121,"stable":[16,6,17,6],"baselineLit":false,"index":26,"candidate":"14,3,19,7","candidateLit":false,"position":[683.3,257.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=863, y=366, w=10, h=7)","bounds":"(x=862, y=365.95, w=42.950000000000045, h=12.150000000000034)","baseline":"19,6,23,10","frame":121,"stable":[21,9,22,9],"baselineLit":false,"index":29,"candidate":"19,6,23,10","candidateLit":false,"position":[866.3,368.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=688, y=101, w=10, h=6)","bounds":"(x=674.15, y=100.45, w=43.200000000000045, h=6.950000000000003)","baseline":"14,0,19,3","frame":121,"stable":[16,2,17,2],"baselineLit":false,"index":41,"candidate":"14,0,19,3","candidateLit":false,"position":[678.3,102.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=863, y=212, w=10, h=6)","bounds":"(x=857.1, y=211.25, w=22.299999999999955, h=6.650000000000006)","baseline":"19,2,23,6","frame":121,"stable":[21,5,21,5],"baselineLit":false,"index":44,"candidate":"19,2,23,6","candidateLit":false,"position":[861.3,213.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=428, y=507, w=9, h=7)","bounds":"(x=424.9, y=506.75, w=35.85000000000002, h=13.149999999999977)","baseline":"8,9,13,13","frame":121,"stable":[10,12,11,12],"baselineLit":false,"index":52,"candidate":"8,9,13,13","candidateLit":false,"position":[429.3,509.7]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=338, y=284, w=3, h=4)","bounds":"(x=298.05, y=278.1, w=43.099999999999966, h=10.699999999999989)","baseline":"5,3,10,8","frame":121,"stable":[7,6,8,7],"baselineLit":false,"index":65,"candidate":"5,3,10,8","candidateLit":false,"position":[302.3,280.7]}
+FAIL Error: exact dense moving visuals f=121 Error: exact dense moving visuals f=121
+	at EffectLoadChecks/check()
+	at EffectLoadChecks/step()

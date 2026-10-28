@@ -1,0 +1,1563 @@
+{
+  "formalUnchanged": {
+    "release/RealisticVisionMod.swf": "638e2d408e2cf46683c41114f75773829a1b4417d74bffe9d08855a4fe343710",
+    "release/config.txt": "5136ee1923a77f5f10eab1b3994b64cbd67b09d687a7e829fb1e81d2e79a3c7f"
+  },
+  "adopted": false,
+  "deployed": false,
+  "resolved": false,
+  "allOwnedRunsFinished": true,
+  "runs": {
+    "identity-blit-native-reverse-19": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 37.30167597765363,
+              "p95": 46,
+              "max": 104,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.04189944134078,
+              "p95": 60,
+              "max": 98,
+              ">100": 0
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.14804469273743,
+              "p95": 6,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.097765363128495,
+              "p95": 60,
+              "max": 107,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.1759776536312847,
+              "p95": 6,
+              "max": 59,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 42.43854748603352,
+              "p95": 67,
+              "max": 156,
+              ">100": 4
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.008379888268156424,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 51.24860335195531,
+              "p95": 70,
+              "max": 99,
+              ">100": 0
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.988826815642458,
+              "p95": 11,
+              "max": 55,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 49.48882681564246,
+              "p95": 65,
+              "max": 120,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.4804469273743015,
+              "p95": 10,
+              "max": 16,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 12,
+        "intervals": 2148,
+        "shots": 1583,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "roomBlack": true,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "land": "random_mane"
+        }
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "identity-blit-native-timing-18": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 35.37150837988827,
+              "p95": 43,
+              "max": 126,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 44.642458100558656,
+              "p95": 58,
+              "max": 108,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.67877094972067,
+              "p95": 4,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 42.977653631284916,
+              "p95": 56,
+              "max": 89,
+              ">100": 0
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.829608938547486,
+              "p95": 4,
+              "max": 17,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 6,
+        "intervals": 1074,
+        "shots": 795,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "loc": "loc1_3",
+          "roomBlack": true,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "nativeUnits": 1,
+          "size": [
+            48,
+            25
+          ],
+          "land": "random_mane"
+        }
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "identity-blit-pixels-16": {
+      "analysis.json": {
+        "exactFrames": 60,
+        "optimizedCalls": 283,
+        "replay": {
+          "count": 71,
+          "blitCount": 61,
+          "screen": [
+            2560,
+            1521
+          ],
+          "kinds": {
+            "visualGilza": 8,
+            "visualBullet": 2,
+            "flash.display::MovieClip": 61
+          },
+          "stageFps": 120,
+          "animated": 63,
+          "sourceBitmapArea": 549,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+        },
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "roomBlack": true,
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "count": 71,
+        "blitCount": 61,
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "visualGilza": 8,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 61
+        },
+        "stageFps": 120,
+        "animated": 63,
+        "sourceBitmapArea": 549,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 283,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "identity-blit-pixels-20": {},
+    "identity-blit-pixels-21": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "identity-blit-timing-17": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "blitCount": 76,
+          "stageFps": 120,
+          "animated": 78,
+          "sourceBitmapArea": 684,
+          "count": 86,
+          "screen": [
+            2560,
+            1521
+          ],
+          "kinds": {
+            "visualGilza": 8,
+            "visualBullet": 2,
+            "flash.display::MovieClip": 76
+          },
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+        },
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 14.264705882352942,
+              "p95": 20,
+              "max": 32,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.1083333333333334,
+              "p95": 5,
+              "max": 13,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 18.714285714285715,
+              "p95": 27,
+              "max": 38,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.75,
+              "p95": 2,
+              "max": 10,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.1875,
+              "p95": 4,
+              "max": 9,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 17.27310924369748,
+              "p95": 25,
+              "max": 84,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.7083333333333334,
+              "p95": 2,
+              "max": 5,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.0375,
+              "p95": 3,
+              "max": 64,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "loc": "loc1_3",
+          "screen": [
+            2560,
+            1521
+          ],
+          "size": [
+            48,
+            25
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "nativeUnits": 1,
+          "roomBlack": true,
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "blitCount": 76,
+        "stageFps": 120,
+        "animated": 78,
+        "sourceBitmapArea": 684,
+        "count": 86,
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "visualGilza": 8,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 76
+        },
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": [
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 0
+        },
+        {
+          "variant": "normal",
+          "maskCount": 22,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 1415
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 22,
+          "optimizedCalls": 771,
+          "stableSavings": 0,
+          "drawCalls": 1136
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 22,
+          "optimizedCalls": 771,
+          "stableSavings": 0,
+          "drawCalls": 1136
+        },
+        {
+          "variant": "normal",
+          "maskCount": 22,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 1415
+        },
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 0
+        }
+      ]
+    },
+    "identity-replay-counterexample-14": {
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "screen": [
+            2560,
+            1521
+          ],
+          "size": [
+            48,
+            25
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "land": "random_mane",
+          "loc": "loc1_3",
+          "roomBlack": true,
+          "nativeUnits": 1
+        }
+      },
+      "replay": {
+        "blitCount": 77,
+        "screen": [
+          2560,
+          1521
+        ],
+        "sourceBitmapArea": 693,
+        "stageFps": 120,
+        "count": 85,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "animated": 78,
+        "kinds": {
+          "flash.display::MovieClip": 77,
+          "visualGilza": 7,
+          "visualBullet": 1
+        }
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": {
+        "optimizedCalls": 27,
+        "region": "(x=1613, y=1167, w=7, h=10)",
+        "frame": 6
+      },
+      "error": "SecurityError: fileWriteResource",
+      "replayWindows": []
+    },
+    "identity-replay-counterexample-15": {
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "roomBlack": true,
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "kinds": {
+          "flash.display::MovieClip": 73,
+          "visualGilza": 9,
+          "visualBullet": 4
+        },
+        "screen": [
+          2560,
+          1521
+        ],
+        "stageFps": 120,
+        "blitCount": 73,
+        "sourceBitmapArea": 657,
+        "animated": 77,
+        "count": 86
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": {
+        "optimizedCalls": 172,
+        "region": "(x=1539, y=1169, w=7, h=10)",
+        "frame": 24
+      },
+      "error": "Error: Replay pixel difference frame 24",
+      "replayWindows": []
+    },
+    "identity-replay-pixels-13": {
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "screen": [
+            2560,
+            1521
+          ],
+          "nativeUnits": 1,
+          "zoom": 1,
+          "black": true,
+          "roomBlack": true,
+          "base": false,
+          "land": "random_mane",
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "platform": [
+            920,
+            1500,
+            959
+          ]
+        }
+      },
+      "replay": {
+        "blitCount": 76,
+        "animated": 77,
+        "screen": [
+          2560,
+          1521
+        ],
+        "stageFps": 120,
+        "count": 85,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "kinds": {
+          "flash.display::MovieClip": 76,
+          "visualGilza": 8,
+          "visualBullet": 1
+        },
+        "sourceBitmapArea": 684
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": "Error: Replay pixel difference frame 2",
+      "replayWindows": []
+    },
+    "replay-motion-03": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": false,
+          "reasons": [
+            "other AIR processes observed at trial endpoints: 48640,49164"
+          ],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "stageFps": 120,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "sourceBitmapArea": 639,
+          "kinds": {
+            "flash.display::MovieClip": 71,
+            "visualGilza": 8,
+            "visualBullet": 2
+          },
+          "count": 81,
+          "screen": [
+            2560,
+            1521
+          ],
+          "blitCount": 71,
+          "animated": 73
+        },
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 16.563025210084035,
+              "p95": 23,
+              "max": 90,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.6083333333333334,
+              "p95": 6,
+              "max": 14,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 24.50420168067227,
+              "p95": 33,
+              "max": 88,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.825,
+              "p95": 2,
+              "max": 2,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.6458333333333335,
+              "p95": 7,
+              "max": 13,
+              ">100": 0
+            }
+          },
+          "fixed": {
+            "interval": {
+              "n": 238,
+              "mean": 18.31512605042017,
+              "p95": 25,
+              "max": 83,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.7291666666666666,
+              "p95": 1,
+              "max": 10,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.6375,
+              "p95": 4,
+              "max": 63,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": false,
+        "reasons": [
+          "other AIR processes observed at trial endpoints: 48640,49164"
+        ],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "nativeUnits": 1,
+          "fps": 30,
+          "loc": "loc1_3",
+          "roomBlack": true,
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "screen": [
+            2560,
+            1521
+          ],
+          "size": [
+            48,
+            25
+          ],
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "stageFps": 120,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "sourceBitmapArea": 639,
+        "kinds": {
+          "flash.display::MovieClip": 71,
+          "visualGilza": 8,
+          "visualBullet": 2
+        },
+        "count": 81,
+        "screen": [
+          2560,
+          1521
+        ],
+        "blitCount": 71,
+        "animated": 73
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": [
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "normal",
+          "maskCount": 57,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "fixed",
+          "maskCount": 61,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "fixed",
+          "maskCount": 61,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "normal",
+          "maskCount": 57,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": null,
+          "drawCalls": null
+        }
+      ]
+    },
+    "replay-pixels-01": {
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": false,
+        "reasons": [
+          "other AIR processes observed at trial endpoints: 48640,49164"
+        ],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "roomBlack": true,
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "sourceBitmapArea": 693,
+        "animated": 81,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "count": 90,
+        "blitCount": 77,
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "flash.display::MovieClip": 77,
+          "visualGilza": 9,
+          "visualBullet": 4
+        },
+        "stageFps": 120
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": [
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "normal",
+          "maskCount": 32,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 32,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 32,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "normal",
+          "maskCount": 32,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        },
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": null,
+          "stableSavings": null,
+          "drawCalls": null
+        }
+      ]
+    },
+    "replay-pixels-02": {
+      "analysis.json": {
+        "exactFrames": 60,
+        "replay": {
+          "animated": 93,
+          "screen": [
+            2560,
+            1521
+          ],
+          "kinds": {
+            "flash.display::MovieClip": 89,
+            "visualGilza": 10,
+            "visualBullet": 4
+          },
+          "count": 103,
+          "sourceBitmapArea": 801,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "stageFps": 120,
+          "blitCount": 89
+        },
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": false,
+          "reasons": [
+            "other AIR processes observed at trial endpoints: 48640,49164"
+          ],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": false,
+        "reasons": [
+          "other AIR processes observed at trial endpoints: 48640,49164"
+        ],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "roomBlack": true,
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "animated": 93,
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "flash.display::MovieClip": 89,
+          "visualGilza": 10,
+          "visualBullet": 4
+        },
+        "count": 103,
+        "sourceBitmapArea": 801,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "stageFps": 120,
+        "blitCount": 89
+      },
+      "exactFrames": 60,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "stable-pixels-04": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "stable-v2-explain-06": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "stable-v2-maskdiff-07": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "stable-v2-pixels-05": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "stable-v3-pixels-08": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "stable-v4-native-timing-12": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 37.865921787709496,
+              "p95": 50,
+              "max": 223,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 45.49441340782123,
+              "p95": 57,
+              "max": 112,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.3966480446927374,
+              "p95": 4,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 46.039106145251395,
+              "p95": 62,
+              "max": 133,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.8016759776536313,
+              "p95": 5,
+              "max": 11,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 6,
+        "intervals": 1074,
+        "shots": 783,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "screen": [
+            2560,
+            1521
+          ],
+          "zoom": 1,
+          "black": true,
+          "nativeUnits": 1,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "roomBlack": true,
+          "land": "random_mane"
+        }
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "stable-v4-pixels-09": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 1081
+      }
+    },
+    "stable-v4-replay-pixels-10": {
+      "analysis.json": {
+        "exactFrames": 60,
+        "optimizedCalls": 3298,
+        "replay": {
+          "stageFps": 120,
+          "kinds": {
+            "visualGilza": 10,
+            "visualBullet": 2,
+            "flash.display::MovieClip": 81
+          },
+          "screen": [
+            2560,
+            1521
+          ],
+          "animated": 83,
+          "blitCount": 81,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "sourceBitmapArea": 729,
+          "count": 93
+        },
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "nativeUnits": 1,
+          "screen": [
+            2560,
+            1521
+          ],
+          "roomBlack": true,
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "loc": "loc1_3",
+          "size": [
+            48,
+            25
+          ],
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "stageFps": 120,
+        "kinds": {
+          "visualGilza": 10,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 81
+        },
+        "screen": [
+          2560,
+          1521
+        ],
+        "animated": 83,
+        "blitCount": 81,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "sourceBitmapArea": 729,
+        "count": 93
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 3298,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": []
+    },
+    "stable-v4-replay-timing-11": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "kinds": {
+            "visualGilza": 9,
+            "flash.display::MovieClip": 65,
+            "visualBullet": 2
+          },
+          "screen": [
+            2560,
+            1521
+          ],
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "count": 76,
+          "stageFps": 120,
+          "animated": 67,
+          "blitCount": 65,
+          "sourceBitmapArea": 585
+        },
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 12.953781512605042,
+              "p95": 18,
+              "max": 79,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.0416666666666665,
+              "p95": 6,
+              "max": 65,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 17.83613445378151,
+              "p95": 22,
+              "max": 71,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.5708333333333333,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.8666666666666667,
+              "p95": 3,
+              "max": 56,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 17.147058823529413,
+              "p95": 23,
+              "max": 92,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 1.0375,
+              "p95": 2,
+              "max": 3,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.275,
+              "p95": 3,
+              "max": 76,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "native": {
+        "windows": 0,
+        "intervals": 0,
+        "shots": 0,
+        "windowVisible": true,
+        "scene": {
+          "fps": 30,
+          "loc": "loc1_3",
+          "roomBlack": true,
+          "zoom": 1,
+          "black": true,
+          "platform": [
+            920,
+            1500,
+            959
+          ],
+          "base": false,
+          "screen": [
+            2560,
+            1521
+          ],
+          "size": [
+            48,
+            25
+          ],
+          "nativeUnits": 1,
+          "land": "random_mane"
+        }
+      },
+      "replay": {
+        "kinds": {
+          "visualGilza": 9,
+          "flash.display::MovieClip": 65,
+          "visualBullet": 2
+        },
+        "screen": [
+          2560,
+          1521
+        ],
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "count": 76,
+        "stageFps": 120,
+        "animated": 67,
+        "blitCount": 65,
+        "sourceBitmapArea": 585
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "pixelFailure": null,
+      "error": null,
+      "replayWindows": [
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 0
+        },
+        {
+          "variant": "normal",
+          "maskCount": 45,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 2703
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 45,
+          "optimizedCalls": 7391,
+          "stableSavings": 6385,
+          "drawCalls": 829
+        },
+        {
+          "variant": "candidate",
+          "maskCount": 45,
+          "optimizedCalls": 7391,
+          "stableSavings": 6385,
+          "drawCalls": 829
+        },
+        {
+          "variant": "normal",
+          "maskCount": 45,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 2703
+        },
+        {
+          "variant": "off",
+          "maskCount": 0,
+          "optimizedCalls": 0,
+          "stableSavings": 0,
+          "drawCalls": 0
+        }
+      ]
+    }
+  },
+  "rootHostSha256": "a80ed32bee50c612cb46ea1e581c8ca9c81072e0b9e6ee1a51e5bacefbdcba19",
+  "boundary": "Replay uses original visuals and deterministic trajectories, not recorded gameplay. Private-desktop visible is not foreground human verification. Native scenes regenerate random layouts."
+}

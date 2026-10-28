@@ -1,0 +1,6 @@
+{
+  "profile": "benchmark",
+  "performanceEligible": true,
+  "reasons": [],
+  "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+}

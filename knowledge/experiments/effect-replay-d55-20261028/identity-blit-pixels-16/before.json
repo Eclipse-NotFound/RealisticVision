@@ -1,0 +1,34 @@
+{
+  "atMs": 1793202940928,
+  "memory": {
+    "load": 72,
+    "totalPhysical": 33879638016,
+    "availablePhysical": 9237315584,
+    "commitLimit": 58533253120,
+    "availableCommit": 12255555584
+  },
+  "air": {
+    "processes": [],
+    "unreadableProcessCount": 170,
+    "scope": "endpoints only; absence is not proof of an idle computer"
+  },
+  "runner": {
+    "cpuPriorityClass": 32,
+    "errors": [],
+    "memoryPriority": 5,
+    "powerThrottling": {
+      "controlMask": 0,
+      "stateMask": 0,
+      "highQoS": false
+    },
+    "inJob": true,
+    "innermostJobLimits": {
+      "flags": 10240,
+      "processCommitCap": null,
+      "jobCommitCap": null,
+      "workingSetCap": null,
+      "boundary": "current innermost job only; nested ancestors may impose further limits"
+    }
+  },
+  "warnings": []
+}
