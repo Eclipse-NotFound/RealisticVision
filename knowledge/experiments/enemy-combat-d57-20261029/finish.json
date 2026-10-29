@@ -1,0 +1,4621 @@
+{
+  "adopted": null,
+  "deployed": false,
+  "fullyResolved": false,
+  "installedSha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+  "runs": {
+    "01-enemy-attribution": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 60.01260504201681,
+              "p95": 87,
+              "max": 131,
+              ">100": 5
+            },
+            "rv": {
+              "n": 238,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 62.331932773109244,
+              "p95": 81,
+              "max": 128,
+              ">100": 3
+            },
+            "rv": {
+              "n": 238,
+              "mean": 3.73109243697479,
+              "p95": 6,
+              "max": 12,
+              ">100": 0
+            }
+          },
+          "current/enemy-nodraw": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 77.45798319327731,
+              "p95": 123,
+              "max": 483,
+              ">100": 18
+            },
+            "rv": {
+              "n": 238,
+              "mean": 4.390756302521009,
+              "p95": 8,
+              "max": 24,
+              ">100": 0
+            }
+          },
+          "current/effect-nodraw": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 66.79411764705883,
+              "p95": 83,
+              "max": 115,
+              ">100": 4
+            },
+            "rv": {
+              "n": 238,
+              "mean": 4.03781512605042,
+              "p95": 7,
+              "max": 16,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 8,
+      "completeIntervals": 952,
+      "samplePlayerShotsLowerBound": 0,
+      "sampleEnemyShotsLowerBound": 0,
+      "nativeMenuClosed": null,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 827904,
+            "rasters": 662,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 7570,
+            "visuals": 58,
+            "previousPixels": 827904,
+            "rawPixels": 1425856
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "enemy-nodraw",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 855744,
+            "rasters": 681,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 8072,
+            "visuals": 45,
+            "previousPixels": 855744,
+            "rawPixels": 1475584
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "effect-nodraw",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 839104,
+            "rasters": 681,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 7646,
+            "visuals": 45,
+            "previousPixels": 839104,
+            "rawPixels": 1465792
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "effect-nodraw",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 851584,
+            "rasters": 682,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 7492,
+            "visuals": 50,
+            "previousPixels": 851584,
+            "rawPixels": 1487936
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "enemy-nodraw",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 855232,
+            "rasters": 685,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 7991,
+            "visuals": 47,
+            "previousPixels": 855232,
+            "rawPixels": 1477120
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 856960,
+            "rasters": 684,
+            "extraEmptyVisuals": 0,
+            "worldPass": 165,
+            "optimizedCalls": 7795,
+            "visuals": 49,
+            "previousPixels": 856960,
+            "rawPixels": 1483200
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        }
+      ]
+    },
+    "02-unit-pixels": {},
+    "03-unit-pixels": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=15 Error: body/bar/extended weapon render frame=15",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "04-unit-independent": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=360 Error: body/bar/extended weapon render frame=360",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "05-unit-switch": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=381 Error: body/bar/extended weapon render frame=381",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "06-unit-fresh": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=432 Error: body/bar/extended weapon render frame=432",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "07-unit-recreated": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=432 Error: body/bar/extended weapon render frame=432",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "08-unit-counterexample": {
+      "result.json": {
+        "exit": 1,
+        "summary": [
+          "FAIL Error: body/bar/extended weapon render frame=432 Error: body/bar/extended weapon render frame=432",
+          "",
+          "\tat MaskRenderChecks/check()",
+          "",
+          "\tat MaskRenderChecks/step()",
+          ""
+        ]
+      }
+    },
+    "09-unit-guard": {
+      "result.json": {
+        "exit": 0,
+        "summary": [
+          "[RVision] room motion-corner 24x18 lDist2=2500 mode=current",
+          "",
+          "[RVision] room motion-corner 24x18 lDist2=2500 mode=current",
+          "",
+          "RENDER COMPLETE passed=1531 clipHits=84",
+          ""
+        ]
+      }
+    },
+    "10-unit-combat": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 54.88826815642458,
+              "p95": 73,
+              "max": 130,
+              ">100": 5
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.00558659217877095,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.706703910614525,
+              "p95": 16,
+              "max": 34,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.810055865921788,
+              "p95": 10,
+              "max": 76,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.21508379888268,
+              "p95": 50,
+              "max": 111,
+              ">100": 2
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.1564245810055866,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 65.07262569832402,
+              "p95": 86,
+              "max": 155,
+              ">100": 7
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.952513966480447,
+              "p95": 6,
+              "max": 18,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 9.787709497206704,
+              "p95": 17,
+              "max": 65,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 7.284916201117318,
+              "p95": 11,
+              "max": 72,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 43.891061452513966,
+              "p95": 59,
+              "max": 131,
+              ">100": 2
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.108938547486034,
+              "p95": 6,
+              "max": 18,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 69.74581005586592,
+              "p95": 92,
+              "max": 185,
+              ">100": 15
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.198324022346369,
+              "p95": 7,
+              "max": 22,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 10.156424581005586,
+              "p95": 18,
+              "max": 64,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 8.081005586592179,
+              "p95": 13,
+              "max": 76,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 47.125698324022345,
+              "p95": 67,
+              "max": 164,
+              ">100": 4
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.38268156424581,
+              "p95": 7,
+              "max": 22,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 49.98324022346369,
+              "p95": 65,
+              "max": 105,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.360335195530727,
+              "p95": 14,
+              "max": 64,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.240223463687151,
+              "p95": 11,
+              "max": 59,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 35.29050279329609,
+              "p95": 43,
+              "max": 65,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.09217877094972067,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 69.64245810055866,
+              "p95": 90,
+              "max": 128,
+              ">100": 8
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.301675977653631,
+              "p95": 11,
+              "max": 17,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.754189944134078,
+              "p95": 16,
+              "max": 62,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.717877094972067,
+              "p95": 12,
+              "max": 55,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 47.77653631284916,
+              "p95": 63,
+              "max": 103,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.393854748603352,
+              "p95": 11,
+              "max": 17,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 67.6145251396648,
+              "p95": 85,
+              "max": 125,
+              ">100": 7
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.4692737430167595,
+              "p95": 12,
+              "max": 16,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.687150837988828,
+              "p95": 16,
+              "max": 64,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.687150837988827,
+              "p95": 11,
+              "max": 58,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 45.62849162011173,
+              "p95": 58,
+              "max": 89,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.611731843575419,
+              "p95": 12,
+              "max": 16,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 0,
+      "sampleEnemyShotsLowerBound": 0,
+      "nativeMenuClosed": null,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "rasters": 661,
+            "emptyVisuals": 0,
+            "softPixels": 948864,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 11565,
+            "rawPixels": 1352128,
+            "visuals": 39,
+            "previousPixels": 948864,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 681,
+            "emptyVisuals": 0,
+            "softPixels": 996416,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 14796,
+            "rawPixels": 1439040,
+            "visuals": 46,
+            "previousPixels": 996416,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 640,
+            "emptyVisuals": 0,
+            "softPixels": 958976,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 15091,
+            "rawPixels": 1369344,
+            "visuals": 41,
+            "previousPixels": 958976,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "rasters": 689,
+            "emptyVisuals": 2,
+            "softPixels": 1014144,
+            "extraEmptyVisuals": 1,
+            "optimizedCalls": 12108,
+            "rawPixels": 1425984,
+            "visuals": 40,
+            "previousPixels": 1014144,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "rasters": 729,
+            "emptyVisuals": 0,
+            "softPixels": 1173312,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 1534336,
+            "visuals": 55,
+            "previousPixels": 1173312,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 701,
+            "emptyVisuals": 0,
+            "softPixels": 1098816,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 1468224,
+            "visuals": 64,
+            "previousPixels": 1098816,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 721,
+            "emptyVisuals": 0,
+            "softPixels": 1147072,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 1521216,
+            "visuals": 52,
+            "previousPixels": 1147072,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "rasters": 673,
+            "emptyVisuals": 0,
+            "softPixels": 1066112,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 1438656,
+            "visuals": 40,
+            "previousPixels": 1066112,
+            "worldPass": 270
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        }
+      ]
+    },
+    "11-native-menu-combat": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 48.35474860335196,
+              "p95": 63,
+              "max": 139,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.008379888268156424,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.53631284916201,
+              "p95": 15,
+              "max": 95,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.094972067039106,
+              "p95": 11,
+              "max": 20,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 33.57541899441341,
+              "p95": 43,
+              "max": 124,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.14804469273743018,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 49.02793296089386,
+              "p95": 62,
+              "max": 118,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.0726256983240225,
+              "p95": 5,
+              "max": 10,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.19832402234637,
+              "p95": 15,
+              "max": 70,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.103351955307263,
+              "p95": 10,
+              "max": 69,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 31.54189944134078,
+              "p95": 38,
+              "max": 73,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 3.184357541899441,
+              "p95": 5,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 52.35474860335196,
+              "p95": 68,
+              "max": 110,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.1675977653631286,
+              "p95": 5,
+              "max": 11,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.600558659217876,
+              "p95": 15,
+              "max": 65,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.64245810055866,
+              "p95": 11,
+              "max": 63,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 33.832402234636874,
+              "p95": 45,
+              "max": 55,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 3.2793296089385473,
+              "p95": 5,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.64804469273743,
+              "p95": 65,
+              "max": 106,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.0111731843575419,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.343575418994414,
+              "p95": 15,
+              "max": 63,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.181564245810056,
+              "p95": 10,
+              "max": 60,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 32.98882681564246,
+              "p95": 44,
+              "max": 82,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.1340782122905028,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 63.597765363128495,
+              "p95": 92,
+              "max": 152,
+              ">100": 12
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.879888268156424,
+              "p95": 11,
+              "max": 19,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.561452513966481,
+              "p95": 15,
+              "max": 55,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.5,
+              "p95": 10,
+              "max": 58,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 42.47486033519553,
+              "p95": 64,
+              "max": 119,
+              ">100": 4
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.06145251396648,
+              "p95": 11,
+              "max": 19,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 59.69553072625698,
+              "p95": 80,
+              "max": 123,
+              ">100": 5
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.0027932960893855,
+              "p95": 11,
+              "max": 66,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.44413407821229,
+              "p95": 16,
+              "max": 65,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.846368715083799,
+              "p95": 10,
+              "max": 14,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.298882681564244,
+              "p95": 52,
+              "max": 92,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.106145251396648,
+              "p95": 11,
+              "max": 66,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 0,
+      "sampleEnemyShotsLowerBound": 0,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "previousPixels": 0,
+            "worldPass": 0,
+            "rasters": 0,
+            "optimizedCalls": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "visuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "previousPixels": 572736,
+            "worldPass": 270,
+            "rasters": 456,
+            "optimizedCalls": 14204,
+            "softPixels": 572736,
+            "extraEmptyVisuals": 0,
+            "visuals": 44,
+            "emptyVisuals": 0,
+            "rawPixels": 952512
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "previousPixels": 560448,
+            "worldPass": 270,
+            "rasters": 447,
+            "optimizedCalls": 11133,
+            "softPixels": 560448,
+            "extraEmptyVisuals": 0,
+            "visuals": 49,
+            "emptyVisuals": 0,
+            "rawPixels": 939776
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "previousPixels": 560512,
+            "worldPass": 270,
+            "rasters": 450,
+            "optimizedCalls": 10788,
+            "softPixels": 560512,
+            "extraEmptyVisuals": 0,
+            "visuals": 40,
+            "emptyVisuals": 0,
+            "rawPixels": 952448
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "previousPixels": 584768,
+            "worldPass": 270,
+            "rasters": 468,
+            "optimizedCalls": 13771,
+            "softPixels": 584768,
+            "extraEmptyVisuals": 0,
+            "visuals": 43,
+            "emptyVisuals": 0,
+            "rawPixels": 983616
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "previousPixels": 0,
+            "worldPass": 0,
+            "rasters": 0,
+            "optimizedCalls": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "visuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "previousPixels": 0,
+            "worldPass": 0,
+            "rasters": 0,
+            "optimizedCalls": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "visuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "previousPixels": 629824,
+            "worldPass": 270,
+            "rasters": 471,
+            "optimizedCalls": 0,
+            "softPixels": 629824,
+            "extraEmptyVisuals": 0,
+            "visuals": 55,
+            "emptyVisuals": 0,
+            "rawPixels": 992128
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "previousPixels": 647040,
+            "worldPass": 270,
+            "rasters": 486,
+            "optimizedCalls": 0,
+            "softPixels": 647040,
+            "extraEmptyVisuals": 0,
+            "visuals": 48,
+            "emptyVisuals": 0,
+            "rawPixels": 1017152
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "previousPixels": 629568,
+            "worldPass": 270,
+            "rasters": 472,
+            "optimizedCalls": 0,
+            "softPixels": 629568,
+            "extraEmptyVisuals": 0,
+            "visuals": 61,
+            "emptyVisuals": 0,
+            "rawPixels": 985408
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "previousPixels": 625344,
+            "worldPass": 270,
+            "rasters": 468,
+            "optimizedCalls": 0,
+            "softPixels": 625344,
+            "extraEmptyVisuals": 0,
+            "visuals": 40,
+            "emptyVisuals": 0,
+            "rawPixels": 978304
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "previousPixels": 0,
+            "worldPass": 0,
+            "rasters": 0,
+            "optimizedCalls": 0,
+            "softPixels": 0,
+            "extraEmptyVisuals": 0,
+            "visuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": null,
+          "sampleNativeEnemyShotsLowerBound": null,
+          "sampleForcedEnemyShots": null
+        }
+      ]
+    },
+    "12-corrected-combat": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 51.85195530726257,
+              "p95": 72,
+              "max": 159,
+              ">100": 6
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 9.061452513966481,
+              "p95": 16,
+              "max": 87,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.240223463687151,
+              "p95": 11,
+              "max": 17,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 36.44134078212291,
+              "p95": 51,
+              "max": 126,
+              ">100": 4
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.10893854748603352,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 56.57821229050279,
+              "p95": 83,
+              "max": 175,
+              ">100": 8
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.0307262569832405,
+              "p95": 7,
+              "max": 17,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.737430167597765,
+              "p95": 16,
+              "max": 68,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.335195530726257,
+              "p95": 11,
+              "max": 62,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 37.35474860335196,
+              "p95": 58,
+              "max": 156,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.150837988826815,
+              "p95": 7,
+              "max": 17,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 57.159217877094974,
+              "p95": 91,
+              "max": 270,
+              ">100": 11
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.494413407821229,
+              "p95": 9,
+              "max": 49,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.79050279329609,
+              "p95": 16,
+              "max": 75,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.276536312849162,
+              "p95": 11,
+              "max": 69,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 37.46368715083799,
+              "p95": 62,
+              "max": 229,
+              ">100": 3
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.628491620111732,
+              "p95": 9,
+              "max": 49,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 50.91340782122905,
+              "p95": 68,
+              "max": 237,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.008379888268156424,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 9.53072625698324,
+              "p95": 17,
+              "max": 82,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.5027932960893855,
+              "p95": 12,
+              "max": 26,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 34.74301675977654,
+              "p95": 45,
+              "max": 219,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.13687150837988826,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 60.798882681564244,
+              "p95": 76,
+              "max": 129,
+              ">100": 6
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.9581005586592175,
+              "p95": 14,
+              "max": 56,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.477653631284916,
+              "p95": 16,
+              "max": 70,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.167597765363128,
+              "p95": 9,
+              "max": 67,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.039106145251395,
+              "p95": 48,
+              "max": 98,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 7.114525139664805,
+              "p95": 14,
+              "max": 56,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 64.36033519553072,
+              "p95": 90,
+              "max": 181,
+              ">100": 11
+            },
+            "rv": {
+              "n": 358,
+              "mean": 7.29608938547486,
+              "p95": 15,
+              "max": 57,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.860335195530727,
+              "p95": 17,
+              "max": 57,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.083798882681564,
+              "p95": 11,
+              "max": 19,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 41.977653631284916,
+              "p95": 57,
+              "max": 155,
+              ">100": 6
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 7.43854748603352,
+              "p95": 15,
+              "max": 57,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 1012,
+      "sampleEnemyShotsLowerBound": 2338,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 0,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 1727424,
+            "optimizedCalls": 11616,
+            "emptyVisuals": 0,
+            "rawPixels": 2298624,
+            "softPixels": 1727424,
+            "rasters": 1046,
+            "visuals": 47
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 2,
+            "previousPixels": 1951936,
+            "optimizedCalls": 14731,
+            "emptyVisuals": 2,
+            "rawPixels": 2557568,
+            "softPixels": 1951936,
+            "rasters": 1137,
+            "visuals": 59
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 3,
+            "previousPixels": 1891008,
+            "optimizedCalls": 14745,
+            "emptyVisuals": 3,
+            "rawPixels": 2506304,
+            "softPixels": 1891008,
+            "rasters": 1129,
+            "visuals": 50
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 86,
+          "sampleNativeEnemyShotsLowerBound": 189,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 3,
+            "previousPixels": 1896704,
+            "optimizedCalls": 11793,
+            "emptyVisuals": 3,
+            "rawPixels": 2522112,
+            "softPixels": 1896704,
+            "rasters": 1131,
+            "visuals": 51
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 74,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 0,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 0,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 72,
+          "sampleNativeEnemyShotsLowerBound": 205,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 1910016,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 2530112,
+            "softPixels": 1910016,
+            "rasters": 1139,
+            "visuals": 54
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 73,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 1856128,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 2514752,
+            "softPixels": 1856128,
+            "rasters": 1117,
+            "visuals": 52
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 1791552,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 2410112,
+            "softPixels": 1791552,
+            "rasters": 1071,
+            "visuals": 55
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 186,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 1937280,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 2573056,
+            "softPixels": 1937280,
+            "rasters": 1158,
+            "visuals": 50
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "previousPixels": 0,
+            "optimizedCalls": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 197,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    },
+    "13-alpha-pixels": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 722
+      }
+    },
+    "14-alpha-native-pixels": {
+      "analysis.json": {
+        "alphaHits": 1716,
+        "exactFrames": 60,
+        "optimizedCalls": 1924,
+        "replay": {
+          "sourceBitmapArea": 783,
+          "kinds": {
+            "flash.display::MovieClip": 87,
+            "visualGilza": 10,
+            "visualBullet": 2
+          },
+          "stageFps": 120,
+          "screen": [
+            2560,
+            1521
+          ],
+          "blitCount": 87,
+          "count": 99,
+          "animated": 89,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+        },
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 0,
+      "completeIntervals": 0,
+      "samplePlayerShotsLowerBound": 0,
+      "sampleEnemyShotsLowerBound": 0,
+      "nativeMenuClosed": null,
+      "windows": []
+    },
+    "15-alpha-combat": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 45.86871508379888,
+              "p95": 57,
+              "max": 231,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.00558659217877095,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.689944134078212,
+              "p95": 14,
+              "max": 36,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.198324022346369,
+              "p95": 10,
+              "max": 54,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 31.8463687150838,
+              "p95": 40,
+              "max": 219,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.1340782122905028,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 51.6731843575419,
+              "p95": 68,
+              "max": 122,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.195530726256983,
+              "p95": 9,
+              "max": 26,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.502793296089385,
+              "p95": 15,
+              "max": 69,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.189944134078212,
+              "p95": 11,
+              "max": 26,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 32.68994413407821,
+              "p95": 41,
+              "max": 88,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.290502793296089,
+              "p95": 9,
+              "max": 26,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 50.44134078212291,
+              "p95": 67,
+              "max": 117,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.067039106145251,
+              "p95": 8,
+              "max": 26,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.421787709497206,
+              "p95": 15,
+              "max": 63,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.304469273743017,
+              "p95": 11,
+              "max": 65,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 31.533519553072626,
+              "p95": 39,
+              "max": 78,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.181564245810056,
+              "p95": 9,
+              "max": 26,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 45.19832402234637,
+              "p95": 60,
+              "max": 104,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.00558659217877095,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.916201117318436,
+              "p95": 15,
+              "max": 39,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.681564245810056,
+              "p95": 10,
+              "max": 18,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 31.472067039106147,
+              "p95": 39,
+              "max": 88,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.12849162011173185,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 57.245810055865924,
+              "p95": 75,
+              "max": 190,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.681564245810056,
+              "p95": 11,
+              "max": 66,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.427374301675977,
+              "p95": 15,
+              "max": 56,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.977653631284916,
+              "p95": 10,
+              "max": 58,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 36.06145251396648,
+              "p95": 47,
+              "max": 116,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.779329608938547,
+              "p95": 11,
+              "max": 66,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 57.349162011173185,
+              "p95": 72,
+              "max": 126,
+              ">100": 5
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.829608938547486,
+              "p95": 12,
+              "max": 69,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.315642458100559,
+              "p95": 16,
+              "max": 30,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.43854748603352,
+              "p95": 11,
+              "max": 70,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 35.66201117318436,
+              "p95": 43,
+              "max": 88,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.932960893854749,
+              "p95": 12,
+              "max": 69,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 1057,
+      "sampleEnemyShotsLowerBound": 2323,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 194,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3346880,
+            "previousPixels": 1939200,
+            "softPixels": 1939200,
+            "rasters": 1413,
+            "visuals": 34,
+            "optimizedCalls": 10164,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 5075,
+            "rawPixels": 3266944,
+            "previousPixels": 1550336,
+            "softPixels": 1550336,
+            "rasters": 1368,
+            "visuals": 36,
+            "optimizedCalls": 9727,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 191,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 5248,
+            "rawPixels": 3280832,
+            "previousPixels": 1309824,
+            "softPixels": 1309824,
+            "rasters": 1343,
+            "visuals": 32,
+            "optimizedCalls": 9740,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3239808,
+            "previousPixels": 1353280,
+            "softPixels": 1353280,
+            "rasters": 1337,
+            "visuals": 35,
+            "optimizedCalls": 9569,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 190,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 194,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3199808,
+            "previousPixels": 1465600,
+            "softPixels": 1465600,
+            "rasters": 1284,
+            "visuals": 30,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3292288,
+            "previousPixels": 1550400,
+            "softPixels": 1550400,
+            "rasters": 1345,
+            "visuals": 48,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 200,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3388224,
+            "previousPixels": 1538560,
+            "softPixels": 1538560,
+            "rasters": 1379,
+            "visuals": 29,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 3162368,
+            "previousPixels": 1483200,
+            "softPixels": 1483200,
+            "rasters": 1302,
+            "visuals": 36,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "rasters": 0,
+            "visuals": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "extraEmptyVisuals": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 188,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    },
+    "16-alpha-reverse-phases": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 45.374301675977655,
+              "p95": 59,
+              "max": 109,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.089385474860336,
+              "p95": 14,
+              "max": 63,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.899441340782123,
+              "p95": 11,
+              "max": 65,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 31.23463687150838,
+              "p95": 37,
+              "max": 96,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.15083798882681565,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 50.91340782122905,
+              "p95": 65,
+              "max": 118,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.432960893854749,
+              "p95": 9,
+              "max": 68,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.9972067039106145,
+              "p95": 14,
+              "max": 30,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.832402234636872,
+              "p95": 9,
+              "max": 54,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 32.51675977653631,
+              "p95": 40,
+              "max": 79,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.567039106145251,
+              "p95": 9,
+              "max": 68,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 50.97486033519553,
+              "p95": 66,
+              "max": 115,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.298882681564246,
+              "p95": 7,
+              "max": 72,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.804469273743017,
+              "p95": 15,
+              "max": 30,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.044692737430168,
+              "p95": 10,
+              "max": 60,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 32.729050279329606,
+              "p95": 40,
+              "max": 82,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.396648044692737,
+              "p95": 7,
+              "max": 72,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 44.29608938547486,
+              "p95": 57,
+              "max": 106,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.125698324022347,
+              "p95": 14,
+              "max": 70,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.745810055865922,
+              "p95": 9,
+              "max": 59,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 30.354748603351954,
+              "p95": 35,
+              "max": 44,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.06983240223463687,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 60.53351955307262,
+              "p95": 76,
+              "max": 174,
+              ">100": 5
+            },
+            "rv": {
+              "n": 358,
+              "mean": 7.083798882681564,
+              "p95": 14,
+              "max": 67,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.38268156424581,
+              "p95": 16,
+              "max": 75,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.896648044692737,
+              "p95": 9,
+              "max": 56,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.05307262569833,
+              "p95": 49,
+              "max": 155,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 7.201117318435754,
+              "p95": 14,
+              "max": 67,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 58.477653631284916,
+              "p95": 72,
+              "max": 112,
+              ">100": 4
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.793296089385475,
+              "p95": 11,
+              "max": 31,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.363128491620111,
+              "p95": 15,
+              "max": 70,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.053072625698324,
+              "p95": 9,
+              "max": 65,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 37.16201117318436,
+              "p95": 44,
+              "max": 56,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.899441340782123,
+              "p95": 11,
+              "max": 31,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 1030,
+      "sampleEnemyShotsLowerBound": 2338,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 0,
+            "softPixels": 0,
+            "rawPixels": 0,
+            "rasters": 0,
+            "previousPixels": 0,
+            "emptyVisuals": 0,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 193,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 1,
+            "alphaHits": 5006,
+            "visuals": 38,
+            "softPixels": 2690112,
+            "rawPixels": 3587072,
+            "rasters": 1568,
+            "previousPixels": 2690112,
+            "emptyVisuals": 1,
+            "optimizedCalls": 10739
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 194,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 8,
+            "alphaHits": 0,
+            "visuals": 46,
+            "softPixels": 2510336,
+            "rawPixels": 3291520,
+            "rasters": 1459,
+            "previousPixels": 2510336,
+            "emptyVisuals": 8,
+            "optimizedCalls": 10094
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 86,
+          "sampleNativeEnemyShotsLowerBound": 189,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 35,
+            "softPixels": 2520896,
+            "rawPixels": 3338048,
+            "rasters": 1432,
+            "previousPixels": 2520896,
+            "emptyVisuals": 0,
+            "optimizedCalls": 10333
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 197,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 9,
+            "alphaHits": 5260,
+            "visuals": 47,
+            "softPixels": 2306368,
+            "rawPixels": 3213312,
+            "rasters": 1371,
+            "previousPixels": 2306368,
+            "emptyVisuals": 9,
+            "optimizedCalls": 10300
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 0,
+            "softPixels": 0,
+            "rawPixels": 0,
+            "rasters": 0,
+            "previousPixels": 0,
+            "emptyVisuals": 0,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 0,
+            "softPixels": 0,
+            "rawPixels": 0,
+            "rasters": 0,
+            "previousPixels": 0,
+            "emptyVisuals": 0,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 189,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 37,
+            "softPixels": 2400768,
+            "rawPixels": 3275456,
+            "rasters": 1383,
+            "previousPixels": 2400768,
+            "emptyVisuals": 0,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 197,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 1,
+            "alphaHits": 0,
+            "visuals": 47,
+            "softPixels": 2455552,
+            "rawPixels": 3371840,
+            "rasters": 1436,
+            "previousPixels": 2455552,
+            "emptyVisuals": 1,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 74,
+          "sampleNativeEnemyShotsLowerBound": 202,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 3,
+            "alphaHits": 0,
+            "visuals": 60,
+            "softPixels": 2538368,
+            "rawPixels": 3507840,
+            "rasters": 1515,
+            "previousPixels": 2538368,
+            "emptyVisuals": 3,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 193,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "worldPass": 270,
+            "extraEmptyVisuals": 4,
+            "alphaHits": 0,
+            "visuals": 51,
+            "softPixels": 2702976,
+            "rawPixels": 3683584,
+            "rasters": 1628,
+            "previousPixels": 2702976,
+            "emptyVisuals": 4,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 71,
+          "sampleNativeEnemyShotsLowerBound": 194,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "worldPass": 0,
+            "extraEmptyVisuals": 0,
+            "alphaHits": 0,
+            "visuals": 0,
+            "softPixels": 0,
+            "rawPixels": 0,
+            "rasters": 0,
+            "previousPixels": 0,
+            "emptyVisuals": 0,
+            "optimizedCalls": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 86,
+          "sampleNativeEnemyShotsLowerBound": 202,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    },
+    "17-memory-attribution": {},
+    "18-memory-attribution": {},
+    "19-memory-attribution": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 49.66386554621849,
+              "p95": 65,
+              "max": 265,
+              ">100": 2
+            },
+            "rv": {
+              "n": 238,
+              "mean": 0.004201680672268907,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 238,
+              "mean": 7.836134453781512,
+              "p95": 15,
+              "max": 20,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 238,
+              "mean": 4.756302521008403,
+              "p95": 8,
+              "max": 15,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 238,
+              "mean": 36.911764705882355,
+              "p95": 45,
+              "max": 248,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 238,
+              "mean": 0.15966386554621848,
+              "p95": 1,
+              "max": 1,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 54.49579831932773,
+              "p95": 73,
+              "max": 166,
+              ">100": 2
+            },
+            "rv": {
+              "n": 238,
+              "mean": 3.2857142857142856,
+              "p95": 5,
+              "max": 9,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 238,
+              "mean": 8.491596638655462,
+              "p95": 15,
+              "max": 107,
+              ">100": 1
+            },
+            "otherHandlersNext": {
+              "n": 238,
+              "mean": 4.840336134453781,
+              "p95": 9,
+              "max": 16,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 238,
+              "mean": 37.73529411764706,
+              "p95": 51,
+              "max": 71,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 238,
+              "mean": 3.4285714285714284,
+              "p95": 5,
+              "max": 9,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 43.89495798319328,
+              "p95": 58,
+              "max": 104,
+              ">100": 1
+            },
+            "rv": {
+              "n": 238,
+              "mean": 0.004201680672268907,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 238,
+              "mean": 7.7899159663865545,
+              "p95": 14,
+              "max": 66,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 238,
+              "mean": 4.42436974789916,
+              "p95": 8,
+              "max": 16,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 238,
+              "mean": 31.57983193277311,
+              "p95": 39,
+              "max": 46,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 238,
+              "mean": 0.10084033613445378,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 238,
+              "mean": 57.180672268907564,
+              "p95": 71,
+              "max": 120,
+              ">100": 3
+            },
+            "rv": {
+              "n": 238,
+              "mean": 5.533613445378151,
+              "p95": 10,
+              "max": 16,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 238,
+              "mean": 7.781512605042017,
+              "p95": 14,
+              "max": 67,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 238,
+              "mean": 4.487394957983193,
+              "p95": 7,
+              "max": 15,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 238,
+              "mean": 39.26890756302521,
+              "p95": 49,
+              "max": 100,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 238,
+              "mean": 5.642857142857143,
+              "p95": 10,
+              "max": 16,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 8,
+      "completeIntervals": 952,
+      "samplePlayerShotsLowerBound": 471,
+      "sampleEnemyShotsLowerBound": 960,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "visuals": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "rasters": 0,
+            "softPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": {},
+          "samplePlayerShotsLowerBound": 58,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 8907,
+            "rawPixels": 954304,
+            "previousPixels": 778432,
+            "visuals": 81,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 7,
+            "rasters": 459,
+            "softPixels": 778432,
+            "emptyVisuals": 13,
+            "worldPass": 165
+          },
+          "memoryProfile": {
+            "computeFov": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 1,
+              "maxPositive": 0,
+              "calls": 4,
+              "negative": 0
+            },
+            "updateWallSurface": {
+              "positive": 126976,
+              "minNegative": 0,
+              "ms": 106,
+              "maxPositive": 12288,
+              "calls": 120,
+              "negative": 0
+            },
+            "hideEnemies": {
+              "positive": 1896448,
+              "minNegative": -724992,
+              "ms": 269,
+              "maxPositive": 229376,
+              "calls": 120,
+              "negative": -5140480
+            },
+            "applyWorldVisuals": {
+              "positive": 1699840,
+              "minNegative": -368640,
+              "ms": 252,
+              "maxPositive": 229376,
+              "calls": 120,
+              "negative": -3981312
+            },
+            "applyVision": {
+              "positive": 2629632,
+              "minNegative": 0,
+              "ms": 31,
+              "maxPositive": 655360,
+              "calls": 120,
+              "negative": 0
+            },
+            "prepareOcclusion": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 14,
+              "maxPositive": 0,
+              "calls": 120,
+              "negative": 0
+            }
+          },
+          "samplePlayerShotsLowerBound": 58,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 9178,
+            "rawPixels": 967040,
+            "previousPixels": 783296,
+            "visuals": 80,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 5,
+            "rasters": 461,
+            "softPixels": 783296,
+            "emptyVisuals": 11,
+            "worldPass": 165
+          },
+          "memoryProfile": {
+            "computeFov": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 2,
+              "maxPositive": 0,
+              "calls": 4,
+              "negative": 0
+            },
+            "updateWallSurface": {
+              "positive": 110592,
+              "minNegative": -4096,
+              "ms": 96,
+              "maxPositive": 12288,
+              "calls": 120,
+              "negative": -4096
+            },
+            "hideEnemies": {
+              "positive": 1396736,
+              "minNegative": -626688,
+              "ms": 236,
+              "maxPositive": 577536,
+              "calls": 120,
+              "negative": -5611520
+            },
+            "applyWorldVisuals": {
+              "positive": 1294336,
+              "minNegative": -299008,
+              "ms": 220,
+              "maxPositive": 565248,
+              "calls": 120,
+              "negative": -4579328
+            },
+            "applyVision": {
+              "positive": 2625536,
+              "minNegative": -4096,
+              "ms": 23,
+              "maxPositive": 659456,
+              "calls": 120,
+              "negative": -8192
+            },
+            "prepareOcclusion": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 9,
+              "maxPositive": 0,
+              "calls": 120,
+              "negative": 0
+            }
+          },
+          "samplePlayerShotsLowerBound": 59,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "visuals": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "rasters": 0,
+            "softPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": {},
+          "samplePlayerShotsLowerBound": 59,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "visuals": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "rasters": 0,
+            "softPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": {},
+          "samplePlayerShotsLowerBound": 58,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 1072320,
+            "previousPixels": 899904,
+            "visuals": 86,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 8,
+            "rasters": 504,
+            "softPixels": 899904,
+            "emptyVisuals": 16,
+            "worldPass": 165
+          },
+          "memoryProfile": {
+            "computeFov": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 2,
+              "maxPositive": 0,
+              "calls": 4,
+              "negative": 0
+            },
+            "updateWallSurface": {
+              "positive": 249856,
+              "minNegative": -32768,
+              "ms": 105,
+              "maxPositive": 12288,
+              "calls": 120,
+              "negative": -57344
+            },
+            "hideEnemies": {
+              "positive": 2695168,
+              "minNegative": -94208,
+              "ms": 287,
+              "maxPositive": 573440,
+              "calls": 120,
+              "negative": -1888256
+            },
+            "applyWorldVisuals": {
+              "positive": 2600960,
+              "minNegative": -94208,
+              "ms": 267,
+              "maxPositive": 573440,
+              "calls": 120,
+              "negative": -1990656
+            }
+          },
+          "samplePlayerShotsLowerBound": 59,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 1045312,
+            "previousPixels": 855744,
+            "visuals": 84,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 5,
+            "rasters": 499,
+            "softPixels": 855744,
+            "emptyVisuals": 13,
+            "worldPass": 165
+          },
+          "memoryProfile": {
+            "computeFov": {
+              "positive": 0,
+              "minNegative": 0,
+              "ms": 1,
+              "maxPositive": 0,
+              "calls": 4,
+              "negative": 0
+            },
+            "updateWallSurface": {
+              "positive": 258048,
+              "minNegative": -20480,
+              "ms": 99,
+              "maxPositive": 12288,
+              "calls": 120,
+              "negative": -24576
+            },
+            "hideEnemies": {
+              "positive": 2916352,
+              "minNegative": -81920,
+              "ms": 298,
+              "maxPositive": 487424,
+              "calls": 120,
+              "negative": -1703936
+            },
+            "applyWorldVisuals": {
+              "positive": 2760704,
+              "minNegative": -86016,
+              "ms": 283,
+              "maxPositive": 487424,
+              "calls": 120,
+              "negative": -1720320
+            }
+          },
+          "samplePlayerShotsLowerBound": 60,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "visuals": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "rasters": 0,
+            "softPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0
+          },
+          "memoryProfile": {},
+          "samplePlayerShotsLowerBound": 60,
+          "sampleNativeEnemyShotsLowerBound": 120,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    },
+    "20-allocation-pixels": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 723
+      }
+    },
+    "21-allocation-combat": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.09497206703911,
+              "p95": 60,
+              "max": 114,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.002793296089385475,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.932960893854749,
+              "p95": 14,
+              "max": 77,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.82122905027933,
+              "p95": 10,
+              "max": 54,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 33.237430167597765,
+              "p95": 41,
+              "max": 48,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.10335195530726257,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 62.279329608938546,
+              "p95": 88,
+              "max": 135,
+              ">100": 10
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.620111731843576,
+              "p95": 7,
+              "max": 14,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 9.388268156424582,
+              "p95": 18,
+              "max": 77,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 6.527932960893855,
+              "p95": 11,
+              "max": 63,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 41.64525139664804,
+              "p95": 60,
+              "max": 88,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.717877094972067,
+              "p95": 7,
+              "max": 14,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 51.87988826815643,
+              "p95": 65,
+              "max": 101,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.184357541899441,
+              "p95": 9,
+              "max": 18,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.977653631284916,
+              "p95": 14,
+              "max": 52,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.58659217877095,
+              "p95": 9,
+              "max": 55,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 34.02513966480447,
+              "p95": 44,
+              "max": 87,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.290502793296089,
+              "p95": 9,
+              "max": 19,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 43.31005586592179,
+              "p95": 54,
+              "max": 105,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.00558659217877095,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.567039106145251,
+              "p95": 14,
+              "max": 56,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.340782122905028,
+              "p95": 8,
+              "max": 65,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 30.298882681564248,
+              "p95": 36,
+              "max": 41,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.10335195530726257,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 55.74301675977654,
+              "p95": 69,
+              "max": 117,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.5083798882681565,
+              "p95": 11,
+              "max": 63,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 7.631284916201118,
+              "p95": 14,
+              "max": 60,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.365921787709497,
+              "p95": 10,
+              "max": 59,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 36.12849162011173,
+              "p95": 43,
+              "max": 93,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.61731843575419,
+              "p95": 12,
+              "max": 63,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 60.09217877094972,
+              "p95": 84,
+              "max": 139,
+              ">100": 6
+            },
+            "rv": {
+              "n": 358,
+              "mean": 6.779329608938547,
+              "p95": 12,
+              "max": 21,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.201117318435754,
+              "p95": 15,
+              "max": 69,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.43854748603352,
+              "p95": 9,
+              "max": 16,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.55027932960894,
+              "p95": 55,
+              "max": 104,
+              ">100": 1
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 6.902234636871508,
+              "p95": 12,
+              "max": 21,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 1047,
+      "sampleEnemyShotsLowerBound": 2349,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "visuals": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 195,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "rasters": 771,
+            "visuals": 45,
+            "extraEmptyVisuals": 1,
+            "emptyVisuals": 1,
+            "alphaHits": 0,
+            "rawPixels": 1674944,
+            "previousPixels": 1363520,
+            "softPixels": 1363520,
+            "optimizedCalls": 11610,
+            "worldPass": 270,
+            "unusedBarShapes": 629
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 913,
+            "visuals": 36,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 1964416,
+            "previousPixels": 1634304,
+            "softPixels": 1634304,
+            "optimizedCalls": 11596,
+            "worldPass": 270,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 840,
+            "visuals": 47,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 1822080,
+            "previousPixels": 1481344,
+            "softPixels": 1481344,
+            "optimizedCalls": 11351,
+            "worldPass": 270,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 75,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "rasters": 763,
+            "visuals": 50,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 1635776,
+            "previousPixels": 1321536,
+            "softPixels": 1321536,
+            "optimizedCalls": 10972,
+            "worldPass": 270,
+            "unusedBarShapes": 618
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 201,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "visuals": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 191,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "visuals": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 86,
+          "sampleNativeEnemyShotsLowerBound": 200,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "rasters": 805,
+            "visuals": 48,
+            "extraEmptyVisuals": 1,
+            "emptyVisuals": 3,
+            "alphaHits": 0,
+            "rawPixels": 1743808,
+            "previousPixels": 1418432,
+            "softPixels": 1418432,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 653
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 850,
+            "visuals": 51,
+            "extraEmptyVisuals": 1,
+            "emptyVisuals": 1,
+            "alphaHits": 0,
+            "rawPixels": 1826304,
+            "previousPixels": 1487360,
+            "softPixels": 1487360,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 196,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "rasters": 765,
+            "visuals": 61,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 1655552,
+            "previousPixels": 1321728,
+            "softPixels": 1321728,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 197,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "rasters": 811,
+            "visuals": 50,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 1751360,
+            "previousPixels": 1419968,
+            "softPixels": 1419968,
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 656
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 192,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "rasters": 0,
+            "visuals": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "alphaHits": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 197,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    },
+    "22-allocation-reverse": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 53.44692737430167,
+              "p95": 71,
+              "max": 145,
+              ">100": 5
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.0111731843575419,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.94413407821229,
+              "p95": 16,
+              "max": 62,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.988826815642458,
+              "p95": 10,
+              "max": 88,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 38.332402234636874,
+              "p95": 49,
+              "max": 117,
+              ">100": 2
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.18156424581005587,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 58.43296089385475,
+              "p95": 80,
+              "max": 147,
+              ">100": 6
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.29608938547486,
+              "p95": 8,
+              "max": 21,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.653631284916202,
+              "p95": 16,
+              "max": 90,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.399441340782123,
+              "p95": 10,
+              "max": 57,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 39.99441340782123,
+              "p95": 55,
+              "max": 99,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.385474860335195,
+              "p95": 8,
+              "max": 21,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 55.05027932960894,
+              "p95": 68,
+              "max": 114,
+              ">100": 3
+            },
+            "rv": {
+              "n": 358,
+              "mean": 4.399441340782123,
+              "p95": 8,
+              "max": 56,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.318435754189943,
+              "p95": 15,
+              "max": 64,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 4.924581005586592,
+              "p95": 9,
+              "max": 21,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 37.31005586592179,
+              "p95": 46,
+              "max": 54,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 4.4972067039106145,
+              "p95": 8,
+              "max": 56,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 49.3268156424581,
+              "p95": 68,
+              "max": 141,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.008379888268156424,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.597765363128492,
+              "p95": 16,
+              "max": 58,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.198324022346369,
+              "p95": 11,
+              "max": 21,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 35.399441340782126,
+              "p95": 47,
+              "max": 95,
+              ">100": 0
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 0.13128491620111732,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 82.90502793296089,
+              "p95": 142,
+              "max": 350,
+              ">100": 51
+            },
+            "rv": {
+              "n": 358,
+              "mean": 7.955307262569832,
+              "p95": 15,
+              "max": 82,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 9.075418994413408,
+              "p95": 17,
+              "max": 63,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.611731843575419,
+              "p95": 11,
+              "max": 20,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 60.14525139664804,
+              "p95": 112,
+              "max": 324,
+              ">100": 23
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 8.072625698324023,
+              "p95": 15,
+              "max": 82,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 68.79050279329608,
+              "p95": 102,
+              "max": 183,
+              ">100": 21
+            },
+            "rv": {
+              "n": 358,
+              "mean": 7.011173184357542,
+              "p95": 12,
+              "max": 61,
+              ">100": 0
+            },
+            "nativeNext": {
+              "n": 358,
+              "mean": 8.013966480446927,
+              "p95": 15,
+              "max": 33,
+              ">100": 0
+            },
+            "otherHandlersNext": {
+              "n": 358,
+              "mean": 5.173184357541899,
+              "p95": 9,
+              "max": 60,
+              ">100": 0
+            },
+            "afterProbe": {
+              "n": 358,
+              "mean": 48.46927374301676,
+              "p95": 74,
+              "max": 162,
+              ">100": 5
+            },
+            "probeMs": {
+              "n": 358,
+              "mean": 7.134078212290503,
+              "p95": 12,
+              "max": 61,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "windowCount": 12,
+      "completeIntervals": 2148,
+      "samplePlayerShotsLowerBound": 1053,
+      "sampleEnemyShotsLowerBound": 2197,
+      "nativeMenuClosed": true,
+      "windows": [
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0,
+            "visuals": 0,
+            "rasters": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 85,
+          "sampleNativeEnemyShotsLowerBound": 183,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "optimizedCalls": 15615,
+            "worldPass": 270,
+            "unusedBarShapes": 0,
+            "visuals": 63,
+            "rasters": 1194,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 4,
+            "emptyVisuals": 4,
+            "rawPixels": 2511424,
+            "previousPixels": 2046976,
+            "softPixels": 2046976
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 85,
+          "sampleNativeEnemyShotsLowerBound": 185,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 15714,
+            "worldPass": 270,
+            "unusedBarShapes": 841,
+            "visuals": 60,
+            "rasters": 1012,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 4,
+            "emptyVisuals": 6,
+            "rawPixels": 2121536,
+            "previousPixels": 1775232,
+            "softPixels": 1775232
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 185,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 15791,
+            "worldPass": 270,
+            "unusedBarShapes": 955,
+            "visuals": 52,
+            "rasters": 1147,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 1,
+            "emptyVisuals": 1,
+            "rawPixels": 2396480,
+            "previousPixels": 1998784,
+            "softPixels": 1998784
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 88,
+          "sampleNativeEnemyShotsLowerBound": 186,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "candidate",
+          "retained": {
+            "optimizedCalls": 15483,
+            "worldPass": 270,
+            "unusedBarShapes": 0,
+            "visuals": 56,
+            "rasters": 1114,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 5,
+            "emptyVisuals": 8,
+            "rawPixels": 2333568,
+            "previousPixels": 1921216,
+            "softPixels": 1921216
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 183,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "current",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0,
+            "visuals": 0,
+            "rasters": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 85,
+          "sampleNativeEnemyShotsLowerBound": 180,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0,
+            "visuals": 0,
+            "rasters": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 182,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 0,
+            "visuals": 50,
+            "rasters": 998,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 4,
+            "emptyVisuals": 4,
+            "rawPixels": 2032448,
+            "previousPixels": 1688448,
+            "softPixels": 1688448
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 181,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 878,
+            "visuals": 65,
+            "rasters": 1048,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 4,
+            "emptyVisuals": 4,
+            "rawPixels": 2163712,
+            "previousPixels": 1814912,
+            "softPixels": 1814912
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 90,
+          "sampleNativeEnemyShotsLowerBound": 183,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "normal",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 945,
+            "visuals": 51,
+            "rasters": 1174,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 2,
+            "emptyVisuals": 2,
+            "rawPixels": 2419840,
+            "previousPixels": 1964992,
+            "softPixels": 1964992
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 185,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "candidate",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 270,
+            "unusedBarShapes": 0,
+            "visuals": 57,
+            "rasters": 1034,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 2,
+            "emptyVisuals": 4,
+            "rawPixels": 2148352,
+            "previousPixels": 1762240,
+            "softPixels": 1762240
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 87,
+          "sampleNativeEnemyShotsLowerBound": 180,
+          "sampleForcedEnemyShots": 0
+        },
+        {
+          "mode": "classic",
+          "variant": "off",
+          "retained": {
+            "optimizedCalls": 0,
+            "worldPass": 0,
+            "unusedBarShapes": 0,
+            "visuals": 0,
+            "rasters": 0,
+            "alphaHits": 0,
+            "extraEmptyVisuals": 0,
+            "emptyVisuals": 0,
+            "rawPixels": 0,
+            "previousPixels": 0,
+            "softPixels": 0
+          },
+          "memoryProfile": null,
+          "samplePlayerShotsLowerBound": 89,
+          "sampleNativeEnemyShotsLowerBound": 184,
+          "sampleForcedEnemyShots": 0
+        }
+      ]
+    }
+  },
+  "allOwnedRunsFinished": true,
+  "correctedNativeWindows": 68,
+  "completeIntervals": 11692,
+  "samplePlayerShotsLowerBound": 5670,
+  "sampleEnemyShotsLowerBound": 12505,
+  "boundary": "12/15/16/19/21/22 have corrected menu/pose/sampled shot accounting. 19 is memory-instrumented attribution, not candidate timing. Earlier failures and distorted fixtures retained, not combined as final validation."
+}

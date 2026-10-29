@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-29 **D57六敌交战调查结束，未采用/未部署，正式仍D56**：身体裁切1531项、alpha裁切722项+原生60帧、减少临时对象723项均有功能证据，但整帧收益不稳定或回退。纠正菜单显示层残留、原生后固定狮鹫姿态及kol_shoot计数；纠正后68窗11692完整间隔（含内存归因）。长帧分布原生/RV/其它监听/绘制后等待；部分内存骤降不证明全由RV分配。22个实验均结束，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-29-enemy-combat.md)；工具build/enemy-combat，经验KB-000123 r4。
+
 > 2026-10-29 **D56 v0.33.11已部署**：current保留原采样格并缩小特效遮罩，真实内容变化时刷新目标关联；classic保持旧路径。发现旧跨帧关联残留，最终721项对照通过，准确包36设置及原生240帧/119次开火通过。三组current配对平均约低7%–12%，最终48.51→42.55ms、P95 65→56ms，仍有102ms长帧。准确包BD64B5BB…CE4A9AD（46441B），生产源build/effect-mask-origin-output/production/src，不含authority；旧638E已备份。29轮自有实例/登记全部结束，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-29-effect-mask-origin.md)。
 
 > 2026-10-29 **D55同批特效回放完成，未采用/未部署，正式仍D44**：stable-v4通过1081项+原生60帧，重画2703→829，但完整扫射45.49→46.04ms未改善。identity-blit原生60帧通过、首轮current约快3.7%，反向current持平/classic变慢，扩展位图检查又在f121失败。原D47 identity也有原生47像素反例。21轮全部结束，完整扫射共24窗4296间隔/3161次开火；主src/release不改，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-28-effect-replay.md)，工具build/effect-replay。
@@ -116,7 +118,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D56 v0.33.11-effect-clip，BD64B5BB…CE4A9AD；准确生产源build/effect-mask-origin-output/production/src，排除authority。current轻机枪持续扫射已改善，classic保持旧路径；仍有长帧和相对关闭RV的差距，详见顶部D56报告。
+- 当前安装D56 v0.33.11-effect-clip，BD64B5BB…CE4A9AD；准确生产源build/effect-mask-origin-output/production/src，排除authority。current轻机枪持续扫射已改善，classic保持旧路径；仍有长帧和相对关闭RV的差距，详见顶部D56报告。 D57六敌交战三候选均未获稳定整帧收益，未发布；纠正后的显示/姿态/计数边界与长帧分段见顶部D57报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -139,6 +141,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D57已结束并释放全部测试登记，正式仍D56。下一步定位原生更新/绘制后等待的具体长帧触发，暂不复用被否决候选。独立生产源与authority开发线继续隔离；下方保留历史停点。
 
 - D56已部署并结束本轮测试；用户保存重启生效。下一步测密集敌人原生战斗的剩余长帧，不把本轮7%–12%外推所有场景。生产私有源与开发authority线分开，四项外部WIP保留；下方是历史停点。
 

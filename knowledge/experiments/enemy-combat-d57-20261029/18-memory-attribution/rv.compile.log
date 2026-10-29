@@ -1,0 +1,11 @@
+正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\18-memory-attribution\rv.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\18-memory-attribution\rv-src\RVExplorationCarrier.as(5): 列: 17 警告: 没有为类 RVExplorationCarrier 指定构造函数。
+
+   public class RVExplorationCarrier extends Sprite
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\18-memory-attribution\rv-src\RealisticVisionMod.as(1580): 列: 1 错误: 函数没有返回值。
+
+}
+^
+

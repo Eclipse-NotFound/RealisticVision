@@ -1,0 +1,9 @@
+{
+  "host": "a80ed32bee50c612cb46ea1e581c8ca9c81072e0b9e6ee1a51e5bacefbdcba19",
+  "mainMenuSource": "277eb7199768a9c8a4cc38cc5e257850107e6dce7db33e6f3fa438d424f50956",
+  "checks": [
+    "native listener priority 0",
+    "public mainStep(Event):void",
+    "single World.step call"
+  ]
+}

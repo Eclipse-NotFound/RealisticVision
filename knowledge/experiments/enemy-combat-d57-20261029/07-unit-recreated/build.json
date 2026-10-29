@@ -1,0 +1,13 @@
+{
+  "swf": "f9e22588ca4af02128b707d395af53a04a85e8cbfcd5a54d4edbfb86d269c5c1",
+  "sources": {
+    "MaskRenderChecks.as": "2ea55c51a37e6025c24b94ee368222bb129be95b1b131156416ac39c451eb4f4",
+    "src\\BaselineVision.as": "cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d",
+    "src\\RealisticVisionMod.as": "3133eb0641b868cb543da40fff90de22cb94b6ed1e744c9b9e6d209543ee54bd",
+    "src\\RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "src\\RVKeybinds.as": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "src\\RVWallSurface.as": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "src\\modlocales\\vision\\RVLocale.as": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "src\\modlocales\\vision\\RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  }
+}

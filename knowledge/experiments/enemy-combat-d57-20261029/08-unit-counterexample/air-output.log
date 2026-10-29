@@ -1,0 +1,10 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+DIFF (x=548, y=422, w=31, h=28)
+COUNTEREXAMPLE {"unit":[440,440],"frame":432,"clipWeapon":"(x=480, y=385, w=115, h=85)","body":"(x=397, y=360, w=83, h=79)","clipBody":"(x=385, y=350, w=105, h=100)","mode":"current","weapon":"(x=491.75, y=395, w=91.35000000000002, h=60.89999999999998)"}
+FAIL Error: body/bar/extended weapon render frame=432 Error: body/bar/extended weapon render frame=432
+	at MaskRenderChecks/check()
+	at MaskRenderChecks/step()

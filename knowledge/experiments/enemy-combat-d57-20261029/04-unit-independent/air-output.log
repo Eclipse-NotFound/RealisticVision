@@ -1,0 +1,38 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=classic
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+DIFF (x=350, y=250, w=427, h=450)
+FAIL Error: body/bar/extended weapon render frame=360 Error: body/bar/extended weapon render frame=360
+	at MaskRenderChecks/check()
+	at MaskRenderChecks/step()

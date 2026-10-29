@@ -1,0 +1,11 @@
+{
+  "exit": 1,
+  "summary": [
+    "FAIL Error: body/bar/extended weapon render frame=15 Error: body/bar/extended weapon render frame=15",
+    "",
+    "\tat MaskRenderChecks/check()",
+    "",
+    "\tat MaskRenderChecks/step()",
+    ""
+  ]
+}

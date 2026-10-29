@@ -1,0 +1,47 @@
+{
+  "01-enemy-attribution/evidence/result.json": {
+    "stored": "01-enemy-attribution/evidence/result.json.gz",
+    "originalSha256": "38540785788f31c27a8dd6546b1092e760b717f12fd2f079a4ab0270023109ee",
+    "storedSha256": "62cf2f1f818eda8bf79796df994914b97187772f36d93d3a44163a3c7ef380d8"
+  },
+  "10-unit-combat/evidence/result.json": {
+    "stored": "10-unit-combat/evidence/result.json.gz",
+    "originalSha256": "8fd9794950085f804bc24ceb0704cf7ef91774a135bb8d53a106e7792812bdaa",
+    "storedSha256": "d8968c2a53d6bf3f78b10543cc84581164e5b7856160b66c38e004aa12f58515"
+  },
+  "11-native-menu-combat/evidence/result.json": {
+    "stored": "11-native-menu-combat/evidence/result.json.gz",
+    "originalSha256": "938f36c88ea169e264dc7a9039f6c6554f12f1b52bb4fc2b8139fdc35f4da024",
+    "storedSha256": "5bda02e2813a7bab85394956383b21c4d625565b60a3bd99aa51f8adc95afd22"
+  },
+  "12-corrected-combat/evidence/result.json": {
+    "stored": "12-corrected-combat/evidence/result.json.gz",
+    "originalSha256": "efda8732d5a97797c1d99b63eed2c0887e14c8fdd33ab5f1b6579db1767d51e4",
+    "storedSha256": "29146e4031250947c5029917ffc9cee98684212285df4068980536b52d5827f2"
+  },
+  "15-alpha-combat/evidence/result.json": {
+    "stored": "15-alpha-combat/evidence/result.json.gz",
+    "originalSha256": "a374a7899a1fa54e4ea7367bc6325ad11a0302dbd174ce4f34c45faa3a0e6bda",
+    "storedSha256": "77c5c585153dd59680cd0ffa524e07de85efddee7a6c2c1bf484eb6b149cee10"
+  },
+  "16-alpha-reverse-phases/evidence/result.json": {
+    "stored": "16-alpha-reverse-phases/evidence/result.json.gz",
+    "originalSha256": "a9f17dd9613b270a25d19ec3eaddcf0c6ae7061eece0be387ff2fe929e4606b7",
+    "storedSha256": "1a7d57d00f9a06088f1d626de07cb400677e1b150d3532deabd2c27e2aa6f771"
+  },
+  "19-memory-attribution/evidence/result.json": {
+    "stored": "19-memory-attribution/evidence/result.json.gz",
+    "originalSha256": "c9825cccd0532e1257c0830524158162297de0947a191fa6f5abb307218867fc",
+    "storedSha256": "a2b5aa4abdcc5d5f7b68c3e86a7779b6bf1d59898c18049631500df1374037e2"
+  },
+  "21-allocation-combat/evidence/result.json": {
+    "stored": "21-allocation-combat/evidence/result.json.gz",
+    "originalSha256": "886d58763e5c277cb230a76b0472fc32707bb94e62d202ee23135903a94278f4",
+    "storedSha256": "7cdf9e1e548327c1329245e68137b8cf584c33c4907d0e34fd9f53884b6994c7"
+  },
+  "22-allocation-reverse/evidence/result.json": {
+    "stored": "22-allocation-reverse/evidence/result.json.gz",
+    "originalSha256": "734f216286dffe0db1259f87d450f222244aabcc2bd475dd44da04bf047685b0",
+    "storedSha256": "773fc880fd14bf6187df57cd1a29f1ad4d892074fbdd939eadebce4d6a70599b"
+  }
+}

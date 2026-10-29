@@ -1,0 +1,59 @@
+正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\03-unit-pixels\MaskRenderChecks.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\03-unit-pixels\MaskRenderChecks.swf（73741 字节）
+警告: 源路径条目“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\03-unit-pixels\src”是源路径条目“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\03-unit-pixels”的一个子目录。
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\loc\Tile.as(4): 列: 17 警告: 没有为类 Tile 指定构造函数。
+
+   public class Tile
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\graph\Grafon.as(6): 列: 17 警告: 没有为类 Grafon 指定构造函数。
+
+   public class Grafon
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\unit\Pers.as(4): 列: 17 警告: 没有为类 Pers 指定构造函数。
+
+   public class Pers
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\enemy-combat-output\03-unit-pixels\src\RVExplorationCarrier.as(5): 列: 17 警告: 没有为类 RVExplorationCarrier 指定构造函数。
+
+   public class RVExplorationCarrier extends Sprite
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\World.as(10): 列: 17 警告: 没有为类 World 指定构造函数。
+
+   public class World
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\Pt.as(7): 列: 17 警告: 没有为类 Pt 指定构造函数。
+
+   public class Pt
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\loc\Location.as(7): 列: 17 警告: 没有为类 Location 指定构造函数。
+
+   public class Location
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\weapon\Weapon.as(7): 列: 17 警告: 没有为类 Weapon 指定构造函数。
+
+   public class Weapon extends Pt
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\Obj.as(4): 列: 17 警告: 没有为类 Obj 指定构造函数。
+
+   public class Obj extends Pt
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\unit\Unit.as(7): 列: 17 警告: 没有为类 Unit 指定构造函数。
+
+   public class Unit extends Obj
+                ^
+
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\stubs\fe\unit\UnitPlayer.as(4): 列: 17 警告: 没有为类 UnitPlayer 指定构造函数。
+
+   public class UnitPlayer extends Unit
+                ^
+

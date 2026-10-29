@@ -1,0 +1,28 @@
+{
+  "alphaHits": 1716,
+  "exactFrames": 60,
+  "optimizedCalls": 1924,
+  "replay": {
+    "sourceBitmapArea": 783,
+    "kinds": {
+      "flash.display::MovieClip": 87,
+      "visualGilza": 10,
+      "visualBullet": 2
+    },
+    "stageFps": 120,
+    "screen": [
+      2560,
+      1521
+    ],
+    "blitCount": 87,
+    "count": 99,
+    "animated": 89,
+    "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay."
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  }
+}
