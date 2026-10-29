@@ -1,0 +1,21 @@
+{
+  "baseline/src/RealisticVisionMod.as": "412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366",
+  "baseline/src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+  "baseline/src/RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+  "baseline/src/RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+  "baseline/src/modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+  "baseline/src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+  "candidates/aux/src/RealisticVisionMod.as": "2b86d5ad8cf610d54eaabb1655919240f46186fbde76905ead55f5a85cc5c4a9",
+  "candidates/aux/src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+  "candidates/aux/src/RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+  "candidates/aux/src/RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+  "candidates/aux/src/modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+  "candidates/aux/src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+  "candidates/vector/src/RealisticVisionMod.as": "cb65856b2ca9a86d46ed81cacd7a79759ea8c6a1a7a35155250287279f04d15c",
+  "candidates/vector/src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+  "candidates/vector/src/RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+  "candidates/vector/src/RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+  "candidates/vector/src/modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+  "candidates/vector/src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+  "native-source/scripts/fe/MainMenu.as": "277eb7199768a9c8a4cc38cc5e257850107e6dce7db33e6f3fa438d424f50956"
+}

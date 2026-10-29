@@ -1,0 +1,20 @@
+{
+  "operation": "read-only Windows job and affinity query",
+  "queryProcess": {"pid": 31316, "kind": "tool-launched Python runner", "inJob": true},
+  "processAffinity": {"ok": true, "mask": "0xffff", "systemMask": "0xffff", "logicalProcessors": 16},
+  "cpuRate": {"ok": true, "error": 0, "bytes": 8, "flags": 0, "rateOrWeight": 0, "enabled": false},
+  "basicLimits": {"ok": true, "error": 0, "bytes": 64, "processTime": 0, "jobTime": 0, "flags": 8192, "minWs": 0, "maxWs": 0, "activeProcesses": 0, "affinity": 0, "priorityClass": 32, "schedulingClass": 5},
+  "jobGroupAffinity": {"ok": true, "error": 0, "groups": [{"group": 0, "mask": "0xffff"}]},
+  "boundaries": [
+    "QueryInformationJobObject(NULL, ...) reports the querying process's immediate job, not every ancestor job.",
+    "This is a current runner observation; it does not retroactively prove D57's historical job CPU policy.",
+    "No game was launched, and no CPU, affinity, priority, job or system setting was changed.",
+    "HiddenProcess._process is a process handle usable with GetProcessAffinityMask and IsProcessInJob; it is not a job handle for QueryInformationJobObject.",
+    "HiddenProcess uses ordinary CreateProcess and inherits its runner's job. Independently querying the child's immediate job requires executing the query in the child or obtaining its actual job handle."
+  ],
+  "sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-queryinformationjobobject",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_cpu_rate_control_information",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprocessaffinitymask"
+  ]
+}

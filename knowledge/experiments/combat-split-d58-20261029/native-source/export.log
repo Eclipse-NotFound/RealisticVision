@@ -1,0 +1,22 @@
+JPEXS Free Flash Decompiler v.26.2.1
+------------------------------------
+Exporting scripts...
+Exported script 1/1 fe.MainMenu, 00:00.326
+Export finished. Total export time: 00:01.994
+OK
+10月 29, 2026 9:46:22 上午 com.jpexs.decompiler.flash.gui.Main clearLogFile
+严重: Cannot initialize logging
+java.nio.file.AccessDeniedException: C:\Users\hello\AppData\Roaming\JPEXS\FFDec\logs\log.txt.lck
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newFileChannel(WindowsFileSystemProvider.java:121)
+	at java.base/java.nio.channels.FileChannel.open(FileChannel.java:298)
+	at java.base/java.nio.channels.FileChannel.open(FileChannel.java:357)
+	at java.logging/java.util.logging.FileHandler.openFiles(FileHandler.java:512)
+	at java.logging/java.util.logging.FileHandler.<init>(FileHandler.java:308)
+	at com.jpexs.decompiler.flash.gui.Main.clearLogFile(Main.java:3964)
+	at com.jpexs.decompiler.flash.gui.Main.initLogging(Main.java:4046)
+	at com.jpexs.decompiler.flash.gui.Main.main(Main.java:3598)
+	at com.jpexs.decompiler.flash.cli.CommandlineInterface.main(CommandlineInterface.java:32)
+

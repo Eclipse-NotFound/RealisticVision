@@ -1,0 +1,7 @@
+正在加载配置文件“D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-split-output\09-support-combat\candidate.compiler.xml”
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-split-output\09-support-combat\candidate.swf（46555 字节）
+D:\Program Files\Steam\steamapps\common\Remains\mods\RealisticVision\build\combat-split-output\09-support-combat\candidate-src\RVExplorationCarrier.as(5): 列: 17 警告: 没有为类 RVExplorationCarrier 指定构造函数。
+
+   public class RVExplorationCarrier extends Sprite
+                ^
+

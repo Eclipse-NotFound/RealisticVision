@@ -1,0 +1,726 @@
+{
+  "01-split-combat/candidate.swf": {
+    "sha256": "572550a270554df5943f4a33ccd56fb46a9df98c57af2e292f9c07f1313ce8a2",
+    "stored": "objects/572550a270554df5943f4a33ccd56fb46a9df98c57af2e292f9c07f1313ce8a2.swf"
+  },
+  "01-split-combat/CombatRenderProbeMod.as": {
+    "sha256": "9eb404c32d8e53fb407c038036479516ba3ba264671f763c9b57e5ad15278d1f",
+    "stored": "objects/9eb404c32d8e53fb407c038036479516ba3ba264671f763c9b57e5ad15278d1f.as"
+  },
+  "01-split-combat/rv.swf": {
+    "sha256": "2698fafaa3d2dfae368fb366f259216b6311c4baf5ddf40b31cb59d479736cbd",
+    "stored": "objects/2698fafaa3d2dfae368fb366f259216b6311c4baf5ddf40b31cb59d479736cbd.swf"
+  },
+  "01-split-combat/vector.swf": {
+    "sha256": "07dda2c7346bcc14b8c293612bfaf5c79e5904d7e84647d2818dec6dc8e97080",
+    "stored": "objects/07dda2c7346bcc14b8c293612bfaf5c79e5904d7e84647d2818dec6dc8e97080.swf"
+  },
+  "01-split-combat/candidate-src/RealisticVisionMod.as": {
+    "sha256": "537a76bc28d2a3bd6534235dc3798a3130e9187acc4030ec6f6498effff5e0fc",
+    "stored": "objects/537a76bc28d2a3bd6534235dc3798a3130e9187acc4030ec6f6498effff5e0fc.as"
+  },
+  "01-split-combat/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "01-split-combat/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "01-split-combat/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "01-split-combat/fe/NativeTimingAccess.as": {
+    "sha256": "ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917",
+    "stored": "objects/ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917.as"
+  },
+  "01-split-combat/rv-src/RealisticVisionMod.as": {
+    "sha256": "2e146c42f60347040c35cf5d7c165ea81bb932d2d96cfbb52e4cffd087f5690f",
+    "stored": "objects/2e146c42f60347040c35cf5d7c165ea81bb932d2d96cfbb52e4cffd087f5690f.as"
+  },
+  "01-split-combat/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "01-split-combat/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "01-split-combat/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "01-split-combat/vector-src/RealisticVisionMod.as": {
+    "sha256": "a39c4ca53915c3cbecf184c409935ea04f2855958b3e900980bafa00c3aa7afc",
+    "stored": "objects/a39c4ca53915c3cbecf184c409935ea04f2855958b3e900980bafa00c3aa7afc.as"
+  },
+  "01-split-combat/vector-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "01-split-combat/vector-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "01-split-combat/vector-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "01-split-combat/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "01-split-combat/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "01-split-combat/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "3360a4e3eb21bac8cd74ea7bff47f7bc15a429eb46d1a2271f8347c88eff7d0f",
+    "stored": "objects/3360a4e3eb21bac8cd74ea7bff47f7bc15a429eb46d1a2271f8347c88eff7d0f.swf"
+  },
+  "01-split-combat/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "01-split-combat/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "01-split-combat/vector-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "01-split-combat/vector-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "02-rate-calibration/candidate.swf": {
+    "sha256": "572550a270554df5943f4a33ccd56fb46a9df98c57af2e292f9c07f1313ce8a2",
+    "stored": "objects/572550a270554df5943f4a33ccd56fb46a9df98c57af2e292f9c07f1313ce8a2.swf"
+  },
+  "02-rate-calibration/CombatRenderProbeMod.as": {
+    "sha256": "426a72745d2cea0cb88cf15b0d92b2fae9efdfb556b3d63a48a594c3ce9db4ca",
+    "stored": "objects/426a72745d2cea0cb88cf15b0d92b2fae9efdfb556b3d63a48a594c3ce9db4ca.as"
+  },
+  "02-rate-calibration/rv.swf": {
+    "sha256": "2698fafaa3d2dfae368fb366f259216b6311c4baf5ddf40b31cb59d479736cbd",
+    "stored": "objects/2698fafaa3d2dfae368fb366f259216b6311c4baf5ddf40b31cb59d479736cbd.swf"
+  },
+  "02-rate-calibration/vector.swf": {
+    "sha256": "07dda2c7346bcc14b8c293612bfaf5c79e5904d7e84647d2818dec6dc8e97080",
+    "stored": "objects/07dda2c7346bcc14b8c293612bfaf5c79e5904d7e84647d2818dec6dc8e97080.swf"
+  },
+  "02-rate-calibration/candidate-src/RealisticVisionMod.as": {
+    "sha256": "537a76bc28d2a3bd6534235dc3798a3130e9187acc4030ec6f6498effff5e0fc",
+    "stored": "objects/537a76bc28d2a3bd6534235dc3798a3130e9187acc4030ec6f6498effff5e0fc.as"
+  },
+  "02-rate-calibration/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "02-rate-calibration/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "02-rate-calibration/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "02-rate-calibration/fe/NativeTimingAccess.as": {
+    "sha256": "ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917",
+    "stored": "objects/ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917.as"
+  },
+  "02-rate-calibration/rv-src/RealisticVisionMod.as": {
+    "sha256": "2e146c42f60347040c35cf5d7c165ea81bb932d2d96cfbb52e4cffd087f5690f",
+    "stored": "objects/2e146c42f60347040c35cf5d7c165ea81bb932d2d96cfbb52e4cffd087f5690f.as"
+  },
+  "02-rate-calibration/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "02-rate-calibration/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "02-rate-calibration/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "02-rate-calibration/vector-src/RealisticVisionMod.as": {
+    "sha256": "a39c4ca53915c3cbecf184c409935ea04f2855958b3e900980bafa00c3aa7afc",
+    "stored": "objects/a39c4ca53915c3cbecf184c409935ea04f2855958b3e900980bafa00c3aa7afc.as"
+  },
+  "02-rate-calibration/vector-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "02-rate-calibration/vector-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "02-rate-calibration/vector-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "02-rate-calibration/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "02-rate-calibration/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "02-rate-calibration/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "67b659f3d81cacaa530c39ffd2bc1f0fea326fb40ae59be8f5951c520dc2a4a0",
+    "stored": "objects/67b659f3d81cacaa530c39ffd2bc1f0fea326fb40ae59be8f5951c520dc2a4a0.swf"
+  },
+  "02-rate-calibration/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "02-rate-calibration/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "02-rate-calibration/vector-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "02-rate-calibration/vector-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "03-fractional-pixels/EffectLoadChecks.as": {
+    "sha256": "4960c0a45c235d0d7f747e3ea131fb004b11101a6d86f27b03e1857b00c1f7e1",
+    "stored": "objects/4960c0a45c235d0d7f747e3ea131fb004b11101a6d86f27b03e1857b00c1f7e1.as"
+  },
+  "03-fractional-pixels/EffectLoadChecks.swf": {
+    "sha256": "df41ad1ab3336130ebf8979c2115d8645764064c66b07b14e541c44aa7cac2ba",
+    "stored": "objects/df41ad1ab3336130ebf8979c2115d8645764064c66b07b14e541c44aa7cac2ba.swf"
+  },
+  "03-fractional-pixels/src/BaselineVision.as": {
+    "sha256": "cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d",
+    "stored": "objects/cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d.as"
+  },
+  "03-fractional-pixels/src/RealisticVisionMod.as": {
+    "sha256": "59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4",
+    "stored": "objects/59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4.as"
+  },
+  "03-fractional-pixels/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "03-fractional-pixels/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "03-fractional-pixels/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "03-fractional-pixels/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "03-fractional-pixels/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "04-fractional-stress/EffectLoadChecks.as": {
+    "sha256": "e14f4e137e7ca9e2b6e74cf723168a982c1615303ae5e6d30ee2358f6aa23f38",
+    "stored": "objects/e14f4e137e7ca9e2b6e74cf723168a982c1615303ae5e6d30ee2358f6aa23f38.as"
+  },
+  "04-fractional-stress/EffectLoadChecks.swf": {
+    "sha256": "e2ba5141cb629380b6522f188dc31d3db27b3bab46a2046078f353c22c3ff229",
+    "stored": "objects/e2ba5141cb629380b6522f188dc31d3db27b3bab46a2046078f353c22c3ff229.swf"
+  },
+  "04-fractional-stress/src/BaselineVision.as": {
+    "sha256": "cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d",
+    "stored": "objects/cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d.as"
+  },
+  "04-fractional-stress/src/RealisticVisionMod.as": {
+    "sha256": "59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4",
+    "stored": "objects/59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4.as"
+  },
+  "04-fractional-stress/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "04-fractional-stress/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "04-fractional-stress/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "04-fractional-stress/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "04-fractional-stress/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "05-fractional-steady/EffectLoadChecks.as": {
+    "sha256": "f0d822c29007157becb845859724d169f052a63e570e3bc895c8eaf543a6f7dc",
+    "stored": "objects/f0d822c29007157becb845859724d169f052a63e570e3bc895c8eaf543a6f7dc.as"
+  },
+  "05-fractional-steady/EffectLoadChecks.swf": {
+    "sha256": "659f9e8f100fd75d8f5a227387b2a8a8cb510eca1f13844207bc58edcbdd1d00",
+    "stored": "objects/659f9e8f100fd75d8f5a227387b2a8a8cb510eca1f13844207bc58edcbdd1d00.swf"
+  },
+  "05-fractional-steady/src/BaselineVision.as": {
+    "sha256": "cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d",
+    "stored": "objects/cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d.as"
+  },
+  "05-fractional-steady/src/RealisticVisionMod.as": {
+    "sha256": "59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4",
+    "stored": "objects/59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4.as"
+  },
+  "05-fractional-steady/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "05-fractional-steady/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "05-fractional-steady/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "05-fractional-steady/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "05-fractional-steady/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "06-fractional-counterexample/EffectLoadChecks.as": {
+    "sha256": "5067ad3d2db459ed21fc4d92372ae4fa373de06d28689f76fbef513e6c49b5cc",
+    "stored": "objects/5067ad3d2db459ed21fc4d92372ae4fa373de06d28689f76fbef513e6c49b5cc.as"
+  },
+  "06-fractional-counterexample/EffectLoadChecks.swf": {
+    "sha256": "e68fc07aad45a162108366f492c7b473c515b19debc5a8ba292183679f396700",
+    "stored": "objects/e68fc07aad45a162108366f492c7b473c515b19debc5a8ba292183679f396700.swf"
+  },
+  "06-fractional-counterexample/src/BaselineVision.as": {
+    "sha256": "cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d",
+    "stored": "objects/cb48f799620108dce513ac15b0e9599e8727910d2b16bc36c729970e7540d67d.as"
+  },
+  "06-fractional-counterexample/src/RealisticVisionMod.as": {
+    "sha256": "59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4",
+    "stored": "objects/59612875343fb61ca0fb2b416d5399a1f9bede033ca78f7ccd83b59de54d0dc4.as"
+  },
+  "06-fractional-counterexample/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "06-fractional-counterexample/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "06-fractional-counterexample/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "06-fractional-counterexample/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "06-fractional-counterexample/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "07-support-volatile/EffectLoadChecks.as": {
+    "sha256": "8bc5441c3c36d66d06751d460d5f5b1469b40acb5fec0e8e32a731412d0cc046",
+    "stored": "objects/8bc5441c3c36d66d06751d460d5f5b1469b40acb5fec0e8e32a731412d0cc046.as"
+  },
+  "07-support-volatile/EffectLoadChecks.swf": {
+    "sha256": "845299bb0c9511d2d2049224a8032d8de3192083b5dea82bf36e39e294eda17a",
+    "stored": "objects/845299bb0c9511d2d2049224a8032d8de3192083b5dea82bf36e39e294eda17a.swf"
+  },
+  "07-support-volatile/src/BaselineVision.as": {
+    "sha256": "268672451609089734c3ce0496c6389c400512519d89784b3e85afa0728ed47d",
+    "stored": "objects/268672451609089734c3ce0496c6389c400512519d89784b3e85afa0728ed47d.as"
+  },
+  "07-support-volatile/src/RealisticVisionMod.as": {
+    "sha256": "95ff3fe25ca9b3f5b97dc0e239099bb266aee78f2519466820214d9c7fd0cc02",
+    "stored": "objects/95ff3fe25ca9b3f5b97dc0e239099bb266aee78f2519466820214d9c7fd0cc02.as"
+  },
+  "07-support-volatile/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "07-support-volatile/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "07-support-volatile/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "07-support-volatile/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "07-support-volatile/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "08-support-persistent/EffectLoadChecks.as": {
+    "sha256": "1aa09e935942af1d2ab4134d97c3c1acf2effd65d4692144046187d3fadbc406",
+    "stored": "objects/1aa09e935942af1d2ab4134d97c3c1acf2effd65d4692144046187d3fadbc406.as"
+  },
+  "08-support-persistent/EffectLoadChecks.swf": {
+    "sha256": "28c6b96b912ff6d007f6b632b183b1c758f66e968279ec4c47e30dcd756cc11a",
+    "stored": "objects/28c6b96b912ff6d007f6b632b183b1c758f66e968279ec4c47e30dcd756cc11a.swf"
+  },
+  "08-support-persistent/src/BaselineVision.as": {
+    "sha256": "268672451609089734c3ce0496c6389c400512519d89784b3e85afa0728ed47d",
+    "stored": "objects/268672451609089734c3ce0496c6389c400512519d89784b3e85afa0728ed47d.as"
+  },
+  "08-support-persistent/src/RealisticVisionMod.as": {
+    "sha256": "95ff3fe25ca9b3f5b97dc0e239099bb266aee78f2519466820214d9c7fd0cc02",
+    "stored": "objects/95ff3fe25ca9b3f5b97dc0e239099bb266aee78f2519466820214d9c7fd0cc02.as"
+  },
+  "08-support-persistent/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "08-support-persistent/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "08-support-persistent/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "08-support-persistent/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "08-support-persistent/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "09-support-combat/candidate.swf": {
+    "sha256": "4a2178b46816cd19ff92425296478a62877f2cc373e4126bf3ab1d3367a18b93",
+    "stored": "objects/4a2178b46816cd19ff92425296478a62877f2cc373e4126bf3ab1d3367a18b93.swf"
+  },
+  "09-support-combat/CombatRenderProbeMod.as": {
+    "sha256": "2d9a104e00ebc4e2fbcafa9a614b6a8efe990a0c1cc7a793e0bc2fb8f2c1427d",
+    "stored": "objects/2d9a104e00ebc4e2fbcafa9a614b6a8efe990a0c1cc7a793e0bc2fb8f2c1427d.as"
+  },
+  "09-support-combat/rv.swf": {
+    "sha256": "19c09e53f3686fdfba81d7229ffca1f0830e3dbe07f1f7eb37e9b95bd5c49651",
+    "stored": "objects/19c09e53f3686fdfba81d7229ffca1f0830e3dbe07f1f7eb37e9b95bd5c49651.swf"
+  },
+  "09-support-combat/vector.swf": {
+    "sha256": "8a65e0889ea058a381cfff07ab0f46bcbafebdbd9454fb4ab23e7df16be97a54",
+    "stored": "objects/8a65e0889ea058a381cfff07ab0f46bcbafebdbd9454fb4ab23e7df16be97a54.swf"
+  },
+  "09-support-combat/candidate-src/RealisticVisionMod.as": {
+    "sha256": "71b021d9250d1b903efbc159765755b11de3b6f52a2faa802951995c92701fb6",
+    "stored": "objects/71b021d9250d1b903efbc159765755b11de3b6f52a2faa802951995c92701fb6.as"
+  },
+  "09-support-combat/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "09-support-combat/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "09-support-combat/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "09-support-combat/fe/NativeTimingAccess.as": {
+    "sha256": "ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917",
+    "stored": "objects/ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917.as"
+  },
+  "09-support-combat/rv-src/RealisticVisionMod.as": {
+    "sha256": "5849d6bb4bf376acfdf4c3bde0af41b199066a68ac33fc0d708d1f156c7ecd91",
+    "stored": "objects/5849d6bb4bf376acfdf4c3bde0af41b199066a68ac33fc0d708d1f156c7ecd91.as"
+  },
+  "09-support-combat/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "09-support-combat/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "09-support-combat/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "09-support-combat/vector-src/RealisticVisionMod.as": {
+    "sha256": "c160ded291d5e4892ba18daee986faf58bd5b4ce42b908476ed0529083a91eae",
+    "stored": "objects/c160ded291d5e4892ba18daee986faf58bd5b4ce42b908476ed0529083a91eae.as"
+  },
+  "09-support-combat/vector-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "09-support-combat/vector-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "09-support-combat/vector-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "09-support-combat/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "09-support-combat/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "09-support-combat/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "ff8613b9412d4bbe10d4cfdbc058cc1e47694a5b474b7c67872aebb8a0bf60c8",
+    "stored": "objects/ff8613b9412d4bbe10d4cfdbc058cc1e47694a5b474b7c67872aebb8a0bf60c8.swf"
+  },
+  "09-support-combat/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "09-support-combat/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "09-support-combat/vector-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "09-support-combat/vector-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "10-support-reverse/candidate.swf": {
+    "sha256": "4a2178b46816cd19ff92425296478a62877f2cc373e4126bf3ab1d3367a18b93",
+    "stored": "objects/4a2178b46816cd19ff92425296478a62877f2cc373e4126bf3ab1d3367a18b93.swf"
+  },
+  "10-support-reverse/CombatRenderProbeMod.as": {
+    "sha256": "4a364a5402f3e31514e0d36306ea857a965f99adad3d648ef6c235aed7efb884",
+    "stored": "objects/4a364a5402f3e31514e0d36306ea857a965f99adad3d648ef6c235aed7efb884.as"
+  },
+  "10-support-reverse/rv.swf": {
+    "sha256": "19c09e53f3686fdfba81d7229ffca1f0830e3dbe07f1f7eb37e9b95bd5c49651",
+    "stored": "objects/19c09e53f3686fdfba81d7229ffca1f0830e3dbe07f1f7eb37e9b95bd5c49651.swf"
+  },
+  "10-support-reverse/vector.swf": {
+    "sha256": "8a65e0889ea058a381cfff07ab0f46bcbafebdbd9454fb4ab23e7df16be97a54",
+    "stored": "objects/8a65e0889ea058a381cfff07ab0f46bcbafebdbd9454fb4ab23e7df16be97a54.swf"
+  },
+  "10-support-reverse/candidate-src/RealisticVisionMod.as": {
+    "sha256": "71b021d9250d1b903efbc159765755b11de3b6f52a2faa802951995c92701fb6",
+    "stored": "objects/71b021d9250d1b903efbc159765755b11de3b6f52a2faa802951995c92701fb6.as"
+  },
+  "10-support-reverse/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "10-support-reverse/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "10-support-reverse/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "10-support-reverse/fe/NativeTimingAccess.as": {
+    "sha256": "ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917",
+    "stored": "objects/ba5db87aacebd767d25a8bcac5c671e098ef908f99afed693ed693ef3d2fa917.as"
+  },
+  "10-support-reverse/rv-src/RealisticVisionMod.as": {
+    "sha256": "5849d6bb4bf376acfdf4c3bde0af41b199066a68ac33fc0d708d1f156c7ecd91",
+    "stored": "objects/5849d6bb4bf376acfdf4c3bde0af41b199066a68ac33fc0d708d1f156c7ecd91.as"
+  },
+  "10-support-reverse/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "10-support-reverse/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "10-support-reverse/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "10-support-reverse/vector-src/RealisticVisionMod.as": {
+    "sha256": "c160ded291d5e4892ba18daee986faf58bd5b4ce42b908476ed0529083a91eae",
+    "stored": "objects/c160ded291d5e4892ba18daee986faf58bd5b4ce42b908476ed0529083a91eae.as"
+  },
+  "10-support-reverse/vector-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "10-support-reverse/vector-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "10-support-reverse/vector-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "10-support-reverse/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "10-support-reverse/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "10-support-reverse/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "7f3d7b2594ac8c56f56c1debf1fdc3513790e6f33e9b4ee06eb610986226871c",
+    "stored": "objects/7f3d7b2594ac8c56f56c1debf1fdc3513790e6f33e9b4ee06eb610986226871c.swf"
+  },
+  "10-support-reverse/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "10-support-reverse/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "10-support-reverse/vector-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "10-support-reverse/vector-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "baseline/src/RealisticVisionMod.as": {
+    "sha256": "412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366",
+    "stored": "objects/412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366.as"
+  },
+  "baseline/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "baseline/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "objects/7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa.as"
+  },
+  "baseline/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "objects/c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc.as"
+  },
+  "baseline/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "objects/4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f.as"
+  },
+  "baseline/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "candidates/aux/src/RealisticVisionMod.as": {
+    "sha256": "2b86d5ad8cf610d54eaabb1655919240f46186fbde76905ead55f5a85cc5c4a9",
+    "stored": "objects/2b86d5ad8cf610d54eaabb1655919240f46186fbde76905ead55f5a85cc5c4a9.as"
+  },
+  "candidates/aux/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "candidates/aux/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "objects/7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa.as"
+  },
+  "candidates/aux/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "objects/c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc.as"
+  },
+  "candidates/aux/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "objects/4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f.as"
+  },
+  "candidates/aux/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "candidates/fractional/src/RealisticVisionMod.as": {
+    "sha256": "a1e57b42562cf8bd6c2354ae00238480a89fe56d3d98339dde410b772487e3a8",
+    "stored": "objects/a1e57b42562cf8bd6c2354ae00238480a89fe56d3d98339dde410b772487e3a8.as"
+  },
+  "candidates/fractional/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "candidates/fractional/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "objects/7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa.as"
+  },
+  "candidates/fractional/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "objects/c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc.as"
+  },
+  "candidates/fractional/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "objects/4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f.as"
+  },
+  "candidates/fractional/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "candidates/support/src/RealisticVisionMod.as": {
+    "sha256": "5d56b8ee4cc0c3ee35fa4b4e2eafb25d377ec5bcec9155fab4d573f626b18785",
+    "stored": "objects/5d56b8ee4cc0c3ee35fa4b4e2eafb25d377ec5bcec9155fab4d573f626b18785.as"
+  },
+  "candidates/support/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "candidates/support/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "objects/7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa.as"
+  },
+  "candidates/support/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "objects/c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc.as"
+  },
+  "candidates/support/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "objects/4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f.as"
+  },
+  "candidates/support/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "candidates/vector/src/RealisticVisionMod.as": {
+    "sha256": "cb65856b2ca9a86d46ed81cacd7a79759ea8c6a1a7a35155250287279f04d15c",
+    "stored": "objects/cb65856b2ca9a86d46ed81cacd7a79759ea8c6a1a7a35155250287279f04d15c.as"
+  },
+  "candidates/vector/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "objects/68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3.as"
+  },
+  "candidates/vector/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "objects/7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa.as"
+  },
+  "candidates/vector/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "objects/c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc.as"
+  },
+  "candidates/vector/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "objects/4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f.as"
+  },
+  "candidates/vector/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "objects/d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee.as"
+  },
+  "native-source/scripts/fe/MainMenu.as": {
+    "sha256": "277eb7199768a9c8a4cc38cc5e257850107e6dce7db33e6f3fa438d424f50956",
+    "stored": "objects/277eb7199768a9c8a4cc38cc5e257850107e6dce7db33e6f3fa438d424f50956.as"
+  }
+}

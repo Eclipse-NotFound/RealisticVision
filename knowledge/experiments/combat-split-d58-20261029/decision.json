@@ -1,0 +1,14 @@
+{
+  "adopted": null,
+  "deployed": false,
+  "fullyResolved": false,
+  "reason": "fractional exact pixels fail; support passes 1446 checks but classic regresses in both full-combat runs, current local CPU inconsistent; aux/vector split contaminated by B190",
+  "performanceRuns": [
+    "09-support-combat",
+    "10-support-reverse"
+  ],
+  "diagnosticRuns": [
+    "01-split-combat",
+    "02-rate-calibration"
+  ]
+}

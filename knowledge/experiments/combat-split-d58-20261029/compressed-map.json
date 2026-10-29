@@ -1,0 +1,22 @@
+{
+  "01-split-combat/evidence/result.json": {
+    "stored": "01-split-combat/evidence/result.json.gz",
+    "originalSha256": "bb435654cb1eaf14f28cfa2636e9d545b7a5fa3956e42c9514f1c07e345a4dd6",
+    "storedSha256": "1cf9ea455eb3c55547c4f9ea45e18ec2a3196753dea170c0c3857fa0c76a5c18"
+  },
+  "02-rate-calibration/evidence/result.json": {
+    "stored": "02-rate-calibration/evidence/result.json.gz",
+    "originalSha256": "3f7f7f7bfa181d631464a05cc2034168507a9acd2d49f37b70538d1d03d5ca42",
+    "storedSha256": "a390e9eb03073fa8fead6837ec681d1813129760a06ebab3576bb1eb8f5fb6f8"
+  },
+  "09-support-combat/evidence/result.json": {
+    "stored": "09-support-combat/evidence/result.json.gz",
+    "originalSha256": "c19addc9c2ec3255788fb2893f700d8f3163ec2784375885c2917ab9d5559361",
+    "storedSha256": "398d2ac52f434a28fa76850f701f18df6df911c6bb4db30818d94afbfc5c9744"
+  },
+  "10-support-reverse/evidence/result.json": {
+    "stored": "10-support-reverse/evidence/result.json.gz",
+    "originalSha256": "3b422323bc4f89b967b8006009729e7ddfb908e893ddf2451153a920126f6e39",
+    "storedSha256": "84cdb5ef7b3ccc9da21e3b773c5bd0a681b5b23ad04cf37bc4c6769e33fe596e"
+  }
+}
