@@ -1,0 +1,9 @@
+ModLoader[boot_start] v2 run=run_1793231365737_60878
+ModLoader[requested_CombatRenderProbeMod] line 16
+ModLoader[boot] v2 col=2 requested=1
+ModLoader[ok_CombatRenderProbeMod] init
+453 Интерфейс
+1038 Game init
+FAIL Error: Error #1009TypeError: Error #1009	at fe.unit::Invent/addLoad()	at fe.unit::Invent()	at fe::World/newGame1()	at fe::World/step()	at fe::MainMenu/mainStep()gr_stage: 0 Error: Error #1009TypeError: Error #1009	at fe.unit::Invent/addLoad()	at fe.unit::Invent()	at fe::World/newGame1()	at fe::World/step()	at fe::MainMenu/mainStep()gr_stage: 0
+	at CombatRenderProbeMod/tick()
+	at flash.utils::Timer/tick()

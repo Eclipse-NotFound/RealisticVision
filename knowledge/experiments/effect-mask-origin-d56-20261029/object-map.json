@@ -1,0 +1,1610 @@
+{
+  "current-final-native-27/candidate.swf": {
+    "sha256": "ff86e491138a3c7b451c7f222c31296b5cca1729119d2218ba4a01ba4b7b8f22",
+    "stored": "objects/ff86e491138a3c7b451c7f222c31296b5cca1729119d2218ba4a01ba4b7b8f22.swf"
+  },
+  "current-final-native-27/CombatRenderProbeMod.as": {
+    "sha256": "ccb2a892385c23558a720e95a7ce94d5fdcc4b116b4c6bb704880b63678cce88",
+    "stored": "objects/ccb2a892385c23558a720e95a7ce94d5fdcc4b116b4c6bb704880b63678cce88.as"
+  },
+  "current-final-native-27/rv.swf": {
+    "sha256": "fab9a219d50310fafc59d78e83a725c7931e8e0aba1e66074caa329203827840",
+    "stored": "objects/fab9a219d50310fafc59d78e83a725c7931e8e0aba1e66074caa329203827840.swf"
+  },
+  "current-final-native-27/candidate-src/RealisticVisionMod.as": {
+    "sha256": "2d5ba51187636f91cb0397e243a5aef103a1f4df350e99b6114e6e331cd8f2db",
+    "stored": "objects/2d5ba51187636f91cb0397e243a5aef103a1f4df350e99b6114e6e331cd8f2db.as"
+  },
+  "current-final-native-27/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "current-final-native-27/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "current-final-native-27/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "current-final-native-27/rv-src/RealisticVisionMod.as": {
+    "sha256": "1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447",
+    "stored": "objects/1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447.as"
+  },
+  "current-final-native-27/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "current-final-native-27/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "current-final-native-27/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "current-final-native-27/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "current-final-native-27/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "current-final-native-27/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "29e4da8bdbe796902e0a2e4fca9e8f389bbb16331b18603546ec6691accda709",
+    "stored": "objects/29e4da8bdbe796902e0a2e4fca9e8f389bbb16331b18603546ec6691accda709.swf"
+  },
+  "current-final-native-27/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "current-final-native-27/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "current-final-pixels-26/EffectLoadChecks.as": {
+    "sha256": "4d8827d964db96383b64e3c8c78d3506043865d2688b4b2313674257d4f0599d",
+    "stored": "objects/4d8827d964db96383b64e3c8c78d3506043865d2688b4b2313674257d4f0599d.as"
+  },
+  "current-final-pixels-26/EffectLoadChecks.swf": {
+    "sha256": "71206aaf53e953539dde93bc335bbb7e874c5bc4f96119187255c7832efd1d99",
+    "stored": "objects/71206aaf53e953539dde93bc335bbb7e874c5bc4f96119187255c7832efd1d99.swf"
+  },
+  "current-final-pixels-26/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "current-final-pixels-26/src/RealisticVisionMod.as": {
+    "sha256": "a4652f1643026201e374df9c89396907179d25622d6182c4a07b44efbb567528",
+    "stored": "objects/a4652f1643026201e374df9c89396907179d25622d6182c4a07b44efbb567528.as"
+  },
+  "current-final-pixels-26/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "current-final-pixels-26/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "current-final-pixels-26/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "current-final-pixels-26/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "current-final-pixels-26/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "dark-child-pixels-06/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "dark-child-pixels-06/EffectLoadChecks.swf": {
+    "sha256": "090af2ca8b58063652317f96b911c83e5382b5b1f1f39b6cc3910196b6129f28",
+    "stored": "objects/090af2ca8b58063652317f96b911c83e5382b5b1f1f39b6cc3910196b6129f28.swf"
+  },
+  "dark-child-pixels-06/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "dark-child-pixels-06/src/RealisticVisionMod.as": {
+    "sha256": "d41a53e6fb3ea4a570a70960eaa86124bcc50c4d1b07e1152c9bccb00c2b7f0d",
+    "stored": "objects/d41a53e6fb3ea4a570a70960eaa86124bcc50c4d1b07e1152c9bccb00c2b7f0d.as"
+  },
+  "dark-child-pixels-06/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "dark-child-pixels-06/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "dark-child-pixels-06/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "dark-child-pixels-06/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "dark-child-pixels-06/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "dark-native-pixels-07/EffectLoadChecks.as": {
+    "sha256": "33eeca6839d464980092b17fa2c63b19f0e1ae1b54ba8ee81b99a5e311aed75c",
+    "stored": "objects/33eeca6839d464980092b17fa2c63b19f0e1ae1b54ba8ee81b99a5e311aed75c.as"
+  },
+  "dark-native-pixels-07/EffectLoadChecks.swf": {
+    "sha256": "a5565f1b5e7669cde0fa263ba5dd7367ba959e28c84323fd5c436de1118ff49f",
+    "stored": "objects/a5565f1b5e7669cde0fa263ba5dd7367ba959e28c84323fd5c436de1118ff49f.swf"
+  },
+  "dark-native-pixels-07/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "dark-native-pixels-07/src/RealisticVisionMod.as": {
+    "sha256": "4f5c572de48a02a2946c71f7f566503d58c15459ed18a6a6ba0af5b69033993d",
+    "stored": "objects/4f5c572de48a02a2946c71f7f566503d58c15459ed18a6a6ba0af5b69033993d.as"
+  },
+  "dark-native-pixels-07/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "dark-native-pixels-07/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "dark-native-pixels-07/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "dark-native-pixels-07/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "dark-native-pixels-07/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "dark-native-replay-08/candidate.swf": {
+    "sha256": "565b49f8f188377384156e40a6cf9be2bf395a796fe10c3ffe116072c2a57d00",
+    "stored": "objects/565b49f8f188377384156e40a6cf9be2bf395a796fe10c3ffe116072c2a57d00.swf"
+  },
+  "dark-native-replay-08/CombatRenderProbeMod.as": {
+    "sha256": "3cf94acedc3b965088630b0dd53b96b414a160508703f121dcea8365e025662c",
+    "stored": "objects/3cf94acedc3b965088630b0dd53b96b414a160508703f121dcea8365e025662c.as"
+  },
+  "dark-native-replay-08/rv.swf": {
+    "sha256": "722b3339b1a2c58e372ee5e702e0049534cd71ae4e3f38330a62c2b244d78fcd",
+    "stored": "objects/722b3339b1a2c58e372ee5e702e0049534cd71ae4e3f38330a62c2b244d78fcd.swf"
+  },
+  "dark-native-replay-08/candidate-src/RealisticVisionMod.as": {
+    "sha256": "80a2df90f8f5b9bd4a0428f2ab93b4ccf138c75f68e647acf79dbb0106d319e1",
+    "stored": "objects/80a2df90f8f5b9bd4a0428f2ab93b4ccf138c75f68e647acf79dbb0106d319e1.as"
+  },
+  "dark-native-replay-08/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "dark-native-replay-08/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "dark-native-replay-08/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "dark-native-replay-08/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "dark-native-replay-08/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "dark-native-replay-08/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "dark-native-replay-08/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "dark-native-replay-08/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "dark-native-replay-08/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "dark-native-replay-08/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "b4360d1e479a2b2c9d37c8e5769d191cb54184f1dd73a921000bbba9a59597ea",
+    "stored": "objects/b4360d1e479a2b2c9d37c8e5769d191cb54184f1dd73a921000bbba9a59597ea.swf"
+  },
+  "dark-native-replay-08/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "dark-native-replay-08/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "fresh-counterexample-14/EffectLoadChecks.as": {
+    "sha256": "5e27e6391bfcb44c9d8edfdf439ba298e6211ff8855184949bc6a90030c3e99b",
+    "stored": "objects/5e27e6391bfcb44c9d8edfdf439ba298e6211ff8855184949bc6a90030c3e99b.as"
+  },
+  "fresh-counterexample-14/EffectLoadChecks.swf": {
+    "sha256": "c40f42f62f50decd019bcbd89c7ebe49dfa6265d64d437e4e1252216698b7e81",
+    "stored": "objects/c40f42f62f50decd019bcbd89c7ebe49dfa6265d64d437e4e1252216698b7e81.swf"
+  },
+  "fresh-counterexample-14/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "fresh-counterexample-14/src/RealisticVisionMod.as": {
+    "sha256": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "stored": "objects/a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da.as"
+  },
+  "fresh-counterexample-14/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "fresh-counterexample-14/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "fresh-counterexample-14/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "fresh-counterexample-14/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "fresh-counterexample-14/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "fresh-reference-16/EffectLoadChecks.as": {
+    "sha256": "fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3",
+    "stored": "objects/fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3.as"
+  },
+  "fresh-reference-16/EffectLoadChecks.swf": {
+    "sha256": "3b2a07a9d9ce75aca767575edc13100331e807ffd62b294f669192acae18862f",
+    "stored": "objects/3b2a07a9d9ce75aca767575edc13100331e807ffd62b294f669192acae18862f.swf"
+  },
+  "fresh-reference-16/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "fresh-reference-16/src/RealisticVisionMod.as": {
+    "sha256": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "stored": "objects/a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da.as"
+  },
+  "fresh-reference-16/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "fresh-reference-16/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "fresh-reference-16/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "fresh-reference-16/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "fresh-reference-16/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-native-24/candidate.swf": {
+    "sha256": "b6ef66aabcf8bfe827e02846dfa026e89dbe16f9c9e1f1ac4a04b5941e29a91f",
+    "stored": "objects/b6ef66aabcf8bfe827e02846dfa026e89dbe16f9c9e1f1ac4a04b5941e29a91f.swf"
+  },
+  "grid-native-24/CombatRenderProbeMod.as": {
+    "sha256": "3134c46c6a7acf0761c753ff2d046c19044600e6cb7fb4b445ebcfd0fad6b0d6",
+    "stored": "objects/3134c46c6a7acf0761c753ff2d046c19044600e6cb7fb4b445ebcfd0fad6b0d6.as"
+  },
+  "grid-native-24/rv.swf": {
+    "sha256": "4e07227e838c336f2523dd36b21915f939dcc6648bbec982d111675629730548",
+    "stored": "objects/4e07227e838c336f2523dd36b21915f939dcc6648bbec982d111675629730548.swf"
+  },
+  "grid-native-24/candidate-src/RealisticVisionMod.as": {
+    "sha256": "15f5d1be78e61697e17eb58365f9377d3fb5f7c6dfce776c0dae1f5cc8148fa0",
+    "stored": "objects/15f5d1be78e61697e17eb58365f9377d3fb5f7c6dfce776c0dae1f5cc8148fa0.as"
+  },
+  "grid-native-24/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-native-24/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-native-24/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-native-24/rv-src/RealisticVisionMod.as": {
+    "sha256": "1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447",
+    "stored": "objects/1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447.as"
+  },
+  "grid-native-24/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-native-24/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-native-24/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-native-24/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-native-24/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-native-24/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "e26968cb5ae9fe06720daf540e1c1008727e02a437db1b2d278c057d0c075356",
+    "stored": "objects/e26968cb5ae9fe06720daf540e1c1008727e02a437db1b2d278c057d0c075356.swf"
+  },
+  "grid-native-24/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-native-24/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-native-reverse-25/candidate.swf": {
+    "sha256": "b6ef66aabcf8bfe827e02846dfa026e89dbe16f9c9e1f1ac4a04b5941e29a91f",
+    "stored": "objects/b6ef66aabcf8bfe827e02846dfa026e89dbe16f9c9e1f1ac4a04b5941e29a91f.swf"
+  },
+  "grid-native-reverse-25/CombatRenderProbeMod.as": {
+    "sha256": "f185da24e108e8e57a9344d9bc0814b47f91482b92b1ace77cce97a366fd1153",
+    "stored": "objects/f185da24e108e8e57a9344d9bc0814b47f91482b92b1ace77cce97a366fd1153.as"
+  },
+  "grid-native-reverse-25/rv.swf": {
+    "sha256": "4e07227e838c336f2523dd36b21915f939dcc6648bbec982d111675629730548",
+    "stored": "objects/4e07227e838c336f2523dd36b21915f939dcc6648bbec982d111675629730548.swf"
+  },
+  "grid-native-reverse-25/candidate-src/RealisticVisionMod.as": {
+    "sha256": "15f5d1be78e61697e17eb58365f9377d3fb5f7c6dfce776c0dae1f5cc8148fa0",
+    "stored": "objects/15f5d1be78e61697e17eb58365f9377d3fb5f7c6dfce776c0dae1f5cc8148fa0.as"
+  },
+  "grid-native-reverse-25/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-native-reverse-25/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-native-reverse-25/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-native-reverse-25/rv-src/RealisticVisionMod.as": {
+    "sha256": "1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447",
+    "stored": "objects/1139b14ebec5a5ca99511ad73f76e454a362bb0adfe6d4b8c1e791a83a645447.as"
+  },
+  "grid-native-reverse-25/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-native-reverse-25/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-native-reverse-25/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-native-reverse-25/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-native-reverse-25/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-native-reverse-25/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "3c81077ea4f7f304a40901c977f88d3426e1ec37325e0b9a7e32e5cd94e499dc",
+    "stored": "objects/3c81077ea4f7f304a40901c977f88d3426e1ec37325e0b9a7e32e5cd94e499dc.swf"
+  },
+  "grid-native-reverse-25/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-native-reverse-25/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-refresh-reference-22/EffectLoadChecks.as": {
+    "sha256": "fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3",
+    "stored": "objects/fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3.as"
+  },
+  "grid-refresh-reference-22/EffectLoadChecks.swf": {
+    "sha256": "cdf87ff3206af68be85594b57774e802972b6ede0e1ec4e3f8061bf793f5601f",
+    "stored": "objects/cdf87ff3206af68be85594b57774e802972b6ede0e1ec4e3f8061bf793f5601f.swf"
+  },
+  "grid-refresh-reference-22/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "grid-refresh-reference-22/src/RealisticVisionMod.as": {
+    "sha256": "e12c64bc0d7d7c17a7357f806c556d47e2dfb9568a0be7152bbb2309d93dcda5",
+    "stored": "objects/e12c64bc0d7d7c17a7357f806c556d47e2dfb9568a0be7152bbb2309d93dcda5.as"
+  },
+  "grid-refresh-reference-22/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-refresh-reference-22/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-refresh-reference-22/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-refresh-reference-22/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-refresh-reference-22/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-refresh-replay-23/candidate.swf": {
+    "sha256": "aa85facd20e581f23ff2ea3484287f8af01672779fb4e0d0b643e123647725e1",
+    "stored": "objects/aa85facd20e581f23ff2ea3484287f8af01672779fb4e0d0b643e123647725e1.swf"
+  },
+  "grid-refresh-replay-23/CombatRenderProbeMod.as": {
+    "sha256": "4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8",
+    "stored": "objects/4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8.as"
+  },
+  "grid-refresh-replay-23/rv.swf": {
+    "sha256": "9403bf1bb25946c4948ce1f3639718fe036460e59617a2cb09089a6324f2d584",
+    "stored": "objects/9403bf1bb25946c4948ce1f3639718fe036460e59617a2cb09089a6324f2d584.swf"
+  },
+  "grid-refresh-replay-23/candidate-src/RealisticVisionMod.as": {
+    "sha256": "2ac9c2fcca1c19903d8875b6bb43f1bf79ae5a761253441403beca22b9201bdb",
+    "stored": "objects/2ac9c2fcca1c19903d8875b6bb43f1bf79ae5a761253441403beca22b9201bdb.as"
+  },
+  "grid-refresh-replay-23/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-refresh-replay-23/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-refresh-replay-23/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-refresh-replay-23/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "grid-refresh-replay-23/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "grid-refresh-replay-23/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "grid-refresh-replay-23/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "grid-refresh-replay-23/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-refresh-replay-23/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "grid-refresh-replay-23/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "3b277b2a98a658c572394adb453fc5ff33849c460775dc8e5cd72524b4f59296",
+    "stored": "objects/3b277b2a98a658c572394adb453fc5ff33849c460775dc8e5cd72524b4f59296.swf"
+  },
+  "grid-refresh-replay-23/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "grid-refresh-replay-23/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "guard-pixels-02/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "guard-pixels-02/EffectLoadChecks.swf": {
+    "sha256": "2483522750caf278cc9031e43e779481269681a7ea7d3fa11e2c94c0ef672e47",
+    "stored": "objects/2483522750caf278cc9031e43e779481269681a7ea7d3fa11e2c94c0ef672e47.swf"
+  },
+  "guard-pixels-02/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "guard-pixels-02/src/RealisticVisionMod.as": {
+    "sha256": "3f94dc8d888708f877c5d95609f3c0e94de267565c30595ac464cf5e505109db",
+    "stored": "objects/3f94dc8d888708f877c5d95609f3c0e94de267565c30595ac464cf5e505109db.as"
+  },
+  "guard-pixels-02/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "guard-pixels-02/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "guard-pixels-02/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "guard-pixels-02/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "guard-pixels-02/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "guard-replay-pixels-03/candidate.swf": {
+    "sha256": "c12b885450b55578e215fc08ff9e6383b9736ba24a4fb09da53e6f74cfbaee31",
+    "stored": "objects/c12b885450b55578e215fc08ff9e6383b9736ba24a4fb09da53e6f74cfbaee31.swf"
+  },
+  "guard-replay-pixels-03/CombatRenderProbeMod.as": {
+    "sha256": "d2f91cd2805da86148e6b9c4599c632f0a60f3f923f331b7ec142c0630673e96",
+    "stored": "objects/d2f91cd2805da86148e6b9c4599c632f0a60f3f923f331b7ec142c0630673e96.as"
+  },
+  "guard-replay-pixels-03/rv.swf": {
+    "sha256": "37b38fd0a992f507830eb3519d32ef1bb5f61f230d1385ba737f39f702be64bf",
+    "stored": "objects/37b38fd0a992f507830eb3519d32ef1bb5f61f230d1385ba737f39f702be64bf.swf"
+  },
+  "guard-replay-pixels-03/candidate-src/RealisticVisionMod.as": {
+    "sha256": "ee2f0df32c3c067e7a375e3383b7e53b0b4a6000807a4558eeedc251096c5dd4",
+    "stored": "objects/ee2f0df32c3c067e7a375e3383b7e53b0b4a6000807a4558eeedc251096c5dd4.as"
+  },
+  "guard-replay-pixels-03/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "guard-replay-pixels-03/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "guard-replay-pixels-03/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "guard-replay-pixels-03/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "guard-replay-pixels-03/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "guard-replay-pixels-03/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "guard-replay-pixels-03/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "guard-replay-pixels-03/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "guard-replay-pixels-03/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "guard-replay-pixels-03/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "815cdbe26dfa4a4420825444ab054352cfa920c49240240de8f42e3e8eed5358",
+    "stored": "objects/815cdbe26dfa4a4420825444ab054352cfa920c49240240de8f42e3e8eed5358.swf"
+  },
+  "guard-replay-pixels-03/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "guard-replay-pixels-03/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "guard-replay-timing-04/candidate.swf": {
+    "sha256": "31345987917e976751d5924e1078544104c529870391ce1c3ea567b6dafbf47e",
+    "stored": "objects/31345987917e976751d5924e1078544104c529870391ce1c3ea567b6dafbf47e.swf"
+  },
+  "guard-replay-timing-04/CombatRenderProbeMod.as": {
+    "sha256": "6f9bbc6ea3a21a66f6615bf851505894b8b1d9a1dad408d79f8c8ca75cdd8986",
+    "stored": "objects/6f9bbc6ea3a21a66f6615bf851505894b8b1d9a1dad408d79f8c8ca75cdd8986.as"
+  },
+  "guard-replay-timing-04/rv.swf": {
+    "sha256": "f9df1c3b3e4f03a4f02cc9c76b6c68a05e1296b64b9acb05993bb536d4180684",
+    "stored": "objects/f9df1c3b3e4f03a4f02cc9c76b6c68a05e1296b64b9acb05993bb536d4180684.swf"
+  },
+  "guard-replay-timing-04/candidate-src/RealisticVisionMod.as": {
+    "sha256": "ee2f0df32c3c067e7a375e3383b7e53b0b4a6000807a4558eeedc251096c5dd4",
+    "stored": "objects/ee2f0df32c3c067e7a375e3383b7e53b0b4a6000807a4558eeedc251096c5dd4.as"
+  },
+  "guard-replay-timing-04/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "guard-replay-timing-04/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "guard-replay-timing-04/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "guard-replay-timing-04/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "guard-replay-timing-04/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "guard-replay-timing-04/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "guard-replay-timing-04/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "guard-replay-timing-04/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "guard-replay-timing-04/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "guard-replay-timing-04/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "31804eea1edbe8ff036b23106f46d48249f47021b1425f4f48e80525edf18032",
+    "stored": "objects/31804eea1edbe8ff036b23106f46d48249f47021b1425f4f48e80525edf18032.swf"
+  },
+  "guard-replay-timing-04/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "guard-replay-timing-04/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "invalidate-counterexample-15/EffectLoadChecks.as": {
+    "sha256": "7598525cf1ff44241ccd747ccc289cddfd767f6358e6b5e37dbbe2143207119a",
+    "stored": "objects/7598525cf1ff44241ccd747ccc289cddfd767f6358e6b5e37dbbe2143207119a.as"
+  },
+  "invalidate-counterexample-15/EffectLoadChecks.swf": {
+    "sha256": "29e83fe7d4f1aba6424a00917b461a4cde0263a1d8aecbb4080a48bd4483d899",
+    "stored": "objects/29e83fe7d4f1aba6424a00917b461a4cde0263a1d8aecbb4080a48bd4483d899.swf"
+  },
+  "invalidate-counterexample-15/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "invalidate-counterexample-15/src/RealisticVisionMod.as": {
+    "sha256": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "stored": "objects/a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da.as"
+  },
+  "invalidate-counterexample-15/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "invalidate-counterexample-15/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "invalidate-counterexample-15/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "invalidate-counterexample-15/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "invalidate-counterexample-15/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "local-pixels-01/EffectLoadChecks.as": {
+    "sha256": "db98763a8069fc36ad7c0a0e51d78504f94c04d666a1966eab4b1bbe0afb7661",
+    "stored": "objects/db98763a8069fc36ad7c0a0e51d78504f94c04d666a1966eab4b1bbe0afb7661.as"
+  },
+  "local-pixels-01/EffectLoadChecks.swf": {
+    "sha256": "b64f21faff83cc57ccd7b87059c027cedd5a00817617e7a3662c2f991842b39f",
+    "stored": "objects/b64f21faff83cc57ccd7b87059c027cedd5a00817617e7a3662c2f991842b39f.swf"
+  },
+  "local-pixels-01/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "local-pixels-01/src/RealisticVisionMod.as": {
+    "sha256": "7b27cb161081e3e48196bcb7e839b6e8297abbae6219fa6e16a5aff202af0a60",
+    "stored": "objects/7b27cb161081e3e48196bcb7e839b6e8297abbae6219fa6e16a5aff202af0a60.as"
+  },
+  "local-pixels-01/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "local-pixels-01/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "local-pixels-01/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "local-pixels-01/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "local-pixels-01/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "offscreen-pixels-17/EffectLoadChecks.as": {
+    "sha256": "639cc832f6dcc6797a8cccdefcdd45196fa8509b77b8e984ebdd9e5dfe658c67",
+    "stored": "objects/639cc832f6dcc6797a8cccdefcdd45196fa8509b77b8e984ebdd9e5dfe658c67.as"
+  },
+  "offscreen-pixels-17/EffectLoadChecks.swf": {
+    "sha256": "274f4465347f643870710a650a8c1b682eeaef1ff72b3ef78c3bd78d37551de5",
+    "stored": "objects/274f4465347f643870710a650a8c1b682eeaef1ff72b3ef78c3bd78d37551de5.swf"
+  },
+  "offscreen-pixels-17/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "offscreen-pixels-17/src/RealisticVisionMod.as": {
+    "sha256": "b24f764c1ca34ced01a8a85dc0e352700a3a7f951cc711efc66c08018c16ff8f",
+    "stored": "objects/b24f764c1ca34ced01a8a85dc0e352700a3a7f951cc711efc66c08018c16ff8f.as"
+  },
+  "offscreen-pixels-17/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "offscreen-pixels-17/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "offscreen-pixels-17/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "offscreen-pixels-17/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "offscreen-pixels-17/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "offscreen-viewport-18/EffectLoadChecks.as": {
+    "sha256": "866293fb0e0c6588e02c551e7e64ceb082ab042638b143993ffd3310e8782c0e",
+    "stored": "objects/866293fb0e0c6588e02c551e7e64ceb082ab042638b143993ffd3310e8782c0e.as"
+  },
+  "offscreen-viewport-18/EffectLoadChecks.swf": {
+    "sha256": "be6ef03b84cc2ee83054bb81938ae3b412a6271f6a68923ab59034fa9258ae33",
+    "stored": "objects/be6ef03b84cc2ee83054bb81938ae3b412a6271f6a68923ab59034fa9258ae33.swf"
+  },
+  "offscreen-viewport-18/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "offscreen-viewport-18/src/RealisticVisionMod.as": {
+    "sha256": "b24f764c1ca34ced01a8a85dc0e352700a3a7f951cc711efc66c08018c16ff8f",
+    "stored": "objects/b24f764c1ca34ced01a8a85dc0e352700a3a7f951cc711efc66c08018c16ff8f.as"
+  },
+  "offscreen-viewport-18/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "offscreen-viewport-18/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "offscreen-viewport-18/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "offscreen-viewport-18/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "offscreen-viewport-18/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "opaque-pixels-10/EffectLoadChecks.as": {
+    "sha256": "1dfd1f21142c48043ae5858e771d1f732731b230783d186d9e8798536198d0c5",
+    "stored": "objects/1dfd1f21142c48043ae5858e771d1f732731b230783d186d9e8798536198d0c5.as"
+  },
+  "opaque-pixels-10/EffectLoadChecks.swf": {
+    "sha256": "5f7ab240ec2229b05b43b78a523b60dd3a59f4710e68867e8b9fa663629aeee3",
+    "stored": "objects/5f7ab240ec2229b05b43b78a523b60dd3a59f4710e68867e8b9fa663629aeee3.swf"
+  },
+  "opaque-pixels-10/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "opaque-pixels-10/src/RealisticVisionMod.as": {
+    "sha256": "08837c9fcee7a9b961f254de59ab10532f46339a842392a90af3d793c72a1e66",
+    "stored": "objects/08837c9fcee7a9b961f254de59ab10532f46339a842392a90af3d793c72a1e66.as"
+  },
+  "opaque-pixels-10/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "opaque-pixels-10/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "opaque-pixels-10/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "opaque-pixels-10/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "opaque-pixels-10/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "production-smoke-28/ProductionSmokeMod.as": {
+    "sha256": "c0572db54784606096db335e90c2436508781dfd264372990692c61e38cdd9b3",
+    "stored": "objects/c0572db54784606096db335e90c2436508781dfd264372990692c61e38cdd9b3.as"
+  },
+  "production-smoke-28/mods/ProductionSmoke/release/ProductionSmokeMod.swf": {
+    "sha256": "ce10adec98d1bac5682d0c2c8aafa2abd26706ad87ff6c6fc54ccff4f79f884d",
+    "stored": "objects/ce10adec98d1bac5682d0c2c8aafa2abd26706ad87ff6c6fc54ccff4f79f884d.swf"
+  },
+  "production-smoke-28/mods/RealisticVision/release/RealisticVisionMod.swf": {
+    "sha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "stored": "production/RealisticVisionMod.swf"
+  },
+  "production-smoke-29/ProductionSmokeMod.as": {
+    "sha256": "d4addb94e1a0fe967341a1c08a3f880b9cf7c1791b8491a3551b50350e161d7d",
+    "stored": "objects/d4addb94e1a0fe967341a1c08a3f880b9cf7c1791b8491a3551b50350e161d7d.as"
+  },
+  "production-smoke-29/mods/ProductionSmoke/release/ProductionSmokeMod.swf": {
+    "sha256": "b8955143ba34471a9e4c8a892244bde3610a81b5f413d51d8dd422086a585bb5",
+    "stored": "objects/b8955143ba34471a9e4c8a892244bde3610a81b5f413d51d8dd422086a585bb5.swf"
+  },
+  "production-smoke-29/mods/RealisticVision/release/RealisticVisionMod.swf": {
+    "sha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "stored": "production/RealisticVisionMod.swf"
+  },
+  "raster-crop-pixels-09/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "raster-crop-pixels-09/EffectLoadChecks.swf": {
+    "sha256": "d23ffc16ffb5ac94e3043967d133a25ce7ca255b4ea061ffc4db4d5be83f3fd8",
+    "stored": "objects/d23ffc16ffb5ac94e3043967d133a25ce7ca255b4ea061ffc4db4d5be83f3fd8.swf"
+  },
+  "raster-crop-pixels-09/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "raster-crop-pixels-09/src/RealisticVisionMod.as": {
+    "sha256": "c69bb93709d22577e6a5ddcce9b7109a3a759abf6633713e13df9456c1ec9ce2",
+    "stored": "objects/c69bb93709d22577e6a5ddcce9b7109a3a759abf6633713e13df9456c1ec9ce2.as"
+  },
+  "raster-crop-pixels-09/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "raster-crop-pixels-09/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "raster-crop-pixels-09/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "raster-crop-pixels-09/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "raster-crop-pixels-09/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "rebind-pixels-11/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "rebind-pixels-11/EffectLoadChecks.swf": {
+    "sha256": "70b3d49fbb59dd6e297a5ebabbaeff2356235bc01e19e314be36db78dd9d0318",
+    "stored": "objects/70b3d49fbb59dd6e297a5ebabbaeff2356235bc01e19e314be36db78dd9d0318.swf"
+  },
+  "rebind-pixels-11/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "rebind-pixels-11/src/RealisticVisionMod.as": {
+    "sha256": "a244b7145ff53416af181944d070e2dea4ce3b0d1efdda7bb1684ac8d76a2bcd",
+    "stored": "objects/a244b7145ff53416af181944d070e2dea4ce3b0d1efdda7bb1684ac8d76a2bcd.as"
+  },
+  "rebind-pixels-11/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "rebind-pixels-11/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "rebind-pixels-11/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "rebind-pixels-11/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "rebind-pixels-11/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "refresh-full-replay-21/candidate.swf": {
+    "sha256": "2730b2e1fa6fda75a1682504bc8c4e4ea18271cc9ad871705bd4a6b08c9dac73",
+    "stored": "objects/2730b2e1fa6fda75a1682504bc8c4e4ea18271cc9ad871705bd4a6b08c9dac73.swf"
+  },
+  "refresh-full-replay-21/CombatRenderProbeMod.as": {
+    "sha256": "4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8",
+    "stored": "objects/4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8.as"
+  },
+  "refresh-full-replay-21/rv.swf": {
+    "sha256": "9410427a8632482fe684551d97fd5b655e646884032f0b7bc9fdf620cf484c47",
+    "stored": "objects/9410427a8632482fe684551d97fd5b655e646884032f0b7bc9fdf620cf484c47.swf"
+  },
+  "refresh-full-replay-21/candidate-src/RealisticVisionMod.as": {
+    "sha256": "908ad8d974aa13df912eb4684e2c5deb65e65551ab4a69a677844ee06fa938ae",
+    "stored": "objects/908ad8d974aa13df912eb4684e2c5deb65e65551ab4a69a677844ee06fa938ae.as"
+  },
+  "refresh-full-replay-21/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "refresh-full-replay-21/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "refresh-full-replay-21/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "refresh-full-replay-21/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "refresh-full-replay-21/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "refresh-full-replay-21/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "refresh-full-replay-21/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "refresh-full-replay-21/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "refresh-full-replay-21/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "refresh-full-replay-21/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "c28a568f4b0f1646d2d8aaf279b3d7b8173e23c62bcfa052ace5959230337f7d",
+    "stored": "objects/c28a568f4b0f1646d2d8aaf279b3d7b8173e23c62bcfa052ace5959230337f7d.swf"
+  },
+  "refresh-full-replay-21/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "refresh-full-replay-21/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "refresh-reference-19/EffectLoadChecks.as": {
+    "sha256": "fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3",
+    "stored": "objects/fa2eef493e1f749060290b027e959801d89bc87b582b993f78b71b3b783084c3.as"
+  },
+  "refresh-reference-19/EffectLoadChecks.swf": {
+    "sha256": "e1828b2dde0d3b0e504b72f8e9b77558a899dd884635f72ee112a12fa0d77682",
+    "stored": "objects/e1828b2dde0d3b0e504b72f8e9b77558a899dd884635f72ee112a12fa0d77682.swf"
+  },
+  "refresh-reference-19/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "refresh-reference-19/src/RealisticVisionMod.as": {
+    "sha256": "9cca209ccb9ed71b362c65099667487dbb9b78809f22cec6c631c99be51b73fd",
+    "stored": "objects/9cca209ccb9ed71b362c65099667487dbb9b78809f22cec6c631c99be51b73fd.as"
+  },
+  "refresh-reference-19/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "refresh-reference-19/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "refresh-reference-19/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "refresh-reference-19/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "refresh-reference-19/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "refresh-replay-20/candidate.swf": {
+    "sha256": "320d6e8d4ccc76cbf22fa153c9a7b53ccb8b2f4f4bd80b392f37b02886cacef9",
+    "stored": "objects/320d6e8d4ccc76cbf22fa153c9a7b53ccb8b2f4f4bd80b392f37b02886cacef9.swf"
+  },
+  "refresh-replay-20/CombatRenderProbeMod.as": {
+    "sha256": "4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8",
+    "stored": "objects/4218205e21cf15388563103fe01f93145d20c8ac36b48b5966b70bf16ef02ac8.as"
+  },
+  "refresh-replay-20/rv.swf": {
+    "sha256": "f167e66bbd49164b2c2acce09a3d746105df446900f084c4bba16984eee1bebb",
+    "stored": "objects/f167e66bbd49164b2c2acce09a3d746105df446900f084c4bba16984eee1bebb.swf"
+  },
+  "refresh-replay-20/candidate-src/RealisticVisionMod.as": {
+    "sha256": "908ad8d974aa13df912eb4684e2c5deb65e65551ab4a69a677844ee06fa938ae",
+    "stored": "objects/908ad8d974aa13df912eb4684e2c5deb65e65551ab4a69a677844ee06fa938ae.as"
+  },
+  "refresh-replay-20/candidate-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "refresh-replay-20/candidate-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "refresh-replay-20/candidate-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "refresh-replay-20/rv-src/RealisticVisionMod.as": {
+    "sha256": "ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f",
+    "stored": "objects/ef79d2052332120d9757ab71eb66b09ec5450aee2fccbc38fb0a433ed9c1692f.as"
+  },
+  "refresh-replay-20/rv-src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "refresh-replay-20/rv-src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "refresh-replay-20/rv-src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "refresh-replay-20/candidate-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "refresh-replay-20/candidate-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "refresh-replay-20/mods/CombatRenderProbe/release/CombatRenderProbeMod.swf": {
+    "sha256": "1f59b8ad59ce0c5ac3ae751eb9007ff8cf63fb4599841dd36672a94b150d86c0",
+    "stored": "objects/1f59b8ad59ce0c5ac3ae751eb9007ff8cf63fb4599841dd36672a94b150d86c0.swf"
+  },
+  "refresh-replay-20/rv-src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "refresh-replay-20/rv-src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "reset-counterexample-13/EffectLoadChecks.as": {
+    "sha256": "96999cdf897329ca19058c3dca26f573cd699139edea8aca86be1c43a0cdd23f",
+    "stored": "objects/96999cdf897329ca19058c3dca26f573cd699139edea8aca86be1c43a0cdd23f.as"
+  },
+  "reset-counterexample-13/EffectLoadChecks.swf": {
+    "sha256": "3a84a90ea9e94c9252f47faf528b81063e1cda3508482a96b68a05b3cd20542f",
+    "stored": "objects/3a84a90ea9e94c9252f47faf528b81063e1cda3508482a96b68a05b3cd20542f.swf"
+  },
+  "reset-counterexample-13/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "reset-counterexample-13/src/RealisticVisionMod.as": {
+    "sha256": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "stored": "objects/a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da.as"
+  },
+  "reset-counterexample-13/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "reset-counterexample-13/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "reset-counterexample-13/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "reset-counterexample-13/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "reset-counterexample-13/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "reset-pixels-12/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "reset-pixels-12/EffectLoadChecks.swf": {
+    "sha256": "0df3a88b92fb8156d1839845dacc5480e1c583e542156e7de8a1179cab17586b",
+    "stored": "objects/0df3a88b92fb8156d1839845dacc5480e1c583e542156e7de8a1179cab17586b.swf"
+  },
+  "reset-pixels-12/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "reset-pixels-12/src/RealisticVisionMod.as": {
+    "sha256": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "stored": "objects/a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da.as"
+  },
+  "reset-pixels-12/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "reset-pixels-12/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "reset-pixels-12/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "reset-pixels-12/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "reset-pixels-12/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "solid-pixels-05/EffectLoadChecks.as": {
+    "sha256": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "stored": "objects/74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a.as"
+  },
+  "solid-pixels-05/EffectLoadChecks.swf": {
+    "sha256": "d80059df27dbaa6b09ff3534054d1666d010317b90d99c4bf6a104e2a0673fdc",
+    "stored": "objects/d80059df27dbaa6b09ff3534054d1666d010317b90d99c4bf6a104e2a0673fdc.swf"
+  },
+  "solid-pixels-05/src/BaselineVision.as": {
+    "sha256": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "stored": "objects/ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33.as"
+  },
+  "solid-pixels-05/src/RealisticVisionMod.as": {
+    "sha256": "6dd68abfc819f60dacaf4941d9d5c6e9746cc163af01c0286381df29cc77a577",
+    "stored": "objects/6dd68abfc819f60dacaf4941d9d5c6e9746cc163af01c0286381df29cc77a577.as"
+  },
+  "solid-pixels-05/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "solid-pixels-05/src/RVKeybinds.as": {
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "stored": "objects/ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde.as"
+  },
+  "solid-pixels-05/src/RVWallSurface.as": {
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "stored": "objects/08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff.as"
+  },
+  "solid-pixels-05/src/modlocales/vision/RVLocale.as": {
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "stored": "objects/8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452.as"
+  },
+  "solid-pixels-05/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/dark-child/src/RealisticVisionMod.as": {
+    "sha256": "ca315e00de7a98c1d682ff22325806c3889653bea9b570c6bfb818db44c42ac3",
+    "stored": "objects/ca315e00de7a98c1d682ff22325806c3889653bea9b570c6bfb818db44c42ac3.as"
+  },
+  "candidates/dark-child/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/dark-child/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/dark-child/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/dark-child/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/dark-child/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/dark-native/src/RealisticVisionMod.as": {
+    "sha256": "f4059c832d897d62dc4f291688bd0c8f3358651ebf5e9f76c2a5c178497fabd7",
+    "stored": "objects/f4059c832d897d62dc4f291688bd0c8f3358651ebf5e9f76c2a5c178497fabd7.as"
+  },
+  "candidates/dark-native/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/dark-native/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/dark-native/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/dark-native/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/dark-native/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/grid_current/src/RealisticVisionMod.as": {
+    "sha256": "78bdeba66c9c0b2c4fd04fd80fe0ff1dea1309b799c128df8a2c6d28c28a079c",
+    "stored": "objects/78bdeba66c9c0b2c4fd04fd80fe0ff1dea1309b799c128df8a2c6d28c28a079c.as"
+  },
+  "candidates/grid_current/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/grid_current/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/grid_current/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/grid_current/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/grid_current/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/grid_refresh/src/RealisticVisionMod.as": {
+    "sha256": "a16d20959d3ff55ebe3e0717e3ae18015491ff53708018b9cfe617004968454e",
+    "stored": "objects/a16d20959d3ff55ebe3e0717e3ae18015491ff53708018b9cfe617004968454e.as"
+  },
+  "candidates/grid_refresh/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/grid_refresh/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/grid_refresh/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/grid_refresh/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/grid_refresh/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/local/src/RealisticVisionMod.as": {
+    "sha256": "ab0d478f378aa245dec5455271b6076776d44917604862f75607e868ce7f841f",
+    "stored": "objects/ab0d478f378aa245dec5455271b6076776d44917604862f75607e868ce7f841f.as"
+  },
+  "candidates/local/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/local/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/local/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/local/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/local/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/local-guard/src/RealisticVisionMod.as": {
+    "sha256": "ca8ccfda9222d4972ad519890a83ebdaf85a13690e4a6a500b4345e03c6c60d9",
+    "stored": "objects/ca8ccfda9222d4972ad519890a83ebdaf85a13690e4a6a500b4345e03c6c60d9.as"
+  },
+  "candidates/local-guard/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/local-guard/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/local-guard/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/local-guard/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/local-guard/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/offscreen/src/RealisticVisionMod.as": {
+    "sha256": "6bb4172ed7e7d1d95718ba7db4234ca273744b2f37b9a7c20d1110c2f42962cc",
+    "stored": "objects/6bb4172ed7e7d1d95718ba7db4234ca273744b2f37b9a7c20d1110c2f42962cc.as"
+  },
+  "candidates/offscreen/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/offscreen/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/offscreen/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/offscreen/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/offscreen/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/raster-crop/src/RealisticVisionMod.as": {
+    "sha256": "e0123d4c7b21c22baa0bd918bfb1a7d443b420a81abf575d5b10abaa3b40f09f",
+    "stored": "objects/e0123d4c7b21c22baa0bd918bfb1a7d443b420a81abf575d5b10abaa3b40f09f.as"
+  },
+  "candidates/raster-crop/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/raster-crop/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/raster-crop/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/raster-crop/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/raster-crop/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/raster-crop-opaque/src/RealisticVisionMod.as": {
+    "sha256": "850580c5fea94c7c38c2248f4aed784c907c80d5fff19c5989c50e8326468cf2",
+    "stored": "objects/850580c5fea94c7c38c2248f4aed784c907c80d5fff19c5989c50e8326468cf2.as"
+  },
+  "candidates/raster-crop-opaque/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/raster-crop-opaque/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/raster-crop-opaque/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/raster-crop-opaque/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/raster-crop-opaque/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/raster-rebind/src/RealisticVisionMod.as": {
+    "sha256": "9ba7b661d58121acdb0302a03832db66a73f47383ef45b94e4cfd62686c4084f",
+    "stored": "objects/9ba7b661d58121acdb0302a03832db66a73f47383ef45b94e4cfd62686c4084f.as"
+  },
+  "candidates/raster-rebind/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/raster-rebind/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/raster-rebind/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/raster-rebind/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/raster-rebind/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/raster-reset/src/RealisticVisionMod.as": {
+    "sha256": "159f7b07a308d1a367bc18d6667cef840cd36f66effb12089a61c231f915de5e",
+    "stored": "objects/159f7b07a308d1a367bc18d6667cef840cd36f66effb12089a61c231f915de5e.as"
+  },
+  "candidates/raster-reset/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/raster-reset/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/raster-reset/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/raster-reset/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/raster-reset/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/refresh/src/RealisticVisionMod.as": {
+    "sha256": "14d4a5e51303b6c074dd61c1a428070b67f89a86cb747635065b02f055ce103e",
+    "stored": "objects/14d4a5e51303b6c074dd61c1a428070b67f89a86cb747635065b02f055ce103e.as"
+  },
+  "candidates/refresh/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/refresh/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/refresh/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/refresh/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/refresh/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "candidates/solid/src/RealisticVisionMod.as": {
+    "sha256": "8d8d9bbbd4460186b20dd5784c3aa7cd8ff91c9beaf33ac7273699009aaeeb3c",
+    "stored": "objects/8d8d9bbbd4460186b20dd5784c3aa7cd8ff91c9beaf33ac7273699009aaeeb3c.as"
+  },
+  "candidates/solid/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "candidates/solid/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "candidates/solid/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "candidates/solid/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "candidates/solid/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  },
+  "production/CandidateOptionsProbe.swf": {
+    "sha256": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "stored": "objects/b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50.swf"
+  },
+  "production/RealisticVisionMod.swf": {
+    "sha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "stored": "production/RealisticVisionMod.swf"
+  },
+  "production/first/candidate.swf": {
+    "sha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "stored": "production/RealisticVisionMod.swf"
+  },
+  "production/first/CandidateOptionsProbe.swf": {
+    "sha256": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "stored": "objects/b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50.swf"
+  },
+  "production/restored/candidate.swf": {
+    "sha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "stored": "production/RealisticVisionMod.swf"
+  },
+  "production/restored/CandidateOptionsProbe.swf": {
+    "sha256": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "stored": "objects/b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50.swf"
+  },
+  "production/src/RealisticVisionMod.as": {
+    "sha256": "412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366",
+    "stored": "production/src/RealisticVisionMod.as"
+  },
+  "production/src/RVExplorationCarrier.as": {
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "stored": "production/src/RVExplorationCarrier.as"
+  },
+  "production/src/RVKeybinds.as": {
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "stored": "production/src/RVKeybinds.as"
+  },
+  "production/src/RVWallSurface.as": {
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "stored": "production/src/RVWallSurface.as"
+  },
+  "production/src/modlocales/vision/RVLocale.as": {
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "stored": "production/src/modlocales/vision/RVLocale.as"
+  },
+  "production/src/modlocales/vision/RVLocaleMessages.as": {
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "stored": "production/src/modlocales/vision/RVLocaleMessages.as"
+  }
+}

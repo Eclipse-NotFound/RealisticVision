@@ -1,0 +1,54 @@
+ModLoader[boot_start] v2 run=run_1793232734493_503264
+ModLoader[requested_ModLoaderMod] line 21
+ModLoader[requested_SandevistanMod] line 22
+ModLoader[requested_RConnectMod] line 23
+ModLoader[requested_RealisticVisionMod] line 24
+ModLoader[requested_MoreSkillsWeaponsMod] line 25
+ModLoader[requested_TDFCMod] line 26
+ModLoader[requested_RandomRoomsMod] line 27
+ModLoader[requested_LootEditorMod] line 28
+ModLoader[requested_PermanentInjuryMod] line 29
+ModLoader[requested_ProductionSmokeMod] line 30
+ModLoader[requested_AddictionSystemMod] line 31
+ModLoader[requested_ContinuousSceneMod] line 32
+ModLoader[requested_FirearmAttachmentsMod] line 33
+ModLoader[requested_LightAndDarknessMod] line 34
+ModLoader[requested_WallBlendMod] line 35
+ModLoader[boot] v2 col=2 requested=15
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_SandevistanMod] init
+[RVision] init ok enabled=true
+ModLoader[ok_RealisticVisionMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+ModLoader[ok_ProductionSmokeMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-fe582fc3be414075ba26b593e044ed66
+ModLoader[ok_AddictionSystemMod] init
+688 Интерфейс
+1836 Game init
+2005 Персонаж
+1 Местность
+861 Создание местности
+369 Вход в местность
+[RVision] room loc0_0 48x25 lDist2=1000 mode=current
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+RConnectRndSeed  random_mane 1233830666
+3574 Создание местности
+false
+464 Вход в местность
+[RVision] room loc0_4 48x25 lDist2=2000 mode=current
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+[AddictionSystem] heartbeat attached=true t=22.349
+D56 PRODUCTION COMPLETE {"audioVolume":0,"windowVisible":true,"screen":[2560,1521],"shots":119,"maxParticles":125,"frames":240,"version":"v0.33.11-effect-clip","maskedParticleSamples":10447}
+D56 PRODUCTION FAIL Error: Error #3200 Error: Error #3200
+	at Error$/throwError()
+	at flash.display::NativeWindow/get visible()
+	at ProductionSmokeMod/step()

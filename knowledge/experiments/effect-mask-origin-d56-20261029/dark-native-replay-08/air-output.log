@@ -1,0 +1,65 @@
+ModLoader[boot_start] v2 run=run_1793229113832_908271
+ModLoader[requested_ModLoaderMod] line 20
+ModLoader[requested_SandevistanMod] line 21
+ModLoader[requested_RConnectMod] line 22
+ModLoader[requested_MoreSkillsWeaponsMod] line 24
+ModLoader[requested_TDFCMod] line 25
+ModLoader[requested_RandomRoomsMod] line 26
+ModLoader[requested_LootEditorMod] line 27
+ModLoader[requested_PermanentInjuryMod] line 28
+ModLoader[requested_CombatRenderProbeMod] line 29
+ModLoader[requested_AddictionSystemMod] line 30
+ModLoader[requested_ContinuousSceneMod] line 31
+ModLoader[requested_FirearmAttachmentsMod] line 32
+ModLoader[requested_LightAndDarknessMod] line 33
+ModLoader[requested_WallBlendMod] line 34
+ModLoader[boot] v2 col=2 requested=14
+ModLoader[ok_CombatRenderProbeMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_LightAndDarknessMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-5ef4ba84da8f435183eb747cf02ab55a
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_WallBlendMod] init
+500 Интерфейс
+1072 Game init
+1122 Персонаж
+0 Местность
+589 Создание местности
+417 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+RConnectRndSeed  random_mane 2437921754
+3203 Создание местности
+false
+497 Вход в местность
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D56 START 0 {"variant":"capture","n":0,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.348
+D56 REPLAY {"blitCount":92,"sourceBitmapArea":828,"boundary":"Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.","screen":[2560,1521],"animated":94,"stageFps":120,"count":102,"kinds":{"visualGilza":8,"visualBullet":2,"flash.display::MovieClip":92}}
+D56 REPLAY START 0 off
+D56 PIXELS COMPLETE
+D56 REPLAY START 0 off
+[AddictionSystem] heartbeat attached=true t=22.429
+D56 REPLAY END 0 masks=0
+D56 REPLAY START 1 normal
+D56 REPLAY END 1 masks=62
+D56 REPLAY START 2 candidate
+[AddictionSystem] heartbeat attached=true t=22.429
+D56 REPLAY END 2 masks=62
+D56 REPLAY START 3 candidate
+[AddictionSystem] heartbeat attached=true t=22.429
+D56 REPLAY END 3 masks=62
+D56 REPLAY START 4 normal
+D56 REPLAY END 4 masks=62
+D56 REPLAY START 5 off
+[AddictionSystem] heartbeat attached=true t=22.429
+D56 REPLAY END 5 masks=0
+D56 COMPLETE

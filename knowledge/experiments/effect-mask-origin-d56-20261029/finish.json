@@ -1,0 +1,1590 @@
+{
+  "adopted": "grid_current",
+  "deployed": true,
+  "fullyResolved": false,
+  "version": "v0.33.11-effect-clip",
+  "installedSha256": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+  "allOwnedRunsFinished": true,
+  "nativeWindows": 30,
+  "completeIntervals": 5370,
+  "shots": 3874,
+  "runs": {
+    "current-final-native-27": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 37.87150837988827,
+              "p95": 50,
+              "max": 99,
+              ">100": 0
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.01675977653631285,
+              "p95": 0,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 48.51117318435754,
+              "p95": 65,
+              "max": 170,
+              ">100": 4
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.5977653631284916,
+              "p95": 5,
+              "max": 11,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 42.547486033519554,
+              "p95": 56,
+              "max": 102,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.8072625698324023,
+              "p95": 5,
+              "max": 54,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 43.29329608938548,
+              "p95": 81,
+              "max": 131,
+              ">100": 8
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.0111731843575419,
+              "p95": 0,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 51.952513966480446,
+              "p95": 69,
+              "max": 106,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.198324022346369,
+              "p95": 10,
+              "max": 55,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 50.88268156424581,
+              "p95": 69,
+              "max": 104,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.148044692737431,
+              "p95": 10,
+              "max": 53,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "error": null,
+      "nativeWindows": [
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 109,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 111,
+          "maxProjectiles": 4,
+          "retained": {
+            "previousPixels": 1178304,
+            "rawPixels": 1572352,
+            "emptyVisuals": 9,
+            "softPixels": 1178304,
+            "optimizedCalls": 0,
+            "rasters": 730,
+            "extraEmptyVisuals": 8,
+            "worldPass": 270,
+            "visuals": 67
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 111,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1224960,
+            "rawPixels": 1627712,
+            "emptyVisuals": 6,
+            "softPixels": 1224960,
+            "optimizedCalls": 9774,
+            "rasters": 749,
+            "extraEmptyVisuals": 5,
+            "worldPass": 270,
+            "visuals": 60
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 112,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1138304,
+            "rawPixels": 1548160,
+            "emptyVisuals": 7,
+            "softPixels": 1138304,
+            "optimizedCalls": 9564,
+            "rasters": 711,
+            "extraEmptyVisuals": 7,
+            "worldPass": 270,
+            "visuals": 71
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 127,
+          "maxParticles": 113,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1061248,
+            "rawPixels": 1429632,
+            "emptyVisuals": 3,
+            "softPixels": 1061248,
+            "optimizedCalls": 0,
+            "rasters": 645,
+            "extraEmptyVisuals": 1,
+            "worldPass": 270,
+            "visuals": 72
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 133,
+          "maxParticles": 108,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "classic",
+          "attacks": 134,
+          "maxParticles": 113,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "classic",
+          "attacks": 132,
+          "maxParticles": 112,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1140352,
+            "rawPixels": 1517760,
+            "emptyVisuals": 6,
+            "softPixels": 1140352,
+            "optimizedCalls": 0,
+            "rasters": 694,
+            "extraEmptyVisuals": 2,
+            "worldPass": 270,
+            "visuals": 78
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "classic",
+          "attacks": 131,
+          "maxParticles": 110,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1137280,
+            "rawPixels": 1581824,
+            "emptyVisuals": 5,
+            "softPixels": 1137280,
+            "optimizedCalls": 0,
+            "rasters": 733,
+            "extraEmptyVisuals": 1,
+            "worldPass": 270,
+            "visuals": 60
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "classic",
+          "attacks": 133,
+          "maxParticles": 115,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1112256,
+            "rawPixels": 1549312,
+            "emptyVisuals": 1,
+            "softPixels": 1112256,
+            "optimizedCalls": 0,
+            "rasters": 713,
+            "extraEmptyVisuals": 0,
+            "worldPass": 270,
+            "visuals": 67
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "classic",
+          "attacks": 132,
+          "maxParticles": 109,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1132928,
+            "rawPixels": 1565632,
+            "emptyVisuals": 8,
+            "softPixels": 1132928,
+            "optimizedCalls": 0,
+            "rasters": 715,
+            "extraEmptyVisuals": 1,
+            "worldPass": 270,
+            "visuals": 61
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "classic",
+          "attacks": 130,
+          "maxParticles": 110,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        }
+      ]
+    },
+    "current-final-pixels-26": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 721
+      }
+    },
+    "dark-child-pixels-06": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 721
+      }
+    },
+    "dark-native-pixels-07": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 738
+      }
+    },
+    "dark-native-replay-08": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "blitCount": 92,
+          "sourceBitmapArea": 828,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "screen": [
+            2560,
+            1521
+          ],
+          "animated": 94,
+          "stageFps": 120,
+          "count": 102,
+          "kinds": {
+            "visualGilza": 8,
+            "visualBullet": 2,
+            "flash.display::MovieClip": 92
+          }
+        },
+        "exactFrames": 60,
+        "optimizedCalls": 505,
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 13.794117647058824,
+              "p95": 19,
+              "max": 86,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.1,
+              "p95": 4,
+              "max": 69,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 20.26890756302521,
+              "p95": 26,
+              "max": 74,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.825,
+              "p95": 2,
+              "max": 6,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.7458333333333333,
+              "p95": 4,
+              "max": 8,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 20.23109243697479,
+              "p95": 26,
+              "max": 94,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.9375,
+              "p95": 2,
+              "max": 7,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.675,
+              "p95": 3,
+              "max": 11,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": {
+        "blitCount": 92,
+        "sourceBitmapArea": 828,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "screen": [
+          2560,
+          1521
+        ],
+        "animated": 94,
+        "stageFps": 120,
+        "count": 102,
+        "kinds": {
+          "visualGilza": 8,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 92
+        }
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 505,
+      "error": null,
+      "nativeWindows": []
+    },
+    "fresh-counterexample-14": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "expectedCounterexample": true,
+        "checks": 0
+      }
+    },
+    "fresh-reference-16": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "grid-native-24": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 37.00837988826816,
+              "p95": 46,
+              "max": 132,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.013966480446927373,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.19832402234637,
+              "p95": 58,
+              "max": 105,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.0139664804469275,
+              "p95": 5,
+              "max": 13,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 43.70670391061452,
+              "p95": 56,
+              "max": 102,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 3.1983240223463687,
+              "p95": 5,
+              "max": 55,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "error": null,
+      "nativeWindows": [
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 119,
+          "maxParticles": 117,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 133,
+          "maxParticles": 115,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1294976,
+            "rawPixels": 1745984,
+            "emptyVisuals": 0,
+            "softPixels": 1294976,
+            "optimizedCalls": 0,
+            "rasters": 817,
+            "extraEmptyVisuals": 0,
+            "worldPass": 270,
+            "visuals": 43
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 116,
+          "maxParticles": 113,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1190656,
+            "rawPixels": 1630464,
+            "emptyVisuals": 0,
+            "softPixels": 1190656,
+            "optimizedCalls": 10280,
+            "rasters": 765,
+            "extraEmptyVisuals": 0,
+            "worldPass": 270,
+            "visuals": 36
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 113,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1193600,
+            "rawPixels": 1635904,
+            "emptyVisuals": 6,
+            "softPixels": 1193600,
+            "optimizedCalls": 11173,
+            "rasters": 763,
+            "extraEmptyVisuals": 6,
+            "worldPass": 270,
+            "visuals": 51
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 134,
+          "maxParticles": 116,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 1232832,
+            "rawPixels": 1669824,
+            "emptyVisuals": 7,
+            "softPixels": 1232832,
+            "optimizedCalls": 0,
+            "rasters": 784,
+            "extraEmptyVisuals": 7,
+            "worldPass": 270,
+            "visuals": 63
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 133,
+          "maxParticles": 116,
+          "maxProjectiles": 5,
+          "retained": {
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "softPixels": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0,
+            "worldPass": 0,
+            "visuals": 0
+          }
+        }
+      ]
+    },
+    "grid-native-reverse-25": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 37.279329608938546,
+              "p95": 46,
+              "max": 139,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.00558659217877095,
+              "p95": 0,
+              "max": 1,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 42.22346368715084,
+              "p95": 52,
+              "max": 110,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.7737430167597767,
+              "p95": 5,
+              "max": 16,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 45.88826815642458,
+              "p95": 56,
+              "max": 124,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 2.8268156424581004,
+              "p95": 4,
+              "max": 16,
+              ">100": 0
+            }
+          },
+          "classic/off": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 35.497206703910614,
+              "p95": 45,
+              "max": 82,
+              ">100": 0
+            },
+            "rv": {
+              "n": 358,
+              "mean": 0.013966480446927373,
+              "p95": 0,
+              "max": 2,
+              ">100": 0
+            }
+          },
+          "classic/candidate": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 47.73184357541899,
+              "p95": 61,
+              "max": 105,
+              ">100": 2
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.173184357541899,
+              "p95": 9,
+              "max": 15,
+              ">100": 0
+            }
+          },
+          "classic/normal": {
+            "nextInterval": {
+              "n": 358,
+              "mean": 46.8463687150838,
+              "p95": 59,
+              "max": 105,
+              ">100": 1
+            },
+            "rv": {
+              "n": 358,
+              "mean": 5.215083798882682,
+              "p95": 10,
+              "max": 15,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "error": null,
+      "nativeWindows": [
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 131,
+          "maxParticles": 108,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 135,
+          "maxParticles": 114,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 877504,
+            "visuals": 52,
+            "previousPixels": 877504,
+            "rawPixels": 1605312,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 6953,
+            "rasters": 683,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 135,
+          "maxParticles": 108,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 843840,
+            "visuals": 45,
+            "previousPixels": 843840,
+            "rawPixels": 1534208,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 659,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "current",
+          "attacks": 129,
+          "maxParticles": 106,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 964416,
+            "visuals": 43,
+            "previousPixels": 964416,
+            "rawPixels": 1647040,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 710,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "current",
+          "attacks": 119,
+          "maxParticles": 114,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 885056,
+            "visuals": 39,
+            "previousPixels": 885056,
+            "rawPixels": 1626496,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 6620,
+            "rasters": 699,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "current",
+          "attacks": 102,
+          "maxParticles": 110,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "classic",
+          "attacks": 132,
+          "maxParticles": 109,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "classic",
+          "attacks": 133,
+          "maxParticles": 111,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 975232,
+            "visuals": 37,
+            "previousPixels": 975232,
+            "rawPixels": 1584960,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 693,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "classic",
+          "attacks": 133,
+          "maxParticles": 115,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 965120,
+            "visuals": 52,
+            "previousPixels": 965120,
+            "rawPixels": 1566592,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 673,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "normal",
+          "mode": "classic",
+          "attacks": 131,
+          "maxParticles": 110,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 1068544,
+            "visuals": 58,
+            "previousPixels": 1068544,
+            "rawPixels": 1693696,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 737,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "candidate",
+          "mode": "classic",
+          "attacks": 117,
+          "maxParticles": 118,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 952192,
+            "visuals": 56,
+            "previousPixels": 952192,
+            "rawPixels": 1535360,
+            "emptyVisuals": 0,
+            "worldPass": 270,
+            "optimizedCalls": 0,
+            "rasters": 678,
+            "extraEmptyVisuals": 0
+          }
+        },
+        {
+          "variant": "off",
+          "mode": "classic",
+          "attacks": 135,
+          "maxParticles": 115,
+          "maxProjectiles": 5,
+          "retained": {
+            "softPixels": 0,
+            "visuals": 0,
+            "previousPixels": 0,
+            "rawPixels": 0,
+            "emptyVisuals": 0,
+            "worldPass": 0,
+            "optimizedCalls": 0,
+            "rasters": 0,
+            "extraEmptyVisuals": 0
+          }
+        }
+      ]
+    },
+    "grid-refresh-reference-22": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 721
+      }
+    },
+    "grid-refresh-replay-23": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "blitCount": 100,
+          "animated": 104,
+          "count": 110,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "screen": [
+            2560,
+            1521
+          ],
+          "kinds": {
+            "visualGilza": 6,
+            "visualBullet": 4,
+            "flash.display::MovieClip": 100
+          },
+          "stageFps": 120,
+          "sourceBitmapArea": 900
+        },
+        "exactFrames": 60,
+        "optimizedCalls": 1982,
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 13.945378151260504,
+              "p95": 19,
+              "max": 28,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.0083333333333333,
+              "p95": 6,
+              "max": 12,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 19.630252100840337,
+              "p95": 27,
+              "max": 35,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.7916666666666666,
+              "p95": 2,
+              "max": 12,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.095833333333333,
+              "p95": 4,
+              "max": 8,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 17.172268907563026,
+              "p95": 23,
+              "max": 28,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.9541666666666667,
+              "p95": 2,
+              "max": 6,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.9666666666666666,
+              "p95": 3,
+              "max": 11,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": {
+        "blitCount": 100,
+        "animated": 104,
+        "count": 110,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "visualGilza": 6,
+          "visualBullet": 4,
+          "flash.display::MovieClip": 100
+        },
+        "stageFps": 120,
+        "sourceBitmapArea": 900
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 1982,
+      "error": null,
+      "nativeWindows": []
+    },
+    "guard-pixels-02": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 721
+      }
+    },
+    "guard-replay-pixels-03": {
+      "analysis.json": {
+        "exactFrames": 60,
+        "optimizedCalls": 299,
+        "replay": {
+          "blitCount": 37,
+          "animated": 39,
+          "screen": [
+            2560,
+            1521
+          ],
+          "sourceBitmapArea": 333,
+          "count": 49,
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "kinds": {
+            "visualGilza": 10,
+            "visualBullet": 2,
+            "flash.display::MovieClip": 37
+          },
+          "stageFps": 120
+        },
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": {
+        "blitCount": 37,
+        "animated": 39,
+        "screen": [
+          2560,
+          1521
+        ],
+        "sourceBitmapArea": 333,
+        "count": 49,
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "kinds": {
+          "visualGilza": 10,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 37
+        },
+        "stageFps": 120
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 299,
+      "error": null,
+      "nativeWindows": []
+    },
+    "guard-replay-timing-04": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "blitCount": 87,
+          "screen": [
+            2560,
+            1521
+          ],
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "sourceBitmapArea": 783,
+          "count": 98,
+          "stageFps": 120,
+          "animated": 89,
+          "kinds": {
+            "visualGilza": 9,
+            "flash.display::MovieClip": 87,
+            "visualBullet": 2
+          }
+        },
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 12.936974789915967,
+              "p95": 19,
+              "max": 71,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.7958333333333334,
+              "p95": 3,
+              "max": 53,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 23.415966386554622,
+              "p95": 32,
+              "max": 77,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.8958333333333334,
+              "p95": 2,
+              "max": 5,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.129166666666667,
+              "p95": 3,
+              "max": 55,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 24.054621848739497,
+              "p95": 38,
+              "max": 83,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.8583333333333333,
+              "p95": 2,
+              "max": 3,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.8375,
+              "p95": 3,
+              "max": 5,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": {
+        "blitCount": 87,
+        "screen": [
+          2560,
+          1521
+        ],
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "sourceBitmapArea": 783,
+        "count": 98,
+        "stageFps": 120,
+        "animated": 89,
+        "kinds": {
+          "visualGilza": 9,
+          "flash.display::MovieClip": 87,
+          "visualBullet": 2
+        }
+      },
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "error": null,
+      "nativeWindows": []
+    },
+    "invalidate-counterexample-15": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "expectedCounterexample": true,
+        "checks": 0
+      }
+    },
+    "local-pixels-01": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "offscreen-pixels-17": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "offscreen-viewport-18": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "opaque-pixels-10": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "production-smoke-28": {},
+    "production-smoke-29": {
+      "validation.json": {
+        "passed": true,
+        "swf": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+        "native": {
+          "windowVisible": true,
+          "version": "v0.33.11-effect-clip",
+          "screen": [
+            2560,
+            1521
+          ],
+          "maskedParticleSamples": 9559,
+          "shots": 119,
+          "maxParticles": 112,
+          "frames": 240,
+          "audioVolume": 0
+        }
+      }
+    },
+    "raster-crop-pixels-09": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "rebind-pixels-11": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "refresh-full-replay-21": {
+      "analysis.json": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "replay": {
+          "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+          "animated": 77,
+          "stageFps": 120,
+          "sourceBitmapArea": 684,
+          "blitCount": 76,
+          "count": 85,
+          "screen": [
+            2560,
+            1521
+          ],
+          "kinds": {
+            "flash.display::MovieClip": 76,
+            "visualGilza": 8,
+            "visualBullet": 1
+          }
+        },
+        "exactFrames": 60,
+        "optimizedCalls": 1411,
+        "groups": {
+          "off": {
+            "interval": {
+              "n": 238,
+              "mean": 12.609243697478991,
+              "p95": 18,
+              "max": 61,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.0,
+              "p95": 0,
+              "max": 0,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.5458333333333334,
+              "p95": 3,
+              "max": 8,
+              ">100": 0
+            }
+          },
+          "normal": {
+            "interval": {
+              "n": 238,
+              "mean": 19.592436974789916,
+              "p95": 24,
+              "max": 82,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.6708333333333333,
+              "p95": 1,
+              "max": 2,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 1.9416666666666667,
+              "p95": 3,
+              "max": 61,
+              ">100": 0
+            }
+          },
+          "candidate": {
+            "interval": {
+              "n": 238,
+              "mean": 19.407563025210084,
+              "p95": 27,
+              "max": 67,
+              ">100": 0
+            },
+            "rv": {
+              "n": 240,
+              "mean": 0.6625,
+              "p95": 1,
+              "max": 6,
+              ">100": 0
+            },
+            "restore": {
+              "n": 240,
+              "mean": 2.4,
+              "p95": 7,
+              "max": 48,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": {
+        "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+        "animated": 77,
+        "stageFps": 120,
+        "sourceBitmapArea": 684,
+        "blitCount": 76,
+        "count": 85,
+        "screen": [
+          2560,
+          1521
+        ],
+        "kinds": {
+          "flash.display::MovieClip": 76,
+          "visualGilza": 8,
+          "visualBullet": 1
+        }
+      },
+      "exactFrames": 60,
+      "optimizedCalls": 1411,
+      "error": null,
+      "nativeWindows": []
+    },
+    "refresh-reference-19": {
+      "validation.json": {
+        "passed": true,
+        "exit": 0,
+        "checks": 721
+      }
+    },
+    "refresh-replay-20": {
+      "environment.json": {
+        "profile": "benchmark",
+        "performanceEligible": true,
+        "reasons": [],
+        "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+      },
+      "replay": null,
+      "exactFrames": null,
+      "optimizedCalls": null,
+      "error": "Error: Error #1009\rTypeError: Error #1009\r\tat fe.unit::Invent/addLoad()\r\tat fe.unit::Invent()\r\tat fe::World/newGame1()\r\tat fe::World/step()\r\tat fe::MainMenu/mainStep()\rgr_stage: 0",
+      "nativeWindows": []
+    },
+    "reset-counterexample-13": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "expectedCounterexample": true,
+        "checks": 0
+      }
+    },
+    "reset-pixels-12": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    },
+    "solid-pixels-05": {
+      "validation.json": {
+        "passed": false,
+        "exit": 1,
+        "checks": 0
+      }
+    }
+  },
+  "boundary": "Only current optimized; no full-FPS equivalence claim. Private-desktop tests and random native layouts."
+}

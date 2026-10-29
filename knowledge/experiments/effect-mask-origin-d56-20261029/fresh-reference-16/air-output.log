@@ -1,0 +1,11 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+LOAD ROW {"memory":20664320,"mode":"current","count":100,"baseline":[6,3,4,3,9,10,2,3,3,2,9,4,3,5,3,2,10,7,4,4,4,4,8,5,2,4,3,2,4,6],"rasters":[100,1109],"state":0,"candidate":[6,4,2,3,8,8,2,3,4,3,5,4,2,3,3,3,8,7,2,4,3,4,7,6,2,3,2,2,5,6]}
+LOAD ROW {"memory":29683712,"mode":"current","count":500,"baseline":[7,9,7,7,22,21,7,9,11,8,20,17,8,7,7,8,17,17,6,6,9,10,20,18,9,6,9,10,21,18],"rasters":[359,1527],"state":0,"candidate":[7,7,6,5,17,19,6,5,7,8,16,15,6,6,5,5,15,17,6,6,6,7,17,14,5,5,5,7,17,15]}
+LOAD ROW {"memory":38047744,"mode":"current","count":100,"baseline":[2,1,1,1,3,2,3,3,3,2,3,3,2,5,1,1,1,1,2,2,1,1,1,2,2,1,3,4,2,2],"rasters":[100,1109],"state":1,"candidate":[1,1,1,2,2,2,2,2,2,3,2,2,1,3,1,1,1,2,1,2,1,2,2,1,1,2,0,2,1,3]}
+LOAD ROW {"memory":23879680,"mode":"current","count":500,"baseline":[5,5,7,4,4,5,5,4,5,7,6,8,5,7,6,5,7,4,7,4,8,5,4,5,5,8,7,4,4,5],"rasters":[359,1527],"state":1,"candidate":[6,5,4,3,3,3,4,6,4,6,3,4,3,6,2,4,3,4,5,4,3,4,4,3,4,4,2,4,3,3]}
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=266, y=564, w=1, h=1)","index":34,"baseline":"4,10,8,15","position":[268.3,558.7],"frame":122,"baselineLit":false,"candidateLit":false,"bounds":"(x=266.55, y=558.7, w=7.5, h=7.5)","candidate":"4,10,8,15"}
+FAIL Error: exact dense moving visuals f=122 Error: exact dense moving visuals f=122
+	at EffectLoadChecks/check()
+	at EffectLoadChecks/step()

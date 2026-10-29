@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-10-29 **D56 v0.33.11已部署**：current保留原采样格并缩小特效遮罩，真实内容变化时刷新目标关联；classic保持旧路径。发现旧跨帧关联残留，最终721项对照通过，准确包36设置及原生240帧/119次开火通过。三组current配对平均约低7%–12%，最终48.51→42.55ms、P95 65→56ms，仍有102ms长帧。准确包BD64B5BB…CE4A9AD（46441B），生产源build/effect-mask-origin-output/production/src，不含authority；旧638E已备份。29轮自有实例/登记全部结束，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-29-effect-mask-origin.md)。
+
 > 2026-10-29 **D55同批特效回放完成，未采用/未部署，正式仍D44**：stable-v4通过1081项+原生60帧，重画2703→829，但完整扫射45.49→46.04ms未改善。identity-blit原生60帧通过、首轮current约快3.7%，反向current持平/classic变慢，扩展位图检查又在f121失败。原D47 identity也有原生47像素反例。21轮全部结束，完整扫射共24窗4296间隔/3161次开火；主src/release不改，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-28-effect-replay.md)，工具build/effect-replay。
 
 > 2026-10-28 **D54最大化持续扫射已复现额外成本，未修复/未部署，正式仍D44**：用户已确认正式启动器、current、轻机枪整个持续扫射、最大化窗口。只读存档副本+原生keyAttack、容量内补弹、单人固定位置，独立私有桌面实际visible=true。28拆分正常53.96/禁鼠标54.17/计算后撤罩48.51/跳过特效46.11ms，支持动态特效绘制线索；撤罩不是修复。integer-v2通过721+888严格检查但27整帧回退；预绘共享通过721但整体收益不稳定，直接Bitmap两版f121差异，均不采用。候选v0.33.11-trailing-cache未部署，不能安装。主src/release不变，自有AIR全退出，四项外部WIP保留。[报告](../knowledge/experiments/2026-10-28-sustained-fire.md)，工具build/sustained-fire。
@@ -114,7 +116,7 @@
 
 ## 3. 当前状态
 
-- 当前安装D44 v0.33.10；准确生产源build/combat-render-output/production-final2/src，排除authority。最新D55建立同批原生特效回放；stable-v4未获整帧收益，identity/identity-blit新增像素反例且后者复测收益不稳定，均未采用/部署；详见顶部D55报告。
+- 当前安装D56 v0.33.11-effect-clip，BD64B5BB…CE4A9AD；准确生产源build/effect-mask-origin-output/production/src，排除authority。current轻机枪持续扫射已改善，classic保持旧路径；仍有长帧和相对关闭RV的差距，详见顶部D56报告。
 
 
 - D32阶梯与性能版已合并部署76314B81…AF5C46B7：新组合299项功能通过，8组每组500错误黑空气像素归零；墙材质和修正区外严格不变。正式路径启动通过，测试窗口已交回RConnect，无待跑RV实例。
@@ -137,6 +139,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- D56已部署并结束本轮测试；用户保存重启生效。下一步测密集敌人原生战斗的剩余长帧，不把本轮7%–12%外推所有场景。生产私有源与开发authority线分开，四项外部WIP保留；下方是历史停点。
 
 - D55：本轮实验已结束，持续扫射问题仍未解决。保存的identity原生像素反例是后续检查入口；stable-v4整帧未获益，不要打包或部署。真实入口/武器/最大化条件已明确，无需再问；下方历史停点保留。
 

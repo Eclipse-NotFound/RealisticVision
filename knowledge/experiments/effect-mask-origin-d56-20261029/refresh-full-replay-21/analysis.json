@@ -1,0 +1,98 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "replay": {
+    "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+    "animated": 77,
+    "stageFps": 120,
+    "sourceBitmapArea": 684,
+    "blitCount": 76,
+    "count": 85,
+    "screen": [
+      2560,
+      1521
+    ],
+    "kinds": {
+      "flash.display::MovieClip": 76,
+      "visualGilza": 8,
+      "visualBullet": 1
+    }
+  },
+  "exactFrames": 60,
+  "optimizedCalls": 1411,
+  "groups": {
+    "off": {
+      "interval": {
+        "n": 238,
+        "mean": 12.609243697478991,
+        "p95": 18,
+        "max": 61,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 1.5458333333333334,
+        "p95": 3,
+        "max": 8,
+        ">100": 0
+      }
+    },
+    "normal": {
+      "interval": {
+        "n": 238,
+        "mean": 19.592436974789916,
+        "p95": 24,
+        "max": 82,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.6708333333333333,
+        "p95": 1,
+        "max": 2,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 1.9416666666666667,
+        "p95": 3,
+        "max": 61,
+        ">100": 0
+      }
+    },
+    "candidate": {
+      "interval": {
+        "n": 238,
+        "mean": 19.407563025210084,
+        "p95": 27,
+        "max": 67,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.6625,
+        "p95": 1,
+        "max": 6,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 2.4,
+        "p95": 7,
+        "max": 48,
+        ">100": 0
+      }
+    }
+  }
+}

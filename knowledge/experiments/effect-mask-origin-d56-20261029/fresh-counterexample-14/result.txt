@@ -1,0 +1,18 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+MASK DATA []
+
+COUNTEREXAMPLE {"delta":"(x=513, y=303, w=4, h=12)","bounds":"(x=503.4, y=301.7, w=13.75, h=13.75)","baseline":"10,4,14,8","candidate":"10,4,14,8","frame":121,"candidateLit":false,"baselineLit":false,"index":8,"position":[505.3,301.7]}
+
+PIXEL DETAILS {"maxChannel":255,"index":8,"roi":"(x=499, y=297, w=23, h=23)","frame":121,"maskAlphaDifferences":92,"alpha":0.25,"pixels":[{"a":"900ff8e","y":303,"mask":[0,0],"x":513,"b":"0"},{"a":"c00ff95","y":303,"mask":[0,0],"x":514,"b":"0"},{"a":"d00ff89","y":303,"mask":[0,0],"x":515,"b":"0"},{"a":"b00ffa2","y":303,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":304,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":304,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":304,"mask":[0,0],"x":515,"b":"0"},{"a":"2e0bff90","y":304,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":305,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":305,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":515,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":516,"b":"0"}],"differing":43}
+
+FRESH BASELINE {"oldDelta":"(x=513, y=303, w=4, h=12)","candidateEqual":true,"frame":121,"oldEqual":false,"index":8,"candidateDelta":null}
+
+FAIL Error: exact dense moving visuals f=121 Error: exact dense moving visuals f=121
+
+	at EffectLoadChecks/check()
+
+	at EffectLoadChecks/step()
+

@@ -1,0 +1,8 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+LOAD ROW {"count":100,"mode":"current","state":0,"rasters":[242,232],"baseline":[1,1,1,1,1,2,1,0,1,1,1,1,2,0,2,1,2,2,0,1,0,0,1,0,0,0,1,1,1,2],"candidate":[3,0,0,0,3,3,1,2,1,1,1,2,0,1,1,1,1,0,0,0,2,2,1,1,1,1,1,1,1,1],"memory":17367040}
+LOAD ROW {"count":500,"mode":"current","state":0,"rasters":[1201,1182],"baseline":[4,2,3,2,6,4,3,2,4,2,5,4,2,3,4,5,7,5,2,3,4,2,6,5,2,1,3,2,8,5],"candidate":[3,5,4,4,6,7,4,4,3,4,7,5,2,2,2,4,8,5,3,2,4,4,5,7,2,3,4,3,6,5],"memory":20713472}
+COUNTEREXAMPLE {"delta":"(x=396, y=695, w=4, h=3)","candidateLit":null,"index":99,"baseline":"7,14,11,17","frame":61,"candidate":null,"baselineLit":false,"bounds":"(x=396.05, y=694.7, w=3.25, h=3.25)","stable":null,"position":[396.3,694.7]}
+FAIL Error: exact dense moving visuals f=61 Error: exact dense moving visuals f=61
+	at EffectLoadChecks/check()
+	at EffectLoadChecks/step()

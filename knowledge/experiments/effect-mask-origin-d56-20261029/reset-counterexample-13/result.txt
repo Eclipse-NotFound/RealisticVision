@@ -1,0 +1,32 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+
+MASK DATA []
+
+COUNTEREXAMPLE {"candidate":"10,4,14,8","delta":"(x=513, y=303, w=4, h=12)","bounds":"(x=503.4, y=301.7, w=13.75, h=13.75)","baseline":"10,4,14,8","frame":121,"candidateLit":false,"baselineLit":false,"index":8,"position":[505.3,301.7]}
+
+PIXEL DETAILS {"pixels":[{"a":"900ff8e","y":303,"mask":[0,0],"x":513,"b":"0"},{"a":"c00ff95","y":303,"mask":[0,0],"x":514,"b":"0"},{"a":"d00ff89","y":303,"mask":[0,0],"x":515,"b":"0"},{"a":"b00ffa2","y":303,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":304,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":304,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":304,"mask":[0,0],"x":515,"b":"0"},{"a":"2e0bff90","y":304,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":305,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":305,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":515,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":516,"b":"0"}],"roi":"(x=499, y=297, w=23, h=23)","maskAlphaDifferences":92,"frame":121,"maxChannel":255,"alpha":0.25,"index":8,"differing":43}
+
+MASK DATA []
+
+COUNTEREXAMPLE {"candidate":"19,6,23,10","delta":"(x=864, y=369, w=9, h=13)","bounds":"(x=864, y=368.7, w=14.100000000000023, h=14.050000000000011)","baseline":"19,6,23,10","frame":121,"candidateLit":false,"baselineLit":false,"index":29,"position":[866.3,368.7]}
+
+MASK DATA []
+
+COUNTEREXAMPLE {"candidate":"19,2,23,6","delta":"(x=863, y=214, w=10, h=13)","bounds":"(x=859.85, y=213.7, w=13.350000000000023, h=13.350000000000023)","baseline":"19,2,23,6","frame":121,"candidateLit":false,"baselineLit":false,"index":44,"position":[861.3,213.7]}
+
+MASK DATA []
+
+COUNTEREXAMPLE {"candidate":"8,9,12,13","delta":"(x=428, y=510, w=7, h=7)","bounds":"(x=427.75, y=509.7, w=7.350000000000023, h=7.349999999999966)","baseline":"8,9,12,13","frame":121,"candidateLit":false,"baselineLit":false,"index":52,"position":[429.3,509.7]}
+
+MASK DATA []
+
+COUNTEREXAMPLE {"candidate":"17,7,21,11","delta":"(x=784, y=422, w=3, h=7)","bounds":"(x=783.95, y=421.7, w=7.199999999999932, h=7.199999999999989)","baseline":"17,7,21,11","frame":121,"candidateLit":false,"baselineLit":false,"index":88,"position":[785.3,421.7]}
+
+FAIL Error: exact dense moving visuals f=121 Error: exact dense moving visuals f=121
+
+	at EffectLoadChecks/check()
+
+	at EffectLoadChecks/step()
+

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "swf": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+  "native": {
+    "windowVisible": true,
+    "version": "v0.33.11-effect-clip",
+    "screen": [
+      2560,
+      1521
+    ],
+    "maskedParticleSamples": 9559,
+    "shots": 119,
+    "maxParticles": 112,
+    "frames": 240,
+    "audioVolume": 0
+  }
+}

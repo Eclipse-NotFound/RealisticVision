@@ -1,0 +1,98 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "replay": {
+    "blitCount": 100,
+    "animated": 104,
+    "count": 110,
+    "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+    "screen": [
+      2560,
+      1521
+    ],
+    "kinds": {
+      "visualGilza": 6,
+      "visualBullet": 4,
+      "flash.display::MovieClip": 100
+    },
+    "stageFps": 120,
+    "sourceBitmapArea": 900
+  },
+  "exactFrames": 60,
+  "optimizedCalls": 1982,
+  "groups": {
+    "off": {
+      "interval": {
+        "n": 238,
+        "mean": 13.945378151260504,
+        "p95": 19,
+        "max": 28,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 2.0083333333333333,
+        "p95": 6,
+        "max": 12,
+        ">100": 0
+      }
+    },
+    "normal": {
+      "interval": {
+        "n": 238,
+        "mean": 19.630252100840337,
+        "p95": 27,
+        "max": 35,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.7916666666666666,
+        "p95": 2,
+        "max": 12,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 2.095833333333333,
+        "p95": 4,
+        "max": 8,
+        ">100": 0
+      }
+    },
+    "candidate": {
+      "interval": {
+        "n": 238,
+        "mean": 17.172268907563026,
+        "p95": 23,
+        "max": 28,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.9541666666666667,
+        "p95": 2,
+        "max": 6,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 1.9666666666666666,
+        "p95": 3,
+        "max": 11,
+        ">100": 0
+      }
+    }
+  }
+}

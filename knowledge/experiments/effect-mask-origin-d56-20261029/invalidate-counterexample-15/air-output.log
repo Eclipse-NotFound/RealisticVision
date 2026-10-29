@@ -1,0 +1,13 @@
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+[RVision] room motion-corner 24x18 lDist2=2500 mode=current
+MASK DATA []
+COUNTEREXAMPLE {"delta":"(x=513, y=303, w=4, h=12)","candidateLit":false,"baseline":"10,4,14,8","frame":121,"index":8,"baselineLit":false,"bounds":"(x=503.4, y=301.7, w=13.75, h=13.75)","candidate":"10,4,14,8","position":[505.3,301.7]}
+PIXEL DETAILS {"pixels":[{"a":"900ff8e","y":303,"mask":[0,0],"x":513,"b":"0"},{"a":"c00ff95","y":303,"mask":[0,0],"x":514,"b":"0"},{"a":"d00ff89","y":303,"mask":[0,0],"x":515,"b":"0"},{"a":"b00ffa2","y":303,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":304,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":304,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":304,"mask":[0,0],"x":515,"b":"0"},{"a":"2e0bff90","y":304,"mask":[0,0],"x":516,"b":"0"},{"a":"c00ff95","y":305,"mask":[0,0],"x":513,"b":"0"},{"a":"180bff95","y":305,"mask":[0,0],"x":514,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":515,"b":"0"},{"a":"250eff91","y":305,"mask":[0,0],"x":516,"b":"0"}],"differing":43,"frame":121,"maskAlphaDifferences":92,"roi":"(x=499, y=297, w=23, h=23)","alpha":0.25,"maxChannel":255,"index":8}
+INVALIDATE STEP {"candidateEqual":true,"oldEqual":false,"action":0}
+INVALIDATE STEP {"candidateEqual":true,"oldEqual":false,"action":1}
+INVALIDATE STEP {"candidateEqual":true,"oldEqual":false,"action":2}
+INVALIDATE STEP {"candidateEqual":true,"oldEqual":false,"action":3}
+FRESH BASELINE {"oldEqual":false,"frame":121,"candidateEqual":true,"candidateDelta":null,"index":8,"oldDelta":"(x=513, y=303, w=4, h=12)"}
+FAIL Error: exact dense moving visuals f=121 Error: exact dense moving visuals f=121
+	at EffectLoadChecks/check()
+	at EffectLoadChecks/step()

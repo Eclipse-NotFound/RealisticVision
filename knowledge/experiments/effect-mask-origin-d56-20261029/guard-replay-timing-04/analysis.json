@@ -1,0 +1,96 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "replay": {
+    "blitCount": 87,
+    "screen": [
+      2560,
+      1521
+    ],
+    "boundary": "Frozen native effect batch; controlled transforms and original sprite-strip/timeline frames; native world paused. Not full gameplay.",
+    "sourceBitmapArea": 783,
+    "count": 98,
+    "stageFps": 120,
+    "animated": 89,
+    "kinds": {
+      "visualGilza": 9,
+      "flash.display::MovieClip": 87,
+      "visualBullet": 2
+    }
+  },
+  "groups": {
+    "off": {
+      "interval": {
+        "n": 238,
+        "mean": 12.936974789915967,
+        "p95": 19,
+        "max": 71,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.0,
+        "p95": 0,
+        "max": 0,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 1.7958333333333334,
+        "p95": 3,
+        "max": 53,
+        ">100": 0
+      }
+    },
+    "normal": {
+      "interval": {
+        "n": 238,
+        "mean": 23.415966386554622,
+        "p95": 32,
+        "max": 77,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.8958333333333334,
+        "p95": 2,
+        "max": 5,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 2.129166666666667,
+        "p95": 3,
+        "max": 55,
+        ">100": 0
+      }
+    },
+    "candidate": {
+      "interval": {
+        "n": 238,
+        "mean": 24.054621848739497,
+        "p95": 38,
+        "max": 83,
+        ">100": 0
+      },
+      "rv": {
+        "n": 240,
+        "mean": 0.8583333333333333,
+        "p95": 2,
+        "max": 3,
+        ">100": 0
+      },
+      "restore": {
+        "n": 240,
+        "mean": 1.8375,
+        "p95": 3,
+        "max": 5,
+        ">100": 0
+      }
+    }
+  }
+}

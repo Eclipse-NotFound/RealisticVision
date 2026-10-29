@@ -100,7 +100,7 @@ package
       private var cfgDebug:Boolean = false;
 
       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
-      private static const VERSION:String = "v0.33.10-render-cache";
+      private static const VERSION:String = "v0.33.11-effect-clip";
 
       private static const FOV_VISIBLE:int = 2;
       private static const FOV_DIM:int = 1;
@@ -3206,6 +3206,7 @@ package
             // 只在可见侧淡出；地板的柔化不能揭露被挡住的敌人。
             this.finishCurrentMask(bd,bdb);
          }
+         if(this.cfgMode=="current")rec.inputRevision=int(rec.inputRevision)+1;
          // 位图填充绘制进矢量 Shape（smoothing → 双线性放大），alpha 渐变即软边
          // 注：beginBitmapFill 的 matrix 不跨调用复用（可能持引用，复用会串改
          // 前一个敌人的填充）——每次新建，成本可忽略（仅 FOV 变化时调用）
@@ -3719,10 +3720,38 @@ package
          }
          record.pass=this.worldPass;
          var shape:Shape=record.shape as Shape;
-         if(record.raster!==raster || record.revision!=raster.maskRevision || record.dark!==drawDark)
+         // Omit unused outer samples while retaining the original sampling
+         // lattice and updating the target's cached mask association.
+         var drawClip:Rectangle=null;
+         var screenMatrix:Matrix=visual.parent.transform.concatenatedMatrix;
+         var drawX:Number=Math.max(0,x0-MASK_PAD_X)*Tile.tileX;
+         var drawY:Number=Math.max(0,y0-MASK_PAD_TOP)*Tile.tileY;
+         var drawScale:Number=Tile.tileX/MASK_SUB;
+         if(this.cfgMode=="current" && !drawDark && screenMatrix.a==1 && screenMatrix.d==1 && screenMatrix.b==0 && screenMatrix.c==0 && screenMatrix.tx==Math.floor(screenMatrix.tx) && screenMatrix.ty==Math.floor(screenMatrix.ty) && !this.worldVisualHasFilters(visual)){ // D56_REFRESH: crop uses the original sample lattice
+            // Integer parent-to-screen translation preserves the original
+            // bitmap sampling phase. Retain two original samples beyond bounds;
+            // transformed/filter-bearing scenes keep the original full mask.
+            var clipLeft:int=Math.max(drawX,(Math.floor(bounds.left/drawScale)-2)*drawScale);
+            var clipTop:int=Math.max(drawY,(Math.floor(bounds.top/drawScale)-2)*drawScale);
+            var clipRight:int=Math.min(drawX+BitmapData(raster.m2e).width*drawScale,(Math.ceil(bounds.right/drawScale)+2)*drawScale);
+            var clipBottom:int=Math.min(drawY+BitmapData(raster.m2e).height*drawScale,(Math.ceil(bounds.bottom/drawScale)+2)*drawScale);
+            drawClip=new Rectangle(clipLeft,clipTop,clipRight-clipLeft,clipBottom-clipTop);
+         }
+         var clipChanged:Boolean=(drawClip==null)!=(record.drawClip==null) || (drawClip!=null && (record.drawClip==null || !drawClip.equals(record.drawClip)));
+         if(record.raster!==raster || (this.cfgMode=="current" && record.inputRevision!==raster.inputRevision) || record.revision!=raster.maskRevision || record.dark!==drawDark || clipChanged)
          {
+            if(this.cfgMode=="current"){
+               if(this.authorityView.active || visual.mask===shape)this.authorityView.write(visual,"mask",null);
+               record.inputRevision=raster.inputRevision;
+            }
             if(drawDark)shape.graphics.clear();
+            else if(drawClip!=null){
+               shape.graphics.clear();
+               shape.graphics.beginBitmapFill(BitmapData(raster.m2e),new Matrix(drawScale,0,0,drawScale,drawX,drawY),false,true);
+               shape.graphics.drawRect(drawClip.x,drawClip.y,drawClip.width,drawClip.height);shape.graphics.endFill();
+            }
             else shape.graphics.copyFrom(Shape(raster.m2).graphics);
+            record.drawClip=drawClip;
             record.raster=raster;record.revision=raster.maskRevision;record.dark=drawDark;
          }
          if(shape.parent!==visual.parent)visual.parent.addChild(shape);

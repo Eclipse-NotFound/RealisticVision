@@ -1,0 +1,15 @@
+{
+  "files": {
+    "EffectLoadChecks.as": "74c28544010f322284ea60fa252b7b61a209657f898ba83efa5fb00ca5e07c6a",
+    "EffectLoadChecks.compile.log": "9993208f48de5afcf2b273b81d0336cba1f50d19b94a60d4b0a8a62c24f944f6",
+    "EffectLoadChecks.compiler.xml": "2c77fae2b40e53a057c58c27f0c41356d44ed2ce24a19ad0aa41f3e244563fdd",
+    "EffectLoadChecks.swf": "0df3a88b92fb8156d1839845dacc5480e1c583e542156e7de8a1179cab17586b",
+    "src/BaselineVision.as": "ce5a409ce597cc03fe998eb4737c5958c8ca58941b22568f9e613db25478bd33",
+    "src/RealisticVisionMod.as": "a554efe908cfc4e18700b6ca65e74e65ea8df131126048f096a68aa484ad10da",
+    "src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "src/RVKeybinds.as": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "src/RVWallSurface.as": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "src/modlocales/vision/RVLocale.as": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  }
+}
