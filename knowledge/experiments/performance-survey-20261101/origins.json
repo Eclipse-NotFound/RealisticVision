@@ -1,0 +1,254 @@
+{
+  "inputs.json": {
+    "source": "build/performance-survey-output/inputs.json",
+    "sha256": "313977cb59de77c6008bd800fca34e155af54f04b5149f45b48115b003d004db",
+    "bytes": 12458,
+    "compressed": false
+  },
+  "history.json": {
+    "source": "build/performance-survey-output/history.json",
+    "sha256": "80c61db518ef2e8b12c2c20dbf1691484d1ee804bc8e5607ba807bed3a1161fe",
+    "bytes": 17519,
+    "compressed": false
+  },
+  "generated-runner.py": {
+    "source": "build/performance-survey-output/generated-runner.py",
+    "sha256": "0ef624c30070b76b629917ca0d8d96d686046d9a3e8afac8d565a945de72f4ee",
+    "bytes": 23657,
+    "compressed": false
+  },
+  "baseline-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "baseline-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "baseline-src/RealisticVisionMod.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/RealisticVisionMod.as",
+    "sha256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "bytes": 206660,
+    "compressed": true
+  },
+  "baseline-src/RVExplorationCarrier.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "baseline-src/RVKeybinds.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "baseline-src/RVWallSurface.as.gz": {
+    "source": "build/performance-survey-output/baseline/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "01-census/after.json": {
+    "source": "build/performance-survey-output/01-census/after.json",
+    "sha256": "567f8efb1a6b5a8e1bb8c2c2faba32e5d33052675b42228c16851622f20717a1",
+    "bytes": 844,
+    "compressed": false
+  },
+  "01-census/before.json": {
+    "source": "build/performance-survey-output/01-census/before.json",
+    "sha256": "f82558f90601cdd8964f5ae7f2eeae0af1aaa7ea79f9f1e34b90b0ef764a91e4",
+    "bytes": 844,
+    "compressed": false
+  },
+  "01-census/build.json": {
+    "source": "build/performance-survey-output/01-census/build.json",
+    "sha256": "08558fb1f22ae1784883e9b938b55cc9af9392f8d9c68f6c1389ad16f2b80cf5",
+    "bytes": 16659,
+    "compressed": false
+  },
+  "01-census/environment.json": {
+    "source": "build/performance-survey-output/01-census/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "01-census/last-run.json": {
+    "source": "build/performance-survey-output/01-census/last-run.json",
+    "sha256": "5850d960a2bb977bda7155edc05dfa15ec875065c815e2ace6407f9497feac3a",
+    "bytes": 111,
+    "compressed": false
+  },
+  "01-census/resource-policy.json": {
+    "source": "build/performance-survey-output/01-census/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "01-census/running.json": {
+    "source": "build/performance-survey-output/01-census/running.json",
+    "sha256": "12b2e626f0a98d81787d4bfb54fe3c78fb28a2514aa6a6a24330e6520b9db869",
+    "bytes": 159,
+    "compressed": false
+  },
+  "01-census/selection.json": {
+    "source": "build/performance-survey-output/01-census/selection.json",
+    "sha256": "97b2323dc69715b5e3f0912eee2ceb99ec134016dd94f03aebc534aadb171ad4",
+    "bytes": 4312,
+    "compressed": false
+  },
+  "01-census/air-output.log.gz": {
+    "source": "build/performance-survey-output/01-census/air-output.log",
+    "sha256": "00b0c8ab19982fdb5594671a8aec2f74091a6649d2f54f83b449e0039e704a43",
+    "bytes": 2061,
+    "compressed": true
+  },
+  "01-census/rv.compile.log.gz": {
+    "source": "build/performance-survey-output/01-census/rv.compile.log",
+    "sha256": "8d8102b5c549ee209008d373b795a0893dab0fb4e3fbf95880cf23849b4ff568",
+    "bytes": 590,
+    "compressed": true
+  },
+  "01-census/rv.compiler.xml.gz": {
+    "source": "build/performance-survey-output/01-census/rv.compiler.xml",
+    "sha256": "8d1b3b112bd20882475781a411f3989776c0a36b8da242e8b73c9b9bd53a714e",
+    "bytes": 813,
+    "compressed": true
+  },
+  "01-census/CombatRenderProbeMod.as.gz": {
+    "source": "build/performance-survey-output/01-census/CombatRenderProbeMod.as",
+    "sha256": "053544aaba9c551243bb50a06884975985eabc89656c4098157ae1c6c3f81116",
+    "bytes": 24457,
+    "compressed": true
+  },
+  "01-census/evidence/scene-0.png": {
+    "source": "build/performance-survey-output/01-census/evidence/scene-0.png",
+    "sha256": "7eb0c445533cf639974d6435201f9d0ed8bba409bacf2ce5148561d520a69390",
+    "bytes": 356094,
+    "compressed": false
+  },
+  "02-census/after.json": {
+    "source": "build/performance-survey-output/02-census/after.json",
+    "sha256": "5ef75af110bdc0fa48db5132b51b3d541c557ce2ab5addc66e765fdeca3c5cd8",
+    "bytes": 844,
+    "compressed": false
+  },
+  "02-census/before.json": {
+    "source": "build/performance-survey-output/02-census/before.json",
+    "sha256": "7e0a9fa1a0689982dd2dd2f57e7abe25543898dcb7cadbd87d3906c37bfe89ea",
+    "bytes": 844,
+    "compressed": false
+  },
+  "02-census/build.json": {
+    "source": "build/performance-survey-output/02-census/build.json",
+    "sha256": "32229a265b912d0b69ea43ac5a0ac31dacb7eb8f1e33fb8ff948ef2ddb22a3bf",
+    "bytes": 16598,
+    "compressed": false
+  },
+  "02-census/environment.json": {
+    "source": "build/performance-survey-output/02-census/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "02-census/last-run.json": {
+    "source": "build/performance-survey-output/02-census/last-run.json",
+    "sha256": "7fb6b05f17a488d81e9c872d22cdc4a5ec564656fee0ab4970dbed9e08364fa4",
+    "bytes": 111,
+    "compressed": false
+  },
+  "02-census/resource-policy.json": {
+    "source": "build/performance-survey-output/02-census/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "02-census/running.json": {
+    "source": "build/performance-survey-output/02-census/running.json",
+    "sha256": "2dd890df1b7d417651397a9b3f1f7de3fad608e0b6bc44ce63f41df7ee73032d",
+    "bytes": 159,
+    "compressed": false
+  },
+  "02-census/selection.json": {
+    "source": "build/performance-survey-output/02-census/selection.json",
+    "sha256": "022a369af4db2f60466bcc13f284579ec7aa3bc71061dde11d245a9612c3f9dd",
+    "bytes": 4312,
+    "compressed": false
+  },
+  "02-census/analysis.json": {
+    "source": "build/performance-survey-output/02-census/analysis.json",
+    "sha256": "06e702d1821c4af56bf62029846eb2f78188545a5665792ec4759328c8cd0fdb",
+    "bytes": 1555,
+    "compressed": false
+  },
+  "02-census/census.json": {
+    "source": "build/performance-survey-output/02-census/census.json",
+    "sha256": "34e70269bec5dadd72f1bd1c060d7ef3a71b96b4e110e321ba8083b63ee98ae8",
+    "bytes": 21177,
+    "compressed": false
+  },
+  "02-census/air-output.log.gz": {
+    "source": "build/performance-survey-output/02-census/air-output.log",
+    "sha256": "98633d7db5f065933a8089ec2b520ce15374405d234e12d64a1ae567e9521e28",
+    "bytes": 2565,
+    "compressed": true
+  },
+  "02-census/CombatRenderProbeMod.as.gz": {
+    "source": "build/performance-survey-output/02-census/CombatRenderProbeMod.as",
+    "sha256": "d8079880cefa9ffc1b4e1a63773b44e7c8708ffb552746389f1764508fa249d4",
+    "bytes": 24461,
+    "compressed": true
+  },
+  "02-census/evidence/result.json.gz": {
+    "source": "build/performance-survey-output/02-census/evidence/result.json",
+    "sha256": "3aa71d8306a0dff86078335a79acfff407eb6cb75719ef2ccbf0db9fce0e6b8d",
+    "bytes": 739404,
+    "compressed": true
+  },
+  "02-census/evidence/scene-0.png": {
+    "source": "build/performance-survey-output/02-census/evidence/scene-0.png",
+    "sha256": "50047303531c49df4701eb7e91c1be3ba12ec8761310bd7d8347d8500665e798",
+    "bytes": 546905,
+    "compressed": false
+  },
+  "02-census/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "02-census/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "02-census/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/RealisticVisionMod.as",
+    "sha256": "a35f4a143cc670daf6e251cae81977557ae7d447d962e1ffeb3b43e3b665f1f7",
+    "bytes": 213534,
+    "compressed": true
+  },
+  "02-census/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "02-census/rv-src/RVKeybinds.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "02-census/rv-src/RVWallSurface.as.gz": {
+    "source": "build/performance-survey-output/02-census/rv-src/RVWallSurface.as",
+    "sha256": "319a6ebd55d56959b690887e1879c2674dba7f6ddc7d785d60c95048281c248c",
+    "bytes": 38884,
+    "compressed": true
+  }
+}

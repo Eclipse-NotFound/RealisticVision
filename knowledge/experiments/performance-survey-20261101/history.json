@@ -1,0 +1,756 @@
+{
+  "scope": "Archived endpoint inventory, not new timing or a matched-size comparison",
+  "cases": [
+    {
+      "run": "01-maximized-baseline",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 1230,
+      "retainedBitmapBytes": 28540928,
+      "visibleRecords": 56,
+      "maskInventory": {
+        "maskShapeLinks": 74,
+        "masked": 74,
+        "unrecognized": 0,
+        "reciprocalPairs": 74,
+        "visible": 68,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "visualGilza": 17,
+          "visReplic": 5,
+          "flash.display::MovieClip": 30,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "owned": 74,
+        "duplicateLayers": 0
+      }
+    },
+    {
+      "run": "01-maximized-baseline",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 1285,
+      "retainedBitmapBytes": 29852416,
+      "visibleRecords": 41,
+      "maskInventory": {
+        "maskShapeLinks": 59,
+        "masked": 59,
+        "unrecognized": 0,
+        "reciprocalPairs": 59,
+        "visible": 53,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "visualGilza": 10,
+          "visReplic": 3,
+          "flash.display::MovieClip": 24,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "owned": 59,
+        "duplicateLayers": 0
+      }
+    },
+    {
+      "run": "02-floor-branch",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 601,
+      "retainedBitmapBytes": 10453504,
+      "visibleRecords": 82,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 88,
+        "duplicateLayers": 0,
+        "visible": 86,
+        "masked": 88,
+        "types": {
+          "vissmg10": 2,
+          "visualGilza": 24,
+          "visReplic": 3,
+          "visualGrifArm1": 6,
+          "visualNoise": 4,
+          "flash.display::MovieClip": 44,
+          "visualBullet": 3,
+          "hpBar": 2
+        },
+        "layers": 6,
+        "owned": 88,
+        "maskShapeLinks": 88
+      }
+    },
+    {
+      "run": "02-floor-branch",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 600,
+      "retainedBitmapBytes": 9659136,
+      "visibleRecords": 71,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 77,
+        "duplicateLayers": 0,
+        "visible": 75,
+        "masked": 77,
+        "types": {
+          "vissmg10": 2,
+          "visualGilza": 21,
+          "visReplic": 5,
+          "visualGrifArm1": 6,
+          "visualNoise": 1,
+          "flash.display::MovieClip": 38,
+          "visualBullet": 2,
+          "hpBar": 2
+        },
+        "layers": 6,
+        "owned": 77,
+        "maskShapeLinks": 77
+      }
+    },
+    {
+      "run": "02-floor-branch",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 556,
+      "retainedBitmapBytes": 9235968,
+      "visibleRecords": 77,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 83,
+        "duplicateLayers": 0,
+        "visible": 81,
+        "masked": 83,
+        "types": {
+          "vissmg10": 2,
+          "visualGilza": 20,
+          "visReplic": 2,
+          "visualGrifArm1": 6,
+          "visualNoise": 4,
+          "flash.display::MovieClip": 45,
+          "visualBullet": 2,
+          "hpBar": 2
+        },
+        "layers": 6,
+        "owned": 83,
+        "maskShapeLinks": 83
+      }
+    },
+    {
+      "run": "02-floor-branch",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 579,
+      "retainedBitmapBytes": 9997568,
+      "visibleRecords": 64,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 70,
+        "duplicateLayers": 0,
+        "visible": 68,
+        "masked": 70,
+        "types": {
+          "vissmg10": 2,
+          "visualGilza": 12,
+          "visReplic": 4,
+          "visualGrifArm1": 6,
+          "flash.display::MovieClip": 43,
+          "visualBullet": 1,
+          "hpBar": 2
+        },
+        "layers": 6,
+        "owned": 70,
+        "maskShapeLinks": 70
+      }
+    },
+    {
+      "run": "03-merged-large",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        2560,
+        1521
+      ],
+      "displayState": "normal",
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        1,
+        320,
+        260
+      ],
+      "cropHitsOverWarmupAndSample": 11552,
+      "retainedRasters": 721,
+      "retainedBitmapBytes": 12401920,
+      "visibleRecords": 68,
+      "maskInventory": {
+        "owned": 80,
+        "maskShapeLinks": 80,
+        "visible": 76,
+        "unrecognized": 0,
+        "reciprocalPairs": 80,
+        "duplicateLayers": 0,
+        "types": {
+          "flash.display::MovieClip": 39,
+          "visualGilza": 20,
+          "visReplic": 5,
+          "visualGrifArm1": 6,
+          "vissmg10": 4,
+          "visualBullet": 2,
+          "hpBar": 4
+        },
+        "layers": 6,
+        "masked": 80
+      }
+    },
+    {
+      "run": "03-merged-large",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        2560,
+        1521
+      ],
+      "displayState": "normal",
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        1,
+        320,
+        260
+      ],
+      "cropHitsOverWarmupAndSample": 12162,
+      "retainedRasters": 979,
+      "retainedBitmapBytes": 16997120,
+      "visibleRecords": 76,
+      "maskInventory": {
+        "owned": 88,
+        "maskShapeLinks": 88,
+        "visible": 84,
+        "unrecognized": 0,
+        "reciprocalPairs": 88,
+        "duplicateLayers": 0,
+        "types": {
+          "flash.display::MovieClip": 42,
+          "visualGilza": 21,
+          "visReplic": 5,
+          "visualGrifArm1": 6,
+          "vissmg10": 4,
+          "visualNoise": 3,
+          "visualBullet": 3,
+          "hpBar": 4
+        },
+        "layers": 6,
+        "masked": 88
+      }
+    },
+    {
+      "run": "03-merged-large",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        2560,
+        1521
+      ],
+      "displayState": "normal",
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        1,
+        320,
+        260
+      ],
+      "cropHitsOverWarmupAndSample": 12414,
+      "retainedRasters": 1027,
+      "retainedBitmapBytes": 16807680,
+      "visibleRecords": 78,
+      "maskInventory": {
+        "owned": 90,
+        "maskShapeLinks": 90,
+        "visible": 86,
+        "unrecognized": 0,
+        "reciprocalPairs": 90,
+        "duplicateLayers": 0,
+        "types": {
+          "flash.display::MovieClip": 40,
+          "visualGilza": 22,
+          "visReplic": 5,
+          "visualKusoch": 5,
+          "visualGrifArm1": 6,
+          "vissmg10": 4,
+          "visualBullet": 4,
+          "hpBar": 4
+        },
+        "layers": 6,
+        "masked": 90
+      }
+    },
+    {
+      "run": "03-merged-large",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        2560,
+        1521
+      ],
+      "displayState": "normal",
+      "worldMatrix": [
+        1,
+        0,
+        0,
+        1,
+        320,
+        260
+      ],
+      "cropHitsOverWarmupAndSample": 11981,
+      "retainedRasters": 1010,
+      "retainedBitmapBytes": 15213312,
+      "visibleRecords": 54,
+      "maskInventory": {
+        "owned": 66,
+        "maskShapeLinks": 66,
+        "visible": 62,
+        "unrecognized": 0,
+        "reciprocalPairs": 66,
+        "duplicateLayers": 0,
+        "types": {
+          "flash.display::MovieClip": 23,
+          "visualGilza": 19,
+          "visReplic": 3,
+          "visualKusoch": 3,
+          "visualGrifArm1": 6,
+          "vissmg10": 4,
+          "visualNoise": 3,
+          "visualBullet": 1,
+          "hpBar": 4
+        },
+        "layers": 6,
+        "masked": 66
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 464,
+      "retainedBitmapBytes": 10231552,
+      "visibleRecords": 63,
+      "maskInventory": {
+        "masked": 81,
+        "reciprocalPairs": 81,
+        "layers": 6,
+        "maskShapeLinks": 81,
+        "visible": 75,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 6,
+          "visualGrifArm1": 6,
+          "visReplic": 2,
+          "visualBullet": 3,
+          "flash.display::MovieClip": 43,
+          "vissmg10": 6,
+          "visualGilza": 15
+        },
+        "duplicateLayers": 0,
+        "owned": 81
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 470,
+      "retainedBitmapBytes": 10383616,
+      "visibleRecords": 57,
+      "maskInventory": {
+        "masked": 75,
+        "reciprocalPairs": 75,
+        "layers": 6,
+        "maskShapeLinks": 75,
+        "visible": 69,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 6,
+          "visualGrifArm1": 6,
+          "visReplic": 4,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 38,
+          "vissmg10": 6,
+          "visualGilza": 13
+        },
+        "duplicateLayers": 0,
+        "owned": 75
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "current",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 463,
+      "retainedBitmapBytes": 10364160,
+      "visibleRecords": 74,
+      "maskInventory": {
+        "masked": 92,
+        "reciprocalPairs": 92,
+        "layers": 6,
+        "maskShapeLinks": 92,
+        "visible": 86,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 6,
+          "visualGrifArm1": 6,
+          "visReplic": 1,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 55,
+          "vissmg10": 6,
+          "visualGilza": 16
+        },
+        "duplicateLayers": 0,
+        "owned": 92
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "current",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 461,
+      "retainedBitmapBytes": 10239232,
+      "visibleRecords": 73,
+      "maskInventory": {
+        "masked": 91,
+        "reciprocalPairs": 91,
+        "layers": 6,
+        "maskShapeLinks": 91,
+        "visible": 85,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 6,
+          "visualGrifArm1": 6,
+          "visReplic": 4,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 49,
+          "vissmg10": 6,
+          "visualGilza": 18
+        },
+        "duplicateLayers": 0,
+        "owned": 91
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "classic",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 471,
+      "retainedBitmapBytes": 10903040,
+      "visibleRecords": 66,
+      "maskInventory": {
+        "masked": 72,
+        "reciprocalPairs": 72,
+        "layers": 6,
+        "maskShapeLinks": 72,
+        "visible": 70,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 2,
+          "visualGrifArm1": 6,
+          "visReplic": 2,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 41,
+          "vissmg10": 6,
+          "visualGilza": 13
+        },
+        "duplicateLayers": 0,
+        "owned": 72
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "classic",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 469,
+      "retainedBitmapBytes": 10659072,
+      "visibleRecords": 81,
+      "maskInventory": {
+        "masked": 87,
+        "reciprocalPairs": 87,
+        "layers": 6,
+        "maskShapeLinks": 87,
+        "visible": 85,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 2,
+          "visualGrifArm1": 6,
+          "visReplic": 3,
+          "visualBullet": 2,
+          "flash.display::MovieClip": 51,
+          "vissmg10": 6,
+          "visualGilza": 17
+        },
+        "duplicateLayers": 0,
+        "owned": 87
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "classic",
+      "variant": "candidate",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 481,
+      "retainedBitmapBytes": 11027712,
+      "visibleRecords": 77,
+      "maskInventory": {
+        "masked": 83,
+        "reciprocalPairs": 83,
+        "layers": 6,
+        "maskShapeLinks": 83,
+        "visible": 81,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 2,
+          "visualGrifArm1": 6,
+          "visReplic": 2,
+          "visualBullet": 3,
+          "flash.display::MovieClip": 45,
+          "vissmg10": 6,
+          "visualGilza": 19
+        },
+        "duplicateLayers": 0,
+        "owned": 83
+      }
+    },
+    {
+      "run": "05-palette-repeat",
+      "mode": "classic",
+      "variant": "normal",
+      "stage": [
+        1280,
+        729
+      ],
+      "displayState": "maximized",
+      "worldMatrix": [
+        0.666656494140625,
+        0,
+        0,
+        0.666656494140625,
+        0,
+        31
+      ],
+      "cropHitsOverWarmupAndSample": 0,
+      "retainedRasters": 470,
+      "retainedBitmapBytes": 10733824,
+      "visibleRecords": 76,
+      "maskInventory": {
+        "masked": 82,
+        "reciprocalPairs": 82,
+        "layers": 6,
+        "maskShapeLinks": 82,
+        "visible": 80,
+        "unrecognized": 0,
+        "types": {
+          "hpBar": 2,
+          "visualGrifArm1": 6,
+          "visReplic": 3,
+          "visualBullet": 4,
+          "flash.display::MovieClip": 44,
+          "vissmg10": 6,
+          "visualGilza": 17
+        },
+        "duplicateLayers": 0,
+        "owned": 82
+      }
+    }
+  ],
+  "sources": {
+    "knowledge\\experiments\\maximized-flow-20261101\\01-maximized-baseline\\evidence\\result.json.gz": "e64a8471e5ad9d19a16eeb47b0fb65428f26db3ce37a8ff911a76e0c830262f7",
+    "knowledge\\experiments\\maximized-flow-20261101\\02-floor-branch\\evidence\\result.json.gz": "f1a1f33e97eceae697bdbc6745a62d8afa13e02a5f7f491b9cfd583a48305542",
+    "knowledge\\experiments\\maximized-flow-20261101\\03-merged-large\\evidence\\result.json.gz": "a222b82e5d0766ce2c84b13f35cc8ffd6ae1da0ab330a6fafb42a48c9f268ecd",
+    "knowledge\\experiments\\maximized-flow-20261101\\05-palette-repeat\\evidence\\result.json.gz": "ddd38472541a7af853721d4e702e8e299ee1f7db21fdf7286b55e58ebee79209"
+  }
+}
