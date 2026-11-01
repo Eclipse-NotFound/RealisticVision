@@ -12,3 +12,6 @@ base_rooms=
 debug=0
 motionstep=4.0
 fx_vision_quality=0
+fog_vision_quality=0
+enemy_mask_fast=1
+vision_quality_preset=0

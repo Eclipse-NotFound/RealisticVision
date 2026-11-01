@@ -1,3 +1,11 @@
+## 2026-11-02 — v0.34.0-fx-liberation 部署：帧率解放三件套 + 无损候选合并（含 locmem）
+
+- 做了什么：用户批准"极小视觉微差换大幅帧率解放"方案后实施四支柱：①移植普查会话 exact-render 的 coverage-fast + classic-repaint-v2（遵从其"贴图门控/固定字段不纳入"结论）；②FOG_SUB/MASK_SUB 常量→实例 fogSub（137+31 处 token 迁移），预设 0 时 4 子格（字段像素 −75%），显示 2x 双线性，applyVisionScale() 统一重建模糊半径/经典矩阵/单元格矩形，wallEdgeLight 与滤镜半径换算全部 fogSub 派生；③enemyState 80%/15% 加权面积门控 + applyWeaponVisual state=1 摘共享遮罩 + 狮鹫手臂/长枪中心点二值；④vision_quality_preset 0/1/2 预设 + 三单项键。存根 SWC 编译 48,554B、SHA 638AB1B0…DAE807C8，部署至 release，config 字节级追加三新键（421B）。
+- 中途合并事件：首轮基于 fx-fast 源完成 4 轮 A/B 后，发现并行会话 01:28 已部署 v0.33.17-locmem（跨楼层记忆修复）。为不回退用户已获修复，diff 确认改动区零重叠后以 landmem 源为基线重放全部编辑（含补 cfg 字段声明脚本），重新编译并以部署字节复验两轮（fxlib05/06）。locmem 的 roommem restore 日志路径保留。
+- 验证：六轮三版本同进程 A/B（fire-exhaustive 链 fxlib01-06，current，718 间隔/版本）：固定站位 vs 历任正式版均值 −1.5%~−4.2%、P95 −9%~−13%、>100ms 帧减半或清零、RV 调用 −34%（1.00→0.66ms）；移动两向持平（±0.6ms，历轮噪声带内）；截图 PIL 校验固有暗区泄漏 0.07%（与 fx-fast 同级）、亮区结构 83-92% 重合、无破图。官方 ModLoader 隔离副本冒烟两轮：launcher 回读 SHA 一致、init ok v0.34.0-fx-liberation、设置注册、tick 1–901。回退备份 build/backups/before-fxlib-20261102-014500；vision_quality_preset=2 可免回滚回三项原路径。
+- 视觉取舍（用户已接受）：雾边缘羽化略粗（10px 子格+双线性+模糊）；≥80% 可见敌人无边界虚化（更利索敌）；≤15% 直接隐藏；手臂/长枪中心点二值。仅 current 整窗计时，classic 收益来自 repaint-v2（普查 48/52/54 数据）。
+- 环境坑（已记报告）：PowerShell Get-Content 按 GBK 读无 BOM UTF-8 源会静默损坏全部中文注释——批量源码改动一律 Python 显式 encoding；run.py --help 会被当运行名（已清理误建目录）；adl64.exe 在游戏根、mxmlc 须在 flexsdk/frameworks 下运行。
+- 遗留/下一步：重启游戏生效；玩家换层后 RVision.log 应见 roommem restore（locmem 验证条件仍适用）；preset=1/2 未单独计时；移动态持平=半分辨率雾收益被移动已有的角点复用摊薄，进一步移动态优化空间待普查会话长帧归因结论。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md)
 ## 2026-11-02 — v0.33.17-locmem 部署：换地图/楼层首房"整间已探索"修复
 
 - 做了什么：用户报告"进入新地图/新楼层后到达的第一个房间整间显示为已探索（记忆区暗度）"，截图处于`马哈顿废墟 - 5`。自`build/fx-fast-20261102/src`派生`build/landmem-fix-20261102/src`：跨房间记忆`roomMem`与视距`rangeMem`改按**Location对象弱键**（`Dictionary(true)`），不再按`loc.id`；恢复成功时每会话记一行`roommem restore loc=… explored=…`。存根SWC路线编译47,862B、SHA `35243D0F…97489D29`，备份`before-locmem-20261102-013447`（旧47,801B `F3223BF1…43799A`）后部署至release，config未改。
