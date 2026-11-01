@@ -1,0 +1,622 @@
+{
+  "run": "06-lighting-cross",
+  "completed": true,
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/off": {
+      "frame": {
+        "n": 238,
+        "mean": 61.828,
+        "p95": 115,
+        "max": 202,
+        "over100": 18
+      },
+      "rv": {
+        "n": 238,
+        "mean": 0.013,
+        "p95": 0,
+        "max": 1,
+        "over100": 0
+      }
+    },
+    "current/normal": {
+      "frame": {
+        "n": 238,
+        "mean": 56.861,
+        "p95": 84,
+        "max": 308,
+        "over100": 8
+      },
+      "rv": {
+        "n": 238,
+        "mean": 2.269,
+        "p95": 4,
+        "max": 9,
+        "over100": 0
+      }
+    },
+    "current/normal-noshotlight": {
+      "frame": {
+        "n": 238,
+        "mean": 52.097,
+        "p95": 87,
+        "max": 234,
+        "over100": 6
+      },
+      "rv": {
+        "n": 238,
+        "mean": 2.252,
+        "p95": 4,
+        "max": 15,
+        "over100": 0
+      }
+    },
+    "current/off-noshotlight": {
+      "frame": {
+        "n": 238,
+        "mean": 41.815,
+        "p95": 71,
+        "max": 128,
+        "over100": 4
+      },
+      "rv": {
+        "n": 238,
+        "mean": 0.004,
+        "p95": 0,
+        "max": 1,
+        "over100": 0
+      }
+    }
+  },
+  "windows": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "off",
+      "frame": {
+        "n": 119,
+        "mean": 62.521,
+        "p95": 110,
+        "max": 202,
+        "over100": 8
+      },
+      "rv": {
+        "n": 119,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 58,
+      "enemyShots": 133,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": true,
+        "renders": 266,
+        "enabled": true,
+        "late": 45,
+        "captured": 76
+      },
+      "ladEnd": {
+        "renders": 504,
+        "enabled": true,
+        "late": 164,
+        "captured": 267,
+        "projectiles": true
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 3.639,
+        "p95": 12,
+        "max": 20,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 16.16,
+        "p95": 22,
+        "max": 24,
+        "over100": 0
+      }
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 57.403,
+        "p95": 84,
+        "max": 308,
+        "over100": 4
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.176,
+        "p95": 4,
+        "max": 9,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 59,
+      "enemyShots": 132,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": true,
+        "renders": 595,
+        "enabled": true,
+        "late": 209,
+        "captured": 349
+      },
+      "ladEnd": {
+        "renders": 832,
+        "enabled": true,
+        "late": 327,
+        "captured": 539,
+        "projectiles": true
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 3.025,
+        "p95": 6,
+        "max": 14,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 15.958,
+        "p95": 22,
+        "max": 24,
+        "over100": 0
+      }
+    },
+    {
+      "index": 2,
+      "mode": "current",
+      "variant": "normal-noshotlight",
+      "frame": {
+        "n": 119,
+        "mean": 49.597,
+        "p95": 73,
+        "max": 225,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.176,
+        "p95": 4,
+        "max": 15,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 58,
+      "enemyShots": 125,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": false,
+        "renders": 878,
+        "enabled": true,
+        "late": 327,
+        "captured": 539
+      },
+      "ladEnd": {
+        "renders": 997,
+        "enabled": true,
+        "late": 327,
+        "captured": 539,
+        "projectiles": false
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 0.613,
+        "p95": 2,
+        "max": 4,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      }
+    },
+    {
+      "index": 3,
+      "mode": "current",
+      "variant": "off-noshotlight",
+      "frame": {
+        "n": 119,
+        "mean": 42.328,
+        "p95": 71,
+        "max": 91,
+        "over100": 0
+      },
+      "rv": {
+        "n": 119,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 44,
+      "enemyShots": 127,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": false,
+        "renders": 1043,
+        "enabled": true,
+        "late": 327,
+        "captured": 539
+      },
+      "ladEnd": {
+        "renders": 1162,
+        "enabled": true,
+        "late": 327,
+        "captured": 539,
+        "projectiles": false
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 0.605,
+        "p95": 3,
+        "max": 5,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      }
+    },
+    {
+      "index": 4,
+      "mode": "current",
+      "variant": "off-noshotlight",
+      "frame": {
+        "n": 119,
+        "mean": 41.303,
+        "p95": 71,
+        "max": 128,
+        "over100": 4
+      },
+      "rv": {
+        "n": 119,
+        "mean": 0.008,
+        "p95": 0,
+        "max": 1,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 59,
+      "enemyShots": 129,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": false,
+        "renders": 1208,
+        "enabled": true,
+        "late": 327,
+        "captured": 539
+      },
+      "ladEnd": {
+        "renders": 1327,
+        "enabled": true,
+        "late": 327,
+        "captured": 539,
+        "projectiles": false
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 0.983,
+        "p95": 4,
+        "max": 13,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      }
+    },
+    {
+      "index": 5,
+      "mode": "current",
+      "variant": "normal-noshotlight",
+      "frame": {
+        "n": 119,
+        "mean": 54.597,
+        "p95": 95,
+        "max": 234,
+        "over100": 4
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.328,
+        "p95": 4,
+        "max": 10,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 57,
+      "enemyShots": 133,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": false,
+        "renders": 1373,
+        "enabled": true,
+        "late": 327,
+        "captured": 539
+      },
+      "ladEnd": {
+        "renders": 1492,
+        "enabled": true,
+        "late": 327,
+        "captured": 539,
+        "projectiles": false
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 0.748,
+        "p95": 3,
+        "max": 6,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      }
+    },
+    {
+      "index": 6,
+      "mode": "current",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 56.319,
+        "p95": 87,
+        "max": 147,
+        "over100": 4
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.361,
+        "p95": 6,
+        "max": 9,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 43,
+      "enemyShots": 129,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": true,
+        "renders": 1583,
+        "enabled": true,
+        "late": 372,
+        "captured": 617
+      },
+      "ladEnd": {
+        "renders": 1821,
+        "enabled": true,
+        "late": 491,
+        "captured": 788,
+        "projectiles": true
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 2.866,
+        "p95": 5,
+        "max": 16,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 14.874,
+        "p95": 21,
+        "max": 22,
+        "over100": 0
+      }
+    },
+    {
+      "index": 7,
+      "mode": "current",
+      "variant": "off",
+      "frame": {
+        "n": 119,
+        "mean": 61.134,
+        "p95": 128,
+        "max": 165,
+        "over100": 10
+      },
+      "rv": {
+        "n": 119,
+        "mean": 0.017,
+        "p95": 0,
+        "max": 1,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 58,
+      "enemyShots": 125,
+      "stage": [
+        1280,
+        729
+      ],
+      "ladStart": {
+        "lighting": {
+          "regions": {
+            "outage": 0.24,
+            "maintained": 0.72,
+            "safe": 0.82,
+            "interior": 0.68,
+            "abandoned": 0.62,
+            "underground": 0.48,
+            "outdoor": 1
+          },
+          "version": 1,
+          "lampRange": 1.1,
+          "multiplier": 1
+        },
+        "projectiles": true,
+        "renders": 1912,
+        "enabled": true,
+        "late": 536,
+        "captured": 869
+      },
+      "ladEnd": {
+        "renders": 2150,
+        "enabled": true,
+        "late": 655,
+        "captured": 1051,
+        "projectiles": true
+      },
+      "lightField": {
+        "n": 119,
+        "mean": 4.462,
+        "p95": 12,
+        "max": 30,
+        "over100": 0
+      },
+      "lightPulses": {
+        "n": 119,
+        "mean": 15.118,
+        "p95": 21,
+        "max": 23,
+        "over100": 0
+      }
+    }
+  ]
+}

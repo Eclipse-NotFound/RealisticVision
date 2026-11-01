@@ -1,0 +1,1190 @@
+{
+  "inputs.json": {
+    "source": "build/fire-cost-output/inputs.json",
+    "sha256": "d5b1300f4d45870beea5bbd99a0a862d7f18dd697a144fd910ce3be05b32a58f",
+    "bytes": 11956,
+    "compressed": false
+  },
+  "optional-lad.json": {
+    "source": "build/fire-cost-output/optional-lad.json",
+    "sha256": "b1494eeea21bc8976da4f98655322939df099c0732bbd04ffd33db89990a55d7",
+    "bytes": 374,
+    "compressed": false
+  },
+  "generated-runner.py": {
+    "source": "build/fire-cost-output/generated-runner.py",
+    "sha256": "bba2014f6f6718623544b57c267328f163611b2d605197ddb4023d247025ef7d",
+    "bytes": 23544,
+    "compressed": false
+  },
+  "final-checks.json": {
+    "source": "build/fire-cost-output/final-checks.json",
+    "sha256": "6629d16d0321e88b887be49f6520cb898cbf14866669e2ba59e2b0e36e67e002",
+    "bytes": 1350,
+    "compressed": false
+  },
+  "baseline/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "baseline/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "baseline/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/RealisticVisionMod.as",
+    "sha256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "bytes": 206660,
+    "compressed": true
+  },
+  "baseline/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "baseline/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "baseline/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/baseline/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidates/phase/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "candidates/phase/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "candidates/phase/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/RealisticVisionMod.as",
+    "sha256": "8c77ad4ebb6fad4c64fa1b2b1819a69bf71a2aca1d3fc553f950274d61c429ae",
+    "bytes": 203852,
+    "compressed": true
+  },
+  "candidates/phase/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "candidates/phase/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "candidates/phase/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidates/phase/sources.json": {
+    "source": "build/fire-cost-output/candidates/phase/sources.json",
+    "sha256": "f14b0d0c488d7e37547177df38d8edc9d2de658e323cda858d8de4dff1c5bf22",
+    "bytes": 586,
+    "compressed": false
+  },
+  "candidates/phase2/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "candidates/phase2/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "candidates/phase2/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/RealisticVisionMod.as",
+    "sha256": "d0b05eafd1c5db98bf236600631d318661e1eb32afd8ce6c938df08f9eb52a23",
+    "bytes": 204012,
+    "compressed": true
+  },
+  "candidates/phase2/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "candidates/phase2/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "candidates/phase2/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/candidates/phase2/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidates/phase2/sources.json": {
+    "source": "build/fire-cost-output/candidates/phase2/sources.json",
+    "sha256": "bb0b38baddfdc1daee005335589873f4e5bc9175f8b1df52f0908343122491fb",
+    "bytes": 586,
+    "compressed": false
+  },
+  "candidates/witness/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "candidates/witness/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "candidates/witness/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/RealisticVisionMod.as",
+    "sha256": "41c4fc0d92e3df08af9a31281b960767dfb2d505d04591301a2dcb39226e0715",
+    "bytes": 203527,
+    "compressed": true
+  },
+  "candidates/witness/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "candidates/witness/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "candidates/witness/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/candidates/witness/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidates/witness/sources.json": {
+    "source": "build/fire-cost-output/candidates/witness/sources.json",
+    "sha256": "70c900fb4bdf88b871bf45f699df5d076bc96fb025c43e17c22a9e8e79433540",
+    "bytes": 586,
+    "compressed": false
+  },
+  "01-allocation/application.xml": {
+    "source": "build/fire-cost-output/01-allocation/application.xml",
+    "sha256": "441fc6752d2b7f0efbdb75325148f274efb3dd641e8e1025d2180bfc065686e7",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "01-allocation/CombatRenderProbeMod.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/CombatRenderProbeMod.as",
+    "sha256": "101174401defe0a0c46be5dae036cb16ca830e517d47cb12a026cda57df78278",
+    "bytes": 24181,
+    "compressed": true
+  },
+  "01-allocation/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "01-allocation/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "01-allocation/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/RealisticVisionMod.as",
+    "sha256": "601cab5289f598749200fa6c27ae64c060a40b49534e2f78d9dcf5c05ab48d21",
+    "bytes": 206352,
+    "compressed": true
+  },
+  "01-allocation/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "01-allocation/rv-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "01-allocation/rv-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/01-allocation/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "02-allocation/after.json": {
+    "source": "build/fire-cost-output/02-allocation/after.json",
+    "sha256": "1a010cb864549f97fb0ae9d628e9ecc704b8bd2b45ddf91d1a6e4482afa4cdf3",
+    "bytes": 843,
+    "compressed": false
+  },
+  "02-allocation/air-output.log.gz": {
+    "source": "build/fire-cost-output/02-allocation/air-output.log",
+    "sha256": "5af35fadee6581fc093e92417a5b7d9ee9e4aaf3c12996cc00d3f920a2f0fd94",
+    "bytes": 2618,
+    "compressed": true
+  },
+  "02-allocation/allocation-analysis.json": {
+    "source": "build/fire-cost-output/02-allocation/allocation-analysis.json",
+    "sha256": "ba62d4358606943b97fdba8823f0092b0acd610f942312d1aa1ba68faa460fce",
+    "bytes": 37525,
+    "compressed": false
+  },
+  "02-allocation/analysis.json": {
+    "source": "build/fire-cost-output/02-allocation/analysis.json",
+    "sha256": "1e9009ff194c91523bd4f9f3ee15368e89b62c4a5dbc922b0c6c36e044488e19",
+    "bytes": 1553,
+    "compressed": false
+  },
+  "02-allocation/application.xml": {
+    "source": "build/fire-cost-output/02-allocation/application.xml",
+    "sha256": "572617842ffdae8fe2205dd1b32c566e6d5a529c28c74e81ae935d7aa3f6caf3",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "02-allocation/before.json": {
+    "source": "build/fire-cost-output/02-allocation/before.json",
+    "sha256": "a4b3f425355e2354997b2a6056b3218a56ee4ea6f63c252cf17dbbb21adcafe2",
+    "bytes": 842,
+    "compressed": false
+  },
+  "02-allocation/build.json": {
+    "source": "build/fire-cost-output/02-allocation/build.json",
+    "sha256": "ed679e7951201dfc592c0e1f95913f18b6ca3b93e599b6c8d2628ae864fce976",
+    "bytes": 16684,
+    "compressed": false
+  },
+  "02-allocation/CombatRenderProbeMod.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/CombatRenderProbeMod.as",
+    "sha256": "101174401defe0a0c46be5dae036cb16ca830e517d47cb12a026cda57df78278",
+    "bytes": 24181,
+    "compressed": true
+  },
+  "02-allocation/cpu-samples.json.gz": {
+    "source": "build/fire-cost-output/02-allocation/cpu-samples.json",
+    "sha256": "07f9455933e318448c5419b7fc0a9853118e34ab7ea4731d79a3b5a476f5d93e",
+    "bytes": 254890,
+    "compressed": true
+  },
+  "02-allocation/environment.json": {
+    "source": "build/fire-cost-output/02-allocation/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "02-allocation/last-run.json": {
+    "source": "build/fire-cost-output/02-allocation/last-run.json",
+    "sha256": "d1e3eb1622cac1410df69879974fe416abd1860eb9b132abcb15abecee6babfb",
+    "bytes": 111,
+    "compressed": false
+  },
+  "02-allocation/resource-policy.json": {
+    "source": "build/fire-cost-output/02-allocation/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "02-allocation/running.json": {
+    "source": "build/fire-cost-output/02-allocation/running.json",
+    "sha256": "0304aff3072e5a4e106d8906a36d16512956fc16605442326fd5c74a3684e085",
+    "bytes": 159,
+    "compressed": false
+  },
+  "02-allocation/rv.compile.log.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv.compile.log",
+    "sha256": "f5ad31c4b9f6dea54cb961c7259d4444125a75dc11facf8b2bd535946caba3a0",
+    "bytes": 575,
+    "compressed": true
+  },
+  "02-allocation/rv.compiler.xml": {
+    "source": "build/fire-cost-output/02-allocation/rv.compiler.xml",
+    "sha256": "17d0f1e85e5c7e4c8a638d0d22852a51f278f21d0aa6aaec40bb11bf58813017",
+    "bytes": 808,
+    "compressed": false
+  },
+  "02-allocation/selection.json": {
+    "source": "build/fire-cost-output/02-allocation/selection.json",
+    "sha256": "50d63c95cdc52b8e462d656c94fa25c5840b23d52e60177c9c8d8d86bd93b575",
+    "bytes": 4302,
+    "compressed": false
+  },
+  "02-allocation/summary.json": {
+    "source": "build/fire-cost-output/02-allocation/summary.json",
+    "sha256": "9c0174370e3349fd40e6c3902241fd90a13a82c1ef8d345acbfbdaa2ad4a7666",
+    "bytes": 24950,
+    "compressed": false
+  },
+  "02-allocation/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "02-allocation/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "02-allocation/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/RealisticVisionMod.as",
+    "sha256": "4525c3fce5048e1e87b297ad53da8d91172270f6cfa3c72f36b9de42c12315c5",
+    "bytes": 207663,
+    "compressed": true
+  },
+  "02-allocation/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "02-allocation/rv-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "02-allocation/rv-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/02-allocation/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "02-allocation/evidence/result.json.gz": {
+    "source": "build/fire-cost-output/02-allocation/evidence/result.json",
+    "sha256": "8ce3d11f7376a468865f8011c8d4c6a5ae00d2915aceb5ed3c7345debc62a67e",
+    "bytes": 1030580,
+    "compressed": true
+  },
+  "02-allocation/evidence/scene-0.png": {
+    "source": "build/fire-cost-output/02-allocation/evidence/scene-0.png",
+    "sha256": "b21ae08d5125d205b7a5adead5b85b7c0810d8923d7bedaacf9804fd7626d68d",
+    "bytes": 425000,
+    "compressed": false
+  },
+  "03-phase-pixels/air-output.log.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/air-output.log",
+    "sha256": "0d4e2e4bbaed4878be205ee1f8b712dce007bc7ebab30587b79fb35e40be40a5",
+    "bytes": 1346,
+    "compressed": true
+  },
+  "03-phase-pixels/build.json": {
+    "source": "build/fire-cost-output/03-phase-pixels/build.json",
+    "sha256": "db297b5040944c99b497837720a8b9197f968d9dd88749806e7c0c67b5d61753",
+    "bytes": 1334,
+    "compressed": false
+  },
+  "03-phase-pixels/EffectLoadChecks.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/EffectLoadChecks.as",
+    "sha256": "30a2daacdf722f2cade21ee329ea07b1a0ead1a1d1c335d2eb5c8cb2f3b52e7f",
+    "bytes": 5594,
+    "compressed": true
+  },
+  "03-phase-pixels/EffectLoadChecks.compile.log.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/EffectLoadChecks.compile.log",
+    "sha256": "f6fedca8c7b9fd39f9acc2c430056e014e4bf273f6ff8cfff8c63acb23b001a0",
+    "bytes": 3516,
+    "compressed": true
+  },
+  "03-phase-pixels/EffectLoadChecks.compiler.xml": {
+    "source": "build/fire-cost-output/03-phase-pixels/EffectLoadChecks.compiler.xml",
+    "sha256": "776f5b2213ac3191127d7739ba29fb53c71364592be820fa38388185b9c4a2d5",
+    "bytes": 1051,
+    "compressed": false
+  },
+  "03-phase-pixels/last-run.json": {
+    "source": "build/fire-cost-output/03-phase-pixels/last-run.json",
+    "sha256": "06bd571c72ac1ff7f8d0f2244560d6e138e596b083113dff6bb03420d1b3d1d8",
+    "bytes": 111,
+    "compressed": false
+  },
+  "03-phase-pixels/RegionGrafon.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "03-phase-pixels/RegionWorld.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "03-phase-pixels/running.json": {
+    "source": "build/fire-cost-output/03-phase-pixels/running.json",
+    "sha256": "438fe742cbc045b7fc24666be2ef13e88ca0b4de808f72c7b5efb3b390b30674",
+    "bytes": 159,
+    "compressed": false
+  },
+  "03-phase-pixels/validation.json": {
+    "source": "build/fire-cost-output/03-phase-pixels/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "03-phase-pixels/src/BaselineVision.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "03-phase-pixels/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "03-phase-pixels/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "03-phase-pixels/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/RealisticVisionMod.as",
+    "sha256": "2f3aa6bc5348ec59588399fb11316dfc1ef839acc27eb18b479c65d1e735455e",
+    "bytes": 203565,
+    "compressed": true
+  },
+  "03-phase-pixels/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "03-phase-pixels/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "03-phase-pixels/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/03-phase-pixels/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "03-phase-pixels/evidence/baseline.png": {
+    "source": "build/fire-cost-output/03-phase-pixels/evidence/baseline.png",
+    "sha256": "fc1b4d4b539f3b4aa0df153258e7dfe9a60b6d5a4c7e5e7c7bf9930c0d75c971",
+    "bytes": 5337,
+    "compressed": false
+  },
+  "03-phase-pixels/evidence/candidate.png": {
+    "source": "build/fire-cost-output/03-phase-pixels/evidence/candidate.png",
+    "sha256": "a7a332dcfea166c9907f7121fe2fef42e159f1c77190b5197f4b5201c1426fd3",
+    "bytes": 5334,
+    "compressed": false
+  },
+  "04-phase2-pixels/air-output.log.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/air-output.log",
+    "sha256": "6ad9f9dda41c66660253de895616761e93af17cee3b4091143ee5887c7aea3bd",
+    "bytes": 1345,
+    "compressed": true
+  },
+  "04-phase2-pixels/build.json": {
+    "source": "build/fire-cost-output/04-phase2-pixels/build.json",
+    "sha256": "18ec49f5343e2a6a88be3e79763304f83f87a87075c7e6884f9d93bbf154fe57",
+    "bytes": 1334,
+    "compressed": false
+  },
+  "04-phase2-pixels/EffectLoadChecks.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/EffectLoadChecks.as",
+    "sha256": "30a2daacdf722f2cade21ee329ea07b1a0ead1a1d1c335d2eb5c8cb2f3b52e7f",
+    "bytes": 5594,
+    "compressed": true
+  },
+  "04-phase2-pixels/EffectLoadChecks.compile.log.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/EffectLoadChecks.compile.log",
+    "sha256": "9aa86d3f586005cd0dd1a8a698ef1c7d1522fa10cdaf3d34a4a7c5520d402cc7",
+    "bytes": 3523,
+    "compressed": true
+  },
+  "04-phase2-pixels/EffectLoadChecks.compiler.xml": {
+    "source": "build/fire-cost-output/04-phase2-pixels/EffectLoadChecks.compiler.xml",
+    "sha256": "42394ba82ff494b2211a048956eaeb19c551060fb9a39b67d54c90a56b64c947",
+    "bytes": 1053,
+    "compressed": false
+  },
+  "04-phase2-pixels/last-run.json": {
+    "source": "build/fire-cost-output/04-phase2-pixels/last-run.json",
+    "sha256": "b47d9054ee6c85937f54792fb4d7dbf1c2437370991a544bb41ff3a3bd092628",
+    "bytes": 112,
+    "compressed": false
+  },
+  "04-phase2-pixels/RegionGrafon.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "04-phase2-pixels/RegionWorld.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "04-phase2-pixels/running.json": {
+    "source": "build/fire-cost-output/04-phase2-pixels/running.json",
+    "sha256": "8f9176cc2251c815ec03cbd68fd725ac00c4f13b611fa26104aae35ea11aab29",
+    "bytes": 160,
+    "compressed": false
+  },
+  "04-phase2-pixels/validation.json": {
+    "source": "build/fire-cost-output/04-phase2-pixels/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "04-phase2-pixels/src/BaselineVision.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/RealisticVisionMod.as",
+    "sha256": "8399a64dd552e99e0b3c048541027dfae9292d4bc26571eaabf383fc03ffa5be",
+    "bytes": 203725,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "04-phase2-pixels/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/04-phase2-pixels/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-phase2-pixels/evidence/baseline.png": {
+    "source": "build/fire-cost-output/04-phase2-pixels/evidence/baseline.png",
+    "sha256": "fc1b4d4b539f3b4aa0df153258e7dfe9a60b6d5a4c7e5e7c7bf9930c0d75c971",
+    "bytes": 5337,
+    "compressed": false
+  },
+  "04-phase2-pixels/evidence/candidate.png": {
+    "source": "build/fire-cost-output/04-phase2-pixels/evidence/candidate.png",
+    "sha256": "a7a332dcfea166c9907f7121fe2fef42e159f1c77190b5197f4b5201c1426fd3",
+    "bytes": 5334,
+    "compressed": false
+  },
+  "05-witness-pixels/air-output.log.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/air-output.log",
+    "sha256": "8d09b2eb995cc9dca76eaf3186a284421836fb5796bf1a14f013d12a866b4a50",
+    "bytes": 11611,
+    "compressed": true
+  },
+  "05-witness-pixels/build.json": {
+    "source": "build/fire-cost-output/05-witness-pixels/build.json",
+    "sha256": "cca9d15f883226e9f2bd24cbae0f00a046a7cf8bba6bb051ca192dc068276385",
+    "bytes": 1334,
+    "compressed": false
+  },
+  "05-witness-pixels/EffectLoadChecks.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/EffectLoadChecks.as",
+    "sha256": "3d2a0c7e77fcd819ee80dd17673da2a3a1b0277da5f44396feb269cec4c363ba",
+    "bytes": 5620,
+    "compressed": true
+  },
+  "05-witness-pixels/EffectLoadChecks.compile.log.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/EffectLoadChecks.compile.log",
+    "sha256": "fcfed83f4482b067b6cd23ca14d9c37ca4c03e8bebeecf2819ebba2aabbfe3f9",
+    "bytes": 3530,
+    "compressed": true
+  },
+  "05-witness-pixels/EffectLoadChecks.compiler.xml": {
+    "source": "build/fire-cost-output/05-witness-pixels/EffectLoadChecks.compiler.xml",
+    "sha256": "40661e4e97a179fb1334798ed8c6197102125184c3c3be5729a729cc56944a6c",
+    "bytes": 1055,
+    "compressed": false
+  },
+  "05-witness-pixels/last-run.json": {
+    "source": "build/fire-cost-output/05-witness-pixels/last-run.json",
+    "sha256": "00c038b542d67964a67bda165699912223a6d71b847870e81a6c2737041b4b9f",
+    "bytes": 112,
+    "compressed": false
+  },
+  "05-witness-pixels/RegionGrafon.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "05-witness-pixels/RegionWorld.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "05-witness-pixels/running.json": {
+    "source": "build/fire-cost-output/05-witness-pixels/running.json",
+    "sha256": "6c21b4f77ad27a05a84293c9a3d2505b139d041e8f546d49147cc04453b19cd3",
+    "bytes": 160,
+    "compressed": false
+  },
+  "05-witness-pixels/validation.json": {
+    "source": "build/fire-cost-output/05-witness-pixels/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "05-witness-pixels/src/BaselineVision.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "05-witness-pixels/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "05-witness-pixels/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "05-witness-pixels/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/RealisticVisionMod.as",
+    "sha256": "a70d0e9005be0be5991ce4212b176feb4c87a35fd608d66d424de3cc3b27c81e",
+    "bytes": 203466,
+    "compressed": true
+  },
+  "05-witness-pixels/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "05-witness-pixels/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "05-witness-pixels/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/05-witness-pixels/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "06-lighting-cross/after.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/after.json",
+    "sha256": "8c2787f29e661c68677077133dc193054236e4e28e33080ef258ef956624757e",
+    "bytes": 843,
+    "compressed": false
+  },
+  "06-lighting-cross/air-output.log.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/air-output.log",
+    "sha256": "be9c236e2abd9349f144dcdfd5aad175701cfd4bf93fae55565b590368505e9c",
+    "bytes": 3386,
+    "compressed": true
+  },
+  "06-lighting-cross/analysis.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/analysis.json",
+    "sha256": "8986539f2b8c83a24cf37416d6816c183aa7880b55eb30d69af104e5157db35e",
+    "bytes": 1548,
+    "compressed": false
+  },
+  "06-lighting-cross/application.xml": {
+    "source": "build/fire-cost-output/06-lighting-cross/application.xml",
+    "sha256": "762bcb78a3894833a737c88e21fabbe2d82aabb5d74702c237ef2261328e30bb",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "06-lighting-cross/before.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/before.json",
+    "sha256": "d75bc86a1f2f0ae1dc8f88e8afcb9bd008ea4091d0f5c1fe46d6c6a6d66cb0d8",
+    "bytes": 843,
+    "compressed": false
+  },
+  "06-lighting-cross/build.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/build.json",
+    "sha256": "8e38ce0e1e53037800eba19030512fb5bb10e9663c0f592f100818d9ed4ae525",
+    "bytes": 16871,
+    "compressed": false
+  },
+  "06-lighting-cross/CombatRenderProbeMod.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/CombatRenderProbeMod.as",
+    "sha256": "9e2be4153ca32c6bccd32bd83abc71158db24515a67da07083986b9acce66794",
+    "bytes": 25132,
+    "compressed": true
+  },
+  "06-lighting-cross/environment.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "06-lighting-cross/last-run.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/last-run.json",
+    "sha256": "03110f06c8d0ea6895eb6b715faa122542ec896946059f21ecb95aa0a407f986",
+    "bytes": 111,
+    "compressed": false
+  },
+  "06-lighting-cross/resource-policy.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "06-lighting-cross/running.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/running.json",
+    "sha256": "9f4b6ac943f3189a62c29a8ad647542e6374aff82c521ffc894889e457eb804b",
+    "bytes": 159,
+    "compressed": false
+  },
+  "06-lighting-cross/rv.compile.log.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv.compile.log",
+    "sha256": "c62c1ce91da0465712b7f89d106310616ed5420c327986ed52153031ad92afe9",
+    "bytes": 587,
+    "compressed": true
+  },
+  "06-lighting-cross/rv.compiler.xml": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv.compiler.xml",
+    "sha256": "2a2f7f4417ddc5e38f11a4ac021decf5d42c1169182dac8011ef80fa73a080b5",
+    "bytes": 812,
+    "compressed": false
+  },
+  "06-lighting-cross/selection.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/selection.json",
+    "sha256": "28780c3d98e33a5473190739f05e323e260318ff023212dbf512487105d784ca",
+    "bytes": 4603,
+    "compressed": false
+  },
+  "06-lighting-cross/summary.json": {
+    "source": "build/fire-cost-output/06-lighting-cross/summary.json",
+    "sha256": "96456dec2db4d9e277b396d8f90de83b2db57ecb8ad7b4b3c5fcdf23eb90c153",
+    "bytes": 12440,
+    "compressed": false
+  },
+  "06-lighting-cross/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "06-lighting-cross/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "06-lighting-cross/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "06-lighting-cross/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "06-lighting-cross/rv-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "06-lighting-cross/rv-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "06-lighting-cross/evidence/result.json.gz": {
+    "source": "build/fire-cost-output/06-lighting-cross/evidence/result.json",
+    "sha256": "3c548b22f87e55cf3bfeead47ef51d637cde2e7631eb68d197ac3f99fed838c6",
+    "bytes": 1150291,
+    "compressed": true
+  },
+  "06-lighting-cross/evidence/scene-0.png": {
+    "source": "build/fire-cost-output/06-lighting-cross/evidence/scene-0.png",
+    "sha256": "504b1e402ae4e1e0b87e104926ad90e3ff6650a218288069ddeaa4c6f73c6ea2",
+    "bytes": 568781,
+    "compressed": false
+  },
+  "07-witness-pixels/air-output.log.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/air-output.log",
+    "sha256": "9aac19d5f89c9e06ae593fb9cfa2d3fd0b4958405ed5b7c7049074115c02fa71",
+    "bytes": 11512,
+    "compressed": true
+  },
+  "07-witness-pixels/build.json": {
+    "source": "build/fire-cost-output/07-witness-pixels/build.json",
+    "sha256": "fa79e8d0709921c73b4528b3042b44224a73271c31d33b79f67ca9b451fd5473",
+    "bytes": 1334,
+    "compressed": false
+  },
+  "07-witness-pixels/EffectLoadChecks.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/EffectLoadChecks.as",
+    "sha256": "e6af3bee294138ffb7955a6af0cd9051617622b6e3725ec7e6bfcc47f1c915f1",
+    "bytes": 5593,
+    "compressed": true
+  },
+  "07-witness-pixels/EffectLoadChecks.compile.log.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/EffectLoadChecks.compile.log",
+    "sha256": "d518a8644a13c3584098d016214191e5aef9adafb42f8091dc62ced7e1d52e1e",
+    "bytes": 3530,
+    "compressed": true
+  },
+  "07-witness-pixels/EffectLoadChecks.compiler.xml": {
+    "source": "build/fire-cost-output/07-witness-pixels/EffectLoadChecks.compiler.xml",
+    "sha256": "a0796a7af4ec96dfe615c0a73237bc72ce315b3a581b81ade4badec2223b881f",
+    "bytes": 1055,
+    "compressed": false
+  },
+  "07-witness-pixels/last-run.json": {
+    "source": "build/fire-cost-output/07-witness-pixels/last-run.json",
+    "sha256": "d046ca1233f2af487f6c9055b8c6931785aeb7e628fd9ae1b2f05ce6543313af",
+    "bytes": 112,
+    "compressed": false
+  },
+  "07-witness-pixels/RegionGrafon.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "07-witness-pixels/RegionWorld.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "07-witness-pixels/running.json": {
+    "source": "build/fire-cost-output/07-witness-pixels/running.json",
+    "sha256": "de6a863a5220bccc77ae751cf9110a8e50bbf83863c073071d68eb0920bf2855",
+    "bytes": 160,
+    "compressed": false
+  },
+  "07-witness-pixels/validation.json": {
+    "source": "build/fire-cost-output/07-witness-pixels/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "07-witness-pixels/src/BaselineVision.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "07-witness-pixels/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "07-witness-pixels/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "07-witness-pixels/src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/RealisticVisionMod.as",
+    "sha256": "a70d0e9005be0be5991ce4212b176feb4c87a35fd608d66d424de3cc3b27c81e",
+    "bytes": 203466,
+    "compressed": true
+  },
+  "07-witness-pixels/src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "07-witness-pixels/src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "07-witness-pixels/src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/07-witness-pixels/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-witness-moving/after.json": {
+    "source": "build/fire-cost-output/08-witness-moving/after.json",
+    "sha256": "d73182d3494d10dfff295812ab6bc23f93c0be6a4ef8091127d78b1161ce4908",
+    "bytes": 842,
+    "compressed": false
+  },
+  "08-witness-moving/air-output.log.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/air-output.log",
+    "sha256": "9aa39adadc93d2b8a3fce8774ed8d237046a3b85c4100ad65f6776f04aa18721",
+    "bytes": 3257,
+    "compressed": true
+  },
+  "08-witness-moving/analysis.json": {
+    "source": "build/fire-cost-output/08-witness-moving/analysis.json",
+    "sha256": "46914b42bf9eee22d9a4fb85b716909688d7fe0e7feba0b15a97634b3082544a",
+    "bytes": 1541,
+    "compressed": false
+  },
+  "08-witness-moving/application.xml": {
+    "source": "build/fire-cost-output/08-witness-moving/application.xml",
+    "sha256": "dd0f6e121b56740757693601fca60a83a0907c36ff17699d00afd3b2ab506aeb",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "08-witness-moving/before.json": {
+    "source": "build/fire-cost-output/08-witness-moving/before.json",
+    "sha256": "5e7ab55f248a0ad2cc888e31d26ed80dfc38bba1419c88b532e688e0a19e7323",
+    "bytes": 842,
+    "compressed": false
+  },
+  "08-witness-moving/build.json": {
+    "source": "build/fire-cost-output/08-witness-moving/build.json",
+    "sha256": "a7b811deb312577175c4e613317d3baf198392ab1523019a264657b8a7da8e19",
+    "bytes": 18532,
+    "compressed": false
+  },
+  "08-witness-moving/candidate.compile.log.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate.compile.log",
+    "sha256": "0e15ad128ea3c155c3805068db8a6430aa1edf46cfb0b261ddf7ce0fd6b75778",
+    "bytes": 608,
+    "compressed": true
+  },
+  "08-witness-moving/candidate.compiler.xml": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate.compiler.xml",
+    "sha256": "17e5ff718e9f6f96ae4521da433fd584b8a89138e963905ec249f39795b2e4c9",
+    "bytes": 819,
+    "compressed": false
+  },
+  "08-witness-moving/CombatRenderProbeMod.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/CombatRenderProbeMod.as",
+    "sha256": "7c1e5deedf45516a94ec635fa38f2a332104c1975c88042b8b68d0c582c706c0",
+    "bytes": 24117,
+    "compressed": true
+  },
+  "08-witness-moving/environment.json": {
+    "source": "build/fire-cost-output/08-witness-moving/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "08-witness-moving/last-run.json": {
+    "source": "build/fire-cost-output/08-witness-moving/last-run.json",
+    "sha256": "0d07096a19573b379e016bcf25d53c844a26c1b58ff8f3982471de547a5d4484",
+    "bytes": 112,
+    "compressed": false
+  },
+  "08-witness-moving/resource-policy.json": {
+    "source": "build/fire-cost-output/08-witness-moving/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "08-witness-moving/running.json": {
+    "source": "build/fire-cost-output/08-witness-moving/running.json",
+    "sha256": "dae03f71adc938cec0d57d83879728f62f86f5a049f5982c60e6bd1c9d04ca5c",
+    "bytes": 160,
+    "compressed": false
+  },
+  "08-witness-moving/rv.compile.log.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv.compile.log",
+    "sha256": "987adef367b4072e01ba67fc76c19f587f7f50598c1f0e2caebe5e003ac3c2b3",
+    "bytes": 587,
+    "compressed": true
+  },
+  "08-witness-moving/rv.compiler.xml": {
+    "source": "build/fire-cost-output/08-witness-moving/rv.compiler.xml",
+    "sha256": "76bc99e5956e91de6eed98cd7e823f6c80757b15a601260855380f0cb503feb5",
+    "bytes": 812,
+    "compressed": false
+  },
+  "08-witness-moving/selection.json": {
+    "source": "build/fire-cost-output/08-witness-moving/selection.json",
+    "sha256": "41bf8658cee87325d6fe4f9ddd5a67945a05515dfbfce400b3a8e7de9f65dbaf",
+    "bytes": 4310,
+    "compressed": false
+  },
+  "08-witness-moving/summary.json": {
+    "source": "build/fire-cost-output/08-witness-moving/summary.json",
+    "sha256": "222cc3224941b916cbd92cb8a72bf27f53d4c769027e7e0ab32fc51335d3209e",
+    "bytes": 5109,
+    "compressed": false
+  },
+  "08-witness-moving/vector.compile.log.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector.compile.log",
+    "sha256": "b59b1a9cf2ef76cde4bdd96f55c8de05825d5740b3b0823bd03499caa5ee7ff4",
+    "bytes": 599,
+    "compressed": true
+  },
+  "08-witness-moving/vector.compiler.xml": {
+    "source": "build/fire-cost-output/08-witness-moving/vector.compiler.xml",
+    "sha256": "73898f09f6e358845ed2ec8e4a9dcc2117d1c9f4b0ebdb5d45e88e28d63ab6e0",
+    "bytes": 816,
+    "compressed": false
+  },
+  "08-witness-moving/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-witness-moving/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-witness-moving/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "08-witness-moving/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-witness-moving/rv-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-witness-moving/rv-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/RealisticVisionMod.as",
+    "sha256": "dbec54d0a74b8c5901b1f58aa783d86703e8e2d422612f60127b35abeae26226",
+    "bytes": 208166,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-witness-moving/candidate-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/candidate-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/RealisticVisionMod.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/RealisticVisionMod.as",
+    "sha256": "dbec54d0a74b8c5901b1f58aa783d86703e8e2d422612f60127b35abeae26226",
+    "bytes": 208166,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/RVExplorationCarrier.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/RVKeybinds.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-witness-moving/vector-src/RVWallSurface.as.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/vector-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-witness-moving/evidence/result.json.gz": {
+    "source": "build/fire-cost-output/08-witness-moving/evidence/result.json",
+    "sha256": "166e77ac53af300c69e262d1855ce06acfd3eee6d4318fe07121d9e0adb5f8ff",
+    "bytes": 1104019,
+    "compressed": true
+  },
+  "08-witness-moving/evidence/scene-0.png": {
+    "source": "build/fire-cost-output/08-witness-moving/evidence/scene-0.png",
+    "sha256": "6a7d0facc6c6e48a4883b928d5001888034272880a9bccfa2dee1c8caebd468f",
+    "bytes": 876024,
+    "compressed": false
+  }
+}

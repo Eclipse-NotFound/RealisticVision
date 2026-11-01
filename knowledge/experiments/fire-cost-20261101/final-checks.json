@@ -1,0 +1,23 @@
+{
+  "deployment": "none; all three candidates not adopted",
+  "observedInstalledSha256": "aea303149b0a5d5a3072c610b3e95f4ad78963ea22ce123c6a3414e73b9aa557",
+  "observedConfigSha256": "0f27e923eb3af5cc99f45064fd3ea93df8afe4107cdbc58b305a915f425bf47e",
+  "observedHostSha256": "9d8662f6cf80e0ad20741ec2a4e7bead68446269ebb0adb641c876db68698b1d",
+  "fingerprintMethod": "separate read-only Get-FileHash; hashes above remained unchanged",
+  "ownedProcessIdsChecked": [26628,92080,103020,109028,89984,108344,110860],
+  "ownedProcessesStillPresent": [],
+  "successfulNativeRuns": ["02-allocation","06-lighting-cross","08-witness-moving"],
+  "nativeWindows": 20,
+  "nativeSampleFrames": 2880,
+  "nativeCompleteIntervals": 2860,
+  "exactPixelFrames": 1440,
+  "oracleCheckedInequalityHits": 2287,
+  "failedRunsRetained": {
+    "01-allocation": "instrumentation anchor failed before AIR launch",
+    "03-phase-pixels": "strict ARGB difference at frame123",
+    "04-phase2-pixels": "same strict ARGB difference at frame123",
+    "05-witness-pixels": "images equal but candidate path not exercised"
+  },
+  "sharedKnowledge": "KB-000108 revision2 (coverage evidence only, no performance acceptance)",
+  "limits": "private desktop; endpoint environment checks; native random effects and shot counts vary; no final gameplay FPS or complete stall resolution claim"
+}

@@ -1,0 +1,286 @@
+{
+  "run": "08-witness-moving",
+  "completed": true,
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/normal": {
+      "frame": {
+        "n": 238,
+        "mean": 59.95,
+        "p95": 81,
+        "max": 185,
+        "over100": 3
+      },
+      "rv": {
+        "n": 238,
+        "mean": 10.172,
+        "p95": 18,
+        "max": 79,
+        "over100": 0
+      }
+    },
+    "current/candidate": {
+      "frame": {
+        "n": 238,
+        "mean": 62.261,
+        "p95": 94,
+        "max": 163,
+        "over100": 7
+      },
+      "rv": {
+        "n": 238,
+        "mean": 10.013,
+        "p95": 18,
+        "max": 104,
+        "over100": 1
+      }
+    },
+    "classic/normal": {
+      "frame": {
+        "n": 238,
+        "mean": 63.87,
+        "p95": 85,
+        "max": 138,
+        "over100": 4
+      },
+      "rv": {
+        "n": 238,
+        "mean": 15.483,
+        "p95": 24,
+        "max": 87,
+        "over100": 0
+      }
+    },
+    "classic/candidate": {
+      "frame": {
+        "n": 238,
+        "mean": 63.588,
+        "p95": 83,
+        "max": 148,
+        "over100": 3
+      },
+      "rv": {
+        "n": 238,
+        "mean": 15.412,
+        "p95": 24,
+        "max": 37,
+        "over100": 0
+      }
+    }
+  },
+  "windows": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 62.403,
+        "p95": 86,
+        "max": 185,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 10.496,
+        "p95": 18,
+        "max": 78,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 44,
+      "enemyShots": 133,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "candidate",
+      "frame": {
+        "n": 119,
+        "mean": 60.16,
+        "p95": 74,
+        "max": 163,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 10.504,
+        "p95": 15,
+        "max": 104,
+        "over100": 1
+      },
+      "samples": 120,
+      "playerShots": 59,
+      "enemyShots": 130,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "current",
+      "variant": "candidate",
+      "frame": {
+        "n": 119,
+        "mean": 64.361,
+        "p95": 97,
+        "max": 140,
+        "over100": 5
+      },
+      "rv": {
+        "n": 119,
+        "mean": 9.521,
+        "p95": 19,
+        "max": 23,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 53,
+      "enemyShots": 126,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "current",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 57.496,
+        "p95": 75,
+        "max": 129,
+        "over100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 9.849,
+        "p95": 18,
+        "max": 79,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 60,
+      "enemyShots": 130,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "classic",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 63.21,
+        "p95": 85,
+        "max": 137,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.529,
+        "p95": 23,
+        "max": 87,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 58,
+      "enemyShots": 125,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "classic",
+      "variant": "candidate",
+      "frame": {
+        "n": 119,
+        "mean": 62.546,
+        "p95": 82,
+        "max": 148,
+        "over100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.252,
+        "p95": 24,
+        "max": 37,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 59,
+      "enemyShots": 125,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "classic",
+      "variant": "candidate",
+      "frame": {
+        "n": 119,
+        "mean": 64.63,
+        "p95": 85,
+        "max": 118,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.571,
+        "p95": 24,
+        "max": 37,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 58,
+      "enemyShots": 135,
+      "stage": [
+        1280,
+        729
+      ]
+    },
+    {
+      "index": 7,
+      "mode": "classic",
+      "variant": "normal",
+      "frame": {
+        "n": 119,
+        "mean": 64.529,
+        "p95": 85,
+        "max": 138,
+        "over100": 2
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.437,
+        "p95": 24,
+        "max": 34,
+        "over100": 0
+      },
+      "samples": 120,
+      "playerShots": 60,
+      "enemyShots": 130,
+      "stage": [
+        1280,
+        729
+      ]
+    }
+  ]
+}
