@@ -29,6 +29,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File build.ps1
 产物 `out/RealisticVisionMod.swf`：47,862B，
 SHA256 `35243D0F23E3E137546E5BBA54991A5FEE68EB188C46D610BC08293E97489D29`。
 
+> 注意：本机 mxmlc 同源码两次编译字节不同（实测 47,862B/47,861B，SHA 不同，疑为编译器内嵌
+> 随机标识）。判产物以同一次构建字节 + 冒烟日志版本串为准，不要用重编译哈希复核源码对应。
+
 ## 验证要点
 
 - 官方 ModLoader 隔离副本冒烟：`init ok v0.33.17-locmem settings=ModSettings-v1`、

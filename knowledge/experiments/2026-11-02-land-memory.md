@@ -47,6 +47,10 @@ resetOff 重建、resetRoom 存取、updateRangeLight 键、版本字符串）�
 
 - 构建：**47,862B，SHA256 `35243D0F23E3E137546E5BBA54991A5FEE68EB188C46D610BC08293E97489D29`**
   （mxmlc 退出 0；仅已知 `RVExplorationCarrier` 无构造函数警告）。
+- 注意：本机 mxmlc（存根 SWC 路线）**同一源码连续两次编译的字节不同**（实测两次
+  47,862B/47,861B，SHA 不同，差异从 SWF 偏移 158 起，疑为编译器内嵌随机标识）。
+  因此产物判定以"部署前同一次构建的字节 + 冒烟日志版本串"为准，不能用重编译哈希复核源码对应；
+  本轮已核对源码 mtime(01:28:37) ≤ 产物 mtime(01:28:42) 且此后未改源码。
 - 官方 ModLoader 路径、隔离副本（独立 app id `pfe-rv-locmem-smoke-0001`、独立 AIR 桌面）：
   `init ok v0.33.17-locmem settings=ModSettings-v1 enabled=true`、`ModSettings settings registered`、
   `tick 1/181/361/541/721/901`，loader `requested_RealisticVisionMod`/`ok_RealisticVisionMod` 配对，无错误。
