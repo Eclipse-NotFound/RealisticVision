@@ -1,0 +1,125 @@
+--- v0.34.2/RealisticVisionMod.as
++++ v0.34.3/RealisticVisionMod.as
+@@ -125,7 +125,7 @@
+       private var cfgDebug:Boolean = false;
+ 
+       // 发布门禁第 2 项：启动日志版本标记（fileLog init 行携带，防"线上跑旧构建"）
+-      private static const VERSION:String = "v0.34.2-laser-shadow";
++      private static const VERSION:String = "v0.34.3-eye-boundary";
+ 
+       private static const FOV_VISIBLE:int = 2;
+       private static const FOV_DIM:int = 1;
+@@ -1065,7 +1065,8 @@
+          var gg:UnitPlayer = loc.gg;
+          var current:Boolean = this.cfgMode == "current";
+          var threshold:Number = current ? this.cfgMotionStep : 1.5;
+-         var moved:Boolean = Math.abs(gg.X-this.lastGX)>threshold || Math.abs(gg.Y-this.lastGY)>threshold;
++         var eye:Point = this.playerVisionEye(gg);
++         var moved:Boolean = Math.abs(eye.x-this.lastGX)>threshold || Math.abs(eye.y-this.lastGY)>threshold;
+          var opacityChanged:Boolean = current && this.prepareOcclusion(loc);
+          var hash:int = !current && (this.frameCount & 1)==0 ? this.structHash(loc) : this.lastStructHash;
+          // D62: reduce periodic FOV fallback from 30 to 90 frames —
+@@ -1090,8 +1091,8 @@
+                }
+             }
+             this.lastFovFrame = this.frameCount;
+-            this.lastGX = gg.X;
+-            this.lastGY = gg.Y;
++            this.lastGX = eye.x;
++            this.lastGY = eye.y;
+             this.lastStructHash = hash;
+             this.computeFov(loc,current);
+             this.fovVersion++;
+@@ -1716,6 +1717,29 @@
+          return changed;
+       }
+ 
++      /** Resolve the displayed eye in the same world space as terrain/visuals.
++       * Re-read the timeline path: pose changes can replace nested clips. */
++      private function playerVisionEye(gg:UnitPlayer):Point
++      {
++         try
++         {
++            var v:DisplayObject = gg.vis;
++            var eye:DisplayObject = Object(v).osn.body.head.morda.eye as DisplayObject;
++            if(v.parent != null && eye != null && v.visible && Object(v).osn.visible)
++            {
++               var bounds:Rectangle = eye.getBounds(eye);
++               if(!bounds.isEmpty())
++               {
++                  var p:Point = v.parent.globalToLocal(eye.localToGlobal(new Point(
++                     (bounds.left+bounds.right)*0.5,(bounds.top+bounds.bottom)*0.5)));
++                  if(isFinite(p.x) && isFinite(p.y))return p;
++               }
++            }
++         }
++         catch(error:Error) {}
++         return new Point(gg.X,gg.Y-gg.scY*0.75);
++      }
++
+       private function computeFov(loc:Location, prepared:Boolean = false):void
+       {
+          if(this.cfgMode == "current" && !prepared) this.prepareOcclusion(loc);
+@@ -1723,8 +1747,9 @@
+          try
+          {
+             var gg:UnitPlayer = loc.gg;
+-            var ex:Number = gg.X;
+-            var ey:Number = gg.Y - gg.scY * 0.75;
++            var eye:Point = this.playerVisionEye(gg);
++            var ex:Number = eye.x;
++            var ey:Number = eye.y;
+             this.eyeX = ex;
+             this.eyeY = ey;
+             this.updateViewDistances(loc);
+@@ -2144,7 +2169,7 @@
+             this.cornerReuseValid = false;
+          }
+          var reuseCorners:Boolean = this.cornerReuseValid && this.cornerReuseLoc === loc
+-            && Math.abs(this.eyeX-this.cornerReuseX) <= 16 && Math.abs(this.eyeY-this.cornerReuseY) <= 16
++            && this.eyeX == this.cornerReuseX && this.eyeY == this.cornerReuseY
+             && int(this.frameCount)-this.cornerReuseFrame <= 4;
+          var reusedTiles:int = 0;
+          this.rayBatch = true;
+@@ -3934,18 +3959,17 @@
+             if(kind === undefined)
+             {
+                var name:String=getQualifiedClassName(obj);
+-               kind=name=="fe.graph::Part" || name=="fe.weapon::Bullet" || name=="fe.weapon::PhisBullet" || name=="fe.weapon::SmartBullet";
++               kind=name=="fe.graph::Part" ? 1 : (name=="fe.weapon::Bullet" || name=="fe.weapon::PhisBullet" || name=="fe.weapon::SmartBullet" ? 2 : 0);
+                this.worldTypes[cls]=kind;
+             }
+             if(kind && obj.vis != null)
+             {
+-               // v0.34.2：激光弹的 vis.laser 子对象按射程拉伸（Bullet.as
+-               // scaleX=距离/100），原点在炮塔口——中心点亮≠全段亮，长光束
+-               // 穿阴影必须逐对象遮罩遮暗；一次动态属性查询，其余弹体不受影响。
+-               if(this.cfgFxQuality == 0 && Object(obj.vis).laser == null)
++               // A projectile origin cannot represent a tracer, trail or beam.
++               // Keep particle acceleration; clip every projectile's full geometry.
++               if(this.cfgFxQuality == 0 && kind == 1)
+                   this.applyTransientVisual(obj.vis);
+                else
+-                  this.applyWorldVisual(obj.vis);
++                  this.applyWorldVisual(obj.vis,kind == 2);
+             }
+             obj=obj.nobj;
+          }
+@@ -4074,7 +4098,7 @@
+          return useSight ? a != 0 : a < MASK_LIT_A;
+       }
+ 
+-      private function applyWorldVisual(visual:DisplayObject):void
++      private function applyWorldVisual(visual:DisplayObject, dynamicBounds:Boolean = false):void
+       {
+          if(visual.parent==null)return;
+          var record:Object=this.worldVisuals[visual];
+@@ -4087,7 +4111,7 @@
+          if(record==null && visual.mask!=null)return;
+          if(!visual.visible && record==null)return;
+          var bounds:Rectangle;
+-         if(record!=null && record.lastBounds!=null && record.lastVX==visual.x && record.lastVY==visual.y
++         if(!dynamicBounds && record!=null && record.lastBounds!=null && record.lastVX==visual.x && record.lastVY==visual.y
+             && record.lastVRot==visual.rotation && record.lastVScaleX==visual.scaleX)
+          {
+             bounds=record.lastBounds;

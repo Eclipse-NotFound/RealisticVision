@@ -90,3 +90,6 @@ build/performance-survey-output/
 build/local-mask-regions-output/
 build/fire-cost-output/
 build/shot-light-output/
+build/eye-boundary-output/
+build/backups/before-eye-boundary-*/
+build/eye-boundary/reviewed-call.json

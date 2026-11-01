@@ -1,0 +1,12 @@
+{
+  "installed": "2f44ddd1844c7dac7e8ffde4eafb256460f5fb6958675a07fb449477c4ac151f",
+  "config": "73b83ab5e60e1cc71367dd7f725de7d2e4c9bcc36f045f43ef530a53bcebc3de",
+  "source": {
+    "RealisticVisionMod.as": "154be66f82488ab1cc18bf04c356b54b64c594bd4cfc22882bf19d4c10ab7564",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  }
+}

@@ -1,5 +1,8 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-02 **v0.34.3-eye-boundary 已部署**：修普通弹体注册点进暗区后整条亮处尾迹提前消失；Bullet/SmartBullet/PhisBullet 改空间软遮罩并刷新动态外框，Part 保持快速路径。视野从真实玩家眼部发出，按眼部位移刷新，墙角分类不再跨不同起点复用。771项受控检查与正式候选原生加载/运行通过；未重测密集战斗帧率。49,048B / `0861FB64…6DD2E30B`；config与宿主未改。源 `build/eye-boundary-output/candidate/src`，可审阅补丁 `build/eye-boundary/production.patch`，备份 `build/backups/before-eye-boundary-20261102-073730`。**保存并重启游戏生效**。[报告](../knowledge/experiments/2026-11-02-eye-boundary.md)。
+
+
 > 2026-11-02 **v0.34.2-laser-shadow 已部署（修复：激光炮塔光束不受阴影遮盖）**：48,757B，SHA256 `2F44DDD1…4AC151F`；备份`build/backups/before-laserfix-20261102-054800`（v0.34.1 DAC7CB25，config 未改）。用户报告 v0.34 系激光光束穿阴影不暗化。根因：激光弹=Bullet 类实例（在 fx-fast 二值名单内），其 vis 内 `laser` 子对象按射程拉伸（Bullet.as:213-215 `vis.laser.scaleX=距离/100`），中心点判定只看光束原点（炮塔口）——原点亮即整段直绘，远端穿阴影部分不遮暗（长条几何无法用原点代表，属 fx-fast 中心点二值的固有局限，v0.33.16 起存在，密集游玩后暴露）。修复：dispatch 处 `Object(obj.vis).laser == null` 才走瞬态二值，激光弹一律回 `applyWorldVisual` 逐对象软遮罩；一次动态属性查询，普通枪弹/火花不受影响。A/B fxlib342-01（718 间隔/版本）：34.06 vs 33.93=噪声带（测试 LMG 场无激光对象；真实激光场景每炮塔 1-2 发在场、软遮罩开销可忽略）；官方冒烟 init ok v0.34.2-laser-shadow/设置注册/tick 通过。**真机激光穿阴影视觉待用户重启核对**。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md#v0342-laser-shadow-修复)，证据 fire-exhaustive-output/fxlib342-01，实验 build/perf-20261102。
 
 > 2026-11-02 **v0.34.1-door-coverage 已部署（修复：透光门后可视效果未覆盖炮塔）**：48,731B，SHA256 `DAC7CB25…4AD6E0C9`；备份`build/backups/before-doorfix-20261102-054200`（v0.34.0 638AB1B0，config 未改 73B83AB5）。用户报告 v0.34.0 门控缺陷：透光门/水泄漏区（FOV_DIM）的混合包围盒按 ≥80% 加权比例被提升为全可见→摘遮罩直绘，门景暗度渐变丢失（门后炮塔亮显）。修复三处：①enemyState 房内路径 bbox 含 FOV_DIM 瓦片时禁 ≥0.8 提升（保留软遮罩，≤15% 隐藏不变）；②tile 级 fallback 路径同语义；③手臂与全可见单位长枪中心瓦片为 FOV_DIM 时回退 applyWorldVisual 软遮罩（粒子/子弹保持亮/隐二值——首轮"粒子也回退"版本实测同轮 +1.19ms 且粒子语义非主诉，收窄后手臂/长枪仅 O(1) 判断）。代价边界：门多且敌人常处门区的场景软遮罩开销回归（fxlibdoor02 同轮 35.57 vs 33.79=+5.3%，为最坏房型；无门场景零影响——fxCenterDim/dimTiles 均 O(1)/O(bbox瓦片)）。A/B fxlibdoor01/02 两轮（718 间隔/版本，benchmark-eligible）确认无崩溃、方向符合预期；官方冒烟 init ok v0.34.1-door-coverage/设置注册/tick 通过。**真机门后炮塔视觉待用户重启核对**（应恢复门景暗化覆盖）。重启生效。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md#v0341-door-coverage-修复)，证据 fire-exhaustive-output/fxlibdoor01-02，实验 build/perf-20261102。
@@ -165,7 +168,9 @@
 
 ## 3. 当前状态
 
-- 当前安装 **v0.33.17-locmem**，47,862B，SHA256 `35243D0F…97489D29`；准确生产源 `build/landmem-fix-20261102/src`（自fx-fast冻结派生）。修跨地图/楼层首房"整间已探索"：房间记忆改按Location对象弱键。冒烟 init/设置注册/tick1–901 通过；真机换层核对待用户重启后确认。回退备份`build/backups/before-locmem-20261102-013447`。重启生效。
+- 当前安装 **v0.34.3-eye-boundary**，49,048B / `0861FB64…6DD2E30B`；准确生产源 `build/eye-boundary-output/candidate/src`，保留 v0.34.2 的门区、激光与跨地图记忆修复。771项针对性检查及正式包冒烟通过；无需追加未请求的性能普查。本轮已结束，等待正常重启后的实际游玩反馈。详情见顶部新条目。
+
+- 历史安装 **v0.33.17-locmem**，47,862B，SHA256 `35243D0F…97489D29`；准确生产源 `build/landmem-fix-20261102/src`（自fx-fast冻结派生）。修跨地图/楼层首房"整间已探索"：房间记忆改按Location对象弱键。冒烟 init/设置注册/tick1–901 通过；真机换层核对待用户重启后确认。回退备份`build/backups/before-locmem-20261102-013447`。重启生效。
 
 - 前一安装 **v0.33.16-fx-fast**，47,801B，SHA256 `F3223BF1…43799A`；准确生产源 `build/fx-fast-20261102/src`（自production-combo-v4冻结派生）。新增：瞬态特效中心点视野快速路径，`fx_vision_quality=0`默认（1=v0.33.15逐特效遮罩原画质）。四轮A/B整帧-3.2%~-9.3%、RV-34%~-64%、固定108ms尖峰清除；跨边界特效失去羽化渐变（配置可回退）。回退备份`build/backups/before-fx-fast-20261102-002600`。
 

@@ -1,3 +1,10 @@
+## 2026-11-02 — v0.34.3-eye-boundary：弹迹提前消失与眼部视点修复
+
+- 用户报告普通子弹提前被阴影遮住、可视区域与眼睛不对齐。基于正式v0.34.2冻结修复，保留并发authority开发线。
+- 弹体全图形裁剪与动态外框；眼部显示部件坐标驱动射线/刷新，取消跨眼点墙角缓存复用。771项受控检查、正式候选原生加载/运行通过，未测完整战斗帧率；工具失败及修正如实留存。
+- 已部署49,048B / 0861FB64…6DD2E30B，配置不变，备份before-eye-boundary-20261102-073730；全部本轮测试退出。玩家保存重启生效，无待执行的agent测试。
+- [报告与边界](../knowledge/experiments/2026-11-02-eye-boundary.md)，准确源build/eye-boundary-output/candidate/src，审阅补丁build/eye-boundary/production.patch。
+
 ## 2026-11-02 — v0.34.2-laser-shadow 部署：激光光束不受阴影遮盖的修复
 
 - 用户报告：激光炮塔的光束不会受到阴影的遮盖。定位（反编译 Bullet.as:208-229）：激光弹是 fe.weapon::Bullet 实例（fx-fast 四类二值名单内），vis 内 laser 子对象按射程拉伸（scaleX=距离/100，可达上千像素）——fxCenterLit 只看 vis.x/y（=炮塔口起点），起点亮→整段直绘，光束远端穿阴影不暗化。v0.33.16 中心点二值的固有几何局限，非 v0.34 门控引入。
