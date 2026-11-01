@@ -1,3 +1,9 @@
+## 2026-11-02 — v0.34.2-laser-shadow 部署：激光光束不受阴影遮盖的修复
+
+- 用户报告：激光炮塔的光束不会受到阴影的遮盖。定位（反编译 Bullet.as:208-229）：激光弹是 fe.weapon::Bullet 实例（fx-fast 四类二值名单内），vis 内 laser 子对象按射程拉伸（scaleX=距离/100，可达上千像素）——fxCenterLit 只看 vis.x/y（=炮塔口起点），起点亮→整段直绘，光束远端穿阴影不暗化。v0.33.16 中心点二值的固有几何局限，非 v0.34 门控引入。
+- 修复：applyWorldVisuals dispatch 加 `Object(obj.vis).laser == null` 判别——激光弹回 applyWorldVisual 逐对象软遮罩；其余弹体（无 laser 子对象）保持二值快速路径。零 getBounds、一次动态属性查询。
+- 验证：fxlib342-01 A/B 34.06 vs 33.93（噪声带，LMG 测试场无激光对象）；官方冒烟 init ok v0.34.2-laser-shadow、设置注册、tick。部署 48,757B 2F44DDD1…，备份 before-laserfix-20261102-054800（v0.34.1），config 未动。
+- 遗留：真机激光穿阴影待用户重启核对；若其他长条特效（非 laser 子对象）仍有同类问题，可按属性特征或尺寸门控扩展。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md)
 ## 2026-11-02 — v0.34.1-door-coverage 部署：透光门后炮塔未被门景覆盖的修复
 
 - 用户报告：v0.34.0 里透光门后可视效果未覆盖炮塔。定位：enemyState 门控把门景泄漏区（FOV_DIM，子格按门景亮度写入 currentSight）的混合包围盒按 ≥80% 加权比例提升为全可见→clearMask 直绘，门景暗度渐变丢失。
