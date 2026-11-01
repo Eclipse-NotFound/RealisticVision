@@ -1,0 +1,161 @@
+ModLoader[boot_start] v2 run=run_1793508426748_203071
+
+ModLoader[requested_ModLoaderMod] line 19
+
+ModLoader[requested_SandevistanMod] line 20
+
+ModLoader[requested_RConnectMod] line 21
+
+ModLoader[requested_MoreSkillsWeaponsMod] line 23
+
+ModLoader[requested_TDFCMod] line 24
+
+ModLoader[requested_RandomRoomsMod] line 25
+
+ModLoader[requested_LootEditorMod] line 26
+
+ModLoader[requested_PermanentInjuryMod] line 27
+
+ModLoader[requested_CombatRenderProbeMod] line 28
+
+ModLoader[requested_AddictionSystemMod] line 29
+
+ModLoader[requested_ContinuousSceneMod] line 30
+
+ModLoader[requested_FirearmAttachmentsMod] line 31
+
+ModLoader[requested_WallBlendMod] line 32
+
+ModLoader[boot] v2 col=2 requested=13
+
+ModLoader[ok_CombatRenderProbeMod] init
+
+ModLoader[ok_LootEditorMod] init
+
+ModLoader[ok_PermanentInjuryMod] init
+
+ModLoader[ok_WallBlendMod] init
+
+ModLoader[ok_TDFCMod] init
+
+ModLoader[ok_SandevistanMod] init
+
+ModLoader[ok_ModLoaderMod] init
+
+ModLoader[ok_ContinuousSceneMod] init
+
+ModLoader[ok_RandomRoomsMod] init
+
+ModLoader[ok_MoreSkillsWeaponsMod] init
+
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-b2cda2bdf04b4dd6b8fbf3997334abc2
+
+ModLoader[ok_AddictionSystemMod] init
+
+ModLoader[ok_FirearmAttachmentsMod] init
+
+ModLoader[ok_RConnectMod] init
+
+759 Интерфейс
+
+1476 Game init
+
+1814 Персонаж
+
+1 Местность
+
+880 Создание местности
+
+635 Вход в местность
+
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+
+RConnectRndSeed  random_mane 756374792
+
+4046 Создание местности
+
+false
+
+544 Вход в местность
+
+flushed
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 0 {"variant":"off","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.348
+
+D58 END 0 off shots=133 bullets=10
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 1 {"variant":"normal","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.514
+
+D58 END 1 normal shots=119 bullets=12
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 2 {"variant":"skip-hide","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.681
+
+D58 END 2 skip-hide shots=135 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 3 {"variant":"hide-fog","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.848
+
+D58 END 3 hide-fog shots=115 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 4 {"variant":"both","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.014
+
+D58 END 4 both shots=118 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 5 {"variant":"both","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.181
+
+D58 END 5 both shots=132 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 6 {"variant":"hide-fog","n":6,"mode":"current"}
+
+D58 END 6 hide-fog shots=132 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 7 {"variant":"skip-hide","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.348
+
+D58 END 7 skip-hide shots=133 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 8 {"variant":"normal","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.514
+
+D58 END 8 normal shots=133 bullets=11
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 9 {"variant":"off","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.681
+
+D58 END 9 off shots=118 bullets=12
+
+D58 COMPLETE

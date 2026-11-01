@@ -1,0 +1,5065 @@
+{
+  "scene": {
+    "nativeUnits": 1,
+    "roomBlack": true,
+    "screen": [
+      2560,
+      1521
+    ],
+    "zoom": 1,
+    "black": true,
+    "fps": 30,
+    "base": false,
+    "land": "random_mane",
+    "loc": "loc1_3",
+    "size": [
+      48,
+      25
+    ],
+    "platform": [
+      920,
+      1500,
+      959
+    ]
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "cases": [
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 39.23463687150838,
+        "median": 37,
+        "p95": 62,
+        "max": 139,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 28.564245810055866,
+        "median": 27,
+        "p95": 48,
+        "max": 79,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.324022346368715,
+        "median": 6,
+        "p95": 15,
+        "max": 19,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 3.212290502793296,
+        "median": 2,
+        "p95": 5,
+        "max": 106,
+        "over100": 1
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.1340782122905028,
+        "median": 0,
+        "p95": 1,
+        "max": 2,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 82.77094972067039,
+        "median": 83,
+        "p95": 97,
+        "max": 105,
+        "over100": 3
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.078212290502793,
+        "median": 7,
+        "p95": 9,
+        "max": 10,
+        "over100": 0
+      },
+      "index": 0,
+      "variant": "off",
+      "active": 180,
+      "shots": 88,
+      "enemyShotsLowerBound": 180,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 1.0941007212113778,
+      "cpuBucketCount": 6,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 10,
+            "weapon2-0": 15,
+            "weapon1-0": 12,
+            "weapon5-0": 24,
+            "bar2": 14,
+            "unit4": 19,
+            "floor": 0,
+            "fogVis": 0,
+            "weapon4-0": 21,
+            "air": 4,
+            "weapon3-0": 18,
+            "unit5": 22,
+            "visual": 1,
+            "weapon0-0": 9,
+            "fogShadow": 0,
+            "unit0": 5,
+            "fogBase": 0,
+            "unit2": 13,
+            "arm": 25,
+            "unit3": 16,
+            "bar1": 11,
+            "bar3": 17,
+            "bar5": 23,
+            "bar0": 7,
+            "bar4": 20,
+            "wall": 0
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 958.8569809548245,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.0964537030306,
+              "masked": false
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 958.5654261678119,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 10,
+            "weapon2-0": 15,
+            "weapon1-0": 12,
+            "weapon5-0": 24,
+            "bar2": 14,
+            "unit4": 19,
+            "floor": 0,
+            "fogVis": 0,
+            "weapon4-0": 21,
+            "air": 4,
+            "weapon3-0": 18,
+            "unit5": 22,
+            "visual": 1,
+            "weapon0-0": 9,
+            "fogShadow": 0,
+            "unit0": 5,
+            "fogBase": 0,
+            "unit2": 13,
+            "arm": 25,
+            "unit3": 16,
+            "bar1": 11,
+            "bar3": 17,
+            "bar5": 23,
+            "bar0": 7,
+            "bar4": 20,
+            "wall": 0
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 957.53617468365,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.9727366133636,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": false
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.832186753442,
+              "masked": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 56.497206703910614,
+        "median": 55,
+        "p95": 69,
+        "max": 113,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.664804469273743,
+        "median": 3,
+        "p95": 4,
+        "max": 14,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 43.262569832402235,
+        "median": 43,
+        "p95": 52,
+        "max": 82,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.871508379888268,
+        "median": 7,
+        "p95": 15,
+        "max": 72,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.5977653631284916,
+        "median": 2,
+        "p95": 5,
+        "max": 13,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 2.7653631284916202,
+        "median": 3,
+        "p95": 4,
+        "max": 14,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 83.55865921787709,
+        "median": 84,
+        "p95": 97,
+        "max": 101,
+        "over100": 1
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 5.966480446927374,
+        "median": 6,
+        "p95": 9,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 1,
+      "variant": "normal",
+      "active": 180,
+      "shots": 74,
+      "enemyShotsLowerBound": 185,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 79,
+        "duplicateLayers": 0,
+        "visible": 73,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "flash.display::MovieClip": 36,
+          "visualGilza": 20,
+          "visReplic": 1,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "maskShapeLinks": 79,
+        "owned": 79,
+        "masked": 79
+      },
+      "cpuCores": 1.9549849509602886,
+      "cpuBucketCount": 9,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 959.9832132441089,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.1292915584938,
+              "masked": true
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": true
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 958.9941955311098,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": true
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 956.0062572552341,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.0790409192975,
+              "masked": true
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.9379495198339,
+              "masked": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 46.76536312849162,
+        "median": 45,
+        "p95": 62,
+        "max": 98,
+        "over100": 0
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0.3575418994413408,
+        "median": 0,
+        "p95": 1,
+        "max": 8,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 36.14525139664804,
+        "median": 36,
+        "p95": 44,
+        "max": 60,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.139664804469274,
+        "median": 6,
+        "p95": 16,
+        "max": 26,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.9553072625698324,
+        "median": 2,
+        "p95": 6,
+        "max": 59,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.5251396648044693,
+        "median": 0,
+        "p95": 2,
+        "max": 8,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 85.60335195530726,
+        "median": 86,
+        "p95": 96,
+        "max": 106,
+        "over100": 3
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.078212290502793,
+        "median": 7,
+        "p95": 9,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 2,
+      "variant": "skip-hide",
+      "active": 180,
+      "shots": 90,
+      "enemyShotsLowerBound": 183,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 2.234562006537981,
+      "cpuBucketCount": 7,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 958.364968293724,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.9832087958027,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 959.7934205284328,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 957.2353883562796,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.0759641464902,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.9927489223069,
+              "masked": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 49.20670391061452,
+        "median": 44,
+        "p95": 80,
+        "max": 120,
+        "over100": 3
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.776536312849162,
+        "median": 2,
+        "p95": 6,
+        "max": 13,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 35.47486033519553,
+        "median": 32,
+        "p95": 58,
+        "max": 105,
+        "over100": 1
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.754189944134078,
+        "median": 7,
+        "p95": 17,
+        "max": 31,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 3.0446927374301676,
+        "median": 2,
+        "p95": 6,
+        "max": 70,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 2.9329608938547485,
+        "median": 3,
+        "p95": 7,
+        "max": 13,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 80.94972067039106,
+        "median": 81,
+        "p95": 95,
+        "max": 99,
+        "over100": 0
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 5.977653631284916,
+        "median": 6,
+        "p95": 9,
+        "max": 10,
+        "over100": 0
+      },
+      "index": 3,
+      "variant": "hide-fog",
+      "active": 180,
+      "shots": 73,
+      "enemyShotsLowerBound": 184,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 80,
+        "duplicateLayers": 0,
+        "visible": 74,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "flash.display::MovieClip": 29,
+          "visualGilza": 26,
+          "visualSchepoch": 3,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "maskShapeLinks": 80,
+        "owned": 80,
+        "masked": 80
+      },
+      "cpuCores": 1.2074750319126928,
+      "cpuBucketCount": 8,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 956.2416605729577,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.4765087772823,
+              "masked": true
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": true
+            },
+            {
+              "y": 959.9496387298332,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": true
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 959.5226302074477,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.351617926804,
+              "masked": true
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 957.7742191314387,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.9936074425284,
+              "masked": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 36.944134078212294,
+        "median": 33,
+        "p95": 58,
+        "max": 122,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0.46368715083798884,
+        "median": 0,
+        "p95": 1,
+        "max": 21,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 25.720670391061454,
+        "median": 23,
+        "p95": 44,
+        "max": 69,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.927374301675978,
+        "median": 6,
+        "p95": 15,
+        "max": 92,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.664804469273743,
+        "median": 2,
+        "p95": 6,
+        "max": 9,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.6312849162011173,
+        "median": 0,
+        "p95": 1,
+        "max": 21,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 84.42458100558659,
+        "median": 84,
+        "p95": 96,
+        "max": 102,
+        "over100": 2
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.284916201117318,
+        "median": 7,
+        "p95": 10,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 4,
+      "variant": "both",
+      "active": 180,
+      "shots": 89,
+      "enemyShotsLowerBound": 182,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 1.1280820065797736,
+      "cpuBucketCount": 6,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 956.5516375992888,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.3103902632274,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1290,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.0087425121772,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 959.7027744173582,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.5245377211388,
+              "masked": false
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": false
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 956.7036871346869,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.7615072152028,
+              "masked": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 34.23463687150838,
+        "median": 32,
+        "p95": 46,
+        "max": 98,
+        "over100": 0
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0.329608938547486,
+        "median": 0,
+        "p95": 1,
+        "max": 7,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 24.039106145251395,
+        "median": 23,
+        "p95": 35,
+        "max": 53,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.184357541899441,
+        "median": 6,
+        "p95": 13,
+        "max": 71,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.553072625698324,
+        "median": 2,
+        "p95": 6,
+        "max": 11,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.4581005586592179,
+        "median": 0,
+        "p95": 1,
+        "max": 8,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 83.12849162011173,
+        "median": 84,
+        "p95": 95,
+        "max": 102,
+        "over100": 1
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.240223463687151,
+        "median": 7,
+        "p95": 9,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 5,
+      "variant": "both",
+      "active": 180,
+      "shots": 89,
+      "enemyShotsLowerBound": 185,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 1.0890118076874267,
+      "cpuBucketCount": 6,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 958.8659364782236,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.0985908232549,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1290,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.2893732494883,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 957.5265277315322,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.971573982128,
+              "masked": false
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": false
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 956.3863118248822,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.5907644356012,
+              "masked": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 41.312849162011176,
+        "median": 40,
+        "p95": 52,
+        "max": 118,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.988826815642458,
+        "median": 2,
+        "p95": 5,
+        "max": 59,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 28.65921787709497,
+        "median": 28,
+        "p95": 35,
+        "max": 42,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.173184357541899,
+        "median": 6,
+        "p95": 14,
+        "max": 76,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.335195530726257,
+        "median": 2,
+        "p95": 4,
+        "max": 7,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 3.1452513966480447,
+        "median": 3,
+        "p95": 5,
+        "max": 59,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 82.43575418994413,
+        "median": 82,
+        "p95": 94,
+        "max": 99,
+        "over100": 0
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.346368715083799,
+        "median": 7,
+        "p95": 9,
+        "max": 10,
+        "over100": 0
+      },
+      "index": 6,
+      "variant": "hide-fog",
+      "active": 180,
+      "shots": 89,
+      "enemyShotsLowerBound": 184,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 69,
+        "duplicateLayers": 0,
+        "visible": 63,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "flash.display::MovieClip": 27,
+          "visualGilza": 20,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "maskShapeLinks": 69,
+        "owned": 69,
+        "masked": 69
+      },
+      "cpuCores": 1.2382824460153938,
+      "cpuBucketCount": 6,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 959.9819058469359,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.134209923144,
+              "masked": true
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 960,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.4582287508547,
+              "masked": true
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 956.0054974568919,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.0740938687336,
+              "masked": true
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": true
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": true
+            },
+            {
+              "y": 956.1566160500412,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.387922548015,
+              "masked": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 47.09497206703911,
+        "median": 45,
+        "p95": 63,
+        "max": 134,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0.5810055865921788,
+        "median": 0,
+        "p95": 1,
+        "max": 23,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 36.262569832402235,
+        "median": 36,
+        "p95": 44,
+        "max": 61,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.4748603351955305,
+        "median": 6,
+        "p95": 16,
+        "max": 88,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.6201117318435756,
+        "median": 2,
+        "p95": 7,
+        "max": 9,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.7374301675977654,
+        "median": 0,
+        "p95": 1,
+        "max": 23,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 86.08379888268156,
+        "median": 86,
+        "p95": 101,
+        "max": 109,
+        "over100": 11
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.35754189944134,
+        "median": 7,
+        "p95": 9,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 7,
+      "variant": "skip-hide",
+      "active": 180,
+      "shots": 89,
+      "enemyShotsLowerBound": 184,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 1.8861409714214834,
+      "cpuBucketCount": 8,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 958.3552072225681,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.9841021071306,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 959,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 19,
+            "weapon2-0": 24,
+            "weapon1-0": 21,
+            "weapon5-0": 33,
+            "bar2": 23,
+            "unit4": 28,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 30,
+            "air": 12,
+            "weapon3-0": 27,
+            "unit5": 31,
+            "visual": 1,
+            "weapon0-0": 18,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 22,
+            "arm": 34,
+            "unit3": 25,
+            "bar1": 20,
+            "bar3": 26,
+            "bar5": 32,
+            "bar0": 16,
+            "bar4": 29,
+            "wall": 10
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 957.2445671615503,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.0740786714587,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 956.0202585125464,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 58.849162011173185,
+        "median": 56,
+        "p95": 80,
+        "max": 118,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.8379888268156424,
+        "median": 3,
+        "p95": 6,
+        "max": 12,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 45.452513966480446,
+        "median": 43,
+        "p95": 64,
+        "max": 77,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.4636871508379885,
+        "median": 7,
+        "p95": 15,
+        "max": 24,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.9329608938547485,
+        "median": 2,
+        "p95": 5,
+        "max": 64,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 3,
+        "median": 3,
+        "p95": 6,
+        "max": 12,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 83.70391061452514,
+        "median": 84,
+        "p95": 97,
+        "max": 102,
+        "over100": 1
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.145251396648045,
+        "median": 7,
+        "p95": 10,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 8,
+      "variant": "normal",
+      "active": 180,
+      "shots": 89,
+      "enemyShotsLowerBound": 182,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 73,
+        "duplicateLayers": 0,
+        "visible": 67,
+        "types": {
+          "hpBar": 6,
+          "vissmg10": 6,
+          "flash.display::MovieClip": 28,
+          "visualGilza": 21,
+          "visualSchepoch": 2,
+          "visualGrifArm1": 6,
+          "visualBullet": 4
+        },
+        "layers": 6,
+        "maskShapeLinks": 73,
+        "owned": 73,
+        "masked": 73
+      },
+      "cpuCores": 1.9290990054607688,
+      "cpuBucketCount": 9,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 956.236953723505,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.4721408229907,
+              "masked": true
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": true
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 959,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": true
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 22,
+            "weapon2-0": 32,
+            "weapon1-0": 26,
+            "weapon5-0": 50,
+            "bar2": 30,
+            "unit4": 40,
+            "floor": 8,
+            "fogVis": 4,
+            "weapon4-0": 44,
+            "air": 12,
+            "weapon3-0": 38,
+            "unit5": 46,
+            "visual": 1,
+            "weapon0-0": 20,
+            "fogShadow": 5,
+            "unit0": 14,
+            "fogBase": 6,
+            "unit2": 28,
+            "arm": 52,
+            "unit3": 34,
+            "bar1": 24,
+            "bar3": 36,
+            "bar5": 48,
+            "bar0": 17,
+            "bar4": 42,
+            "wall": 10
+          },
+          "nonDefault": [
+            {
+              "id": 14,
+              "parent": 15,
+              "name": "instance103375",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 16,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 17,
+              "parent": 18,
+              "name": "instance103387",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 19,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 20,
+              "parent": 15,
+              "name": "instance103371",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 21,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 22,
+              "parent": 15,
+              "name": "instance103399",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 23,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 24,
+              "parent": 18,
+              "name": "instance103411",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 25,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 26,
+              "parent": 15,
+              "name": "instance103395",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 27,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 28,
+              "parent": 15,
+              "name": "instance103423",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 29,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 30,
+              "parent": 18,
+              "name": "instance103435",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 31,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 32,
+              "parent": 15,
+              "name": "instance103419",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 33,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 34,
+              "parent": 15,
+              "name": "instance103447",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 35,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 36,
+              "parent": 18,
+              "name": "instance103459",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 37,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 38,
+              "parent": 15,
+              "name": "instance103443",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 39,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 40,
+              "parent": 15,
+              "name": "instance103471",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 41,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 42,
+              "parent": 18,
+              "name": "instance103483",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 43,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 44,
+              "parent": 15,
+              "name": "instance103467",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 45,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 46,
+              "parent": 15,
+              "name": "instance103495",
+              "type": "flash.display::MovieClip",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 47,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 48,
+              "parent": 18,
+              "name": "instance103507",
+              "type": "hpBar",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 49,
+              "alpha": 1,
+              "visible": false
+            },
+            {
+              "id": 50,
+              "parent": 15,
+              "name": "instance103491",
+              "type": "vissmg10",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 51,
+              "alpha": 1,
+              "visible": true
+            },
+            {
+              "id": 52,
+              "parent": 15,
+              "name": "instance103378",
+              "type": "visualGrifArm1",
+              "filters": [],
+              "cache": true,
+              "blend": "normal",
+              "mask": 53,
+              "alpha": 1,
+              "visible": true
+            }
+          ],
+          "units": [
+            {
+              "y": 959.5290454915179,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.3554032491415,
+              "masked": true
+            },
+            {
+              "y": 952,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182.6,
+              "masked": true
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": true
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": true
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1330,
+              "masked": true
+            },
+            {
+              "y": 956.139778609973,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "nextInterval": {
+        "n": 179,
+        "mean": 34.97206703910614,
+        "median": 34,
+        "p95": 46,
+        "max": 115,
+        "over100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 179,
+        "mean": 24.329608938547487,
+        "median": 24,
+        "p95": 31,
+        "max": 40,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 179,
+        "mean": 7.888268156424581,
+        "median": 6,
+        "p95": 13,
+        "max": 86,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 179,
+        "mean": 2.6033519553072626,
+        "median": 2,
+        "p95": 5,
+        "max": 15,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 179,
+        "mean": 0.15083798882681565,
+        "median": 0,
+        "p95": 1,
+        "max": 2,
+        "over100": 0
+      },
+      "particles": {
+        "n": 179,
+        "mean": 83.57541899441341,
+        "median": 83,
+        "p95": 96,
+        "max": 104,
+        "over100": 3
+      },
+      "projectiles": {
+        "n": 179,
+        "mean": 6.005586592178771,
+        "median": 6,
+        "p95": 9,
+        "max": 11,
+        "over100": 0
+      },
+      "index": 9,
+      "variant": "off",
+      "active": 180,
+      "shots": 73,
+      "enemyShotsLowerBound": 185,
+      "maskInventory": {
+        "unrecognized": 0,
+        "reciprocalPairs": 0,
+        "duplicateLayers": 0,
+        "visible": 0,
+        "types": {},
+        "layers": 6,
+        "maskShapeLinks": 0,
+        "owned": 0,
+        "masked": 0
+      },
+      "cpuCores": 1.2341121950309195,
+      "cpuBucketCount": 5,
+      "display": {
+        "treeStart": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 10,
+            "weapon2-0": 15,
+            "weapon1-0": 12,
+            "weapon5-0": 24,
+            "bar2": 14,
+            "unit4": 19,
+            "floor": 0,
+            "fogVis": 0,
+            "weapon4-0": 21,
+            "air": 4,
+            "weapon3-0": 18,
+            "unit5": 22,
+            "visual": 1,
+            "weapon0-0": 9,
+            "fogShadow": 0,
+            "unit0": 5,
+            "fogBase": 0,
+            "unit2": 13,
+            "arm": 25,
+            "unit3": 16,
+            "bar1": 11,
+            "bar3": 17,
+            "bar5": 23,
+            "bar0": 7,
+            "bar4": 20,
+            "wall": 0
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 956.558498563166,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1129.3068056535851,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1182,
+              "masked": false
+            },
+            {
+              "y": 930,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1270,
+              "masked": false
+            },
+            {
+              "y": 946,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1405.9993697006869,
+              "masked": false
+            }
+          ]
+        },
+        "treeEnd": {
+          "quality": "HIGH",
+          "roots": {
+            "unit1": 10,
+            "weapon2-0": 15,
+            "weapon1-0": 12,
+            "weapon5-0": 24,
+            "bar2": 14,
+            "unit4": 19,
+            "floor": 0,
+            "fogVis": 0,
+            "weapon4-0": 21,
+            "air": 4,
+            "weapon3-0": 18,
+            "unit5": 22,
+            "visual": 1,
+            "weapon0-0": 9,
+            "fogShadow": 0,
+            "unit0": 5,
+            "fogBase": 0,
+            "unit2": 13,
+            "arm": 25,
+            "unit3": 16,
+            "bar1": 11,
+            "bar3": 17,
+            "bar5": 23,
+            "bar0": 7,
+            "bar4": 20,
+            "wall": 0
+          },
+          "nonDefault": [],
+          "units": [
+            {
+              "y": 959.6975483648142,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1130.5287555080367,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1184.25,
+              "masked": false
+            },
+            {
+              "y": 920,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1210,
+              "masked": false
+            },
+            {
+              "y": 940,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1310,
+              "masked": false
+            },
+            {
+              "y": 950,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1350,
+              "masked": false
+            },
+            {
+              "y": 956.4211340169115,
+              "id": "merc1",
+              "visible": true,
+              "alpha": 1,
+              "x": 1430,
+              "masked": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "longFrames": [
+    {
+      "case": 0,
+      "variant": "off",
+      "frame": {
+        "age": 260,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": true,
+        "partialEnemies": 0,
+        "worldPass": 0,
+        "fireTime": 0,
+        "rv": 0,
+        "start": 35884,
+        "nextInterval": 139,
+        "bandMinus100": 0,
+        "diagnosticMs": 0,
+        "masks": 0,
+        "trigger": true,
+        "bandNative": 7,
+        "particles": 88,
+        "enemyDriveMs": 0,
+        "projectiles": 10,
+        "memoryAfter": 381743104,
+        "beforeProbe": 9,
+        "objects": 142,
+        "probeEnd": 35884,
+        "memoryBefore": 381743104,
+        "probeMs": 0,
+        "otherHandlersNext": 106,
+        "afterProbe": 25,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 334,
+        "nativeNext": 8,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 1,
+      "variant": "normal",
+      "frame": {
+        "age": 206,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 6,
+        "worldPass": 207,
+        "fireTime": 0,
+        "rv": 2,
+        "start": 49271,
+        "nextInterval": 113,
+        "bandMinus100": 2,
+        "diagnosticMs": 0,
+        "masks": 162,
+        "trigger": true,
+        "bandNative": 12,
+        "particles": 77,
+        "enemyDriveMs": 0,
+        "projectiles": 7,
+        "memoryAfter": 344453120,
+        "beforeProbe": 15,
+        "objects": 128,
+        "probeEnd": 49273,
+        "memoryBefore": 344420352,
+        "probeMs": 2,
+        "otherHandlersNext": 4,
+        "afterProbe": 35,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 550,
+        "nativeNext": 72,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 3,
+      "variant": "hide-fog",
+      "frame": {
+        "age": 90,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 6,
+        "worldPass": 91,
+        "fireTime": 0,
+        "rv": 2,
+        "start": 70243,
+        "nextInterval": 120,
+        "bandMinus100": 1,
+        "diagnosticMs": 0,
+        "masks": 110,
+        "trigger": true,
+        "bandNative": 6,
+        "particles": 73,
+        "enemyDriveMs": 0,
+        "projectiles": 2,
+        "memoryAfter": 321589248,
+        "beforeProbe": 8,
+        "objects": 119,
+        "probeEnd": 70245,
+        "memoryBefore": 321540096,
+        "probeMs": 2,
+        "otherHandlersNext": 70,
+        "afterProbe": 28,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 974,
+        "nativeNext": 20,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 3,
+      "variant": "hide-fog",
+      "frame": {
+        "age": 181,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 6,
+        "worldPass": 182,
+        "fireTime": 0,
+        "rv": 4,
+        "start": 74863,
+        "nextInterval": 102,
+        "bandMinus100": 1,
+        "diagnosticMs": 0,
+        "masks": 200,
+        "trigger": true,
+        "bandNative": 26,
+        "particles": 89,
+        "enemyDriveMs": 0,
+        "projectiles": 10,
+        "memoryAfter": 324620288,
+        "beforeProbe": 31,
+        "objects": 143,
+        "probeEnd": 74867,
+        "memoryBefore": 324591616,
+        "probeMs": 4,
+        "otherHandlersNext": 2,
+        "afterProbe": 92,
+        "nativeEnemyShotLowerBound": 5,
+        "nativeTick": 1065,
+        "nativeNext": 4,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 3,
+      "variant": "hide-fog",
+      "frame": {
+        "age": 196,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": true,
+        "partialEnemies": 6,
+        "worldPass": 197,
+        "fireTime": 0,
+        "rv": 2,
+        "start": 75826,
+        "nextInterval": 119,
+        "bandMinus100": 1,
+        "diagnosticMs": 1,
+        "masks": 160,
+        "trigger": true,
+        "bandNative": 11,
+        "particles": 73,
+        "enemyDriveMs": 0,
+        "projectiles": 8,
+        "memoryAfter": 336097280,
+        "beforeProbe": 15,
+        "objects": 125,
+        "probeEnd": 75829,
+        "memoryBefore": 336023552,
+        "probeMs": 3,
+        "otherHandlersNext": 2,
+        "afterProbe": 105,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 1080,
+        "nativeNext": 9,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 4,
+      "variant": "both",
+      "frame": {
+        "age": 156,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 0,
+        "worldPass": 0,
+        "fireTime": 0,
+        "rv": 0,
+        "start": 85025,
+        "nextInterval": 122,
+        "bandMinus100": 1,
+        "diagnosticMs": 1,
+        "masks": 0,
+        "trigger": true,
+        "bandNative": 6,
+        "particles": 87,
+        "enemyDriveMs": 0,
+        "projectiles": 5,
+        "memoryAfter": 338141184,
+        "beforeProbe": 8,
+        "objects": 136,
+        "probeEnd": 85026,
+        "memoryBefore": 338141184,
+        "probeMs": 1,
+        "otherHandlersNext": 4,
+        "afterProbe": 25,
+        "nativeEnemyShotLowerBound": 1,
+        "nativeTick": 1310,
+        "nativeNext": 92,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 6,
+      "variant": "hide-fog",
+      "frame": {
+        "age": 200,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 6,
+        "worldPass": 201,
+        "fireTime": 0,
+        "rv": 3,
+        "start": 107931,
+        "nextInterval": 118,
+        "bandMinus100": 1,
+        "diagnosticMs": 0,
+        "masks": 184,
+        "trigger": true,
+        "bandNative": 6,
+        "particles": 88,
+        "enemyDriveMs": 0,
+        "projectiles": 7,
+        "memoryAfter": 334872576,
+        "beforeProbe": 8,
+        "objects": 139,
+        "probeEnd": 107934,
+        "memoryBefore": 334909440,
+        "probeMs": 3,
+        "otherHandlersNext": 2,
+        "afterProbe": 37,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 1894,
+        "nativeNext": 76,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 7,
+      "variant": "skip-hide",
+      "frame": {
+        "age": 164,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": false,
+        "partialEnemies": 0,
+        "worldPass": 0,
+        "fireTime": 0,
+        "rv": 0,
+        "start": 119099,
+        "nextInterval": 134,
+        "bandMinus100": 0,
+        "diagnosticMs": 1,
+        "masks": 0,
+        "trigger": true,
+        "bandNative": 4,
+        "particles": 103,
+        "enemyDriveMs": 0,
+        "projectiles": 9,
+        "memoryAfter": 341585920,
+        "beforeProbe": 6,
+        "objects": 156,
+        "probeEnd": 119100,
+        "memoryBefore": 341700608,
+        "probeMs": 1,
+        "otherHandlersNext": 3,
+        "afterProbe": 42,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 2128,
+        "nativeNext": 88,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 8,
+      "variant": "normal",
+      "frame": {
+        "age": 157,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": true,
+        "partialEnemies": 6,
+        "worldPass": 158,
+        "fireTime": 0,
+        "rv": 3,
+        "start": 133062,
+        "nextInterval": 118,
+        "bandMinus100": 1,
+        "diagnosticMs": 0,
+        "masks": 182,
+        "trigger": true,
+        "bandNative": 13,
+        "particles": 88,
+        "enemyDriveMs": 0,
+        "projectiles": 8,
+        "memoryAfter": 330166272,
+        "beforeProbe": 16,
+        "objects": 140,
+        "probeEnd": 133065,
+        "memoryBefore": 330182656,
+        "probeMs": 3,
+        "otherHandlersNext": 64,
+        "afterProbe": 44,
+        "nativeEnemyShotLowerBound": 6,
+        "nativeTick": 2391,
+        "nativeNext": 7,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    },
+    {
+      "case": 9,
+      "variant": "off",
+      "frame": {
+        "age": 135,
+        "band100": 1,
+        "worldStepsNext": 1,
+        "fired": true,
+        "partialEnemies": 0,
+        "worldPass": 0,
+        "fireTime": 0,
+        "rv": 0,
+        "start": 144646,
+        "nextInterval": 115,
+        "bandMinus100": 0,
+        "diagnosticMs": 0,
+        "masks": 0,
+        "trigger": true,
+        "bandNative": 6,
+        "particles": 91,
+        "enemyDriveMs": 0,
+        "projectiles": 8,
+        "memoryAfter": 367828992,
+        "beforeProbe": 9,
+        "objects": 143,
+        "probeEnd": 144646,
+        "memoryBefore": 367828992,
+        "probeMs": 0,
+        "otherHandlersNext": 4,
+        "afterProbe": 25,
+        "nativeEnemyShotLowerBound": 0,
+        "nativeTick": 2639,
+        "nativeNext": 86,
+        "forcedEnemyShots": 0
+      },
+      "cpuInterior": []
+    }
+  ],
+  "groups": {
+    "off": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 37.10335195530726,
+        "median": 35.0,
+        "p95": 56,
+        "max": 139,
+        "over100": 2
+      },
+      "rv": {
+        "n": 358,
+        "mean": 0,
+        "median": 0.0,
+        "p95": 0,
+        "max": 0,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 358,
+        "mean": 26.446927374301676,
+        "median": 25.0,
+        "p95": 39,
+        "max": 79,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 358,
+        "mean": 7.606145251396648,
+        "median": 6.0,
+        "p95": 15,
+        "max": 86,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 358,
+        "mean": 2.9078212290502794,
+        "median": 2.0,
+        "p95": 5,
+        "max": 106,
+        "over100": 1
+      },
+      "probeMs": {
+        "n": 358,
+        "mean": 0.1424581005586592,
+        "median": 0.0,
+        "p95": 1,
+        "max": 2,
+        "over100": 0
+      }
+    },
+    "normal": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 57.6731843575419,
+        "median": 56.0,
+        "p95": 76,
+        "max": 118,
+        "over100": 2
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.7513966480446927,
+        "median": 3.0,
+        "p95": 5,
+        "max": 14,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 358,
+        "mean": 44.357541899441344,
+        "median": 43.0,
+        "p95": 58,
+        "max": 82,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 358,
+        "mean": 7.667597765363128,
+        "median": 7.0,
+        "p95": 15,
+        "max": 72,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 358,
+        "mean": 2.7653631284916202,
+        "median": 2.0,
+        "p95": 5,
+        "max": 64,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 358,
+        "mean": 2.88268156424581,
+        "median": 3.0,
+        "p95": 5,
+        "max": 14,
+        "over100": 0
+      }
+    },
+    "skip-hide": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 46.93016759776536,
+        "median": 45.0,
+        "p95": 63,
+        "max": 134,
+        "over100": 1
+      },
+      "rv": {
+        "n": 358,
+        "mean": 0.4692737430167598,
+        "median": 0.0,
+        "p95": 1,
+        "max": 23,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 358,
+        "mean": 36.20391061452514,
+        "median": 36.0,
+        "p95": 44,
+        "max": 61,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 358,
+        "mean": 7.307262569832402,
+        "median": 6.0,
+        "p95": 16,
+        "max": 88,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 358,
+        "mean": 2.787709497206704,
+        "median": 2.0,
+        "p95": 6,
+        "max": 59,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 358,
+        "mean": 0.6312849162011173,
+        "median": 0.0,
+        "p95": 1,
+        "max": 23,
+        "over100": 0
+      }
+    },
+    "hide-fog": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 45.25977653631285,
+        "median": 42.0,
+        "p95": 66,
+        "max": 120,
+        "over100": 4
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.88268156424581,
+        "median": 2.0,
+        "p95": 6,
+        "max": 59,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 358,
+        "mean": 32.06703910614525,
+        "median": 30.0,
+        "p95": 50,
+        "max": 105,
+        "over100": 1
+      },
+      "nativeNext": {
+        "n": 358,
+        "mean": 7.4636871508379885,
+        "median": 6.0,
+        "p95": 15,
+        "max": 76,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 358,
+        "mean": 2.689944134078212,
+        "median": 2.0,
+        "p95": 4,
+        "max": 70,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 358,
+        "mean": 3.0391061452513966,
+        "median": 3.0,
+        "p95": 6,
+        "max": 59,
+        "over100": 0
+      }
+    },
+    "both": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 35.589385474860336,
+        "median": 33.0,
+        "p95": 54,
+        "max": 122,
+        "over100": 1
+      },
+      "rv": {
+        "n": 358,
+        "mean": 0.39664804469273746,
+        "median": 0.0,
+        "p95": 1,
+        "max": 21,
+        "over100": 0
+      },
+      "afterProbe": {
+        "n": 358,
+        "mean": 24.879888268156424,
+        "median": 23.0,
+        "p95": 40,
+        "max": 69,
+        "over100": 0
+      },
+      "nativeNext": {
+        "n": 358,
+        "mean": 7.555865921787709,
+        "median": 6.0,
+        "p95": 14,
+        "max": 92,
+        "over100": 0
+      },
+      "otherHandlersNext": {
+        "n": 358,
+        "mean": 2.6089385474860336,
+        "median": 2.0,
+        "p95": 6,
+        "max": 11,
+        "over100": 0
+      },
+      "probeMs": {
+        "n": 358,
+        "mean": 0.5446927374301676,
+        "median": 0.0,
+        "p95": 1,
+        "max": 21,
+        "over100": 0
+      }
+    }
+  },
+  "interaction": {
+    "nextInterval": 1.0726256983240248,
+    "rv": -0.20391061452513964,
+    "afterProbe": 0.966480446927374
+  },
+  "interactionHalves": [
+    {
+      "nextInterval": -2.530726256983236,
+      "rv": -0.005586592178770666,
+      "afterProbe": -2.6368715083798833
+    },
+    {
+      "nextInterval": 4.6759776536312785,
+      "rv": -0.4022346368715087,
+      "afterProbe": 4.569832402234635
+    }
+  ],
+  "cpuSampler": {
+    "metadata": {
+      "schema": 1,
+      "sampler": "OwnedCpuSampler",
+      "pid": 24668,
+      "pid_source": "caller-provided; not independently verified",
+      "interval_seconds": 1.0,
+      "status": "stopped",
+      "handle_lifetime": "caller-managed; never closed by sampler",
+      "counter_units": {
+        "kernel_time_100ns": "100 ns",
+        "user_time_100ns": "100 ns",
+        "process_cycles": "raw CPU cycles; not elapsed time"
+      },
+      "sampling": "start/stop endpoints and one-second waits; no catch-up samples",
+      "errors": [],
+      "sample_count": 151
+    },
+    "queryMs": {
+      "n": 151,
+      "mean": 0.16276092715231788,
+      "median": 0.1027,
+      "p95": 0.233,
+      "max": 4.5057,
+      "over100": 0
+    },
+    "delayedBuckets": 0
+  }
+}

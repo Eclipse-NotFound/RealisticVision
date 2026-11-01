@@ -1,0 +1,26 @@
+[
+  {
+    "case": 1,
+    "differentPixels": 38590,
+    "maxChannelDelta": 2,
+    "overOnePixels": 60
+  },
+  {
+    "case": 2,
+    "differentPixels": 38562,
+    "maxChannelDelta": 2,
+    "overOnePixels": 57
+  },
+  {
+    "case": 3,
+    "differentPixels": 38474,
+    "maxChannelDelta": 2,
+    "overOnePixels": 60
+  },
+  {
+    "case": 4,
+    "differentPixels": 38473,
+    "maxChannelDelta": 2,
+    "overOnePixels": 59
+  }
+]

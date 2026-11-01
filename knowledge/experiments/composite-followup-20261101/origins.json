@@ -1,0 +1,570 @@
+{
+  "inputs.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\inputs.json",
+    "sourceSha256": "5b76c2c1ee5dcdf7694337eb1c019fd16777bac75005b09105206b0faabefacd",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "native-checked.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\native-source\\checked.json",
+    "sourceSha256": "97515909c544bb5a05167c3acbc9612edf824c59cf63d5a52745bd92cf2a63b9",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\analysis.json",
+    "sourceSha256": "232ad8a0a8f7c29bebf92bbfa0418440cb400e1dfc8f8bb094349a3757d486d6",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\summary.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\summary.json",
+    "sourceSha256": "609e911e12c1888d75ce5d8c4edb27ec5c6213619ee04fec1680345a88f61048",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\build.json",
+    "sourceSha256": "5114fde7e4e11a7951096651f6669807dc31c1829df3845511ab93c2f3dbe1cd",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\environment.json",
+    "sourceSha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\before.json",
+    "sourceSha256": "54b67c2d37b4128ee5203f4515acfa6a338db35bf5e2cd7fb22c875c04f5ef39",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\after.json",
+    "sourceSha256": "ba4314b65e30304edbe431fb0857522f900ac3ff61771964f9d98863bd2244f7",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\resource-policy.json",
+    "sourceSha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\running.json",
+    "sourceSha256": "4ce17edb621b9f4ec9165daa8f0262da6cf640872e89950bab5751a0b11acf3a",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\selection.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\selection.json",
+    "sourceSha256": "f4574880d7f13133015b21da2e2b5c88a8620bd1cfcb0b02ad937a072e7269c0",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\air-output.log",
+    "sourceSha256": "3cd1b4628e90cd5cbf41391830546f3457852009bbcf00d0bcecf2200e64387c",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\CombatRenderProbeMod.as",
+    "sourceSha256": "bca2772a46d580f5eda8c7f64977190d711b27bccdc7d91a72aedd248434bc3c",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "01-large-factorial\\evidence\\result.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\evidence\\result.json",
+    "sourceSha256": "6b2a0d76b437c25c1045c8ee026c19c30e28c735386a18a89b0eb8fde7c6a100",
+    "gzip": true
+  },
+  "01-large-factorial\\cpu-samples.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\cpu-samples.json",
+    "sourceSha256": "63f8bbf356595295c8bef6261f3da76abeb2693e1ecb4d6733ecdeeb52ae5168",
+    "gzip": true
+  },
+  "01-large-factorial\\evidence\\scene-0.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\evidence\\scene-0.png",
+    "sourceSha256": "033ba8ac7ddbf158b32666affd7603a31a715c418cd48e82f336c135ae607bf3",
+    "gzip": false
+  },
+  "01-large-factorial\\rv-src\\RealisticVisionMod.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\RealisticVisionMod.as",
+    "sourceSha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "gzip": true
+  },
+  "01-large-factorial\\rv-src\\RVExplorationCarrier.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\RVExplorationCarrier.as",
+    "sourceSha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "gzip": true
+  },
+  "01-large-factorial\\rv-src\\RVKeybinds.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\RVKeybinds.as",
+    "sourceSha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "gzip": true
+  },
+  "01-large-factorial\\rv-src\\RVWallSurface.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\RVWallSurface.as",
+    "sourceSha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "gzip": true
+  },
+  "01-large-factorial\\rv-src\\modlocales\\vision\\RVLocale.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\modlocales\\vision\\RVLocale.as",
+    "sourceSha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "gzip": true
+  },
+  "01-large-factorial\\rv-src\\modlocales\\vision\\RVLocaleMessages.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\01-large-factorial\\rv-src\\modlocales\\vision\\RVLocaleMessages.as",
+    "sourceSha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "gzip": true
+  },
+  "02-fog-cache\\analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\analysis.json",
+    "sourceSha256": "1d72007bb43272516e16f887c95d92d45c1da7a1abb6f9924bb96893673e0686",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\summary.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\summary.json",
+    "sourceSha256": "c92c99c84394349ec78226c5753f615a0e576e4764f6a91f8e319b6356d0639b",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\pixel-difference.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\pixel-difference.json",
+    "sourceSha256": "50a4341be4ae9146a80077214a4ea6eaa90cb922bef7639393298e7d88ab4c9a",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\build.json",
+    "sourceSha256": "553f2bea43e13fddc44d529b21ea3112576bc064bf210f9f26e1b4041440a922",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\environment.json",
+    "sourceSha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\before.json",
+    "sourceSha256": "20121eb5bc07f87da1e88d29c0b943381d40a0ff42edcb7506e5e360d78a2de3",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\after.json",
+    "sourceSha256": "c7c3dde7e0be28a6b40f5035ea37115f07569827f08ac92579ad44aec3d0b553",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\resource-policy.json",
+    "sourceSha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\running.json",
+    "sourceSha256": "918c8a7e91d9f1b6f1e5ac5eeadab2de5072df79704e233ac2c39b3c6bec74e6",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\selection.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\selection.json",
+    "sourceSha256": "609ecf05f776e12a2be32b0e3c5ca41b5183ca169d8fe4ffdeb021a879c15fe8",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\air-output.log",
+    "sourceSha256": "24ebb0820ca082b2e76e9da7a2fc548ec729f691620fb3cd28e554d9fc6b1dc6",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\CombatRenderProbeMod.as",
+    "sourceSha256": "de408f4425d4623f9a66fccca5626ffb49d4838dfbad458e6a973784e9f7dee2",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "02-fog-cache\\evidence\\result.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\result.json",
+    "sourceSha256": "843f8a8a312e6891905cd8f7b35821292225701055c9621079267687a13f0600",
+    "gzip": true
+  },
+  "02-fog-cache\\cpu-samples.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\cpu-samples.json",
+    "sourceSha256": "966577bc06658898fc9409492fcdb77035a8373834d33a6454e6d9babe490a73",
+    "gzip": true
+  },
+  "02-fog-cache\\evidence\\cache-1-cached.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-1-cached.png",
+    "sourceSha256": "8347ac757c099bb06d03caf0c4b36f17a4381ce5d6fcbfbba19ce1d03fcd8ec0",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-1-normal.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-1-normal.png",
+    "sourceSha256": "efa5aa575c71cba8a7866ff2d951288582e81510b3a6c52f947fc1cd111128f6",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-2-cached.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-2-cached.png",
+    "sourceSha256": "73c6a1502632b67b9901b80a80ba53822634d4c5933f553d26f589ed5eb7c7ff",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-2-normal.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-2-normal.png",
+    "sourceSha256": "4100d0c2e43fc55b0ddf9f7e77d47b019e5422e97f72ff0052d852b30bdae8a7",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-3-cached.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-3-cached.png",
+    "sourceSha256": "23fa0c3ffd1181178927b28f8b5d6bd0a198be4e9a2a140b773c4623a17545b3",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-3-normal.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-3-normal.png",
+    "sourceSha256": "baf74f634b9e988ef695704bf8fa3a5536df0212423a62dd8035b56f49890e5d",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-4-cached.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-4-cached.png",
+    "sourceSha256": "8693db0970585fb0ae6d03e26b62d3fed5f94a4114786d33a2d6cbe25621275a",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\cache-4-normal.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\cache-4-normal.png",
+    "sourceSha256": "50c2d6bb5ac67acf2d2c03b46597558b152f1f270ce12b06113f1c190ee62e3a",
+    "gzip": false
+  },
+  "02-fog-cache\\evidence\\scene-0.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\evidence\\scene-0.png",
+    "sourceSha256": "307701441b34ddb1ad4c5ed4930e93b0d4710ff4f8287b1a98a70734e44f7e8b",
+    "gzip": false
+  },
+  "02-fog-cache\\rv-src\\RealisticVisionMod.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\RealisticVisionMod.as",
+    "sourceSha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "gzip": true
+  },
+  "02-fog-cache\\rv-src\\RVExplorationCarrier.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\RVExplorationCarrier.as",
+    "sourceSha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "gzip": true
+  },
+  "02-fog-cache\\rv-src\\RVKeybinds.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\RVKeybinds.as",
+    "sourceSha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "gzip": true
+  },
+  "02-fog-cache\\rv-src\\RVWallSurface.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\RVWallSurface.as",
+    "sourceSha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "gzip": true
+  },
+  "02-fog-cache\\rv-src\\modlocales\\vision\\RVLocale.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\modlocales\\vision\\RVLocale.as",
+    "sourceSha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "gzip": true
+  },
+  "02-fog-cache\\rv-src\\modlocales\\vision\\RVLocaleMessages.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\02-fog-cache\\rv-src\\modlocales\\vision\\RVLocaleMessages.as",
+    "sourceSha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "gzip": true
+  },
+  "03-contour-components\\analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\analysis.json",
+    "sourceSha256": "79fcd8f6a3d8040e437eb8d44a4d3a0ddeee7086647a7b77122e7ff9b6210d19",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\summary.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\summary.json",
+    "sourceSha256": "3b2e31e487f58f651f0f040f2ba2ad4496a9f2ccc9f7941711dfa1a1a3b653ab",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\build.json",
+    "sourceSha256": "3280b227b0429d23d6956a8a730a7636083c1585583d2ca83d816258b5aa5d44",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\environment.json",
+    "sourceSha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\before.json",
+    "sourceSha256": "ca979e2f0a37446e52710bbea5f30f2963a8a81ee1262b2f1094f0eb9cf61132",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\after.json",
+    "sourceSha256": "abf064dd57572befabd19dfa22e7bde8d50c5e83d51a3cc20b24a2ffb3227522",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\resource-policy.json",
+    "sourceSha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\running.json",
+    "sourceSha256": "358f695c165890782e585b3c7fbbf8b2ab6561259f8ae069d6cbc4eaabb3079b",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\selection.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\selection.json",
+    "sourceSha256": "b3a1d63c89de9f9c55c5af608f0cc175039ea01ef2bab326037786f346f26ccb",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\air-output.log",
+    "sourceSha256": "5f5cadb21ad777dbe0d48451e7c9eeb0a0fe5d3f8894cb91e95069cd71afdc6a",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\CombatRenderProbeMod.as",
+    "sourceSha256": "ba92f5e43ddc7951c7f8abbfa469c2624967c987b94a83f273c04bd21014f18d",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "03-contour-components\\evidence\\result.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\evidence\\result.json",
+    "sourceSha256": "93beecf58173ff153e814b039ad1085bf61fa8e9a3c99bf3bdc68634bb1079f5",
+    "gzip": true
+  },
+  "03-contour-components\\cpu-samples.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\cpu-samples.json",
+    "sourceSha256": "f670b9b6aa02f3dbaeca90fd23a131feb8a2eef245bc6cc5436241e39ef8b9ca",
+    "gzip": true
+  },
+  "03-contour-components\\evidence\\scene-0.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\evidence\\scene-0.png",
+    "sourceSha256": "d2990065f34203489c11630e29855d26ed9393e4bd4232d6f9d46d66678323e0",
+    "gzip": false
+  },
+  "03-contour-components\\rv-src\\RealisticVisionMod.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\RealisticVisionMod.as",
+    "sourceSha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "gzip": true
+  },
+  "03-contour-components\\rv-src\\RVExplorationCarrier.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\RVExplorationCarrier.as",
+    "sourceSha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "gzip": true
+  },
+  "03-contour-components\\rv-src\\RVKeybinds.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\RVKeybinds.as",
+    "sourceSha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "gzip": true
+  },
+  "03-contour-components\\rv-src\\RVWallSurface.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\RVWallSurface.as",
+    "sourceSha256": "17dac182ff7ff6bc7b090066b99e6e41d2a4be87b0da6c3b78cedf3d5c5b41a6",
+    "gzip": true
+  },
+  "03-contour-components\\rv-src\\modlocales\\vision\\RVLocale.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\modlocales\\vision\\RVLocale.as",
+    "sourceSha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "gzip": true
+  },
+  "03-contour-components\\rv-src\\modlocales\\vision\\RVLocaleMessages.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\03-contour-components\\rv-src\\modlocales\\vision\\RVLocaleMessages.as",
+    "sourceSha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "gzip": true
+  },
+  "04-floorwall-components\\analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\analysis.json",
+    "sourceSha256": "b79f13b88f919efd618f4141a79ee20fd8d61cce1db58c713b118518f3506cda",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\summary.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\summary.json",
+    "sourceSha256": "9a35784641e31dc594bb9600cbe9facc1a63f9f6efe6d0edadf98f177dc50a3e",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\build.json",
+    "sourceSha256": "091bb4ccb2090c2421cc688b781c06f25fbe81e1226a988810f31df8b766bae9",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\environment.json",
+    "sourceSha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\before.json",
+    "sourceSha256": "4cdadd82ddbf1cee4ac7fb85963bb3374e13bc0c8f320fe145d1f3778a5bbebb",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\after.json",
+    "sourceSha256": "e4b81ab2c4f999038a8c8284af2840a49122bd2d97096c86790ae8e20df1ee03",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\resource-policy.json",
+    "sourceSha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\running.json",
+    "sourceSha256": "9d6798e7f8a44bc44343e5ce8825f53cfbc4a5189f00ec579e726f96c8680e8b",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\selection.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\selection.json",
+    "sourceSha256": "c62298907c339856cd7c49bfee3d7541067e427506d020c5b0efbf8ab8ebc708",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\air-output.log",
+    "sourceSha256": "55660b528dbe2a26145cfe938bc37075f7203b6480d47a94a76f52422a56e98f",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\CombatRenderProbeMod.as",
+    "sourceSha256": "aaabf30f7c23e89b92270b26a2feb45f77e4ea36df7eaeb566e1463ade5ee7cd",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "04-floorwall-components\\evidence\\result.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\evidence\\result.json",
+    "sourceSha256": "d421ed5942895c911240193bd656882c177f5f543908ad99d0247ca1b7771cd2",
+    "gzip": true
+  },
+  "04-floorwall-components\\cpu-samples.json.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\cpu-samples.json",
+    "sourceSha256": "6bbd8c7232967e1bd9ad4c471f30e33caf418b39fe4ef28e9aa7ef595853ec6e",
+    "gzip": true
+  },
+  "04-floorwall-components\\evidence\\scene-0.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\evidence\\scene-0.png",
+    "sourceSha256": "1e381f4d740bf9afb2605031a39eb600006883a6e3f3c8573e39bbdc2ab392c4",
+    "gzip": false
+  },
+  "04-floorwall-components\\rv-src\\RealisticVisionMod.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\RealisticVisionMod.as",
+    "sourceSha256": "7d1b487dc25d8ef311100b9965ecffe8446b3bccf3dd12bea470e06dd04a23c1",
+    "gzip": true
+  },
+  "04-floorwall-components\\rv-src\\RVExplorationCarrier.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\RVExplorationCarrier.as",
+    "sourceSha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "gzip": true
+  },
+  "04-floorwall-components\\rv-src\\RVKeybinds.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\RVKeybinds.as",
+    "sourceSha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "gzip": true
+  },
+  "04-floorwall-components\\rv-src\\RVWallSurface.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\RVWallSurface.as",
+    "sourceSha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "gzip": true
+  },
+  "04-floorwall-components\\rv-src\\modlocales\\vision\\RVLocale.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\modlocales\\vision\\RVLocale.as",
+    "sourceSha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "gzip": true
+  },
+  "04-floorwall-components\\rv-src\\modlocales\\vision\\RVLocaleMessages.as.gz": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup-output\\04-floorwall-components\\rv-src\\modlocales\\vision\\RVLocaleMessages.as",
+    "sourceSha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "gzip": true
+  },
+  "driver\\analyze.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\analyze.py",
+    "sourceSha256": "2ec5868298f3307291254fda8f4dc2fbbfe48a0647e9a3bc5fd503db61d2dfa6",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\archive.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\archive.py",
+    "sourceSha256": "c219213a901a3cf7447f18362ba4d2530aab7737217d155dab20f261db78d126",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\CachePixels.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\CachePixels.as",
+    "sourceSha256": "2336f8bf30d0ad5a1cbbfc176e18890a16a61c7b9d1ea3d8955ea5dee921045a",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\close.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\close.py",
+    "sourceSha256": "212235ba403ad56345d8036b5186fc6426b092ef623669d146d6bb5ab485aa3c",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\cpu_sampler.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\cpu_sampler.py",
+    "sourceSha256": "8192b4a132ca67a43711616237551a126aa024e710de6d51172131e2ed1eb37b",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\DisplaySnapshot.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\DisplaySnapshot.as",
+    "sourceSha256": "501086dd4a9dd91ae5382ddffce8489052bde36ad05ed78a8634858bb1aac4e8",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\native_check.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\native_check.py",
+    "sourceSha256": "fdd7ff6e10e2ffd767cfd6a106cf1dc6732697c01300b68e8233fb84b59c0c0e",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\prepare.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\prepare.py",
+    "sourceSha256": "83279ce7e4665fdb9ddb143f5792dd269ad32c7109ae52fa3db264b31a5d5499",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\README.md": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\README.md",
+    "sourceSha256": "0f3afcc619b58d4915f17f7b2bb2df609044c5a1be4e22a10de40c3fd3750a13",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\run.py": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\run.py",
+    "sourceSha256": "e5ad70c29135931c6883a39cdbadd52e40b8a5f18be4704d4dd9487101bb1231",
+    "gzip": false,
+    "normalizedText": true
+  },
+  "driver\\SavedFireProbe.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\composite-followup\\SavedFireProbe.as",
+    "sourceSha256": "57796e59fc63f425edd8b2d2dc55d65ee261241085429ec476ef27e99222e6d0",
+    "gzip": false,
+    "normalizedText": true
+  }
+}
