@@ -1,6 +1,8 @@
 """Pinned isolated native runner. New outputs only; diagnostics never deploy."""
 from pathlib import Path
 import hashlib,json,sys
+if '--lighting-cross' in sys.argv and '--lighting-study' not in sys.argv:
+ raise SystemExit('Lighting cross-checks belong to a separate LightAndDarkness study. RV evaluations keep LAD unloaded; --lighting-study explicitly selects the separate investigation.')
 HERE=Path(__file__).resolve().parent;MOD=HERE.parents[1];OUT=MOD/'build/fire-cost-output'
 sys.path.insert(0,str(HERE));sys.path.insert(1,str(MOD/'build/maximized-flow'))
 from instrument import once

@@ -1,5 +1,10 @@
 # 开火照明调查工具
 
+2026-11-01用户最新约定：后续RealisticVision性能测试关闭光与暗，只评估RV本体。
+本目录保留为独立照明研究入口，不作为RV性能基准；`run.py`必须显式带`--lighting-study`才启动。
+RV对照采用光与暗不加载的固定组合，仅改变RV关闭/current/classic；加载日志也须核对LAD未启动。
+光与暗的算法研究与结果另行记录，不混入RV收益结论，不更改玩家正式加载名单。
+
 只写 RealisticVision 内的隔离输出。读取匹配正式 LAD 0.7.0 的冻结源；不改他模组或 release。
 调查结论见 `../../knowledge/experiments/2026-11-01-shot-light.md`，原件 `../shot-light-output`。
 

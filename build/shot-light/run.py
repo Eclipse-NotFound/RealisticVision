@@ -1,6 +1,9 @@
 """Isolated native shot-light profile; writes only inside RealisticVision."""
 from pathlib import Path
 import hashlib,json,sys
+# This historical tool deliberately loads LAD. It is not an RV benchmark.
+if '--lighting-study' not in sys.argv:
+ raise SystemExit('This tool is a separate LightAndDarkness study. RV evaluations must keep LAD unloaded; use --lighting-study only for that separate investigation.')
 HERE=Path(__file__).resolve().parent;MOD=HERE.parents[1];OUT=MOD/'build/shot-light-output'
 sys.path.insert(0,str(HERE));sys.path.insert(1,str(MOD/'build/maximized-flow'))
 from profile import once
