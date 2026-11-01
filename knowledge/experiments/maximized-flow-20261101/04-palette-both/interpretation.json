@@ -1,0 +1,7 @@
+{
+  "status": "failed-diagnostic-only",
+  "performanceEligible": false,
+  "savedCases": 7,
+  "reason": "Concurrent PowerShell Get-Content/ConvertFrom-Json reader overlapped runtime result writing. Error 3013 in save; fail handler repeated the same failing write before exit and native game continued. All performance data excluded from acceptance.",
+  "cleanup": "Owned PID 93028, creation 2026-11-01 14:24:30, exact 04-palette-both/test.xml command verified before termination; runner closed sampler, descriptor and registration."
+}

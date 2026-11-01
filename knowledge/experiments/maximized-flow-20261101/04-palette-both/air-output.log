@@ -1,0 +1,247 @@
+ModLoader[boot_start] v2 run=run_1793514273957_122845
+
+ModLoader[requested_ModLoaderMod] line 19
+
+ModLoader[requested_SandevistanMod] line 20
+
+ModLoader[requested_RConnectMod] line 21
+
+ModLoader[requested_MoreSkillsWeaponsMod] line 23
+
+ModLoader[requested_TDFCMod] line 24
+
+ModLoader[requested_RandomRoomsMod] line 25
+
+ModLoader[requested_LootEditorMod] line 26
+
+ModLoader[requested_PermanentInjuryMod] line 27
+
+ModLoader[requested_CombatRenderProbeMod] line 28
+
+ModLoader[requested_AddictionSystemMod] line 29
+
+ModLoader[requested_ContinuousSceneMod] line 30
+
+ModLoader[requested_FirearmAttachmentsMod] line 31
+
+ModLoader[requested_WallBlendMod] line 32
+
+ModLoader[boot] v2 col=2 requested=13
+
+ModLoader[ok_RConnectMod] init
+
+ModLoader[ok_TDFCMod] init
+
+ModLoader[ok_ContinuousSceneMod] init
+
+ModLoader[ok_SandevistanMod] init
+
+ModLoader[ok_ModLoaderMod] init
+
+ModLoader[ok_PermanentInjuryMod] init
+
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-e17c72e453794157a921d8e30bf3a9a8
+
+ModLoader[ok_AddictionSystemMod] init
+
+ModLoader[ok_LootEditorMod] init
+
+ModLoader[ok_WallBlendMod] init
+
+ModLoader[ok_MoreSkillsWeaponsMod] init
+
+ModLoader[ok_RandomRoomsMod] init
+
+ModLoader[ok_FirearmAttachmentsMod] init
+
+ModLoader[ok_CombatRenderProbeMod] init
+
+TypeError: Error #1009
+
+TypeError: Error #1009
+
+605 Интерфейс
+
+1539 Game init
+
+1482 Персонаж
+
+0 Местность
+
+785 Создание местности
+
+521 Вход в местность
+
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+
+RConnectRndSeed  random_mane 44594692
+
+3554 Создание местности
+
+false
+
+383 Вход в местность
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 0 {"variant":"off","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.348
+
+[AddictionSystem] heartbeat attached=true t=22.515
+
+D58 END 0 off shots=205 bullets=15
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 1 {"variant":"normal","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.682
+
+D58 END 1 normal shots=207 bullets=14
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 2 {"variant":"candidate","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=22.848
+
+[AddictionSystem] heartbeat attached=true t=23.015
+
+D58 END 2 candidate shots=220 bullets=15
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 3 {"variant":"candidate","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.182
+
+D58 END 3 candidate shots=205 bullets=14
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 4 {"variant":"normal","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.348
+
+[AddictionSystem] heartbeat attached=true t=23.515
+
+D58 END 4 normal shots=215 bullets=14
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+
+D58 START 5 {"variant":"off","n":6,"mode":"current"}
+
+[AddictionSystem] heartbeat attached=true t=23.682
+
+D58 END 5 off shots=220 bullets=15
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=classic
+
+D58 START 6 {"variant":"off","n":6,"mode":"classic"}
+
+[AddictionSystem] heartbeat attached=true t=23.848
+
+[AddictionSystem] heartbeat attached=true t=24.015
+
+D58 END 6 off shots=217 bullets=14
+
+[RVision] room loc1_3 48x25 lDist2=2000 mode=classic
+
+D58 START 7 {"variant":"normal","n":6,"mode":"classic"}
+
+[AddictionSystem] heartbeat attached=true t=24.182
+
+FAIL Error: Error #3013 Error: Error #3013
+
+	at CombatRenderProbeMod/save()
+
+	at CombatRenderProbeMod/step()
+
+Error: Error #3013
+
+[AddictionSystem] heartbeat attached=true t=24.348
+
+[AddictionSystem] heartbeat attached=true t=24.515
+
+[AddictionSystem] heartbeat attached=true t=24.682
+
+[AddictionSystem] heartbeat attached=true t=24.848
+
+flushed
+
+[AddictionSystem] heartbeat attached=true t=25.015
+
+[AddictionSystem] heartbeat attached=true t=25.182
+
+[AddictionSystem] heartbeat attached=true t=25.348
+
+[AddictionSystem] heartbeat attached=true t=25.515
+
+[AddictionSystem] heartbeat attached=true t=25.682
+
+[AddictionSystem] heartbeat attached=true t=25.848
+
+[AddictionSystem] heartbeat attached=true t=26.015
+
+[AddictionSystem] heartbeat attached=true t=26.182
+
+[AddictionSystem] heartbeat attached=true t=26.348
+
+[AddictionSystem] heartbeat attached=true t=26.515
+
+[AddictionSystem] heartbeat attached=true t=26.682
+
+[AddictionSystem] heartbeat attached=true t=26.848
+
+[AddictionSystem] heartbeat attached=true t=27.015
+
+[AddictionSystem] heartbeat attached=true t=27.182
+
+[AddictionSystem] heartbeat attached=true t=27.348
+
+[AddictionSystem] heartbeat attached=true t=27.515
+
+[AddictionSystem] heartbeat attached=true t=27.682
+
+flushed
+
+[AddictionSystem] heartbeat attached=true t=27.848
+
+[AddictionSystem] heartbeat attached=true t=28.015
+
+[AddictionSystem] heartbeat attached=true t=28.182
+
+[AddictionSystem] heartbeat attached=true t=28.348
+
+[AddictionSystem] heartbeat attached=true t=28.515
+
+[AddictionSystem] heartbeat attached=true t=28.682
+
+[AddictionSystem] heartbeat attached=true t=28.848
+
+[AddictionSystem] heartbeat attached=true t=29.015
+
+[AddictionSystem] heartbeat attached=true t=29.182
+
+[AddictionSystem] heartbeat attached=true t=29.348
+
+[AddictionSystem] heartbeat attached=true t=29.515
+
+[AddictionSystem] heartbeat attached=true t=29.682
+
+[AddictionSystem] heartbeat attached=true t=29.848
+
+[AddictionSystem] heartbeat attached=true t=30.015
+
+[AddictionSystem] heartbeat attached=true t=30.182
+
+[AddictionSystem] heartbeat attached=true t=30.348
+
+[AddictionSystem] heartbeat attached=true t=30.515
+
+flushed
+
+[AddictionSystem] heartbeat attached=true t=30.682
+
+[AddictionSystem] heartbeat attached=true t=30.848

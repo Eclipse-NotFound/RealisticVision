@@ -1,0 +1,580 @@
+{
+  "scene": {
+    "nativeUnits": 1,
+    "fps": 30,
+    "loc": "loc1_3",
+    "screen": [
+      1280,
+      729
+    ],
+    "zoom": 0.6666666666666666,
+    "land": "random_mane",
+    "platform": [
+      920,
+      1500,
+      959
+    ],
+    "base": false,
+    "size": [
+      48,
+      25
+    ],
+    "roomBlack": true,
+    "black": true
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "cases": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "normal",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 44.26462395543175,
+        "median": 41,
+        "p95": 64,
+        "max": 122,
+        "over100": 3
+      },
+      "rv": {
+        "n": 359,
+        "mean": 1.724233983286908,
+        "median": 2,
+        "p95": 3,
+        "max": 9,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 84.69637883008356,
+        "median": 84,
+        "p95": 97,
+        "max": 109,
+        "over100": 7
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.172701949860724,
+        "median": 6,
+        "p95": 8,
+        "max": 9,
+        "over100": 0
+      },
+      "shots": 163,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 10,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 27,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 0,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "candidate",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 44.82729805013928,
+        "median": 41,
+        "p95": 71,
+        "max": 122,
+        "over100": 4
+      },
+      "rv": {
+        "n": 359,
+        "mean": 1.9220055710306407,
+        "median": 2,
+        "p95": 3,
+        "max": 67,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 84.73537604456824,
+        "median": 85,
+        "p95": 97,
+        "max": 101,
+        "over100": 3
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.155988857938719,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 162,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 10,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 10,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 17,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "current",
+      "variant": "candidate",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 44.08356545961003,
+        "median": 42,
+        "p95": 66,
+        "max": 118,
+        "over100": 2
+      },
+      "rv": {
+        "n": 359,
+        "mean": 1.7075208913649025,
+        "median": 2,
+        "p95": 3,
+        "max": 11,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 84.74930362116991,
+        "median": 85,
+        "p95": 98,
+        "max": 105,
+        "over100": 8
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.203342618384401,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 171,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 10,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 10,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 17,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "current",
+      "variant": "normal",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 42.60724233983287,
+        "median": 40,
+        "p95": 66,
+        "max": 127,
+        "over100": 2
+      },
+      "rv": {
+        "n": 359,
+        "mean": 1.7270194986072422,
+        "median": 2,
+        "p95": 3,
+        "max": 8,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 85.18384401114206,
+        "median": 85,
+        "p95": 96,
+        "max": 105,
+        "over100": 1
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.256267409470752,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 176,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 10,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 27,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 0,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "classic",
+      "variant": "normal",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 43.83008356545961,
+        "median": 41,
+        "p95": 61,
+        "max": 190,
+        "over100": 2
+      },
+      "rv": {
+        "n": 359,
+        "mean": 5.4735376044568245,
+        "median": 6,
+        "p95": 10,
+        "max": 19,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 84.1142061281337,
+        "median": 84,
+        "p95": 96,
+        "max": 106,
+        "over100": 3
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.2534818941504176,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 175,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 1,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 450,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 0,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "classic",
+      "variant": "candidate",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 68.62952646239555,
+        "median": 56,
+        "p95": 122,
+        "max": 441,
+        "over100": 40
+      },
+      "rv": {
+        "n": 359,
+        "mean": 6.116991643454039,
+        "median": 6,
+        "p95": 12,
+        "max": 19,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 85.7715877437326,
+        "median": 86,
+        "p95": 98,
+        "max": 104,
+        "over100": 4
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.155988857938719,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 164,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 1,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 1,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 449,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "classic",
+      "variant": "candidate",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 55.92479108635097,
+        "median": 51,
+        "p95": 84,
+        "max": 133,
+        "over100": 7
+      },
+      "rv": {
+        "n": 359,
+        "mean": 5.537604456824512,
+        "median": 5,
+        "p95": 10,
+        "max": 21,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 85.48467966573816,
+        "median": 85,
+        "p95": 96,
+        "max": 104,
+        "over100": 5
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.22841225626741,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 173,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 1,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 1,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 449,
+          "fieldEqual": true
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "mode": "classic",
+      "variant": "normal",
+      "windowDisplayState": "maximized",
+      "stageScreen": [
+        1280,
+        729
+      ],
+      "active": 360,
+      "nextInterval": {
+        "n": 359,
+        "mean": 59.54596100278552,
+        "median": 54,
+        "p95": 97,
+        "max": 308,
+        "over100": 15
+      },
+      "rv": {
+        "n": 359,
+        "mean": 6.467966573816156,
+        "median": 7,
+        "p95": 11,
+        "max": 78,
+        "over100": 0
+      },
+      "particles": {
+        "n": 359,
+        "mean": 86.0974930362117,
+        "median": 87,
+        "p95": 96,
+        "max": 101,
+        "over100": 1
+      },
+      "projectiles": {
+        "n": 359,
+        "mean": 5.2924791086350975,
+        "median": 6,
+        "p95": 8,
+        "max": 8,
+        "over100": 0
+      },
+      "shots": 175,
+      "enemyShotsLowerBound": 360,
+      "pixelChecks": [
+        {
+          "fieldUpdates": 1,
+          "difference": {
+            "equal": true
+          },
+          "paletteUploads": 450,
+          "repeatControl": {
+            "equal": true
+          },
+          "paletteSkipped": 0,
+          "fieldEqual": true
+        }
+      ]
+    }
+  ],
+  "measurement": "original native listener order; no per-function profile, native wrapper or external CPU sampler",
+  "groups": {
+    "current/normal": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 43.43593314763231,
+        "median": 41.0,
+        "p95": 65,
+        "max": 127,
+        "over100": 5
+      },
+      "rv": {
+        "n": 718,
+        "mean": 1.7256267409470751,
+        "median": 2.0,
+        "p95": 3,
+        "max": 9,
+        "over100": 0
+      }
+    },
+    "current/candidate": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 44.45543175487465,
+        "median": 41.0,
+        "p95": 69,
+        "max": 122,
+        "over100": 6
+      },
+      "rv": {
+        "n": 718,
+        "mean": 1.8147632311977715,
+        "median": 2.0,
+        "p95": 3,
+        "max": 67,
+        "over100": 0
+      }
+    },
+    "classic/normal": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 51.68802228412256,
+        "median": 47.0,
+        "p95": 85,
+        "max": 308,
+        "over100": 17
+      },
+      "rv": {
+        "n": 718,
+        "mean": 5.97075208913649,
+        "median": 7.0,
+        "p95": 11,
+        "max": 78,
+        "over100": 0
+      }
+    },
+    "classic/candidate": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 62.27715877437326,
+        "median": 53.5,
+        "p95": 109,
+        "max": 441,
+        "over100": 47
+      },
+      "rv": {
+        "n": 718,
+        "mean": 5.827298050139276,
+        "median": 6.0,
+        "p95": 11,
+        "max": 21,
+        "over100": 0
+      }
+    }
+  }
+}

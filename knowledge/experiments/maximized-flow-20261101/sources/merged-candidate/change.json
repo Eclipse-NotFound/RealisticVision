@@ -1,0 +1,9 @@
+{
+  "kind": "intersect-wall-hard-masks",
+  "files": {
+    "RealisticVisionMod.as": "882dabb9054e55c3e63714dbd616176be4707b8c0fb06aef96359dafd2e1f894",
+    "RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "RVWallSurface.as": "9311a85536f1cd263a6f1a952af82d6d248b84f43b253719f92f99730ced37d6"
+  }
+}

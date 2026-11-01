@@ -1,0 +1,98 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/off": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 50.37604456824513,
+        "p95": 92,
+        "max": 896,
+        ">100": 31
+      },
+      "rv": {
+        "n": 718,
+        "mean": 0.008356545961002786,
+        "p95": 0,
+        "max": 2,
+        ">100": 0
+      },
+      "nativeNext": {
+        "n": 718,
+        "mean": 9.266016713091922,
+        "p95": 21,
+        "max": 85,
+        ">100": 0
+      },
+      "otherHandlersNext": {
+        "n": 718,
+        "mean": 3.367688022284123,
+        "p95": 7,
+        "max": 105,
+        ">100": 1
+      },
+      "afterProbe": {
+        "n": 718,
+        "mean": 37.55431754874652,
+        "p95": 73,
+        "max": 873,
+        ">100": 21
+      },
+      "probeMs": {
+        "n": 718,
+        "mean": 0.18802228412256267,
+        "p95": 1,
+        "max": 5,
+        ">100": 0
+      }
+    },
+    "current/normal": {
+      "nextInterval": {
+        "n": 718,
+        "mean": 48.051532033426184,
+        "p95": 65,
+        "max": 121,
+        ">100": 7
+      },
+      "rv": {
+        "n": 718,
+        "mean": 2.433147632311978,
+        "p95": 5,
+        "max": 16,
+        ">100": 0
+      },
+      "nativeNext": {
+        "n": 718,
+        "mean": 7.7534818941504176,
+        "p95": 16,
+        "max": 32,
+        ">100": 0
+      },
+      "otherHandlersNext": {
+        "n": 718,
+        "mean": 3.284122562674095,
+        "p95": 7,
+        "max": 79,
+        ">100": 0
+      },
+      "afterProbe": {
+        "n": 718,
+        "mean": 34.43454038997214,
+        "p95": 43,
+        "max": 107,
+        ">100": 2
+      },
+      "probeMs": {
+        "n": 718,
+        "mean": 2.5793871866295266,
+        "p95": 5,
+        "max": 17,
+        ">100": 0
+      }
+    }
+  }
+}
