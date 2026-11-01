@@ -1,3 +1,14 @@
+## 2026-11-02 — v0.33.17-locmem 部署：换地图/楼层首房"整间已探索"修复
+
+- 做了什么：用户报告"进入新地图/新楼层后到达的第一个房间整间显示为已探索（记忆区暗度）"，截图处于`马哈顿废墟 - 5`。自`build/fx-fast-20261102/src`派生`build/landmem-fix-20261102/src`：跨房间记忆`roomMem`与视距`rangeMem`改按**Location对象弱键**（`Dictionary(true)`），不再按`loc.id`；恢复成功时每会话记一行`roommem restore loc=… explored=…`。存根SWC路线编译47,862B、SHA `35243D0F…97489D29`，备份`before-locmem-20261102-013447`（旧47,801B `F3223BF1…43799A`）后部署至release，config未改。
+- 关键决定/发现：①根因=房间身份用错键——`loc.id`只是Land内坐标（`Land.as:945-957`，跨Land重名；同Land内prob房还共用`loc0_0`），且所有Location恒48×25（`Location.as:265-266`），模组`mem.length==n`尺寸校验永远通过；Land重建（读档/出口箱`gotoNextLevel`设`crea`/世界地图非base图）后，新到达房（random_mane入口固定(0,4)，`GameData.as:367`）命中旧同id记录即恢复旧`explored[]`。②游戏内读档走`World.loadGame`（`World.as:969-1055`）从不置`allStat<1`，原`resetOff`清空路径不覆盖——对象键方案天然覆盖。③对象键对齐原版语义：`Tile.visi`随Location实例存活，缓存Land复用（脚本`gotoland`不建crea）时保留、Land重建时清零。④先做的"Land对象变化即清空"方案被否决：脚本回缓存Land时原版保留记忆，清空会比原版更黑。
+- 验证：mxmlc退出0；官方ModLoader隔离副本（app id `pfe-rv-locmem-smoke-0001`）`init ok v0.33.17-locmem`、设置注册、tick 1/181/…/901，requested==ok；部署后release SHA与候选一致。**未做**真机自然换层复现对照（需专用驱动强制`gotoNextLevel`），性能未计时（仅每房间一次对象键替换，无逐帧新增）。
+- 遗留/下一步：用户重启后换一层核对——新楼层首房应只显示视野内区域，`RVision.log`出现`roommem restore`说明同Land重进恢复仍正常。若仍复现，下一步建专用驱动强制`gotoNextLevel`做A/B。报告[2026-11-02-land-memory.md](../knowledge/experiments/2026-11-02-land-memory.md)，回执[deployment-v03317-20261102.md](deployment-v03317-20261102.md)。
+
+## 2026-11-02 — RV本体无损普查接续（76轮，独立候选，不合并部署）
+
+用户选择各自测试，本任务不发送协调、不合并或部署，正式文件F3223BF1/config13F5AB06未改。准确544B8062无损候选及既有收益保留；补64–76证据：贴图/固定字段性能不稳；70/71空罩和矩阵各720帧严格全等，73/75正反序24窗4296间隔仍无稳定整帧收益；69合罩与74/76直接位图均有ARGB反例。65内存/IO计数及72自有线程WCT只缩小归因范围，WCT查询最高313ms、单次两线程采样540ms，不常驻、不排名，长帧未全部解决。全部本轮AIR结束，使用共享登记顺序等待CS，没有中断其他会话。新增工具/精确源/字节与证据按index-76归档并核验，无游戏素材或fx-fast别会话结果。MEMORY只改自己的块，外部authority/架构和部署记录保留；目标继续，见2026-11-01-fire-exhaustive.md。
+
 ## 2026-11-02 — v0.33.16-fx-fast 部署：瞬态特效中心点视野快速路径（开火卡顿）
 
 - 做了什么：用户批准"整理优化方案并实施"后，自production-combo-v4冻结派生`build/fx-fast-20261102/src`：瞬态特效（Part/Bullet/PhisBullet/SmartBullet）由逐对象Shape遮罩+cacheAsBitmap改为中心点视野查表二值处理（亮区摘遮罩原生直绘/暗区常驻空Shape遮罩），`fx_vision_quality`配置0快速默认、1回退v0.33.15原画质。存根SWC路线编译47,801B（F3223BF1…99A）部署至release，config模板字节级追加fx_vision_quality=0，备份before-fx-fast-20261102-002600。

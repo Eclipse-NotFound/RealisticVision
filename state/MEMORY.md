@@ -1,8 +1,10 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-02 **v0.33.17-locmem 已部署（换地图/楼层首房"整间已探索"修复）**：47,862B，SHA256 `35243D0F…97489D29`；回退备份`build/backups/before-locmem-20261102-013447`（旧v0.33.16 47,801B `F3223BF1…43799A` + config）。用户报告：进入新地图/新楼层后到达的第一个房间整间按记忆暗度显示。根因：跨房间记忆`roomMem`按`loc.id`存，而`loc.id`只是Land内坐标（`Land.as:945-957`，跨Land重名），且所有房间恒48×25（`Location.as:265-266`，尺寸校验永远通过）；Land一重建（读档/出口箱下一层/世界地图非base图），新到达房就命中旧同 id 记录恢复`explored[]`。修复：`roomMem`/`rangeMem`改 **Location对象弱键**（`Dictionary(true)`），对齐原版"记忆随Location/Tile实例存活"——重建后自然不命中、缓存Land复用仍保留，并顺带修掉同Land内prob房共用`loc0_0`的撞名。每会话恢复时记一行`roommem restore loc=… explored=…`。验证：候选构建退出0；官方ModLoader隔离副本冒烟 init ok v0.33.17-locmem/设置注册/tick 1–901、requested==ok；部署后回读SHA一致。**未做**真机自然换层复现对照（需专用驱动强制gotoNextLevel）——用户重启后换层核对即可：`RVision.log`出现`roommem restore`说明恢复路径正常、新楼层首房不再整间发暗。注意：与并行普查会话的未部署候选`v0.33.17-exact-render`(47,740B)是不同产物，正式安装只认`v0.33.17-locmem`。[报告](../knowledge/experiments/2026-11-02-land-memory.md)，[回执](deployment-v03317-20261102.md)，源build/landmem-fix-20261102/src。
+
 > 2026-11-02 **v0.33.16-fx-fast 已部署（开火卡顿·瞬态特效快速路径）**：47,801B，SHA256 `F3223BF193D60922E31EF88FB2674B9D945A7C21C35A3F0F3E8B21098A43799A`；备份`build/backups/before-fx-fast-20261102-002600`（旧combo-v4 SWF+旧config），config模板字节级追加`fx_vision_quality=0`（新SHA 13F5AB06…34F609）。瞬态特效（Part/子弹/弹壳/火花）改中心点视野查表二值处理：亮区摘遮罩原生直绘、暗区挂常驻空Shape遮罩（无栅格/cacheAsBitmap）；**不碰visible/alpha**——原生`Part.step`的otklad机制会把visible=false的粒子每帧设回true，visible开关与监听顺序不可靠，mask是常驻属性顺序无关。`fx_vision_quality`=0快速(默认)/1=v0.33.15逐特效遮罩原画质。四轮原生A/B（fire-exhaustive链33-36：固定/移动正反序+截图，238间隔/版本，基准=combo-v4冻结源重编译）：整帧均值-3.2%~-9.3%、RV调用-34%~-64%、固定108ms尖峰清除（34正序128ms单帧未在反序复现=噪声）；截图校验暗区泄漏0.07-0.09%（边界中心亮子弹尾迹预期）、亮区96%重合。官方ModLoader冒烟init/设置注册/tick通过。仅测current；classic走同分支未整窗计时；与并行普查会话共享登记无冲突（其50轮条目见下）。重启生效。[报告](../knowledge/experiments/2026-11-02-fx-fast.md)，证据fire-exhaustive-output/33-36，实验build/fx-fast-20261102。
 
-> 2026-11-01 **本体开火全面普查进行中（未部署，50轮后）**：准确combo-v4 AEA30314/冻结9D8662，全部本轮原生测试关闭LAD。两项无损组合（覆盖分类早退+classic省重画）通过39/40严格图像及47原生5945分类/36重画对照。44移动整帧current51.48→49.10ms、classic48.83→45.13；48固定classic42.03→38.42、RV6.79→4.49，current35.89→37.24不利结果保留，单人待验。41最大化暂停、42存档计数清零均为夹具问题，44按冻结原生契约修正并保留自动存档长帧。画面外省算旧f423系夹具漏末尾清理，补真实顺序后49全等；50共享模糊720帧全等，51原生局部视角性能进行中。未部署/未穷尽，正确性首次渐入变更仍独立。工具build/fire-exhaustive，[持续报告](../knowledge/experiments/2026-11-01-fire-exhaustive.md)。保护外部WIP，不编HEAD生产。
+> 2026-11-02 **本体开火全面普查继续（76轮，独立候选，暂不合并部署）**：遵守用户“各自测试”：不发跨会话消息、不写release/config。基线combo-v4 AEA30314/9D8662、关闭LAD。无损coverage+classic省重画独立包v0.33.17-exact-render（47740B/544B8062…72117）通过39/40/47严格图像、36设置及61当前loader原生射击；44/52/54有收益，48固定current不利结果保留，密集交战仍远慢于off。新增贴图上传/固定字段/空罩挂载/延迟矩阵均画面通过但配对性能不稳定，未加入。69重叠合罩1600像素反例；74/76直接Bitmap在真实阴影算法仍36/96组不同。65慢帧桶无明显IO/换页增长；72自有线程WCT仅单节点且观察开销高，未定位等待源，不作收益排名。70–76自有游戏及登记全部结束。报告knowledge/experiments/2026-11-01-fire-exhaustive.md；证据fire-exhaustive-20261101/index-76.json按哈希与压缩回读核对，排除其它会话fx-fast和游戏素材。正确性外框/alpha修复仍独立，不编HEAD生产；正式F3223BF1是其它会话视觉取舍包。本任务目标ACTIVE，剩余非重叠分组/类别与大图原生覆盖、引擎等待，未声称无损空间穷尽。
 
 
 > 2026-11-01 **用户最新测试范围**：后续RealisticVision性能评估关闭光与暗，只评估RV本体；光与暗算法可以作为独立方向研究，结果分开记录。本轮仅调整测试入口与记录，未启动游戏或更改正式安装。
@@ -157,7 +159,9 @@
 
 ## 3. 当前状态
 
-- 当前安装 **v0.33.16-fx-fast**，47,801B，SHA256 `F3223BF1…43799A`；准确生产源 `build/fx-fast-20261102/src`（自production-combo-v4冻结派生）。新增：瞬态特效中心点视野快速路径，`fx_vision_quality=0`默认（1=v0.33.15逐特效遮罩原画质）。四轮A/B整帧-3.2%~-9.3%、RV-34%~-64%、固定108ms尖峰清除；跨边界特效失去羽化渐变（配置可回退）。回退备份`build/backups/before-fx-fast-20261102-002600`。重启生效。
+- 当前安装 **v0.33.17-locmem**，47,862B，SHA256 `35243D0F…97489D29`；准确生产源 `build/landmem-fix-20261102/src`（自fx-fast冻结派生）。修跨地图/楼层首房"整间已探索"：房间记忆改按Location对象弱键。冒烟 init/设置注册/tick1–901 通过；真机换层核对待用户重启后确认。回退备份`build/backups/before-locmem-20261102-013447`。重启生效。
+
+- 前一安装 **v0.33.16-fx-fast**，47,801B，SHA256 `F3223BF1…43799A`；准确生产源 `build/fx-fast-20261102/src`（自production-combo-v4冻结派生）。新增：瞬态特效中心点视野快速路径，`fx_vision_quality=0`默认（1=v0.33.15逐特效遮罩原画质）。四轮A/B整帧-3.2%~-9.3%、RV-34%~-64%、固定108ms尖峰清除；跨边界特效失去羽化渐变（配置可回退）。回退备份`build/backups/before-fx-fast-20261102-002600`。
 
 - 前一安装 **v0.33.15-combo-v4**，47,534B，SHA256 `AEA30314…9AA557`；准确生产源 `build/mask-budget-output/production-combo-v4/src`。新增：单位渐入修复+FOV兜底90帧。移动-4.1%/RV-23%；固定RV-40%（vs v0.33.14）。累计D56→v0.33.15：移动约-20%/固定约-15%。motionstep=4.0。后续测试默认关闭LightAndDarknessMod。
 
