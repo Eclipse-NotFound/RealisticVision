@@ -1,0 +1,447 @@
+{
+  "scene": {
+    "fps": 30,
+    "roomBlack": true,
+    "screen": [
+      1280,
+      729
+    ],
+    "zoom": 0.6666666666666666,
+    "black": true,
+    "platform": [
+      920,
+      1500,
+      959
+    ],
+    "base": false,
+    "land": "random_mane",
+    "loc": "loc1_3",
+    "size": [
+      48,
+      25
+    ],
+    "nativeUnits": 1
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "rows": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "normal-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 191,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 81.89944134078212,
+        "p95": 136,
+        "max": 291,
+        ">100": 30
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.564245810055866,
+        "p95": 4,
+        "max": 16,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.8547486033519553,
+        "p95": 11,
+        "max": 18,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 288,
+        "late": 57
+      },
+      "ladEnd": {
+        "renders": 642,
+        "late": 232
+      }
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "fast-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 88,
+      "nativeEnemyShots": 195,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 111.98324022346368,
+        "p95": 208,
+        "max": 553,
+        ">100": 82
+      },
+      "rv": {
+        "n": 179,
+        "mean": 3.122905027932961,
+        "p95": 6,
+        "max": 31,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 4.776536312849162,
+        "p95": 13,
+        "max": 22,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 763,
+        "late": 292
+      },
+      "ladEnd": {
+        "renders": 1121,
+        "late": 471
+      }
+    },
+    {
+      "index": 2,
+      "mode": "current",
+      "variant": "fast-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 89,
+      "nativeEnemyShots": 200,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 84.83240223463687,
+        "p95": 129,
+        "max": 378,
+        ">100": 37
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.6983240223463687,
+        "p95": 4,
+        "max": 19,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.804469273743017,
+        "p95": 11,
+        "max": 17,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 1242,
+        "late": 531
+      },
+      "ladEnd": {
+        "renders": 1599,
+        "late": 709
+      }
+    },
+    {
+      "index": 3,
+      "mode": "current",
+      "variant": "normal-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 197,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 76.27374301675978,
+        "p95": 112,
+        "max": 168,
+        ">100": 22
+      },
+      "rv": {
+        "n": 179,
+        "mean": 2.9720670391061454,
+        "p95": 5,
+        "max": 31,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.9273743016759775,
+        "p95": 10,
+        "max": 27,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 1720,
+        "late": 769
+      },
+      "ladEnd": {
+        "renders": 2077,
+        "late": 947
+      }
+    },
+    {
+      "index": 4,
+      "mode": "current",
+      "variant": "normal-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 189,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 86.52513966480447,
+        "p95": 121,
+        "max": 343,
+        ">100": 34
+      },
+      "rv": {
+        "n": 179,
+        "mean": 12.35195530726257,
+        "p95": 21,
+        "max": 37,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.022346368715084,
+        "p95": 6,
+        "max": 19,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 2197,
+        "late": 1006
+      },
+      "ladEnd": {
+        "renders": 2541,
+        "late": 1171
+      }
+    },
+    {
+      "index": 5,
+      "mode": "current",
+      "variant": "fast-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 90,
+      "nativeEnemyShots": 195,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 87.5195530726257,
+        "p95": 123,
+        "max": 304,
+        ">100": 38
+      },
+      "rv": {
+        "n": 179,
+        "mean": 13.64245810055866,
+        "p95": 22,
+        "max": 227,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.0614525139664805,
+        "p95": 8,
+        "max": 23,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 2656,
+        "late": 1225
+      },
+      "ladEnd": {
+        "renders": 3012,
+        "late": 1402
+      }
+    },
+    {
+      "index": 6,
+      "mode": "current",
+      "variant": "fast-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 90,
+      "nativeEnemyShots": 195,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 80.72067039106145,
+        "p95": 111,
+        "max": 266,
+        ">100": 22
+      },
+      "rv": {
+        "n": 179,
+        "mean": 13.206703910614525,
+        "p95": 22,
+        "max": 195,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 2.793296089385475,
+        "p95": 5,
+        "max": 20,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 3130,
+        "late": 1459
+      },
+      "ladEnd": {
+        "renders": 3487,
+        "late": 1637
+      }
+    },
+    {
+      "index": 7,
+      "mode": "current",
+      "variant": "normal-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 193,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 90.89944134078212,
+        "p95": 138,
+        "max": 308,
+        ">100": 42
+      },
+      "rv": {
+        "n": 179,
+        "mean": 12.083798882681565,
+        "p95": 19,
+        "max": 23,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 3.7709497206703912,
+        "p95": 11,
+        "max": 92,
+        ">100": 0
+      },
+      "rasterChecks": 0,
+      "ladStart": {
+        "renders": 3605,
+        "late": 1694
+      },
+      "ladEnd": {
+        "renders": 3956,
+        "late": 1866
+      }
+    }
+  ],
+  "groups": {
+    "current/normal-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 79.08659217877096,
+        "p95": 125,
+        "max": 291,
+        ">100": 52
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.7681564245810057,
+        "p95": 4,
+        "max": 31,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 358,
+        "mean": 3.8910614525139664,
+        "p95": 11,
+        "max": 27,
+        ">100": 0
+      }
+    },
+    "current/fast-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 98.40782122905028,
+        "p95": 191,
+        "max": 553,
+        ">100": 119
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.910614525139665,
+        "p95": 4,
+        "max": 31,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 358,
+        "mean": 4.290502793296089,
+        "p95": 12,
+        "max": 22,
+        ">100": 0
+      }
+    },
+    "current/normal-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 88.7122905027933,
+        "p95": 132,
+        "max": 343,
+        ">100": 76
+      },
+      "rv": {
+        "n": 358,
+        "mean": 12.217877094972067,
+        "p95": 20,
+        "max": 37,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 358,
+        "mean": 3.3966480446927374,
+        "p95": 8,
+        "max": 92,
+        ">100": 0
+      }
+    },
+    "current/fast-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 84.12011173184358,
+        "p95": 121,
+        "max": 304,
+        ">100": 60
+      },
+      "rv": {
+        "n": 358,
+        "mean": 13.424581005586592,
+        "p95": 22,
+        "max": 227,
+        ">100": 2
+      },
+      "lightingMs": {
+        "n": 358,
+        "mean": 2.9273743016759775,
+        "p95": 6,
+        "max": 23,
+        ">100": 0
+      }
+    }
+  }
+}

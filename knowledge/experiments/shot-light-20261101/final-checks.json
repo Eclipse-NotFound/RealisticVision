@@ -1,0 +1,199 @@
+{
+  "deployed": false,
+  "installedUnchanged": {
+    "mods/RealisticVision/release/RealisticVisionMod.swf": "aea303149b0a5d5a3072c610b3e95f4ad78963ea22ce123c6a3414e73b9aa557",
+    "mods/RealisticVision/release/config.txt": "0f27e923eb3af5cc99f45064fd3ea93df8afe4107cdbc58b305a915f425bf47e",
+    "mods/LightAndDarkness/release/LightAndDarknessMod.swf": "8adba6914df5aada4df12a646b6c22df4b95b9630a55dd05ca7f713621c7e3ef"
+  },
+  "currentHost": "9d8662f6cf80e0ad20741ec2a4e7bead68446269ebb0adb641c876db68698b1d",
+  "frozenInputsVerified": 69,
+  "candidateSourcesVerified": [
+    "candidate",
+    "raster-candidate",
+    "geometry-candidate",
+    "direct-candidate",
+    "direct-full-candidate",
+    "direct-circle-candidate"
+  ],
+  "windows": 36,
+  "sampleFrames": 6000,
+  "completeIntervals": 5964,
+  "registrations": [
+    {
+      "id": "5f40b9be145b4e3cbc7f9c040520f551",
+      "purpose": "01-lighting-profile",
+      "state": "failed",
+      "ended": "2026-11-01T19:58:44+08:00",
+      "children": []
+    },
+    {
+      "id": "94f5f1e94a1142e28803e1f5da372fef",
+      "purpose": "02-lighting-profile",
+      "state": "passed",
+      "ended": "2026-11-01T20:10:49+08:00",
+      "children": [
+        {
+          "pid": 109132,
+          "token": "134380085300629846",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "25d479d5ebfe4471879c9dbd3911618e",
+      "purpose": "03-trail-checks",
+      "state": "passed",
+      "ended": "2026-11-01T20:11:04+08:00",
+      "children": [
+        {
+          "pid": 99248,
+          "token": "134380086514873978",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "d3a7cadc27b74ef2b489620270d05cef",
+      "purpose": "04-light-sources",
+      "state": "passed",
+      "ended": "2026-11-01T20:17:50+08:00",
+      "children": [
+        {
+          "pid": 19336,
+          "token": "134380090051026739",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "801c8d168a9c433492529d260797d3ef",
+      "purpose": "05-raster-verify",
+      "state": "passed",
+      "ended": "2026-11-01T20:20:46+08:00",
+      "children": [
+        {
+          "pid": 17660,
+          "token": "134380091832449999",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "9dd0b96dcb2b46e497b5c3e4581b4459",
+      "purpose": "06-raster-timing",
+      "state": "passed",
+      "ended": "2026-11-01T20:25:11+08:00",
+      "children": [
+        {
+          "pid": 48332,
+          "token": "134380092894525970",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "84a908b62b0b4452a27a02e46ce9c30c",
+      "purpose": "07-geometry-verify",
+      "state": "passed",
+      "ended": "2026-11-01T20:26:40+08:00",
+      "children": [
+        {
+          "pid": 6684,
+          "token": "134380095212463646",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "3f0a34d3a743465e9018637faf530cd9",
+      "purpose": "08-geometry-checks",
+      "state": "passed",
+      "ended": "2026-11-01T20:26:46+08:00",
+      "children": [
+        {
+          "pid": 85828,
+          "token": "134380096031554451",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "4bd5b66fa52541b8989a0508b693c10b",
+      "purpose": "09-geometry-timing",
+      "state": "passed",
+      "ended": "2026-11-01T20:32:55+08:00",
+      "children": [
+        {
+          "pid": 105652,
+          "token": "134380096552961896",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "4d3169b26813461492c83cd6d59eaea6",
+      "purpose": "10-direct-checks",
+      "state": "failed",
+      "ended": "2026-11-01T20:33:01+08:00",
+      "children": [
+        {
+          "pid": 87344,
+          "token": "134380099777127972",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "7a8241e90e564be38e040bd033046605",
+      "purpose": "11-direct-full-checks",
+      "state": "failed",
+      "ended": "2026-11-01T20:35:06+08:00",
+      "children": [
+        {
+          "pid": 109208,
+          "token": "134380101024415770",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "b4e6668bea48470f8902831eeec917ce",
+      "purpose": "12-direct-circle-checks",
+      "state": "passed",
+      "ended": "2026-11-01T20:36:06+08:00",
+      "children": [
+        {
+          "pid": 73700,
+          "token": "134380101631083503",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "e640542193ab4b0184e95e6b625e94ec",
+      "purpose": "13-circle-stress",
+      "state": "failed",
+      "ended": "2026-11-01T20:37:24+08:00",
+      "children": [
+        {
+          "pid": 49148,
+          "token": "134380102406991524",
+          "gone": true
+        }
+      ]
+    },
+    {
+      "id": "b258b63f019d465ba07ff3488e9308a1",
+      "purpose": "14-projectile-circle-stress",
+      "state": "failed",
+      "ended": "2026-11-01T20:41:31+08:00",
+      "children": [
+        {
+          "pid": 101772,
+          "token": "134380104880362259",
+          "gone": true
+        }
+      ]
+    }
+  ]
+}

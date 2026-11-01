@@ -1,0 +1,291 @@
+{
+  "scene": {
+    "fps": 30,
+    "screen": [
+      1280,
+      729
+    ],
+    "size": [
+      48,
+      25
+    ],
+    "zoom": 0.6666666666666666,
+    "black": true,
+    "platform": [
+      920,
+      1500,
+      959
+    ],
+    "base": false,
+    "land": "random_mane",
+    "loc": "loc1_3",
+    "roomBlack": true,
+    "nativeUnits": 1
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "rows": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "fast-fixed",
+      "frames": 120,
+      "intervals": 119,
+      "playerShots": 60,
+      "nativeEnemyShots": 132,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 119,
+        "mean": 58.15126050420168,
+        "p95": 80,
+        "max": 142,
+        ">100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.235294117647059,
+        "p95": 3,
+        "max": 13,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.680672268907563,
+        "p95": 9,
+        "max": 19,
+        ">100": 0
+      },
+      "rasterChecks": 495,
+      "geometryReuses": 2,
+      "ladStart": {
+        "late": 60,
+        "renders": 293
+      },
+      "ladEnd": {
+        "late": 179,
+        "renders": 531
+      }
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "fast-moving",
+      "frames": 120,
+      "intervals": 119,
+      "playerShots": 58,
+      "nativeEnemyShots": 132,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 119,
+        "mean": 76.66386554621849,
+        "p95": 109,
+        "max": 166,
+        ">100": 10
+      },
+      "rv": {
+        "n": 119,
+        "mean": 11.621848739495798,
+        "p95": 16,
+        "max": 92,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.9327731092436973,
+        "p95": 9,
+        "max": 24,
+        ">100": 0
+      },
+      "rasterChecks": 1258,
+      "geometryReuses": 138,
+      "ladStart": {
+        "late": 239,
+        "renders": 652
+      },
+      "ladEnd": {
+        "late": 358,
+        "renders": 890
+      }
+    },
+    {
+      "index": 2,
+      "mode": "classic",
+      "variant": "fast-fixed",
+      "frames": 120,
+      "intervals": 119,
+      "playerShots": 59,
+      "nativeEnemyShots": 123,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 119,
+        "mean": 65.22689075630252,
+        "p95": 88,
+        "max": 128,
+        ">100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 7.218487394957983,
+        "p95": 12,
+        "max": 17,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.3361344537815127,
+        "p95": 6,
+        "max": 15,
+        ">100": 0
+      },
+      "rasterChecks": 1689,
+      "geometryReuses": 139,
+      "ladStart": {
+        "late": 418,
+        "renders": 1011
+      },
+      "ladEnd": {
+        "late": 537,
+        "renders": 1249
+      }
+    },
+    {
+      "index": 3,
+      "mode": "classic",
+      "variant": "fast-moving",
+      "frames": 120,
+      "intervals": 119,
+      "playerShots": 56,
+      "nativeEnemyShots": 124,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 119,
+        "mean": 69.99159663865547,
+        "p95": 99,
+        "max": 148,
+        ">100": 5
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.159663865546218,
+        "p95": 22,
+        "max": 87,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.2941176470588234,
+        "p95": 7,
+        "max": 18,
+        ">100": 0
+      },
+      "rasterChecks": 2394,
+      "geometryReuses": 275,
+      "ladStart": {
+        "late": 597,
+        "renders": 1370
+      },
+      "ladEnd": {
+        "late": 716,
+        "renders": 1608
+      }
+    }
+  ],
+  "groups": {
+    "current/fast-fixed": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 58.15126050420168,
+        "p95": 80,
+        "max": 142,
+        ">100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 2.235294117647059,
+        "p95": 3,
+        "max": 13,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.680672268907563,
+        "p95": 9,
+        "max": 19,
+        ">100": 0
+      }
+    },
+    "current/fast-moving": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 76.66386554621849,
+        "p95": 109,
+        "max": 166,
+        ">100": 10
+      },
+      "rv": {
+        "n": 119,
+        "mean": 11.621848739495798,
+        "p95": 16,
+        "max": 92,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.9327731092436973,
+        "p95": 9,
+        "max": 24,
+        ">100": 0
+      }
+    },
+    "classic/fast-fixed": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 65.22689075630252,
+        "p95": 88,
+        "max": 128,
+        ">100": 1
+      },
+      "rv": {
+        "n": 119,
+        "mean": 7.218487394957983,
+        "p95": 12,
+        "max": 17,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.3361344537815127,
+        "p95": 6,
+        "max": 15,
+        ">100": 0
+      }
+    },
+    "classic/fast-moving": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 69.99159663865547,
+        "p95": 99,
+        "max": 148,
+        ">100": 5
+      },
+      "rv": {
+        "n": 119,
+        "mean": 15.159663865546218,
+        "p95": 22,
+        "max": 87,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 119,
+        "mean": 3.2941176470588234,
+        "p95": 7,
+        "max": 18,
+        ">100": 0
+      }
+    }
+  }
+}

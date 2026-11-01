@@ -1,0 +1,359 @@
+{
+  "scene": {
+    "land": "random_mane",
+    "fps": 30,
+    "loc": "loc1_3",
+    "screen": [
+      1280,
+      729
+    ],
+    "zoom": 0.6666666666666666,
+    "roomBlack": true,
+    "platform": [
+      920,
+      1500,
+      959
+    ],
+    "base": false,
+    "nativeUnits": 1,
+    "size": [
+      48,
+      25
+    ],
+    "black": true
+  },
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "rows": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "normal-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 183,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 82.27932960893855,
+        "p95": 123,
+        "max": 274,
+        ">100": 29
+      },
+      "rv": {
+        "n": 179,
+        "mean": 5.631284916201118,
+        "p95": 14,
+        "max": 29,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 5.5307262569832405,
+        "p95": 20,
+        "max": 56,
+        ">100": 0
+      },
+      "lightingPhases": {
+        "setup": 0.0111731843575419,
+        "terrain": 0.18435754189944134,
+        "ambient": 1.005586592178771,
+        "stable": 0,
+        "ordinary": 5.620111731843576,
+        "cleanup": 0.00558659217877095,
+        "trail": 0.45251396648044695,
+        "total": 7.279329608938547,
+        "renders": 1.994413407821229,
+        "visits": 1169.3743016759777,
+        "rays": 519.6312849162011,
+        "shadow": 2.9553072625698324,
+        "invalid": 0,
+        "same": 343.7877094972067,
+        "adjacent": 157.45810055865923,
+        "other": 18.385474860335197,
+        "painted": 393.23463687150837
+      },
+      "ladStart": {
+        "late": 54,
+        "renders": 288
+      },
+      "ladEnd": {
+        "late": 231,
+        "renders": 644
+      }
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "normal-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 88,
+      "nativeEnemyShots": 194,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 104.50279329608938,
+        "p95": 188,
+        "max": 260,
+        ">100": 75
+      },
+      "rv": {
+        "n": 179,
+        "mean": 11.245810055865922,
+        "p95": 18,
+        "max": 166,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 5.256983240223463,
+        "p95": 15,
+        "max": 69,
+        ">100": 0
+      },
+      "lightingPhases": {
+        "setup": 0.00558659217877095,
+        "terrain": 0.2011173184357542,
+        "ambient": 0.4245810055865922,
+        "stable": 0.01675977653631285,
+        "ordinary": 8.754189944134078,
+        "cleanup": 0.00558659217877095,
+        "trail": 0.39664804469273746,
+        "total": 9.804469273743017,
+        "renders": 1.988826815642458,
+        "visits": 1329.2849162011173,
+        "rays": 596.731843575419,
+        "shadow": 4.407821229050279,
+        "invalid": 0,
+        "same": 399.2849162011173,
+        "adjacent": 177.3631284916201,
+        "other": 20.083798882681563,
+        "painted": 462.64245810055866
+      },
+      "ladStart": {
+        "late": 291,
+        "renders": 765
+      },
+      "ladEnd": {
+        "late": 468,
+        "renders": 1121
+      }
+    },
+    {
+      "index": 2,
+      "mode": "classic",
+      "variant": "normal-fixed",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 87,
+      "nativeEnemyShots": 189,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 78.39106145251397,
+        "p95": 113,
+        "max": 299,
+        ">100": 22
+      },
+      "rv": {
+        "n": 179,
+        "mean": 10.324022346368714,
+        "p95": 21,
+        "max": 202,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 4.4636871508379885,
+        "p95": 13,
+        "max": 53,
+        ">100": 0
+      },
+      "lightingPhases": {
+        "setup": 0.00558659217877095,
+        "terrain": 0.16759776536312848,
+        "ambient": 0.40782122905027934,
+        "stable": 0,
+        "ordinary": 5.17877094972067,
+        "cleanup": 0.00558659217877095,
+        "trail": 0.5307262569832403,
+        "total": 6.301675977653631,
+        "renders": 2,
+        "visits": 1310.4525139664804,
+        "rays": 593.0670391061452,
+        "shadow": 2.5027932960893855,
+        "invalid": 0.1005586592178771,
+        "same": 390.52513966480444,
+        "adjacent": 181.56983240223462,
+        "other": 20.87150837988827,
+        "painted": 456.00558659217876
+      },
+      "ladStart": {
+        "late": 527,
+        "renders": 1241
+      },
+      "ladEnd": {
+        "late": 706,
+        "renders": 1599
+      }
+    },
+    {
+      "index": 3,
+      "mode": "classic",
+      "variant": "normal-moving",
+      "frames": 180,
+      "intervals": 179,
+      "playerShots": 88,
+      "nativeEnemyShots": 190,
+      "forcedEnemyShots": 0,
+      "nextInterval": {
+        "n": 179,
+        "mean": 72.39106145251397,
+        "p95": 94,
+        "max": 267,
+        ">100": 6
+      },
+      "rv": {
+        "n": 179,
+        "mean": 13.77094972067039,
+        "p95": 22,
+        "max": 27,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 2.9329608938547485,
+        "p95": 5,
+        "max": 22,
+        ">100": 0
+      },
+      "lightingPhases": {
+        "setup": 0.00558659217877095,
+        "terrain": 0.17318435754189945,
+        "ambient": 0.2905027932960894,
+        "stable": 0,
+        "ordinary": 5.324022346368715,
+        "cleanup": 0.0223463687150838,
+        "trail": 0.4581005586592179,
+        "total": 6.273743016759776,
+        "renders": 2,
+        "visits": 1389.5921787709497,
+        "rays": 639.3743016759777,
+        "shadow": 4.217877094972067,
+        "invalid": 0.8100558659217877,
+        "same": 434.5586592178771,
+        "adjacent": 184.10055865921788,
+        "other": 19.905027932960895,
+        "painted": 505.3966480446927
+      },
+      "ladStart": {
+        "late": 766,
+        "renders": 1720
+      },
+      "ladEnd": {
+        "late": 945,
+        "renders": 2078
+      }
+    }
+  ],
+  "groups": {
+    "current/normal-fixed": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 82.27932960893855,
+        "p95": 123,
+        "max": 274,
+        ">100": 29
+      },
+      "rv": {
+        "n": 179,
+        "mean": 5.631284916201118,
+        "p95": 14,
+        "max": 29,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 5.5307262569832405,
+        "p95": 20,
+        "max": 56,
+        ">100": 0
+      }
+    },
+    "current/normal-moving": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 104.50279329608938,
+        "p95": 188,
+        "max": 260,
+        ">100": 75
+      },
+      "rv": {
+        "n": 179,
+        "mean": 11.245810055865922,
+        "p95": 18,
+        "max": 166,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 5.256983240223463,
+        "p95": 15,
+        "max": 69,
+        ">100": 0
+      }
+    },
+    "classic/normal-fixed": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 78.39106145251397,
+        "p95": 113,
+        "max": 299,
+        ">100": 22
+      },
+      "rv": {
+        "n": 179,
+        "mean": 10.324022346368714,
+        "p95": 21,
+        "max": 202,
+        ">100": 1
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 4.4636871508379885,
+        "p95": 13,
+        "max": 53,
+        ">100": 0
+      }
+    },
+    "classic/normal-moving": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 72.39106145251397,
+        "p95": 94,
+        "max": 267,
+        ">100": 6
+      },
+      "rv": {
+        "n": 179,
+        "mean": 13.77094972067039,
+        "p95": 22,
+        "max": 27,
+        ">100": 0
+      },
+      "lightingMs": {
+        "n": 179,
+        "mean": 2.9329608938547485,
+        "p95": 5,
+        "max": 22,
+        ">100": 0
+      }
+    }
+  }
+}

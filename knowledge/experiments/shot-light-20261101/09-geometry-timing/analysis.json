@@ -1,0 +1,138 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/normal-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 58.1927374301676,
+        "p95": 80,
+        "max": 365,
+        ">100": 6
+      },
+      "rv": {
+        "n": 358,
+        "mean": 2.35195530726257,
+        "p95": 7,
+        "max": 19,
+        ">100": 0
+      }
+    },
+    "current/fast-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 56.4804469273743,
+        "p95": 78,
+        "max": 359,
+        ">100": 2
+      },
+      "rv": {
+        "n": 358,
+        "mean": 1.888268156424581,
+        "p95": 3,
+        "max": 16,
+        ">100": 0
+      }
+    },
+    "current/normal-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 68.59217877094972,
+        "p95": 95,
+        "max": 374,
+        ">100": 13
+      },
+      "rv": {
+        "n": 358,
+        "mean": 8.170391061452515,
+        "p95": 12,
+        "max": 291,
+        ">100": 1
+      }
+    },
+    "current/fast-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 68.75698324022346,
+        "p95": 99,
+        "max": 400,
+        ">100": 15
+      },
+      "rv": {
+        "n": 358,
+        "mean": 7.466480446927374,
+        "p95": 12,
+        "max": 109,
+        ">100": 1
+      }
+    },
+    "classic/normal-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 62.01675977653631,
+        "p95": 86,
+        "max": 113,
+        ">100": 5
+      },
+      "rv": {
+        "n": 358,
+        "mean": 6.363128491620111,
+        "p95": 11,
+        "max": 20,
+        ">100": 0
+      }
+    },
+    "classic/fast-fixed": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 61.477653631284916,
+        "p95": 87,
+        "max": 395,
+        ">100": 5
+      },
+      "rv": {
+        "n": 358,
+        "mean": 6.639664804469274,
+        "p95": 11,
+        "max": 83,
+        ">100": 0
+      }
+    },
+    "classic/normal-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 74.65083798882682,
+        "p95": 102,
+        "max": 445,
+        ">100": 21
+      },
+      "rv": {
+        "n": 358,
+        "mean": 12.005586592178771,
+        "p95": 18,
+        "max": 363,
+        ">100": 1
+      }
+    },
+    "classic/fast-moving": {
+      "nextInterval": {
+        "n": 358,
+        "mean": 69.10614525139665,
+        "p95": 96,
+        "max": 402,
+        ">100": 12
+      },
+      "rv": {
+        "n": 358,
+        "mean": 11.533519553072626,
+        "p95": 17,
+        "max": 347,
+        ">100": 1
+      }
+    }
+  }
+}

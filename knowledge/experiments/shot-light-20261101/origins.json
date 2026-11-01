@@ -1,0 +1,3500 @@
+{
+  "inputs.json": {
+    "source": "build/shot-light-output/inputs.json",
+    "sha256": "fd25293d6722e76325ffb660c9aa437990e30b8d698cc47a1fd98181f41e8062",
+    "bytes": 8836,
+    "compressed": false
+  },
+  "stub-inputs.json": {
+    "source": "build/shot-light-output/stub-inputs.json",
+    "sha256": "dd8b0fb2cab57e12629fb7e709a5b86fb2d70f351aa4ace032da7587fb328f61",
+    "bytes": 360,
+    "compressed": false
+  },
+  "generated-runner.py.gz": {
+    "source": "build/shot-light-output/generated-runner.py",
+    "sha256": "06169b4c450d282e04cc07d3c80297216a53dd2559dabfb8ebc0336306012381",
+    "bytes": 28934,
+    "compressed": true
+  },
+  "baseline/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/baseline/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "baseline/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/baseline/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "baseline/src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/baseline/src/RealisticVisionMod.as",
+    "sha256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "bytes": 206660,
+    "compressed": true
+  },
+  "baseline/src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/baseline/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "baseline/src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/baseline/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "baseline/src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/baseline/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadLightField.as",
+    "sha256": "6e9e73b7346dd98b4a8f8dddc4e35f987484d4a94d2ed40e2a7fb7ee0c992430",
+    "bytes": 17955,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "lighting-baseline/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "lighting-baseline/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "lighting-baseline/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/lighting-baseline/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadLightField.as",
+    "sha256": "6e9e73b7346dd98b4a8f8dddc4e35f987484d4a94d2ed40e2a7fb7ee0c992430",
+    "bytes": 17955,
+    "compressed": true
+  },
+  "candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/LadTrailRaster.as",
+    "sha256": "8bbc077f74a8fdf359ffaa414471d275b2ae2685543a8229d731a7f208fa600b",
+    "bytes": 7650,
+    "compressed": true
+  },
+  "candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "candidate/sources.json": {
+    "source": "build/shot-light-output/candidate/sources.json",
+    "sha256": "bb431a8340c371301be6c8d671540b392dbec5810da40f8e63492fb0807b077b",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "raster-candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadLightField.as",
+    "sha256": "837435ca00964ca845f7b99c4b27598afcfbf0e85cc7ea1a9915a6dccf66024e",
+    "bytes": 18385,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "raster-candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "raster-candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "raster-candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/raster-candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "raster-candidate/sources.json": {
+    "source": "build/shot-light-output/raster-candidate/sources.json",
+    "sha256": "809c403ee1a62eb96cf7b20c0a37e9dd837e27318078b6a8a302d8ceadf4bc4e",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "geometry-candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadLightField.as",
+    "sha256": "21193161b4763613bbe7f431a1aeb370c9b1b06e20751b893cf3fc51d013ea7d",
+    "bytes": 18878,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "geometry-candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "geometry-candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "geometry-candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/geometry-candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "geometry-candidate/sources.json": {
+    "source": "build/shot-light-output/geometry-candidate/sources.json",
+    "sha256": "6e821948cbb69c3864c8773bb884dd3aaeb12dbdb931618f850c6c14b146cdb0",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "direct-candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadLightField.as",
+    "sha256": "2d39294753b28acd0b924129d83a869cd45cf250e986a1ffd895bc862db744d6",
+    "bytes": 17499,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "direct-candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "direct-candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "direct-candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/direct-candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "direct-candidate/sources.json": {
+    "source": "build/shot-light-output/direct-candidate/sources.json",
+    "sha256": "9e24db4ac1b6f3892a17de4c97f41191aa41b35ed1147a3d7cf5163ac79bea5e",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "direct-full-candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadLightField.as",
+    "sha256": "f26a18a2fbc4738f854ed555e8060ca47d635ff3bbffc41b4fa462e5bb6158c9",
+    "bytes": 19288,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "direct-full-candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "direct-full-candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "direct-full-candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/direct-full-candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "direct-full-candidate/sources.json": {
+    "source": "build/shot-light-output/direct-full-candidate/sources.json",
+    "sha256": "020fe652219f1172757a9fda0a1d0d2cb2ba9fa93e090be52be08dfda3c6fb34",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "direct-circle-candidate/src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadLightField.as",
+    "sha256": "cc3719510e6c187e462a67b03299675dbc2d004fe2495df9f79fe525b8e828d3",
+    "bytes": 19285,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "direct-circle-candidate/src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/direct-circle-candidate/src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "direct-circle-candidate/sources.json": {
+    "source": "build/shot-light-output/direct-circle-candidate/sources.json",
+    "sha256": "25e385b552fa9e6d15f219ad4a2ad29b17338bcb70b7a6ff67c5055d6a10436c",
+    "bytes": 2169,
+    "compressed": false
+  },
+  "01-lighting-profile/application.xml": {
+    "source": "build/shot-light-output/01-lighting-profile/application.xml",
+    "sha256": "f961cfb4ce12770487c1d1bc6f3c766cd1efce2747f769c165403ae5478dd87d",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "01-lighting-profile/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/CombatRenderProbeMod.as",
+    "sha256": "1ba938ae4cf1a588ccd0767c1c5b6951b00710eba40ff4c068adac6ffc844cf5",
+    "bytes": 24852,
+    "compressed": true
+  },
+  "01-lighting-profile/rv.compile.log.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv.compile.log",
+    "sha256": "5470e4bf0a4e0283b5d508d193e9c85fba664f4a57e0d16bb19805949aa4de4b",
+    "bytes": 596,
+    "compressed": true
+  },
+  "01-lighting-profile/rv.compiler.xml": {
+    "source": "build/shot-light-output/01-lighting-profile/rv.compiler.xml",
+    "sha256": "f6623eccb0c5928dfafbe833fd1842caaed5d61134f0022f6d4be601ac4aff69",
+    "bytes": 815,
+    "compressed": false
+  },
+  "01-lighting-profile/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "01-lighting-profile/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "01-lighting-profile/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "01-lighting-profile/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "01-lighting-profile/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "01-lighting-profile/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadLightField.as",
+    "sha256": "283b7da5fba38e1fa335e3ab5051fb91ecfca67cf9610c809e2fe22965555415",
+    "bytes": 18559,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "852ea82f107dc3bc202d3f8590110d41a18d1c720a1192c4dd28a4194f7a6d57",
+    "bytes": 6876,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "01-lighting-profile/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/01-lighting-profile/lighting-build/compile.log",
+    "sha256": "7c4fa9019875aff57998af11585977d15fead6633d7a8a1d782fb748250cf351",
+    "bytes": 175,
+    "compressed": true
+  },
+  "02-lighting-profile/after.json": {
+    "source": "build/shot-light-output/02-lighting-profile/after.json",
+    "sha256": "5f3cefeb72bc112138cf2561c73a2580c1614cefea67d52412720724ca6ab3f4",
+    "bytes": 842,
+    "compressed": false
+  },
+  "02-lighting-profile/air-output.log.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/air-output.log",
+    "sha256": "9faa82c95b00df319fcc11dfc3a5fc122d91c17a480e67541e8c73a405e4ba91",
+    "bytes": 2668,
+    "compressed": true
+  },
+  "02-lighting-profile/analysis.json": {
+    "source": "build/shot-light-output/02-lighting-profile/analysis.json",
+    "sha256": "2a3f22ec852f9fd4f37f0b0e5acf708d50a487de562a0117bb6a00c808a9f1d8",
+    "bytes": 1565,
+    "compressed": false
+  },
+  "02-lighting-profile/application.xml": {
+    "source": "build/shot-light-output/02-lighting-profile/application.xml",
+    "sha256": "099e49b9472dfa08a056c463e67ddd1469e2a599de392d240c249f82d96bf11f",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "02-lighting-profile/before.json": {
+    "source": "build/shot-light-output/02-lighting-profile/before.json",
+    "sha256": "5ea0847afcc5b9d2a4695916439fce71950e7167a9abab1767a96cdeb6be9c79",
+    "bytes": 842,
+    "compressed": false
+  },
+  "02-lighting-profile/build.json": {
+    "source": "build/shot-light-output/02-lighting-profile/build.json",
+    "sha256": "ed5c9b099f24f48bea09ec1de062508e3b47d000e101e15323a0f1d98ea02e40",
+    "bytes": 13406,
+    "compressed": false
+  },
+  "02-lighting-profile/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/CombatRenderProbeMod.as",
+    "sha256": "1ba938ae4cf1a588ccd0767c1c5b6951b00710eba40ff4c068adac6ffc844cf5",
+    "bytes": 24852,
+    "compressed": true
+  },
+  "02-lighting-profile/detailed-analysis.json": {
+    "source": "build/shot-light-output/02-lighting-profile/detailed-analysis.json",
+    "sha256": "4dfef9470d5d20b26d7afcfb5a4a52c2df6adf1d27b0ae5632a54047aa240919",
+    "bytes": 8131,
+    "compressed": false
+  },
+  "02-lighting-profile/environment.json": {
+    "source": "build/shot-light-output/02-lighting-profile/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "02-lighting-profile/last-run.json": {
+    "source": "build/shot-light-output/02-lighting-profile/last-run.json",
+    "sha256": "a4c0e5d4f97d4371c8f9629561fb419eb6a1f4596f8b3a140ab50d964d155c2a",
+    "bytes": 112,
+    "compressed": false
+  },
+  "02-lighting-profile/lighting-summary.json": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-summary.json",
+    "sha256": "92a240e62ca231216d4638e034b9f94aae0ea3165decd22d89e58b11dd21bd5e",
+    "bytes": 2614,
+    "compressed": false
+  },
+  "02-lighting-profile/resource-policy.json": {
+    "source": "build/shot-light-output/02-lighting-profile/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "02-lighting-profile/running.json": {
+    "source": "build/shot-light-output/02-lighting-profile/running.json",
+    "sha256": "4eef4114153d26a24c62e1e8db1347362a80799c67ad13834769bb0bc596f273",
+    "bytes": 160,
+    "compressed": false
+  },
+  "02-lighting-profile/rv.compile.log.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv.compile.log",
+    "sha256": "4ccc4d2a880c6fc7eba00bda3ec1d5a962151871eac0600c6d2cd91bce0e6736",
+    "bytes": 596,
+    "compressed": true
+  },
+  "02-lighting-profile/rv.compiler.xml": {
+    "source": "build/shot-light-output/02-lighting-profile/rv.compiler.xml",
+    "sha256": "2480a099d871d92dd7b8e96d93819019f3bc3438c907deb0dffcf11c93b6ba30",
+    "bytes": 815,
+    "compressed": false
+  },
+  "02-lighting-profile/selection.json": {
+    "source": "build/shot-light-output/02-lighting-profile/selection.json",
+    "sha256": "82160088096db5391dc1d6928301b554bc80474ac1a460aa6a556e2eecf586d5",
+    "bytes": 4609,
+    "compressed": false
+  },
+  "02-lighting-profile/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "02-lighting-profile/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "02-lighting-profile/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "02-lighting-profile/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "02-lighting-profile/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "02-lighting-profile/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadLightField.as",
+    "sha256": "283b7da5fba38e1fa335e3ab5051fb91ecfca67cf9610c809e2fe22965555415",
+    "bytes": 18559,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "852ea82f107dc3bc202d3f8590110d41a18d1c720a1192c4dd28a4194f7a6d57",
+    "bytes": 6876,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-build/compile.log",
+    "sha256": "728c3c412529cca08574ff4f0c9546dd046dfd177f2581430f42f99b722cfa68",
+    "bytes": 2828,
+    "compressed": true
+  },
+  "02-lighting-profile/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-build/lighting.compiler.xml",
+    "sha256": "184c2b2862f021b963c76c3ab914c17de91878018db3cb4836ab156a8898c1ab",
+    "bytes": 724,
+    "compressed": false
+  },
+  "02-lighting-profile/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/02-lighting-profile/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "02-lighting-profile/evidence/result.json.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/evidence/result.json",
+    "sha256": "f78f9ed5f582482637cdc2da4a83bc3a0758686b202427614410dd1d45fdcc87",
+    "bytes": 940984,
+    "compressed": true
+  },
+  "02-lighting-profile/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/02-lighting-profile/evidence/scene-0.png",
+    "sha256": "aa7fdd8bafd55ff52f71cc652684a8fa50a4cae698f6b5b2be026bc26ba189bc",
+    "bytes": 416820,
+    "compressed": true
+  },
+  "03-trail-checks/air-output.log.gz": {
+    "source": "build/shot-light-output/03-trail-checks/air-output.log",
+    "sha256": "9d1c9d38e235a32c03b1af5199012a832ba88816b08c0c300ff4b657492c7539",
+    "bytes": 340,
+    "compressed": true
+  },
+  "03-trail-checks/BaselineTrail.as.gz": {
+    "source": "build/shot-light-output/03-trail-checks/BaselineTrail.as",
+    "sha256": "035389b4ae8df8cb9df604fe0c5c99a829e1e78a44d04e362b00c3e1dd131152",
+    "bytes": 6579,
+    "compressed": true
+  },
+  "03-trail-checks/build.json": {
+    "source": "build/shot-light-output/03-trail-checks/build.json",
+    "sha256": "f8cd64d7f78d2d383dc7500b64e32701d494cff442166a3a9866c940ee4f3bcc",
+    "bytes": 564,
+    "compressed": false
+  },
+  "03-trail-checks/CandidateTrail.as.gz": {
+    "source": "build/shot-light-output/03-trail-checks/CandidateTrail.as",
+    "sha256": "76b54b49e80c3eb8dd0cd313d1c00cf1e4ff35944794c0b5757269368bdbc987",
+    "bytes": 7671,
+    "compressed": true
+  },
+  "03-trail-checks/last-run.json": {
+    "source": "build/shot-light-output/03-trail-checks/last-run.json",
+    "sha256": "2d65aceeb9483d842495aae2afc810e32cb63bfd206269fd4ce30ebd51ca82d5",
+    "bytes": 111,
+    "compressed": false
+  },
+  "03-trail-checks/running.json": {
+    "source": "build/shot-light-output/03-trail-checks/running.json",
+    "sha256": "7b873931334e719c2f53fe63588aca4b5fe4dceb08e9a2014af114c55a21e2e3",
+    "bytes": 159,
+    "compressed": false
+  },
+  "03-trail-checks/TrailChecks.as.gz": {
+    "source": "build/shot-light-output/03-trail-checks/TrailChecks.as",
+    "sha256": "20523fbe49fbc7467d232f1dbef36ed49c8c73b7e8a4cb659fb11fbac3a58167",
+    "bytes": 5665,
+    "compressed": true
+  },
+  "03-trail-checks/TrailChecks.compile.log.gz": {
+    "source": "build/shot-light-output/03-trail-checks/TrailChecks.compile.log",
+    "sha256": "3c858c2f15ebd75cb22ac2e7814f8799b5e5ab409f184167308d41922c053d2e",
+    "bytes": 843,
+    "compressed": true
+  },
+  "03-trail-checks/TrailChecks.compiler.xml": {
+    "source": "build/shot-light-output/03-trail-checks/TrailChecks.compiler.xml",
+    "sha256": "2de30f67521169117d44521cc9569f507f95d792c61aaba88afae19de7feb3f4",
+    "bytes": 687,
+    "compressed": false
+  },
+  "03-trail-checks/validation.json": {
+    "source": "build/shot-light-output/03-trail-checks/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "04-light-sources/after.json": {
+    "source": "build/shot-light-output/04-light-sources/after.json",
+    "sha256": "7759d578cbd6f4535d5ff5d52d5ed99b097c4f0e60a223250e415957d10f776d",
+    "bytes": 842,
+    "compressed": false
+  },
+  "04-light-sources/air-output.log.gz": {
+    "source": "build/shot-light-output/04-light-sources/air-output.log",
+    "sha256": "006b106ea5cf4c20986800903ad01f76d4e7c1c1ccd52c2341bc876764fba20f",
+    "bytes": 2216,
+    "compressed": true
+  },
+  "04-light-sources/analysis.json": {
+    "source": "build/shot-light-output/04-light-sources/analysis.json",
+    "sha256": "1f91a73eca8c79230311d162179c1836c0d3fa92779bd4d7c434a075d26bbeb6",
+    "bytes": 904,
+    "compressed": false
+  },
+  "04-light-sources/application.xml": {
+    "source": "build/shot-light-output/04-light-sources/application.xml",
+    "sha256": "becf9ef60e6bed52b63d78c53025e4a48cefd3082f54f05fa49d03875367eeec",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "04-light-sources/before.json": {
+    "source": "build/shot-light-output/04-light-sources/before.json",
+    "sha256": "074998ca948c63c9a8407ba6810c96cf9063f2da8491d21e8affdd14dbd9a665",
+    "bytes": 842,
+    "compressed": false
+  },
+  "04-light-sources/build.json": {
+    "source": "build/shot-light-output/04-light-sources/build.json",
+    "sha256": "f087b254c44d0979e13d4e18979022ecb5ea0d67ae9794cc2581bba9499e5d2b",
+    "bytes": 13412,
+    "compressed": false
+  },
+  "04-light-sources/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/CombatRenderProbeMod.as",
+    "sha256": "238385e567a23fde276240b7a73962587aeb966b22bcbf829946be4d3e87a94a",
+    "bytes": 24849,
+    "compressed": true
+  },
+  "04-light-sources/detailed-analysis.json": {
+    "source": "build/shot-light-output/04-light-sources/detailed-analysis.json",
+    "sha256": "76f0f364cd616d1cbbdc4665fc6f20187034620a329ca3e4b2cb0cff027460c4",
+    "bytes": 6599,
+    "compressed": false
+  },
+  "04-light-sources/environment.json": {
+    "source": "build/shot-light-output/04-light-sources/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "04-light-sources/last-run.json": {
+    "source": "build/shot-light-output/04-light-sources/last-run.json",
+    "sha256": "e0e9212804da03bfbf3d5940e5874290b0de02e76cca12467befe59b92bc5d7d",
+    "bytes": 111,
+    "compressed": false
+  },
+  "04-light-sources/resource-policy.json": {
+    "source": "build/shot-light-output/04-light-sources/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "04-light-sources/running.json": {
+    "source": "build/shot-light-output/04-light-sources/running.json",
+    "sha256": "3e104368298481f72e3bf397fb30e7533f9fc4710388cf7138132c2beff45763",
+    "bytes": 159,
+    "compressed": false
+  },
+  "04-light-sources/rv.compile.log.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv.compile.log",
+    "sha256": "4fa7fbae79802f5abed269c501cbbce66810edf18e5af5528109a01d9d099a67",
+    "bytes": 587,
+    "compressed": true
+  },
+  "04-light-sources/rv.compiler.xml": {
+    "source": "build/shot-light-output/04-light-sources/rv.compiler.xml",
+    "sha256": "d1010ce5d474a9dca4618072e9fb1535706318ca23b2d5796330be361e7e1a73",
+    "bytes": 812,
+    "compressed": false
+  },
+  "04-light-sources/selection.json": {
+    "source": "build/shot-light-output/04-light-sources/selection.json",
+    "sha256": "1c2459d1e857dba3dae74f5b70e9037a99ec5c3dea373fe9d9114904ea9d9e5a",
+    "bytes": 4603,
+    "compressed": false
+  },
+  "04-light-sources/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "04-light-sources/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "04-light-sources/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "04-light-sources/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "04-light-sources/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "04-light-sources/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadLightField.as",
+    "sha256": "a88b6155a05f7d7a240d04a8e080317db8e475d5c832b54c6909e3d37b4d46a9",
+    "bytes": 19397,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "852ea82f107dc3bc202d3f8590110d41a18d1c720a1192c4dd28a4194f7a6d57",
+    "bytes": 6876,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "04-light-sources/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "04-light-sources/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/04-light-sources/lighting-build/compile.log",
+    "sha256": "0be62075c244cd3a3c00b732fa70a67e9a7523fffac1cbc8836b086a7199d7c5",
+    "bytes": 2795,
+    "compressed": true
+  },
+  "04-light-sources/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/04-light-sources/lighting-build/lighting.compiler.xml",
+    "sha256": "35828add225458841d1914662e71125d38256f1b38f0a714779b46069394391a",
+    "bytes": 718,
+    "compressed": false
+  },
+  "04-light-sources/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/04-light-sources/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "04-light-sources/evidence/result.json.gz": {
+    "source": "build/shot-light-output/04-light-sources/evidence/result.json",
+    "sha256": "8caf6eeffe9e28317929213d2fb38a97dafb7bda4a477f22726d148603550701",
+    "bytes": 447907,
+    "compressed": true
+  },
+  "04-light-sources/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/04-light-sources/evidence/scene-0.png",
+    "sha256": "f3b42eda29b85f9508363e3d1f98686edabd97a8ed2751c3f5c90c919f3dd8b2",
+    "bytes": 521523,
+    "compressed": true
+  },
+  "05-raster-verify/after.json": {
+    "source": "build/shot-light-output/05-raster-verify/after.json",
+    "sha256": "b3b19dd8c1fc9a02c9b028c2fbedd9e3b1f4248a8a46bc5b767f012bfb8331e8",
+    "bytes": 842,
+    "compressed": false
+  },
+  "05-raster-verify/air-output.log.gz": {
+    "source": "build/shot-light-output/05-raster-verify/air-output.log",
+    "sha256": "c3a59ac222711a7a9df6509cf7fcc11bb95dcfab10f85ec2970cd9d847b241c4",
+    "bytes": 2209,
+    "compressed": true
+  },
+  "05-raster-verify/analysis.json": {
+    "source": "build/shot-light-output/05-raster-verify/analysis.json",
+    "sha256": "527233dba34f67f78f82dadbfc67540ca4144420af0d9646eb0d106b911b3694",
+    "bytes": 899,
+    "compressed": false
+  },
+  "05-raster-verify/application.xml": {
+    "source": "build/shot-light-output/05-raster-verify/application.xml",
+    "sha256": "b0ee85c66f85b599853c664f3d0e7eb9293e952caa00e2289c6e71d3ea7b9f57",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "05-raster-verify/before.json": {
+    "source": "build/shot-light-output/05-raster-verify/before.json",
+    "sha256": "961d1f4fd5c815347c607734d79d0d4e63b54e504fcf3a3224ef94626fcd6e5f",
+    "bytes": 842,
+    "compressed": false
+  },
+  "05-raster-verify/build.json": {
+    "source": "build/shot-light-output/05-raster-verify/build.json",
+    "sha256": "8f3a04f526051336e31c4c51c65ee6f841840cc51f9d0a9f14173b88664f70fd",
+    "bytes": 13412,
+    "compressed": false
+  },
+  "05-raster-verify/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/CombatRenderProbeMod.as",
+    "sha256": "53f348df7518d3e0c9cc5a53f2333a9c8a5454768bd1f369192897d4ef00ca21",
+    "bytes": 25049,
+    "compressed": true
+  },
+  "05-raster-verify/detailed-analysis.json": {
+    "source": "build/shot-light-output/05-raster-verify/detailed-analysis.json",
+    "sha256": "bd613a54c4cf325be137f081ac5dc6f825493e66d3f80225653252d3bae31b13",
+    "bytes": 3102,
+    "compressed": false
+  },
+  "05-raster-verify/environment.json": {
+    "source": "build/shot-light-output/05-raster-verify/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "05-raster-verify/last-run.json": {
+    "source": "build/shot-light-output/05-raster-verify/last-run.json",
+    "sha256": "ed0a08cd9431c74f1cb57d540afd025b18e3e27463bb0873ae256642cde3e5e6",
+    "bytes": 111,
+    "compressed": false
+  },
+  "05-raster-verify/resource-policy.json": {
+    "source": "build/shot-light-output/05-raster-verify/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "05-raster-verify/running.json": {
+    "source": "build/shot-light-output/05-raster-verify/running.json",
+    "sha256": "166b942f0fa5224c6776191eea1a611ed1c2be6ac160108bf8daae212b838fa5",
+    "bytes": 159,
+    "compressed": false
+  },
+  "05-raster-verify/rv.compile.log.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv.compile.log",
+    "sha256": "79c732b64705fdad04770a67a0c2ce6ab4f5a680e8cd0ff7e3d0fb13a5a92238",
+    "bytes": 587,
+    "compressed": true
+  },
+  "05-raster-verify/rv.compiler.xml": {
+    "source": "build/shot-light-output/05-raster-verify/rv.compiler.xml",
+    "sha256": "388bf88d733c07f0b01aa2c6421f27e55f56fbe8a7d1af3de69ff8042f61a94f",
+    "bytes": 812,
+    "compressed": false
+  },
+  "05-raster-verify/selection.json": {
+    "source": "build/shot-light-output/05-raster-verify/selection.json",
+    "sha256": "a441520924d1059b42de4bcd566b068f30d2b4f4b28d5a929b7484f2d15641e2",
+    "bytes": 4603,
+    "compressed": false
+  },
+  "05-raster-verify/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "05-raster-verify/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "05-raster-verify/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "05-raster-verify/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "05-raster-verify/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "05-raster-verify/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadLightField.as",
+    "sha256": "89f8e9d5e307b1cd684d7310c4d6397ed96143c00e6f1a43655342a2f56fdcc2",
+    "bytes": 20515,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-build/compile.log",
+    "sha256": "48ed57516caba7768152cae0714ce32aebefe52ff23ff22ea03face606bf4958",
+    "bytes": 2795,
+    "compressed": true
+  },
+  "05-raster-verify/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-build/lighting.compiler.xml",
+    "sha256": "1544126ac7bad7edbd58df05df1988875a81f945939fa5b010eb25550b23ed25",
+    "bytes": 718,
+    "compressed": false
+  },
+  "05-raster-verify/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/05-raster-verify/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "05-raster-verify/evidence/result.json.gz": {
+    "source": "build/shot-light-output/05-raster-verify/evidence/result.json",
+    "sha256": "0df55fa3eaa972dd23bb04f3c0867755c678d32e25e5bdb1dfbd7e109149b6a8",
+    "bytes": 327234,
+    "compressed": true
+  },
+  "05-raster-verify/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/05-raster-verify/evidence/scene-0.png",
+    "sha256": "79915955788c216943b713756aec6937769f30292234f04a7e92b64eae2f8720",
+    "bytes": 378776,
+    "compressed": true
+  },
+  "06-raster-timing/after.json": {
+    "source": "build/shot-light-output/06-raster-timing/after.json",
+    "sha256": "4c8a96c045c7ce044a175fae0f1995489c430c56fabe75a24aa0d1f60c02e925",
+    "bytes": 843,
+    "compressed": false
+  },
+  "06-raster-timing/air-output.log.gz": {
+    "source": "build/shot-light-output/06-raster-timing/air-output.log",
+    "sha256": "e2c2095b5a7707933ce4bcd8313f4c503b19df93683b65e099d9c5f7b1e97dfc",
+    "bytes": 3474,
+    "compressed": true
+  },
+  "06-raster-timing/analysis.json": {
+    "source": "build/shot-light-output/06-raster-timing/analysis.json",
+    "sha256": "53bd1621179dc3bbeef3e5b5b1478896a6c251780868455e050655dac37e6fb9",
+    "bytes": 1560,
+    "compressed": false
+  },
+  "06-raster-timing/application.xml": {
+    "source": "build/shot-light-output/06-raster-timing/application.xml",
+    "sha256": "ba8eedc3abdd99fa3a0882f164e5f379020dbdb0141d9272386efb0bf521e19b",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "06-raster-timing/before.json": {
+    "source": "build/shot-light-output/06-raster-timing/before.json",
+    "sha256": "59c79a2ff9f8264acc58630107d00a75ffc1f6896f759afc04e376a67d94bd57",
+    "bytes": 842,
+    "compressed": false
+  },
+  "06-raster-timing/build.json": {
+    "source": "build/shot-light-output/06-raster-timing/build.json",
+    "sha256": "3f32c6e8a7252c6584a111cebfedf936ea1bd6393486f47394faf6a8035455aa",
+    "bytes": 13410,
+    "compressed": false
+  },
+  "06-raster-timing/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/CombatRenderProbeMod.as",
+    "sha256": "222913807811e10f6514494e9a1fd5ca7a0ddaebe57c8693a4156603c9c4b8a7",
+    "bytes": 25074,
+    "compressed": true
+  },
+  "06-raster-timing/detailed-analysis.json": {
+    "source": "build/shot-light-output/06-raster-timing/detailed-analysis.json",
+    "sha256": "7ba21fffe19f12b8f34d129afa3b7b21a5c7a39cb3b4f87b49c2ce036b1feed3",
+    "bytes": 8852,
+    "compressed": false
+  },
+  "06-raster-timing/environment.json": {
+    "source": "build/shot-light-output/06-raster-timing/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "06-raster-timing/last-run.json": {
+    "source": "build/shot-light-output/06-raster-timing/last-run.json",
+    "sha256": "1a7efa44cfb649a8e384f48a282abb6b9a21b3944bc2db8c8cc17d815c5ca1d5",
+    "bytes": 111,
+    "compressed": false
+  },
+  "06-raster-timing/resource-policy.json": {
+    "source": "build/shot-light-output/06-raster-timing/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "06-raster-timing/running.json": {
+    "source": "build/shot-light-output/06-raster-timing/running.json",
+    "sha256": "565c9f6524d3b0092d127e55f7e09e7a300231acbdcdd04e8211974d69f262b9",
+    "bytes": 159,
+    "compressed": false
+  },
+  "06-raster-timing/rv.compile.log.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv.compile.log",
+    "sha256": "70429c30c2237092c83046ee25678f64737b3e8910963856ff1e0003c745c14e",
+    "bytes": 587,
+    "compressed": true
+  },
+  "06-raster-timing/rv.compiler.xml": {
+    "source": "build/shot-light-output/06-raster-timing/rv.compiler.xml",
+    "sha256": "453e6ee014185e6779561a3f74eb2498529b02934f442d3cfbfaaf6ea5fc8195",
+    "bytes": 812,
+    "compressed": false
+  },
+  "06-raster-timing/selection.json": {
+    "source": "build/shot-light-output/06-raster-timing/selection.json",
+    "sha256": "7f3a8dc9c9ae45edcae30452fce6bd78197580a3cd3581068635583307edaa9e",
+    "bytes": 4603,
+    "compressed": false
+  },
+  "06-raster-timing/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "06-raster-timing/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "06-raster-timing/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "06-raster-timing/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "06-raster-timing/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "06-raster-timing/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadLightField.as",
+    "sha256": "e526c5cee939443798597c0fef880aee6b385530a02da8b0a7e646bfe74714ba",
+    "bytes": 20196,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-build/compile.log",
+    "sha256": "5e62400b9a1b88689459e9b8eb6f486da0818f2e80313d8519a8cb2e68c38dd7",
+    "bytes": 2795,
+    "compressed": true
+  },
+  "06-raster-timing/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-build/lighting.compiler.xml",
+    "sha256": "175266e7ad7bcef22952bb822de85d5df8474ca3a02a4dc83478152e35710f02",
+    "bytes": 718,
+    "compressed": false
+  },
+  "06-raster-timing/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/06-raster-timing/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "06-raster-timing/evidence/result.json.gz": {
+    "source": "build/shot-light-output/06-raster-timing/evidence/result.json",
+    "sha256": "2c4e797fed8e46266f8a34d6a25d665e83d4b2dff699af6e7237f5767ced6ba0",
+    "bytes": 1745883,
+    "compressed": true
+  },
+  "06-raster-timing/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/06-raster-timing/evidence/scene-0.png",
+    "sha256": "e11ed85409a3c6c9ce17aa2df3b87f4fb7b50aa82608f6c1f01df47280c6bb63",
+    "bytes": 558812,
+    "compressed": true
+  },
+  "07-geometry-verify/after.json": {
+    "source": "build/shot-light-output/07-geometry-verify/after.json",
+    "sha256": "8ab3421374844120a24cd5eb6678d3752b6d28fc76dc40e55891e3c3f9866478",
+    "bytes": 843,
+    "compressed": false
+  },
+  "07-geometry-verify/air-output.log.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/air-output.log",
+    "sha256": "ea54193040257aba04b58b947acf9c0827b16478bf7b436ab0a0572fc6aead3f",
+    "bytes": 2594,
+    "compressed": true
+  },
+  "07-geometry-verify/analysis.json": {
+    "source": "build/shot-light-output/07-geometry-verify/analysis.json",
+    "sha256": "0a061db7c4f7c971d216fa108e978ebffdd75cef700df9e276688dc91da58b80",
+    "bytes": 1549,
+    "compressed": false
+  },
+  "07-geometry-verify/application.xml": {
+    "source": "build/shot-light-output/07-geometry-verify/application.xml",
+    "sha256": "40966aa18ef0dec685551d320257b67553eeab00e67ba89ed01ee108f7920cff",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "07-geometry-verify/before.json": {
+    "source": "build/shot-light-output/07-geometry-verify/before.json",
+    "sha256": "f129daec5bac8dcc484b6152b46089c79d807ccd974338b241a892c25d0e1db4",
+    "bytes": 843,
+    "compressed": false
+  },
+  "07-geometry-verify/build.json": {
+    "source": "build/shot-light-output/07-geometry-verify/build.json",
+    "sha256": "a95de789b955fe47a1cd5f205b34401b7b3d7c89ab8d7e191c7a0f0149857356",
+    "bytes": 13448,
+    "compressed": false
+  },
+  "07-geometry-verify/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/CombatRenderProbeMod.as",
+    "sha256": "71a7eeb33b9fda239ce85978e10108fcf0ebed88e7a167e07f48d521515976c1",
+    "bytes": 25145,
+    "compressed": true
+  },
+  "07-geometry-verify/detailed-analysis.json": {
+    "source": "build/shot-light-output/07-geometry-verify/detailed-analysis.json",
+    "sha256": "7aa1d3136147123cf56d8582a7d11d4830e063b18c1276c0508a8166df7d2ccc",
+    "bytes": 5720,
+    "compressed": false
+  },
+  "07-geometry-verify/environment.json": {
+    "source": "build/shot-light-output/07-geometry-verify/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "07-geometry-verify/last-run.json": {
+    "source": "build/shot-light-output/07-geometry-verify/last-run.json",
+    "sha256": "3980a6ac6538537e9c82350f1bd3472bd9fdf7ac90a772a74426ab2061819d26",
+    "bytes": 110,
+    "compressed": false
+  },
+  "07-geometry-verify/resource-policy.json": {
+    "source": "build/shot-light-output/07-geometry-verify/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "07-geometry-verify/running.json": {
+    "source": "build/shot-light-output/07-geometry-verify/running.json",
+    "sha256": "de301d45e3d9bb7ccc5d1f4e64ac5d11bbcf5728ca48d6f99dcdeb8101ca4cb2",
+    "bytes": 158,
+    "compressed": false
+  },
+  "07-geometry-verify/rv.compile.log.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv.compile.log",
+    "sha256": "f77bf0562fff8f939faec92dde56a4ef00982d4837022405bcc3d36d5b2e4942",
+    "bytes": 593,
+    "compressed": true
+  },
+  "07-geometry-verify/rv.compiler.xml": {
+    "source": "build/shot-light-output/07-geometry-verify/rv.compiler.xml",
+    "sha256": "84350b10a98e4e3731fdba4c48bbd8b0734cf73852bd77249e26e239e8288250",
+    "bytes": 814,
+    "compressed": false
+  },
+  "07-geometry-verify/selection.json": {
+    "source": "build/shot-light-output/07-geometry-verify/selection.json",
+    "sha256": "d9b2828c0287cc36dee3a35b04898d0b1561da2669a0d9b3743fa10d6f89e442",
+    "bytes": 4607,
+    "compressed": false
+  },
+  "07-geometry-verify/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "07-geometry-verify/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "07-geometry-verify/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "07-geometry-verify/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "07-geometry-verify/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "07-geometry-verify/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadLightField.as",
+    "sha256": "bd2b2ba484299876d8e501cd2e30a11ee0d8b68fc06b43fda1402a646e51eac7",
+    "bytes": 21216,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-build/compile.log",
+    "sha256": "070588e3a1d646c37ec33bb6ece00b59b0fd004784f421af008ca2a74ebec77d",
+    "bytes": 2817,
+    "compressed": true
+  },
+  "07-geometry-verify/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-build/lighting.compiler.xml",
+    "sha256": "c70a5dcb3c4dc98cf88f772d475f3abc26d79b4d814bb4e73f3d31ae5de0177c",
+    "bytes": 722,
+    "compressed": false
+  },
+  "07-geometry-verify/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/07-geometry-verify/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "07-geometry-verify/evidence/result.json.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/evidence/result.json",
+    "sha256": "28b5850a2ab9db2ea7459c77bfe7c6c75046bda2e5923a89daa8415bfca1986f",
+    "bytes": 653522,
+    "compressed": true
+  },
+  "07-geometry-verify/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/07-geometry-verify/evidence/scene-0.png",
+    "sha256": "73fdb7c7bb31495eee1fcae7579c8b84884657085903dc9b86efa533770659af",
+    "bytes": 1109765,
+    "compressed": true
+  },
+  "08-geometry-checks/air-output.log.gz": {
+    "source": "build/shot-light-output/08-geometry-checks/air-output.log",
+    "sha256": "ab48f8643459cea48a9f0b4d6383e77c33da14bb0f0e18819d0cb28fde06907a",
+    "bytes": 105,
+    "compressed": true
+  },
+  "08-geometry-checks/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/08-geometry-checks/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "08-geometry-checks/build.json": {
+    "source": "build/shot-light-output/08-geometry-checks/build.json",
+    "sha256": "38507b3c57bba840a605939e7b791382950176b8db6503b23303a9ce476dca04",
+    "bytes": 572,
+    "compressed": false
+  },
+  "08-geometry-checks/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/08-geometry-checks/CandidateFan.as",
+    "sha256": "9f6bee378df7b7bd053060ad5a4ef7366ac4bc86b4e893ca1f5bf345415ad1b2",
+    "bytes": 3875,
+    "compressed": true
+  },
+  "08-geometry-checks/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/08-geometry-checks/GeometryChecks.as",
+    "sha256": "f2cfcc7fe558a3181b8d30bbb4b484fa259d153277c348891bec05f1294c6bb2",
+    "bytes": 2682,
+    "compressed": true
+  },
+  "08-geometry-checks/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/08-geometry-checks/GeometryChecks.compile.log",
+    "sha256": "d15232939f2624ff716a2492367d30ff1fd25847ced36035cc519d381a6e8eda",
+    "bytes": 1149,
+    "compressed": true
+  },
+  "08-geometry-checks/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/08-geometry-checks/GeometryChecks.compiler.xml",
+    "sha256": "771e62126d3a0a832f8865fbc7d4cf09c40cc2541e15abe2a3797baf13efcbb3",
+    "bytes": 690,
+    "compressed": false
+  },
+  "08-geometry-checks/last-run.json": {
+    "source": "build/shot-light-output/08-geometry-checks/last-run.json",
+    "sha256": "87c891c8716e980fdeaa0e235d450acd3639fe6d7dfc3b9b37485cd06f1b7b92",
+    "bytes": 111,
+    "compressed": false
+  },
+  "08-geometry-checks/running.json": {
+    "source": "build/shot-light-output/08-geometry-checks/running.json",
+    "sha256": "2091d27c1d1f6a11bc0bf63b6ee3d58b78fcc926f36dcc1808f935cd55d5060b",
+    "bytes": 159,
+    "compressed": false
+  },
+  "08-geometry-checks/validation.json": {
+    "source": "build/shot-light-output/08-geometry-checks/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "09-geometry-timing/after.json": {
+    "source": "build/shot-light-output/09-geometry-timing/after.json",
+    "sha256": "3ca78cae5f314b62c12b0689adfa9a73cd234c7fa00314d23497c32284180d39",
+    "bytes": 843,
+    "compressed": false
+  },
+  "09-geometry-timing/air-output.log.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/air-output.log",
+    "sha256": "b377e89f82063484d71a3c06c47d8193309b6fde4a0dfdfc1327720c60cee3aa",
+    "bytes": 5157,
+    "compressed": true
+  },
+  "09-geometry-timing/analysis.json": {
+    "source": "build/shot-light-output/09-geometry-timing/analysis.json",
+    "sha256": "97314d9f45465b06587435f77776853f4d4294791988d12117015d5bcb5b3315",
+    "bytes": 2863,
+    "compressed": false
+  },
+  "09-geometry-timing/application.xml": {
+    "source": "build/shot-light-output/09-geometry-timing/application.xml",
+    "sha256": "554473141f7701175795336afc02c08842332950367b86a4759bf1d6979b0182",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "09-geometry-timing/before.json": {
+    "source": "build/shot-light-output/09-geometry-timing/before.json",
+    "sha256": "2b8b1d4aa6f31ebaa02878d8f8adbf5cd19f4fb756c787136b9da2256471df54",
+    "bytes": 843,
+    "compressed": false
+  },
+  "09-geometry-timing/build.json": {
+    "source": "build/shot-light-output/09-geometry-timing/build.json",
+    "sha256": "afa0da7792c0a8a530bdd17339f9865c4747f169397fd81763de43e5f7ca13ab",
+    "bytes": 13446,
+    "compressed": false
+  },
+  "09-geometry-timing/CombatRenderProbeMod.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/CombatRenderProbeMod.as",
+    "sha256": "8181a0d3436756eb8cc7ea7dd01d7d34f1b035b6971c76658a134f002bd79a64",
+    "bytes": 25260,
+    "compressed": true
+  },
+  "09-geometry-timing/detailed-analysis.json": {
+    "source": "build/shot-light-output/09-geometry-timing/detailed-analysis.json",
+    "sha256": "8238d1c20b4f6cc7d91098d5b5faa8aab5f952ac7d07cd3cdb05894c9abcc53d",
+    "bytes": 24477,
+    "compressed": false
+  },
+  "09-geometry-timing/environment.json": {
+    "source": "build/shot-light-output/09-geometry-timing/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "09-geometry-timing/last-run.json": {
+    "source": "build/shot-light-output/09-geometry-timing/last-run.json",
+    "sha256": "e67456c0a0925b831df67b475fa3046dee23de1b8e13b66f966290bbbc5bae5a",
+    "bytes": 112,
+    "compressed": false
+  },
+  "09-geometry-timing/resource-policy.json": {
+    "source": "build/shot-light-output/09-geometry-timing/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "09-geometry-timing/running.json": {
+    "source": "build/shot-light-output/09-geometry-timing/running.json",
+    "sha256": "3c0fefc19779d37358b873fb458fe85f0d6274105d620a840dafa0588372086d",
+    "bytes": 160,
+    "compressed": false
+  },
+  "09-geometry-timing/rv.compile.log.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv.compile.log",
+    "sha256": "51a476a3e5dc92eb49eb4952e5fbfcc93c0f8be9c52fe56cdbc25c1cfe6791e2",
+    "bytes": 593,
+    "compressed": true
+  },
+  "09-geometry-timing/rv.compiler.xml": {
+    "source": "build/shot-light-output/09-geometry-timing/rv.compiler.xml",
+    "sha256": "6f8d0f50087e2189c8005a9e2e437124bec2ddedf6bd291811d57158a149f72b",
+    "bytes": 814,
+    "compressed": false
+  },
+  "09-geometry-timing/selection.json": {
+    "source": "build/shot-light-output/09-geometry-timing/selection.json",
+    "sha256": "93972b48492cec5107262c72e9f2603fb7447abdc5b56ea0323f358b53926396",
+    "bytes": 4607,
+    "compressed": false
+  },
+  "09-geometry-timing/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "09-geometry-timing/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "09-geometry-timing/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "09-geometry-timing/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "09-geometry-timing/rv-src/RVKeybinds.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "09-geometry-timing/rv-src/RVWallSurface.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadAtmosphere.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadAtmosphere.as",
+    "sha256": "05d8ec3d24ab11830464662304d9f96e3108c3a2b310c1ee6d3f2d352c28b4bb",
+    "bytes": 6349,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadBackdrop.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadBackdrop.as",
+    "sha256": "4a2f4bd56de10f33205cf15f6f48a01d26b77a17d77d5fcc178cc0e557720c48",
+    "bytes": 5973,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadCarrier.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadCarrier.as",
+    "sha256": "6eea873fe6564568c3a1a93c75707f02622dbab2aee0a20296a6f677d63ae02e",
+    "bytes": 230,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadEnvironment.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadEnvironment.as",
+    "sha256": "0fe92f93731326459e234302472876fe317d9cde9dacc36f374b2dbf5bfae956",
+    "bytes": 20727,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadHud.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadHud.as",
+    "sha256": "a85a3498d5f1b1dc741e99f0f129d6337ac443723f9e28c18ad787ca7d835471",
+    "bytes": 1421,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadKeys.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadKeys.as",
+    "sha256": "c186918bfd0871d30989ab517c7eaf47d0c02e603666ad1656eb18be4cb0411d",
+    "bytes": 7691,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadLampCatalog.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadLampCatalog.as",
+    "sha256": "873661d249c7cf6b19d59a6fb6d1c11542de51c69839e4f965a58f074f34f9c6",
+    "bytes": 5203,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadLandmarkLights.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadLandmarkLights.as",
+    "sha256": "a33ab324eeaadb3f4eee63850a6f97060fd623b9e407b3f5bf4e1f640581bb7f",
+    "bytes": 5729,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadLightField.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadLightField.as",
+    "sha256": "4e9308eadd9b409e2279d84f9bcb49ac0e6556ac9f7eecdbf1b844c127169671",
+    "bytes": 20807,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadLightingPreferences.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadLightingPreferences.as",
+    "sha256": "62ca369ffaa1cd8f99574108f8fef5ccbc016ad441b42240f032a3bba0fc2636",
+    "bytes": 3033,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadLog.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadLog.as",
+    "sha256": "d82cf52491f058f6ea2f3e4d2e7a465d5efff95958f6483b24b1e7f66166c136",
+    "bytes": 672,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadMachineLights.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadMachineLights.as",
+    "sha256": "9e964a8aafc301fc0c2494d6bc1518587c22c14660e6abf1bdcfcb07c3c50886",
+    "bytes": 5623,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadPlayerTick.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadPlayerTick.as",
+    "sha256": "333fa37745fd5e130e8d7dd45c9d417d784dae67d163e846684b242b0e17f613",
+    "bytes": 618,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadProjectileProfiles.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadProjectileProfiles.as",
+    "sha256": "051d7cb741f0b5e218b44bce741d8de84f999acef52d20f7a1683cb78332bbb5",
+    "bytes": 12148,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadProjectiles.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadProjectiles.as",
+    "sha256": "e8d0bdb6aad83dab371b633088f0e892506cbdaa08fd9c023f13c7783de37321",
+    "bytes": 18503,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadRuntime.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadRuntime.as",
+    "sha256": "c139a63c2da131898b9d68d2a681e8d3560eee9c11104ff83af7b6670be1de2c",
+    "bytes": 29634,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadSceneBake.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadSceneBake.as",
+    "sha256": "ad0109de08e1ee11b7b2a47c03704df3700a4c4e0aa0fffb4c7ae02e88b90db9",
+    "bytes": 5706,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadStore.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadStore.as",
+    "sha256": "b934f459151090c23725739ebc82ebd029e613ffadebd7656d53e97d8f53765e",
+    "bytes": 2186,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadTileState.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadTileState.as",
+    "sha256": "e1271c61bd64f6126c9f97be0a5a25d4c18a419dd6d490884ba7a218693235fc",
+    "bytes": 722,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/LadTrailRaster.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/LadTrailRaster.as",
+    "sha256": "16e1389f5e221f973fe11d691aed564b07cea67629ca8317906122f904f6d3d6",
+    "bytes": 6589,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/lad/native/LadLampTarget.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/lad/native/LadLampTarget.as",
+    "sha256": "53f9962778a64f2ac200b7be3085cc3de727ab9dfea9b19948647b0a647ebca9",
+    "bytes": 1818,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/LightAndDarknessDoc.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/LightAndDarknessDoc.as",
+    "sha256": "7b96febf163398810b3ff1eac45f1a1ab21b59ff838449109654942b73f9c3ff",
+    "bytes": 163,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-src/LightAndDarknessMod.as.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-src/LightAndDarknessMod.as",
+    "sha256": "d0866cefefae5bc2f80927452faf2242279bc90eb0a22122d25ce705dba1b24a",
+    "bytes": 319,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-build/compile.log.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-build/compile.log",
+    "sha256": "fd02f7cd1d8b30be84024f583f51b688cc7c8e03cdbdaea4a4a8da6315a6d1de",
+    "bytes": 2817,
+    "compressed": true
+  },
+  "09-geometry-timing/lighting-build/lighting.compiler.xml": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-build/lighting.compiler.xml",
+    "sha256": "b5ebe89830198bfd13617754f8d74e51748888112b4f1f9fe145d0fd6ded7426",
+    "bytes": 722,
+    "compressed": false
+  },
+  "09-geometry-timing/lighting-build/signatures.compiler.xml": {
+    "source": "build/shot-light-output/09-geometry-timing/lighting-build/signatures.compiler.xml",
+    "sha256": "1f543370e544836e6895884e7c527090f45d5f5765cc61605f3c9f13087ecf83",
+    "bytes": 530,
+    "compressed": false
+  },
+  "09-geometry-timing/evidence/result.json.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/evidence/result.json",
+    "sha256": "60beae7f5a01a30296e443e3af7770f3458d90f7d6468ed9f3906e97a3383173",
+    "bytes": 3607192,
+    "compressed": true
+  },
+  "09-geometry-timing/evidence/scene-0.png.gz": {
+    "source": "build/shot-light-output/09-geometry-timing/evidence/scene-0.png",
+    "sha256": "93cfd5e1562cdc33c1488cdef7a39ee56517925bd3a2cd534d10cfd33182a9cb",
+    "bytes": 353119,
+    "compressed": true
+  },
+  "10-direct-checks/air-output.log.gz": {
+    "source": "build/shot-light-output/10-direct-checks/air-output.log",
+    "sha256": "a91dc901e0b48681abdc3683313917899ea3d865fe85827a182a10f345923181",
+    "bytes": 439,
+    "compressed": true
+  },
+  "10-direct-checks/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/10-direct-checks/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "10-direct-checks/build.json": {
+    "source": "build/shot-light-output/10-direct-checks/build.json",
+    "sha256": "18f8253d7d5489f84aab5e626473fc9888cd94beb536a9eb37d40128fc93626e",
+    "bytes": 572,
+    "compressed": false
+  },
+  "10-direct-checks/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/10-direct-checks/CandidateFan.as",
+    "sha256": "f623589083d9926cdfc57eba16d3dca9d0c175cb1c6bf7dad88e69f6f55b7a35",
+    "bytes": 2726,
+    "compressed": true
+  },
+  "10-direct-checks/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/10-direct-checks/GeometryChecks.as",
+    "sha256": "9edce73ce2bc204e32560e414c3d50b180a77d7bc2a31deeaf44106ea7b0e1b1",
+    "bytes": 2668,
+    "compressed": true
+  },
+  "10-direct-checks/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/10-direct-checks/GeometryChecks.compile.log",
+    "sha256": "d0071335359377a136b82b4d6fee71513e424095a767d4d0f15ed5b7fe7e922c",
+    "bytes": 1141,
+    "compressed": true
+  },
+  "10-direct-checks/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/10-direct-checks/GeometryChecks.compiler.xml",
+    "sha256": "71aa732603a433ebb14f3b4b9e24b58d2794e763094e02d3f23fba5826f542a2",
+    "bytes": 688,
+    "compressed": false
+  },
+  "10-direct-checks/last-run.json": {
+    "source": "build/shot-light-output/10-direct-checks/last-run.json",
+    "sha256": "d6eef05ae0be70d889fc0cf66161ba91c0711db5e29cbf05890b0753f66f0d91",
+    "bytes": 111,
+    "compressed": false
+  },
+  "10-direct-checks/running.json": {
+    "source": "build/shot-light-output/10-direct-checks/running.json",
+    "sha256": "646a092230ee832d8960c12a69b600201486e1135ac5971f97503c5023326c7a",
+    "bytes": 159,
+    "compressed": false
+  },
+  "10-direct-checks/validation.json": {
+    "source": "build/shot-light-output/10-direct-checks/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "10-direct-checks/evidence/baseline.png": {
+    "source": "build/shot-light-output/10-direct-checks/evidence/baseline.png",
+    "sha256": "64559647760f73088e9d26026733486f28a084321639053a7f460b7c9b65dc79",
+    "bytes": 212,
+    "compressed": false
+  },
+  "10-direct-checks/evidence/candidate.png": {
+    "source": "build/shot-light-output/10-direct-checks/evidence/candidate.png",
+    "sha256": "ad8d4df950b93ad93276817de41b6920f2b4ca763b5a7089629413ec168c7b67",
+    "bytes": 215,
+    "compressed": false
+  },
+  "11-direct-full-checks/air-output.log.gz": {
+    "source": "build/shot-light-output/11-direct-full-checks/air-output.log",
+    "sha256": "66af152d08c62c17edacaca5ffeece6d7b8bda22c0308302183728cb03417ae1",
+    "bytes": 443,
+    "compressed": true
+  },
+  "11-direct-full-checks/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/11-direct-full-checks/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "11-direct-full-checks/build.json": {
+    "source": "build/shot-light-output/11-direct-full-checks/build.json",
+    "sha256": "3e1cbeb11f6b256ac2c430941f6ec3dd54cd4e28c9d61ba8d083388ce8ff52ec",
+    "bytes": 572,
+    "compressed": false
+  },
+  "11-direct-full-checks/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/11-direct-full-checks/CandidateFan.as",
+    "sha256": "e32da2ac69b151984c1062bc8fdc8a871f0b1f79627a8cd0389c9c3c2f3547cf",
+    "bytes": 4507,
+    "compressed": true
+  },
+  "11-direct-full-checks/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/11-direct-full-checks/GeometryChecks.as",
+    "sha256": "9edce73ce2bc204e32560e414c3d50b180a77d7bc2a31deeaf44106ea7b0e1b1",
+    "bytes": 2668,
+    "compressed": true
+  },
+  "11-direct-full-checks/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/11-direct-full-checks/GeometryChecks.compile.log",
+    "sha256": "352ea56247628035db0bdaedb11705c16db234ba3c2abbcae3d88d92e99d1944",
+    "bytes": 1161,
+    "compressed": true
+  },
+  "11-direct-full-checks/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/11-direct-full-checks/GeometryChecks.compiler.xml",
+    "sha256": "9dffd5dbd632a52e1f42c835616a950119662222b3a426fc4d9a4c945274a85f",
+    "bytes": 693,
+    "compressed": false
+  },
+  "11-direct-full-checks/last-run.json": {
+    "source": "build/shot-light-output/11-direct-full-checks/last-run.json",
+    "sha256": "3e76a40970d28bb44dda8d7f782f8d2774b615000ebe611cd8e5227b64938384",
+    "bytes": 112,
+    "compressed": false
+  },
+  "11-direct-full-checks/running.json": {
+    "source": "build/shot-light-output/11-direct-full-checks/running.json",
+    "sha256": "141ea06a3228dbc7f4498f2eaaf177ebb7c9f262d1a32279675c78a24c4a4c75",
+    "bytes": 160,
+    "compressed": false
+  },
+  "11-direct-full-checks/validation.json": {
+    "source": "build/shot-light-output/11-direct-full-checks/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "11-direct-full-checks/evidence/baseline.png": {
+    "source": "build/shot-light-output/11-direct-full-checks/evidence/baseline.png",
+    "sha256": "460bac500fd0cb94e58a4f05941bc271e812d467f6b65d641254d334a308f0e6",
+    "bytes": 885,
+    "compressed": false
+  },
+  "11-direct-full-checks/evidence/candidate.png": {
+    "source": "build/shot-light-output/11-direct-full-checks/evidence/candidate.png",
+    "sha256": "4e2112b1e9d2b7699a70ac11f6bf12a0668e436b4110b8a82c937f5b0815cffa",
+    "bytes": 887,
+    "compressed": false
+  },
+  "12-direct-circle-checks/air-output.log.gz": {
+    "source": "build/shot-light-output/12-direct-circle-checks/air-output.log",
+    "sha256": "570f0ac7c109e6e458e92c6687c7a35f0c7237fa3c8f9083fc2a665b8f13c9de",
+    "bytes": 103,
+    "compressed": true
+  },
+  "12-direct-circle-checks/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/12-direct-circle-checks/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "12-direct-circle-checks/build.json": {
+    "source": "build/shot-light-output/12-direct-circle-checks/build.json",
+    "sha256": "a776785d592b49b166920b0d7a77beb93b09ab207e88d126da680465dbc03d97",
+    "bytes": 572,
+    "compressed": false
+  },
+  "12-direct-circle-checks/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/12-direct-circle-checks/CandidateFan.as",
+    "sha256": "bff445b73d8e2e3e25ed7704b8964e6ae4804c0725e5d5f2203278e569034e90",
+    "bytes": 4504,
+    "compressed": true
+  },
+  "12-direct-circle-checks/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/12-direct-circle-checks/GeometryChecks.as",
+    "sha256": "9edce73ce2bc204e32560e414c3d50b180a77d7bc2a31deeaf44106ea7b0e1b1",
+    "bytes": 2668,
+    "compressed": true
+  },
+  "12-direct-circle-checks/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/12-direct-circle-checks/GeometryChecks.compile.log",
+    "sha256": "889ece8f961a5df8347fcae8273b467c7b1ce9910da522b0c47111213d631f1b",
+    "bytes": 1169,
+    "compressed": true
+  },
+  "12-direct-circle-checks/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/12-direct-circle-checks/GeometryChecks.compiler.xml",
+    "sha256": "a70a6adbfccc9fe8ab744b6a5566d7e1f72c6d98f0ec1afdcb795ae6e4d37fcd",
+    "bytes": 695,
+    "compressed": false
+  },
+  "12-direct-circle-checks/last-run.json": {
+    "source": "build/shot-light-output/12-direct-circle-checks/last-run.json",
+    "sha256": "8055d79157d5631b580d01ba6697268332957fe937b6fd3d1b4c7734ced1bf47",
+    "bytes": 111,
+    "compressed": false
+  },
+  "12-direct-circle-checks/running.json": {
+    "source": "build/shot-light-output/12-direct-circle-checks/running.json",
+    "sha256": "25f0fe6b1221c17f9e4cbecf888e4268deb0d3625d6e107a11e90dcec210622a",
+    "bytes": 159,
+    "compressed": false
+  },
+  "12-direct-circle-checks/validation.json": {
+    "source": "build/shot-light-output/12-direct-circle-checks/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "13-circle-stress/air-output.log.gz": {
+    "source": "build/shot-light-output/13-circle-stress/air-output.log",
+    "sha256": "007dfd67aca3bf9faecbd746ad007bf4512503f9e7f64d678d2bc99b2fa9697b",
+    "bytes": 527,
+    "compressed": true
+  },
+  "13-circle-stress/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/13-circle-stress/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "13-circle-stress/build.json": {
+    "source": "build/shot-light-output/13-circle-stress/build.json",
+    "sha256": "890381075be25009144dd187f7e8f2762144e3667c5f17136c17ab7ea49bfae4",
+    "bytes": 572,
+    "compressed": false
+  },
+  "13-circle-stress/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/13-circle-stress/CandidateFan.as",
+    "sha256": "6500da49dd9521f1bde33088c7793880b9045bb43d6a46c971d10cb016252fa4",
+    "bytes": 4491,
+    "compressed": true
+  },
+  "13-circle-stress/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/13-circle-stress/GeometryChecks.as",
+    "sha256": "78edfb081e3a39d30e4b2a90f9caa2281a27efb1d0c8671fba14a16b8249572f",
+    "bytes": 2810,
+    "compressed": true
+  },
+  "13-circle-stress/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/13-circle-stress/GeometryChecks.compile.log",
+    "sha256": "67ee5feed5d8a381b69b67f4c19c8d36ad153d16cf3b084a94c6e1bf35287c55",
+    "bytes": 1141,
+    "compressed": true
+  },
+  "13-circle-stress/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/13-circle-stress/GeometryChecks.compiler.xml",
+    "sha256": "691ed1ad1c9de0b537a32abb6ef41b5c859c35c80f2d2ae630700fd4859251d4",
+    "bytes": 688,
+    "compressed": false
+  },
+  "13-circle-stress/last-run.json": {
+    "source": "build/shot-light-output/13-circle-stress/last-run.json",
+    "sha256": "aa8f32c9745da43ea19ad284470e96312271aceacc3e4f8171c2437e23b14619",
+    "bytes": 111,
+    "compressed": false
+  },
+  "13-circle-stress/running.json": {
+    "source": "build/shot-light-output/13-circle-stress/running.json",
+    "sha256": "d4ef9fa69310809469e231814adaa7b314cd8f2dc5a56bc6ee58f38348ac767c",
+    "bytes": 159,
+    "compressed": false
+  },
+  "13-circle-stress/validation.json": {
+    "source": "build/shot-light-output/13-circle-stress/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "13-circle-stress/evidence/baseline.png": {
+    "source": "build/shot-light-output/13-circle-stress/evidence/baseline.png",
+    "sha256": "cd2ec3c0ed88530cf967b8c7257dd6bee0f6e74285b12f5ae05d292a6ad0960a",
+    "bytes": 451,
+    "compressed": false
+  },
+  "13-circle-stress/evidence/candidate.png": {
+    "source": "build/shot-light-output/13-circle-stress/evidence/candidate.png",
+    "sha256": "cac3ab4129b986a616bbc907e5cfc8753335defc93d5103fcbff590260ab9824",
+    "bytes": 451,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/air-output.log.gz": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/air-output.log",
+    "sha256": "405a46b72ec9e0bb7f72718858a75a08c80afc1f422b99874c274bce2987bc83",
+    "bytes": 483,
+    "compressed": true
+  },
+  "14-projectile-circle-stress/BaselineFan.as.gz": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/BaselineFan.as",
+    "sha256": "124516b407f890a638ff76c3f0bd8b49ec9d7161f4df739af1b0d580224d6699",
+    "bytes": 2884,
+    "compressed": true
+  },
+  "14-projectile-circle-stress/build.json": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/build.json",
+    "sha256": "025a644fa088d833e5f011b944ad77f8538fbd08d11a0007172197b9fab5bd1e",
+    "bytes": 572,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/CandidateFan.as.gz": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/CandidateFan.as",
+    "sha256": "6500da49dd9521f1bde33088c7793880b9045bb43d6a46c971d10cb016252fa4",
+    "bytes": 4491,
+    "compressed": true
+  },
+  "14-projectile-circle-stress/GeometryChecks.as.gz": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/GeometryChecks.as",
+    "sha256": "844096e735a69fed06766a202a9651dd4f25e24006a70a252108b2d15649064a",
+    "bytes": 2922,
+    "compressed": true
+  },
+  "14-projectile-circle-stress/GeometryChecks.compile.log.gz": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/GeometryChecks.compile.log",
+    "sha256": "59d30d7c0acea8bd4892ac56de5ba314f707677fe9683f1bf6445f853b78d581",
+    "bytes": 1185,
+    "compressed": true
+  },
+  "14-projectile-circle-stress/GeometryChecks.compiler.xml": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/GeometryChecks.compiler.xml",
+    "sha256": "ab81d5ae592bd029f0456f115e59ad09a2759175a83e31c5ed32fca9b23a157e",
+    "bytes": 699,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/last-run.json": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/last-run.json",
+    "sha256": "24c18e2d0469ad2da8cda092c9f6e3ed781b85498d0f9c8bf3284ed1fa219396",
+    "bytes": 112,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/running.json": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/running.json",
+    "sha256": "b66cad0b41994b9e038c51e1678137860509394b14392a597559f733c55a4a3c",
+    "bytes": 160,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/validation.json": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/evidence/baseline.png": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/evidence/baseline.png",
+    "sha256": "ced0adb8efbff0fa442555ca3404da811cd9a2b2b84a9f1415ef7a55f74a7da2",
+    "bytes": 1660,
+    "compressed": false
+  },
+  "14-projectile-circle-stress/evidence/candidate.png": {
+    "source": "build/shot-light-output/14-projectile-circle-stress/evidence/candidate.png",
+    "sha256": "5b974eb047146366e807509e05e8b1a3b1bfa506512c3315e31883e6013e7925",
+    "bytes": 1664,
+    "compressed": false
+  }
+}

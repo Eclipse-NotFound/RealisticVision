@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/fast-fixed": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 80.5126050420168,
+        "p95": 169,
+        "max": 234,
+        ">100": 16
+      },
+      "rv": {
+        "n": 119,
+        "mean": 6.07563025210084,
+        "p95": 15,
+        "max": 43,
+        ">100": 0
+      }
+    },
+    "current/fast-moving": {
+      "nextInterval": {
+        "n": 119,
+        "mean": 94.36974789915966,
+        "p95": 182,
+        "max": 337,
+        ">100": 35
+      },
+      "rv": {
+        "n": 119,
+        "mean": 12.588235294117647,
+        "p95": 19,
+        "max": 239,
+        ">100": 1
+      }
+    }
+  }
+}

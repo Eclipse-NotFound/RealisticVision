@@ -1,0 +1,130 @@
+[
+  {
+    "mode": "current",
+    "variant": "normal-fixed",
+    "samples": 180,
+    "means": {
+      "setup": 0.011,
+      "terrain": 0.183,
+      "ambient": 1,
+      "stable": 0,
+      "ordinary": 5.594,
+      "cleanup": 0.006,
+      "trail": 0.45,
+      "total": 7.244,
+      "renders": 1.989,
+      "visits": 1165.5,
+      "rays": 517.756,
+      "shadow": 2.939,
+      "invalid": 0,
+      "same": 342.528,
+      "adjacent": 156.878,
+      "other": 18.35,
+      "painted": 391.65
+    },
+    "start": {
+      "late": 54,
+      "renders": 288
+    },
+    "end": {
+      "late": 231,
+      "renders": 644
+    }
+  },
+  {
+    "mode": "current",
+    "variant": "normal-moving",
+    "samples": 180,
+    "means": {
+      "setup": 0.006,
+      "terrain": 0.2,
+      "ambient": 0.422,
+      "stable": 0.017,
+      "ordinary": 8.728,
+      "cleanup": 0.006,
+      "trail": 0.4,
+      "total": 9.778,
+      "renders": 1.989,
+      "visits": 1330.228,
+      "rays": 597.272,
+      "shadow": 4.394,
+      "invalid": 0,
+      "same": 399.439,
+      "adjacent": 177.706,
+      "other": 20.128,
+      "painted": 462.683
+    },
+    "start": {
+      "late": 291,
+      "renders": 765
+    },
+    "end": {
+      "late": 468,
+      "renders": 1121
+    }
+  },
+  {
+    "mode": "classic",
+    "variant": "normal-fixed",
+    "samples": 180,
+    "means": {
+      "setup": 0.006,
+      "terrain": 0.167,
+      "ambient": 0.406,
+      "stable": 0,
+      "ordinary": 5.2,
+      "cleanup": 0.011,
+      "trail": 0.528,
+      "total": 6.322,
+      "renders": 2,
+      "visits": 1308.428,
+      "rays": 591.806,
+      "shadow": 2.494,
+      "invalid": 0.1,
+      "same": 389.633,
+      "adjacent": 181.178,
+      "other": 20.894,
+      "painted": 454.944
+    },
+    "start": {
+      "late": 527,
+      "renders": 1241
+    },
+    "end": {
+      "late": 706,
+      "renders": 1599
+    }
+  },
+  {
+    "mode": "classic",
+    "variant": "normal-moving",
+    "samples": 180,
+    "means": {
+      "setup": 0.006,
+      "terrain": 0.172,
+      "ambient": 0.289,
+      "stable": 0,
+      "ordinary": 5.322,
+      "cleanup": 0.022,
+      "trail": 0.461,
+      "total": 6.272,
+      "renders": 2,
+      "visits": 1388.322,
+      "rays": 638.506,
+      "shadow": 4.211,
+      "invalid": 0.806,
+      "same": 433.789,
+      "adjacent": 183.972,
+      "other": 19.939,
+      "painted": 504.411
+    },
+    "start": {
+      "late": 766,
+      "renders": 1720
+    },
+    "end": {
+      "late": 945,
+      "renders": 2078
+    }
+  }
+]
