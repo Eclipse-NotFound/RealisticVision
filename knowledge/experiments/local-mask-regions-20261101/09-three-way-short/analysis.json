@@ -1,0 +1,106 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/vector": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 63.66386554621849,
+        "p95": 112,
+        "max": 250,
+        ">100": 21
+      },
+      "rv": {
+        "n": 238,
+        "mean": 9.22689075630252,
+        "p95": 16,
+        "max": 180,
+        ">100": 1
+      }
+    },
+    "current/candidate": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 80.97058823529412,
+        "p95": 152,
+        "max": 529,
+        ">100": 45
+      },
+      "rv": {
+        "n": 238,
+        "mean": 8.491596638655462,
+        "p95": 16,
+        "max": 117,
+        ">100": 1
+      }
+    },
+    "current/normal": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 64.1470588235294,
+        "p95": 113,
+        "max": 181,
+        ">100": 19
+      },
+      "rv": {
+        "n": 238,
+        "mean": 8.100840336134453,
+        "p95": 16,
+        "max": 78,
+        ">100": 0
+      }
+    },
+    "classic/vector": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 82.8655462184874,
+        "p95": 172,
+        "max": 402,
+        ">100": 56
+      },
+      "rv": {
+        "n": 238,
+        "mean": 13.138655462184873,
+        "p95": 23,
+        "max": 78,
+        ">100": 0
+      }
+    },
+    "classic/candidate": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 79.48319327731092,
+        "p95": 144,
+        "max": 216,
+        ">100": 46
+      },
+      "rv": {
+        "n": 238,
+        "mean": 12.747899159663865,
+        "p95": 22,
+        "max": 84,
+        ">100": 0
+      }
+    },
+    "classic/normal": {
+      "nextInterval": {
+        "n": 238,
+        "mean": 69.8109243697479,
+        "p95": 129,
+        "max": 262,
+        ">100": 26
+      },
+      "rv": {
+        "n": 238,
+        "mean": 12.739495798319327,
+        "p95": 23,
+        "max": 85,
+        ">100": 0
+      }
+    }
+  }
+}

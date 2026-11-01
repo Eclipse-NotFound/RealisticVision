@@ -1,0 +1,23 @@
+{
+  "verification": "Read-only source/byte checks followed by a separate text record; no installed binary write",
+  "baseline_sources_match_inputs": true,
+  "candidate_sources_match_manifest": true,
+  "alpha_sources_match_manifest": true,
+  "candidate_main_sha256": "a16b61f1d9b01ad967af70936bbdf0e326756a94298da8f19a90e17e9b3ad4f4",
+  "alpha_helper_sha256": "86afc4710cf3d53285bd42ee006984da2ef3f1c99ba28a972a52eb9f07c3458d",
+  "08_09_same_bytes": {
+    "rv": "CA9C595301F40FD3D805C9649F65F33B9D087716B0EC1D9AD901B3C331A6241A",
+    "candidate": "817CCFE0AF5037FB023E346451E23D8FFA904CAE31F0D357D4B018A644749A11",
+    "vector": "F4D7A3F2C58031B5AAA407C4B73DC0F21A496F01D6A638CC5ACC4F2AE85FAE9F"
+  },
+  "09_cases": 12,
+  "09_all_active": true,
+  "09_samples": 1440,
+  "09_intervals": 1428,
+  "09_all_screens": [1280, 729],
+  "python_syntax": "passed",
+  "formal_binary_unchanged": "AEA303149B0A5D5A3072C610B3E95F4AD78963EA22CE123C6A3414E73B9AA557",
+  "formal_config_unchanged": "0F27E923EB3AF5CC99F45064FD3EA93DF8AFE4107CDBC58B305A915F425BF47E",
+  "adopted": false,
+  "deployed": false
+}

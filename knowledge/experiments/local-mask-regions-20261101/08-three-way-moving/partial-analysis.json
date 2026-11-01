@@ -1,0 +1,418 @@
+{
+  "source": "result-9-605784.json",
+  "complete": false,
+  "exit": 124,
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "cases": [
+    {
+      "index": 0,
+      "mode": "current",
+      "variant": "normal",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 115.54038997214485,
+        "median": 102,
+        "p95": 201,
+        "max": 420,
+        ">100": 187
+      },
+      "rv": {
+        "n": 359,
+        "mean": 18.735376044568245,
+        "median": 16,
+        "p95": 35,
+        "max": 359,
+        ">100": 3
+      },
+      "playerShots": 176,
+      "enemyShots": 379,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "current",
+      "variant": "candidate",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 103.6267409470752,
+        "median": 95,
+        "p95": 158,
+        "max": 273,
+        ">100": 152
+      },
+      "rv": {
+        "n": 359,
+        "mean": 17.008356545961004,
+        "median": 16,
+        "p95": 32,
+        "max": 188,
+        ">100": 1
+      },
+      "playerShots": 177,
+      "enemyShots": 379,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "current",
+      "variant": "vector",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 155.033426183844,
+        "median": 127,
+        "p95": 328,
+        "max": 751,
+        ">100": 263
+      },
+      "rv": {
+        "n": 359,
+        "mean": 25.56267409470752,
+        "median": 19,
+        "p95": 57,
+        "max": 411,
+        ">100": 7
+      },
+      "playerShots": 175,
+      "enemyShots": 377,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "current",
+      "variant": "vector",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 129.96378830083566,
+        "median": 121,
+        "p95": 205,
+        "max": 354,
+        ">100": 270
+      },
+      "rv": {
+        "n": 359,
+        "mean": 20.462395543175486,
+        "median": 17,
+        "p95": 47,
+        "max": 100,
+        ">100": 0
+      },
+      "playerShots": 177,
+      "enemyShots": 385,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "current",
+      "variant": "candidate",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 126.47910863509749,
+        "median": 115,
+        "p95": 213,
+        "max": 389,
+        ">100": 246
+      },
+      "rv": {
+        "n": 359,
+        "mean": 19.690807799442897,
+        "median": 16,
+        "p95": 49,
+        "max": 299,
+        ">100": 3
+      },
+      "playerShots": 177,
+      "enemyShots": 381,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "current",
+      "variant": "normal",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 127.91922005571031,
+        "median": 119,
+        "p95": 214,
+        "max": 500,
+        ">100": 259
+      },
+      "rv": {
+        "n": 359,
+        "mean": 19.027855153203344,
+        "median": 17,
+        "p95": 39,
+        "max": 386,
+        ">100": 1
+      },
+      "playerShots": 159,
+      "enemyShots": 386,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "classic",
+      "variant": "normal",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 152.23398328690809,
+        "median": 136,
+        "p95": 291,
+        "max": 768,
+        ">100": 283
+      },
+      "rv": {
+        "n": 359,
+        "mean": 36.409470752089135,
+        "median": 34,
+        "p95": 84,
+        "max": 428,
+        ">100": 15
+      },
+      "playerShots": 172,
+      "enemyShots": 402,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 7,
+      "mode": "classic",
+      "variant": "candidate",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 150.8523676880223,
+        "median": 122,
+        "p95": 333,
+        "max": 652,
+        ">100": 259
+      },
+      "rv": {
+        "n": 359,
+        "mean": 36.33426183844011,
+        "median": 34,
+        "p95": 86,
+        "max": 284,
+        ">100": 12
+      },
+      "playerShots": 176,
+      "enemyShots": 382,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    },
+    {
+      "index": 8,
+      "mode": "classic",
+      "variant": "vector",
+      "screen": [
+        1280,
+        729
+      ],
+      "frame": {
+        "n": 359,
+        "mean": 172.85793871866295,
+        "median": 139,
+        "p95": 384,
+        "max": 661,
+        ">100": 310
+      },
+      "rv": {
+        "n": 359,
+        "mean": 40.64902506963789,
+        "median": 37,
+        "p95": 94,
+        "max": 283,
+        ">100": 15
+      },
+      "playerShots": 178,
+      "enemyShots": 391,
+      "xRange": [
+        880.0000923163001,
+        1119.988271025757
+      ]
+    }
+  ],
+  "groups": {
+    "current/normal": {
+      "frame": {
+        "n": 718,
+        "mean": 121.72980501392757,
+        "median": 111.0,
+        "p95": 210,
+        "max": 500,
+        ">100": 446
+      },
+      "rv": {
+        "n": 718,
+        "mean": 18.881615598885794,
+        "median": 17.0,
+        "p95": 39,
+        "max": 386,
+        ">100": 4
+      }
+    },
+    "current/candidate": {
+      "frame": {
+        "n": 718,
+        "mean": 115.05292479108635,
+        "median": 106.0,
+        "p95": 199,
+        "max": 389,
+        ">100": 398
+      },
+      "rv": {
+        "n": 718,
+        "mean": 18.34958217270195,
+        "median": 16.0,
+        "p95": 43,
+        "max": 299,
+        ">100": 4
+      }
+    },
+    "current/vector": {
+      "frame": {
+        "n": 718,
+        "mean": 142.49860724233983,
+        "median": 124.0,
+        "p95": 254,
+        "max": 751,
+        ">100": 533
+      },
+      "rv": {
+        "n": 718,
+        "mean": 23.012534818941504,
+        "median": 18.0,
+        "p95": 52,
+        "max": 411,
+        ">100": 7
+      }
+    },
+    "classic/normal": {
+      "frame": {
+        "n": 359,
+        "mean": 152.23398328690809,
+        "median": 136,
+        "p95": 291,
+        "max": 768,
+        ">100": 283
+      },
+      "rv": {
+        "n": 359,
+        "mean": 36.409470752089135,
+        "median": 34,
+        "p95": 84,
+        "max": 428,
+        ">100": 15
+      }
+    },
+    "classic/candidate": {
+      "frame": {
+        "n": 359,
+        "mean": 150.8523676880223,
+        "median": 122,
+        "p95": 333,
+        "max": 652,
+        ">100": 259
+      },
+      "rv": {
+        "n": 359,
+        "mean": 36.33426183844011,
+        "median": 34,
+        "p95": 86,
+        "max": 284,
+        ">100": 12
+      }
+    },
+    "classic/vector": {
+      "frame": {
+        "n": 359,
+        "mean": 172.85793871866295,
+        "median": 139,
+        "p95": 384,
+        "max": 661,
+        ">100": 310
+      },
+      "rv": {
+        "n": 359,
+        "mean": 40.64902506963789,
+        "median": 37,
+        "p95": 94,
+        "max": 283,
+        ">100": 15
+      }
+    }
+  },
+  "changes": {
+    "current/candidate": {
+      "meanChangeMs": -6.67688022284122,
+      "rvChangeMs": -0.532033426183844,
+      "forwardChangeMs": -11.913649025069645,
+      "returnChangeMs": -1.4401114206128227
+    },
+    "current/vector": {
+      "meanChangeMs": 20.768802228412255,
+      "rvChangeMs": 4.130919220055709,
+      "forwardChangeMs": 39.49303621169915,
+      "returnChangeMs": 2.0445682451253475
+    }
+  },
+  "performanceEligible": false,
+  "limitation": "Incomplete timed-out run; partial statistics are diagnostic only. Endpoint environment eligibility cannot override this."
+}

@@ -1,0 +1,60 @@
+{
+  "utcSeconds": 1793524658.3389683,
+  "logicalCPUs": 16,
+  "aggregateSampleSeconds": 2,
+  "totalCPUPercent": 87.0,
+  "unreadableProcesses": 0,
+  "availableGiB": 10.12,
+  "topCPU": [
+    {
+      "pid": 113060,
+      "name": "adl64.exe",
+      "cores": 1.992,
+      "intervalSeconds": 22.252,
+      "rssMiB": 1665
+    },
+    {
+      "pid": 98964,
+      "name": "DeepSeek Harness.exe",
+      "cores": 1.67,
+      "intervalSeconds": 22.312,
+      "rssMiB": 323
+    },
+    {
+      "pid": 2000,
+      "name": "dwm.exe",
+      "cores": 1.012,
+      "intervalSeconds": 16.376,
+      "rssMiB": 123
+    },
+    {
+      "pid": 0,
+      "name": "System Idle Process",
+      "cores": 0.913,
+      "intervalSeconds": 14.455,
+      "rssMiB": 0
+    },
+    {
+      "pid": 4968,
+      "name": "avp.exe",
+      "cores": 0.87,
+      "intervalSeconds": 20.518,
+      "rssMiB": 315
+    },
+    {
+      "pid": 111744,
+      "name": "python.exe",
+      "cores": 0.796,
+      "intervalSeconds": 22.254,
+      "rssMiB": 19
+    },
+    {
+      "pid": 61184,
+      "name": "Weixin.exe",
+      "cores": 0.598,
+      "intervalSeconds": 22.248,
+      "rssMiB": 110
+    }
+  ],
+  "boundary": "Per-process elapsed time uses each PID own read timestamps; intervals are not simultaneous. Previous resource-check.json used an incorrect shared 2-second denominator; its per-process rates are invalid."
+}

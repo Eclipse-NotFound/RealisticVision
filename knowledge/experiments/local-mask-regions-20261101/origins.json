@@ -1,0 +1,1334 @@
+{
+  "inputs.json": {
+    "source": "build/local-mask-regions-output/inputs.json",
+    "sha256": "9f66df01ca09a3ef7337599670dd91ae6ecb92abe964dee2b6de50695f3bf17b",
+    "bytes": 11964,
+    "compressed": false
+  },
+  "generated-runner.py": {
+    "source": "build/local-mask-regions-output/generated-runner.py",
+    "sha256": "304b05eeda14c0d375b39fe29d4d55b4202e4f7362ca68c21d053be03f31e0e5",
+    "bytes": 24568,
+    "compressed": false
+  },
+  "resource-check.json": {
+    "source": "build/local-mask-regions-output/resource-check.json",
+    "sha256": "6249227ffa909bbc97a25c6ee2145cc5495cc0f44044abfcdcbd8fd71f7a9c79",
+    "bytes": 1109,
+    "compressed": false
+  },
+  "resource-check-v2.json": {
+    "source": "build/local-mask-regions-output/resource-check-v2.json",
+    "sha256": "16cad5ecfa391ed068cd41f1d8959d79675c160a08b1ade9827dbc593791b404",
+    "bytes": 1365,
+    "compressed": false
+  },
+  "final-checks.json": {
+    "source": "build/local-mask-regions-output/final-checks.json",
+    "sha256": "34c0915a7ceeb52567791cfe2ec2ff971b38aa4878b126e08fe97e7c94fea2d8",
+    "bytes": 1087,
+    "compressed": false
+  },
+  "baseline/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "baseline/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "baseline/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/RealisticVisionMod.as",
+    "sha256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "bytes": 206660,
+    "compressed": true
+  },
+  "baseline/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "baseline/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "baseline/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/baseline/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidate/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "candidate/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "candidate/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/RealisticVisionMod.as",
+    "sha256": "a16b61f1d9b01ad967af70936bbdf0e326756a94298da8f19a90e17e9b3ad4f4",
+    "bytes": 208210,
+    "compressed": true
+  },
+  "candidate/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "candidate/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "candidate/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/candidate/src/RVWallSurface.as",
+    "sha256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "bytes": 37947,
+    "compressed": true
+  },
+  "candidate/sources.json": {
+    "source": "build/local-mask-regions-output/candidate/sources.json",
+    "sha256": "7b7d1a3965de60c210cae91238ef5f09193d315a989661c139eb9fba0937b64f",
+    "bytes": 586,
+    "compressed": false
+  },
+  "alpha-candidate/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/modlocales/vision/RVLocale.as",
+    "sha256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "bytes": 5080,
+    "compressed": true
+  },
+  "alpha-candidate/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "alpha-candidate/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/RealisticVisionMod.as",
+    "sha256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "bytes": 206660,
+    "compressed": true
+  },
+  "alpha-candidate/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "alpha-candidate/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/RVKeybinds.as",
+    "sha256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "bytes": 6484,
+    "compressed": true
+  },
+  "alpha-candidate/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/alpha-candidate/src/RVWallSurface.as",
+    "sha256": "86afc4710cf3d53285bd42ee006984da2ef3f1c99ba28a972a52eb9f07c3458d",
+    "bytes": 39009,
+    "compressed": true
+  },
+  "alpha-candidate/sources.json": {
+    "source": "build/local-mask-regions-output/alpha-candidate/sources.json",
+    "sha256": "851af5575c242c2c46190a47b10706eb68872ce48d10b68a0c5126ad40a6151c",
+    "bytes": 586,
+    "compressed": false
+  },
+  "01-regions/RegionChecks.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/RegionChecks.as",
+    "sha256": "f4e19e9a0b0ad8914075524fe5d1de9c0060fef80a8beb54652a92bd47888447",
+    "bytes": 5747,
+    "compressed": true
+  },
+  "01-regions/RegionChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/01-regions/RegionChecks.compile.log",
+    "sha256": "5fd570ec0d30a671634fb0f67f880d2ca87d092c393b24c38e9f71269b814244",
+    "bytes": 3755,
+    "compressed": true
+  },
+  "01-regions/RegionChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/01-regions/RegionChecks.compiler.xml",
+    "sha256": "8f2dbf271fd41730c84ccae5974dd32f2e09cc5696ca44811425f46c79936cb5",
+    "bytes": 1059,
+    "compressed": false
+  },
+  "01-regions/src/BaselineVision.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "01-regions/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "01-regions/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "01-regions/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/RealisticVisionMod.as",
+    "sha256": "dcb705eafa216f587d185de31b168bd7b7c0c40b3f5e2141beb6cef10d8b4e72",
+    "bytes": 208682,
+    "compressed": true
+  },
+  "01-regions/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "01-regions/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "01-regions/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/01-regions/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "02-regions/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/02-regions/air-output.log",
+    "sha256": "658faa4a1f5bc636f06f5e13ef609342f8e55b98cd1e57a087f6e69099cf4c60",
+    "bytes": 290,
+    "compressed": true
+  },
+  "02-regions/build.json": {
+    "source": "build/local-mask-regions-output/02-regions/build.json",
+    "sha256": "59a59c673fa6e522f8f3d968fe91165b25f3e87e392134893eab851d2396312d",
+    "bytes": 1135,
+    "compressed": false
+  },
+  "02-regions/last-run.json": {
+    "source": "build/local-mask-regions-output/02-regions/last-run.json",
+    "sha256": "a81c3d561524e8e306fbbffedbf0d545fc251e7138823bf200bcafe361b06c99",
+    "bytes": 111,
+    "compressed": false
+  },
+  "02-regions/RegionChecks.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/RegionChecks.as",
+    "sha256": "9851e388a2f8f23239fa6e26240cc63910f450a4bc56525e131e1e5b4d559bbb",
+    "bytes": 5780,
+    "compressed": true
+  },
+  "02-regions/RegionChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/02-regions/RegionChecks.compile.log",
+    "sha256": "b03709460b2b5476880e9a0b8ca743e06b458d9fdc3916ef007b600b887e1338",
+    "bytes": 3014,
+    "compressed": true
+  },
+  "02-regions/RegionChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/02-regions/RegionChecks.compiler.xml",
+    "sha256": "d2cb33ec43d5f9016096c0ea5b31148d8afb8a347513689fb5b993b1a9475924",
+    "bytes": 1059,
+    "compressed": false
+  },
+  "02-regions/running.json": {
+    "source": "build/local-mask-regions-output/02-regions/running.json",
+    "sha256": "9049af6ee0762e68850a9bef508250bf74cc5a654880cec67267c464124c3cae",
+    "bytes": 159,
+    "compressed": false
+  },
+  "02-regions/validation.json": {
+    "source": "build/local-mask-regions-output/02-regions/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "02-regions/src/BaselineVision.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "02-regions/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "02-regions/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "02-regions/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/RealisticVisionMod.as",
+    "sha256": "dcb705eafa216f587d185de31b168bd7b7c0c40b3f5e2141beb6cef10d8b4e72",
+    "bytes": 208682,
+    "compressed": true
+  },
+  "02-regions/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "02-regions/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "02-regions/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/02-regions/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "03-regions/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/03-regions/air-output.log",
+    "sha256": "2185e75f6400e0a362bbc5a3455ca7312a347ae5b126f3a96d2a18417e3644f5",
+    "bytes": 294,
+    "compressed": true
+  },
+  "03-regions/build.json": {
+    "source": "build/local-mask-regions-output/03-regions/build.json",
+    "sha256": "bdd6b0ee656c9ae9121430ddf86c05ede1c27e8aae67876041fd62c2ee6651bf",
+    "bytes": 1227,
+    "compressed": false
+  },
+  "03-regions/last-run.json": {
+    "source": "build/local-mask-regions-output/03-regions/last-run.json",
+    "sha256": "23f3dc8c6c1a01fb49d22d7f4703af6c31fdbfa49fc202dd0994a69556f7892e",
+    "bytes": 111,
+    "compressed": false
+  },
+  "03-regions/RegionChecks.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/RegionChecks.as",
+    "sha256": "213d67448843e70c4ac1255ae05276723ff23048cbf9433fa902fc718bc7886f",
+    "bytes": 5786,
+    "compressed": true
+  },
+  "03-regions/RegionChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/03-regions/RegionChecks.compile.log",
+    "sha256": "86e743792fa97f44893d476c1f3a9e24e8121bee268a9b2cd4d9b46fa40dc518",
+    "bytes": 3277,
+    "compressed": true
+  },
+  "03-regions/RegionChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/03-regions/RegionChecks.compiler.xml",
+    "sha256": "2ca347dcff24ac848ce815d4a9fbf19251fcbd5b1684be8b4ca6eac63eda2b01",
+    "bytes": 1059,
+    "compressed": false
+  },
+  "03-regions/RegionGrafon.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "03-regions/running.json": {
+    "source": "build/local-mask-regions-output/03-regions/running.json",
+    "sha256": "ee114babe4f22eab0cb044c26e629ddb590aa27938c99e34b92de1592b49dd99",
+    "bytes": 159,
+    "compressed": false
+  },
+  "03-regions/validation.json": {
+    "source": "build/local-mask-regions-output/03-regions/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "03-regions/src/BaselineVision.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "03-regions/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "03-regions/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "03-regions/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/RealisticVisionMod.as",
+    "sha256": "dcb705eafa216f587d185de31b168bd7b7c0c40b3f5e2141beb6cef10d8b4e72",
+    "bytes": 208682,
+    "compressed": true
+  },
+  "03-regions/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "03-regions/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "03-regions/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/03-regions/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-native-oracle/after.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/after.json",
+    "sha256": "1e0a48b65571724ef0ba331649adc3de6cc469f4c1f969aa756d0c376fba49bb",
+    "bytes": 844,
+    "compressed": false
+  },
+  "04-native-oracle/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/air-output.log",
+    "sha256": "b6a3387c27517ebe852979bedd0ce1bd0221fc1564cc02f77bea233a6aea1949",
+    "bytes": 2176,
+    "compressed": true
+  },
+  "04-native-oracle/analysis.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/analysis.json",
+    "sha256": "eadb9f0b28b5d9bdcf72523ae41a9eb6f6dab11f114406079a202969459c3b60",
+    "bytes": 894,
+    "compressed": false
+  },
+  "04-native-oracle/application.xml": {
+    "source": "build/local-mask-regions-output/04-native-oracle/application.xml",
+    "sha256": "2781e092fd7ec9b77bf7b6cd1b651fdf4a4ffe0c4290d4f1fc56c9cf4bf657e8",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "04-native-oracle/before.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/before.json",
+    "sha256": "4ed53deeccbc65da76d9542863ea21c401a5fda1d5be0b3fccb95c94c680c428",
+    "bytes": 844,
+    "compressed": false
+  },
+  "04-native-oracle/build.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/build.json",
+    "sha256": "c8264e993495790df7a2042c855c5d16b56b64574684c069f29882037009136a",
+    "bytes": 18469,
+    "compressed": false
+  },
+  "04-native-oracle/candidate.compile.log.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate.compile.log",
+    "sha256": "112f1aadd3f83dcb246b74e01c6bd766088627f8de988889bb1f25dc0bd10ff6",
+    "bytes": 632,
+    "compressed": true
+  },
+  "04-native-oracle/candidate.compiler.xml": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate.compiler.xml",
+    "sha256": "1dc4c50a806016b93f7be34fdfb02b162031807b81856fb36faa5799430527b8",
+    "bytes": 827,
+    "compressed": false
+  },
+  "04-native-oracle/CombatRenderProbeMod.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/CombatRenderProbeMod.as",
+    "sha256": "de639f6d4a7f3ce9ea20a1e5a0906dbd0a7339236e444a7feb2edf45cbaf1e0b",
+    "bytes": 24259,
+    "compressed": true
+  },
+  "04-native-oracle/environment.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "04-native-oracle/last-run.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/last-run.json",
+    "sha256": "52b9fc3ea13a82f38d27af8a063cea0a973b42ea30823bd3d7fd935b82422b1f",
+    "bytes": 111,
+    "compressed": false
+  },
+  "04-native-oracle/resource-policy.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "04-native-oracle/running.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/running.json",
+    "sha256": "b6f8750f911d2bbe8c7aad664856d450c97b493274a16018728d9db17b2aab89",
+    "bytes": 159,
+    "compressed": false
+  },
+  "04-native-oracle/rv.compile.log.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv.compile.log",
+    "sha256": "42088d33f7c94680b0552b1c33a54b3a72f00af6ad806d0a88458cc12325e49b",
+    "bytes": 611,
+    "compressed": true
+  },
+  "04-native-oracle/rv.compiler.xml": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv.compiler.xml",
+    "sha256": "bc60e904bcff1d5ba1e7194c88a9e34e942d9226e5b76615b1521cec675e9a66",
+    "bytes": 820,
+    "compressed": false
+  },
+  "04-native-oracle/selection.json": {
+    "source": "build/local-mask-regions-output/04-native-oracle/selection.json",
+    "sha256": "39d73628a1b507ea6823e9eb33e2f3ad107965c4deb09a48a8a00b6332b3c9dc",
+    "bytes": 4326,
+    "compressed": false
+  },
+  "04-native-oracle/vector.compile.log.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector.compile.log",
+    "sha256": "b04a37420c862a96edc4ee78b32f5770550c3937ce109f5f775d377b42ce7836",
+    "bytes": 623,
+    "compressed": true
+  },
+  "04-native-oracle/vector.compiler.xml": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector.compiler.xml",
+    "sha256": "21b42a562f564aa7261256aaccd13145e647d3efb43f198b81b5c88c96af64de",
+    "bytes": 824,
+    "compressed": false
+  },
+  "04-native-oracle/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "04-native-oracle/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "04-native-oracle/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "04-native-oracle/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "04-native-oracle/rv-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "04-native-oracle/rv-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/RealisticVisionMod.as",
+    "sha256": "3372e04b459d196ace539dd0b94e3ce3f345be0e4faa454a9c8807c15d468dcf",
+    "bytes": 213721,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "04-native-oracle/candidate-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/candidate-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/RealisticVisionMod.as",
+    "sha256": "3372e04b459d196ace539dd0b94e3ce3f345be0e4faa454a9c8807c15d468dcf",
+    "bytes": 213721,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "04-native-oracle/vector-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/vector-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "04-native-oracle/evidence/result.json.gz": {
+    "source": "build/local-mask-regions-output/04-native-oracle/evidence/result.json",
+    "sha256": "8f5fd506e9b3c81f36b766018d647e22953439edc2a8d1c4be04aaec43a86579",
+    "bytes": 369204,
+    "compressed": true
+  },
+  "04-native-oracle/evidence/scene-0.png": {
+    "source": "build/local-mask-regions-output/04-native-oracle/evidence/scene-0.png",
+    "sha256": "0a7b3e4905d769ee6e3de36885855ebc6795290107fbc8f0fa9ddb0ce1a67177",
+    "bytes": 451087,
+    "compressed": false
+  },
+  "05-large-regions/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/air-output.log",
+    "sha256": "d1808911b8ba40e55245254658d657cf9de4c792e3de401d6e525694fc52e751",
+    "bytes": 289,
+    "compressed": true
+  },
+  "05-large-regions/build.json": {
+    "source": "build/local-mask-regions-output/05-large-regions/build.json",
+    "sha256": "0d9bb581f2343f8bc69f15a0e1d58e2cf28f02fb91881ba94a40980d567c6375",
+    "bytes": 1412,
+    "compressed": false
+  },
+  "05-large-regions/last-run.json": {
+    "source": "build/local-mask-regions-output/05-large-regions/last-run.json",
+    "sha256": "13a7bcd1e821c4f5870f3794461496f876fc9c7853fb83a4855f079ec6f1e67e",
+    "bytes": 111,
+    "compressed": false
+  },
+  "05-large-regions/MotionLocation.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/MotionLocation.as",
+    "sha256": "ebe7a55d7bdd31a33010b2ec0c57f653fe6f9f8e7dd643d0e2ef63a0bf77cbe6",
+    "bytes": 691,
+    "compressed": true
+  },
+  "05-large-regions/RegionChecks.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/RegionChecks.as",
+    "sha256": "0e780f7d3d909099a451508a8aefdf5381e68849daa03bf05107f08e141fcbc3",
+    "bytes": 5868,
+    "compressed": true
+  },
+  "05-large-regions/RegionChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/RegionChecks.compile.log",
+    "sha256": "44c823c6d1912aecbd4668357d0d66c166f190410c3990c7d6602d0175e6d502",
+    "bytes": 3578,
+    "compressed": true
+  },
+  "05-large-regions/RegionChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/05-large-regions/RegionChecks.compiler.xml",
+    "sha256": "3e0f2b91b01e4e02b8e7042cf481e1d16e25f6a32e11d7cf3fbe2d35456aea69",
+    "bytes": 1071,
+    "compressed": false
+  },
+  "05-large-regions/RegionGrafon.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "05-large-regions/RegionWorld.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "05-large-regions/running.json": {
+    "source": "build/local-mask-regions-output/05-large-regions/running.json",
+    "sha256": "f4f75f195d31e202068eeaba2b2f47baeffcaad9ddac6d8319415742f4af60b4",
+    "bytes": 159,
+    "compressed": false
+  },
+  "05-large-regions/validation.json": {
+    "source": "build/local-mask-regions-output/05-large-regions/validation.json",
+    "sha256": "a9acc9e99266fe9af965b6fcc3c72a8be0a22898552b391b460d42a92c6d9345",
+    "bytes": 39,
+    "compressed": false
+  },
+  "05-large-regions/src/BaselineVision.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "05-large-regions/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "05-large-regions/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "05-large-regions/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/RealisticVisionMod.as",
+    "sha256": "dcb705eafa216f587d185de31b168bd7b7c0c40b3f5e2141beb6cef10d8b4e72",
+    "bytes": 208682,
+    "compressed": true
+  },
+  "05-large-regions/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "05-large-regions/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "05-large-regions/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/05-large-regions/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "06-alpha-checks/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/air-output.log",
+    "sha256": "6a9ba6804db93d0a44879cfb0ea821491b73799d4148efb2c1f76ab7fd5fca54",
+    "bytes": 3619,
+    "compressed": true
+  },
+  "06-alpha-checks/build.json": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/build.json",
+    "sha256": "f880dbc1c1bc85c1b5aa34003577e3b6ad5f2f4dd45405f54ed0064c520eaf83",
+    "bytes": 636,
+    "compressed": false
+  },
+  "06-alpha-checks/ContourCacheChecks.as.gz": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/ContourCacheChecks.as",
+    "sha256": "0f2bf747696352b97563b876f89471e8318b86e5966f8bb511ad461e3b417ca2",
+    "bytes": 5334,
+    "compressed": true
+  },
+  "06-alpha-checks/ContourCacheChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/ContourCacheChecks.compile.log",
+    "sha256": "6143bc1d850a2462e0f66a1f32a092762d6701a17e9398e0dfb81786343bdd24",
+    "bytes": 653,
+    "compressed": true
+  },
+  "06-alpha-checks/ContourCacheChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/ContourCacheChecks.compiler.xml",
+    "sha256": "1ecf29997b5bf869bd82b3b8cd44eecfd87ea5d7b5de8c8033853eaaf5b0e706",
+    "bytes": 844,
+    "compressed": false
+  },
+  "06-alpha-checks/last-run.json": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/last-run.json",
+    "sha256": "f7bcd5b5a8e9e3bf9772eff823131ad156c099a0ad04e2c100487a06d6cb01b9",
+    "bytes": 111,
+    "compressed": false
+  },
+  "06-alpha-checks/running.json": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/running.json",
+    "sha256": "a307f82b5a29c4d52081879834e2825b1e8bbce714874e98d861a578445574b0",
+    "bytes": 159,
+    "compressed": false
+  },
+  "06-alpha-checks/validation.json": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "06-alpha-checks/src/FullScanWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/src/FullScanWallSurface.as",
+    "sha256": "b954f38b8de88ebcfd916c423dfb460c20262dde56459fed6254eee291b6dd9a",
+    "bytes": 37959,
+    "compressed": true
+  },
+  "06-alpha-checks/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/06-alpha-checks/src/RVWallSurface.as",
+    "sha256": "a0567553eeb005420344da6b70055658becc75b2861e56138efd9a7611bd25b9",
+    "bytes": 39041,
+    "compressed": true
+  },
+  "07-large-regions/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/air-output.log",
+    "sha256": "e075242727c44dc24aebc3fa6ee89a6151b89ac16aa3a6da4d3f382b46d72674",
+    "bytes": 294,
+    "compressed": true
+  },
+  "07-large-regions/build.json": {
+    "source": "build/local-mask-regions-output/07-large-regions/build.json",
+    "sha256": "da52f00170b2110d44a599f432f4534d12d3b4c99d1975b00588cd56316712e4",
+    "bytes": 1412,
+    "compressed": false
+  },
+  "07-large-regions/last-run.json": {
+    "source": "build/local-mask-regions-output/07-large-regions/last-run.json",
+    "sha256": "5a8258ac299693957276abd608e2294104021430deda67ffe5cb56ed5c84bfd5",
+    "bytes": 111,
+    "compressed": false
+  },
+  "07-large-regions/MotionLocation.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/MotionLocation.as",
+    "sha256": "2ed05a8a7fa7549f221cb981ec86de46be8535fcb03334085b67872320a6ec20",
+    "bytes": 761,
+    "compressed": true
+  },
+  "07-large-regions/RegionChecks.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/RegionChecks.as",
+    "sha256": "0e780f7d3d909099a451508a8aefdf5381e68849daa03bf05107f08e141fcbc3",
+    "bytes": 5868,
+    "compressed": true
+  },
+  "07-large-regions/RegionChecks.compile.log.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/RegionChecks.compile.log",
+    "sha256": "96f2f0e9dfd3bcb9a7a4f800b485e6057b6f1336964731368f6f4f7f2404298d",
+    "bytes": 3578,
+    "compressed": true
+  },
+  "07-large-regions/RegionChecks.compiler.xml": {
+    "source": "build/local-mask-regions-output/07-large-regions/RegionChecks.compiler.xml",
+    "sha256": "e9374fabf04458edca461746fe017f95daadefb04ce4d16b7507c774d4a87a37",
+    "bytes": 1071,
+    "compressed": false
+  },
+  "07-large-regions/RegionGrafon.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/RegionGrafon.as",
+    "sha256": "6c674e09fe7700cb314eed228eb715bce3a2dbe76a349a784ef44a43553dbc48",
+    "bytes": 156,
+    "compressed": true
+  },
+  "07-large-regions/RegionWorld.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/RegionWorld.as",
+    "sha256": "b2c2445eedfed62ac58bb9e4e64bfb6df950deb961c20b3f6f3102cb800c26e8",
+    "bytes": 145,
+    "compressed": true
+  },
+  "07-large-regions/running.json": {
+    "source": "build/local-mask-regions-output/07-large-regions/running.json",
+    "sha256": "dd570f1e6ce4e705e49f28ce95275640601a74dc4f5c03b9c16b086457d66022",
+    "bytes": 159,
+    "compressed": false
+  },
+  "07-large-regions/validation.json": {
+    "source": "build/local-mask-regions-output/07-large-regions/validation.json",
+    "sha256": "a1983676a1b192c4bd77663ded78b73cd8911bf9bff8ef14e8701c2f68e3303a",
+    "bytes": 38,
+    "compressed": false
+  },
+  "07-large-regions/src/BaselineVision.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/BaselineVision.as",
+    "sha256": "a15f9316502def86b27af5cb7f7b771bf5229a386c39e8975919296abc18d30f",
+    "bytes": 201767,
+    "compressed": true
+  },
+  "07-large-regions/src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "07-large-regions/src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "07-large-regions/src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/RealisticVisionMod.as",
+    "sha256": "dcb705eafa216f587d185de31b168bd7b7c0c40b3f5e2141beb6cef10d8b4e72",
+    "bytes": 208682,
+    "compressed": true
+  },
+  "07-large-regions/src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "07-large-regions/src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "07-large-regions/src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/07-large-regions/src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-three-way-moving/after.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/after.json",
+    "sha256": "dffeda8095c5b5a68dcb294b3747b7ab03e1f15aeef19953f1136b069d5431b3",
+    "bytes": 842,
+    "compressed": false
+  },
+  "08-three-way-moving/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/air-output.log",
+    "sha256": "c7d67be1885636ba7d3d545fafd6484ace40e5b7a5231585961759d81ee3f61f",
+    "bytes": 3979,
+    "compressed": true
+  },
+  "08-three-way-moving/application.xml": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/application.xml",
+    "sha256": "0c9b0774fd871303e2730d02a4adf136429bba1c824a0935fd9b99b14a6891ba",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "08-three-way-moving/before.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/before.json",
+    "sha256": "4f64e472c2931a791a2bf442fc36a1a9232cee4b863f743bc724691caf35fb41",
+    "bytes": 843,
+    "compressed": false
+  },
+  "08-three-way-moving/build.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/build.json",
+    "sha256": "5dc21fe5e477c3a353132c4059293bcc00c8b1cf952f8dbbd018de9d00234727",
+    "bytes": 18486,
+    "compressed": false
+  },
+  "08-three-way-moving/candidate.compile.log.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate.compile.log",
+    "sha256": "6ae32f028711e4b810f5963b6b863f1bf96ee73a5e2a5795458b249ba00cecd1",
+    "bytes": 641,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate.compiler.xml": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate.compiler.xml",
+    "sha256": "e6a92c55d708155bf94305daa0b1eba8680876402bd236f76a2cf45db0d9dc22",
+    "bytes": 830,
+    "compressed": false
+  },
+  "08-three-way-moving/CombatRenderProbeMod.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/CombatRenderProbeMod.as",
+    "sha256": "c03f5db09e124f5b0440cad21186025548a4e52c0c1d00f49fb403db00317dc0",
+    "bytes": 24144,
+    "compressed": true
+  },
+  "08-three-way-moving/environment.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "08-three-way-moving/last-run.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/last-run.json",
+    "sha256": "eb4d258a0a2a57eac139ae7794e841adc48ed1e9995c065a048faab0b22243a9",
+    "bytes": 113,
+    "compressed": false
+  },
+  "08-three-way-moving/partial-analysis.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/partial-analysis.json",
+    "sha256": "9e8299f6444a4f25c6815b5ac4a21478bf1b4bd435805da9efbe04a305649dbf",
+    "bytes": 8298,
+    "compressed": false
+  },
+  "08-three-way-moving/resource-policy.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "08-three-way-moving/running.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/running.json",
+    "sha256": "f2d2126cf9f3c35d4f45589c7484c4549028c30c98313351f9a650b3a09fbe49",
+    "bytes": 159,
+    "compressed": false
+  },
+  "08-three-way-moving/rv.compile.log.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv.compile.log",
+    "sha256": "74b70c6fcfdde242ef8a3db5de1684c1fad42ab97453c465a43f4ef11a7a929f",
+    "bytes": 620,
+    "compressed": true
+  },
+  "08-three-way-moving/rv.compiler.xml": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv.compiler.xml",
+    "sha256": "0e493ed0fb2335746535068be88a39b9c95e8a5cb39bb1afb6f38a926ba8cbdb",
+    "bytes": 823,
+    "compressed": false
+  },
+  "08-three-way-moving/selection.json": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/selection.json",
+    "sha256": "6f9eca580b3e5dd9fd114dddd4366c8b5bb4be755c12c8ec42d2bc27eb5d53ef",
+    "bytes": 4332,
+    "compressed": false
+  },
+  "08-three-way-moving/vector.compile.log.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector.compile.log",
+    "sha256": "30c7b2e9d26088527f3ea35d32446ec25eb821de8cf5992af208f84633c2e668",
+    "bytes": 632,
+    "compressed": true
+  },
+  "08-three-way-moving/vector.compiler.xml": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector.compiler.xml",
+    "sha256": "602c767b2d849974e1de8a8375555dd67915ef8751467f80a7ca17f36f30c8bb",
+    "bytes": 827,
+    "compressed": false
+  },
+  "08-three-way-moving/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-three-way-moving/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-three-way-moving/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "08-three-way-moving/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-three-way-moving/rv-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-three-way-moving/rv-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/RealisticVisionMod.as",
+    "sha256": "9873e224a7591b7d5c0ab94a9641bc6b0a5bf27dcf0c089a3ddb8402a60f0634",
+    "bytes": 212919,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-three-way-moving/candidate-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/candidate-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "08-three-way-moving/vector-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/vector-src/RVWallSurface.as",
+    "sha256": "8b39897775bf57178e9bc33e151b17ed21985e2b45332f874349f2ebbf461640",
+    "bytes": 39607,
+    "compressed": true
+  },
+  "08-three-way-moving/evidence/result-6-399018.json.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/evidence/result-6-399018.json",
+    "sha256": "cbce0b3eb461d94c8c3b7598970b321d19db587fd9b62142eeb0867e5bccb4bc",
+    "bytes": 2059645,
+    "compressed": true
+  },
+  "08-three-way-moving/evidence/result-9-605784.json.gz": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/evidence/result-9-605784.json",
+    "sha256": "f58fe7ee8dae57292df0d280ee5cd0df5b7f1b5d0d0e4d9369a2ee414a92d492",
+    "bytes": 3089976,
+    "compressed": true
+  },
+  "08-three-way-moving/evidence/scene-0.png": {
+    "source": "build/local-mask-regions-output/08-three-way-moving/evidence/scene-0.png",
+    "sha256": "8839c99b6698e89adf0316b6bd739f8313e5f18492e74675f87884185574ce70",
+    "bytes": 527204,
+    "compressed": false
+  },
+  "09-three-way-short/after.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/after.json",
+    "sha256": "2a353c8e89df24de65f572a94372cfcc52f16710740e3a9ce3f3b661c7144de0",
+    "bytes": 844,
+    "compressed": false
+  },
+  "09-three-way-short/air-output.log.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/air-output.log",
+    "sha256": "31be46ad000074c870f8dd79e577bdd04595151dc54b5321829f3bd1dbabc8bb",
+    "bytes": 3965,
+    "compressed": true
+  },
+  "09-three-way-short/analysis.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/analysis.json",
+    "sha256": "30d5815f03c33df88e1fe7bcaa6eabb33b5dfc11639f534f711cc01f24855be4",
+    "bytes": 2189,
+    "compressed": false
+  },
+  "09-three-way-short/application.xml": {
+    "source": "build/local-mask-regions-output/09-three-way-short/application.xml",
+    "sha256": "3ea3d35143fdc60c2f2ec022870a8110f8780786e3cc6b73558dd09158d0d019",
+    "bytes": 1226,
+    "compressed": false
+  },
+  "09-three-way-short/before.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/before.json",
+    "sha256": "8c5fc86a138cdfb57a436304d9b1e090a2c7fb0cf3120267930e96696c3436e3",
+    "bytes": 843,
+    "compressed": false
+  },
+  "09-three-way-short/build.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/build.json",
+    "sha256": "bd24cd75d9e8ed93bad51d19ac4cdbd5c3dc12fe55b9a39e36461670240e6a72",
+    "bytes": 18273,
+    "compressed": false
+  },
+  "09-three-way-short/CombatRenderProbeMod.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/CombatRenderProbeMod.as",
+    "sha256": "b603d944734a292d1fd224ba034a972a7c05e49d28b622e9fa6a7ec9648c6e66",
+    "bytes": 24144,
+    "compressed": true
+  },
+  "09-three-way-short/environment.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/environment.json",
+    "sha256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "bytes": 191,
+    "compressed": false
+  },
+  "09-three-way-short/last-run.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/last-run.json",
+    "sha256": "db6482e3f923d5b22e51329d6177ede96344e0b121de61bfe74a54dcbc5ba833",
+    "bytes": 112,
+    "compressed": false
+  },
+  "09-three-way-short/paired-analysis.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/paired-analysis.json",
+    "sha256": "acdf573ade1d7a73be15f5bbbb680db084b763c69d5fd2b5c28c1bd2c1bf5226",
+    "bytes": 10188,
+    "compressed": false
+  },
+  "09-three-way-short/resource-policy.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/resource-policy.json",
+    "sha256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "bytes": 484,
+    "compressed": false
+  },
+  "09-three-way-short/running.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/running.json",
+    "sha256": "55cf391c3c9a7e01ab76f6f7cbb2bba8e3754f13aceb0b20220b7ba23b19448c",
+    "bytes": 160,
+    "compressed": false
+  },
+  "09-three-way-short/selection.json": {
+    "source": "build/local-mask-regions-output/09-three-way-short/selection.json",
+    "sha256": "761c1ee7dc67d52f466d415f83fc4a9a11432407a5ab37faf6b123ec9b3cfba6",
+    "bytes": 4330,
+    "compressed": false
+  },
+  "09-three-way-short/rv-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "09-three-way-short/rv-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "09-three-way-short/rv-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "09-three-way-short/rv-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "09-three-way-short/rv-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "09-three-way-short/rv-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/rv-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/RealisticVisionMod.as",
+    "sha256": "9873e224a7591b7d5c0ab94a9641bc6b0a5bf27dcf0c089a3ddb8402a60f0634",
+    "bytes": 212919,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "09-three-way-short/candidate-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/candidate-src/RVWallSurface.as",
+    "sha256": "08511b531c2732ded1c5b24f1e9b717b48d4adb0da421e238547215069e887ff",
+    "bytes": 38528,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/modlocales/vision/RVLocale.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/modlocales/vision/RVLocale.as",
+    "sha256": "8bf729c87114a11f8af3977ec8bc5f814aaa101b428dda54df36564393afc452",
+    "bytes": 5071,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/modlocales/vision/RVLocaleMessages.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/modlocales/vision/RVLocaleMessages.as",
+    "sha256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "bytes": 8127,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/RealisticVisionMod.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/RealisticVisionMod.as",
+    "sha256": "7e193ef7bc2fe1e64a0777de2d06cdb0dc8df933c36662b3aee10dcb2ddc04fc",
+    "bytes": 206725,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/RVExplorationCarrier.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/RVExplorationCarrier.as",
+    "sha256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "bytes": 233,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/RVKeybinds.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/RVKeybinds.as",
+    "sha256": "ebebb3ab423ad8b93a388448633d64e48f5012f41d1bc3b270d8cccbd42adfde",
+    "bytes": 6475,
+    "compressed": true
+  },
+  "09-three-way-short/vector-src/RVWallSurface.as.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/vector-src/RVWallSurface.as",
+    "sha256": "8b39897775bf57178e9bc33e151b17ed21985e2b45332f874349f2ebbf461640",
+    "bytes": 39607,
+    "compressed": true
+  },
+  "09-three-way-short/evidence/result.json.gz": {
+    "source": "build/local-mask-regions-output/09-three-way-short/evidence/result.json",
+    "sha256": "67cbfdb2ea0a90141675e05efcd840aefeb9fedf5cda10b83ef82100c07c3504",
+    "bytes": 1656439,
+    "compressed": true
+  },
+  "09-three-way-short/evidence/scene-0.png": {
+    "source": "build/local-mask-regions-output/09-three-way-short/evidence/scene-0.png",
+    "sha256": "bd73112da139e6641e08ba5b26b87363e92838e7fb7dfa11f2a67bd0d17a60f7",
+    "bytes": 429025,
+    "compressed": false
+  }
+}

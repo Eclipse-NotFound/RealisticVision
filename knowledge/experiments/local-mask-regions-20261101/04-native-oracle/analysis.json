@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "profile": "benchmark",
+    "performanceEligible": true,
+    "reasons": [],
+    "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+  },
+  "groups": {
+    "current/candidate": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 53.01117318435754,
+        "p95": 69,
+        "max": 142,
+        ">100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 8.212290502793296,
+        "p95": 13,
+        "max": 103,
+        ">100": 1
+      }
+    },
+    "classic/candidate": {
+      "nextInterval": {
+        "n": 179,
+        "mean": 58.56983240223464,
+        "p95": 78,
+        "max": 124,
+        ">100": 1
+      },
+      "rv": {
+        "n": 179,
+        "mean": 12.888268156424582,
+        "p95": 21,
+        "max": 31,
+        ">100": 0
+      }
+    }
+  }
+}

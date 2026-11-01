@@ -1,0 +1,63 @@
+{
+  "utcSeconds": 1793524486.3582418,
+  "seconds": 2.0066418000496924,
+  "totalCPUPercent": 96.2,
+  "unreadableProcesses": 0,
+  "availableGiB": 10.4,
+  "topCPU": [
+    {
+      "pid": 113060,
+      "name": "adl64.exe",
+      "cores": 23.44,
+      "rssMiB": 1583
+    },
+    {
+      "pid": 98964,
+      "name": "DeepSeek Harness.exe",
+      "cores": 15.89,
+      "rssMiB": 306
+    },
+    {
+      "pid": 104816,
+      "name": "python.exe",
+      "cores": 9.95,
+      "rssMiB": 19
+    },
+    {
+      "pid": 22548,
+      "name": "svchost.exe",
+      "cores": 7.27,
+      "rssMiB": 27
+    },
+    {
+      "pid": 61184,
+      "name": "Weixin.exe",
+      "cores": 7.26,
+      "rssMiB": 90
+    },
+    {
+      "pid": 4968,
+      "name": "avp.exe",
+      "cores": 6.28,
+      "rssMiB": 428
+    },
+    {
+      "pid": 63736,
+      "name": "WeChatAppEx.exe",
+      "cores": 4.78,
+      "rssMiB": 239
+    },
+    {
+      "pid": 64704,
+      "name": "ChatGPT.exe",
+      "cores": 4.52,
+      "rssMiB": 245
+    },
+    {
+      "pid": 46784,
+      "name": "PCAppStoreAppOM.exe",
+      "cores": 3.69,
+      "rssMiB": 16
+    }
+  ]
+}
