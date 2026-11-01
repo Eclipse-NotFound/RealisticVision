@@ -65,3 +65,19 @@
 - 输出：`build/fire-exhaustive-output/fxlib01-fixed` … `fxlib06-merged-moving`、`fxlib04-visual/evidence/scene-0..5.png`
 - 候选槽位：`build/fire-exhaustive-output/fxlib/src`（=部署源）；现任对照槽 `locmem/src`
 - 实验：`build/perf-20261102/`（src/out/转换脚本/visual_check.py/smoke_official.py/deploy.py/locmem.diff）
+
+# v0.34.1-door-coverage 修复
+
+用户真机报告：透光门后可视效果未覆盖炮塔。根因=v0.34.0 门控把 FOV_DIM（透光门/水泄漏区，子格按门景亮度写入 currentSight）混合包围盒按 ≥80% 加权比例提升为全可见，摘遮罩直绘导致门景暗度渐变丢失。
+
+修复（源 build/perf-20261102/src，部署 48,731B DAC7CB25…4AD6E0C9，备份 uild/backups/before-doorfix-20261102-054200，config 未改）：
+1. enemyState 房内路径：dimTiles 计数，bbox 含 FOV_DIM 瓦片时禁 ≥0.8 提升（≤15% 隐藏不受影响）；
+2. fallback 路径：同语义（bbox 扫 FOV_DIM）；
+3. 手臂与全可见单位长枪：中心瓦片 FOV_DIM 时回退 pplyWorldVisual 软遮罩；**粒子/子弹保持亮/隐二值**（首版粒子也回退，fxlibdoor01 同轮 +1.19ms，且粒子语义非主诉，收窄为手臂/长枪）。
+
+|轮次|候选均值/P95/>100|v0.34.0 现任|说明|
+|---|---|---|---|
+|fxlibdoor01（粗版，粒子也回退）|34.84/53/3|33.65/47/3|门少房型|
+|fxlibdoor02（收窄部署版）|35.57/55/2|33.79/47/2|门多+敌常在门区=最坏场景，软遮罩开销回归为语义代价；无门场景零影响（判断 O(1)）|
+
+官方冒烟：init ok v0.34.1-door-coverage、设置注册、tick 1–901。真机门后炮塔视觉待用户重启核对。

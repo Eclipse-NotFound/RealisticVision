@@ -1,3 +1,9 @@
+## 2026-11-02 — v0.34.1-door-coverage 部署：透光门后炮塔未被门景覆盖的修复
+
+- 用户报告：v0.34.0 里透光门后可视效果未覆盖炮塔。定位：enemyState 门控把门景泄漏区（FOV_DIM，子格按门景亮度写入 currentSight）的混合包围盒按 ≥80% 加权比例提升为全可见→clearMask 直绘，门景暗度渐变丢失。
+- 修复：①房内路径 dimTiles 计数，含 FOV_DIM 瓦片禁 ≥0.8 提升（软遮罩保留门景暗化，≤15% 隐藏不受影响）；②fallback 路径同语义（bbox 扫 FOV_DIM）；③手臂/长枪中心瓦片 FOV_DIM 时回退 applyWorldVisual；粒子/子弹保持二值（首版粒子也回退，同轮 +1.19ms，收窄）。
+- 验证：fxlibdoor01（粗版）34.84 vs 33.65、fxlibdoor02（收窄部署版）35.57 vs 33.79——收窄轮房型门多敌在门区为最坏场景，语义代价符合预期；无门场景仅 O(1) 判断。官方冒烟 init ok v0.34.1-door-coverage、设置注册、tick 1–901。部署 48,731B DAC7CB25…，备份 before-doorfix-20261102-054200（v0.34.0），config 未动。
+- 遗留：真机门后炮塔视觉请用户重启核对；若仍有异常（如水后/记忆区门景边缘），下一步按同 FOV_DIM 框架扩展。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md)
 ## 2026-11-02 — v0.34.0-fx-liberation 部署：帧率解放三件套 + 无损候选合并（含 locmem）
 
 - 做了什么：用户批准"极小视觉微差换大幅帧率解放"方案后实施四支柱：①移植普查会话 exact-render 的 coverage-fast + classic-repaint-v2（遵从其"贴图门控/固定字段不纳入"结论）；②FOG_SUB/MASK_SUB 常量→实例 fogSub（137+31 处 token 迁移），预设 0 时 4 子格（字段像素 −75%），显示 2x 双线性，applyVisionScale() 统一重建模糊半径/经典矩阵/单元格矩形，wallEdgeLight 与滤镜半径换算全部 fogSub 派生；③enemyState 80%/15% 加权面积门控 + applyWeaponVisual state=1 摘共享遮罩 + 狮鹫手臂/长枪中心点二值；④vision_quality_preset 0/1/2 预设 + 三单项键。存根 SWC 编译 48,554B、SHA 638AB1B0…DAE807C8，部署至 release，config 字节级追加三新键（421B）。
