@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "CandidateOptionsProbe.swf": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "RealisticVisionMod.swf": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "first/candidate.swf": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "first/CandidateOptionsProbe.swf": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "restored/candidate.swf": "bd64b5bbfe5a07a0b5bff38e4c344652e1df526cfd5c308d63b607123ce4a9ad",
+    "restored/CandidateOptionsProbe.swf": "b5eed9a49e8488abb230681102d1ca33cd130d8596d93bfe7fce05a953045d50",
+    "src/RealisticVisionMod.as": "412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366",
+    "src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "src/RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "src/RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "src/modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  },
+  "candidate": {
+    "RealisticVisionMod.swf": "aea303149b0a5d5a3072c610b3e95f4ad78963ea22ce123c6a3414e73b9aa557",
+    "src/RealisticVisionMod.as": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "src/RVExplorationCarrier.as": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "src/RVKeybinds.as": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "src/RVWallSurface.as": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "src/modlocales/vision/RVLocale.as": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "src/modlocales/vision/RVLocaleMessages.as": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee"
+  },
+  "installed": {
+    "mods\\RealisticVision\\release\\RealisticVisionMod.swf": "aea303149b0a5d5a3072c610b3e95f4ad78963ea22ce123c6a3414e73b9aa557",
+    "mods\\RealisticVision\\release\\config.txt": "0f27e923eb3af5cc99f45064fd3ea93df8afe4107cdbc58b305a915f425bf47e",
+    "pfe.swf": "8321e4e7068672b2afa1fb17da3d8c21d9e95074a76354aece8b10894e025643",
+    "application.xml": "70dd3b085e5f6c66c03693cf68ce5e93a4e4136dd745d40d1a5b2a49863ba236"
+  }
+}

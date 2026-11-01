@@ -1,0 +1,5 @@
+{
+  "02-small-pair-checks": "All six timed windows finished; post-timing PNG write used app: resource path and failed. Preserved, corrected and checked in 04/08.",
+  "06-audit-only": "Host changed while queued; reuse fingerprint guard stopped before AIR launch.",
+  "07-large-fog": "Host changed while queued; native-loop fingerprint guard stopped before compile/AIR. 08/09 explicitly reuse frozen private host."
+}

@@ -1,0 +1,42 @@
+ModLoader[boot_start] v2 run=run_1793506998166_393150
+ModLoader[requested_ModLoaderMod] line 19
+ModLoader[requested_SandevistanMod] line 20
+ModLoader[requested_RConnectMod] line 21
+ModLoader[requested_MoreSkillsWeaponsMod] line 23
+ModLoader[requested_TDFCMod] line 24
+ModLoader[requested_RandomRoomsMod] line 25
+ModLoader[requested_LootEditorMod] line 26
+ModLoader[requested_PermanentInjuryMod] line 27
+ModLoader[requested_CombatRenderProbeMod] line 28
+ModLoader[requested_AddictionSystemMod] line 29
+ModLoader[requested_ContinuousSceneMod] line 30
+ModLoader[requested_FirearmAttachmentsMod] line 31
+ModLoader[requested_WallBlendMod] line 32
+ModLoader[boot] v2 col=2 requested=13
+ModLoader[ok_PermanentInjuryMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-d8dfcf9cc0c74ef683ea826065a50ec9
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_RConnectMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_CombatRenderProbeMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+ModLoader[ok_WallBlendMod] init
+685 Интерфейс
+1593 Game init
+1581 Персонаж
+1 Местность
+847 Создание местности
+466 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+RConnectRndSeed  random_mane 3072819324
+3529 Создание местности
+false
+729 Вход в местность
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 COMPLETE

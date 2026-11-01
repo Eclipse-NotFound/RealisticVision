@@ -1,0 +1,472 @@
+{
+  "inputs.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\inputs.json",
+    "originalSHA256": "b34cbab1a52375fd1b5333ab79c933f52969423de75017a2415f9bce2e07f65d",
+    "textWhitespaceNormalized": true
+  },
+  "summary.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\summary.json",
+    "originalSHA256": "cf14547d96c6e3df484030f559112f5ab9e44368bb0e0e4b2580d699f7538cc3",
+    "textWhitespaceNormalized": true
+  },
+  "native-source/checked.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\native-source\\checked.json",
+    "originalSHA256": "f4c8fb36192dcbd36613aec55886e077073714d5b8df1e5bb02dd456be79cf31",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/baseline/RealisticVisionMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\RealisticVisionMod.as",
+    "originalSHA256": "412d76c3d77ed12e605ad10c904251aa3bfbc6dd2476bf127a9033ab0dc98366",
+    "textWhitespaceNormalized": false
+  },
+  "production-source/baseline/RVExplorationCarrier.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\RVExplorationCarrier.as",
+    "originalSHA256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/baseline/RVKeybinds.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\RVKeybinds.as",
+    "originalSHA256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/baseline/RVWallSurface.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\RVWallSurface.as",
+    "originalSHA256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "textWhitespaceNormalized": false
+  },
+  "production-source/baseline/modlocales/vision/RVLocale.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\modlocales\\vision\\RVLocale.as",
+    "originalSHA256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/baseline/modlocales/vision/RVLocaleMessages.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\baseline\\src\\modlocales\\vision\\RVLocaleMessages.as",
+    "originalSHA256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/candidate/RealisticVisionMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\RealisticVisionMod.as",
+    "originalSHA256": "8ab36948e25142d90ea6703c96035c172f7cb987a446219fd1f0bae16441760f",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/candidate/RVExplorationCarrier.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\RVExplorationCarrier.as",
+    "originalSHA256": "68bab2d8b316de4d3f1317593c9ce65d19cc9c64901c5693edb0729891ece0d3",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/candidate/RVKeybinds.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\RVKeybinds.as",
+    "originalSHA256": "7aec5454e26598b15ddccdec6d9f4aaf5e221370863cbb748298f4837b0532fa",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/candidate/RVWallSurface.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\RVWallSurface.as",
+    "originalSHA256": "c94bdee1c2f3ae5708607854d33c62157a8393b09e43ae171eec9df80ce499bc",
+    "textWhitespaceNormalized": false
+  },
+  "production-source/candidate/modlocales/vision/RVLocale.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\modlocales\\vision\\RVLocale.as",
+    "originalSHA256": "4d87c40183a7dbcd1c178fb6d3aea39e7c955d202c0c979d2aa461f0f9ca686f",
+    "textWhitespaceNormalized": true
+  },
+  "production-source/candidate/modlocales/vision/RVLocaleMessages.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\candidate\\src\\modlocales\\vision\\RVLocaleMessages.as",
+    "originalSHA256": "d9055703aff22367e88ec7f3d47860f02a3ce5d56c53b8cfb9f60ba1510b93ee",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\build.json",
+    "originalSHA256": "1faa553ec4e585680a3d365430e3a8cda5011330b053b750e9f812c569785b4d",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\before.json",
+    "originalSHA256": "a36f54f050f3352bdebb6217b73f5d6dc35b06d39ef84574160cf6d7075dd037",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\after.json",
+    "originalSHA256": "d889392991ce2bd30306d456c5ed96b6c035f34f96c43d38d092f8332ee41352",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\analysis.json",
+    "originalSHA256": "0f5c7f8fb59142f8ce5b4570e09b8138da319e82ecd0d7cb4fa8d03ea5774087",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\last-run.json",
+    "originalSHA256": "d46842df42d4d81954347f661a6e087c78bc22797aab77e857e09e9d2e6e2dc1",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\running.json",
+    "originalSHA256": "feafaf1232ff2a9d91bb7d8b2faca38e7ebadf6c758e17887b3ba6584d44530d",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\CombatRenderProbeMod.as",
+    "originalSHA256": "4ce63ca2b123ca9d70457a82b71f674647af3d807ba7f3e89b3913b13f71f29a",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\air-output.log",
+    "originalSHA256": "65a4b9674e80e88b69f422f9e6108258e18a1f3faf8da38241db78f57350bb7c",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\build.json",
+    "originalSHA256": "fdf3771a0b95a2685bba7b2ba347aef1fd0b236f6619d1dcc95ed8780aee09ea",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\before.json",
+    "originalSHA256": "d148d1a3c6c39510ad82c1eb44ce4dd43efc921fc518a1548480d770e7c92dfc",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\after.json",
+    "originalSHA256": "226cc6ba9e3e9658f0d388935e9aad4ff1b41afd53acc33f23984c1b72cba9ae",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\last-run.json",
+    "originalSHA256": "7b851b2ebef9c2fa748a40835a25eccb10ace343309022a4198d29fe4737efe7",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\running.json",
+    "originalSHA256": "1be59bdee63638302905eca399cf953960d8ddaad1106ac15f8fa173aab9c7fa",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\CombatRenderProbeMod.as",
+    "originalSHA256": "fa40ae981063ef5478e8634bb96bb9b70292e205a888ebf912adce2f44528cad",
+    "textWhitespaceNormalized": true
+  },
+  "02-small-pair-checks/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\02-small-pair-checks\\air-output.log",
+    "originalSHA256": "3904ae34ddea4c7a713abb6b50c22b6f94379174f50a46f0ac65d560d2ae656c",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\build.json",
+    "originalSHA256": "b31dfa6ff683f7c816fd40f88156fe84ecfcb29db0b290cc9e65b25d69da3312",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\before.json",
+    "originalSHA256": "427d962681c3c614807b1386caf6858a0fcba52de76e3de27925de2c11d7764f",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\after.json",
+    "originalSHA256": "e7c7180744e87bb1abb914040afb77d4863ddf14f1050f23cd8166296de4868e",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\analysis.json",
+    "originalSHA256": "9d7eb29818d7fb3acfc0eee8ced11661f751077cb64a474ba2117ea0cf43efca",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\last-run.json",
+    "originalSHA256": "9cc504481face31eafb174085b1594f2220bc753e2301a8ab6ee99a7f22f2122",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\running.json",
+    "originalSHA256": "e78220962ecd0d4b7047c2b9d432713b810e2a5a72f747a4818cfc2b0ef80025",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\CombatRenderProbeMod.as",
+    "originalSHA256": "6fc8fba25a82a4efef2d6ad8d4d7d7e7cbabeb3e5af57421e40d9f0f17d6c5f3",
+    "textWhitespaceNormalized": true
+  },
+  "03-large-diagnostic/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\03-large-diagnostic\\air-output.log",
+    "originalSHA256": "e39c65fa4722ba298737c3ce8cc2b9bd5b958121eae9a7470882a8de3beb97dd",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\build.json",
+    "originalSHA256": "5325b504878f06014a185b0efbdbfdb122ff5a280970e623a33a48822a1722fb",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\before.json",
+    "originalSHA256": "e5c40d6a563f841e9817234aa764764f2b220de79efce297b62c24a4213cae10",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\after.json",
+    "originalSHA256": "787d30398db74a372698c796b08f5c83994259f1feb896ea2f159841804dc79c",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\analysis.json",
+    "originalSHA256": "6fcba8363f1bf30eaeb2135eb80355bd52f2a392630dee0d4d90edd5b121789b",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\last-run.json",
+    "originalSHA256": "d668d69b70f436c66dcec55f8241896e50d2293b8fd48ebbe40d345bcdbf24cc",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\running.json",
+    "originalSHA256": "4ee696993ecaf168e0a4fd602142ddf529b522d5e78aee88634fd71aa78be15c",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\CombatRenderProbeMod.as",
+    "originalSHA256": "41addd211d3a24ea3421c33340fd2eed509b57a190e4e37240dea888101bb13f",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\air-output.log",
+    "originalSHA256": "3665908e99e82be040125d388aa09fa515283326d0b124dd5fd55d6df005d806",
+    "textWhitespaceNormalized": true
+  },
+  "04-large-solo/audit-child-graphics-fresh.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\evidence\\audit-child-graphics-fresh.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "04-large-solo/audit-child-graphics-stale.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\evidence\\audit-child-graphics-stale.png",
+    "originalSHA256": "9d5c3198ebff4e6962ceef4b59e5410bd348609d823b67ad73342052ea6477fc",
+    "textWhitespaceNormalized": false
+  },
+  "04-large-solo/audit-scaleY-fresh.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\evidence\\audit-scaleY-fresh.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "04-large-solo/audit-scaleY-stale.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\04-large-solo\\evidence\\audit-scaleY-stale.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "05-large-noeffects/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\build.json",
+    "originalSHA256": "77503c176efd2a21e96236651db283273743ce6cc4ab20a50335aa73ee2ff5b3",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\before.json",
+    "originalSHA256": "99fccdf5c6533fa62e231d4d612fcfe57f84a200e561e85c155bab782626da88",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\after.json",
+    "originalSHA256": "7c1bbc747230abebb36178a3d598997d76f2e990e0cb0e8f52f67708b6a7ab42",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\analysis.json",
+    "originalSHA256": "b7daa8b072ddbd998d4c10dfb642586e6ec56aa6381c44a57ec834dd1f47d22c",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\last-run.json",
+    "originalSHA256": "5127b9c212b298accc1b05308553b12cd9f34c9f8640e11a36347e1e7285b311",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\running.json",
+    "originalSHA256": "dac7339659f7d175ce74d739ba0ae1c7dc87902fc668ae7e461f9a57c24cdff4",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\CombatRenderProbeMod.as",
+    "originalSHA256": "30d8e172d24b8a087006cd44322b89ab51ba6e3676e632bfd1e5da8d035c3187",
+    "textWhitespaceNormalized": true
+  },
+  "05-large-noeffects/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\05-large-noeffects\\air-output.log",
+    "originalSHA256": "193282e28a98f78a0583d1df63350dab4f23be45948f3d33cd095cec90116939",
+    "textWhitespaceNormalized": true
+  },
+  "06-audit-only/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\06-audit-only\\CombatRenderProbeMod.as",
+    "originalSHA256": "92b26f2daa2f2677e3570460f915adfbc829051a84dd9b9d191ccea7b074b40c",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\build.json",
+    "originalSHA256": "32327a6c5002cb30815a0951cd15269fcc4108cec78f8fb71061dfe80299b5b1",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\before.json",
+    "originalSHA256": "794c336d1b382de2dc498e9acd4c9f4c19ceecd319435525d5a880bcb51b5013",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\after.json",
+    "originalSHA256": "a7366ffb710a11218e5955f2449d8c263061b134cc22ea8d9f6fcdd1a6de6b09",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\analysis.json",
+    "originalSHA256": "15c8dd00992282a705bf4f8cbc7c7e43e0f33fc48303ebe435721258ee920a77",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\last-run.json",
+    "originalSHA256": "ebf3055ac3d035825ebe3ddcb1cff4e79fcddd30362251f32c287270efe79b8d",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\running.json",
+    "originalSHA256": "eab61950c7ab0bfed324c5c7fa22a57963bb798ae4be7857aed8752045166147",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\CombatRenderProbeMod.as",
+    "originalSHA256": "92b26f2daa2f2677e3570460f915adfbc829051a84dd9b9d191ccea7b074b40c",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\air-output.log",
+    "originalSHA256": "e61b0d44685fbc6d8d288647ba9989156ca166f3a048dce0b04e85381ffcdf95",
+    "textWhitespaceNormalized": true
+  },
+  "08-audit-only/audit-child-graphics-fresh.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\evidence\\audit-child-graphics-fresh.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "08-audit-only/audit-child-graphics-stale.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\evidence\\audit-child-graphics-stale.png",
+    "originalSHA256": "9d5c3198ebff4e6962ceef4b59e5410bd348609d823b67ad73342052ea6477fc",
+    "textWhitespaceNormalized": false
+  },
+  "08-audit-only/audit-scaleY-fresh.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\evidence\\audit-scaleY-fresh.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "08-audit-only/audit-scaleY-stale.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\08-audit-only\\evidence\\audit-scaleY-stale.png",
+    "originalSHA256": "d8d9fd4d6f6cb75decd36f370d70593f58072abd12c97d418a3f32d269e8abe5",
+    "textWhitespaceNormalized": false
+  },
+  "09-large-fog/build.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\build.json",
+    "originalSHA256": "3e51c391ce0377b4e6260ab0a494389cc58de826f8b63b0e53d493c693a7968f",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/before.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\before.json",
+    "originalSHA256": "56cbc41012596d423c4c2fb19421d2119165f96c72409be0eb6ded911fdbeed3",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/after.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\after.json",
+    "originalSHA256": "fbd8d66d59c8972f0afbbba27741dfd3586a4c7242907c64b45cc62935e16297",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/environment.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\environment.json",
+    "originalSHA256": "0f1a4244c998c6f938ba88f3714f77e8656ad584947209cd428274dce3c83b54",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/analysis.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\analysis.json",
+    "originalSHA256": "270aa0435920cd82c4b14eeea79f1401ead2b2f79b55e980d370ba4f2e688ceb",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/last-run.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\last-run.json",
+    "originalSHA256": "d0a2922de9eb1b9ebe99a09ac9cae6f013381c451ce2d8d34e667136e7a29dc7",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/resource-policy.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\resource-policy.json",
+    "originalSHA256": "b83b04ba953bdc841188beb49100f3297705395f19fcee73b20a1a297a27cc6d",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/running.json": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\running.json",
+    "originalSHA256": "568f15c7b20c2ec5134876f6a3c24a4dc2877c2cb68f1911c421de45fb889cbf",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/CombatRenderProbeMod.as": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\CombatRenderProbeMod.as",
+    "originalSHA256": "03d6978103747aca8a4c96fc0eb5e2fd03fd0a3e22bbaa2f11735f90fd63684e",
+    "textWhitespaceNormalized": true
+  },
+  "09-large-fog/air-output.log": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\09-large-fog\\air-output.log",
+    "originalSHA256": "02e530d874821ea1cab6b122c60910fc5702920f22fb9dbc498a41472ddc492e",
+    "textWhitespaceNormalized": true
+  },
+  "01-large-pair/scene-0.png": {
+    "source": "D:\\Program Files\\Steam\\steamapps\\common\\Remains\\mods\\RealisticVision\\build\\combo-audit-output\\01-large-pair\\evidence\\scene-0.png",
+    "originalSHA256": "b1a806b21ec24fa8caf0b185a65db6358f5ef522db93501a61a31165caf0f3d5",
+    "textWhitespaceNormalized": false
+  }
+}

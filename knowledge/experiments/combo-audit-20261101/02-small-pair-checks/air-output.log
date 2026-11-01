@@ -1,0 +1,68 @@
+ModLoader[boot_start] v2 run=run_1793505714235_785316
+ModLoader[requested_ModLoaderMod] line 19
+ModLoader[requested_SandevistanMod] line 20
+ModLoader[requested_RConnectMod] line 21
+ModLoader[requested_MoreSkillsWeaponsMod] line 23
+ModLoader[requested_TDFCMod] line 24
+ModLoader[requested_RandomRoomsMod] line 25
+ModLoader[requested_LootEditorMod] line 26
+ModLoader[requested_PermanentInjuryMod] line 27
+ModLoader[requested_CombatRenderProbeMod] line 28
+ModLoader[requested_AddictionSystemMod] line 29
+ModLoader[requested_ContinuousSceneMod] line 30
+ModLoader[requested_FirearmAttachmentsMod] line 31
+ModLoader[requested_WallBlendMod] line 32
+ModLoader[boot] v2 col=2 requested=13
+ModLoader[ok_CombatRenderProbeMod] init
+ModLoader[ok_LootEditorMod] init
+ModLoader[ok_PermanentInjuryMod] init
+ModLoader[ok_WallBlendMod] init
+ModLoader[ok_TDFCMod] init
+ModLoader[ok_SandevistanMod] init
+ModLoader[ok_ModLoaderMod] init
+ModLoader[ok_ContinuousSceneMod] init
+ModLoader[ok_RandomRoomsMod] init
+ModLoader[ok_MoreSkillsWeaponsMod] init
+[AddictionSystem] v0.1.0 loaded pfe-modsettings-rv-motion-ee101b4aa3f44e9ea4c469a33fd00a5e
+ModLoader[ok_AddictionSystemMod] init
+ModLoader[ok_FirearmAttachmentsMod] init
+ModLoader[ok_RConnectMod] init
+908 Интерфейс
+1871 Game init
+1860 Персонаж
+0 Местность
+1004 Создание местности
+602 Вход в местность
+[AddictionSystem] attached fe.unit::AddictionInvent fe.unit::AddictionPers migrated=false
+RConnectRndSeed  random_mane 566550084
+4599 Создание местности
+false
+730 Вход в местность
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 0 {"variant":"off","n":6,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.348
+D58 END 0 off shots=134 bullets=9
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 1 {"variant":"normal","n":6,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.514
+D58 END 1 normal shots=132 bullets=8
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 2 {"variant":"candidate","n":6,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.681
+D58 END 2 candidate shots=133 bullets=8
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 3 {"variant":"candidate","n":6,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=22.848
+D58 END 3 candidate shots=130 bullets=8
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 4 {"variant":"normal","n":6,"mode":"current"}
+[AddictionSystem] heartbeat attached=true t=23.014
+D58 END 4 normal shots=134 bullets=8
+[RVision] room loc1_3 48x25 lDist2=2000 mode=current
+D58 START 5 {"variant":"off","n":6,"mode":"current"}
+D58 END 5 off shots=117 bullets=8
+FAIL SecurityError: fileWriteResource SecurityError: fileWriteResource
+	at CombatRenderProbeMod/auditChecks()
+	at CombatRenderProbeMod/step()
+Error: Error #3200
+[AddictionSystem] heartbeat attached=true t=23.181
