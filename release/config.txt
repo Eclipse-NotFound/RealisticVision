@@ -1,6 +1,5 @@
-# RealisticVision 配置文件
-# 修改后重启游戏生效；F11 运行时切换 enabled、F12 轮换 mode，均写回本文件。
-enabled=1
+﻿# RealisticVision 閰嶇疆鏂囦欢
+# 淇敼鍚庨噸鍚父鎴忕敓鏁堬紱F11 杩愯鏃跺垏鎹?enabled銆丗12 杞崲 mode锛屽潎鍐欏洖鏈枃浠躲€?enabled=1
 mode=current
 dim=0.35
 doordim=0.5
@@ -11,3 +10,5 @@ maskblur_current=4
 telegrace=3
 base_rooms=
 debug=0
+motionstep=4.0
+fx_vision_quality=0

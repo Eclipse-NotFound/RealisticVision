@@ -1,3 +1,14 @@
+## 2026-11-02 — v0.33.16-fx-fast 部署：瞬态特效中心点视野快速路径（开火卡顿）
+
+- 做了什么：用户批准"整理优化方案并实施"后，自production-combo-v4冻结派生`build/fx-fast-20261102/src`：瞬态特效（Part/Bullet/PhisBullet/SmartBullet）由逐对象Shape遮罩+cacheAsBitmap改为中心点视野查表二值处理（亮区摘遮罩原生直绘/暗区常驻空Shape遮罩），`fx_vision_quality`配置0快速默认、1回退v0.33.15原画质。存根SWC路线编译47,801B（F3223BF1…99A）部署至release，config模板字节级追加fx_vision_quality=0，备份before-fx-fast-20261102-002600。
+- 关键决定/发现：①实现前发现原方案设想的visible开关不可行——原生`Part.step`（fe/graph/Part.as:151-153）每帧把visible=false的粒子设回true（otklad机制），且RV与原生step执行顺序不可依赖；改用常驻空遮罩（顺序无关，空遮罩隐藏语义v0.33.10起已验证）。②四轮fire-exhaustive链A/B（33固定/34移动正序/35反序/36+截图，238完整间隔/版本，基准=combo-v4冻结源重编译，benchmark资格通过）：整帧均值-3.2%~-9.3%、RV调用-34%~-64%、固定108ms尖峰清除；34的128ms单帧反序未复现按噪声处理。③截图程序化校验：恒暗区泄漏30-40/44781点（0.07-0.09%=边界中心亮子弹尾迹预期）、亮区96%重合。④官方ModLoader冒烟init ok v0.33.16/settings注册/tick通过，launcher回读SHA与构建一致。
+- 环境坑（已记报告）：mask-budget旧链在本机不可用（python缺psutil→3.12；GBK默认读UTF-8源崩溃需PYTHONUTF8=1；player-seed流程当前宿主#1009，失败保留mask-budget-output/32-fx-fast）；fire-exhaustive候选槽名必须纯字母数字（fxfast）。
+- 遗留/下一步：仅测current（用户主诉模式），classic同分支未整窗计时；跨边界特效失去羽化渐变已由配置兜底；孤立长帧（非RV段）仍属普查会话的长帧方向。重启游戏生效。[报告](../knowledge/experiments/2026-11-02-fx-fast.md)。
+
+## 2026-11-01 — RV本体开火穷尽调查检查点（进行中，未部署）
+
+已推进到50轮，保持RV-only。组合通过场/连续消费者及原生分类、重画核对；移动current/classic完整帧约低4.6%/7.6%，固定classic约低8.6%，current固定约高3.8%保留待查。41/42暴露测试最大化失焦暂停与自动存档计数清零，冻结宿主只读核实后修正；44完整12窗包含存档。画面外旧反例复查发现夹具漏真实末尾清理，49修夹具后720帧全等；50共享模糊720帧全等，51局部视角原生配对进行中。仍需单人、长帧、生产门禁，不称穷尽。正式安装AEA30314/config未动，外部WIP保留。详见knowledge/experiments/2026-11-01-fire-exhaustive.md。
+
 ## 2026-11-01 — 按用户要求分开照明研究与RV本体评估
 
 - 用户明确后续测试关闭光与暗，只评估RealisticVision；照明算法可另行研究，结果不得混入RV性能结论。
@@ -60,6 +71,116 @@
 - 三项正确性缺陷：父transform不变不足以缓存动态外框；fadeCount首次undefined；恢复遗漏alpha。04/08真实宿主内受控反例，D56独立scaleY图像差3840；不将重绑快照的4560差误作回退幅度。
 - 40窗7160完整间隔。首轮大窗off34.38/D5649.44/v444.73ms；零敌人扫射仍慢。单位遮罩和fog显示各有局部开销证据，但特效代码削减没有稳定整帧收益，且后段含绘制/等待/调度，不能称GPU独占。无敌无弹5394ms停顿中RV0ms，根因尚未全解。
 - 02计时完成后PNG路径错误，登记失败保留，04/08补验；06/07因外部宿主更新在启动前被指纹门禁拦住，后两轮复用冻结副本。9项登记全部结束，未部署候选。报告knowledge/experiments/2026-11-01-combo-audit.md；证据combo-audit-20261101；工具build/combo-audit。
+
+## 2026-11-01 — combo_v5 sight 采样方案否决
+
+- 实现在refreshMask的early-return加入currentSight 24点采样判断；首版新raster上m2e=null崩溃，加安全检查修复。
+- A/B移动：RV 7.22→6.39ms（-12%），但整帧44.34→46.04ms（+1.7ms更差）；非RV时间增加2.5ms。
+- 否决：采样是近似、有小概率漏检内容变化导致掩膜滞后（视觉影响）；收益/风险比不理想。不合并不部署，正式保持v0.33.15。
+- 零影响优化已达边际：RV约3.6ms移动/1.2ms固定，与关闭RV差距约3.3ms/1.6ms。进一步降低需减少被遮弹体/特效（视觉影响）或更激进FOV节流（视觉影响）。报告knowledge/experiments/2026-11-01-sight-sampling-rejected.md。
+
+## 2026-11-01 — v0.33.15-combo-v4 渐入修复+90帧兜底与部署
+
+- 修复炮塔阴影边界二分切换：单位从state=0→1/2时，前5帧alpha从0.05渐入到1.0。
+- FOV兜底频率30→90帧：站立开火时周期性FOV全量重算从每秒一次降为每3秒一次，消除~4ms周期尖峰。
+- A/B移动：v0.33.14 normal38.57→v0.33.15 **36.99ms（-4.1%）**、RV4.68→**3.61ms（-23%）**；固定33.18→33.25ms无回退、RV2.08→**1.24ms（-40%）**。
+- 00:33重新部署47,534B SHA256 `AEA30314…9AA557`。官方ModLoader smoke通过`v0.33.15-combo-v4`。
+- 用户两个问题均已处理：炮塔二分→渐入修复；开火卡顿→90帧兜底消除周期尖峰+此前motionstep等优化累计约-20%。回执state/deployment-v03315-20261101.md。
+
+## 2026-10-31 — v0.33.14-combo-v3 零视觉影响优化与部署
+
+- 实现3项零视觉影响优化：整数tile key（`(x0<<24)|(y0<<16)|(x1<<8)|y1`替代字符串拼接）、Matrix缓存（同帧同parent复用concatenatedMatrix）、corner reuse距离4→16px/帧限制2→4。
+- 移动A/B：v0.33.13 normal45.48→v0.33.14 candidate44.73ms（-1.7%）、RV5.97→5.39ms（-9.7%）；固定44.26→42.62ms（-3.7%）、RV2.65→1.73ms（-35%）。
+- 17:37:35部署47,415B SHA256 `C1CB90C5…DADF8`；旧v0.33.13备份`before-combo-v3-20261031-173735`。官方ModLoader smoke通过`v0.33.14-combo-v3`。
+- 累计D56→v0.33.14：固定约-13%/移动约-16%。全部增量均零视觉影响或有用户接受的视觉取舍。生产源build/mask-budget-output/production-combo-v3/src；回执state/deployment-v03314-20261031.md。
+
+## 2026-10-31 — v0.33.13-combo-v2 实现、A/B 与部署
+
+- 基于 v0.33.12 profile（updateWallSurface 1.12ms、fillFogCache 1.02ms/次、applyWorldVisual 2.34ms/帧、refreshMask 1.81ms/帧），实现两个增量优化：motionstep 2.5→4.0 + applyWorldVisual getBounds 缓存（transform 不变时复用）。
+- 移动 A/B（active 1280×720 六敌，v0.33.12 baseline = production-combo 源）：normal 40.43→candidate **37.75ms（-6.6%）**、RV 6.48→**5.05ms（-22%）**、P95 52→50、>100 1→0；与off差距 7.07→4.39ms。固定 A/B：41.18→40.32ms，无回退。
+- 2026-10-31 16:48:52 部署 `release/RealisticVisionMod.swf` 47,326B SHA256 `3F6E6072…6D96D`；旧 v0.33.12 备份`before-combo-v2-20261031-164852`；config `motionstep=4.0`。官方 ModLoader smoke 通过 `v0.33.13-combo-v2`。
+- 回滚恢复备份SWF并改motionstep=2.5。生产源 build/mask-budget-output/production-combo-v2/src；回执 state/deployment-v03313-20261031.md。
+
+## 2026-10-31 — 用户接受视觉损失并确认部署/测试策略
+
+- 用户明确接受 v0.33.12-combo 的视觉损失，要求完成部署；部署已于 15:59:52 完成（47,195B，`26456B67…46FB255`），备份`before-combo-20261031-155952`，官方ModLoader smoke通过。
+- 后续性能测试默认关闭 LightAndDarknessMod：`mask-budget/run.py --full` 默认排除 `LightAndDarknessMod`，需要时用`--allow-lightanddarkness`显式恢复；README记录该策略。官方游戏配置/其它模组未改。
+- 本轮回执与README更新；正式仍v0.33.12-combo。
+
+## 2026-10-31 — v0.33.12-combo 实现、A/B 与部署
+
+- 组合候选：墙面输入门控（loc/view/前墙/fov/雾/结构版本不变时跳过RVWallSurface.update，30帧兜底）+ 四角射线复用（|Δeye|≤4px/≤2帧；诊断85,742复用瓦片仅3分类/2分支差异）+ P1清理 + current移动阈值可配置`motionstep=2.5`。
+- active 1280×720六敌A/B（production-clean）：固定normal38.86→combo35.03ms（-9.9%）、RV2.80→1.79、P95 55→52、>100 1→0；移动normal48.44→43.82ms（-9.5%）、RV8.71→6.19、P95 66→55、>100 3→1。逐窗两窗均更快；另一轮移动51.43→47.71支持方向。
+- 视觉：墙面门控输入不变等价；角点复用约0.0035%分类差异；motionstep 2.5最多2.5px更新滞后；采样截图无明显异常，但未做逐帧像素/视频验收，属有意近似；`motionstep=0.25`可恢复旧频率。
+- 2026-10-31 15:59:52部署 `release/RealisticVisionMod.swf` 47,195B SHA256 `26456B67…46FB255`；旧版BD64备份`build/backups/before-combo-20261031-155952`；config追加motionstep=2.5；未改用户Local Store/其它模组/宿主。
+- 部署后官方ModLoader路径smoke：`RVision.log` `init ok v0.33.12-combo`、tick1/181、settings registered；回滚恢复备份SWF并重启。生产源build/mask-budget-output/production-combo/src；报告knowledge/experiments/2026-10-31-combo-deployment.md，回执state/deployment-v03312-20261031.md。
+
+## 2026-10-30 — D59 角点复用验证与 TDFC 长窗排除（未采用）
+
+- cornerverify：86/156 FOV复用命中，检查85742个复用瓦片，cLit/位掩码不一致3个、分支不同2个（0.0035%）；分类近乎等价，但未做逐帧像素diff。
+- cornerreuse性能复测不一致：18轮normal57.77/candidate56.50（RV10.89/10.92，>100 5/4）；20轮normal67.56/candidate68.29（RV12.08/13.64，>100 3/6）；无稳定收益，不发布。
+- 长窗TDFC排除：去TDFC normal65.30/RV15.06/其它5.33/P95 81/长帧5，全组合normal67.44/RV11.61/其它7.59/P95 83/长帧5；off也不同（41.87 vs46.29），环境差异大，只能记TDFC可能约2ms稳定监听成本，非长帧主因。
+- 正式仍D56 BD64…，主src/release未改。下一步：更干净角点配对或MSW/FirearmAttachments长窗排除；报告knowledge/experiments/2026-10-30-corner-verify-longwindow.md。
+
+## 2026-10-30 — D59 fillFogCache 角点复用诊断（未采用）
+
+- filldiag诊断：移动48×25场景156次FOV、122707瓦片-FOV比较，122532（99.86%）四角lit值完全相同；仅约175（0.14%）变化，均伴随布尔变化。说明角点有大量复用空间但变化瓦片可能位于边界。
+- 实现cornerreuse候选：loc相同、距上次完整重算≤4px/≤2帧且墙结构未变时复用cLit/位掩码并跳过4次castRay；命中86/156 FOV、74595瓦片、约298k次射线。
+- 移动A/B：normal57.77ms/RV10.89/P95 76/>100 5，cornerreuse56.50/RV10.92/P95 73/>100 4；帧差-1.27ms但RV未降、环境负载高，未做像素diff/截图；不部署，候选保留。
+- 正式仍D56 BD64…，主src/release未改。下一步：复用帧vs完整重算像素diff、边界穿越截图、干净环境复测；再做TDFC/MSW/FirearmAttachments长窗排除。报告knowledge/experiments/2026-10-30-corner-reuse.md。
+
+## 2026-10-30 — D59 建议方向执行（visfast/fulldark，未采用）
+
+- 实现 visfast：worldMasks raster 已标记 fullyLit/fullyDark 时跳过 refreshMask；fulldark：全暗 blit Part 隐藏单 Bitmap 子节点并解除 RV mask/cache。两源均由 D56 准确源复制，仅隔离编译。
+- 固定 A/B：normal43.72ms/RV3.14，visfast47.61/RV3.47，fulldark49.30/RV4.54；移动：normal46.18/RV7.42，visfast47.68/RV7.95（1次RV148ms），fulldark48.53/RV8.40。窗口漂移明显但两候选均无收益、方向不利；未做严格像素/恢复断言。
+- 结论：两方向否证，不合并/不部署；主src/release未改，正式仍D56 BD64…。剩余最大项fillFogCache 3.4ms/次、95%帧调用；下一步角点复用诊断与TDFC/MSW/FirearmAttachments长窗排除，或需用户接受雾层/阴影画质取舍。报告knowledge/experiments/2026-10-30-visfast-fulldark.md。
+
+## 2026-10-30 — D59 其他未检查方向调查
+
+- 诊断候选 wvdiag（行为同D56，仅内部计时）移动120帧：applyWorldVisuals约99.5次visual/帧、链132.5节点/帧、层275子对象/帧、refreshMask 102次/帧；层扫描约0.4ms/帧，逐visual工作才是大头（插桩约4.3-4.6ms/帧）。
+- fillFogCache 530-543ms/156次=3.40-3.48ms/次、156/165帧调用（95%），是最大未处理AS3单项；updateWallSurface 2.25-2.35ms/帧插桩。
+- 跨模组补充：去RConnect 44.76/其它4.07/P95 53/长帧0；去ContinuousScene 43.77/4.49/P95 55/长帧0；各约0-1ms，无D58的300ms尖峰。最小组合仍因存档依赖#1009不可用。
+- 结论：优先“完全可见特效提前跳过”和“全暗blit Part解除mask”（像素/恢复断言），再 fillFogCache 角点复用/雾层隔帧（需画质拍板）与 TDFC/MSW/FirearmAttachments 排除。未改主src/release，正式仍D56 BD64…。报告knowledge/experiments/2026-10-30-other-directions.md。
+
+## 2026-10-30 — D59 三方向尝试（均未采用）
+
+- 方向1 FOV/更新阈值 current 0.25→2.5px：固定43.18 vs normal44.02ms（-0.84ms，RV 3.29→3.00）；移动44.80 vs44.76（RV 10.59→9.12但P95 55→64、>100 1→2）；截图目检无明显差异，未严格像素验收。无完整帧收益。
+- 方向2 enemyState tile 80/20 阈值：固定43.43 vs44.02（-0.59）；移动57.61 vs44.76（+12.85ms，RV 12.97，>100 3）；淘汰，20%边界有突然显隐/提前露出风险。
+- 方向3：最小组合（ModLoader+探针）因存档依赖 `Invent.addLoad #1009` 失败；全组合去 RConnect 44.76/其它监听4.07/P95 53/长帧0，去 ContinuousScene 43.77/P95 55/长帧0；均只有0–1ms线索，未复现D58的300ms其它监听尖峰。长帧归因需更长窗口/稀有事件。
+- 三方向均无“明显收益+可接受画质损失”；主src/release未改，正式仍D56 BD64…。报告knowledge/experiments/2026-10-30-three-directions.md。
+
+## 2026-10-30 — D59 P2-A wallgate 候选测试（未采用）
+
+- 从D56准确源派生wallgate候选：updateWallSurface在loc/view/前墙/fov/雾/结构版本均未变时跳过，附P1清理（死数组、bbox复用、applyUnitWeapons参数）。候选只在build隔离副本编译。
+- 固定active A/B两轮：normal 37.38/37.53ms，候选36.65/37.03ms（-0.5~-0.7ms）；RV 2.6–2.8→1.70ms；05b >100ms 2→0。移动：wallgate 50.43 vs normal49.64（RV仅-0.35ms，>100 0→2）；隔帧墙更新子变体60.21 vs54.07、>100 3→7，淘汰。
+- 结论：固定约1.3%–2.0%，移动无确认收益，未达“明显收益”，**未合并/未部署**；正式仍D56 BD64…，主src/release/config/玩家数据未改。未做像素/可见性验收。
+- 下一步需用户选择：墙面/雾层更新节流（画质时序）、敌人身体mask绘制成本（约-3.4ms，软/硬边决策）或跨模组长帧归因。报告knowledge/experiments/2026-10-29-wallgate-candidate.md。
+
+## 2026-10-29 — D59 P0 完成：六类遮罩归因与移动态 RV
+
+- 找到可用测试通道：`danger-full-access` 下用 `subprocess.Popen` 在默认桌面启动 active 1280×720 可见窗口（x=0；`--activate`），绕过此前 AppData/私有桌面阻塞；预置 `pfe-modsettings-rv-motion-p0mask` 隔离存储并每轮重置。
+- 固定/移动两套 16 窗（每类 2 窗、238 间隔）：固定 off 38.80 / normal 51.29 / RV 3.72ms；移动 off 34.72 / normal 49.97 / **RV 8.20ms**。移动态 RV 比固定高约 4.5ms。
+- 六类撤罩：仅 `unit` body mask 在固定/移动两套、4/4 窗都更快（约 -3.36/-3.55ms）；Part 数量最多（约 35/帧）但固定 -9.09/+6.09、移动 +0.38/-9.30，方向不一致；hpbar/weapon/arm/bullet 小于窗间漂移。撤任何一类不降低 RV AS3，变化在绘制后段 → 成本是 mask/cache 关联绘制，不是 refreshMask 几何。
+- 边界：active 默认桌面 1280×720，不是 D58 私有桌面 2560×1521；只有 2 窗/类，属方向性归因；未做像素/可见性验收，未改模组本体。脚本收尾返回 1（环境/登记断言），但两轮均 COMPLETE 且证据完整，不作发布依据。
+- 下一步：补 D56 移动态分函数 profile（fillFogCache/updateWallSurface/refreshMask/applyWorldVisuals），再按 P2 子项实现；P2.1 软边滞后须先证明明确收益。报告 `knowledge/experiments/2026-10-29-mask-budget-p0.md`。
+- 已补移动态 profile（`04-moving-profile`，插桩）：updateWallSurface 450/165=2.73ms/帧、applyVision 2.82（fillFogCache 336/99=3.39ms/次，99/120帧）、hideEnemies 2.21（applyWorldVisuals 1.85、refreshMask 0.85、applyMask 0.22）、computeFov 0.46。P2.1 掩膜节流上限<0.5ms，不满足用户“明显收益”条件；P2 改为先做像素等价的 updateWallSurface 增量/复用，其次 fillFogCache 脏区。
+
+## 2026-10-29 — D59 P0 探针试跑受阻（未取得数据）
+
+- 用户批准 P0（软边滞后仅在明确性能收益时接受；特效遮挡保持现状；允许跨模组归因）。
+- 新建 `build/mask-budget`：复制 D58 探针/运行器，加入固定/移动与 unit/hpbar/weapon/arm/bullet/part 六类撤罩变体；RV 取自 D56 准确生产源；探针、RV、vector 均编译成功。
+- 启动 AIR 四种尝试均受阻：workspace-write 创建 `%APPDATA%` 测试存储 `PermissionError`；`danger-full-access` 下 `adl64` 退出 `0xC0000142`（原版 D58 harness `12-env-check` 同码）；私有桌面+workspace 进程启动但 5min 无帧/无日志；固定测试 ID+预置存储默认桌面退出/私有桌面无帧。
+- 未取得任何分类成本或移动态 RV 数字；这些是环境/工具链阻塞，不写成 RV 候选失败或优化结论。已释放 00-smoke3 的测试登记；主 src/release/config/玩家数据未改。
+- 保留 `build/mask-budget` 六类变体与失败输出记录；下一步换可启动 AIR 的通道（agent-debug 或能正常写 AppData+私有桌面的会话）重跑 P0，测量协议不变。
+
+## 2026-10-29 — D59扫射/交战卡顿只读排查与优化方案（不改模组）
+
+- 用户要求针对轻机枪持续扫射、与敌人交战卡顿，从敌人遮罩、子弹/特效动画计算入手排查并给方案；明确“不实际替换模组本体文件”。本轮只读，未启动游戏、未新增性能样本；正式仍D56 BD64B5BB…CE4A9AD。
+- 重新读取D44/D57冻结证据：D57固定位置current每120帧仅4次FOV重算、RV 3.29ms；D44受控移动profile约13ms/帧（applyVision 4.98、updateWallSurface 2.45、hideEnemies 5.13，其中refreshMask 97.4次/帧），说明近三轮固定位置协议低估了移动交战成本，需在D56上复测。
+- D44 small-02六敌：current normal 43.66/60.38 vs nomask 33.70/33.24ms；classic 42.06/45.07 vs 32.97/33.32ms。逐对象mask关联是最大单项，但D56后current normal−off已约4.8ms；继续缩遮罩几何上限低。D57 classic绘制后阶段+7.69ms、current仅+0.82ms，用户当前current的主要目标应是移动态RV调用而非继续裁mask图形。
+- 代码热点：移动时FOV/fillFogCache/blur每帧并fovVersion++使全部掩膜失效；refreshMask全局版本门+逐raster多全幅pass；逐对象Shape+mask+cache（Part静态blit原生已cache、Bullet为动画MovieClip）；每帧firstObj链/六层子对象扫描、两次filters递归、死数组/临时对象；worldMasks bbox churn；血条/武器沿用owner状态产生多余mask。
+- 方案：P0类别归因（只编译探针、不改模组）→P1零画质清理→P2移动态掩膜刷新节流/脏区（主收益，需接受软边2–3帧滞后）→P3全暗特效解除mask/按目标分类/硬边或特效遮挡性能档（需用户拍板）→P4长帧与跨模组归因；列出像素/原生回放/配对帧验收与不部署门槛。
+- 边界：主src、release、config、玩家数据、其它模组均未改；未改技能；未运行新游戏样本。报告knowledge/experiments/2026-10-29-combat-optimization-plan.md；下一步待用户批准P0与画质档，不重复D55–D58已否的遮罩裁切/临时对象微优化。
 
 ## 2026-10-29 — D58拆分开销、帧率校准与支持区缓存，未采用
 
@@ -387,6 +508,10 @@
 ## 2026-10-14 — 连续大场景兼容v0.30.3-scene已安装
 
 用户明确允许ContinuousScene任务修改视野兼容。镜头附近绘图、模糊和显示裁切，保留小房间路径与逻辑视线。基于已安装源码0735491叠加兼容构建，不把authority接口或本轮前既有WIP带入release。37项视野、全模组大场景44项、实际安装启动通过，配置不变；备份ContinuousScene/build/backups/install-20261014-181702。完整指纹、性能与边界见state/deployment-scene-20261014.md；未宣称消除所有卡顿或验证联机大图。
+
+## 2026-10-12 — B完成帧采样的显示隔离（未部署）
+
+RConnect主会话按独立接口授权增加readNative，支持临时取原生显示、finally恢复本机遮挡与原掩膜次序。RV003配B148身体专项主157/0加89/0，实际视野仍在跑；独立新增5项检查尚未执行，临时启动命令被本地护栏拒绝。源码改动仅独立RVAuthorityView及对应检查，原共享探索与安装版不变。详细结果见RConnect/state/host-authority-playable-2026-10-11.md。
 
 ## 2026-10-12 — RConnect B独立接口（未部署）
 
