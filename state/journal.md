@@ -1,3 +1,12 @@
+## 2026-11-03 — C1 弹体栅格粗量化执行：无损等价通过、性能方向不稳定未部署；FOV 级联归因实证
+
+- 做了什么：用户指示"按方案执行，先做无损修复"。基于 v0.34.4 冻结实现 C1（applyWorldVisual 瓦片区间量化到 2×2 粗格，WORLD_RASTER_CELL=2）；探针同进程双版本严格像素等价（checks-02，623 项：静态/位移扫掠/持续绑定/直接调用 + A/A 对照 + raster 集合 12→6 复用阳性对照）；性能 4 轮 fire-exhaustive 链 A/B（c1grid-01c 正序/02 反序 + diag-01/02 诊断，718 间隔/版本，benchmark-eligible，三版本含同字节 A/A 副本）。
+- 结果：轻载相位候选 rv −10%~−40%（refreshMask 调用与耗时双降）；重载相位反向（refreshMask 调用 3858→3852 不降、单位成本 +22%、rv +1.7~+3.2ms）→ **方向随场景相位翻转，不满足稳定收益纪律，未部署**。正式安装未动。
+- 关键归因（本轮最大收获）：重载相位 rv≈15ms/帧中 FOV 级联占 ≈13ms（fillFogCache ≈11.9ms/次 × computeFov 246~343 次/450 帧），弹体路径仅 ≈0.9ms。diag-02 逐帧眼点采样证明稳态射击眼点零位移（否决"射击动画抖动"假设）；重载轮 body 轨迹 ggMoved 235~359/360 与 computeFov 一一对应——**级联由承受命中的击退/踉跄真实位移驱动**。同时解释症状二（敌命中→位移→级联；是否持续命中决定复现性）。C1 失败根因同源：FOV 每帧失效使 raster 复用无从积累、更大量化栅格在失效重算时纯亏。
+- 下一步（待拍板）：C4-a 小位移分档重算（非严格无损：战斗位移下视野重算最多滞后 2~3 帧/几 px）或 C4-b fillFogCache 小 Δ 增量化（研究项，D51 同类前科）；C2/C3 建议延后至级联摊薄后。
+- 工具坑：SavedFireProbe.as 须指 build/fire-exhaustive/（输出目录无副本）；PYTHONUTF8=1 必设（模板 runner 裸 read_text 走 GBK）；PYTHONPATH 需含 build/composite-followup（cpu_sampler）。c1grid-01/01b 两次失败（缺文件/GBK）保留在登记。
+- [报告](../knowledge/experiments/2026-11-03-raster-grid.md)，[方案状态更新](../design/boundary-fire-stutter-plan.md)，工具 build/boundary-c1-20261103，证据 build/boundary-c1-output + fire-exhaustive-output/c1grid*；全部本轮 AIR/登记已结束。
+
 ## 2026-11-02 — v0.34.4-door-smooth 部署：门/窗视野边界平滑修复
 
 - 用户实测报告：窗户和门提供的视野边界明显不如墙壁平滑。只读调查定位两根因：①recalcTile 的 doorView 分支把 FOV_DIM 瓦片内全部子格（含被遮挡）统一抬到 doordim（alpha 128）→ 40px 纯色块马赛克边界；②fillFogCache 4 角采样对窄缝光锥漏检（cLit==0 误判整块记忆填充）。
