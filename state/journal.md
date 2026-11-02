@@ -1,3 +1,11 @@
+## 2026-11-02 — v0.34.4-door-smooth 部署：门/窗视野边界平滑修复
+
+- 用户实测报告：窗户和门提供的视野边界明显不如墙壁平滑。只读调查定位两根因：①recalcTile 的 doorView 分支把 FOV_DIM 瓦片内全部子格（含被遮挡）统一抬到 doordim（alpha 128）→ 40px 纯色块马赛克边界；②fillFogCache 4 角采样对窄缝光锥漏检（cLit==0 误判整块记忆填充）。
+- 修复：①doorView 仅对 lit>0 子格用门景下限，被遮挡子格回落曾见→记忆/未见→黑；②角点循环把"半径内被遮挡"角记 flags 高 4 位（随 cornerReuseFlags 缓存），cLit==0+中心亮+有标记 → 完整子格重算；视距边缘角不触发。单位遮罩门控/seenSub 不受影响。
+- 中途换基事件：首次部署尝试发现 release 已被并行会话换为 v0.34.3-eye-boundary（07:37，弹体软遮罩+眼位+角点精确复用）——中止部署，以 eye-boundary 源为基底重放两修复（改动区零重叠），版本号让位 v0.34.3 → 本轮 v0.34.4-door-smooth。
+- 性能监测（fxlib344-01/02，vs v0.34.3 现任，718 间隔/版本）：固定 33.33/40/RV1.00 vs 33.44/41/0.95（持平略快）；移动 33.95/42/RV1.77 vs 33.33/40/1.95（+0.62ms 噪声带边缘，RV 耗时反降——非算法成本）。首轮基于 v0.34.2 基底的 fxlib343-01/02 结论一致（固定均值差全来自单帧 1142ms 环境尖峰；移动精确持平）。
+- 工具坑新增：Copy-Item 不带 -Recurse 不复制目录内容（modlocales 空）；目标目录已存在时 Copy-Item src dst 会嵌套双目录——槽位复制一律 robocopy；fire-exhaustive 媒体池 shared-v2-combat-01 的 7 个不可变 SWF 曾缺失，已从游戏根硬链接恢复。
+- 部署 49,080B；备份 before-doorsmooth-20261102-190500；config 未动。真机门/窗边界待用户重启核对。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md)
 ## 2026-11-02 — 边界开火/敌人活动卡顿调查与优化方案（未实施）
 
 - 做了什么：核对 KB-000106/KB-000123 与 v0.34.0–0.34.3 部署报告后，对 v0.34.3 生产源（build/eye-boundary-output/candidate/src）做源码级机制归因；产出 [boundary-fire-stutter-plan](../design/boundary-fire-stutter-plan.md)。
