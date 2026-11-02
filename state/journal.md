@@ -1,3 +1,9 @@
+## 2026-11-02 build 相同副本清理（ModLoader 会话统一执行，跨模组治理）
+
+- 按"只删完全相同副本"处置 build 堆积（D 盘曾剩 6.2 GB）：本模组 34,467 个文件被删（10 月下旬冷 output 目录中的本体副本与内部重复；今日活跃目录被 48h 窗口保留）；git 跟踪文件、测试登记表目录、backups 一律保留。三模组本轮合计实际释放 54.67 GiB。
+- 恢复：被删文件按 `../ModLoader/build/out/cleanup-plans/20261102-095751/receipt.json` 记录的 origin 重新复制即可；工具 `../ModLoader/tools/cleanup_test_copies.py`。2026-10-16 的 CLEANUP.md 冻结输入（wall-restore/wall-performance/wall-options/motion-test 下的历史宿主）本轮显式排除，继续有效。
+- 根因（每试验复制一份完整游戏本体+反编译树，fire-exhaustive 单目录 1528 个 SWF）与防复发（调试器 1.2.0 硬链接冻结＋自动 sweep、`/build/` 整体 gitignore、配额巡检）见 ModLoader journal 同日条目；本模组自带 runner 输出根迁硬链接路径待后续迭代。
+
 ## 2026-11-02 — v0.34.3-eye-boundary：弹迹提前消失与眼部视点修复
 
 - 用户报告普通子弹提前被阴影遮住、可视区域与眼睛不对齐。基于正式v0.34.2冻结修复，保留并发authority开发线。

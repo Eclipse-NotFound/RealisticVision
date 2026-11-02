@@ -93,3 +93,9 @@ build/shot-light-output/
 build/eye-boundary-output/
 build/backups/before-eye-boundary-*/
 build/eye-boundary/reviewed-call.json
+
+# ==== 2026-11-02 build-area containment ====
+# The whole build tree is ignored. Files already tracked stay tracked; new
+# files there need an explicit exception (`!path`) or `git add -f`.
+# Test isolation copies must not be committed - use the cleanup tool instead.
+/build/
