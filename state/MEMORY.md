@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-02 **边界开火/敌人活动卡顿调查完成，优化方案已制定（未实施）**：用户收紧线索——①开火卡顿仅当"存在正在渲染的阴影边界"时；②敌人单独活动偶发卡顿（敌数无关、不稳定复现）。源码归因：症状①=v0.34.3 弹体软遮罩语义回归——跨界弹体每帧 getBounds+worldMasks 新 raster+blur+Shape+双 cacheAsBitmap，无边界时均匀分类早退（与"开阔地开火不卡"吻合）；症状②候选=敌方弹体同路径+敌人跨界 state=2 掩膜逐瓦片全量重建，另有**非 RV 低执行量长帧**（RV off 窗也出现，普查 156/168 已证）须先归因。方案：P0 诊断场景矩阵→C1 raster 键粗格量化（无损首选）→C2/C3 弹体重建节流/降模糊（画质取舍待拍板）→C4 眼点抖动迟滞→C5 敌人/弹体缓存统一；不重复普查已否决路线。[方案](../design/boundary-fire-stutter-plan.md)。本轮仅调查+文档，src/release/config 未改。
+
 > 2026-11-02 **v0.34.3-eye-boundary 已部署**：修普通弹体注册点进暗区后整条亮处尾迹提前消失；Bullet/SmartBullet/PhisBullet 改空间软遮罩并刷新动态外框，Part 保持快速路径。视野从真实玩家眼部发出，按眼部位移刷新，墙角分类不再跨不同起点复用。771项受控检查与正式候选原生加载/运行通过；未重测密集战斗帧率。49,048B / `0861FB64…6DD2E30B`；config与宿主未改。源 `build/eye-boundary-output/candidate/src`，可审阅补丁 `build/eye-boundary/production.patch`，备份 `build/backups/before-eye-boundary-20261102-073730`。**保存并重启游戏生效**。[报告](../knowledge/experiments/2026-11-02-eye-boundary.md)。
 
 
@@ -280,6 +282,7 @@
 
 ## 6. 下一步
 
+- 最新接续（2026-11-02 下午）：按 [boundary-fire-stutter-plan](../design/boundary-fire-stutter-plan.md) 执行——先 P0 归因实验（诊断构建计数器 + 边界×开火×敌人场景矩阵 + RV off 对照，fire-exhaustive 链 + agent-debug），证实机制后再实施 C1（弹体 raster 键量化，无损）；C2/C3 画质取舍与 C4-b、非 RV 长帧立项待用户拍板。P0 前不动生产代码。
 - 最新接续（2026-11-01）：回到不加载LightAndDarkness的RV本体开火/移动/交战对照，比较关闭/current/classic及长帧分布。上轮照明调查保留为独立研究，不能据其改善宣称RV提速；以下旧版本行动仅作历史。
 - 当前D42 v0.33.8需用户正常保存并重启加载。原生特效与狮鹫泄露已修复；后续长帧仍需实测归因。下方旧版本行动仅留历史，不据此回退当前安装。
 
