@@ -18,8 +18,8 @@ package {
     if(!main)return;host=main;SoundMixer.soundTransform=new SoundTransform(0);
     wc=host.loaderInfo.applicationDomain.getDefinition('fe.World') as Class;
     for each(var n:String in ['baseline','candidate'])load(n);
-    var scenes:Array=['idle-fixed','fire-fixed','idle-move','fire-move','edge-idle','edge-fire'];
-    if(MOVING)scenes=['idle-move','fire-move','edge-idle','edge-fire'];
+    var scenes:Array=['idle-fixed','fire-fixed','idle-move','fire-move','edge-idle','edge-fire','edge-move-idle','edge-move-fire'];
+    if(MOVING)scenes=['idle-move','fire-move','edge-idle','edge-fire','edge-move-idle','edge-move-fire'];
     if(REVERSE)scenes.reverse();
     for each(var s:String in scenes){
      var order:Array=PAIRED?(REVERSE?['candidate','baseline','baseline','candidate']:['baseline','candidate','candidate','baseline']):['baseline','candidate'];
@@ -104,7 +104,7 @@ package {
    }
    private function input(e:Event):void{try{
     if(!host.stage.nativeWindow.active)host.stage.nativeWindow.activate();var w:*=wc['w'];
-    w.ctr.clearAll();w.gg.ggControl=true;w.gg.setPos(480+(row.scenario.indexOf('move')>=0&&row.scenario.indexOf('edge')<0?Math.abs((age%120)-60)*4:0),640);
+    w.ctr.clearAll();w.gg.ggControl=true;w.gg.setPos(480+(row.scenario.indexOf('move')>=0?Math.abs((age%120)-60)*4:0),640);
     w.gg.dx=w.gg.dy=0;w.gg.setVisPos();w.cam.calc(w.gg);
     w.ctr.keyAttack=row.scenario.indexOf('fire')>=0;
     w.celX=1400;w.celY=580;w.cam.celX=w.celX*w.cam.scaleV+w.cam.vx;w.cam.celY=w.celY*w.cam.scaleV+w.cam.vy;

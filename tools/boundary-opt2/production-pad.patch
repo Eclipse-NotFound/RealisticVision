@@ -1,0 +1,75 @@
+--- a/RealisticVisionMod.as
++++ b/RealisticVisionMod.as
+@@ -3503,12 +3503,12 @@
+          } else if(s3.parent != null)s3.parent.removeChild(s3);
+       }
+ 
+-      private function refreshMask(rec:Object,bb:Array):void
+-      {
+-         var x0:int = bb[0] - MASK_PAD_X;
+-         var y0:int = bb[1] - MASK_PAD_TOP;
+-         var x1:int = bb[2] + MASK_PAD_X;
+-         var y1:int = bb[3] + MASK_PAD_BOTTOM;
++      private function refreshMask(rec:Object,bb:Array,padX:int = MASK_PAD_X,padTop:int = MASK_PAD_TOP,padBottom:int = MASK_PAD_BOTTOM):void
++      {
++         var x0:int = bb[0] - padX;
++         var y0:int = bb[1] - padTop;
++         var x1:int = bb[2] + padX;
++         var y1:int = bb[3] + padBottom;
+          if(x0 < 0)
+          {
+             x0 = 0;
+@@ -3626,9 +3626,9 @@
+                dark=first==0 && !bd.hitTest(this.fogPoint,1,bd.rect);
+                uniformLit=first==255 && bd.getColorBoundsRect(0xff000000,0xff000000,false).isEmpty();
+             }
+-            if(uniformLit && (bb[0]-x0<MASK_PAD_X || bb[1]-y0<MASK_PAD_TOP || x1-bb[2]<MASK_PAD_X || y1-bb[3]<MASK_PAD_BOTTOM
+-               || blur.blurX*blur.quality/2+2>MASK_PAD_X*this.fogSub
+-               || blur.blurY*blur.quality/2+2>MASK_PAD_BOTTOM*this.fogSub))uniformLit=false;
++            if(uniformLit && (bb[0]-x0<padX || bb[1]-y0<padTop || x1-bb[2]<padX || y1-bb[3]<padBottom
++               || blur.blurX*blur.quality/2+2>padX*this.fogSub
++               || blur.blurY*blur.quality/2+2>padBottom*this.fogSub))uniformLit=false;
+             if(dark || uniformLit){
+                rec.fullyDark=dark;rec.fullyLit=uniformLit;rec.coverageFov=this.fovVersion;
+                rec.maskValid=false;
+@@ -4278,13 +4278,15 @@
+          var raster:Object=this.worldMasks[key];
+          if(raster==null){raster={worldRaster:true,lastFov:-1,lastBb:-1,m2:null,m3:null,m2d:null,m2e:null};this.worldMasks[key]=raster;}
+          raster.used=this.worldPass;
+-         this.refreshMask(raster,[x0,y0,x1,y1]);
++         // v0.34.8 C-Bul-2：弹体/手臂栅格支持区收窄（2/3/1→1/1/1）；几何已含于
++            // bounds，模糊半径需求远小于 1 瓦片；敌人单位掩膜走默认 pad 不变。
++            this.refreshMask(raster,[x0,y0,x1,y1],1,1,1);
+          // Leave fully lit native visuals untouched. Besides avoiding needless
+          // caches, this preserves subpixel animation rendering exactly.
+          if(raster.coverageFov!==this.fovVersion)
+          {
+-            var rx:int=(x0-Math.max(0,x0-MASK_PAD_X))*this.fogSub;
+-            var ry:int=(y0-Math.max(0,y0-MASK_PAD_TOP))*this.fogSub;
++            var rx:int=(x0-Math.max(0,x0-1))*this.fogSub;
++            var ry:int=(y0-Math.max(0,y0-1))*this.fogSub;
+             // coverage-fast（普查会话移植）：先查角落单像素，全亮才展开向量；
+             // 全暗用原生 any-alpha 查询代替 bounds 扫描。31/33/37 轮验证
+             // 720帧严格相等、6149次覆盖早退；48/52/54 组合收益稳定。
+@@ -4307,8 +4309,8 @@
+          var drawDark:Boolean=raster.fullyDark;
+          if(!drawDark){
+             var supportData:BitmapData=raster.m2e as BitmapData;
+-            var supportX:int=(x0-Math.max(0,x0-MASK_PAD_X))*this.fogSub;
+-            var supportY:int=(y0-Math.max(0,y0-MASK_PAD_TOP))*this.fogSub;
++            var supportX:int=(x0-Math.max(0,x0-1))*this.fogSub;
++            var supportY:int=(y0-Math.max(0,y0-1))*this.fogSub;
+             // Keep bilinear neighbours, reusing one synchronous scratch rect.
+             this.worldSupportRect.x=Math.max(0,supportX-1);
+             this.worldSupportRect.y=Math.max(0,supportY-1);
+@@ -4340,8 +4342,8 @@
+             this.matrixCacheFrame = this.frameCount;
+             this.matrixCacheValue = screenMatrix;
+          }
+-         var drawX:Number=Math.max(0,x0-MASK_PAD_X)*Tile.tileX;
+-         var drawY:Number=Math.max(0,y0-MASK_PAD_TOP)*Tile.tileY;
++         var drawX:Number=Math.max(0,x0-1)*Tile.tileX;
++         var drawY:Number=Math.max(0,y0-1)*Tile.tileY;
+          var drawScale:Number=Tile.tileX/this.fogSub;
+          if(this.cfgMode=="current" && !drawDark && screenMatrix.a==1 && screenMatrix.d==1 && screenMatrix.b==0 && screenMatrix.c==0 && screenMatrix.tx==Math.floor(screenMatrix.tx) && screenMatrix.ty==Math.floor(screenMatrix.ty) && !this.worldVisualHasFilters(visual)){ // D56_REFRESH: crop uses the original sample lattice
+             // Integer parent-to-screen translation preserves the original

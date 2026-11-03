@@ -1,3 +1,11 @@
+## 2026-11-04 — v0.34.8-clip-pad：弹体支持区收窄 + S2 组合场景（Phase 2）
+
+- 授权：用户"按方案继续下一步"。实施 C-Bul-2（refreshMask pad 参数化，applyWorldVisual 传 1/1/1，坐标映射/守卫同步），新增 S2 场景（edge-move-idle/fire：玩家移动+边界假人+开火）补齐方案验证矩阵。C-Ene-2 降级、C-Fov-1 待拍板（报告有据）。
+- 基线切换：上轮产物移入 legacy-v0346-base/，基线重冻结为 v0.34.7 冻结源；三次探针断言迭代（缩进锚点重取→逐行替换；C-Bul-2 的正确性语义是"零差异"而非"有差异"；基线已含迟滞→两版均需零翻转）。
+- 验证：pad-exact-03 8,598 项全过——弹体像素零差异、支持区子格 −55% 阳性、迟滞两版一致、场/静态/射线严格相同。三轮性能（含 S2）：RV 计时差异在 AA 噪声带 ±5.3% 内，完整帧持平——分配减半的机制收益在训练室量级下不可测，不作收益声明。
+- 部署：02:24 安装 49,693B `e0437a7f…`（前任 v0.34.7 dc7c7bd5，备份 before-clip-pad-20261104-022443-3ad4eb）；冒烟 init ok v0.34.8-clip-pad / tick 1/181；config 未动。[报告](../knowledge/experiments/2026-11-04-clip-pad.md)、[数据](../knowledge/experiments/boundary-opt2-20261104/measurements.json)、工具 `tools/boundary-opt2/`（prepare_candidate2.py）。
+- 停点：方案 Phase 1+2 完成（C-Ene-2 降级、C-Fov-1 待拍板）；真机体感（边界开火、单敌徘徊、重负载分配）待用户重启核对；开发树三批移植遗留。
+
 ## 2026-11-04 — v0.34.7-clip-hyst：弹体裁剪遮罩 + 敌人状态迟滞（边界开火/单敌卡顿 Phase 1）
 
 - 授权：用户"按方案行优化"。实施 [方案](../design/boundary-and-enemy-stutter-optimization-plan.md) Phase 1 的 C-Bul-1（弹体 dynamicBounds 遮罩改矢量裁剪、禁双侧 cacheAsBitmap，消除旋转弹体每帧位图缓存击穿）与 C-Ene-1（enemyState 中间带漏判修复 + 迟滞带 0.85/0.80/0.25/0.10，0/1 必经软遮罩）。

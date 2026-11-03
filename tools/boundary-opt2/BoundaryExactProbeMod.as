@@ -127,8 +127,16 @@ package {
       ia.dispose();ib.dispose();result.fields++;
      }
     }
-    // Positive control: the candidate must actually differ on the dynamic path.
-    check(result.dynFrames>0&&result.dynAdded>0,'clip path exercised');
+    // C-Bul-2 invariant: narrowing the support padding must not change any
+    // pixel of the projectile path (the clip boundary follows the mask alpha
+    // inside the bounding box, which the padding does not touch).
+    check(result.dynFrames==0&&result.dynAdded==0&&result.dynLost==0,'clip path pixels identical');
+    // Positive control: the world rasters themselves must have shrunk.
+    var areaA:int=0,areaB:int=0;
+    for each(var rkA:Object in a.worldMasks) if(rkA.m2e)areaA+=rkA.m2e.width*rkA.m2e.height;
+    for each(var rkB:Object in b.worldMasks) if(rkB.m2e)areaB+=rkB.m2e.width*rkB.m2e.height;
+    check(areaB<areaA,'pad narrowed rasters '+areaA+'->'+areaB);
+    result.padArea={baseline:areaA,candidate:areaB};
     // Strict comparison for the static (non-projectile) visual: hide the
     // dynamic sprites so both layers contain only the static consumer.
     dyn[0].visible=false;dyn[1].visible=false;
@@ -224,9 +232,10 @@ package {
      amp*=2;tries++;
     }
     result.oscillate={center:[cx,cy],dir:[dx,dy],amp:amp,baseline:seqA,candidate:seqB,directA:directA,directB:directB};
-    check(directA>=3,'baseline flips 0<->1 ('+directA+' at amp '+amp+')');
-    check(directB==0,'candidate has no direct 0<->1 flip ('+directB+')');
-    check(calibB.indexOf(2)>=0,'candidate uses the partial band');
+    // Since v0.34.7 the baseline itself carries the hysteresis: both variants
+    // must stay free of direct 0<->1 flips, and the partial band is still used.
+    check(directA==0&&directB==0,'no direct 0<->1 flip ('+directA+'/'+directB+')');
+    check(calibA.indexOf(2)>=0&&calibB.indexOf(2)>=0,'partial band used on both sides');
     result.hystChecks=2;
     dummy.setPos(home,homeY);
     w.gg.setPos(oldx,oldy);w.gg.setVisPos();

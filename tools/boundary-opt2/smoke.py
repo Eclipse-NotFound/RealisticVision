@@ -23,7 +23,7 @@ with r.Registration(owner='RealisticVision / clip-mask production',purpose=sys.a
     rvlog=(folder/'storage/RVision.log').read_text('utf8')
     print(log[-1000:]);print(rvlog[-1000:])
     assert code==0 and 'PRODUCTION SMOKE COMPLETE' in log and 'FAIL ' not in log
-    assert 'init ok v0.34.7-clip-hyst' in rvlog and 'onFrame error' not in rvlog
+    assert 'init ok v0.34.8-clip-pad' in rvlog and 'onFrame error' not in rvlog
     assert 'tick ' in rvlog
     assert all('ModLoader[ok_'+n+']' in log for n in ['RealisticVisionMod','SmokeProbeMod'])
     r.save(folder/'validation.json',{'passed':True,'production':r.sha(release/'RealisticVisionMod.swf'),

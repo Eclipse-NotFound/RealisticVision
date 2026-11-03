@@ -10,8 +10,8 @@ HERE = Path(__file__).resolve().parent
 MOD = HERE.parents[1]
 GAME = MOD.parents[1]
 OUT = MOD / 'build/boundary-opt2-20261104'
-BASE = MOD / 'build/cs-window-20261103/src'
-PIN = 'a095a2f58049bae93032826a3184e720f0209888636d4d5a5ffd2101f08b4db0'
+BASE = MOD / 'build/boundary-opt2-20261104/legacy-v0346-base/production/src'
+PIN = 'dc7c7bd57abfc7cf968a80fec960f0f25ea0fb790c98828644e9b3f9b9ec721b'
 
 
 def load(name, path):

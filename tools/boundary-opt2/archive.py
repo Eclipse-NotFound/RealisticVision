@@ -1,11 +1,11 @@
-"""Keep compact, recomputable measurements in the tracked experiment directory."""
+﻿"""Keep compact, recomputable measurements in the tracked experiment directory."""
 from pathlib import Path
 import json
 from run import MOD, OUT, r
 from analyze import stats
 
 dest=MOD/'knowledge/experiments/boundary-opt2-20261104';dest.mkdir(exist_ok=True)
-names=['clip-perf-01','clip-perf-02','aa-perf-01']
+names=['pad-perf-01','pad-perf-02','pad-aa-01']
 archive={'inputs':json.loads((OUT/'inputs.json').read_text('utf8')),'runs':{}}
 for name in names:
     folder=OUT/name
@@ -21,7 +21,7 @@ for name in names:
     archive['runs'][name]={'scene':data['scene'],'build':json.loads((folder/'build.json').read_text('utf8')),
         'source':str(raw),'sourceSHA256':r.sha(raw),'environment':summary['environment'],
         'cases':rows,'combined':summary['combined']}
-archive['exact']=json.loads((OUT/'clip-exact-01/evidence/result.json').read_text('utf8'))
+archive['exact']=json.loads((OUT/'pad-exact-03/evidence/result.json').read_text('utf8'))
 archive['production']=json.loads((OUT/'production/build.json').read_text('utf8'))
 archive['smoke']=json.loads((OUT/'production-smoke-01/validation.json').read_text('utf8'))
 archive['deployment']=json.loads((OUT/'deployment.json').read_text('utf8'))
