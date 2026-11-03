@@ -1,0 +1,104 @@
+--- a/RealisticVisionMod.as
++++ b/RealisticVisionMod.as
+@@ -128 +128 @@
+-      private static const VERSION:String = "v0.34.4-door-smooth";
++      private static const VERSION:String = "v0.34.5-ray-loop";
+@@ -1911,27 +1911,71 @@
+-         while(c1x != tx || c1y != ty)
+-         {
+-            if(++guard > 400)
+-            {
+-               break;
+-            }
+-            if(tMaxX < tMaxY)
+-            {
+-               tMaxX += tDeltaX;
+-               c1x += stepX;
+-            }
+-            else
+-            {
+-               tMaxY += tDeltaY;
+-               c1y += stepY;
+-            }
+-            op = cached ? this.rayOpac[c1x+c1y*this.rayWidth] : this.tileOpac(loc,loc.getTile(c1x,c1y));
+-            // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
+-            if(op >= 1)
+-            {
+-               return -1;
+-            }
+-            if(op > 0)
+-            {
+-               leaked = true;
+-            }
+-            lit -= op;
++         // Batch rays share an immutable opacity snapshot. Resolve that path once,
++         // then advance its flat index with the DDA instead of reading members
++         // and multiplying by the row width at every crossed cell.
++         // Keep tie ordering, the 400-step guard and the second target sample.
++         if(cached)
++         {
++            var opacity:Vector.<Number> = this.rayOpac;
++            var rowStep:int = stepY * this.rayWidth;
++            var cell:int = c0x + c0y * this.rayWidth;
++            while(c1x != tx || c1y != ty)
++            {
++               if(++guard > 400)
++               {
++                  break;
++               }
++               if(tMaxX < tMaxY)
++               {
++                  tMaxX += tDeltaX;
++                  c1x += stepX;
++                  cell += stepX;
++               }
++               else
++               {
++                  tMaxY += tDeltaY;
++                  c1y += stepY;
++                  cell += rowStep;
++               }
++               op = opacity[cell];
++               if(op == 0) continue; // Empty cells do not alter light or leakage.
++               // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
++               if(op >= 1)
++               {
++                  return -1;
++               }
++               if(op > 0)
++               {
++                  leaked = true;
++               }
++               lit -= op;
++            }
++         }
++         else
++         {
++            while(c1x != tx || c1y != ty)
++            {
++               if(++guard > 400)
++               {
++                  break;
++               }
++               if(tMaxX < tMaxY)
++               {
++                  tMaxX += tDeltaX;
++                  c1x += stepX;
++               }
++               else
++               {
++                  tMaxY += tDeltaY;
++                  c1y += stepY;
++               }
++               op = this.tileOpac(loc,loc.getTile(c1x,c1y));
++               // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
++               if(op >= 1)
++               {
++                  return -1;
++               }
++               if(op > 0)
++               {
++                  leaked = true;
++               }
++               lit -= op;
++            }

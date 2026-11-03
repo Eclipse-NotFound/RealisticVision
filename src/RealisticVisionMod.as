@@ -1671,33 +1671,77 @@ package
          var c1y:int = c0y;
          var guard:int = 0;
          var op:Number;
-         while(c1x != tx || c1y != ty)
+         // Batch rays share an immutable opacity snapshot. Resolve that path once,
+         // then advance its flat index with the DDA instead of reading members
+         // and multiplying by the row width at every crossed cell.
+         // Keep tie ordering, the 400-step guard and the second target sample.
+         if(cached)
          {
-            if(++guard > 400)
+            var opacity:Vector.<Number> = this.rayOpac;
+            var rowStep:int = stepY * this.rayWidth;
+            var cell:int = c0x + c0y * this.rayWidth;
+            while(c1x != tx || c1y != ty)
             {
-               break;
+               if(++guard > 400)
+               {
+                  break;
+               }
+               if(tMaxX < tMaxY)
+               {
+                  tMaxX += tDeltaX;
+                  c1x += stepX;
+                  cell += stepX;
+               }
+               else
+               {
+                  tMaxY += tDeltaY;
+                  c1y += stepY;
+                  cell += rowStep;
+               }
+               op = opacity[cell];
+               if(op == 0) continue; // Empty cells do not alter light or leakage.
+               // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
+               if(op >= 1)
+               {
+                  return -1;
+               }
+               if(op > 0)
+               {
+                  leaked = true;
+               }
+               lit -= op;
             }
-            if(tMaxX < tMaxY)
+         }
+         else
+         {
+            while(c1x != tx || c1y != ty)
             {
-               tMaxX += tDeltaX;
-               c1x += stepX;
+               if(++guard > 400)
+               {
+                  break;
+               }
+               if(tMaxX < tMaxY)
+               {
+                  tMaxX += tDeltaX;
+                  c1x += stepX;
+               }
+               else
+               {
+                  tMaxY += tDeltaY;
+                  c1y += stepY;
+               }
+               op = this.tileOpac(loc,loc.getTile(c1x,c1y));
+               // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
+               if(op >= 1)
+               {
+                  return -1;
+               }
+               if(op > 0)
+               {
+                  leaked = true;
+               }
+               lit -= op;
             }
-            else
-            {
-               tMaxY += tDeltaY;
-               c1y += stepY;
-            }
-            op = cached ? this.rayOpac[c1x+c1y*this.rayWidth] : this.tileOpac(loc,loc.getTile(c1x,c1y));
-            // 全实心（墙/金属门）→ 完全阻挡；部分透光（木门/栅格/水）→ 泄漏暗色视野
-            if(op >= 1)
-            {
-               return -1;
-            }
-            if(op > 0)
-            {
-               leaked = true;
-            }
-            lit -= op;
          }
          op = cached ? this.rayOpac[tx+ty*this.rayWidth] : this.tileOpac(loc,loc.getTile(tx,ty));
          if(op >= 1)
