@@ -1,3 +1,29 @@
+## 2026-11-04 — v0.34.7-clip-hyst：弹体裁剪遮罩 + 敌人状态迟滞（边界开火/单敌卡顿 Phase 1）
+
+- 授权：用户"按方案行优化"。实施 [方案](../design/boundary-and-enemy-stutter-optimization-plan.md) Phase 1 的 C-Bul-1（弹体 dynamicBounds 遮罩改矢量裁剪、禁双侧 cacheAsBitmap，消除旋转弹体每帧位图缓存击穿）与 C-Ene-1（enemyState 中间带漏判修复 + 迟滞带 0.85/0.80/0.25/0.10，0/1 必经软遮罩）。
+- 基线事件：冻结时发现并行 CS 会话 00:58 已部署 v0.34.6-cs-window；全链在其冻结线重建（改动区正交），v0.34.5 基线旧轮次存 legacy-v0345-base；开发树未移植（cs-window 也未回迁，两批合并遗留）。
+- 验证：Exact 8,598 项全过——96 组场严格相同；弹体差异丢失 0/暗区泄漏 0/新增仅在过渡带；非弹体路径严格相同；标定扫描 baseline 1→0 直跳 vs candidate 1→2→0；边界振荡 baseline 7 次直接翻转 vs candidate 0 次。原生性能 3 轮（ABBA/BAAB/同字节 AA）：8/8 baseline edge 窗 flips=18 vs 8/8 candidate 窗 flips=0（AA 两槽同 18=场景可重复）；RV 计时与完整帧在噪声带内无稳定差异（收益在渲染管线/显示树，训练室锁帧测不出），不宣称帧率收益。
+- 新增测试基建：Perf/Exact 探针新增 edge 场景（假人沿运行时发现的视野亮暗交界 80px 往返）；Exact 探针含 fov 场边界发现、模式复位（场对照循环后 cfgMode 停 classic 的坑）与翻转计数断言。DSH 低完整性沙箱被 ModLoader 启动完整性检查按设计拒绝——游戏测试需 full-access（正常完整性）上下文。
+- 部署：01:19 安装 49,660B `dc7c7bd5…`（前任 cs-window a095a2f5，备份 before-clip-hyst-20261104-011915-c1a9c6）；冒烟 init ok v0.34.7-clip-hyst / tick 1/181；config 未动（cs_window 保留）。[报告](../knowledge/experiments/2026-11-04-clip-hyst.md)、[数据](../knowledge/experiments/boundary-opt2-20261104/measurements.json)、工具 `tools/boundary-opt2/`。
+- 停点：Phase 1 完成；Phase 2/3（C-Bul-2 支持区紧致、C-Ene-2 建议降级——visDetails 调用已被迟滞控制且节流有血条分歧风险、C-Fov-1 死区）待真机反馈后定；开发树两批移植合并待做。
+
+## 2026-11-03 — 阴影边界开火与单敌活动卡顿调查：机制与系统优化方案制定
+
+- 任务：针对用户收紧线索开展深入调查并编写优化方案——①“开火导致卡顿”收紧为“存在正在渲染的阴影边界时，开火会导致卡顿”；②“单独的敌人活动似乎也会造成卡顿（无论敌人多少）但不能稳定复现”。
+- 关键发现（开火跨界）：
+  1. 纯亮区开火不卡机理：`raster.fullyLit`（4210行）命中，弹体完全不挂载遮罩 Shape、不分配位图、不走滤镜、不设 cacheAsBitmap，原生直接渲染，零额外开销。
+  2. 跨边界重度卡顿机理：弹体跨越混合边界时触发 `refreshMask`，除位图分配与 BlurFilter 卷积外，最致命的是对高速移动/旋转的弹体开启了 `visual.cacheAsBitmap = true` 与 `shape.cacheAsBitmap = true`！Flash 引擎的位图缓存每帧因旋转位移而击穿重绘，叠加离屏双层 Alpha 合成，射速快时瞬间拥塞。
+  3. “正在渲染边界”的恶性共振：若开火伴随位移/后坐导致眼点移动 >4px，触发 `computeFov`（12ms+）与 `fovVersion++`，导致所有遮罩每帧强制全失效，视野重算与弹体每帧重栅格化发生严重叠加。
+- 关键发现（单敌活动）：
+  1. `enemyState` 逻辑漏洞（3355–3363行）：`cfgEnemyFast == 1` 时漏写 `return 2`，导致 0.15~0.80 临界区敌人全部跌落返回 0（全隐）。单敌在 80% 边界微晃时发生剧烈 0↔1 二值翻转（Flip-Flop），频繁触发 `showUnit/hideUnit`，每秒多次调用原生高开销的 `u.visDetails()`（血条/装甲帧跳转），产生突发卡顿。站位恰在临界线时才触发，完美解释“单敌也卡、无法稳定复现”。
+  2. 单敌骨骼动画软遮罩重绘：敌人进入 `state = 2` 时挂载 `cacheAsBitmap=true`，其极其庞大的多层 MovieClip 骨骼动画每帧换帧导致整树重栅格化。
+  3. 外部效应与 GC 尖峰：敌方子弹跨界同路径软遮罩卡顿、流弹击中玩家引发 FOV 重算，以及大量临时位图分配累积诱发的 AIR 引擎全局 GC 停顿（50ms~300ms）。
+- 方案制定：完成 [系统优化方案](../design/boundary-and-enemy-stutter-optimization-plan.md)。
+  - 支柱一（弹体）：C-Bul-1 弹体禁用 `visual.cacheAsBitmap`（首选，消除旋转击穿）；C-Bul-2 弹体支持区收窄至 1 瓦片并瓦片量化复用；C-Bul-3 极速档中心点二值增强。
+  - 支柱二（单敌）：C-Ene-1 修复 `enemyState` 漏项并引入双阈值迟滞（0.70/0.85 施密特触发器，杜绝呼吸翻转）；C-Ene-2 节流 `visDetails()` 刷新；C-Ene-3 动画态敌人禁用 `cacheAsBitmap`。
+  - 支柱三（系统）：C-Fov-1 开火/受击微晃死区过滤（4px→6px 或最小重算间隔），阻断恶性共振。
+- 状态：本轮完成深度调查与方案文档编写，未更改生产 SWF 或配置，src/release/config 保持 v0.34.5。
+
 ## 2026-11-03 — v0.34.5-ray-loop：实施保真优化并记录计算收益
 
 - 用户授权：按既有方案优化并记录性能收益。实际配置只读核验成功；隔离测试经过 loadConfig，保留玩家 enabled=0。

@@ -1,0 +1,49 @@
+--- a/RealisticVisionMod.as
++++ b/RealisticVisionMod.as
+@@ -3418,9 +3418,19 @@
+                {
+                   // v0.34.1：透光门/水泄漏区（FOV_DIM）必须保留门景暗化软遮罩——
+                   // 混合区按比例提升为全可见会把门后单位（如炮塔）亮显。
++                  // v0.34.6 C-Ene-1：修复 0.15<比例<0.8 临界区漏判（原跌落返回 0，
++                  // 边界微晃引发 0/1 高频翻转与显隐/渐入抖动）；中间带明确走软遮罩，
++                  // 并按上一稳定状态加迟滞带（升显 0.85、离显 0.80、离隐 0.25、
++                  // 降隐 0.10；带内保持），0 与 1 之间必经软遮罩过渡。
+                   var gateRatio:Number=litWeight/tileCount;
+-                  if(gateRatio>=0.8 && dimTiles==0) return 1;
+-                  if(gateRatio<=0.15) return 0;
++                  var prevRec:Object=this.unitVis[u];
++                  var prevSt:int=prevRec!=null?int(prevRec.state):-1;
++                  if(gateRatio>=0.85 && dimTiles==0) return 1;
++                  if(gateRatio>=0.8) return dimTiles==0 && prevSt==1 ? 1 : 2;
++                  if(gateRatio>=0.25) return 2;
++                  if(gateRatio>=0.15) return prevSt==0 ? 0 : 2;
++                  if(gateRatio>=0.1) return prevSt==2 ? 2 : 0;
++                  return 0;
+                }
+                return !mixed && combined==2 ? 1 : 0;
+             }
+@@ -4361,9 +4371,21 @@
+             record.raster=raster;record.revision=raster.maskRevision;record.dark=drawDark;
+          }
+          if(shape.parent!==visual.parent)visual.parent.addChild(shape);
+-         if(shape.cacheAsBitmap!==!drawDark)shape.cacheAsBitmap=!drawDark;
+-         var useCache:Boolean=drawDark?record.cache:true;
+-         if(visual.cacheAsBitmap!==useCache)visual.cacheAsBitmap=useCache;
++         // v0.34.6 C-Bul-1：高速弹体（dynamicBounds）改矢量裁剪遮罩。旋转/位移
++         // 弹体在 alpha 遮罩（双侧 cacheAsBitmap）下每帧位图缓存击穿重栅格化；
++         // 裁剪语义无需位图表面，两侧缓存恢复原值。代价：跨界弹体边界由 alpha
++         // 渐变变为遮罩场 alpha>0 硬边（亮区尾迹与暗区隐藏语义不变）。
++         if(dynamicBounds)
++         {
++            if(shape.cacheAsBitmap)shape.cacheAsBitmap=false;
++            if(visual.cacheAsBitmap!==record.cache)visual.cacheAsBitmap=record.cache;
++         }
++         else
++         {
++            if(shape.cacheAsBitmap!==!drawDark)shape.cacheAsBitmap=!drawDark;
++            var useCache:Boolean=drawDark?record.cache:true;
++            if(visual.cacheAsBitmap!==useCache)visual.cacheAsBitmap=useCache;
++         }
+          if(visual.mask!==shape)visual.mask=shape;
+       }
+ 
