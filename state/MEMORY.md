@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-03 **边界卡顿调查/方案复核完成（本轮仅文档，无游戏测试或部署）**：正式 v0.34.4-door-smooth，SWF `2D536086…F064407`、config `73B83AB5…EBC3DE`；准确主源码 `build/perf-20261102/src`。复核 C1 四轮 24 窗发现：驱动跳过正式配置加载，初始 8 子格 vs 安装模板解析后 4；计数含预热 450 帧而位置仅 360；敌方发射下界误写成命中；场景布局/原生单位数不同；重载部分可见敌人为 0；同源 SWF 非同字节。保留 623 项图像通过及 C1 不部署；“受击已证实为两症状共同主因”和优先降频建议撤回。场/墙体在旧重载夹具占 RV 81.9%–87.1%，是方向线索，不是玩家实际成本。下一步为配置对齐 + 边界在屏/弹体支持区跨界的最小因果对照，再测单敌不开火活动。实际 Local Store 设置的只读核对被保护钩子拦截，仍未验。[现行方案](../design/boundary-fire-stutter-plan.md)、[复核与更正](../knowledge/experiments/2026-11-03-boundary-audit.md)。下条为 C1 原摘要，归因和优先级以本条为准，不自动实施或部署。
+
 > 2026-11-03 **C1 弹体栅格粗量化已执行、未部署；FOV 级联归因实证（重要）**：用户指示"按方案执行，先做无损修复"。C1（WORLD_RASTER_CELL=2）基于 v0.34.4 冻结实现：同进程双版本**严格像素等价 623 项全过**（checks-02，静态/位移扫掠/持续绑定/直接调用 + 复用阳性对照 raster 12→6）；性能 4 轮（c1grid-01c/02、diag-01/02，718 间隔/版本，benchmark-eligible）轻载相位 rv −10%~−40%、**重载相位反向（refreshMask 单位成本 +22%、调用数不降、rv +1.7~+3.2ms）→ 方向随场景相位翻转，不部署**。**归因发现（重载相位 rv≈15ms/帧结构）**：computeFov 246~343 次/450 帧（每 1.3~1.8 帧一次），fillFogCache ≈11.9ms/次+雾重绘+墙体重建+全遮罩失效占绝对主导（弹体路径仅 ≈0.9ms/帧）；diag-02 逐帧眼点采样证**稳态射击眼点零位移**（排除射击动画假设），**级联由承受命中的真实位移（击退/踉跄）驱动**——ggMoved 235~359/360 与 computeFov 一一对应；h（透明度变化）仅 1~5 次/窗。该级联同时解释症状二（敌命中→位移→级联，命中是否持续决定复现性）。下一步第一优先=级联摊薄：C4-a 小位移分档重算（**需用户拍板**，滞后上限与 4px 阈值同量级）/ C4-b fillFogCache 小 Δ 增量化（研究项，D51 同类前科）；C2/C3 建议延后。正式安装仍 v0.34.4-door-smooth（2d536086…，src/release/config 未改）。[报告](../knowledge/experiments/2026-11-03-raster-grid.md)，[方案更新](../design/boundary-fire-stutter-plan.md)，工具 build/boundary-c1-20261103，证据 build/boundary-c1-output + fire-exhaustive-output/c1grid*。
 
 > 2026-11-02 **v0.34.4-door-smooth 已部署（修复：门/窗视野边界不如墙平滑）**：49,080B，SHA256 见部署输出；备份`build/backups/before-doorsmooth-20261102-190500`（v0.34.3-eye-boundary 0861FB64，config 未改）。基底=v0.34.3-eye-boundary（并行会话 07:37 部署，本轮首次部署尝试时发现指纹不符而中止、换基重放——保留其弹体软遮罩/眼位/角点精确复用全部改动）。根因（只读调查确认）：①`recalcTile` doorView 分支把透光门景（FOV_DIM）瓦片内**所有**子格（含被墙/门框完全遮挡的）统一抬到 doordim=0.5（alpha 128）——子格光线几何被抹平，整瓦片退化为 40px 纯色块，边界呈瓦片阶梯；②fillFogCache 4 角采样分类漏检窄缝光锥（窗/门缝光束穿过瓦片中心但避开全部 4 个角样本 → cLit==0 误判整块记忆填充）。修复：①doorView 分支仅对 lit>0 子格用门景下限，被遮挡子格回落普通路径（曾见→记忆暗色/未见→黑）——门景边界恢复子格几何+模糊，与墙同平滑级；单位遮罩门控（currentSight 只写 lit>0）与 seenSub 标记不受影响；②角点循环把"半径内被遮挡"角记入 flags 高 4 位（随 cornerReuseFlags 缓存，与 v0.34.3 精确同起点复用条件兼容），分类处 cLit==0 且中心亮且有此标记 → 完整 8×8 重算；视距半径边缘角不触发（保持原记忆填充语义）。语义变化：透光门后不再整瓦片 0.5 亮度可见，改为一子格级光锥（光锥内仍 doordim 暗视，锥外回记忆/黑）——更符合"透过玻璃/木门看"的直觉。性能（fire-exhaustive 三版本同进程，718 间隔/版本，benchmark-eligible）：固定 fxlib344-01 候选 33.33/P95 40/RV 1.00 vs v0.34.3 现任 33.44/41/0.95（持平略快）；移动 fxlib344-02 33.95/42/1.77 vs 33.33/40/1.95（+0.62ms 在噪声带边缘，RV 自身耗时反降 0.18ms——非算法成本；历轮移动噪声 ±0.6ms、无改动对照 ±3ms）。官方冒烟见报告。**真机门/窗边界平滑度待用户重启核对**。[报告](../knowledge/experiments/2026-11-02-fx-liberation.md#v0344-door-smooth-修复)，证据 fire-exhaustive-output/fxlib344-01/02，实验 build/perf-20261102（源=eye-boundary 基底+apply_doorsmooth.py）。
@@ -174,7 +176,7 @@
 
 ## 3. 当前状态
 
-- 当前安装 **v0.34.3-eye-boundary**，49,048B / `0861FB64…6DD2E30B`；准确生产源 `build/eye-boundary-output/candidate/src`，保留 v0.34.2 的门区、激光与跨地图记忆修复。771项针对性检查及正式包冒烟通过；无需追加未请求的性能普查。本轮已结束，等待正常重启后的实际游玩反馈。详情见顶部新条目。
+- 当前安装 **v0.34.4-door-smooth**，49,080B / `2D536086…F064407`；准确生产源 `build/perf-20261102/src`，主文件与 C1 基线冻结一致。2026-11-03 本轮回读安装/模板指纹未变，仅复核证据和修订方案；未核实玩家进程是否已重启及实际保存配置。v0.34.3 的弹迹/眼部修复与 v0.34.4 门窗平滑语义均保留。
 
 - 历史安装 **v0.33.17-locmem**，47,862B，SHA256 `35243D0F…97489D29`；准确生产源 `build/landmem-fix-20261102/src`（自fx-fast冻结派生）。修跨地图/楼层首房"整间已探索"：房间记忆改按Location对象弱键。冒烟 init/设置注册/tick1–901 通过；真机换层核对待用户重启后确认。回退备份`build/backups/before-locmem-20261102-013447`。重启生效。
 
@@ -203,6 +205,8 @@
 - 上次部署备份 build/release_backup_v0280_grabfix1_before_v0282_20260919.swf，SHA E4E5ED82D5E65201A57A712F7BEBC6FDB499E7822C131B414A67700107401969。旧部署实例22条心跳/六loader正常/F12入口见v0282部署报告，不属于新候选部署验证。
 
 ## 4. 正在进行与停点
+
+- 2026-11-03 当前委托的调查与优化方案已交付，无本轮待运行游戏或优化候选。后续执行从 [boundary-fire-stutter-plan](../design/boundary-fire-stutter-plan.md) P0-a 开始；旧“已确定受击共同主因、先降频”停点已撤回，见顶部复核。
 
 - **D61 v0.33.13-combo-v2 已部署**（2026-10-31 16:48:52，47,326B，`3F6E6072…6D96D`）：motionstep 4.0 + getBounds 缓存。移动较v0.33.12再-6.6%、RV-22%；固定无回退；与off差距4.39ms。官方ModLoader smoke通过。停点=玩家重启后实际体验；异常回滚用`before-combo-v2-20261031-164852`。后续测试默认关闭LightAndDarknessMod。
 
@@ -286,8 +290,7 @@
 
 ## 6. 下一步
 
-- 最新接续（2026-11-03）：C1 已执行未部署（见顶部条目）。第一优先=**战斗位移 FOV 级联摊薄**：待用户拍板 C4-a（小位移分档重算，非严格无损）或立项 C4-b（fillFogCache 小 Δ 增量化研究）；C1 源码与证据保留，级联摊薄后可重估。跑批要点：SavedFireProbe.as 用 `build/fire-exhaustive/` 路径、`PYTHONUTF8=1`、PYTHONPATH 含 `build/composite-followup`。
-- 最新接续（2026-11-02 下午）：按 [boundary-fire-stutter-plan](../design/boundary-fire-stutter-plan.md) 执行——先 P0 归因实验（诊断构建计数器 + 边界×开火×敌人场景矩阵 + RV off 对照，fire-exhaustive 链 + agent-debug），证实机制后再实施 C1（弹体 raster 键量化，无损）；C2/C3 画质取舍与 C4-b、非 RV 长帧立项待用户拍板。P0 前不动生产代码。
+- 最新接续（2026-11-03 复核）：按[修订方案](../design/boundary-fire-stutter-plan.md)先 P0-a 正式配置/计数口径对齐及 S0/S1/S2，再按证据测单敌跨界与命中位移。只有热点和整帧收益成立才试对应保真候选；C1 仍未采用，C4-a 降频不再是默认首选。此次任务停在调查与方案交付，未启动后续实施。旧跑批路径和编码提示保留于 C1 报告。
 - 最新接续（2026-11-01）：回到不加载LightAndDarkness的RV本体开火/移动/交战对照，比较关闭/current/classic及长帧分布。上轮照明调查保留为独立研究，不能据其改善宣称RV提速；以下旧版本行动仅作历史。
 - 当前D42 v0.33.8需用户正常保存并重启加载。原生特效与狮鹫泄露已修复；后续长帧仍需实测归因。下方旧版本行动仅留历史，不据此回退当前安装。
 

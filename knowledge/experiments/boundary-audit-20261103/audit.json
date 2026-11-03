@@ -1,0 +1,2572 @@
+{
+  "date": "2026-11-03",
+  "kind": "offline_reanalysis_not_new_runtime_test",
+  "scope": "Existing C1 fixtures; no causal hit detection or player reproduction",
+  "inputs": [
+    {
+      "path": "release/RealisticVisionMod.swf",
+      "sha256": "2d5360864abd7a6e6115fbe6c362cd0ed5f0665a8d336513df6e711b3f064407",
+      "bytes": 49080
+    },
+    {
+      "path": "release/config.txt",
+      "sha256": "73b83ab5e60e1cc71367dd7f725de7d2e4c9bcc36f045f43ef530a53bcebc3de",
+      "bytes": 421
+    },
+    {
+      "path": "build/perf-20261102/src/RealisticVisionMod.as",
+      "sha256": "133bd23611c245275546d8088f80fe3d27de214c6e99aab66da1a0e1ffd85c0e",
+      "bytes": 219618
+    },
+    {
+      "path": "build/boundary-c1-output/baseline/src/RealisticVisionMod.as",
+      "sha256": "133bd23611c245275546d8088f80fe3d27de214c6e99aab66da1a0e1ffd85c0e",
+      "bytes": 219618
+    },
+    {
+      "path": "build/boundary-c1-output/inputs.json",
+      "sha256": "5638587aac1bd069d71fba2043956c74e8c2493053411ba91934c6c5a1e47654",
+      "bytes": 268
+    }
+  ],
+  "checks": {
+    "scenarios": [
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 280,
+        "x": 270
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 320,
+        "x": 280
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 320,
+        "x": 310
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 200,
+        "x": 340
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 60,
+        "x": 375
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 4,
+        "lit": 0,
+        "x": 450
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 280,
+        "x": 270
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 320,
+        "x": 280
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 320,
+        "x": 310
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 200,
+        "x": 340
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 60,
+        "x": 375
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "current",
+        "sub": 8,
+        "lit": 0,
+        "x": 450
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 280,
+        "x": 270
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 320,
+        "x": 280
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 320,
+        "x": 310
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 200,
+        "x": 340
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 60,
+        "x": 375
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 4,
+        "lit": 0,
+        "x": 450
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 280,
+        "x": 270
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 320,
+        "x": 280
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 320,
+        "x": 310
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 200,
+        "x": 340
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 60,
+        "x": 375
+      },
+      {
+        "kind": "static",
+        "dark": 0,
+        "mode": "classic",
+        "sub": 8,
+        "lit": 0,
+        "x": 450
+      }
+    ],
+    "checks": 623,
+    "rasters": {
+      "candidate": 6,
+      "midCandidate": 6,
+      "baseline": 12
+    }
+  },
+  "runs": [
+    {
+      "name": "c1grid-01c",
+      "scene": {
+        "roomBlack": true,
+        "loc": "loc1_3",
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "fps": 30,
+        "base": false,
+        "land": "random_mane",
+        "nativeUnits": 12,
+        "size": [
+          48,
+          25
+        ],
+        "platform": [
+          1281.8,
+          1861.8,
+          920
+        ]
+      },
+      "inputs": [
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/evidence/result.json",
+          "sha256": "62e6ddf70d092f36d3cd764a270536060930584795cb6aca142352e65097bab9",
+          "bytes": 2048487
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/analysis.json",
+          "sha256": "d611933dd00ecf864db4b598b3b6287664e3c15775a5713caea3e9f593457b3a",
+          "bytes": 1212
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/CombatRenderProbeMod.as",
+          "sha256": "8360720eb98cd28392a00df3365cf5fa249320c6f207746824fc83da5c644c8e",
+          "bytes": 25807
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/rv.swf",
+          "sha256": "9acdc5d6dd0b6fc3ecd712839d3ddf7a4959215dcd7b14cf745ee51bbe252fad",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/vector.swf",
+          "sha256": "3cb31091349d1d5a9024cc7dcd2f00d0c0beac0321f5c54ed0e48317b6b76eb1",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/candidate.swf",
+          "sha256": "b9150d247183249fc67e2aa55202b5044fad12240c99b3fb2b233674cb409ca0",
+          "bytes": 50263
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/rv-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/vector-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-01c/candidate-src/RealisticVisionMod.as",
+          "sha256": "69dbbd4b19251106eb4743a393ac44214e36988ffb7d15d961eb68bd1d4210f2",
+          "bytes": 229465
+        }
+      ],
+      "baseline_main_source_byte_equal": true,
+      "baseline_swf_byte_equal": false,
+      "probe_has_config_initialization_reference": false,
+      "profile_flag_false": true,
+      "performance_summary": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/normal": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 36.73398328690808,
+              "p95": 48,
+              "max": 187,
+              ">100": 4
+            },
+            "rv": {
+              "n": 718,
+              "mean": 3.299442896935933,
+              "p95": 10,
+              "max": 94,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 35.959610027855156,
+              "p95": 47,
+              "max": 269,
+              ">100": 4
+            },
+            "rv": {
+              "n": 718,
+              "mean": 2.8885793871866294,
+              "p95": 7,
+              "max": 104,
+              ">100": 1
+            }
+          },
+          "current/vector": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 35.977715877437326,
+              "p95": 49,
+              "max": 105,
+              ">100": 1
+            },
+            "rv": {
+              "n": 718,
+              "mean": 3.221448467966574,
+              "p95": 9,
+              "max": 64,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "windows": [
+        {
+          "index": 0,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 52,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 45,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 391,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 2299,
+          "vision_plus_wall_ms_including_warmup": 1494,
+          "vision_plus_wall_share_of_rv": 0.649848,
+          "fill_ms_per_call": 4.955556,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 595,
+            "computeFov": 42,
+            "refreshWallField": 78,
+            "fillFogCache": 223,
+            "applyWeaponVisual": 12,
+            "refreshMask": 227,
+            "updateWallSurface": 692,
+            "prepareOcclusion": 64,
+            "hideEnemies": 685,
+            "enemyState": 27,
+            "applyWorldVisual": 338,
+            "applyVision": 802
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 45,
+            "refreshWallField": 450,
+            "fillFogCache": 45,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3614,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 3928,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 1,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 26,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 13,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 376,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1412,
+          "vision_plus_wall_ms_including_warmup": 701,
+          "vision_plus_wall_share_of_rv": 0.496459,
+          "fill_ms_per_call": 5.076923,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 551,
+            "computeFov": 18,
+            "refreshWallField": 88,
+            "fillFogCache": 66,
+            "applyWeaponVisual": 5,
+            "refreshMask": 224,
+            "updateWallSurface": 300,
+            "prepareOcclusion": 43,
+            "hideEnemies": 628,
+            "enemyState": 15,
+            "applyWorldVisual": 339,
+            "applyVision": 401
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 13,
+            "refreshWallField": 450,
+            "fillFogCache": 13,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3514,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 3862,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 2,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 28,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 13,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 373,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1707,
+          "vision_plus_wall_ms_including_warmup": 886,
+          "vision_plus_wall_share_of_rv": 0.519039,
+          "fill_ms_per_call": 5.153846,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 628,
+            "computeFov": 24,
+            "refreshWallField": 89,
+            "fillFogCache": 67,
+            "applyWeaponVisual": 10,
+            "refreshMask": 316,
+            "updateWallSurface": 432,
+            "prepareOcclusion": 54,
+            "hideEnemies": 720,
+            "enemyState": 27,
+            "applyWorldVisual": 400,
+            "applyVision": 454
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 13,
+            "refreshWallField": 450,
+            "fillFogCache": 13,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3580,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 3939,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 3,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 23,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 11,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 367,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1392,
+          "vision_plus_wall_ms_including_warmup": 613,
+          "vision_plus_wall_share_of_rv": 0.440374,
+          "fill_ms_per_call": 4.272727,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 601,
+            "computeFov": 7,
+            "refreshWallField": 76,
+            "fillFogCache": 47,
+            "applyWeaponVisual": 4,
+            "refreshMask": 220,
+            "updateWallSurface": 298,
+            "prepareOcclusion": 64,
+            "hideEnemies": 688,
+            "enemyState": 25,
+            "applyWorldVisual": 329,
+            "applyVision": 315
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 11,
+            "refreshWallField": 450,
+            "fillFogCache": 11,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3686,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 4081,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 4,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 23,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 11,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 367,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1418,
+          "vision_plus_wall_ms_including_warmup": 663,
+          "vision_plus_wall_share_of_rv": 0.46756,
+          "fill_ms_per_call": 5.181818,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 608,
+            "computeFov": 10,
+            "refreshWallField": 79,
+            "fillFogCache": 57,
+            "applyWeaponVisual": 7,
+            "refreshMask": 177,
+            "updateWallSurface": 280,
+            "prepareOcclusion": 54,
+            "hideEnemies": 683,
+            "enemyState": 19,
+            "applyWorldVisual": 379,
+            "applyVision": 383
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 11,
+            "refreshWallField": 450,
+            "fillFogCache": 11,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3698,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 4096,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 5,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 14,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 9,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 384,
+          "unit_count_including_player_and_native_units": 18,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1431,
+          "vision_plus_wall_ms_including_warmup": 430,
+          "vision_plus_wall_share_of_rv": 0.300489,
+          "fill_ms_per_call": 5.666667,
+          "profile_inclusive_ms": {
+            "applyWorldVisuals": 841,
+            "computeFov": 9,
+            "refreshWallField": 77,
+            "fillFogCache": 51,
+            "applyWeaponVisual": 7,
+            "refreshMask": 463,
+            "updateWallSurface": 186,
+            "prepareOcclusion": 54,
+            "hideEnemies": 923,
+            "enemyState": 11,
+            "applyWorldVisual": 584,
+            "applyVision": 244
+          },
+          "calls_including_warmup": {
+            "applyWorldVisuals": 450,
+            "computeFov": 9,
+            "refreshWallField": 450,
+            "fillFogCache": 9,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 3941,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 7200,
+            "applyWorldVisual": 4371,
+            "applyVision": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "c1grid-02",
+      "scene": {
+        "roomBlack": true,
+        "nativeUnits": 6,
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "fps": 30,
+        "base": false,
+        "land": "random_mane",
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "platform": [
+          1361.8,
+          1941.8,
+          960
+        ]
+      },
+      "inputs": [
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/evidence/result.json",
+          "sha256": "e6204376fcd929f7f824d55e9c438f0fe396d6b20173bdf544d9c1cec24ae775",
+          "bytes": 2058257
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/analysis.json",
+          "sha256": "9f20c6a65750661879defb90e0da858e21c256d15646fdabd0ae0f7b67bccd9e",
+          "bytes": 1213
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/CombatRenderProbeMod.as",
+          "sha256": "0c59f6ea0c3cd486b516548382581e61696484b03940d4c09d3c8f3ddd34bdea",
+          "bytes": 25807
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/rv.swf",
+          "sha256": "a312b33d99b2483d555172820a49b7ddb17b922686e6a7ea24d6c3ed18d34a69",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/vector.swf",
+          "sha256": "4b61d9c5802194d174660e8261f4394ffc957cfc47f1ac68c54573109432943d",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/candidate.swf",
+          "sha256": "85026d70a02f2328084602d089e72ca2d0df4b715b6d5ccb574b91f1168f6203",
+          "bytes": 50263
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/rv-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/vector-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-02/candidate-src/RealisticVisionMod.as",
+          "sha256": "69dbbd4b19251106eb4743a393ac44214e36988ffb7d15d961eb68bd1d4210f2",
+          "bytes": 229465
+        }
+      ],
+      "baseline_main_source_byte_equal": true,
+      "baseline_swf_byte_equal": false,
+      "probe_has_config_initialization_reference": false,
+      "profile_flag_false": true,
+      "performance_summary": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/vector": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 49.82451253481894,
+              "p95": 67,
+              "max": 172,
+              ">100": 5
+            },
+            "rv": {
+              "n": 718,
+              "mean": 15.080779944289693,
+              "p95": 27,
+              "max": 137,
+              ">100": 2
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 53.278551532033426,
+              "p95": 67,
+              "max": 143,
+              ">100": 5
+            },
+            "rv": {
+              "n": 718,
+              "mean": 16.78690807799443,
+              "p95": 26,
+              "max": 92,
+              ">100": 0
+            }
+          },
+          "current/normal": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 49.6142061281337,
+              "p95": 65,
+              "max": 287,
+              ">100": 5
+            },
+            "rv": {
+              "n": 718,
+              "mean": 13.610027855153204,
+              "p95": 28,
+              "max": 88,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "windows": [
+        {
+          "index": 0,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 255,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 198,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 387,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 5243,
+          "vision_plus_wall_ms_including_warmup": 4378,
+          "vision_plus_wall_share_of_rv": 0.835018,
+          "fill_ms_per_call": 11.722222,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 321,
+            "applyVision": 3209,
+            "applyWorldVisuals": 534,
+            "computeFov": 155,
+            "refreshWallField": 59,
+            "fillFogCache": 2321,
+            "applyWeaponVisual": 0,
+            "refreshMask": 219,
+            "updateWallSurface": 1169,
+            "prepareOcclusion": 50,
+            "hideEnemies": 640,
+            "enemyState": 64
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4099,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 198,
+            "refreshWallField": 450,
+            "fillFogCache": 198,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 3605,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4133
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 1,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 335,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 337,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 397,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 7728,
+          "vision_plus_wall_ms_including_warmup": 6470,
+          "vision_plus_wall_share_of_rv": 0.837215,
+          "fill_ms_per_call": 11.78635,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 592,
+            "applyVision": 5011,
+            "applyWorldVisuals": 803,
+            "computeFov": 253,
+            "refreshWallField": 57,
+            "fillFogCache": 3972,
+            "applyWeaponVisual": 5,
+            "refreshMask": 446,
+            "updateWallSurface": 1459,
+            "prepareOcclusion": 44,
+            "hideEnemies": 942,
+            "enemyState": 78
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4654,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 337,
+            "refreshWallField": 450,
+            "fillFogCache": 337,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 4053,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4383
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 2,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 299,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 287,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 396,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 6827,
+          "vision_plus_wall_ms_including_warmup": 5765,
+          "vision_plus_wall_share_of_rv": 0.844441,
+          "fill_ms_per_call": 11.787456,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 410,
+            "applyVision": 4372,
+            "applyWorldVisuals": 654,
+            "computeFov": 247,
+            "refreshWallField": 53,
+            "fillFogCache": 3383,
+            "applyWeaponVisual": 0,
+            "refreshMask": 305,
+            "updateWallSurface": 1393,
+            "prepareOcclusion": 31,
+            "hideEnemies": 762,
+            "enemyState": 72
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4535,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 287,
+            "refreshWallField": 450,
+            "fillFogCache": 287,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 3964,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4201
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 3,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 235,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 205,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 387,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 5355,
+          "vision_plus_wall_ms_including_warmup": 4388,
+          "vision_plus_wall_share_of_rv": 0.819421,
+          "fill_ms_per_call": 12.029268,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 420,
+            "applyVision": 3245,
+            "applyWorldVisuals": 607,
+            "computeFov": 191,
+            "refreshWallField": 48,
+            "fillFogCache": 2466,
+            "applyWeaponVisual": 1,
+            "refreshMask": 310,
+            "updateWallSurface": 1143,
+            "prepareOcclusion": 51,
+            "hideEnemies": 711,
+            "enemyState": 61
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4321,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 205,
+            "refreshWallField": 450,
+            "fillFogCache": 205,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 3751,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4364
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 4,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 349,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 349,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 371,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 7806,
+          "vision_plus_wall_ms_including_warmup": 6693,
+          "vision_plus_wall_share_of_rv": 0.857417,
+          "fill_ms_per_call": 11.962751,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 458,
+            "applyVision": 5236,
+            "applyWorldVisuals": 686,
+            "computeFov": 248,
+            "refreshWallField": 52,
+            "fillFogCache": 4175,
+            "applyWeaponVisual": 2,
+            "refreshMask": 305,
+            "updateWallSurface": 1457,
+            "prepareOcclusion": 54,
+            "hideEnemies": 791,
+            "enemyState": 58
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4192,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 349,
+            "refreshWallField": 450,
+            "fillFogCache": 349,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 3651,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4050
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 5,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 359,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 366,
+          "fov_reasons_including_warmup": null,
+          "enemy_shot_lower_bound_not_hits": 389,
+          "unit_count_including_player_and_native_units": 12,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 7993,
+          "vision_plus_wall_ms_including_warmup": 6961,
+          "vision_plus_wall_share_of_rv": 0.870887,
+          "fill_ms_per_call": 12.136612,
+          "profile_inclusive_ms": {
+            "applyWorldVisual": 360,
+            "applyVision": 5496,
+            "applyWorldVisuals": 578,
+            "computeFov": 269,
+            "refreshWallField": 42,
+            "fillFogCache": 4442,
+            "applyWeaponVisual": 7,
+            "refreshMask": 251,
+            "updateWallSurface": 1465,
+            "prepareOcclusion": 36,
+            "hideEnemies": 710,
+            "enemyState": 90
+          },
+          "calls_including_warmup": {
+            "applyWorldVisual": 4547,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 366,
+            "refreshWallField": 450,
+            "fillFogCache": 366,
+            "applyWeaponVisual": 4500,
+            "refreshMask": 3974,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "hideEnemies": 450,
+            "enemyState": 4050
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "c1grid-diag-01",
+      "scene": {
+        "fps": 30,
+        "nativeUnits": 9,
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "platform": [
+          81.80000000000001,
+          661.8,
+          960
+        ],
+        "base": false,
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "roomBlack": true,
+        "land": "random_mane"
+      },
+      "inputs": [
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/evidence/result.json",
+          "sha256": "664e987c8a507858630adc3bda78dfe1eeb16be8af8c692fcb27417ad1e511c6",
+          "bytes": 2010998
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/analysis.json",
+          "sha256": "f3c4f8b19111dcd83ac9972195fc0f60ed95981b1c98d24bf4bfa13acb9989fa",
+          "bytes": 1213
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/CombatRenderProbeMod.as",
+          "sha256": "015d5e12fcbe884fe03f20cb540642192d58c3884a094c6b1d2820513b2d8305",
+          "bytes": 25894
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/rv.swf",
+          "sha256": "a7d328a7656e792949f3025948f2b3798ecb62d22936ca23d7c88d5b279f9ee3",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/vector.swf",
+          "sha256": "cece62f006ea06b3b913231deed889df07264b6a1820cba23d6c134069e536bd",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/candidate.swf",
+          "sha256": "c4b8e8b737ad35c018d4d280dbce4c1dfbd80a8c12402c3c7b2684173d85c671",
+          "bytes": 50263
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/rv-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/vector-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-01/candidate-src/RealisticVisionMod.as",
+          "sha256": "69dbbd4b19251106eb4743a393ac44214e36988ffb7d15d961eb68bd1d4210f2",
+          "bytes": 229465
+        }
+      ],
+      "baseline_main_source_byte_equal": true,
+      "baseline_swf_byte_equal": false,
+      "probe_has_config_initialization_reference": false,
+      "profile_flag_false": true,
+      "performance_summary": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/normal": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 39.571030640668525,
+              "p95": 51,
+              "max": 171,
+              ">100": 3
+            },
+            "rv": {
+              "n": 718,
+              "mean": 1.8997214484679665,
+              "p95": 5,
+              "max": 143,
+              ">100": 1
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 39.956824512534816,
+              "p95": 54,
+              "max": 107,
+              ">100": 3
+            },
+            "rv": {
+              "n": 718,
+              "mean": 1.1406685236768803,
+              "p95": 2,
+              "max": 17,
+              ">100": 0
+            }
+          },
+          "current/vector": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 39.53899721448468,
+              "p95": 51,
+              "max": 112,
+              ">100": 3
+            },
+            "rv": {
+              "n": 718,
+              "mean": 1.2896935933147633,
+              "p95": 3,
+              "max": 70,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "windows": [
+        {
+          "index": 0,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 74,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 32,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 26
+          },
+          "enemy_shot_lower_bound_not_hits": 398,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1149,
+          "vision_plus_wall_ms_including_warmup": 444,
+          "vision_plus_wall_share_of_rv": 0.386423,
+          "fill_ms_per_call": 2.90625,
+          "profile_inclusive_ms": {
+            "hideEnemies": 612,
+            "applyWorldVisual": 347,
+            "applyVision": 288,
+            "applyWorldVisuals": 534,
+            "computeFov": 33,
+            "refreshWallField": 68,
+            "fillFogCache": 93,
+            "applyWeaponVisual": 6,
+            "refreshMask": 263,
+            "updateWallSurface": 156,
+            "prepareOcclusion": 42,
+            "enemyState": 19
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3088,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 32,
+            "refreshWallField": 450,
+            "fillFogCache": 32,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2635,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 1,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 404,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 712,
+          "vision_plus_wall_ms_including_warmup": 279,
+          "vision_plus_wall_share_of_rv": 0.391854,
+          "fill_ms_per_call": 5.833333,
+          "profile_inclusive_ms": {
+            "hideEnemies": 353,
+            "applyWorldVisual": 94,
+            "applyVision": 193,
+            "applyWorldVisuals": 276,
+            "computeFov": 7,
+            "refreshWallField": 62,
+            "fillFogCache": 35,
+            "applyWeaponVisual": 5,
+            "refreshMask": 24,
+            "updateWallSurface": 86,
+            "prepareOcclusion": 51,
+            "enemyState": 13
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3283,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2781,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 2,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 384,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 712,
+          "vision_plus_wall_ms_including_warmup": 237,
+          "vision_plus_wall_share_of_rv": 0.332865,
+          "fill_ms_per_call": 4.333333,
+          "profile_inclusive_ms": {
+            "hideEnemies": 394,
+            "applyWorldVisual": 147,
+            "applyVision": 154,
+            "applyWorldVisuals": 326,
+            "computeFov": 7,
+            "refreshWallField": 61,
+            "fillFogCache": 26,
+            "applyWeaponVisual": 9,
+            "refreshMask": 67,
+            "updateWallSurface": 83,
+            "prepareOcclusion": 51,
+            "enemyState": 12
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3182,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2725,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 3,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 385,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 804,
+          "vision_plus_wall_ms_including_warmup": 239,
+          "vision_plus_wall_share_of_rv": 0.297264,
+          "fill_ms_per_call": 3.666667,
+          "profile_inclusive_ms": {
+            "hideEnemies": 508,
+            "applyWorldVisual": 256,
+            "applyVision": 171,
+            "applyWorldVisuals": 429,
+            "computeFov": 2,
+            "refreshWallField": 76,
+            "fillFogCache": 22,
+            "applyWeaponVisual": 9,
+            "refreshMask": 140,
+            "updateWallSurface": 68,
+            "prepareOcclusion": 42,
+            "enemyState": 13
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3253,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2761,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 4,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 383,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 674,
+          "vision_plus_wall_ms_including_warmup": 279,
+          "vision_plus_wall_share_of_rv": 0.413947,
+          "fill_ms_per_call": 3.833333,
+          "profile_inclusive_ms": {
+            "hideEnemies": 323,
+            "applyWorldVisual": 85,
+            "applyVision": 183,
+            "applyWorldVisuals": 256,
+            "computeFov": 6,
+            "refreshWallField": 62,
+            "fillFogCache": 23,
+            "applyWeaponVisual": 9,
+            "refreshMask": 22,
+            "updateWallSurface": 96,
+            "prepareOcclusion": 47,
+            "enemyState": 9
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3206,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2751,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        },
+        {
+          "index": 5,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 380,
+          "unit_count_including_player_and_native_units": 15,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 805,
+          "vision_plus_wall_ms_including_warmup": 238,
+          "vision_plus_wall_share_of_rv": 0.295652,
+          "fill_ms_per_call": 4.166667,
+          "profile_inclusive_ms": {
+            "hideEnemies": 487,
+            "applyWorldVisual": 248,
+            "applyVision": 160,
+            "applyWorldVisuals": 437,
+            "computeFov": 3,
+            "refreshWallField": 69,
+            "fillFogCache": 25,
+            "applyWeaponVisual": 8,
+            "refreshMask": 177,
+            "updateWallSurface": 78,
+            "prepareOcclusion": 57,
+            "enemyState": 17
+          },
+          "calls_including_warmup": {
+            "hideEnemies": 450,
+            "applyWorldVisual": 3193,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 7200,
+            "refreshMask": 2740,
+            "updateWallSurface": 450,
+            "prepareOcclusion": 450,
+            "enemyState": 5850
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "c1grid-diag-02",
+      "scene": {
+        "fps": 30,
+        "roomBlack": true,
+        "screen": [
+          1264,
+          681
+        ],
+        "zoom": 0.6583333333333333,
+        "black": true,
+        "platform": [
+          201.8,
+          781.8,
+          320
+        ],
+        "base": false,
+        "land": "random_mane",
+        "loc": "loc1_3",
+        "size": [
+          48,
+          25
+        ],
+        "nativeUnits": 17
+      },
+      "inputs": [
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/evidence/result.json",
+          "sha256": "f456991f3261aa6650bf6ad09cc3a5a862b912d46ce556f26bdad87d9e8d7240",
+          "bytes": 2099519
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/analysis.json",
+          "sha256": "1d76b6dd083b3fca5cedaa6156cf196386940d2145ac6631ca4fb45c8d41f97e",
+          "bytes": 1210
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/CombatRenderProbeMod.as",
+          "sha256": "e88ad6864e39f112ead62ba91cc916bcd74053f9778b74d8c7f2f2457654b2e7",
+          "bytes": 25975
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/rv.swf",
+          "sha256": "b781feba753cf227cc923d656394decb2b99ff1407f23bca09d7169cc61b9670",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/vector.swf",
+          "sha256": "4797cc3f42ca2ae973471d7bc6135f19629894a389581d934ad3970cb74aeb2a",
+          "bytes": 50197
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/candidate.swf",
+          "sha256": "82a00ffe8d04616b3ed49bba6d64deca92945dfc7975be102bd780e2a8d5b1cc",
+          "bytes": 50263
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/rv-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/vector-src/RealisticVisionMod.as",
+          "sha256": "97c27e70609776ec26f292a8ae4dd0fcc9921948e4f5ea1b2cdf86b93bec8972",
+          "bytes": 228651
+        },
+        {
+          "path": "build/fire-exhaustive-output/c1grid-diag-02/candidate-src/RealisticVisionMod.as",
+          "sha256": "69dbbd4b19251106eb4743a393ac44214e36988ffb7d15d961eb68bd1d4210f2",
+          "bytes": 229465
+        }
+      ],
+      "baseline_main_source_byte_equal": true,
+      "baseline_swf_byte_equal": false,
+      "probe_has_config_initialization_reference": false,
+      "profile_flag_false": true,
+      "performance_summary": {
+        "environment": {
+          "profile": "benchmark",
+          "performanceEligible": true,
+          "reasons": [],
+          "boundary": "endpoint observations; background CPU/GPU, RNG and activity still require matched controls"
+        },
+        "groups": {
+          "current/normal": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 34.286908077994426,
+              "p95": 46,
+              "max": 108,
+              ">100": 3
+            },
+            "rv": {
+              "n": 718,
+              "mean": 2.364902506963788,
+              "p95": 10,
+              "max": 63,
+              ">100": 0
+            }
+          },
+          "current/candidate": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 33.66155988857939,
+              "p95": 45,
+              "max": 106,
+              ">100": 1
+            },
+            "rv": {
+              "n": 718,
+              "mean": 1.360724233983287,
+              "p95": 2,
+              "max": 24,
+              ">100": 0
+            }
+          },
+          "current/vector": {
+            "nextInterval": {
+              "n": 718,
+              "mean": 33.94568245125348,
+              "p95": 44,
+              "max": 112,
+              ">100": 3
+            },
+            "rv": {
+              "n": 718,
+              "mean": 1.4610027855153203,
+              "p95": 3,
+              "max": 24,
+              ">100": 0
+            }
+          }
+        }
+      },
+      "windows": [
+        {
+          "index": 0,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 30,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 42,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 5,
+            "mv": 0,
+            "m": 32
+          },
+          "enemy_shot_lower_bound_not_hits": 362,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 1842,
+          "vision_plus_wall_ms_including_warmup": 1256,
+          "vision_plus_wall_share_of_rv": 0.681868,
+          "fill_ms_per_call": 5.285714,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 41,
+            "enemyState": 29,
+            "hideEnemies": 493,
+            "applyWorldVisual": 205,
+            "applyVision": 657,
+            "applyWorldVisuals": 390,
+            "computeFov": 32,
+            "refreshWallField": 48,
+            "fillFogCache": 222,
+            "applyWeaponVisual": 4,
+            "refreshMask": 126,
+            "updateWallSurface": 599
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3231,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 42,
+            "refreshWallField": 450,
+            "fillFogCache": 42,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2876,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            123.05000000000001,
+            256.0
+          ]
+        },
+        {
+          "index": 1,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 9,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 4,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 360,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 875,
+          "vision_plus_wall_ms_including_warmup": 351,
+          "vision_plus_wall_share_of_rv": 0.401143,
+          "fill_ms_per_call": 7.111111,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 50,
+            "enemyState": 23,
+            "hideEnemies": 437,
+            "applyWorldVisual": 140,
+            "applyVision": 182,
+            "applyWorldVisuals": 327,
+            "computeFov": 7,
+            "refreshWallField": 55,
+            "fillFogCache": 64,
+            "applyWeaponVisual": 6,
+            "refreshMask": 56,
+            "updateWallSurface": 169
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3142,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 9,
+            "refreshWallField": 450,
+            "fillFogCache": 9,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2758,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "index": 2,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 10,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 5,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 360,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 919,
+          "vision_plus_wall_ms_including_warmup": 324,
+          "vision_plus_wall_share_of_rv": 0.352557,
+          "fill_ms_per_call": 6.2,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 58,
+            "enemyState": 27,
+            "hideEnemies": 509,
+            "applyWorldVisual": 210,
+            "applyVision": 188,
+            "applyWorldVisuals": 409,
+            "computeFov": 9,
+            "refreshWallField": 55,
+            "fillFogCache": 62,
+            "applyWeaponVisual": 6,
+            "refreshMask": 118,
+            "updateWallSurface": 136
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3157,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 10,
+            "refreshWallField": 450,
+            "fillFogCache": 10,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2802,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "index": 3,
+          "variant": "vector",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 6,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 1,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 360,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 762,
+          "vision_plus_wall_ms_including_warmup": 262,
+          "vision_plus_wall_share_of_rv": 0.343832,
+          "fill_ms_per_call": 7.333333,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 54,
+            "enemyState": 22,
+            "hideEnemies": 436,
+            "applyWorldVisual": 171,
+            "applyVision": 179,
+            "applyWorldVisuals": 350,
+            "computeFov": 2,
+            "refreshWallField": 32,
+            "fillFogCache": 44,
+            "applyWeaponVisual": 1,
+            "refreshMask": 102,
+            "updateWallSurface": 83
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3104,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 6,
+            "refreshWallField": 450,
+            "fillFogCache": 6,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2752,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "index": 4,
+          "variant": "candidate",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 7,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 2,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 360,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 709,
+          "vision_plus_wall_ms_including_warmup": 234,
+          "vision_plus_wall_share_of_rv": 0.330042,
+          "fill_ms_per_call": 5.428571,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 54,
+            "enemyState": 16,
+            "hideEnemies": 409,
+            "applyWorldVisual": 125,
+            "applyVision": 150,
+            "applyWorldVisuals": 334,
+            "computeFov": 2,
+            "refreshWallField": 41,
+            "fillFogCache": 38,
+            "applyWeaponVisual": 7,
+            "refreshMask": 40,
+            "updateWallSurface": 84
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3178,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 7,
+            "refreshWallField": 450,
+            "fillFogCache": 7,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2801,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "index": 5,
+          "variant": "normal",
+          "warmup": 90,
+          "sample_frames": 360,
+          "profile_frames_including_warmup": 450,
+          "all_frames": 450,
+          "body_moved_sample_transitions": 0,
+          "body_sample_transitions": 359,
+          "fov_calls_including_warmup": 7,
+          "fov_reasons_including_warmup": {
+            "f": 5,
+            "h": 2,
+            "mv": 0,
+            "m": 0
+          },
+          "enemy_shot_lower_bound_not_hits": 360,
+          "unit_count_including_player_and_native_units": 23,
+          "max_partial_enemies": 0,
+          "rv_ms_including_warmup": 876,
+          "vision_plus_wall_ms_including_warmup": 376,
+          "vision_plus_wall_share_of_rv": 0.429224,
+          "fill_ms_per_call": 6.285714,
+          "profile_inclusive_ms": {
+            "prepareOcclusion": 47,
+            "enemyState": 29,
+            "hideEnemies": 439,
+            "applyWorldVisual": 158,
+            "applyVision": 269,
+            "applyWorldVisuals": 340,
+            "computeFov": 5,
+            "refreshWallField": 40,
+            "fillFogCache": 44,
+            "applyWeaponVisual": 7,
+            "refreshMask": 84,
+            "updateWallSurface": 107
+          },
+          "calls_including_warmup": {
+            "prepareOcclusion": 450,
+            "enemyState": 9450,
+            "hideEnemies": 450,
+            "applyWorldVisual": 3082,
+            "applyVision": 450,
+            "applyWorldVisuals": 450,
+            "computeFov": 7,
+            "refreshWallField": 450,
+            "fillFogCache": 7,
+            "applyWeaponVisual": 5850,
+            "refreshMask": 2735,
+            "updateWallSurface": 450
+          },
+          "frame_fields": [
+            "age",
+            "band100",
+            "bandMinus100",
+            "bandNative",
+            "beforeProbe",
+            "diagnosticMs",
+            "enemyDriveMs",
+            "fireTime",
+            "fired",
+            "forcedEnemyShots",
+            "masks",
+            "memoryAfter",
+            "memoryBefore",
+            "nativeEnemyShotLowerBound",
+            "nextInterval",
+            "objects",
+            "partialEnemies",
+            "particles",
+            "projectiles",
+            "rv",
+            "trigger",
+            "worldPass"
+          ],
+          "live_eye_sample_span_xy": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ]
+}

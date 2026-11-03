@@ -77,3 +77,11 @@ rv=每帧 RV onFrameInner 耗时（插桩同施于三版本）。rv( incumbent �
 - 工具 `build/boundary-c1-20261103/`（prepare/probe/smoke/deploy/windows/profiles/gen_*）；跑批坑：SavedFireProbe.as 须指 `build/fire-exhaustive/`（输出目录无副本）；`PYTHONUTF8=1` 必设（模板 runner 裸 read_text 走 GBK）；PYTHONPATH 需含 `build/composite-followup`（cpu_sampler）。
 - 登记：checks-02 通过（game-coexist）；c1grid-01（SavedFireProbe 缺失）/c1grid-01b（GBK 解码）两次失败保留；c1grid-01c/02、diag-01/02 通过（benchmark-eligible）。
 - 本轮**未改** release/config/src；正式安装仍 v0.34.4-door-smooth。
+
+## 2026-11-03 独立复核更正（保留上文原实验记录）
+
+新的[复核报告](2026-11-03-boundary-audit.md)重新读取本轮原始数据、测试驱动与生产快照，发现上文归因超出了证据：驱动直接 new 实例而未走配置加载，实际初值为 8 子格，安装模板解析后为 4；profile 含 90 帧预热共 450 帧，位置只有 360 帧；371–397 是敌方发射下界，不是命中/击退次数。轻重轮布局、出生位置及原生单位数不同，重载六窗部分可见敌人全为 0；同源对照的两份 SWF 也非同字节。
+
+623 项图像通过和 C1 未部署状态保留；重载轮以同一 450 帧分母重算，applyVision+updateWallSurface 占 RV 耗时 81.9%–87.1%，但 fillFogCache 已含在 applyVision 内，不能重复相加。位移伴随高频重算是线索；“命中造成共同主因”“全量级联已唯一归因”“粗格导致全部性能差值”降级为待控制实验验证。diag-02 眼点静止只适用于所采窗口。
+
+后续以[修订方案](../../design/boundary-fire-stutter-plan.md)为准：先对齐正式配置，再分离边界在屏/弹道跨界、固定眼点/命中位移、敌人不开火活动/开火。旧优先降频建议撤回；30fps 下 2–3 帧约 67–100ms，额外空间误差未经证明。此次为离线复核，没有新增游戏测试、候选或部署。
