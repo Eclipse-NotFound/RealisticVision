@@ -15,3 +15,15 @@ fx_vision_quality=0
 fog_vision_quality=0
 enemy_mask_fast=1
 vision_quality_preset=0
+cs_window=1
+# v0.35.0-aperture-grade switches (1=fix on; 0=legacy v0.34.8 behaviour)
+eye_clamp=1
+eye_guard=1
+solid_promote=1
+ray_target_once=1
+ray_radius=0
+fovdbg=0
+aperture_surface=1
+lit_fastpath=1
+doorgrade=1
+door_wall_merge=0

@@ -1,4 +1,25 @@
-## 2026-11-04 — v0.34.8-clip-pad：弹体支持区收窄 + S2 组合场景（Phase 2）
+## 2026-11-04 — 两批实施：v0.34.9-fov-correct + v0.35.0-aperture-grade（门/窗边界 + 贴墙泄漏）
+
+- 授权：用户"按方案进行优化"。按 [方案](../design/door-window-boundary-plan.md) 实施批次 1（正确性）与批次 2（口径统一），两批各自独立备份/回滚。
+- **批次 1 `v0.34.9-fov-correct`**（50,835B `7be18163…daac`）：C-Eye-1 眼点钳制（新增 `visionEye` 每帧缓存 + `sanitizeEye` 按**当前姿态** `scX/scY` 夹回实心自由格 + `eyeCellFree`）、C-Eye-2 起点格实心即整条射线作废、C-Ap-1 墙可见性传播只认 `opac>=1`、C-Ray-1 目标格只扣一次、C-Ray-2 半径守卫（**默认关**）、P0-D `fovdbg` 诊断（默认关）。偏离方案三处并写明理由：`eye_guard` 收窄为"只对实心起点格"（半透起点格是原生一致语义，扣减会让水房变暗）、`eyeCellFree` 只判 `opac>=1`、`ray_radius` 默认 0（原生场外是棘轮保留，变黑反而偏离原版）。
+- **批次 2 `v0.35.0-aperture-grade`**（51,634B `c97a6f6c…d76e`，现行）：C-Ap-4 `fillLitTile` 带 `litF`（角点亮度量化进 `cornerReuseFlags` bit8-15，复用帧可还原；窗/栅格 300px 内从 alpha 0 恢复 51）、C-Ap-2 透光叶面走与墙同族的四角双线性（新增 `surfaceAlpha`/`fillApertureTile`）、C-Ap-3 门景 `doorgrade` 渐变、C-Ap-5 B1 门景锥内墙与地板同源（**默认关**）。偏离方案两处：C-Ap-2 **不乘透射率**（opac 是挡光量不是透明度；原生门板本来就是亮的，乘了会得到"门板 204 / 门后 38"的反向）、C-Ap-5 的角值补偿未实施（C-Ap-2 已让交界 raw 落差 59→0，再补偿会偏离原生）。
+- **离线证据**（`tools/fov-fix-20261104/checks.py` 9/9、`checks_b2.py` 9/9）：站立墙后 0 格 / 坐姿 45 格（复现）→ 钳制后 0 格；木门目标格 0.05→0.2、窗 0.6→0.8；门板 `[16..29]→[38]`；窗后 `0→51`；门板/墙交界 59→0；门后光轴取值数 1→22、远端 71 vs 解析 69；门景锥内墙 249→38、锥外逐位不变；开放区（lit=1）逐位不变。
+- **未验证（边界）**：运行时加载**没做成**——`adl64` 能启动（探针 `application descriptor not found`），但完整 AIR 应用在本沙箱无法初始化（进程树对 `%APPDATA%` 写入被拒，`Local Store` 未创建、`air-output.log` 为空；重定向 `APPDATA` 也不行），与"游戏测试需 full-access"的记录一致。观感与性能均未测，不作帧率声明。
+- 部署：两批均已安装并回读指纹；备份 `build/backups/before-v0349-20261104-061848/`、`before-v0350-20261104-062257/`；`release/config.txt` 追加 10 个新键（原有 GBK 字节未动）；重启生效。[报告](../knowledge/experiments/2026-11-04-fov-correct-and-aperture-grade.md)
+- 停点：等用户重启后的三条验收（贴墙不再看穿 / 门板有雾+门后渐变 / 窗后暗一层），再决定 `door_wall_merge` 是否开、`doorgrade` 取哪档；有 full-access 时补 ModLoader 冒烟 + A/A 性能 + 共享探索等价性。开发树 `src/` 四批移植仍遗留。
+
+
+
+- 授权：用户要求"详细调查并编写优化方案文件"。**未改源码/release/config，未启动游戏，未部署**。
+- 交付：[door-window-boundary-plan.md](../design/door-window-boundary-plan.md)（898 行方案）+ 离线模型 [tools/door-fov-20261104/](../tools/door-fov-20261104/)（`model.py` + 6 张 PNG）+ 两份并行只读调查 [原生光照/门窗机制](../knowledge/investigations/2026-11-04-native-light-and-door-fov.md)、[RV 门窗与贴墙审计](../knowledge/investigations/2026-11-04-rv-door-and-wallhug-audit.md)。
+- **先纠正配置口径**：生效配置是 `%APPDATA%\pfe\Local Store\RealisticVision_config.txt`（`RealisticVisionMod.as:565-570`），本机 `dim=0.6 / doordim=0.85 / soft_current=25 / preset=0 → fogSub=4`；`release/config.txt` 的 0.35/0.5 不生效。⇒ `dimA=102`、门景恒 alpha **38**、窗 51、栅格 26、`curBlur≈2.5 雾px=25 世界px`。
+- **A（门/窗不平滑）六条机制**（离线模型量化）：①门后平顶——原始场门后有光子集 `[38..38]`、**单一值 100%**（开口/窗为 45–71 个取值 `[31..101]`）；②叶面丢透射率——墙可见性传播只判 `opac>0`（`:1869`）把门窗格抬成 VISIBLE，门/窗/开口叶面 alpha **都是 16–29**；③`fillLitTile` 快路径**完全不读 `lit`**（`:2486-2513`）⇒ 窗/栅格 300px 内直接 alpha 0，只剩锥边 51/26 环带；④门后**地板 38 / 墙 ≈204**（原生 visi 扣了门 opac）亮度反向；⑤门景口径与地板口径在 40px 瓦片线上相接；⑥`cLit` 二值分档。另发现 `br`/`litArr` 是**死字段**（只写不读）。
+- **B（贴墙看穿）根因确认**：`castRay` 两分支都**不采样起点格**（`:1905-1909`、`:1960-2027`）。触发集：站立时眼点在 50×70 盒内（横向余量仅 2.85px、纵向 7.6px，模型 0 格/0.0%）；**坐姿**盒缩到 50×35（`sitY=stayY/2`）⇒ 眼点在盒顶上方 17.8–27.4px ⇒ 模型 **墙后 47 格点亮、23.2% 像素差**；另有上台阶自动 `sit(true)`（`Unit.as:2108-2117`）、水/`tileop` 起点格、幽灵墙/sky/传送。性能夹具曾捕获越盒 23.7px 的眼点 ⇒ 不能只靠"站立安全"。判读：v0.34.3 把起点从盒内 body 点换成显示眼点，**破坏了"起点在体内"这个原生前提**，属回归。
+- **顺带**：`castRay` 目标格 opac **扣两遍**（木门 0.2→0.05、窗 0.8→0.6 恰贴 `litmin`）；`MASK_LIT_A=140` 与 `dim` 不同源；`recalcTile` 无半径守卫（探索溢出）；`bboxFovCount` 把传播点亮的墙算可见。
+- 方案：批次 1 `v0.34.9-fov-correct`（P0-D 诊断 + C-Eye-1 眼点钳制 + C-Eye-2 起点兜底 + C-Ap-1 传播只认实心墙 + C-Ray-1 目标格一次）；批次 2 `v0.35.0-aperture-grade`（C-Ap-4 快路径带 lit、C-Ap-2 透光表面口径、C-Ap-3 门景径向渐变 `doorgrade`、C-Ap-5 墙地同源）。全部带配置回滚口。
+- 停点：**待拍板 5 项**（`doorgrade` 三档、门板明暗、窗/栅格是否变暗一层、是否接受时间平滑、批次 1 是否单独部署）；**下一轮第一优先 = 姿态静态提取（E3）**：用 `checks-06` 与 `pad-perf-01` 两份现成 evidence JSON 反算坐/飞/卧姿态眼点，再决定 F-1/F-2 的触发集，不必启动游戏。
+
+
 
 - 授权：用户"按方案继续下一步"。实施 C-Bul-2（refreshMask pad 参数化，applyWorldVisual 传 1/1/1，坐标映射/守卫同步），新增 S2 场景（edge-move-idle/fire：玩家移动+边界假人+开火）补齐方案验证矩阵。C-Ene-2 降级、C-Fov-1 待拍板（报告有据）。
 - 基线切换：上轮产物移入 legacy-v0346-base/，基线重冻结为 v0.34.7 冻结源；三次探针断言迭代（缩进锚点重取→逐行替换；C-Bul-2 的正确性语义是"零差异"而非"有差异"；基线已含迟滞→两版均需零翻转）。
