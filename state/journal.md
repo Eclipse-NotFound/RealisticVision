@@ -8,7 +8,8 @@
 - **测试台三坑（已修，写进报告）**：①游戏读 `mods/loader-manifest.txt`（`supported-mods.txt` 只是兼容表），新驱动必须 `RemainsModLauncher --root <runtime> --all --no-ui --report <runtime>/selection.json` 重新生成，否则不被 requested（首轮 precheck 空跑即此因）；②`main["rvAuditAPI"]` 在密封类读缺失键抛 #1069，驱动已 try/catch；③本机 PyPI 被代理拒，测试目录放 `psutil.py` 垫片（GlobalMemoryStatusEx + tasklist）。另：被 kill 的 `run_one.ps1` 会留下 AIR 子进程（非 job object），需手工清。
 - 部署：13:18:46，`release/RealisticVisionMod.swf` → 52,690B `31bdc9a2…`；备份 `before-v0351-csoptA-20261104-131846-c97a6f6c/`（SWF + release 配置 + 玩家 store 配置副本）；config 追加 `large_view_gate=1`（store 与 release 两处）。需重启游戏生效；回退 = 备份覆盖或 `large_view_gate=0`。
 - **方案修正**：W3 原写"大图 2–3ms/帧"是过推（微基准 + 实测都表明逐视觉工作不随地图规模增长），大图额外约 0.3ms/帧 ⇒ 阶段 B 降级；W8+W1 才是主项（实测 −2.68ms 与微基准预测 −2.1~−2.4ms 同量级）。
-- 停点：真机体感待用户重启核对（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms，实际前台应更明显）；下一步优先级 ①W6 诊断臂 C/D（唯一可能数量级更大的未证项）②阶段 C 开门尖峰 ③阶段 B3（手臂视觉修复）④classic/`viewscale≠1` 覆盖。
+- **W6 诊断（同装置，交错 B,C,D,B ×45s）**：C（每帧 `fogVis.visible=false`，整层雾不画）**−3.5ms（−3.9%）**；D（每帧清雾层 mask、雾照画）**+1.7ms（噪声内）** ⇒ **W6"掩膜合成面积随地图面积增长"不成立**（187MiB 上界没兑现），阶段 D（视口尺寸工作位图）**关闭**。
+- 停点：真机体感待用户重启核对（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms，实际前台应更明显）；下一步优先级 ①阶段 C 开门尖峰（W4，唯一剩下的已知 O(map) 事件尖峰）②阶段 B3（CS 下手部遮挡视觉修复）③classic/`viewscale≠1` 覆盖。
 
 ## 2026-11-04 — RV×CS 阶段 A 实施（W8+W7+W2+W1）：候选构建 + 离线 A/B 34/34，未部署
 

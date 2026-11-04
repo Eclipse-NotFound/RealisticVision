@@ -6,7 +6,8 @@
 > - **运行时实测**（隔离 CS 沙箱，`random_mane` 240×125，真实行走 X 跨度 310px，60s 窗口，Q=基线 / P=候选 交错 Q,P,P,Q ×3 批 = 12 窗口/臂）：**RV 自报 12.63 → 9.95 ms/帧（−2.68ms，−21.2%）**，两窗口区间均不重叠、6/6 方向一致；整帧中位 **85.5 → 80ms**，`>100ms` 帧/分钟 **174.5 → 126（−27.8%）**；24 轮全部 init ok / 设置注册 / tick、候选 `err=0`。证据 [报告](../knowledge/experiments/2026-11-04-csrv-moving-ab.md)、[实施记录](../build/csopt-20261104/REPORT.md)、`build/cs-rv-20261104/evidence/qp-0{1,2,3}-*`。
 > - **测试台经验（重要，已写入报告）**：①游戏读的是 `mods/loader-manifest.txt`，`supported-mods.txt` 只是兼容表——新驱动必须用 `RemainsModLauncher.exe --root <runtime> --all --no-ui --report <runtime>/selection.json` 重新生成清单，否则永远不会被 requested（第一次 precheck 空跑即此因）；②`main["rvAuditAPI"]` 在密封类上读缺失键会抛 #1069，驱动须 try/catch；③本机 PyPI 被代理拒（403），测试目录放了 `psutil.py` 垫片（GlobalMemoryStatusEx + tasklist）。
 > - **方案修正**：W3 原写"大图 2–3ms/帧"是过推；微基准 + 实测显示大图额外成本约 0.3ms/帧（逐视觉工作不随地图规模增长）⇒ 阶段 B 降级。实测 −2.68ms 与微基准预测 −2.1~−2.4ms 同量级，W8+W1 是主项。
-> - **未验证**：玩家真实前台下帧率（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms）；classic / `viewscale≠1` / CS 关闭的大图；**W6 雾层掩膜合成面积**（C/D 诊断臂未跑，仍是最大未知项）。
+> - **未验证**：玩家真实前台下帧率（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms）；classic / `viewscale≠1` / CS 关闭的大图。
+> - **W6 已实测否定（诊断臂 B,C,D,B 交错）**：C（每帧隐藏整层雾）只比 B 快 **≈3.5ms（−3.9%）**，D（只摘雾层 mask、雾照画）**无收益**（+1.7ms 噪声内）⇒ "掩膜合成面积随地图面积增长"不成立（187MiB 上界没兑现），**阶段 D（视口尺寸工作位图）不做**。数据见同一报告 §W6 诊断。
 
 > 2026-11-04 **RV×CS 阶段 A 已实现并离线验证（候选 52,691B，未部署）**：按用户"按方案进行优化"实施 [方案](../design/cs-coexist-optimization-plan.md) 阶段 A 四项 —— **W8** 墙角循环改"行×8瓦片列块"分桶（只访问窗口内的角）、**W7** `enemyState` 整图分类数组改代次戳（不再每帧 `new Vector.<int>(spaceX*spaceY)` = 120KB/帧）、**W2** `computeFov` 的 fov 全清改"只清上一轮写入矩形"、**W1** "墙场变化但非 FOV 帧"的全图 `wallTiles` 重绘改"只做本帧可见域"（新增逃生口键 `large_view_gate`，默认 1）。
 > - 产物 `build/csopt-20261104/`：`prepare.py`（25 个 anchor，每个断言唯一）→ `production/src`（`RealisticVisionMod.as` sha `741d1c10…`）；`build_swf.py` 官方配方出 `out/candidate.swf`（52,691B）；`run_checks.py` 离线 A/B 夹具。
