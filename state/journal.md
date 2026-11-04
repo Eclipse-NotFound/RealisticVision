@@ -1,3 +1,38 @@
+## 2026-11-04 — v0.35.1-csoptA 已部署：RV×CS 阶段 A（W8+W7+W2+W1），实测 RV 自身 −21.2%
+
+- 授权：用户"按方案进行优化"→（问部署时）"继续尝试实测"。本会话沙箱中途放宽到 `danger-full-access`，`%APPDATA%` 可写，**游戏实测通道打通**，故本轮由"仅候选"升级为"实测 + 部署"。
+- 四项改动（25→26 个 anchor，`prepare.py` 每个断言"命中==1"）：**W8** 墙角循环改"行×8瓦片列块"分桶；**W7** 整图分类数组改代次戳（消 120KB/帧分配）；**W2** `fov` 全清改"只清上一轮写入矩形"；**W1** "墙场变化但非 FOV 帧"改只做本帧可见域（新键 `large_view_gate`，默认 1）。版本号 `v0.35.0-aperture-grade` → `v0.35.1-csoptA`（P0-version patch），便于日志辨认。
+- **离线 A/B 34/34 PASS**：标准房 200 帧全字段/位图逐元素逐像素相同；classic 60 帧相同；大图 CS 开/关各 40 帧逐帧相同（含 2,800px 传送）；W1 窗口内 539,328 px 零差异 + 1 帧自愈 + 窗外确实陈旧（diff=16，证明优化生效）；W7 重建 15→0；W8 7,019 角覆盖无遗漏；`large_view_gate=0` 与基线逐像素相同。既有 SoftHarness 16/16；SharedExplorationHarness 20/21（该项基线同样失败）。
+- **运行时实测**（`build/cs-rv-20261104/` 测试台，隔离沙箱 = 宿主 A9B39CC7 + CS 0.9.8 + 13 模组 + 自有驱动；`random_mane` 240×125；真实按键往返 X 跨度 310px；60s 窗口；Q=v0.35.0 基线 / P=候选，交错 Q,P,P,Q ×3 批）：**RV 自报 12.63 → 9.95 ms/帧（−2.68ms，−21.2%）**；窗口 1 区间 Q 10.57–12.22 vs P 8.40–8.99、窗口 2 Q 12.91–15.37 vs P 10.51–11.90（**均不重叠**，6/6 一致）；整帧均值 95.55→89.23（去首个冷启动离群 92.67→89.23）、中位 **85.5→80ms**、`>100ms` 帧/分钟 **174.5→126（−27.8%）**；24 轮 init ok/设置注册/tick，候选 err=0。
+- **对照价值**：同一装置测得 RV 在大图移动工况下**基线就要 12.6ms/帧**（此前静止场景只有 3–4ms）——这就是用户"两模组同开严重卡顿"里 RV 的真实份额；阶段 A 拿回 21%。
+- **测试台三坑（已修，写进报告）**：①游戏读 `mods/loader-manifest.txt`（`supported-mods.txt` 只是兼容表），新驱动必须 `RemainsModLauncher --root <runtime> --all --no-ui --report <runtime>/selection.json` 重新生成，否则不被 requested（首轮 precheck 空跑即此因）；②`main["rvAuditAPI"]` 在密封类读缺失键抛 #1069，驱动已 try/catch；③本机 PyPI 被代理拒，测试目录放 `psutil.py` 垫片（GlobalMemoryStatusEx + tasklist）。另：被 kill 的 `run_one.ps1` 会留下 AIR 子进程（非 job object），需手工清。
+- 部署：13:18:46，`release/RealisticVisionMod.swf` → 52,690B `31bdc9a2…`；备份 `before-v0351-csoptA-20261104-131846-c97a6f6c/`（SWF + release 配置 + 玩家 store 配置副本）；config 追加 `large_view_gate=1`（store 与 release 两处）。需重启游戏生效；回退 = 备份覆盖或 `large_view_gate=0`。
+- **方案修正**：W3 原写"大图 2–3ms/帧"是过推（微基准 + 实测都表明逐视觉工作不随地图规模增长），大图额外约 0.3ms/帧 ⇒ 阶段 B 降级；W8+W1 才是主项（实测 −2.68ms 与微基准预测 −2.1~−2.4ms 同量级）。
+- 停点：真机体感待用户重启核对（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms，实际前台应更明显）；下一步优先级 ①W6 诊断臂 C/D（唯一可能数量级更大的未证项）②阶段 C 开门尖峰 ③阶段 B3（手臂视觉修复）④classic/`viewscale≠1` 覆盖。
+
+## 2026-11-04 — RV×CS 阶段 A 实施（W8+W7+W2+W1）：候选构建 + 离线 A/B 34/34，未部署
+
+- 授权：用户"按方案进行优化"。按 [方案](../design/cs-coexist-optimization-plan.md) 阶段 A（T2–T4）实施；基线 v0.35.0-aperture-grade（`c97a6f6c…`，源 sha `8073d112…`）冻结进 `build/csopt-20261104/baseline/`。
+- 改动（25 个 anchor，`prepare.py` 每个断言"命中==1"，任一不唯一即中止）：**W8** `sceneRefreshWallFieldFast` 改"行×8瓦片列块"桶遍历（`wallCornerGrid`，`wallCorners` 内容/顺序不变，classic 与 `joinClassicWalls` 不受影响）；**W7** `enemyState` 整图分类数组改 `sightGen`/`sightClassGen` 代次戳（`currentSight` 每条写路径后 `sightGen++`，共 4 处；含回绕保护）；**W2** `computeFov` 的 fov 全清改"只清上一轮写入矩形"（写前记录超集，`resetRoom` 强制全清一次）；**W1** `applyVision` 的"墙场变化但非 FOV 帧"全图 `wallTiles` 重绘改"只做本帧可见域"（`wallRefreshRect` = 相机视口 ∪ 玩家视野圆盘；新键 `large_view_gate`，默认 1，0=回退）。
+- 构建：`build_swf.py`（官方配方 airglobal 外部库 + GameStubs.swc 存根）→ `out/baseline.swf` 51,635B / `out/candidate.swf` **52,691B**（`8714d22c…`；构建非确定性，同源两次哈希不同，身份以源 sha 为准）。候选源 `RealisticVisionMod.as` sha `741d1c10…`（+7,919B）。
+- **离线 A/B 证据（同进程、baseline 改名 BaselineVision、stub 游戏类为真类形态）34/34 PASS**：标准房 48×25 跑 200 帧（含拓扑变化、眼点摆动）`fov`/`wallA`/`memCur`/`wallRaw`/`fogCache`/`currentSight`/`seenSub`/`explored` **逐元素逐像素相同**、单位三态每帧相同；classic 60 帧 `fov`/`lastA`/`classicRaw` 相同；大图 240×125（自建 `BigRoom`，`space` 列数组走 fast path）CS 开/关各 40 帧 `fov`/`wallA`/`memCur`/`wallRaw`/单位态逐帧相同（含一次 2,800px 传送）；**W1** 静止墙场变化 12 帧刷新窗口内 **539,328 px 零差异**、`currentSight` 零差异、跳位后 **1 帧自愈**、且窗口外确实陈旧（diff=16 ⇒ 优化真的生效）；**W7** 基线 30 帧重建 `sightClasses` 15 次 vs 候选 **0 次**（分类结果相同）；**W8** 大图 7,019 角、网格恰好覆盖每个一次、桶位置正确；**逃生口** `large_view_gate=0` 时 fog/sight 与基线逐像素相同。既有 `SoftHarness` 16/16；`SharedExplorationHarness` 20 PASS/1 FAIL（`memory brightness setting still controls shared area`，**基线同样失败**=v0.34/0.35 改 `dim` 口径后的陈旧断言）；`ExplorationCacheHarness` 两臂都启动即退（陈旧夹具）。
+- **方案修正（写回方案文档）**：W3 原写"大图 2–3ms/帧"是过推（把 D59 的 0.4ms/帧全当作随对象数增长）；微基准 M3 只测到链遍历 0.18ms，逐视觉工作（getBounds/refreshMask/遮罩）不随地图规模增长 ⇒ 大图额外成本约 **0.3ms/帧**，阶段 B 由"收益最大"降级为"需要时再做"；W8(1.68ms/帧) > W1(6.67ms/突发) > W2(0.26ms/FOV) ≈ W3(0.3ms) > W7(0.07ms+GC)。
+- **未部署（明确边界）**：①发布门禁要求的"本轮实际加载"做不到——本会话沙箱禁写 `%APPDATA%`，宿主 `pfe.swf` 启动早期停住、ModLoader 零模组初始化（与 `build/cs-rv-20261104/REPORT.md` 同一阻断；不是缺少用户许可）；②并行会话已认领本方案文档，避免双写 `release/`。`deploy.py` 已门禁化就绪（断言 release 仍是 `c97a6f6c…` + 候选源未漂移 + 备份名唯一 → 备份 SWF/store 配置 → 覆盖 → 补 `large_view_gate` → 回读 → 写 `deployment.json`）。
+- 停点：有 `%APPDATA%` 写权限的会话执行 `python deploy.py` → ModLoader 冒烟（init ok / 设置注册 / tick 1/181）→ 大图移动 A/B（RV 关 vs 开，ABBA≥2 轮）+ RV 自报 `ms=` 对比 → 开门尖峰对比；随后再决定阶段 B/C 与 W6 诊断臂。回退：备份覆盖或 `large_view_gate=0`。
+
+## 2026-11-04 — RV×CS 共存卡顿：调查 + 可执行优化方案（仅文档，未改源码/未部署）
+
+- 授权：用户"你负责 realisticvision 模组的开发……请进行详细调查并编写可执行的优化方案文件"（本轮只交文档）。
+- 交付：[方案](../design/cs-coexist-optimization-plan.md)（约 500 行：根因表 + 逐项可执行 AS3 补丁 + 等价性证明 + 配置键 + 验收矩阵 V1–V8/P1–P5 + 11 项工单）、只读审计 [AUDIT.md](../build/cs-rv-20261104-audit/AUDIT.md)（56 项逐函数清单，v0.34.8 行号）、实测设施 [REPORT.md](../build/cs-rv-20261104/REPORT.md)（隔离沙箱 + 驱动 + 插桩 RV + 日志探针 + 六臂 + 登记脚本，全部已编译）。
+- **调查结论（按"每帧成本×规模"排序，均为结构证据）**：W3 三段全对象扫描（最贵的持续成本，D59 的 48×25 实测 0.4ms/帧 × 大图对象数 → 约 2–3ms/帧）；W7 `enemyState` 每帧整图 `Vector.<int>`（240×125 ≈ **120KB/帧** 零填充，GC 长帧、不进 RV `ms`）；W1 非 FOV 帧的**全图 `wallTiles` 重绘**（fogSub=4 → 48 次像素操作/墙瓦片，对应 RV 自报 `ms=4.32/120` 的 120ms 峰值）；W8 角循环只门控了循环体（遍历仍全图墙角，还带 `%`/`/`）；W2 `fov` 全清 30k→~2.8k；W4 开门整图 rebuild 尖峰；W6 雾层 mask 合成面积疑似随地图面积增长（大图 wallBmp 世界 9,640×5,080、单层 32bpp 上界≈187MiB，**待诊断臂 C/D 定论**）。
+- **正确性缺口**（非性能，顺带修）：`guard<5000` 因原生链"追加到链尾"会静默丢弃**最新**对象（= 弹体/粒子）；CS 包装使 `getQualifiedClassName` 手臂识别恒 false（暗处手臂不再遮挡）。
+- **证伪三项**（省得后续再查）：mask Shape 不会每帧反复 addChild（wrapper 稳定）；`visLight.visible` 是原生在写、不是 CS；`fillFogCache`/`updateWallSurface` 已是视口域，不该围着 cs_window 再收窄。
+- **基线漂移**：写作期间并行会话 06:18 部署 v0.34.9、06:22 部署 **v0.35.0**（51,634B `c97a6f6c…d76e`）。方案全文行号已改对齐 `build/fov-fix-20261104/v0350/src`，附录给 v0.34.8↔v0.35.0 对照；实施前必须重冻结（本模组第 4 次换基）。
+- **配置口径纠正**：生效配置是 `%APPDATA%\pfe\Local Store\RealisticVision_config.txt`（`v0350:604-609`），`release/config.txt` 仅回退；本机 store 副本 `dim=0.6 / doordim=0.85 / soft_current=25 / fogSub=4 / cs_window=1`。
+- **实测未取得（环境阻断，非方法问题）**：本会话 DSH 沙箱禁写 `%APPDATA%`（pwsh 复核 UnauthorizedAccessException），AIR 子进程继承后 `applicationStorageDirectory` 不可写（MinAIR `#3003`，写旧 store `#3001`）→ 宿主启动早期停住（进程活、CPU 空闲、0 行输出、无 store、ModLoader 零模组）——与 06:18 那轮"运行时加载没做成"同源。2026-11-04 00:59 那轮能跑通是因为那轮会话的 AIR 有 `%APPDATA%` 权限。
+- **合成微基准（有数，但不是游戏实测）**：`build/cs-rv-20261104/microbench/`（AIR 51.1.3.3、debug=false/optimize=true、1280×800 cpu、同进程 ABAB×5 轮、每变体每轮≥200 次；复算 `python microbench/compile_run.py`）。30,000 项角表全遍历 **1,747.5µs** vs 窗内 1,200 项 71.75µs ⇒ **≈1.68ms/帧**（下界，真实循环体更重，且真实墙角数待测）；6,000 墙瓦片像重填 **6,665µs** vs 600 瓦片 701µs ⇒ **≈5.96ms/次**（突发）；fov 全清 277.5→19.25µs（0.258ms/次 FOV）；链 1,070 节点 180→1.7µs（仅遍历段，逐对象工作未建模）；`new Vector.<int>(30000,true)` 67.5→0.15µs + **120KB/帧**垃圾（内存锯齿 +6.9/−11.7MB，但未测 GC 停顿）；小对象可忽略。**W6 掩膜合成合成模型覆盖不到**，只能靠 C/D 诊断臂或游戏实测。合成排序 W8>W1(突发)>W2>W3链>W7≫M6；与 in-game 证据（D59：48×25 房 0.4ms/帧，1/8 对象数）合并后 W3 仍排前（逐对象工作才是大头）。
+- 停点：**T1 取证需有 `%APPDATA%` 写权限的会话**（命令与预检顺序见 REPORT §7；先 `--order A --window-ms 20000` 确认产出 `result.json` + `RVision.log` 含 `auto room … 240x125`）。之后按阶段 A（W8+W7+W2+W1）→ B（W3 三小步）→ C（W4 行桶 mask）→ D（W6 条件，需先确诊）。所有收益声明等实测。
+
 ## 2026-11-04 — 两批实施：v0.34.9-fov-correct + v0.35.0-aperture-grade（门/窗边界 + 贴墙泄漏）
 
 - 授权：用户"按方案进行优化"。按 [方案](../design/door-window-boundary-plan.md) 实施批次 1（正确性）与批次 2（口径统一），两批各自独立备份/回滚。
