@@ -28,6 +28,8 @@ MOD = HERE.parents[1]
 GAME = MOD.parents[1]
 OUT = MOD / 'build/fov-fix-20261104'
 HOST_ENTRY = 'pfe.swf'
+sys.path.insert(0, str(GAME / 'mods/ModLoader/tools'))
+from air_test_process import HiddenProcess
 
 
 def copy_game(folder):
@@ -97,17 +99,19 @@ def main():
     env['LOCALAPPDATA'] = str(store)
     try:
         with log.open('w', encoding='utf-8') as fh:
-            proc = subprocess.Popen([str(GAME / 'adl64.exe'), '-runtime',
+            proc = HiddenProcess([str(GAME / 'adl64.exe'), '-runtime',
                                      str(GAME / 'runtimes/air/win64'), str(desc), '-nodebug'],
-                                    cwd=folder, stdout=fh, stderr=subprocess.STDOUT,
-                                    env=env,
-                                    creationflags=subprocess.CREATE_NO_WINDOW)
+                                    cwd=folder, stdout=fh, stderr=fh, env=env)
             try:
                 code = proc.wait(timeout=args.timeout)
             except subprocess.TimeoutExpired:
                 proc.kill()
                 proc.wait()
                 code = 124
+            finally:
+                if proc.poll() is None:
+                    proc.kill(); proc.wait(15)
+                proc.close()
     finally:
         desc.unlink(missing_ok=True)
 

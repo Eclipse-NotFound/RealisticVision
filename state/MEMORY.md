@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-04 测试启动图修复：CS×RV `run_one.ps1`、shadowfix `run_smoke.ps1`、csopt/shadowfix `run_checks.py` 和 `tools/fov-fix-20261104/smoke.py` 改用共用独立桌面入口；保留业务断言和环境变量，后续PS记录桌面策略。8项接口检查及真实AIR验证通过，未重跑RV性能/战斗矩阵、未改RV运行版。证据和回退见[ModLoader记录](../../ModLoader/knowledge/experiments/quiet-tests-2026-11-04/README.md)。
+
 > 2026-11-04 **v0.35.2-shadowfix 已部署（激光/高速弹药阴影遮盖 + 炮塔/单位退出阴影不显示）**：按用户"请按方案进行优化"实施 [方案](../design/projectile-and-turret-shadow-optimization-plan.md)。**54,217B / `aea1af3a…f18df`**；基底 v0.35.1-csoptA（`31bdc9a2…`）；备份 `build/backups/before-v0352-shadowfix-20261104-165437-31bdc9a2/`（v0.35.1 原包）、`…180530-50f68135/`（定稿前一版）（另有重滚前 `…165934-c48b6d4a/`）；回执 `build/shadowfix-20261104/deployment.json`。**需重启游戏生效。**
 > - **根因（都不是调参）**：①激光/高速弹药不遮暗 = v0.34.7 C-Bul-1 关掉遮罩两侧 `cacheAsBitmap` 后 Flash 退化为**标准矢量剪裁**（只认 `graphics` 轮廓、**完全不读位图 alpha**），而旧码画的正是包围盒实心 `drawRect` ⇒ 只要一端在亮区，整条轨迹（含阴影内）100% 透出；②炮塔/单位退出阴影不显示 = `unitBBox` 外扩 1 瓦片把**不可透光实心墙**计入可见比例分母（12 格包围盒常含 3~6 格天花板/墙角），`gateRatio` 被稀释进迟滞死区 `[0.15,0.25)`，该分支是 `prevSt==0 ? 0 : 2` ⇒ **原本全隐的单位永远出不来**。
 > - **改动**（新键 `proj_shadow_clip` / `turret_wall_guard`，默认 1，置 0 逐项回退）：弹体**定向矢量裁剪**（沿轴向按视野场采样，只画亮段定向四边形；全亮摘罩/全暗空罩；静止弹体缓存键含 `sightGen`+外框尺寸）；实心墙**不进分母**（仍参与 combined/mixed）；**核心锚点**（身位中心在光里且 `st==0` → 抬到 2，放在 `hideEnemies` 调用点）；**keep-lit 遮罩映射**（核心在光里时不侵蚀亮侧，暗子格仍硬切 0）；**淡入残值治理**（`fadeCount/baseAlpha` 初始化 + `showUnit` 恢复基准 alpha，不再硬写 1）。版本串 → `v0.35.2-shadowfix`。
