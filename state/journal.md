@@ -1,3 +1,15 @@
+## 2026-11-04 — v0.35.2-shadowfix 已部署：弹体定向矢量裁剪 + 单位实心墙剔除/核心锚点
+
+- 授权：用户"请按方案进行优化"（方案 = [projectile-and-turret-shadow-optimization-plan.md](../design/projectile-and-turret-shadow-optimization-plan.md)）。基线 v0.35.1-csoptA（52,690B `31bdc9a2…`）→ **54,198B `50f68135…079e`**，备份 `before-v0352-shadowfix-20261104-165437-31bdc9a2/`（另有重滚前 `…165934-c48b6d4a/`）。
+- **两个机制性根因**（都不是调参）：①激光/高速弹药不遮暗 = v0.34.7 C-Bul-1 关掉遮罩两侧 `cacheAsBitmap` 后 Flash 退化为**标准矢量剪裁**（只认 `graphics` 轮廓、不读位图 alpha），而旧码画的正是包围盒实心 `drawRect` ⇒ 一端在亮区就整条透出；②炮塔/单位退出阴影不显示 = `unitBBox` 外扩把**实心墙**计入可见比例分母，`gateRatio` 落进迟滞死区 `[0.15,0.25)`，而该分支是 `prevSt==0 ? 0 : 2` ⇒ 原本全隐的单位永远出不来。
+- 改动（新键 `proj_shadow_clip` / `turret_wall_guard`，默认全开，置 0 逐项回退）：**弹体定向矢量裁剪**（沿轴向按视野场采样，只把亮段画成定向四边形；全亮摘罩/全暗空罩；静止弹体裁剪缓存键含 `sightGen`+外框尺寸）；**实心墙不进分母**（仍参与 combined/mixed）；**核心锚点**（`unitCoreLit` 真且 `st==0` → 抬到 2）；**keep-lit 遮罩映射**（核心在光里时不侵蚀亮侧，暗子格仍硬切 0）；**淡入残值治理**（`fadeCount/baseAlpha`，`showUnit` 恢复基准 alpha）。版本串 → `v0.35.2-shadowfix`。
+- **离线 A/B `ShadowFixHarness` 23/23 PASS**：同一贴天花板炮塔 baseline `st=0` → 候选 `st=2`；弹体遮罩几何 `x=240..960`（交界 640，暗侧 320px 全放行）→ `x=300..630`；全亮无罩/全暗空罩；遮罩剖面交界首行 79→167；标准房 **200 帧** `fov/wallA/memCur/wallRaw/fogCache/currentSight/seenSub/explored` 逐像素不变；大图 90 帧**无"更隐"回归**（状态变化 43 次均为更可见方向）。
+- **既有套件**：SoftHarness 16/16；SharedExplorationHarness 20/21（同一陈旧断言基线也失败）；CsOptHarness（对 v0.35.0 基线）31/34，余 3 项全是本轮有意的单位状态变化，场/位图等价与 W1/W7 机制项全过。
+- **微基准 `ShadowPerf`（ABAB×5，24 跨界弹体）**：视野刷新帧 **0.0340 → 0.0096 ms/对象（−72%）**；静止视野帧 +0.0038 ms/移动对象（真实 2~4 发 ≈ ≤0.015ms/帧）；`enemyState` 0.000625 ms/单位**不变**（候选侧还多算了 `unitCoreLit`）。⇒ 未拖累，交战帧反而更省。
+- **真机加载**（隔离沙箱 `runtime-smoke`，本轮 `%APPDATA%` 已可写）：17 模组 `errors=[]`，`init ok v0.35.2-shadowfix` / 设置注册 / 48×25 → `random_mane` 240×125（208 units / 593 objects）/ `tick 181`，无 RV 报错。见 `evidence/smoke-03-final/`。
+- 偏离方案 4 处（详见 [REPORT](../build/shadowfix-20261104/REPORT.md) §4）：wall-dilate 改 keep-lit 映射（实测旧映射只压交界 1~2 行，不是 15~18px 全透明）、新增静止弹体缓存键、核心锚点放到 `hideEnemies` 调用点、§2.3 的 18px 说法按实测修正。
+- 遗留：玩家真机观感（激光截断位置、炮塔边缘羽化）待重启核对；classic/`viewscale≠1` 与 20+ 同屏弹体未测；弹体裁剪是几何硬边（慢速抛射物跨界会比以前硬）。
+
 ## 2026-11-04 — 阶段 C（W4 墙拓扑尖峰）实测与归属：RV 份额 ≈+35ms，但大头不在 RV 脚本/雾层
 
 - 授权：用户"继续"。不改源码、不部署，只做测量与归属（测试台加臂）。
