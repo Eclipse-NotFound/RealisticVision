@@ -8,7 +8,7 @@
 > - **弹体夹具**：横向块 200×140（中轴亮、下沿 30px 暗）基线**整条摘罩**（暗侧全透）→ 候选取罩到底边 335（交界 340 前收住）；短弹体跨竖直交界遮罩边界误差 **10px→4px**；全亮摘罩/全暗空罩不变。
 > - **既有套件**：`SoftHarness` 16/16；`SharedExplorationHarness` 20/21（该 1 项**基线臂同样失败**）；`CsOptHarness` 31/34（3 项假设基线是 v0.35.0 的机制断言；其中 `large_view_gate=0` 的 diff=8 来自本轮默认开的 AA，独立键置 0 即逐字节相同）；`ShadowFixHarness` 23/25（2 项是基线臂断言：v0.35.3 已修的炮塔死锁、已收窄到 10px 的泄漏）。
 > - **真机加载**（隔离沙箱 `runtime-smoke`，真实 pfe.swf）：`init ok v0.36.0-clarity` / 设置注册 / 48×25 → **240×125（CS 大图）** / `arm wrap detected` / `tick 181,361` / `fov=110/5/1 blurD=117 ms=10.81/99 err=0`。
-> - **成本**：AA 整帧差 −0.38~+0.27ms（噪声带内；第一版子格 7×7 卷积实测 **+6.95ms/帧**=整帧 3 倍，已废弃重写）。
+> - **成本**：AA 整帧差 −0.38~+0.27ms（噪声带内；第一版子格 7×7 卷积实测 **+6.95ms/帧**=整帧 3 倍，已废弃重写）。**P3 的代价有数**：两次隔离冒烟（同 SWF、不同 `fog_vision_quality`，各自单跑不是交错 A/B）RV 自报 `ms=10.81/99`（fs=4）vs `ms=12.91/121`（fs=8，240×125 CS 大图）≈ **+2.1ms/帧、+19%**；不作严格性能结论，卡就 `fog_vision_quality=0`。
 > - **工具链反例**：`flexsdk/frameworks/localFonts.ser` 缺失时 mxmlc 在 `defaults: 无法打开` 处直接中止（基线源码同样失败）；把 `-compiler.fonts.local-fonts-snapshot` 指向自己 `out/` 下空文件即可，别写共享 SDK。`build_swf.py`/`run_checks.py` 已内置。
 > - **未验证**：玩家真机观感（门窗锥边、子弹跨界、移动抖动）、classic、`viewscale≠1`、20+ 同屏弹体、fs=8 的帧率影响。
 >
