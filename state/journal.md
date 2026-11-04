@@ -1,3 +1,14 @@
+## 2026-11-04（晚）— 继续攻事件尖峰：单项关视效全无效、RV 份额 +34ms 定案、阶段 C-1 实现但收益不显著（不部署）
+
+- 授权：用户"先完成1"（继续攻事件尖峰）。
+- 基线变化：并行会话已把 **v0.35.2-shadowfix**（54,217B `aea1af3a…`）部署上线，且以我的 v0.35.1-csoptA 为基底；本轮探针与候选都基于 `build/shadowfix-20261104/production/src`。
+- 单项关视效探针：`build/csopt-20261104/probe/src`（配置键 `probe_disable=unit|weapon|effect|cache|fov`）→ `out/probe-effects.swf`；接成 E0–E5 臂。结果：**E1 单位遮罩 +108、E2 武器遮罩 +105、E3 特效裁剪 +108、E4 cacheAsBitmap +107、Y 整层雾 +95/+111、E5 跳过 FOV 重算 +122/+106**，对照 R 为 +151/+108 ⇒ 全部在漂移带内，**无单一元凶**。
+- 噪声：风暴改为每 10 帧一次（40s 窗口 22–32 次事件）后，同臂重复差 8ms；据此定案 **RV 份额 = +34ms/次**（R +109/+101 vs W +72/+70，`dens-02`）。
+- 阶段 C-1 实现：`wallClip/floorClip` 由单 Shape 改每行一个 Shape 的 Sprite 容器（+静态边框 Shape），`scenePrepareOcclusionFast` 记录脏行（>64 退化整图），重建只重画脏行；配置键 `wall_row_update`（默认 1）。源 `build/csopt-20261104/cliprow/src` → `out/cliprow-candidate.swf`。
+- 验证：离线 `ClipRowChecks` **8/8**（初始 + 24 次拓扑翻转后两张掩膜整图光栅逐像素相同、翻转点 320px 裁切逐像素相同、fog/sight 不受影响、行数=spaceY）；上机 `cliprow-01`（R,C1,C1,R 密集风暴）**+118/+106 vs +114/+100**，均值 112 vs 107 ⇒ **−5ms/次，噪声内，不部署**。
+- 结论：事件尖峰 ≈110ms 里 RV ≈34ms（多个常规分段之和，无可安全单点优化），**其余 ≈70ms 属原生+CS**（chunk 重绘 + relight）；要再往下必须把重建的 O(map) 扫描与墙表/角表维护也做成增量（估再拿 8–12ms，风险显著上升），暂不做。
+- 交付：`knowledge/experiments/2026-11-04-wall-rebuild-spike.md` 追加两节（单项对照 + C-1 实现/验证 + 给 CS 的反馈）；测试台新增 R/E0–E5/C1 臂、`--allow-foreign`、`psutil.py` 垫片、`analyze_storm_robust.py`。部署未变（仍 v0.35.2-shadowfix）。
+
 ## 2026-11-04 — v0.35.2-shadowfix 已部署：弹体定向矢量裁剪 + 单位实心墙剔除/核心锚点
 
 - 授权：用户"请按方案进行优化"（方案 = [projectile-and-turret-shadow-optimization-plan.md](../design/projectile-and-turret-shadow-optimization-plan.md)）。基线 v0.35.1-csoptA（52,690B `31bdc9a2…`）→ **54,217B `aea1af3a…f18df`**，备份 `before-v0352-shadowfix-20261104-165437-31bdc9a2/`（另有中间版 `…165934-c48b6d4a/`、`…180530-50f68135/`）。
