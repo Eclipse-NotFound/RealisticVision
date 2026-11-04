@@ -8,6 +8,7 @@
 > - **方案修正**：W3 原写"大图 2–3ms/帧"是过推；微基准 + 实测显示大图额外成本约 0.3ms/帧（逐视觉工作不随地图规模增长）⇒ 阶段 B 降级。实测 −2.68ms 与微基准预测 −2.1~−2.4ms 同量级，W8+W1 是主项。
 > - **未验证**：玩家真实前台下帧率（沙箱隐藏窗口 ~10fps，整帧只 −3~−6ms）；classic / `viewscale≠1` / CS 关闭的大图。
 > - **W6 已实测否定（诊断臂 B,C,D,B 交错）**：C（每帧隐藏整层雾）只比 B 快 **≈3.5ms（−3.9%）**，D（只摘雾层 mask、雾照画）**无收益**（+1.7ms 噪声内）⇒ "掩膜合成面积随地图面积增长"不成立（187MiB 上界没兑现），**阶段 D（视口尺寸工作位图）不做**。数据见同一报告 §W6 诊断。
+> - **阶段 C（W4 墙拓扑尖峰）已测量、归属已细化，但结论是"先别改"**：驱动新增风暴臂（每 45 帧把玩家周边 3 块实心墙 `opac` 1↔0）。每发生一次墙拓扑变化，那一帧多花 **+96~+129ms**；RV 关时 **+61~+68ms** ⇒ RV 份额 **≈+35ms**。但插桩探针显示：墙几何重建本身只 **8–16ms**（240×125：2,098 条 drawRect / 5,212 墙瓦片 / 8,666 角），风暴帧上 `computeFov/applyVision/updateWallSurface/hideEnemies` 四段与普通帧**相同**；**隐藏整层雾（Y 臂）不降低尖峰**，而 **RV 惰性（V 臂 `mode=vanilla`）回落到 RV 关水平** ⇒ 放大器是 RV 的**活动视效**（单位/武器/特效的 `cacheAsBitmap`+遮罩），不是雾层也不是 RV 脚本。两批 `Y/V` 对照受玩家游戏与其它会话 AIR 污染（样本 38–218ms），只作方向性证据。报告 `knowledge/experiments/2026-11-04-wall-rebuild-spike.md`。**下一步需要独占机器 + 候选 SWF 单项关闭（cacheAsBitmap / 单位遮罩 / 特效遮罩）的对照臂**才能定位，暂时不实施阶段 C。
 
 > 2026-11-04 **RV×CS 阶段 A 已实现并离线验证（候选 52,691B，未部署）**：按用户"按方案进行优化"实施 [方案](../design/cs-coexist-optimization-plan.md) 阶段 A 四项 —— **W8** 墙角循环改"行×8瓦片列块"分桶（只访问窗口内的角）、**W7** `enemyState` 整图分类数组改代次戳（不再每帧 `new Vector.<int>(spaceX*spaceY)` = 120KB/帧）、**W2** `computeFov` 的 fov 全清改"只清上一轮写入矩形"、**W1** "墙场变化但非 FOV 帧"的全图 `wallTiles` 重绘改"只做本帧可见域"（新增逃生口键 `large_view_gate`，默认 1）。
 > - 产物 `build/csopt-20261104/`：`prepare.py`（25 个 anchor，每个断言唯一）→ `production/src`（`RealisticVisionMod.as` sha `741d1c10…`）；`build_swf.py` 官方配方出 `out/candidate.swf`（52,691B）；`run_checks.py` 离线 A/B 夹具。
