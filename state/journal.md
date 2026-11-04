@@ -1,3 +1,13 @@
+## 2026-11-04（夜）— v0.36.0-clarity：门/窗边界抗锯齿 + 子弹二维裁剪 + 恢复 5px 阴影网格（已部署）
+
+- 授权：用户"请按方案进行优化"（承接上一轮 [深度调查](../design/clarity-and-mask-plan.md) 的三条实测反馈）。
+- P1 `aperture_edge_aa=1`：门/窗光锥边缘覆盖率抗锯齿。墙边界来自原生 40px 角点场（双线性+迟滞），而门窗光锥边界是**子格二值**（锥内恒 38~102、锥外记忆 102/未探索 255，近 200 级落差/10px 子格）。做法：`recalcTile` 顺手数 lit 子格 → 瓦片级覆盖率 → 瓦片角平均 → 逐子格双线性 → `a=cov*aLit+(1-cov)*aDark`；与墙场同构、零新增射线、只写 fogCache。
+- P2 `proj_clip_2d`/`proj_clip_step=1`：`applyProjectileClip` 原只沿中轴一条线采样，中轴在亮侧就把整条法向宽度放行（子弹压在阴影里的那侧整幅透出）；改法向 5 点取最长连续亮子段 + 逐段收紧法向宽度 + 步长自适应（≤4px/段，≤96 段）；`anyDark` 补"段宽被裁/整段全暗"两种情形。
+- P3：`fog_vision_quality` 0→1（4 子格 10px → 8 子格 5px = CS 0.9.3 时期网格），离线证实这是"移动时边界变粗"的主因（同一基线 fs=8 显示场最大步 31 vs fs=4 的 54）。
+- 验证：`ClarityHarness` **26/26**（门光锥原始最大步 198→99、显示场 54→37、带 45→51；窗 153→110 / 47→38；fs=8 198→92 / 31→20；锥内外与 `currentSight` 逐像素/逐字节不变；`aa=0` 60 帧逐像素等价；实心墙房间 120 帧逐像素等价；弹体横向 30px 漏光消失、短弹体边界误差 10px→4px）。既有 `SoftHarness` 16/16、`SharedExploration` 20/21（基线同错）、`CsOpt` 31/34、`ShadowFix` 23/25（失败项均为基线臂/旧基线假设）。
+- 真机：隔离沙箱真实 pfe.swf `init ok v0.36.0-clarity` → 48×25 → 240×125（CS 大图）→ tick 181/361，`err=0`。
+- 坑与更正：①AA 第一版用子格 7×7 卷积，实测 **+6.95ms/帧**（整帧 3 倍），废弃改为瓦片角插值（−0.38~+0.27ms，噪声内）；②弹体第一版漏写"整段全暗也要 anyDark"，被夹具 E4 抓出；③夹具第一版只跑 2 帧，`fogBmp` 读数全是淡入中间值（要等 `visCur` 收敛 16 帧）；④`flexsdk` 缺 `localFonts.ser` 会让 mxmlc 在 `defaults:` 处中止（基线源码同样失败），用 `-compiler.fonts.local-fonts-snapshot` 指向自己 out 目录的空文件即可。
+- 边界：未验证玩家真机观感、classic、`viewscale≠1`、20+ 同屏弹体、fs=8 的帧率影响；存配置 `enabled=0` 未动，重启后需 F11 打开。报告 [2026-11-04-visual-clarity.md](../knowledge/experiments/2026-11-04-visual-clarity.md)，施工源 `build/visualfix-20261104/`。
 ## 2026-11-04 测试进程启动图隐藏修复
 
 - 按用户要求修复仍直接启动AIR的五个近期测试入口，接入ModLoader共用独立桌面；Python保留env/日志/超时并释放桌面，PS记录PID/桌面策略/清理回执。

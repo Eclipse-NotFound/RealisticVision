@@ -1,5 +1,17 @@
 # RealisticVision —— 开发记忆入口
 
+> 2026-11-04 **v0.36.0-clarity 已部署（门/窗边界抗锯齿 + 子弹二维裁剪 + 恢复 5px 阴影网格）**：按用户"请按方案进行优化"实施 [方案](../design/clarity-and-mask-plan.md)。**56,589B / `734896e6…42d6`**；基底 v0.35.3-armwrap（`db8c3ed1`）；备份 `build/backups/before-v0360-clarity-20261104-233105-db8c3ed1/`；回执 `build/visualfix-20261104/deployment.json`。**需重启游戏生效；存配置 `enabled=0` 未动 —— 重启后需 F11 打开 RV。**
+> - **P1 `aperture_edge_aa`（默认 1）**：门/窗光锥边缘的覆盖率抗锯齿。归因：墙边界来自原生 40px 角点场（双线性+迟滞），门窗光锥边界是**子格二值**（锥内恒 38~102、锥外记忆 102/未探索 255，近 200 级落差压在一个 10px 子格）。做法：`recalcTile` 顺手数 lit 子格 → 瓦片级覆盖率 → **瓦片角平均 → 逐子格双线性**（与墙场同构），`a = cov*aLit+(1-cov)*aDark`；只写 fogCache，`currentSight` 不动；零新增射线。
+> - **P2 `proj_clip_2d` / `proj_clip_step`（默认 1）**：`applyProjectileClip` 原只测**中轴**一条线 ⇒ 中轴在亮侧就把整条法向宽度放行（子弹压在阴影里的那侧整幅透出）。改为法向**5 点**取最长连续亮子段、逐段收紧法向宽度（`projRunBuf` 每段 4 个数，96→256）、段宽突变 >2px 断开；步长自适应 `min(tile/fogSub, max(4, extent/6))`、段数 ≤96。`anyDark` 补上"段宽被裁"与"整段全暗"两种情况（第一版漏了，被夹具 E4 抓出）。
+> - **P3 画质恢复**：`fog_vision_quality` **0→1**（4 子格 10px → 8 子格 5px，即 CS 0.9.3 时期 ≤v0.33.17 的网格）。离线证实同一基线 fs=8 显示场最大步 31 vs fs=4 的 54（−43%）⇒ 移动时边界变粗的主因是网格量化。代价=位图面积 ×4；**本轮未重测帧率**，逃生口 `fog_vision_quality=0`。
+> - **离线 A/B `ClarityHarness` 26/26**（新增 `ApertureRoom`：row8 横墙 + 木门 0.8 + 窗 0.2；先跑 16 帧让 `visCur` 淡入收敛，否则 `fogBmp` 读数是淡入中间值）：门光锥原始场最大步 **198→99**、取值数 5→32、过渡带 9→49 子格；**显示场**（过 25px 高斯）**54→37**、带 45→51；窗 153→110 / 47→38；fs=8 下 198→92 / 31→20。锥内/锥外逐像素不变、`currentSight` **逐字节不变**；`aperture_edge_aa=0` 连跑 60 帧移动与 v0.35.3 **逐像素相同**；只有实心墙的房间 120 帧**逐像素相同**。
+> - **弹体夹具**：横向块 200×140（中轴亮、下沿 30px 暗）基线**整条摘罩**（暗侧全透）→ 候选取罩到底边 335（交界 340 前收住）；短弹体跨竖直交界遮罩边界误差 **10px→4px**；全亮摘罩/全暗空罩不变。
+> - **既有套件**：`SoftHarness` 16/16；`SharedExplorationHarness` 20/21（该 1 项**基线臂同样失败**）；`CsOptHarness` 31/34（3 项假设基线是 v0.35.0 的机制断言；其中 `large_view_gate=0` 的 diff=8 来自本轮默认开的 AA，独立键置 0 即逐字节相同）；`ShadowFixHarness` 23/25（2 项是基线臂断言：v0.35.3 已修的炮塔死锁、已收窄到 10px 的泄漏）。
+> - **真机加载**（隔离沙箱 `runtime-smoke`，真实 pfe.swf）：`init ok v0.36.0-clarity` / 设置注册 / 48×25 → **240×125（CS 大图）** / `arm wrap detected` / `tick 181,361` / `fov=110/5/1 blurD=117 ms=10.81/99 err=0`。
+> - **成本**：AA 整帧差 −0.38~+0.27ms（噪声带内；第一版子格 7×7 卷积实测 **+6.95ms/帧**=整帧 3 倍，已废弃重写）。
+> - **工具链反例**：`flexsdk/frameworks/localFonts.ser` 缺失时 mxmlc 在 `defaults: 无法打开` 处直接中止（基线源码同样失败）；把 `-compiler.fonts.local-fonts-snapshot` 指向自己 `out/` 下空文件即可，别写共享 SDK。`build_swf.py`/`run_checks.py` 已内置。
+> - **未验证**：玩家真机观感（门窗锥边、子弹跨界、移动抖动）、classic、`viewscale≠1`、20+ 同屏弹体、fs=8 的帧率影响。
+>
 > 2026-11-04 测试启动图修复：CS×RV `run_one.ps1`、shadowfix `run_smoke.ps1`、csopt/shadowfix `run_checks.py` 和 `tools/fov-fix-20261104/smoke.py` 改用共用独立桌面入口；保留业务断言和环境变量，后续PS记录桌面策略。8项接口检查及真实AIR验证通过，未重跑RV性能/战斗矩阵、未改RV运行版。证据和回退见[ModLoader记录](../../ModLoader/knowledge/experiments/quiet-tests-2026-11-04/README.md)。
 
 > 2026-11-04 **v0.35.2-shadowfix 已部署（激光/高速弹药阴影遮盖 + 炮塔/单位退出阴影不显示）**：按用户"请按方案进行优化"实施 [方案](../design/projectile-and-turret-shadow-optimization-plan.md)。**54,217B / `aea1af3a…f18df`**；基底 v0.35.1-csoptA（`31bdc9a2…`）；备份 `build/backups/before-v0352-shadowfix-20261104-165437-31bdc9a2/`（v0.35.1 原包）、`…180530-50f68135/`（定稿前一版）（另有重滚前 `…165934-c48b6d4a/`）；回执 `build/shadowfix-20261104/deployment.json`。**需重启游戏生效。**
