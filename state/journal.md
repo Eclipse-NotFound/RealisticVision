@@ -1,3 +1,14 @@
+## 2026-11-04（晚）— v0.35.3-armwrap：修 CS 包装层导致的狮鹫手臂漏遮挡（已部署）
+
+- 授权：用户"再做 CS 下手部遮挡的视觉修复"（阶段 B3）。
+- 根因：ContinuousScene `SceneObjectCulling` 把 `grafon.visObjs[*]` 每个子节点包进单子 Sprite wrapper；RV 按 `getQualifiedClassName(层子节点)` 识别 `visualGrifArm` 读到 `flash.display::Sprite` → 手臂分支永不命中，暗处/记忆区手臂完全不遮挡。离线夹具先复现了缺陷（baseline：被包装手臂 `mask == null`），再据此实现修复。
+- 实现（基线 v0.35.2）：`refreshArmWrap` 每 60 帧探测一次（仅 `sceneLarge` 宿主；未命中零开销），命中后对未判定子树**跳过 Shape** 取唯一非 Shape 子节点、按内层构造器缓存并分类；`fxCenterDim/fxCenterLit/applyWorldVisual/applyTransientVisual` 全部作用到内层。配置键 `arm_wrap_fix`（默认 1）。
+- 坑：第一版用 `numChildren == 1` 判定包装 —— RV 自己挂上遮罩 Shape 后 wrapper 变 2 子节点，分类失效，**遮罩每帧创建/释放交替**；离线夹具的"连续 3 帧稳定"断言抓出，改为跳过 Shape 计数后修复。
+- 验证：`ArmWrapChecks` **11/11 绿**（缺陷复现、修复、内层挂遮罩、普通包装视觉不误判、亮区释放、连续帧稳定、40 帧移动+拓扑变化下 `fogCache/currentSight/wallRaw/wallA` 与 v0.35.2 逐字节相同）。既有 34 项 `CsOptHarness` 以 v0.35.2 为基线跑：等价性断言全过，3 条"针对 v0.35.0 的机制假设"失败属预期（v0.35.2 已含 W7/W1）。
+- 运行时冒烟：沙箱内 `init ok v0.35.3-armwrap`、`auto arm wrap detected layer=2 index=18`、`err=0`，RV ms 与对照同量级（单窗口 14.49 vs 13.83）。
+- 部署：`release/RealisticVisionMod.swf` = **v0.35.3-armwrap 54,629B `db8c3ed1…`**（前版 v0.35.2 `aea1af3a…`）；备份 `build/backups/before-v0353-armwrap-20261104-202958-aea1af3a/`；release 与 store config 均写 `arm_wrap_fix=1`。需重启生效，回退 = 覆盖备份或键改 0。
+- 同时交付给 CS 侧报告：`mods/ContinuousScene/knowledge/handoff/2026-11-04-rv-to-cs-wall-topology-spike.md`；公共结论入 `shared-knowledge/knowledge-validation/experiments/wall-topology-event-spike-2026-11-04.md` 与 `shared-knowledge/rendering/discoveries/mod-object-layer-wrapping-2026-11-04.md`。
+
 ## 2026-11-04（晚）— 继续攻事件尖峰：单项关视效全无效、RV 份额 +34ms 定案、阶段 C-1 实现但收益不显著（不部署）
 
 - 授权：用户"先完成1"（继续攻事件尖峰）。
