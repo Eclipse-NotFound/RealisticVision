@@ -1,5 +1,7 @@
 # RealisticVision —— 开发记忆入口
 
+> **2026-11-05 GitHub 公开**：本仓库已开源到 https://github.com/Eclipse-NotFound/RealisticVision（默认分支 `main`，MIT 许可证），发布 tag `v0.36.0` 与 Release 资产 `RealisticVision_v0.36.0.zip`（预发布）。由同步会话执行；未运行游戏、未改 `release/` 下已部署产物。
+
 > 2026-11-04 **v0.36.0-clarity 已部署（门/窗边界抗锯齿 + 子弹二维裁剪 + 恢复 5px 阴影网格）**：按用户"请按方案进行优化"实施 [方案](../design/clarity-and-mask-plan.md)。**56,589B / `734896e6…42d6`**；基底 v0.35.3-armwrap（`db8c3ed1`）；备份 `build/backups/before-v0360-clarity-20261104-233105-db8c3ed1/`；回执 `build/visualfix-20261104/deployment.json`。**需重启游戏生效；存配置 `enabled=0` 未动 —— 重启后需 F11 打开 RV。**
 > - **P1 `aperture_edge_aa`（默认 1）**：门/窗光锥边缘的覆盖率抗锯齿。归因：墙边界来自原生 40px 角点场（双线性+迟滞），门窗光锥边界是**子格二值**（锥内恒 38~102、锥外记忆 102/未探索 255，近 200 级落差压在一个 10px 子格）。做法：`recalcTile` 顺手数 lit 子格 → 瓦片级覆盖率 → **瓦片角平均 → 逐子格双线性**（与墙场同构），`a = cov*aLit+(1-cov)*aDark`；只写 fogCache，`currentSight` 不动；零新增射线。
 > - **P2 `proj_clip_2d` / `proj_clip_step`（默认 1）**：`applyProjectileClip` 原只测**中轴**一条线 ⇒ 中轴在亮侧就把整条法向宽度放行（子弹压在阴影里的那侧整幅透出）。改为法向**5 点**取最长连续亮子段、逐段收紧法向宽度（`projRunBuf` 每段 4 个数，96→256）、段宽突变 >2px 断开；步长自适应 `min(tile/fogSub, max(4, extent/6))`、段数 ≤96。`anyDark` 补上"段宽被裁"与"整段全暗"两种情况（第一版漏了，被夹具 E4 抓出）。
