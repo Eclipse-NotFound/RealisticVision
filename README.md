@@ -4,7 +4,7 @@
 
 Unexplored areas stay dark, your current view is clear, and places you leave become dim memories. Enemies disappear when they leave your sight. For a stronger sense of stealth and exploration.
 
-**[Download v0.30.1 — RealisticVision_v0.30.1.zip](https://github.com/Eclipse-NotFound/RealisticVision/releases/download/v0.30.1/RealisticVision_v0.30.1.zip)** · [Release notes / other versions](https://github.com/Eclipse-NotFound/RealisticVision/releases)
+**[Download v0.36.0 — RealisticVision_v0.36.0.zip](https://github.com/Eclipse-NotFound/RealisticVision/releases/download/v0.36.0/RealisticVision_v0.36.0.zip)** · [Release notes / other versions](https://github.com/Eclipse-NotFound/RealisticVision/releases)
 
 Use the download link above, or open the release page, expand **Assets**, and select that filename. **Source code** and the green **Code → Download ZIP** button are development files, not the installable package.
 
@@ -21,7 +21,7 @@ For **Windows / Remains 1.02**.
 
 1. Save and close the game. In your Steam Library, right-click Remains → **Manage → Browse local files**. The game folder contains `pfe.swf` and `application.xml`.
 2. If this is your first mod from this collection, complete the [ModLoader first-time setup](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.md#first-install), including the game patch and scanner. Skip this if already installed.
-3. Extract the ZIP and **merge its `mods` folder into the game folder**. Avoid a nested `mods/mods` folder. On a first installation, copy `default-config/RealisticVision/config.txt` into `mods/RealisticVision/release/config.txt`. Do not overwrite an existing configuration when updating.
+3. Extract the ZIP and **merge its `mods` folder into the game folder**. Avoid a nested `mods/mods` folder. The package already contains the default `mods/RealisticVision/release/config.txt`; when updating, keep your own `config.txt` instead of overwriting it.
 4. Double-click **`mods/ModLoader/RemainsModScanner.exe`** inside the game folder. Wait for it to finish, close its message, then launch the game normally.
 
 Check that this file exists: `mods/RealisticVision/release/RealisticVisionMod.swf`. Enter an exploration area to see the effect; use F11 to compare enabled and disabled views.
@@ -42,7 +42,7 @@ The mode name appears briefly when you switch. Mode and enable settings persist;
 
 Before updating, save and close the game, back up `mods/RealisticVision`, merge the new files, run the scanner and restart. Preserve your configuration. To disable the mod temporarily, move its folder outside `mods` as a backup, scan again and restart.
 
-This guide covers v0.30.1 on Remains 1.02. Safe areas may retain the vanilla view. Increasing memory brightness does not reveal hidden enemies. Performance in busy scenes depends on your machine and other mods.
+This guide covers v0.36.0 on Remains 1.02. Safe areas may retain the vanilla view. Increasing memory brightness does not reveal hidden enemies. Performance in busy scenes depends on your machine and other mods.
 
 ## Need help?
 

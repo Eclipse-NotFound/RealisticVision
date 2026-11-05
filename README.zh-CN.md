@@ -4,7 +4,7 @@
 
 没去过的地方隐藏在黑暗中，眼前区域清晰可见，离开后只留下较暗的地形记忆；墙后的敌人不会继续显示。适合喜欢潜行与探索感的玩家。
 
-**[下载 v0.30.1 — RealisticVision_v0.30.1.zip](https://github.com/Eclipse-NotFound/RealisticVision/releases/download/v0.30.1/RealisticVision_v0.30.1.zip)** · [发布说明 / 其他版本](https://github.com/Eclipse-NotFound/RealisticVision/releases)
+**[下载 v0.36.0 — RealisticVision_v0.36.0.zip](https://github.com/Eclipse-NotFound/RealisticVision/releases/download/v0.36.0/RealisticVision_v0.36.0.zip)** · [发布说明 / 其他版本](https://github.com/Eclipse-NotFound/RealisticVision/releases)
 
 点击上方链接下载成品。也可以打开发布页，展开 **Assets（下载文件）**，选择同名文件；**Source code** 和绿色 **Code → Download ZIP** 是源码，不能直接安装。
 
@@ -21,7 +21,7 @@
 
 1. 保存并退出游戏。Steam 库中右键 Remains → **管理 → 浏览本地文件**，打开含 `pfe.swf` 和 `application.xml` 的游戏文件夹。
 2. 第一次装本系列模组，先完成 [ModLoader 首次安装](https://github.com/Eclipse-NotFound/ModLoader/blob/master/docs/INSTALL.zh-CN.md#first-install)；它包含一次性游戏补丁和模组扫描器。已装好的玩家可跳过。
-3. 解压下载的 ZIP，把里面的 **`mods` 文件夹合并到游戏文件夹**，不要套成 `mods/mods`。 首次安装时，将 `default-config/RealisticVision/config.txt` 复制到 `mods/RealisticVision/release/config.txt`；升级时不要覆盖原配置。
+3. 解压下载的 ZIP，把里面的 **`mods` 文件夹合并到游戏文件夹**，不要套成 `mods/mods`。包内已带默认的 `mods/RealisticVision/release/config.txt`；升级时保留你自己的 `config.txt`，不要覆盖。
 4. 双击游戏目录下的 **`mods/ModLoader/RemainsModScanner.exe`**，等待完成后关闭提示，再按平常方式启动游戏。
 
 放对后应能找到：`mods/RealisticVision/release/RealisticVisionMod.swf`。进入可探索区域后应能看到视野变化；F11 可对比开关效果。
@@ -42,7 +42,7 @@
 
 更新前保存退出，备份 `mods/RealisticVision`，再合并新版文件、运行扫描器并重启；保留自己的配置。临时停用时，可把该模组文件夹移到 `mods` 之外备份，再扫描并重启。
 
-本指引对应 v0.30.1 / Remains 1.02。营地等安全区可能保留原版显示。记忆亮度不会让隐藏敌人现身；复杂场景的性能仍会受机器与其他模组影响。
+本指引对应 v0.36.0 / Remains 1.02。营地等安全区可能保留原版显示。记忆亮度不会让隐藏敌人现身；复杂场景的性能仍会受机器与其他模组影响。
 
 ## 遇到问题
 
