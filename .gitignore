@@ -99,3 +99,9 @@ build/eye-boundary/reviewed-call.json
 # files there need an explicit exception (`!path`) or `git add -f`.
 # Test isolation copies must not be committed - use the cleanup tool instead.
 /build/
+
+# ==== 2026-11-05 public-sync containment ====
+# Local-only evidence archive: 3,415 per-frame PNGs / gzip payloads (~148 MB
+# under runs/). Kept on this machine so the git pack stays pushable; the
+# readable summary lives in knowledge/experiments/2026-11-01-fire-exhaustive.md.
+/knowledge/experiments/fire-exhaustive-20261101/
