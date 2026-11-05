@@ -52,6 +52,7 @@ fadestep=0.1    淡入步长
 telegrace=3     念力拖敌出视野宽限（秒）
 base_rooms=     额外安全基地房间 id（逗号分隔）
 maskblur_classic / maskblur_current   敌人掩膜模糊宽度（0=硬边回退）
+motionstep=2.5   current 移动触发视野/雾/掩膜重算的最小像素（0.25=旧行为）
 debug=0
 autotest=0      自动化验证埋点（默认关；开=每 300 帧 auto st 统计 + 事件日志，
                 见 knowledge/experiments/2026-08-27-autotest-verification.md）
