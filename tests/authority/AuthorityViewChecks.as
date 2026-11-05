@@ -37,6 +37,21 @@ package {
          view.write(body,"mask",localMask);view.write(body,"cacheAsBitmap",true);lease.prepare();
          check(body.mask===nativeMask && body.cacheAsBitmap,"restore original native mask and cache");
          check(localMask.parent==null && nativeMask.parent===this,"remove only RV mask from display tree");
+         addChild(localMask);var secondMask:Sprite=new Sprite();addChild(secondMask);
+         var other:Sprite=new Sprite();addChild(other);
+         var firstIndex:int=getChildIndex(localMask),secondIndex:int=getChildIndex(secondMask);
+         view.write(body,"mask",localMask);view.write(other,"mask",secondMask);view.write(body,"visible",false);
+         var readOK:Boolean=lease.readNative(function():Boolean {
+            return body.visible && body.mask===nativeMask && other.mask==null && localMask.parent==null && secondMask.parent==null;
+         });
+         check(readOK,"late native read excludes only local RV visibility and masks");
+         check(!body.visible && body.mask===localMask && other.mask===secondMask && getChildIndex(localMask)==firstIndex && getChildIndex(secondMask)==secondIndex,
+            "late read restores both masks at their original display indices");
+         var threw:Boolean=false;try {lease.readNative(function():void {throw new Error("intentional read failure");});}catch(expectedRead:Error){threw=true;}
+         check(threw && !body.visible && body.mask===localMask && getChildIndex(localMask)==firstIndex,"exception restores local view without swallowing the reader error");
+         lease.readNative(function():void {body.mask=null;});
+         check(body.mask==null,"late read preserves an intervening native mask change");lease.prepare();
+         check(body.visible && body.mask==null && localMask.parent==null && secondMask.parent==null,"next native step clears the retained RV overlay exactly once");
          body.visible=true;view.remember(body,"visible");body.visible=false;view.changed(body,"visible");lease.prepare();
          check(body.visible,"record delegated native visDetails changes");
          body.visible=true;view.write(body,"visible",false);lease.detach();
